@@ -1,0 +1,14 @@
+# Création par FPO
+# 13/02/2012
+
+# Exlusion du fichier .project généré par Aptana
+.project
+# Exlusion du dossier nbproject généré par Netbeans
+/nbproject/
+# on enlève les fichiers liés à codeblocks
+*.cbp
+*.depend
+*.layout
+# on enlève tout ce qui est lié à la compilation (on ne laisse que les sources)
+/bin/
+/obj/
