@@ -4,36 +4,28 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/backend/Postgres>
 #include <Wt/Dbo/WtSqlTraits>
+#include <Constants.h>
 
-//template <typename U>
 class Table //classe abstraite
 {
     public:
         Table();
         virtual ~Table();
-        static std::string getTrigram();
-        static std::string getName();
-        static std::string TRIGRAM;
-        static std::string SEP;
-
-
-
-
-
-
+        /*template<typename T>
+        std::string formatColumnName(const T &x, std::string value)
+        {
+            return T::getTrigram();
+        }*/
     protected:
-        std::string formatColumnName(std::string value);
-
-        static std::string TABLE_PREFIX;
-        static std::string SHORT_NAME;
-        static std::string FULL_NAME;
-
+        //virtual std::string getTrigram();
 
 
     private:
 
 
 };
+
+
 
 template<typename T>
 void QuiSuisJe(const T & x)

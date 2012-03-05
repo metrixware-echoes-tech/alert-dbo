@@ -1,17 +1,26 @@
 #ifndef USER_H
 #define USER_H
 
-#include <Table.h>
+#include <Wt/Dbo/Dbo>
+#include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
+
+#include "UserRole.h"
+#include "Table.h"
+
+class UserRole;
 
 class User : public Table
 {
-private:
 
+private:
+    std::string formatColumnName(std::string value);
 public:
     User();
     User(std::string firstName, std::string lastName, std::string eMail, std::string password);
     virtual ~User();
+
+    static std::string TRIGRAM;
 
     std::string firstName;
     std::string lastName;
@@ -19,6 +28,9 @@ public:
     std::string password;
     Wt::WDateTime deleteTag;
 
+    static std::string getName();
+
+    Wt::Dbo::collection<Wt::Dbo::ptr<UserRole>> roles;
 
     /*
     int myint[] = {1,2,3,4};
@@ -43,14 +55,19 @@ public:
         std::map<std::string,std::string>::iterator itStrings;
         for(itStrings = mapClassAttributesStrings.begin(); itStrings != mapClassAttributesStrings.end(); ++itStrings)
         {
-            Wt::Dbo::field(a, (*itStrings).second,     this->formatColumnName((*itStrings).first));
+            Wt::Dbo::field(a, (*itStrings).second, formatColumnName((*itStrings).first));
         }
 
         std::map<std::string,Wt::WDateTime>::iterator itDates;
         for(itDates = mapClassAttributesDates.begin(); itDates != mapClassAttributesDates.end(); ++itDates)
         {
-            Wt::Dbo::field(a, (*itDates).second,     this->formatColumnName((*itDates).first));
+            Wt::Dbo::field(a, (*itDates).second, formatColumnName((*itDates).first));
         }
+
+        Wt::Dbo::hasMany(a,
+                         roles,
+                         Wt::Dbo::ManyToOne,
+                         Constants::T_USER_USR);
 
 
         //Wt::Dbo::field(a, this->deleteTag,     this->formatColumnName("DELETE"));
@@ -59,28 +76,6 @@ public:
 
     void test();
 };
-
-namespace Wt
-{
-    namespace Dbo
-    {
-        template<>
-        struct dbo_traits<User> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
-                return "USR_ID";
-            }
-            static const char *versionField()
-            {
-                return 0;
-            }
-        };
-    }
-}
 
 
 

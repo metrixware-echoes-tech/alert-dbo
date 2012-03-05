@@ -1,19 +1,9 @@
 #include "User.h"
+#include "Constants.h"
 
 using namespace std;
 
-
-string Table::TRIGRAM = "USR";
-string Table::SHORT_NAME = "USER";
-string Table::FULL_NAME = Table::TABLE_PREFIX + Table::SEP + Table::SHORT_NAME + Table::SEP + Table::TRIGRAM;
-
-template<typename T>
-struct testStruct
-{
-    T a;
-    string b;
-};
-
+string User::TRIGRAM = "USR";
 
 User::User() : Table()
 {
@@ -38,6 +28,22 @@ void QuiSuisJe<User>(const User & x)
     cout << "Je suis un <User>" << endl;
 }
 
+string User::formatColumnName(string value)
+{
+    return User::TRIGRAM + Constants::SEP + value;
+}
+
+/*string User::formatColumnName()
+{
+    return User::TRIGRAM + Constants::SEP + value;
+}*/
+
+string User::getName()
+{
+    return Constants::T_USER_USR;
+}
+
+
 void User::test()
 {
     string str("toto");
@@ -46,16 +52,16 @@ void User::test()
     QuiSuisJe(1); // "Je suis un <int>"
     QuiSuisJe(1.23);
 
-    testStruct<string> t1;
-    t1.a = "toto";
-    t1.b = "tata";
+    //testStruct<string> t1;
+    //t1.a = "toto";
+    //t1.b = "tata";
 
-    testStruct<int> t2;
-    t2.a = 42;
-    t2.b = "titi";
+    //testStruct<int> t2;
+    //t2.a = 42;
+    //t2.b = "titi";
 
-    setFields(t1);
-    setFields(t2);
+    //setFields(t1);
+    //setFields(t2);
 
 
 

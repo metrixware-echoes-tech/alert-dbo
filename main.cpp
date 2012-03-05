@@ -8,7 +8,13 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/backend/Postgres>
 #include <PostgresConnector.h>
-#include <User.h>
+
+#include "Constants.h"
+#include "UserRole.h"
+#include "User.h"
+
+class User;
+class UserRole;
 
 namespace odb = Wt::Dbo;
 using namespace std;
@@ -19,12 +25,9 @@ void run()
 {
 
     PostgresConnector *pc = new PostgresConnector("echoes","echoes","127.0.0.1","5432","toto");
-
     Wt::Dbo::Session *maSession = pc->getSession();
-
-
-    maSession->mapClass<User>(Table::getName().c_str());
-
+    maSession->mapClass<User>(Constants::T_USER_USR);
+    maSession->mapClass<UserRole>(Constants::T_USER_ROLE_URO);
     pc->generateModel(true);
 
     {
@@ -35,9 +38,6 @@ void run()
         transaction.commit();
     }
 
-    /*****
-     * Dbo tutorial section 4. Querying objects
-     *****/
     /*
     {
         odb::Transaction transaction(session);
