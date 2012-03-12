@@ -6,6 +6,8 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Constants.h>
 
+class Table;
+
 class Table //classe abstraite
 {
     public:

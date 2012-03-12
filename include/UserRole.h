@@ -15,14 +15,21 @@ class UserRole
 public:
     UserRole();
     virtual ~UserRole();
-    Wt::Dbo::ptr<User> user;
+
+    Wt::Dbo::collection<Wt::Dbo::ptr<User>> users;
 
     template<class Action>
     void persist(Action& a)
     {
         //Wt::Dbo::belongsTo(a, user, User::getName().c_str());
-        Wt::Dbo::belongsTo(a, user, Constants::T_USER_USR);
+        Wt::Dbo::hasMany(a,
+                         users,
+                         Wt::Dbo::ManyToOne,
+                         "URO");
     }
+
+
+
 };
 
 #endif // USERROLE_H

@@ -6,9 +6,11 @@
 #include <Wt/WDateTime>
 
 #include "UserRole.h"
+#include "Hierarchy.h"
 #include "Table.h"
 
 class UserRole;
+class Hierarchy;
 
 class User : public Table
 {
@@ -30,7 +32,12 @@ public:
 
     static std::string getName();
 
-    Wt::Dbo::collection<Wt::Dbo::ptr<UserRole>> roles;
+    Wt::Dbo::ptr<UserRole> userRole;
+
+    Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy>> parents;
+
+    Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy>> children;
+
 
     /*
     int myint[] = {1,2,3,4};
@@ -64,16 +71,19 @@ public:
             Wt::Dbo::field(a, (*itDates).second, formatColumnName((*itDates).first));
         }
 
+        Wt::Dbo::belongsTo(a, userRole, "URO");
+
         Wt::Dbo::hasMany(a,
-                         roles,
+                         parents,
                          Wt::Dbo::ManyToOne,
-                         Constants::T_USER_USR);
+                         "UPA");
 
+        Wt::Dbo::hasMany(a,
+                         children,
+                         Wt::Dbo::ManyToOne,
+                         "UCH");
 
-        //Wt::Dbo::field(a, this->deleteTag,     this->formatColumnName("DELETE"));
-        //Wt::Dbo::field(a, password, this->formatColumnName("PASSWORD"));
     }
-
     void test();
 };
 

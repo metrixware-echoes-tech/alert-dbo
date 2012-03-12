@@ -10,6 +10,7 @@
 #include <PostgresConnector.h>
 
 #include "Constants.h"
+#include "Hierarchy.h"
 #include "UserRole.h"
 #include "User.h"
 
@@ -28,7 +29,8 @@ void run()
     Wt::Dbo::Session *maSession = pc->getSession();
     maSession->mapClass<User>(Constants::T_USER_USR);
     maSession->mapClass<UserRole>(Constants::T_USER_ROLE_URO);
-    pc->generateModel(true);
+    maSession->mapClass<Hierarchy>(Constants::T_HIERARCHY_HRC);
+    pc->generateModel(false);
 
     {
         odb::Transaction transaction(*maSession);
