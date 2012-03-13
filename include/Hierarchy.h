@@ -4,7 +4,6 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "Constants.h"
 #include "User.h"
 
 class Hierarchy
@@ -17,11 +16,11 @@ class Hierarchy
         Wt::Dbo::ptr<User> userChild;
 
         template<class Action>
-    void persist(Action& a)
-    {
-        Wt::Dbo::belongsTo(a, userParent, "UPA");
-        Wt::Dbo::belongsTo(a, userChild, "UCH");
-    }
+        void persist(Action& a)
+        {
+            Wt::Dbo::belongsTo(a, userParent, "UPA");
+            Wt::Dbo::belongsTo(a, userChild, "UCH");
+        }
     protected:
     private:
 };

@@ -6,11 +6,16 @@
 #include <Wt/WDateTime>
 
 #include "UserRole.h"
+#include "UserProfile.h"
+#include "UserField.h"
+#include "UserValue.h"
 #include "Hierarchy.h"
 #include "Table.h"
 
 class UserRole;
+class UserProfile;
 class Hierarchy;
+class userField;
 
 class User : public Table
 {
@@ -34,9 +39,17 @@ public:
 
     Wt::Dbo::ptr<UserRole> userRole;
 
+    Wt::Dbo::ptr<UserProfile> userProfile;
+
+    Wt::Dbo::collection<Wt::Dbo::ptr<UserField>> userFields;
+
+    Wt::Dbo::collection<Wt::Dbo::ptr<UserValue>> userValues;
+
     Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy>> parents;
 
     Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy>> children;
+
+
 
 
     /*
@@ -73,6 +86,8 @@ public:
 
         Wt::Dbo::belongsTo(a, userRole, "URO");
 
+        Wt::Dbo::belongsTo(a, userProfile, "UPR");
+
         Wt::Dbo::hasMany(a,
                          parents,
                          Wt::Dbo::ManyToOne,
@@ -82,6 +97,16 @@ public:
                          children,
                          Wt::Dbo::ManyToOne,
                          "UCH");
+
+        Wt::Dbo::hasMany(a,
+                         userValues,
+                         Wt::Dbo::ManyToOne,
+                         "UVA_UFI");
+
+        Wt::Dbo::hasMany(a,
+                         userFields,
+                         Wt::Dbo::ManyToMany,
+                         "TJ_USR_UFI");
 
     }
     void test();

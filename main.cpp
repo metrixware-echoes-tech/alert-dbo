@@ -12,6 +12,8 @@
 #include "Constants.h"
 #include "Hierarchy.h"
 #include "UserRole.h"
+#include "UserField.h"
+#include "UserValue.h"
 #include "User.h"
 
 class User;
@@ -29,8 +31,11 @@ void run()
     Wt::Dbo::Session *maSession = pc->getSession();
     maSession->mapClass<User>(Constants::T_USER_USR);
     maSession->mapClass<UserRole>(Constants::T_USER_ROLE_URO);
+    maSession->mapClass<UserProfile>(Constants::T_USER_PROFILE_UPR);
     maSession->mapClass<Hierarchy>(Constants::T_HIERARCHY_HRC);
-    pc->generateModel(false);
+    maSession->mapClass<UserField>(Constants::T_USER_FIELD_UFI);
+    maSession->mapClass<UserValue>(Constants::T_USER_VALUE_UVA);
+    pc->generateModel(true);
 
     {
         odb::Transaction transaction(*maSession);

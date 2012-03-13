@@ -7,6 +7,9 @@
 
 class User;
 class UserRole;
+class UserProfile;
+class UserField;
+class UserValue;
 class Hierarchy;
 
 namespace Wt
@@ -44,6 +47,51 @@ namespace Wt
             }
         };
         template<>
+        struct dbo_traits<UserProfile> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                //FIXME: solve this string / char problem
+                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
+                //const char * resChar = resString.c_str();
+                return "UPR_ID";
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
+        struct dbo_traits<UserField> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                //FIXME: solve this string / char problem
+                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
+                //const char * resChar = resString.c_str();
+                return "UFI_ID";
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
+        struct dbo_traits<UserValue> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                //FIXME: solve this string / char problem
+                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
+                //const char * resChar = resString.c_str();
+                return 0;
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
         struct dbo_traits<Hierarchy> : public dbo_default_traits
         {
             static const char *surrogateIdField()
@@ -71,6 +119,9 @@ class Constants
         static const char *T_USER_USR;
         static const char *T_USER_ROLE_URO;
         static const char *T_HIERARCHY_HRC;
+        static const char *T_USER_PROFILE_UPR;
+        static const char *T_USER_VALUE_UVA;
+        static const char *T_USER_FIELD_UFI;
     protected:
     private:
 };

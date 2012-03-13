@@ -1,7 +1,8 @@
-#ifndef USERPROFILE_H
-#define USERPROFILE_H
+#ifndef USERROLE_H
+#define USERROLE_H
 
 #include <Wt/Dbo/Dbo>
+#include <Wt/Dbo/backend/Postgres>
 #include <Wt/Dbo/WtSqlTraits>
 
 #include "Constants.h"
@@ -9,11 +10,11 @@
 
 class User;
 
-class UserProfile
+class UserRole
 {
 public:
-    UserProfile();
-    virtual ~UserProfile();
+    UserRole();
+    virtual ~UserRole();
 
     Wt::Dbo::collection<Wt::Dbo::ptr<User>> users;
 
@@ -24,11 +25,11 @@ public:
         Wt::Dbo::hasMany(a,
                          users,
                          Wt::Dbo::ManyToOne,
-                         "UPR");
+                         "URO");
     }
 
 
 
 };
 
-#endif // USERPROFILE_H
+#endif // USERROLE_H
