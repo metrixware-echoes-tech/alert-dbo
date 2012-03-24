@@ -1,0 +1,3 @@
+1. ajouter dans la classe Constants : le nom de la table
+2. ajouter la classe dans le mapping dans main.cpp
+3. utiliser le template class.h pour ne rien oublier dans la définition de la classe

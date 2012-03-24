@@ -39,6 +39,7 @@
 		<Unit filename="include/tools/PostgresConnector.h" />
 		<Unit filename="include/tools/Table.h" />
 		<Unit filename="include/user/Hierarchy.h" />
+		<Unit filename="include/user/HistoricalAction.h" />
 		<Unit filename="include/user/User.h" />
 		<Unit filename="include/user/UserField.h" />
 		<Unit filename="include/user/UserProfile.h" />
@@ -49,6 +50,7 @@
 		<Unit filename="src/tools/PostgresConnector.cpp" />
 		<Unit filename="src/tools/Table.cpp" />
 		<Unit filename="src/user/Hierarchy.cpp" />
+		<Unit filename="src/user/HistoricalAction.cpp" />
 		<Unit filename="src/user/User.cpp" />
 		<Unit filename="src/user/UserField.cpp" />
 		<Unit filename="src/user/UserProfile.cpp" />
