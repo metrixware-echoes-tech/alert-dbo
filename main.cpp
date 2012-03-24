@@ -10,10 +10,7 @@
 #include <PostgresConnector.h>
 
 #include "Constants.h"
-#include "Hierarchy.h"
 #include "UserRole.h"
-#include "UserField.h"
-#include "UserValue.h"
 #include "User.h"
 
 class User;
@@ -36,7 +33,8 @@ void run()
     maSession->mapClass<UserField>(Constants::T_USER_FIELD_UFI);
     maSession->mapClass<UserValue>(Constants::T_USER_VALUE_UVA);
     maSession->mapClass<HistoricalAction>(Constants::T_HISTORICAL_ACTION_HAC);
-    pc->generateModel(false);
+    maSession->mapClass<Action>(Constants::T_ACTION_ACT);
+    pc->generateModel(true);
 
     {
         odb::Transaction transaction(*maSession);

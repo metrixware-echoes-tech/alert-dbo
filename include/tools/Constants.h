@@ -12,6 +12,8 @@ class UserProfile;
 class UserField;
 class UserValue;
 class Hierarchy;
+class HistoricalAction;
+class Action;
 
 
 namespace Wt
@@ -102,6 +104,36 @@ namespace Wt
                 //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
                 //const char * resChar = resString.c_str();
                 return 0;
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
+        struct dbo_traits<HistoricalAction> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                //FIXME: solve this string / char problem
+                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
+                //const char * resChar = resString.c_str();
+                return "HAC_ID";
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
+        struct dbo_traits<Action> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                //FIXME: solve this string / char problem
+                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
+                //const char * resChar = resString.c_str();
+                return "ACT_ID";
             }
             static const char *versionField()
             {

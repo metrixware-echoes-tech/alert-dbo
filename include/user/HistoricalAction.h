@@ -3,6 +3,7 @@
 
 #include "Table.h"
 #include "User.h"
+#include "Action.h"
 #include <string>
 
 // include Dbo
@@ -29,7 +30,7 @@ class HistoricalAction : public Table
         Wt::Dbo::ptr<User> user;
 
 	// dbo collections (This table id as foreign key in other tables)
-        //Wt::Dbo::collection<Wt::Dbo::ptr<>> ;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Action>> actions;
 
         template<class Action>
         void persist(Action& a)
@@ -58,10 +59,10 @@ class HistoricalAction : public Table
 
             //User id as foreign key in other tables
 
-            /*Wt::Dbo::hasMany(a,
-                             ,
+            Wt::Dbo::hasMany(a,
+                             actions,
                              Wt::Dbo::ManyToOne,
-                             "");*/
+                             "ACT");
 
         }
 };
