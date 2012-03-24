@@ -4,10 +4,10 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "Constants.h"
 #include "User.h"
+#include "Constants.h"
 
-class User;
+
 class UserValue;
 
 class UserField
@@ -33,8 +33,6 @@ class UserField
                              Wt::Dbo::ManyToOne,
                              "UVA_UFI");
         }
-    protected:
-    private:
 };
 
 #endif // USERFIELD_H

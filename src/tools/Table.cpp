@@ -1,9 +1,7 @@
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/backend/Postgres>
 #include "Table.h"
 
-using namespace std;
-
+std::string Table::SEP = "_";
+std::string Table::TABLE_PREFIX = "T";
 
 Table::Table()
 {

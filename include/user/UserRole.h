@@ -5,8 +5,8 @@
 #include <Wt/Dbo/backend/Postgres>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "Constants.h"
 #include "User.h"
+#include "Constants.h"
 
 class User;
 

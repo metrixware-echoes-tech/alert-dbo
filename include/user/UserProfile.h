@@ -1,11 +1,14 @@
 #ifndef USERPROFILE_H
 #define USERPROFILE_H
 
+
+#include "User.h"
+
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
+
 #include "Constants.h"
-#include "User.h"
 
 class User;
 
@@ -30,5 +33,6 @@ public:
 
 
 };
+
 
 #endif // USERPROFILE_H

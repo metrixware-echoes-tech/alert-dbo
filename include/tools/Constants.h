@@ -5,12 +5,14 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
+
 class User;
 class UserRole;
 class UserProfile;
 class UserField;
 class UserValue;
 class Hierarchy;
+
 
 namespace Wt
 {
@@ -109,19 +111,21 @@ namespace Wt
     }
 }
 
+
 class Constants
 {
     public:
         Constants();
         virtual ~Constants();
-        static std::string SEP;
-        static std::string TABLE_PREFIX;
         static const char *T_USER_USR;
         static const char *T_USER_ROLE_URO;
         static const char *T_HIERARCHY_HRC;
         static const char *T_USER_PROFILE_UPR;
         static const char *T_USER_VALUE_UVA;
         static const char *T_USER_FIELD_UFI;
+        static const char *T_HISTORICAL_ACTION_HAC;
+        static const char *T_ACTION_ACT;
+        static const char *T_USER_ORGANISATION_UOR;
     protected:
     private:
 };
