@@ -34,7 +34,8 @@ void run()
     maSession->mapClass<UserValue>(Constants::T_USER_VALUE_UVA);
     maSession->mapClass<HistoricalAction>(Constants::T_HISTORICAL_ACTION_HAC);
     maSession->mapClass<Action>(Constants::T_ACTION_ACT);
-    pc->generateModel(true);
+    maSession->mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
+    pc->generateModel(false);
 
     {
         odb::Transaction transaction(*maSession);

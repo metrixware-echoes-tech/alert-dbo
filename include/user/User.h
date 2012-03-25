@@ -7,6 +7,7 @@
 #include "UserValue.h"
 #include "Hierarchy.h"
 #include "HistoricalAction.h"
+#include "Organization.h"
 
 
 #include "Table.h"
@@ -23,6 +24,7 @@ class UserProfile;
 class Hierarchy;
 class userField;
 class HistoricalAction;
+class Organization;
 
 class User : public Table
 {
@@ -49,6 +51,8 @@ class User : public Table
         Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy>> parents;
         Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy>> children;
         Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalAction>> historicalActions;
+
+        Wt::Dbo::collection<Wt::Dbo::ptr<Organization>> organizations;
 
         template<class Action>
         void persist(Action& a)
@@ -104,6 +108,11 @@ class User : public Table
                              userFields,
                              Wt::Dbo::ManyToMany,
                              "TJ_USR_UFI");
+
+            Wt::Dbo::hasMany(a,
+                             organizations,
+                             Wt::Dbo::ManyToMany,
+                             "TJ_USR_ORG");
 
 
 

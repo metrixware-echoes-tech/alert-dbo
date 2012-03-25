@@ -14,6 +14,7 @@ class UserValue;
 class Hierarchy;
 class HistoricalAction;
 class Action;
+class Organization;
 
 
 namespace Wt
@@ -140,6 +141,21 @@ namespace Wt
                 return 0;
             }
         };
+        template<>
+        struct dbo_traits<Organization> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                //FIXME: solve this string / char problem
+                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
+                //const char * resChar = resString.c_str();
+                return "ORG_ID";
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
     }
 }
 
@@ -157,7 +173,7 @@ class Constants
         static const char *T_USER_FIELD_UFI;
         static const char *T_HISTORICAL_ACTION_HAC;
         static const char *T_ACTION_ACT;
-        static const char *T_USER_ORGANISATION_UOR;
+        static const char *T_ORGANIZATION_ORG;
     protected:
     private:
 };
