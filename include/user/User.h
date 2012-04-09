@@ -13,10 +13,14 @@
 #include "Table.h"
 #include <string>
 
+#include <Wt/Dbo/Types>
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
+#include <Wt/WGlobal>
 
+// Auth
+typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
 
 
 class UserRole;
@@ -120,6 +124,6 @@ class User : public Table
         void test();
 };
 
-
+DBO_EXTERN_TEMPLATES(User);
 
 #endif // USER_H

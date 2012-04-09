@@ -5,6 +5,8 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/backend/Postgres>
 
+#include "Session.h"
+
 
 class PostgresConnector
 {
@@ -12,7 +14,7 @@ class PostgresConnector
         PostgresConnector(std::string databaseName,std::string userName,std::string databaseURL,std::string databasePort,std::string userPwd);
         virtual ~PostgresConnector();
         void connect();
-        Wt::Dbo::Session *getSession();
+        Session *getSession();
         void generateModel(bool drop);
     protected:
     private:
@@ -21,7 +23,7 @@ class PostgresConnector
         std::string m_databaseURL;
         std::string m_databasePort;
         std::string m_userPwd;
-        Wt::Dbo::Session *m_session;
+        Session *m_session;
         Wt::Dbo::backend::Postgres *m_pg;
 
 };

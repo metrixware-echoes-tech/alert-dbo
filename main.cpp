@@ -3,114 +3,100 @@
  *
  * See the LICENSE file for terms of use.
  */
+#include <Wt/WApplication>
+#include <Wt/WContainerWidget>
+#include <Wt/WServer>
 
+#include <Wt/Auth/AuthWidget>
+#include <Wt/Auth/PasswordService>
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/backend/Postgres>
-#include <PostgresConnector.h>
+#include "PostgresConnector.h"
+#include "Session.h"
 
-#include "Constants.h"
-#include "UserRole.h"
-#include "User.h"
-
-class User;
-class UserRole;
-
-namespace odb = Wt::Dbo;
-using namespace std;
-
-
-
-void run()
+class AuthApplication : public Wt::WApplication
 {
+public:
+    AuthApplication(const Wt::WEnvironment& env)
+        : Wt::WApplication(env)
+    {
+        PostgresConnector *pc = new PostgresConnector("echoes","echoes","127.0.0.1","5432","toto");
+        maSession = pc->getSession();
+        maSession->login().changed().connect(this, &AuthApplication::authEvent);
+
+        useStyleSheet("css/style.css");
+
+        Wt::Auth::AuthWidget *authWidget
+            = new Wt::Auth::AuthWidget(Session::auth(), (*maSession).users(),
+                                       (*maSession).login());
+
+        authWidget->addPasswordAuth(&Session::passwordAuth());
+        authWidget->addOAuth(Session::oAuth());
+        authWidget->setRegistrationEnabled(true);
+
+        authWidget->processEnvironment();
+
+        root()->addWidget(authWidget);
+    }
+
+    void authEvent()
+    {
+        if ((*maSession).login().loggedIn())
+            Wt::log("notice") << "User " << (*maSession).login().user().id()
+                              << " logged in.";
+        else
+            Wt::log("notice") << "User logged out.";
+    }
+
+private:
+    Session *maSession;
+};
+
+Wt::WApplication *createApplication(const Wt::WEnvironment& env)
+{
+    return new AuthApplication(env);
+}
+
+int main(int argc, char **argv)
+{
+    try
+    {
+
+
+        Wt::WServer server(argv[0]);
+
+        server.setServerConfiguration(argc, argv, WTHTTP_CONFIGURATION);
+        server.addEntryPoint(Wt::Application, createApplication,"", "/favicon.ico");
+
+        Session::configureAuth();
+
+        if (server.start())
+        {
+            Wt::WServer::waitForShutdown();
+            server.stop();
+        }
+    }
+    catch (Wt::WServer::Exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << "exception: " << e.what() << std::endl;
+    }
+}
+
+
+
+/*
 
     PostgresConnector *pc = new PostgresConnector("echoes","echoes","127.0.0.1","5432","toto");
     Wt::Dbo::Session *maSession = pc->getSession();
-    maSession->mapClass<User>(Constants::T_USER_USR);
-    maSession->mapClass<UserRole>(Constants::T_USER_ROLE_URO);
-    maSession->mapClass<UserProfile>(Constants::T_USER_PROFILE_UPR);
-    maSession->mapClass<Hierarchy>(Constants::T_HIERARCHY_HRC);
-    maSession->mapClass<UserField>(Constants::T_USER_FIELD_UFI);
-    maSession->mapClass<UserValue>(Constants::T_USER_VALUE_UVA);
-    maSession->mapClass<HistoricalAction>(Constants::T_HISTORICAL_ACTION_HAC);
-    maSession->mapClass<Action>(Constants::T_ACTION_ACT);
-    maSession->mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
     pc->generateModel(false);
 
-    {
-        odb::Transaction transaction(*maSession);
-        User *user = new User("John","Smith","john@smith.com","toto");
-        user->test();
-        odb::ptr<User> userPtr = maSession->add(user);
-        transaction.commit();
-    }
 
-    /*
-    {
-        odb::Transaction transaction(session);
-
-        odb::ptr<User> joe = session.find<User>().where("name = ?").bind("Joe");
-
-        std::cerr << "Joe has karma: " << joe->karma << std::endl;
-
-        odb::ptr<User> joe2 = session.query< odb::ptr<User> >
-                              ("select u from \"T_USER_USR\" u").where("name = ?").bind("Joe");
-
-        transaction.commit();
-    }
-
-    {
-        odb::Transaction transaction(session);
-
-        typedef odb::collection< odb::ptr<User> > Users;
-
-        Users users = session.find<User>();
-
-        std::cerr << "We have " << users.size() << " users:" << std::endl;
-
-        for (Users::const_iterator i = users.begin(); i != users.end(); ++i)
-            std::cerr << " T_USER_USR " << (*i)->name
-                      << " with karma of " << (*i)->karma << std::endl;
-
-        transaction.commit();
-    }
-    */
-    /*****
-     * Dbo tutorial section 5. Updating objects
-     *****/
-    /*
-    {
-        odb::Transaction transaction(session);
-
-        odb::ptr<User> joe = session.find<User>().where("name = ?").bind("Joe");
-
-        joe.modify()->karma++;
-        joe.modify()->password = "public";
-
-        transaction.commit();
-    }
-
-    {
-        odb::Transaction transaction(session);
-        odb::ptr<User> joe = session.find<User>().where("name = ?").bind("Joe");
-        if (joe)
-            joe.remove();
-        transaction.commit();
-    }
-
-    {
-        odb::Transaction transaction(session);
-
-        odb::ptr<User> silly = session.add(new User("Toto"));
-        silly.modify()->name = "Silly";
-        silly.remove();
-
-        transaction.commit();
-    }
-    */
-}
 
 int main(int argc, char **argv)
 {
     run();
 }
+*/

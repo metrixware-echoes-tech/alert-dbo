@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="-c config.xml --docroot . --http-address 0.0.0.0 --http-port 8080" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -46,6 +47,9 @@
 			<Add directory="include/addon" />
 			<Add directory="include/plugin" />
 		</Compiler>
+		<Linker>
+			<Add directory="/usr/lib/" />
+		</Linker>
 		<Unit filename="include/addon/Addon.h" />
 		<Unit filename="include/alert/Alert.h" />
 		<Unit filename="include/alert/AlertCriteria.h" />
@@ -67,6 +71,7 @@
 		<Unit filename="include/probe/Probe.h" />
 		<Unit filename="include/tools/Constants.h" />
 		<Unit filename="include/tools/PostgresConnector.h" />
+		<Unit filename="include/tools/Session.h" />
 		<Unit filename="include/tools/Table.h" />
 		<Unit filename="include/unit/Unit.h" />
 		<Unit filename="include/unit/UnitType.h" />
@@ -105,6 +110,7 @@
 		<Unit filename="src/probe/Probe.cpp" />
 		<Unit filename="src/tools/Constants.cpp" />
 		<Unit filename="src/tools/PostgresConnector.cpp" />
+		<Unit filename="src/tools/Session.cpp" />
 		<Unit filename="src/tools/Table.cpp" />
 		<Unit filename="src/unit/Unit.cpp" />
 		<Unit filename="src/unit/UnitType.cpp" />

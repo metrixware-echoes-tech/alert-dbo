@@ -10,7 +10,7 @@ PostgresConnector::PostgresConnector(string databaseName,string userName,string 
     m_databasePort(databasePort),
     m_userPwd(userPwd)
 {
-    m_session = new Wt::Dbo::Session();
+    m_session = new Session();
     this->connect();
 }
 
@@ -41,7 +41,7 @@ void PostgresConnector::generateModel(bool drop)
     m_session->createTables();
 }
 
-odb::Session *PostgresConnector::getSession()
+Session *PostgresConnector::getSession()
 {
     return m_session;
 }
