@@ -10,7 +10,6 @@ PostgresConnector::PostgresConnector(string databaseName,string userName,string 
     m_databasePort(databasePort),
     m_userPwd(userPwd)
 {
-    m_session = new Session();
     this->connect();
 }
 
@@ -26,7 +25,8 @@ void PostgresConnector::connect()
     string connectionString = "hostaddr="+m_databaseURL+" port="+m_databasePort+" dbname="+m_databaseName+" user="+m_userName+" password="+m_userPwd;
     m_pg = new odb::backend::Postgres(connectionString);
     m_pg->setProperty("show-queries", "true");
-    m_session->setConnection(*m_pg);
+    m_session = new Session(m_pg);
+
 
 }
 

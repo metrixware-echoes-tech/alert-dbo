@@ -1,55 +1,11 @@
-/*
- * Copyright (C) 2010 Emweb bvba, Kessel-Lo, Belgium.
- *
- * See the LICENSE file for terms of use.
- */
 #include <Wt/WApplication>
 #include <Wt/WContainerWidget>
 #include <Wt/WServer>
 
-#include <Wt/Auth/AuthWidget>
-#include <Wt/Auth/PasswordService>
-
 #include "PostgresConnector.h"
 #include "Session.h"
+#include "AuthApplication.h"
 
-class AuthApplication : public Wt::WApplication
-{
-public:
-    AuthApplication(const Wt::WEnvironment& env)
-        : Wt::WApplication(env)
-    {
-        PostgresConnector *pc = new PostgresConnector("echoes","echoes","127.0.0.1","5432","toto");
-        maSession = pc->getSession();
-        maSession->login().changed().connect(this, &AuthApplication::authEvent);
-
-        useStyleSheet("css/style.css");
-
-        Wt::Auth::AuthWidget *authWidget
-            = new Wt::Auth::AuthWidget(Session::auth(), (*maSession).users(),
-                                       (*maSession).login());
-
-        authWidget->addPasswordAuth(&Session::passwordAuth());
-        authWidget->addOAuth(Session::oAuth());
-        authWidget->setRegistrationEnabled(true);
-
-        authWidget->processEnvironment();
-
-        root()->addWidget(authWidget);
-    }
-
-    void authEvent()
-    {
-        if ((*maSession).login().loggedIn())
-            Wt::log("notice") << "User " << (*maSession).login().user().id()
-                              << " logged in.";
-        else
-            Wt::log("notice") << "User logged out.";
-    }
-
-private:
-    Session *maSession;
-};
 
 Wt::WApplication *createApplication(const Wt::WEnvironment& env)
 {

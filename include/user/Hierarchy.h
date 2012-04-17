@@ -18,6 +18,7 @@ class Hierarchy
         template<class Action>
         void persist(Action& a)
         {
+
             Wt::Dbo::belongsTo(a, userParent, "UPA");
             Wt::Dbo::belongsTo(a, userChild, "UCH");
         }

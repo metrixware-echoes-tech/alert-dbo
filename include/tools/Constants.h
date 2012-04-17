@@ -26,9 +26,6 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
                 return "USR_ID";
             }
             static const char *versionField()
@@ -41,9 +38,6 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
                 return "URO_ID";
             }
             static const char *versionField()
@@ -56,9 +50,6 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
                 return "UPR_ID";
             }
             static const char *versionField()
@@ -71,9 +62,6 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
                 return "UFI_ID";
             }
             static const char *versionField()
@@ -86,10 +74,8 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
-                return 0;
+                //changed to test, return0.
+                return "UVA_ID";
             }
             static const char *versionField()
             {
@@ -101,9 +87,8 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
+                //changed to test, return0.
+                //return "HRC_ID";
                 return 0;
             }
             static const char *versionField()
@@ -116,9 +101,6 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
                 return "HAC_ID";
             }
             static const char *versionField()
@@ -131,9 +113,6 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
                 return "ACT_ID";
             }
             static const char *versionField()
@@ -146,9 +125,6 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                //FIXME: solve this string / char problem
-                //const std::string resString = Table::TRIGRAM+Table::SEP+"ID";
-                //const char * resChar = resString.c_str();
                 return "ORG_ID";
             }
             static const char *versionField()

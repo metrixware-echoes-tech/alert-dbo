@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Option parameters="-c config.xml --docroot . --http-address 0.0.0.0 --http-port 8080" />
 				<Compiler>
+					<Add option="-std=c++0x" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -30,6 +31,7 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++0x" />
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 			<Add directory="include/" />
@@ -48,7 +50,15 @@
 			<Add directory="include/plugin" />
 		</Compiler>
 		<Linker>
-			<Add directory="/usr/lib/" />
+			<Add library="/usr/local/lib/libboost_filesystem.so" />
+			<Add library="/usr/local/lib/libboost_signals.so" />
+			<Add library="/usr/local/lib/libboost_system.so" />
+			<Add library="/usr/local/lib/libwt.so" />
+			<Add library="/usr/local/lib/libwtdbo.so" />
+			<Add library="/usr/local/lib/libwtdbopostgres.so" />
+			<Add library="/usr/local/lib/libwtdbosqlite3.so" />
+			<Add library="/usr/local/lib/libwthttp.so" />
+			<Add directory="/usr/local/lib/" />
 		</Linker>
 		<Unit filename="include/addon/Addon.h" />
 		<Unit filename="include/alert/Alert.h" />
@@ -69,6 +79,7 @@
 		<Unit filename="include/pack/Pack.h" />
 		<Unit filename="include/plugin/Plugin.h" />
 		<Unit filename="include/probe/Probe.h" />
+		<Unit filename="include/tools/AuthApplication.h" />
 		<Unit filename="include/tools/Constants.h" />
 		<Unit filename="include/tools/PostgresConnector.h" />
 		<Unit filename="include/tools/Session.h" />
@@ -108,6 +119,7 @@
 		<Unit filename="src/pack/Pack.cpp" />
 		<Unit filename="src/plugin/Plugin.cpp" />
 		<Unit filename="src/probe/Probe.cpp" />
+		<Unit filename="src/tools/AuthApplication.cpp" />
 		<Unit filename="src/tools/Constants.cpp" />
 		<Unit filename="src/tools/PostgresConnector.cpp" />
 		<Unit filename="src/tools/Session.cpp" />

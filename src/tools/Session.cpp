@@ -46,8 +46,10 @@ void Session::configureAuth()
         myOAuthServices.push_back(new Auth::GoogleService(myAuthService));
 }
 
-Session::Session()
+Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
 {
+
+    setConnection(*pgBackend);
 
     mapClass<User>(Constants::T_USER_USR);
     mapClass<UserRole>(Constants::T_USER_ROLE_URO);
@@ -59,9 +61,9 @@ Session::Session()
     mapClass<Action>(Constants::T_ACTION_ACT);
     mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
 
-    mapClass<AuthInfo>("auth_info");
-    mapClass<AuthInfo::AuthIdentityType>("auth_identity");
-    mapClass<AuthInfo::AuthTokenType>("auth_token");
+    mapClass<AuthInfo>("T_AUTH_INFO_AIN");
+    mapClass<AuthInfo::AuthIdentityType>("T_AUTH_IDENTITY_AID");
+    mapClass<AuthInfo::AuthTokenType>("T_AUTH_TOKEN_ATO");
 
     try
     {
@@ -71,7 +73,7 @@ Session::Session()
     catch (std::exception& e)
     {
         std::cerr << e.what() << std::endl;
-        std::cerr << "Using existing database";
+        std::cerr << "createTables problem : Session.cpp";
     }
 
     users_ = new UserDatabase(*this);
