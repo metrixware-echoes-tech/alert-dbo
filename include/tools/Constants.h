@@ -15,6 +15,11 @@ class Hierarchy;
 class HistoricalAction;
 class Action;
 class Organization;
+class Probe;
+class Value;
+class HistoricalValue;
+class Information2;
+class Plugin;
 
 
 namespace Wt
@@ -132,6 +137,66 @@ namespace Wt
                 return 0;
             }
         };
+        template<>
+        struct dbo_traits<Probe> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "PRB_ID";
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
+        struct dbo_traits<Value> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return 0;
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
+        struct dbo_traits<HistoricalValue> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return 0;
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
+        struct dbo_traits<Information2> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "INF_ID";
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
+        struct dbo_traits<Plugin> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "PLG_ID";
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
     }
 }
 
@@ -150,6 +215,11 @@ class Constants
         static const char *T_HISTORICAL_ACTION_HAC;
         static const char *T_ACTION_ACT;
         static const char *T_ORGANIZATION_ORG;
+        static const char *T_PROBE_PRB;
+        static const char *T_VALUE_VAL;
+        static const char *T_HISTORICAL_VALUE_VAL;
+        static const char *T_INFORMATION_INF;
+        static const char *T_PLUGIN_PLG;
     protected:
     private:
 };

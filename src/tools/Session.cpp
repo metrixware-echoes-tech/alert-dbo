@@ -60,6 +60,11 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<HistoricalAction>(Constants::T_HISTORICAL_ACTION_HAC);
     mapClass<Action>(Constants::T_ACTION_ACT);
     mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
+    mapClass<Probe>(Constants::T_PROBE_PRB);
+    mapClass<Value>(Constants::T_VALUE_VAL);
+    mapClass<HistoricalValue>(Constants::T_HISTORICAL_VALUE_VAL);
+    mapClass<Information2>(Constants::T_INFORMATION_INF);
+    mapClass<Plugin>(Constants::T_PLUGIN_PLG);
 
     mapClass<AuthInfo>("T_AUTH_INFO_AIN");
     mapClass<AuthInfo::AuthIdentityType>("T_AUTH_IDENTITY_AID");

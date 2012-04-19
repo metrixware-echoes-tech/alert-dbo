@@ -1,11 +1,11 @@
 #include "Information.h"
 
-Information::Information()
+Information2::Information2()
 {
     //ctor
 }
 
-Information::~Information()
+Information2::~Information2()
 {
     //dtor
 }

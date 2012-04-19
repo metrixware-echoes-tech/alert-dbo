@@ -4,6 +4,7 @@
 #include "Table.h"
 #include <string>
 #include "User.h"
+#include "Probe.h"
 
 // include Dbo
 #include <Wt/Dbo/Dbo>
@@ -11,6 +12,8 @@
 #include <Wt/WDateTime>
 
 class User;
+class Probe;
+
 
 class Organization : public Table
 {
@@ -28,6 +31,7 @@ class Organization : public Table
 
         // dbo collections (This table id as foreign key in other tables)
         Wt::Dbo::collection<Wt::Dbo::ptr<User>> user;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Probe>> probes;
 
         template<class Action>
         void persist(Action& a)
@@ -55,8 +59,11 @@ class Organization : public Table
                              user,
                              Wt::Dbo::ManyToMany,
                              "TJ_USR_ORG");
-
-        }
+            Wt::Dbo::hasMany(a,
+                             probes,
+                             Wt::Dbo::ManyToOne,
+                             "PRB");
+       }
 };
 
 
