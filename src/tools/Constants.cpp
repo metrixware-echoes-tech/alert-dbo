@@ -16,6 +16,7 @@ const char *Constants::T_VALUE_VAL = "T_VALUE_VAL";
 const char *Constants::T_HISTORICAL_VALUE_VAL = "T_HISTORICAL_VALUE_VAL";
 const char *Constants::T_INFORMATION_INF = "T_INFORMATION_INF";
 const char *Constants::T_PLUGIN_PLG = "T_PLUGIN_PLG";
+const char *Constants::T_WIDGET_VALUE_WVA = "T_WIDGET_VALUE_WVA";
 
 Constants::Constants()
 {

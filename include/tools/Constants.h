@@ -20,6 +20,7 @@ class Value;
 class HistoricalValue;
 class Information2;
 class Plugin;
+class WidgetValue;
 
 
 namespace Wt
@@ -142,7 +143,7 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                return "PRB_ID";
+                return 0;
             }
             static const char *versionField()
             {
@@ -197,6 +198,18 @@ namespace Wt
                 return 0;
             }
         };
+        template<>
+        struct dbo_traits<WidgetValue> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return 0;
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
     }
 }
 
@@ -220,6 +233,7 @@ class Constants
         static const char *T_HISTORICAL_VALUE_VAL;
         static const char *T_INFORMATION_INF;
         static const char *T_PLUGIN_PLG;
+        static const char *T_WIDGET_VALUE_WVA;
     protected:
     private:
 };
