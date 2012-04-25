@@ -5,18 +5,14 @@
 #include <Wt/Dbo/backend/Postgres>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "User.h"
-#include "Constants.h"
-
 class User;
-
 class UserRole
 {
 public:
     UserRole();
     virtual ~UserRole();
 
-    Wt::Dbo::collection<Wt::Dbo::ptr<User>> users;
+    Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
     template<class Action>
     void persist(Action& a)
@@ -31,5 +27,6 @@ public:
 
 
 };
+
 
 #endif // USERROLE_H

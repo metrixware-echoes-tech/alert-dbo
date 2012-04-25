@@ -1,10 +1,9 @@
 #ifndef HISTORICALVALUE_H
 #define HISTORICALVALUE_H
 
+#include <Wt/Dbo/Dbo>
 
-#include "Plugin.h"
-#include "Probe.h"
-#include "Information.h"
+#include "Table.h"
 
 class Plugin;
 class Probe;

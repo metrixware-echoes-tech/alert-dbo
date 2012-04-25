@@ -2,8 +2,6 @@
 #define HISTORICALACTION_H
 
 #include "Table.h"
-#include "User.h"
-#include "Action.h"
 #include <string>
 
 // include Dbo
@@ -11,6 +9,8 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 
+class User;
+class UserAction;
 
 class HistoricalAction : public Table
 {
@@ -30,7 +30,7 @@ class HistoricalAction : public Table
         Wt::Dbo::ptr<User> user;
 
 	// dbo collections (This table id as foreign key in other tables)
-        Wt::Dbo::collection<Wt::Dbo::ptr<Action>> actions;
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserAction> > actions;
 
         template<class Action>
         void persist(Action& a)

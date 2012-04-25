@@ -5,7 +5,8 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/backend/Postgres>
 
-#include "Session.h"
+
+class Session;
 
 
 class PostgresConnector

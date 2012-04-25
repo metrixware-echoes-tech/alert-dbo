@@ -1,15 +1,6 @@
 #ifndef USER_H
 #define USER_H
 
-#include "UserRole.h"
-#include "UserProfile.h"
-#include "UserField.h"
-#include "UserValue.h"
-#include "Hierarchy.h"
-#include "HistoricalAction.h"
-#include "Organization.h"
-
-
 #include "Table.h"
 #include <string>
 
@@ -19,16 +10,14 @@
 #include <Wt/WDateTime>
 #include <Wt/WGlobal>
 
-// Auth
-typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
-
 
 class UserRole;
 class UserProfile;
 class Hierarchy;
-class userField;
+class UserField;
+class UserValue;
 class HistoricalAction;
-class Organization;
+//class Organization;
 
 class User : public Table
 {
@@ -50,13 +39,13 @@ class User : public Table
         Wt::Dbo::ptr<UserRole> userRole;
         Wt::Dbo::ptr<UserProfile> userProfile;
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<UserField>> userFields;
-        Wt::Dbo::collection<Wt::Dbo::ptr<UserValue>> userValues;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy>> parents;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy>> children;
-        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalAction>> historicalActions;
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserField> > userFields;
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserValue> > userValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy> > parents;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy> > children;
+        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalAction> > historicalActions;
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<Organization>> organizations;
+        //Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
 
         template<class Action>
         void persist(Action& a)
@@ -85,18 +74,18 @@ class User : public Table
             //Other tables ids as foreign keys for user table
 
             Wt::Dbo::belongsTo(a, userRole, "URO");
-            Wt::Dbo::belongsTo(a, userProfile, "UPR");
-
-            //User id as foreign key in other tables
-
-            Wt::Dbo::hasMany(a,
-                             parents,
-                             Wt::Dbo::ManyToOne,
-                             "UPA");
-            Wt::Dbo::hasMany(a,
-                             children,
-                             Wt::Dbo::ManyToOne,
-                             "UCH");
+//            Wt::Dbo::belongsTo(a, userProfile, "UPR");
+//
+//            //User id as foreign key in other tables
+//
+//            Wt::Dbo::hasMany(a,
+//                             parents,
+//                             Wt::Dbo::ManyToOne,
+//                             "UPA");
+//            Wt::Dbo::hasMany(a,
+//                             children,
+//                             Wt::Dbo::ManyToOne,
+//                             "UCH");
             Wt::Dbo::hasMany(a,
                              userValues,
                              Wt::Dbo::ManyToOne,
@@ -105,18 +94,18 @@ class User : public Table
                              historicalActions,
                              Wt::Dbo::ManyToOne,
                              "UHA");
-
-
-            // join tables
+//
+//
+//            // join tables
             Wt::Dbo::hasMany(a,
                              userFields,
                              Wt::Dbo::ManyToMany,
                              "TJ_USR_UFI");
 
-            Wt::Dbo::hasMany(a,
-                             organizations,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_USR_ORG");
+//            Wt::Dbo::hasMany(a,
+//                             organizations,
+//                             Wt::Dbo::ManyToMany,
+//                             "TJ_USR_ORG");
 
 
 
@@ -124,6 +113,9 @@ class User : public Table
         void test();
 };
 
-DBO_EXTERN_TEMPLATES(User);
+// Auth
+typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
+
+//DBO_EXTERN_TEMPLATES(User);
 
 #endif // USER_H

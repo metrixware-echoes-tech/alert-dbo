@@ -1,9 +1,7 @@
 #ifndef INFORMATION_H
 #define INFORMATION_H
 
-#include "Value.h"
-#include "HistoricalValue.h"
-#include "Plugin.h"
+#include "Table.h"
 
 class Value;
 class HistoricalValue;
@@ -16,10 +14,10 @@ class Information2 : public Table
         Information2();
         virtual ~Information2();
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<Value>> values;
-        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue>> historicalValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
+        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
         //TJ
-        Wt::Dbo::collection<Wt::Dbo::ptr<Plugin>> plugins;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
 
 
         template<class Action>

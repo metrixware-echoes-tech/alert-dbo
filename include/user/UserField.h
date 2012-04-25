@@ -4,10 +4,7 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "User.h"
-#include "Constants.h"
-
-
+class User;
 class UserValue;
 
 class UserField
@@ -16,9 +13,9 @@ class UserField
         UserField();
         virtual ~UserField();
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<User>> users;
+        Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<UserValue>> userValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserValue> > userValues;
 
         template<class Action>
         void persist(Action& a)

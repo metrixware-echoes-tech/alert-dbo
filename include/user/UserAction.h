@@ -1,5 +1,5 @@
-#ifndef ORGANIZATION_H
-#define ORGANIZATION_H
+#ifndef ACTION_H
+#define ACTION_H
 
 #include "Table.h"
 #include <string>
@@ -9,27 +9,25 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 
-class User;
-class Probe;
+class HistoricalAction;
 
-
-class Organization : public Table
+class UserAction : public Table
 {
     public:
-        Organization();
-        virtual ~Organization();
+        UserAction();
+        virtual ~UserAction();
 
         static std::string TRIGRAM;
 
-        // attributes
-        Wt::WDateTime deleteTag;
+	// attributes
+	Wt::WDateTime deleteTag;
 
 
-        // methods
+	// methods
 
-        // dbo collections (This table id as foreign key in other tables)
-        Wt::Dbo::collection<Wt::Dbo::ptr<User> > user;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Probe> > probes;
+
+	// dbo pointers (Other tables ids as foreign keys for this table)
+        Wt::Dbo::ptr<HistoricalAction> historicalAction;
 
         template<class Action>
         void persist(Action& a)
@@ -51,18 +49,29 @@ class Organization : public Table
                 Wt::Dbo::field(a, (*itDates).second, formatColumnName(*this,(*itDates).first));
             }
 
-            //User id as foreign key in other tables
+            //Other tables ids as foreign keys for user table
 
-            Wt::Dbo::hasMany(a,
-                             user,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_USR_ORG");
-            Wt::Dbo::hasMany(a,
-                             probes,
-                             Wt::Dbo::ManyToOne,
-                             "PRB");
-       }
+            Wt::Dbo::belongsTo(a, historicalAction, "ACT");
+
+        }
 };
+namespace Wt {
+    namespace Dbo {
+        template<>
+        struct dbo_traits<UserAction> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "ACT_ID";
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+    }
+}
+        
 
 
-#endif // ORGANIZATION_H
+#endif // ACTION_H

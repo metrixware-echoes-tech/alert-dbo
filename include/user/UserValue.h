@@ -2,10 +2,9 @@
 #define USERVALUE_H
 
 #include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
+#include "UserValueId.h"
 
-#include "User.h"
-
+class User;
 class UserField;
 
 class UserValue
@@ -13,20 +12,17 @@ class UserValue
     public:
         UserValue();
         virtual ~UserValue();
-
-        Wt::Dbo::ptr<User> user;
-
-        Wt::Dbo::ptr<UserField> userField;
+        
+        UserValueId uvid;
 
         template<class Action>
         void persist(Action& a)
         {
-            Wt::Dbo::belongsTo(a, user, "UVA_USR");
-
-            Wt::Dbo::belongsTo(a, userField, "UVA_UFI");
+            Wt::Dbo::id(a,uvid,"PK_TEST");
         }
     protected:
     private:
 };
+
 
 #endif // USERVALUE_H

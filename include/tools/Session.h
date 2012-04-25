@@ -7,7 +7,9 @@
 #include <Wt/Dbo/ptr>
 #include <Wt/Dbo/backend/Postgres>
 
-#include "User.h"
+class User;
+
+typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
 
 typedef Wt::Auth::Dbo::UserDatabase<AuthInfo> UserDatabase;
 

@@ -6,8 +6,10 @@
 #include <Wt/Auth/AuthWidget>
 #include <Wt/Auth/PasswordService>
 
-#include "PostgresConnector.h"
 #include "Session.h"
+
+class PostgresConnector;
+class Session;
 
 class AuthApplication : public Wt::WApplication
 {

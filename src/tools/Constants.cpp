@@ -1,4 +1,14 @@
 #include "Constants.h"
+#include "Hierarchy.h"
+#include "HistoricalAction.h"
+#include "UserProfile.h"
+#include "UserAction.h"
+#include "UserRole.h"
+#include "UserField.h"
+#include "UserValue.h"
+#include "UserValueId.h"
+#include "HistoricalAction.h"
+#include "User.h"
 
 using namespace std;
 

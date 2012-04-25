@@ -1,5 +1,13 @@
-#include "Session.h"
 #include "Constants.h"
+#include "Hierarchy.h"
+#include "UserAction.h"
+#include "UserRole.h"
+#include "UserProfile.h"
+#include "UserField.h"
+#include "UserValue.h"
+#include "User.h"
+#include "HistoricalAction.h"
+#include "Session.h"
 
 #include "Wt/Auth/AuthService"
 #include "Wt/Auth/HashFunction"
@@ -51,24 +59,27 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
 
     setConnection(*pgBackend);
 
+    mapClass<UserAction>(Constants::T_ACTION_ACT);
+    mapClass<Hierarchy>(Constants::T_HIERARCHY_HRC);
+    mapClass<HistoricalAction>(Constants::T_HISTORICAL_ACTION_HAC);
     mapClass<User>(Constants::T_USER_USR);
     mapClass<UserRole>(Constants::T_USER_ROLE_URO);
     mapClass<UserProfile>(Constants::T_USER_PROFILE_UPR);
-    mapClass<Hierarchy>(Constants::T_HIERARCHY_HRC);
     mapClass<UserField>(Constants::T_USER_FIELD_UFI);
     mapClass<UserValue>(Constants::T_USER_VALUE_UVA);
-    mapClass<HistoricalAction>(Constants::T_HISTORICAL_ACTION_HAC);
-    mapClass<Action>(Constants::T_ACTION_ACT);
-    mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
+    /*mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
     mapClass<Probe>(Constants::T_PROBE_PRB);
     mapClass<Value>(Constants::T_VALUE_VAL);
     mapClass<HistoricalValue>(Constants::T_HISTORICAL_VALUE_VAL);
     mapClass<Information2>(Constants::T_INFORMATION_INF);
-    mapClass<Plugin>(Constants::T_PLUGIN_PLG);
+    mapClass<Plugin>(Constants::T_PLUGIN_PLG);*/
 
-    mapClass<AuthInfo>("T_AUTH_INFO_AIN");
-    mapClass<AuthInfo::AuthIdentityType>("T_AUTH_IDENTITY_AID");
-    mapClass<AuthInfo::AuthTokenType>("T_AUTH_TOKEN_ATO");
+    mapClass<AuthInfo>("auth_info");
+    mapClass<AuthInfo::AuthIdentityType>("auth_identity");
+    mapClass<AuthInfo::AuthTokenType>("auth_token");
+//    mapClass<AuthInfo>("T_AUTH_INFO_AIN");
+//    mapClass<AuthInfo::AuthIdentityType>("T_AUTH_IDENTITY_AID");
+//    mapClass<AuthInfo::AuthTokenType>("T_AUTH_TOKEN_ATO");
 
     try
     {

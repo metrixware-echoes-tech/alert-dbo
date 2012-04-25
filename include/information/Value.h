@@ -1,9 +1,7 @@
 #ifndef VALUE_H
 #define VALUE_H
 
-#include "Plugin.h"
-#include "Probe.h"
-#include "Information.h"
+#include "Table.h"
 
 class Plugin;
 class Probe;

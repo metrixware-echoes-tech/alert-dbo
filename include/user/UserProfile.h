@@ -1,14 +1,8 @@
 #ifndef USERPROFILE_H
 #define USERPROFILE_H
 
-
-#include "User.h"
-
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
-
-
-#include "Constants.h"
 
 class User;
 
@@ -18,7 +12,7 @@ public:
     UserProfile();
     virtual ~UserProfile();
 
-    Wt::Dbo::collection<Wt::Dbo::ptr<User>> users;
+    Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
     template<class Action>
     void persist(Action& a)
@@ -30,9 +24,9 @@ public:
                          "UPR");
     }
 
-
-
 };
+
+
 
 
 #endif // USERPROFILE_H

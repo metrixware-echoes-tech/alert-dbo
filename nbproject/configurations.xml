@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="include" displayName="include" projectFiles="true">
+      <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
+        <itemPath>include/primaryKeys/ProbeId.h</itemPath>
+        <itemPath>include/primaryKeys/UserValueId.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="tools" displayName="tools" projectFiles="true">
+        <itemPath>include/tools/AuthApplication.h</itemPath>
+        <itemPath>include/tools/Constants.h</itemPath>
+        <itemPath>include/tools/PostgresConnector.h</itemPath>
+        <itemPath>include/tools/Session.h</itemPath>
+        <itemPath>include/tools/Table.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="user" displayName="user" projectFiles="true">
+        <itemPath>include/user/Hierarchy.h</itemPath>
+        <itemPath>include/user/HistoricalAction.h</itemPath>
+        <itemPath>include/user/User.h</itemPath>
+        <itemPath>include/user/UserAction.h</itemPath>
+        <itemPath>include/user/UserField.h</itemPath>
+        <itemPath>include/user/UserProfile.h</itemPath>
+        <itemPath>include/user/UserRole.h</itemPath>
+        <itemPath>include/user/UserValue.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="src" displayName="src" projectFiles="true">
+      <logicalFolder name="tools" displayName="tools" projectFiles="true">
+        <itemPath>src/tools/AuthApplication.cpp</itemPath>
+        <itemPath>src/tools/Constants.cpp</itemPath>
+        <itemPath>src/tools/PostgresConnector.cpp</itemPath>
+        <itemPath>src/tools/Session.cpp</itemPath>
+        <itemPath>src/tools/Table.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="user" displayName="user" projectFiles="true">
+        <itemPath>src/user/Hierarchy.cpp</itemPath>
+        <itemPath>src/user/HistoricalAction.cpp</itemPath>
+        <itemPath>src/user/User.cpp</itemPath>
+        <itemPath>src/user/UserAction.cpp</itemPath>
+        <itemPath>src/user/UserField.cpp</itemPath>
+        <itemPath>src/user/UserProfile.cpp</itemPath>
+        <itemPath>src/user/UserRole.cpp</itemPath>
+        <itemPath>src/user/UserValue.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>include</Elem>
+    <Elem>src</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>include/widget</pElem>
+            <pElem>include/user</pElem>
+            <pElem>include/unit</pElem>
+            <pElem>include/tools</pElem>
+            <pElem>include/probe</pElem>
+            <pElem>include/plugin</pElem>
+            <pElem>include/plugin</pElem>
+            <pElem>include/pack</pElem>
+            <pElem>include/organization</pElem>
+            <pElem>include/media</pElem>
+            <pElem>include/information</pElem>
+            <pElem>include/asset</pElem>
+            <pElem>include/alert</pElem>
+            <pElem>include/addon</pElem>
+            <pElem>include/primaryKeys</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>wt</linkerLibLibItem>
+            <linkerLibLibItem>wtdbo</linkerLibLibItem>
+            <linkerLibLibItem>wtdbopostgres</linkerLibLibItem>
+            <linkerLibLibItem>wthttp</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

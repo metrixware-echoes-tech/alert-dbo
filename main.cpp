@@ -2,9 +2,18 @@
 #include <Wt/WContainerWidget>
 #include <Wt/WServer>
 
+#include "Constants.h"
+#include "HistoricalAction.h"
+#include "UserValue.h"
+#include "UserAction.h"
+#include "UserField.h"
+#include "UserProfile.h"
+#include "UserRole.h"
+#include "User.h"
+
 #include "PostgresConnector.h"
-#include "Session.h"
 #include "AuthApplication.h"
+#include "Session.h"
 
 
 Wt::WApplication *createApplication(const Wt::WEnvironment& env)

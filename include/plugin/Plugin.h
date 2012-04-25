@@ -5,10 +5,6 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 
-#include "Value.h"
-#include "HistoricalValue.h"
-#include "Information.h"
-
 class Value;
 class HistoricalValue;
 class Information2;
@@ -19,9 +15,9 @@ class Plugin
         Plugin();
         virtual ~Plugin();
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<Value>> values;
-        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue>> historicalValues;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Information2>> informations;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
+        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Information2> > informations;
 
         template<class Action>
         void persist(Action& a)
