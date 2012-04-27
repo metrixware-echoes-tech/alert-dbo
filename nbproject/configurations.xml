@@ -7,12 +7,22 @@
         <itemPath>include/information/Information.h</itemPath>
         <itemPath>include/information/Value.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="organization"
+                     displayName="organization"
+                     projectFiles="true">
+        <itemPath>include/organization/Organization.h</itemPath>
+        <itemPath>include/organization/OrganizationType.h</itemPath>
+        <itemPath>include/organization/OrganizationValue.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
         <itemPath>include/plugin/Plugin.h</itemPath>
       </logicalFolder>
       <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
         <itemPath>include/primaryKeys/ProbeId.h</itemPath>
         <itemPath>include/primaryKeys/UserValueId.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="probe" displayName="probe" projectFiles="true">
+        <itemPath>include/probe/Probe.h</itemPath>
       </logicalFolder>
       <logicalFolder name="tools" displayName="tools" projectFiles="true">
         <itemPath>include/tools/AuthApplication.h</itemPath>
@@ -42,8 +52,18 @@
         <itemPath>src/information/Information.cpp</itemPath>
         <itemPath>src/information/Value.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="organization"
+                     displayName="organization"
+                     projectFiles="true">
+        <itemPath>src/organization/Organization.cpp</itemPath>
+        <itemPath>src/organization/OrganizationType.cpp</itemPath>
+        <itemPath>src/organization/OrganizationValue.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
         <itemPath>src/plugin/Plugin.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="probe" displayName="probe" projectFiles="true">
+        <itemPath>src/probe/Probe.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="tools" displayName="tools" projectFiles="true">
         <itemPath>src/tools/AuthApplication.cpp</itemPath>

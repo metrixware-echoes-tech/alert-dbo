@@ -11,9 +11,19 @@
 #include "UserRole.h"
 #include "User.h"
 
+#include "Probe.h"
+
+#include "Organization.h"
+
 #include "PostgresConnector.h"
 #include "AuthApplication.h"
 #include "Session.h"
+
+#include "Information.h"
+#include "Value.h"
+#include "HistoricalValue.h"
+
+#include "Plugin.h"
 
 
 Wt::WApplication *createApplication(const Wt::WEnvironment& env)

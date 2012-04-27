@@ -14,6 +14,17 @@
 
 #include "Information.h"
 
+#include "Information.h"
+#include "HistoricalValue.h"
+#include "Value.h"
+
+#include "Probe.h"
+#include "ProbeId.h"
+
+#include "Organization.h"
+
+
+
 using namespace std;
 
 const char *Constants::T_USER_USR = "T_USER_USR";

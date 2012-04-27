@@ -28,6 +28,17 @@ namespace Wt
 #include "UserValue.h"
 #include "UserValueId.h"
 
+#include "Organization.h"
+
+#include "Probe.h"
+#include "ProbeId.h"
+
+#include "Plugin.h"
+
+#include "Information.h"
+#include "HistoricalValue.h"
+#include "Value.h"
+
 
 //#include "Hierarchy.h"
 

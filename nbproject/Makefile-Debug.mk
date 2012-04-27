@@ -35,8 +35,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/tools/Session.o \
+	${OBJECTDIR}/src/organization/OrganizationType.o \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
+	${OBJECTDIR}/src/probe/Probe.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/user/UserAction.o \
@@ -44,6 +47,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/information/Value.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
 	${OBJECTDIR}/src/tools/Table.o \
+	${OBJECTDIR}/src/organization/OrganizationValue.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
 	${OBJECTDIR}/src/user/User.o \
@@ -83,15 +87,30 @@ ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
 
+${OBJECTDIR}/src/organization/OrganizationType.o: src/organization/OrganizationType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
+
 ${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
 
+${OBJECTDIR}/src/probe/Probe.o: src/probe/Probe.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/probe
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
 
 ${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
@@ -127,6 +146,11 @@ ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
+
+${OBJECTDIR}/src/organization/OrganizationValue.o: src/organization/OrganizationValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationValue.o src/organization/OrganizationValue.cpp
 
 ${OBJECTDIR}/src/user/UserValue.o: src/user/UserValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user

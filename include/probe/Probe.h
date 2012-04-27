@@ -26,8 +26,6 @@ class Probe : public Table
         {
             Wt::Dbo::id (a, pk, "PRIMARY_KEY");
 
-            //Wt::Dbo::belongsTo(a, pk.orga, "FOREIGN_KEY_TEST");
-
             Wt::Dbo::hasMany(a,
                              values,
                              Wt::Dbo::ManyToOne,

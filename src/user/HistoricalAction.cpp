@@ -27,6 +27,17 @@ namespace Wt
 #include "UserValueId.h"
 #include "User.h"
 
+#include "Organization.h"
+
+#include "Probe.h"
+#include "ProbeId.h"
+
+#include "Plugin.h"
+
+#include "Information.h"
+#include "HistoricalValue.h"
+#include "Value.h"
+
 std::string HistoricalAction::TRIGRAM = "UHA";
 
 HistoricalAction::HistoricalAction()

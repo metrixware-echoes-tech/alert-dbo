@@ -9,10 +9,11 @@
 #ifndef PROBEID_H
 #define	PROBEID_H
 
-/*
-class Organization;
-
 #include <Wt/Dbo/Dbo>
+
+class Organization;
+class Probe;
+
 
 struct ProbeId
 {
@@ -40,5 +41,24 @@ inline std::ostream& operator<< (std::ostream& o, const ProbeId& pk)
 {
     return o << "(" << pk.id << ")";
 }
- * */
+
+namespace Wt
+{
+    namespace Dbo
+    {
+        template <class Action>
+        void field(Action& a, ProbeId& prid,
+                   const std::string& name, int size = -1)
+        {
+            Wt::Dbo::belongsTo(a, prid.orga, "ORG_ID");
+        }
+        template<>
+        struct dbo_traits<Probe> : public dbo_default_traits
+        {
+            typedef ProbeId IdType;
+            static IdType invalidId() { return ProbeId(); }
+            static const char *surrogateIdField() { return 0; }
+        };
+    }
+}
 #endif	/* PROBEID_H */

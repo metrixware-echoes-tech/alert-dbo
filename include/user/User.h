@@ -17,7 +17,7 @@ class Hierarchy;
 class UserField;
 class UserValue;
 class HistoricalAction;
-//class Organization;
+class Organization;
 
 class User : public Table
 {
@@ -45,7 +45,7 @@ class User : public Table
         Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy> > children;
         Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalAction> > historicalActions;
 
-        //Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
 
         template<class Action>
         void persist(Action& a)
@@ -102,10 +102,10 @@ class User : public Table
                              Wt::Dbo::ManyToMany,
                              "TJ_USR_UFI");
 
-//            Wt::Dbo::hasMany(a,
-//                             organizations,
-//                             Wt::Dbo::ManyToMany,
-//                             "TJ_USR_ORG");
+            Wt::Dbo::hasMany(a,
+                             organizations,
+                             Wt::Dbo::ManyToMany,
+                             "TJ_USR_ORG");
 
 
 
