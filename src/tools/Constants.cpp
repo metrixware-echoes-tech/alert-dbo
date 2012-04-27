@@ -10,6 +10,10 @@
 #include "HistoricalAction.h"
 #include "User.h"
 
+#include "Plugin.h"
+
+#include "Information.h"
+
 using namespace std;
 
 const char *Constants::T_USER_USR = "T_USER_USR";

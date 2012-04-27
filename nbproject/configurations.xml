@@ -2,6 +2,14 @@
 <configurationDescriptor version="80">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="include" displayName="include" projectFiles="true">
+      <logicalFolder name="information" displayName="information" projectFiles="true">
+        <itemPath>include/information/HistoricalValue.h</itemPath>
+        <itemPath>include/information/Information.h</itemPath>
+        <itemPath>include/information/Value.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
+        <itemPath>include/plugin/Plugin.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
         <itemPath>include/primaryKeys/ProbeId.h</itemPath>
         <itemPath>include/primaryKeys/UserValueId.h</itemPath>
@@ -29,6 +37,14 @@
                    projectFiles="true">
     </logicalFolder>
     <logicalFolder name="src" displayName="src" projectFiles="true">
+      <logicalFolder name="information" displayName="information" projectFiles="true">
+        <itemPath>src/information/HistoricalValue.cpp</itemPath>
+        <itemPath>src/information/Information.cpp</itemPath>
+        <itemPath>src/information/Value.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
+        <itemPath>src/plugin/Plugin.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="tools" displayName="tools" projectFiles="true">
         <itemPath>src/tools/AuthApplication.cpp</itemPath>
         <itemPath>src/tools/Constants.cpp</itemPath>

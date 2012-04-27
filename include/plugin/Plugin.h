@@ -5,11 +5,13 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 
+#include "Table.h"
+
 class Value;
 class HistoricalValue;
 class Information2;
 
-class Plugin
+class Plugin : public Table
 {
     public:
         Plugin();

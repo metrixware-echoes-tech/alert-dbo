@@ -41,13 +41,17 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/user/UserAction.o \
 	${OBJECTDIR}/src/tools/Constants.o \
+	${OBJECTDIR}/src/information/Value.o \
+	${OBJECTDIR}/src/plugin/Plugin.o \
 	${OBJECTDIR}/src/tools/Table.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
 	${OBJECTDIR}/src/user/User.o \
 	${OBJECTDIR}/src/user/UserField.o \
 	${OBJECTDIR}/src/user/HistoricalAction.o \
-	${OBJECTDIR}/src/user/Hierarchy.o
+	${OBJECTDIR}/src/information/Information.o \
+	${OBJECTDIR}/src/user/Hierarchy.o \
+	${OBJECTDIR}/src/information/HistoricalValue.o
 
 
 # C Compiler Flags
@@ -109,6 +113,16 @@ ${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Constants.o src/tools/Constants.cpp
 
+${OBJECTDIR}/src/information/Value.o: src/information/Value.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Value.o src/information/Value.cpp
+
+${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
+
 ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
@@ -139,10 +153,20 @@ ${OBJECTDIR}/src/user/HistoricalAction.o: src/user/HistoricalAction.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/HistoricalAction.o src/user/HistoricalAction.cpp
 
+${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
+
 ${OBJECTDIR}/src/user/Hierarchy.o: src/user/Hierarchy.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/Hierarchy.o src/user/Hierarchy.cpp
+
+${OBJECTDIR}/src/information/HistoricalValue.o: src/information/HistoricalValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/widget -Iinclude/user -Iinclude/unit -Iinclude/tools -Iinclude/probe -Iinclude/plugin -Iinclude/plugin -Iinclude/pack -Iinclude/organization -Iinclude/media -Iinclude/information -Iinclude/asset -Iinclude/alert -Iinclude/addon -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/HistoricalValue.o src/information/HistoricalValue.cpp
 
 # Subprojects
 .build-subprojects:

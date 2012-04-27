@@ -6,7 +6,7 @@
 #include "Table.h"
 
 class Plugin;
-class Probe;
+//class Probe;
 class Information2;
 
 class HistoricalValue : public Table
@@ -16,14 +16,14 @@ class HistoricalValue : public Table
         virtual ~HistoricalValue();
 
         Wt::Dbo::ptr<Plugin> plugin;
-        Wt::Dbo::ptr<Probe> probe;
+//        Wt::Dbo::ptr<Probe> probe;
         Wt::Dbo::ptr<Information2> information;
 
         template<class Action>
         void persist(Action& a)
         {
             Wt::Dbo::belongsTo(a, plugin, "HOR");
-            Wt::Dbo::belongsTo(a, probe, "HPR");
+//            Wt::Dbo::belongsTo(a, probe, "HPR");
             Wt::Dbo::belongsTo(a, information, "HIN");
         }
 

@@ -9,6 +9,12 @@
 #include "HistoricalAction.h"
 #include "Session.h"
 
+#include "Plugin.h"
+
+#include "Information.h"
+#include "HistoricalValue.h"
+#include "Value.h"
+
 #include "Wt/Auth/AuthService"
 #include "Wt/Auth/HashFunction"
 #include "Wt/Auth/PasswordService"
@@ -67,12 +73,14 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<UserProfile>(Constants::T_USER_PROFILE_UPR);
     mapClass<UserField>(Constants::T_USER_FIELD_UFI);
     mapClass<UserValue>(Constants::T_USER_VALUE_UVA);
+    
+    mapClass<Plugin>(Constants::T_PLUGIN_PLG);
+    
+    mapClass<Information2>(Constants::T_INFORMATION_INF);
     /*mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
-    mapClass<Probe>(Constants::T_PROBE_PRB);
+    mapClass<Probe>(Constants::T_PROBE_PRB);*/
     mapClass<Value>(Constants::T_VALUE_VAL);
     mapClass<HistoricalValue>(Constants::T_HISTORICAL_VALUE_VAL);
-    mapClass<Information2>(Constants::T_INFORMATION_INF);
-    mapClass<Plugin>(Constants::T_PLUGIN_PLG);*/
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");

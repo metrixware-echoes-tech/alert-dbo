@@ -1,6 +1,9 @@
 #ifndef INFORMATION_H
 #define INFORMATION_H
 
+#include <Wt/Dbo/Dbo>
+#include <Wt/Dbo/WtSqlTraits>
+
 #include "Table.h"
 
 class Value;
