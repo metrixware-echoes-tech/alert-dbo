@@ -9,6 +9,7 @@
 class Value;
 class HistoricalValue;
 class Plugin;
+class Unit;
 
 
 class Information2 : public Table
@@ -16,6 +17,8 @@ class Information2 : public Table
     public:
         Information2();
         virtual ~Information2();
+        
+        Wt::Dbo::ptr<Unit> unit;
 
         Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
         Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
@@ -26,6 +29,8 @@ class Information2 : public Table
         template<class Action>
         void persist(Action& a)
         {
+            Wt::Dbo::belongsTo(a, unit, "UIN");
+            
             Wt::Dbo::hasMany(a,
                              values,
                              Wt::Dbo::ManyToOne,

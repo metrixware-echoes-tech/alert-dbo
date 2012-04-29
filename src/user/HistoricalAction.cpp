@@ -38,6 +38,9 @@ namespace Wt
 #include "HistoricalValue.h"
 #include "Value.h"
 
+#include "Unit.h"
+#include "UnitType.h"
+
 std::string HistoricalAction::TRIGRAM = "UHA";
 
 HistoricalAction::HistoricalAction()

@@ -6,8 +6,10 @@
 #include "Plugin.h"
 #include "Information.h"
 
-
 #include "Organization.h"
+
+#include "Unit.h"
+#include "UnitType.h"
 
 Information2::Information2()
 {

@@ -3,6 +3,7 @@
 #include <Wt/WServer>
 
 #include "Constants.h"
+#include "Hierarchy.h"
 #include "HistoricalAction.h"
 #include "UserValue.h"
 #include "UserAction.h"
@@ -24,6 +25,9 @@
 #include "HistoricalValue.h"
 
 #include "Plugin.h"
+
+#include "Unit.h"
+#include "UnitType.h"
 
 
 Wt::WApplication *createApplication(const Wt::WEnvironment& env)

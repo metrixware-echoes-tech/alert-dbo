@@ -8,6 +8,9 @@
 
 #include "Plugin.h"
 
+#include "Unit.h"
+#include "UnitType.h"
+
 
 std::string Organization::TRIGRAM = "ORG";
 

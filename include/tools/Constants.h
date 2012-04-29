@@ -30,6 +30,8 @@ class Constants
         static const char *T_INFORMATION_INF;
         static const char *T_PLUGIN_PLG;
         static const char *T_WIDGET_VALUE_WVA;
+        static const char *T_UNIT_UNT;
+        static const char *T_UNIT_TYPE_UTY;
     protected:
     private:
 };

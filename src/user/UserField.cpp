@@ -19,19 +19,11 @@ namespace Wt
     }
 }
 
-//#include "Constants.h"
-//#include "ProbeId.h"
-//#include "Probe.h"
-//#include "Session.h"
-//#include "Value.h"
-//#include "Plugin.h"
-//#include "Constants.h"
-//#include "Information.h"
 #include "UserAction.h"
-//#include "Hierarchy.h"
+#include "Hierarchy.h"
 #include "HistoricalAction.h"
 #include "User.h"
-//#include "UserProfile.h"
+#include "UserProfile.h"
 #include "UserRole.h"
 #include "UserValue.h"
 #include "UserValueId.h"
@@ -48,6 +40,8 @@ namespace Wt
 #include "HistoricalValue.h"
 #include "Value.h"
 
+#include "Unit.h"
+#include "UnitType.h"
 
 UserField::UserField()
 {

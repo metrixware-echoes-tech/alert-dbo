@@ -23,6 +23,9 @@
 
 #include "Organization.h"
 
+#include "Unit.h"
+#include "UnitType.h"
+
 
 
 using namespace std;
@@ -42,6 +45,8 @@ const char *Constants::T_HISTORICAL_VALUE_VAL = "T_HISTORICAL_VALUE_VAL";
 const char *Constants::T_INFORMATION_INF = "T_INFORMATION_INF";
 const char *Constants::T_PLUGIN_PLG = "T_PLUGIN_PLG";
 const char *Constants::T_WIDGET_VALUE_WVA = "T_WIDGET_VALUE_WVA";
+const char *Constants::T_UNIT_UNT = "T_UNIT_UNT";
+const char *Constants::T_UNIT_TYPE_UTY = "T_UNIT_TYPE_UTY";
 
 Constants::Constants()
 {

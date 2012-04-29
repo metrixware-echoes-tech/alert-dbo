@@ -8,6 +8,9 @@
 #include "HistoricalValue.h"
 #include "Value.h"
 
+#include "Unit.h"
+#include "UnitType.h"
+
 
 Probe::Probe()
 {

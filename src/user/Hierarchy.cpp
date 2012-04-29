@@ -1,5 +1,6 @@
 #include "User.h"
 #include "UserAction.h"
+#include "UserProfile.h"
 #include "UserRole.h"
 #include "UserField.h"
 #include "UserValue.h"
@@ -17,6 +18,9 @@
 #include "Information.h"
 #include "HistoricalValue.h"
 #include "Value.h"
+
+#include "Unit.h"
+#include "UnitType.h"
 
 Hierarchy::Hierarchy()
 {

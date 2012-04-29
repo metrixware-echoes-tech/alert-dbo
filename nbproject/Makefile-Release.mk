@@ -40,11 +40,13 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/probe/Probe.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/organization/Organization.o \
+	${OBJECTDIR}/src/unit/UnitType.o \
 	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/user/UserAction.o \
-	${OBJECTDIR}/src/tools/Constants.o \
+	${OBJECTDIR}/src/unit/Unit.o \
 	${OBJECTDIR}/src/information/Value.o \
+	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
 	${OBJECTDIR}/src/tools/Table.o \
 	${OBJECTDIR}/src/organization/OrganizationValue.o \
@@ -112,6 +114,11 @@ ${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
 
+${OBJECTDIR}/src/unit/UnitType.o: src/unit/UnitType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/unit
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/UnitType.o src/unit/UnitType.cpp
+
 ${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
@@ -127,15 +134,20 @@ ${OBJECTDIR}/src/user/UserAction.o: src/user/UserAction.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserAction.o src/user/UserAction.cpp
 
-${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
+${OBJECTDIR}/src/unit/Unit.o: src/unit/Unit.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/unit
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Constants.o src/tools/Constants.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/Unit.o src/unit/Unit.cpp
 
 ${OBJECTDIR}/src/information/Value.o: src/information/Value.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Value.o src/information/Value.cpp
+
+${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Constants.o src/tools/Constants.cpp
 
 ${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin

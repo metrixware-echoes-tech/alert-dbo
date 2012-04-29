@@ -25,6 +25,7 @@ namespace Wt
 #include "UserRole.h"
 #include "UserField.h"
 #include "HistoricalAction.h"
+#include "Hierarchy.h"
 #include "UserValue.h"
 #include "UserValueId.h"
 
@@ -38,6 +39,9 @@ namespace Wt
 #include "Information.h"
 #include "HistoricalValue.h"
 #include "Value.h"
+
+#include "Unit.h"
+#include "UnitType.h"
 
 
 //#include "Hierarchy.h"

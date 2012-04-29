@@ -8,6 +8,9 @@
 #include "Information.h"
 #include "Plugin.h"
 
+#include "Unit.h"
+#include "UnitType.h"
+
 Plugin::Plugin()
 {
     //ctor

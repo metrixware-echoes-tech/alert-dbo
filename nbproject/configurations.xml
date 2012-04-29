@@ -31,6 +31,10 @@
         <itemPath>include/tools/Session.h</itemPath>
         <itemPath>include/tools/Table.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="unit" displayName="unit" projectFiles="true">
+        <itemPath>include/unit/Unit.h</itemPath>
+        <itemPath>include/unit/UnitType.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="user" displayName="user" projectFiles="true">
         <itemPath>include/user/Hierarchy.h</itemPath>
         <itemPath>include/user/HistoricalAction.h</itemPath>
@@ -71,6 +75,10 @@
         <itemPath>src/tools/PostgresConnector.cpp</itemPath>
         <itemPath>src/tools/Session.cpp</itemPath>
         <itemPath>src/tools/Table.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="unit" displayName="unit" projectFiles="true">
+        <itemPath>src/unit/Unit.cpp</itemPath>
+        <itemPath>src/unit/UnitType.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="user" displayName="user" projectFiles="true">
         <itemPath>src/user/Hierarchy.cpp</itemPath>

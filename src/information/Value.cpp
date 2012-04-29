@@ -8,8 +8,10 @@
 #include "Plugin.h"
 #include "HistoricalValue.h"
 
-
 #include "Organization.h"
+
+#include "Unit.h"
+#include "UnitType.h"
 
 
 Value::Value()

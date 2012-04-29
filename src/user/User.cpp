@@ -42,6 +42,8 @@ namespace Wt
 #include "HistoricalValue.h"
 #include "Value.h"
 
+#include "Unit.h"
+#include "UnitType.h"
 
 #include <string>
 #include <Wt/Dbo/Impl>

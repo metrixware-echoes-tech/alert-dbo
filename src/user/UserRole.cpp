@@ -22,11 +22,13 @@ namespace Wt
 }
 
 #include "User.h"
+#include "UserProfile.h"
 #include "UserAction.h"
 #include "UserValue.h"
 #include "UserValueId.h"
 #include "UserField.h"
 #include "HistoricalAction.h"
+#include "Hierarchy.h"
 
 #include "Organization.h"
 
@@ -38,6 +40,9 @@ namespace Wt
 #include "Information.h"
 #include "HistoricalValue.h"
 #include "Value.h"
+
+#include "Unit.h"
+#include "UnitType.h"
 
 UserRole::UserRole()
 {

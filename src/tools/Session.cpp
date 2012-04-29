@@ -19,6 +19,9 @@
 //#include "ProbeId.h"
 #include "Organization.h"
 
+#include "Unit.h"
+#include "UnitType.h"
+
 #include "Wt/Auth/AuthService"
 #include "Wt/Auth/HashFunction"
 #include "Wt/Auth/PasswordService"
@@ -85,6 +88,9 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<Probe>(Constants::T_PROBE_PRB);
     mapClass<Value>(Constants::T_VALUE_VAL);
     mapClass<HistoricalValue>(Constants::T_HISTORICAL_VALUE_VAL);
+    
+    mapClass<Unit>(Constants::T_UNIT_UNT);
+    mapClass<UnitType>(Constants::T_UNIT_TYPE_UTY);
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");
