@@ -38,6 +38,9 @@
 
 #include "Addon.h"
 
+#include "Alert.h"
+#include "AlertHisto.h"
+
 
 Wt::WApplication *createApplication(const Wt::WEnvironment& env)
 {

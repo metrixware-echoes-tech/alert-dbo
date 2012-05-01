@@ -5,6 +5,14 @@
       <logicalFolder name="addon" displayName="addon" projectFiles="true">
         <itemPath>include/addon/Addon.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="alert" displayName="alert" projectFiles="true">
+        <itemPath>include/alert/Alert.h</itemPath>
+        <itemPath>include/alert/AlertCriteria.h</itemPath>
+        <itemPath>include/alert/AlertHisto.h</itemPath>
+        <itemPath>include/alert/AlertParam.h</itemPath>
+        <itemPath>include/alert/AlertType.h</itemPath>
+        <itemPath>include/alert/AlertValue.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="information" displayName="information" projectFiles="true">
         <itemPath>include/information/HistoricalValue.h</itemPath>
         <itemPath>include/information/Information.h</itemPath>
@@ -64,6 +72,14 @@
     <logicalFolder name="src" displayName="src" projectFiles="true">
       <logicalFolder name="addon" displayName="addon" projectFiles="true">
         <itemPath>src/addon/Addon.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="alert" displayName="alert" projectFiles="true">
+        <itemPath>src/alert/Alert.cpp</itemPath>
+        <itemPath>src/alert/AlertCriteria.cpp</itemPath>
+        <itemPath>src/alert/AlertHisto.cpp</itemPath>
+        <itemPath>src/alert/AlertParam.cpp</itemPath>
+        <itemPath>src/alert/AlertType.cpp</itemPath>
+        <itemPath>src/alert/AlertValue.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="information" displayName="information" projectFiles="true">
         <itemPath>src/information/HistoricalValue.cpp</itemPath>

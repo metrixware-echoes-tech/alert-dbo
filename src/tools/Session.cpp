@@ -31,6 +31,9 @@
 
 #include "Addon.h"
 
+#include "Alert.h"
+#include "AlertHisto.h"
+
 #include "Wt/Auth/AuthService"
 #include "Wt/Auth/HashFunction"
 #include "Wt/Auth/PasswordService"
@@ -109,6 +112,9 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<TabWidgetAssociation>(Constants::T_TAB_WIDGET_TWG);
     
     mapClass<Addon>(Constants::T_ADDON_ADO);
+    
+    mapClass<Alert>(Constants::T_ALERT_ALE);
+    mapClass<Alert>(Constants::T_ALERT_HISTO_AHI);
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");
