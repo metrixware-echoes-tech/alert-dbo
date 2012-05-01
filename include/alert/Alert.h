@@ -26,7 +26,7 @@ class Alert : public Table
             Wt::Dbo::hasMany(a,
                              alertValues,
                              Wt::Dbo::ManyToOne,
-                             "ALV");
+                             "ALE_ID");
         }
     protected:
     private:

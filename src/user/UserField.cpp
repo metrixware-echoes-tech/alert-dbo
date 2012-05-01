@@ -11,16 +11,13 @@ namespace Wt
             {
                 return "UFI_ID";
             }
-            static const char *versionField()
-            {
-                return 0;
-            }
         };
     }
 }
 
 #include "UserAction.h"
 #include "Hierarchy.h"
+#include "HierarchyId.h"
 #include "HistoricalAction.h"
 #include "User.h"
 #include "UserProfile.h"

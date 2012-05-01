@@ -37,6 +37,7 @@
 
 #include "Alert.h"
 #include "AlertHisto.h"
+#include "AlertValue.h"
 
 
 
@@ -67,6 +68,7 @@ const char *Constants::T_TAB_WIDGET_TWG = "T_TAB_WIDGET_TWG";
 const char *Constants::T_ADDON_ADO = "T_ADDON_ADO";
 const char *Constants::T_ALERT_ALE = "T_ALERT_ALE";
 const char *Constants::T_ALERT_HISTO_AHI = "T_ALERT_HISTO_AHI";
+const char *Constants::T_ALERT_VALUE_AVA = "T_ALERT_VALUE_AVA";
 
 Constants::Constants()
 {

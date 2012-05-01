@@ -16,6 +16,9 @@ namespace Wt
     }  
 }
 
+#include "Alert.h"
+#include "AlertHisto.h"
+
 AlertValue::AlertValue()
 {
     //ctor

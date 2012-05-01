@@ -17,6 +17,7 @@ namespace Wt
 }
 
 #include "AlertHisto.h"
+#include "AlertValue.h"
 
 Alert::Alert()
 {

@@ -1,132 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="80">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <logicalFolder name="include" displayName="include" projectFiles="true">
-      <logicalFolder name="addon" displayName="addon" projectFiles="true">
-        <itemPath>include/addon/Addon.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="alert" displayName="alert" projectFiles="true">
-        <itemPath>include/alert/Alert.h</itemPath>
-        <itemPath>include/alert/AlertCriteria.h</itemPath>
-        <itemPath>include/alert/AlertHisto.h</itemPath>
-        <itemPath>include/alert/AlertParam.h</itemPath>
-        <itemPath>include/alert/AlertType.h</itemPath>
-        <itemPath>include/alert/AlertValue.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="information" displayName="information" projectFiles="true">
-        <itemPath>include/information/HistoricalValue.h</itemPath>
-        <itemPath>include/information/Information.h</itemPath>
-        <itemPath>include/information/Value.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="organization"
-                     displayName="organization"
-                     projectFiles="true">
-        <itemPath>include/organization/Organization.h</itemPath>
-        <itemPath>include/organization/OrganizationType.h</itemPath>
-        <itemPath>include/organization/OrganizationValue.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
-        <itemPath>include/plugin/Plugin.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
-        <itemPath>include/primaryKeys/ProbeId.h</itemPath>
-        <itemPath>include/primaryKeys/UserValueId.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="probe" displayName="probe" projectFiles="true">
-        <itemPath>include/probe/Probe.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="tools" displayName="tools" projectFiles="true">
-        <itemPath>include/tools/AuthApplication.h</itemPath>
-        <itemPath>include/tools/Constants.h</itemPath>
-        <itemPath>include/tools/PostgresConnector.h</itemPath>
-        <itemPath>include/tools/Session.h</itemPath>
-        <itemPath>include/tools/Table.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="unit" displayName="unit" projectFiles="true">
-        <itemPath>include/unit/Unit.h</itemPath>
-        <itemPath>include/unit/UnitType.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="user" displayName="user" projectFiles="true">
-        <itemPath>include/user/Hierarchy.h</itemPath>
-        <itemPath>include/user/HistoricalAction.h</itemPath>
-        <itemPath>include/user/User.h</itemPath>
-        <itemPath>include/user/UserAction.h</itemPath>
-        <itemPath>include/user/UserField.h</itemPath>
-        <itemPath>include/user/UserProfile.h</itemPath>
-        <itemPath>include/user/UserRole.h</itemPath>
-        <itemPath>include/user/UserValue.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="widget" displayName="widget" projectFiles="true">
-        <itemPath>include/widget/Tab.h</itemPath>
-        <itemPath>include/widget/TabVersion.h</itemPath>
-        <itemPath>include/widget/TabWidgetAssociation.h</itemPath>
-        <itemPath>include/widget/Widget.h</itemPath>
-        <itemPath>include/widget/WidgetType.h</itemPath>
-        <itemPath>include/widget/WidgetValue.h</itemPath>
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="include" displayName="include" projectFiles="true">
+        <logicalFolder name="addon" displayName="addon" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/addon/Addon.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="alert" displayName="alert" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/alert/Alert.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/alert/AlertCriteria.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/alert/AlertHisto.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/alert/AlertParam.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/alert/AlertType.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/alert/AlertValue.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="asset" displayName="asset" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/asset/Asset.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="information" displayName="information" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/information/HistoricalValue.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/information/Information.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/information/Value.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="media" displayName="media" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/media/Media.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="organization"
+                       displayName="organization"
+                       projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/organization/Organization.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/organization/OrganizationType.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/organization/OrganizationValue.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="pack" displayName="pack" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/pack/Option.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/pack/Pack.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/plugin/Plugin.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
+          <itemPath>include/primaryKeys/HierarchyId.h</itemPath>
+          <itemPath>include/primaryKeys/ProbeId.h</itemPath>
+          <itemPath>include/primaryKeys/UserValueId.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="probe" displayName="probe" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/probe/Probe.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="tools" displayName="tools" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/tools/AuthApplication.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/tools/Constants.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/tools/PostgresConnector.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/tools/Session.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/tools/Table.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="unit" displayName="unit" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/unit/Unit.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/unit/UnitType.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="user" displayName="user" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/user/Hierarchy.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/user/HistoricalAction.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/user/User.h</itemPath>
+          <itemPath>include/user/UserAction.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/user/UserField.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/user/UserProfile.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/user/UserRole.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/user/UserValue.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="widget" displayName="widget" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/widget/Tab.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/widget/TabVersion.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/widget/Widget.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/widget/WidgetType.h</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/include/widget/WidgetValue.h</itemPath>
+        </logicalFolder>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
     </logicalFolder>
-    <logicalFolder name="src" displayName="src" projectFiles="true">
-      <logicalFolder name="addon" displayName="addon" projectFiles="true">
-        <itemPath>src/addon/Addon.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="alert" displayName="alert" projectFiles="true">
-        <itemPath>src/alert/Alert.cpp</itemPath>
-        <itemPath>src/alert/AlertCriteria.cpp</itemPath>
-        <itemPath>src/alert/AlertHisto.cpp</itemPath>
-        <itemPath>src/alert/AlertParam.cpp</itemPath>
-        <itemPath>src/alert/AlertType.cpp</itemPath>
-        <itemPath>src/alert/AlertValue.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="information" displayName="information" projectFiles="true">
-        <itemPath>src/information/HistoricalValue.cpp</itemPath>
-        <itemPath>src/information/Information.cpp</itemPath>
-        <itemPath>src/information/Value.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="organization"
-                     displayName="organization"
-                     projectFiles="true">
-        <itemPath>src/organization/Organization.cpp</itemPath>
-        <itemPath>src/organization/OrganizationType.cpp</itemPath>
-        <itemPath>src/organization/OrganizationValue.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
-        <itemPath>src/plugin/Plugin.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="probe" displayName="probe" projectFiles="true">
-        <itemPath>src/probe/Probe.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="tools" displayName="tools" projectFiles="true">
-        <itemPath>src/tools/AuthApplication.cpp</itemPath>
-        <itemPath>src/tools/Constants.cpp</itemPath>
-        <itemPath>src/tools/PostgresConnector.cpp</itemPath>
-        <itemPath>src/tools/Session.cpp</itemPath>
-        <itemPath>src/tools/Table.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="unit" displayName="unit" projectFiles="true">
-        <itemPath>src/unit/Unit.cpp</itemPath>
-        <itemPath>src/unit/UnitType.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="user" displayName="user" projectFiles="true">
-        <itemPath>src/user/Hierarchy.cpp</itemPath>
-        <itemPath>src/user/HistoricalAction.cpp</itemPath>
-        <itemPath>src/user/User.cpp</itemPath>
-        <itemPath>src/user/UserAction.cpp</itemPath>
-        <itemPath>src/user/UserField.cpp</itemPath>
-        <itemPath>src/user/UserProfile.cpp</itemPath>
-        <itemPath>src/user/UserRole.cpp</itemPath>
-        <itemPath>src/user/UserValue.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="widget" displayName="widget" projectFiles="true">
-        <itemPath>src/widget/Tab.cpp</itemPath>
-        <itemPath>src/widget/TabVersion.cpp</itemPath>
-        <itemPath>include/wigdet/TabWidgetAssociation.cpp</itemPath>
-        <itemPath>src/widget/Widget.cpp</itemPath>
-        <itemPath>src/widget/WidgetType.cpp</itemPath>
-        <itemPath>src/widget/WidgetValue.cpp</itemPath>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <logicalFolder name="addon" displayName="addon" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/addon/Addon.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="alert" displayName="alert" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/alert/Alert.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/alert/AlertCriteria.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/alert/AlertHisto.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/alert/AlertParam.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/alert/AlertType.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/alert/AlertValue.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="asset" displayName="asset" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/asset/Asset.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="information" displayName="information" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/information/HistoricalValue.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/information/Information.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/information/Value.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="media" displayName="media" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/media/Media.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="organization"
+                       displayName="organization"
+                       projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/organization/Organization.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/organization/OrganizationType.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/organization/OrganizationValue.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="pack" displayName="pack" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/pack/Option.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/pack/Pack.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/plugin/Plugin.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="probe" displayName="probe" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/probe/Probe.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="tools" displayName="tools" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/tools/AuthApplication.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/tools/Constants.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/tools/PostgresConnector.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/tools/Session.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/tools/Table.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="unit" displayName="unit" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/unit/Unit.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/unit/UnitType.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="user" displayName="user" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/user/Hierarchy.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/user/HistoricalAction.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/user/User.cpp</itemPath>
+          <itemPath>src/user/UserAction.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/user/UserField.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/user/UserProfile.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/user/UserRole.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/user/UserValue.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="widget" displayName="widget" projectFiles="true">
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/widget/Tab.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/widget/TabVersion.cpp</itemPath>
+          <itemPath>src/widget/TabWidgetAssociation.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/widget/Widget.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/widget/WidgetType.cpp</itemPath>
+          <itemPath>/home/tom/dev/echoes-alert/dbo/src/widget/WidgetValue.cpp</itemPath>
+        </logicalFolder>
       </logicalFolder>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -143,35 +171,34 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>include</Elem>
-    <Elem>src</Elem>
+    <Elem>include/primaryKeys</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>GNU|GNU</compilerSet>
+        <compilerSet>default</compilerSet>
       </toolsSet>
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>include/widget</pElem>
-            <pElem>include/user</pElem>
-            <pElem>include/unit</pElem>
-            <pElem>include/tools</pElem>
-            <pElem>include/probe</pElem>
-            <pElem>include/plugin</pElem>
-            <pElem>include/plugin</pElem>
-            <pElem>include/pack</pElem>
-            <pElem>include/organization</pElem>
-            <pElem>include/media</pElem>
-            <pElem>include/information</pElem>
-            <pElem>include/asset</pElem>
-            <pElem>include/alert</pElem>
             <pElem>include/addon</pElem>
+            <pElem>include/alert</pElem>
+            <pElem>include/asset</pElem>
+            <pElem>include/information</pElem>
+            <pElem>include/media</pElem>
+            <pElem>include/organization</pElem>
+            <pElem>include/pack</pElem>
+            <pElem>include/plugin</pElem>
+            <pElem>include/probe</pElem>
+            <pElem>include/tools</pElem>
+            <pElem>include/unit</pElem>
+            <pElem>include/user</pElem>
+            <pElem>include/widget</pElem>
             <pElem>include/primaryKeys</pElem>
           </incDir>
+          <commandLine>-std=c++0x</commandLine>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
@@ -179,6 +206,8 @@
             <linkerLibLibItem>wtdbo</linkerLibLibItem>
             <linkerLibLibItem>wtdbopostgres</linkerLibLibItem>
             <linkerLibLibItem>wthttp</linkerLibLibItem>
+            <linkerLibLibItem>boost_signals</linkerLibLibItem>
+            <linkerLibLibItem>boost_system</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

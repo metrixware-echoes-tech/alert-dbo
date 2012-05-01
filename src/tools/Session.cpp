@@ -33,6 +33,7 @@
 
 #include "Alert.h"
 #include "AlertHisto.h"
+#include "AlertValue.h"
 
 #include "Wt/Auth/AuthService"
 #include "Wt/Auth/HashFunction"
@@ -114,7 +115,8 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<Addon>(Constants::T_ADDON_ADO);
     
     mapClass<Alert>(Constants::T_ALERT_ALE);
-    mapClass<Alert>(Constants::T_ALERT_HISTO_AHI);
+    mapClass<AlertHisto>(Constants::T_ALERT_HISTO_AHI);
+    mapClass<AlertValue>(Constants::T_ALERT_VALUE_AVA);
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");

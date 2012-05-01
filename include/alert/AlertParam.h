@@ -1,6 +1,7 @@
 #ifndef ALERTPARAM_H
 #define ALERTPARAM_H
 
+#include <Wt/Dbo/Dbo>
 
 class AlertParam
 {

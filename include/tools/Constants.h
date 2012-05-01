@@ -40,6 +40,7 @@ class Constants
         static const char *T_ADDON_ADO;
         static const char *T_ALERT_ALE;
         static const char *T_ALERT_HISTO_AHI;
+        static const char *T_ALERT_VALUE_AVA;
     protected:
     private:
 };
