@@ -35,6 +35,8 @@ namespace Wt
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 Tab::Tab()
 {
     //ctor

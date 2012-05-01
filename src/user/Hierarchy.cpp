@@ -29,6 +29,8 @@
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 Hierarchy::Hierarchy()
 {
     //ctor

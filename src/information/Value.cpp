@@ -20,6 +20,8 @@
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 
 Value::Value()
 {

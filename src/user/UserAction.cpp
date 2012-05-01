@@ -29,6 +29,8 @@
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 std::string UserAction::TRIGRAM = "ACT";
 
 UserAction::UserAction()

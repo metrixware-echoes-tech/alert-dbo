@@ -18,6 +18,8 @@
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 Information2::Information2()
 {
     //ctor

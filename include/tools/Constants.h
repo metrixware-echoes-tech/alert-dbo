@@ -37,6 +37,7 @@ class Constants
         static const char *T_TAB_TAB;
         static const char *T_TAB_VERSION_TVS;
         static const char *T_TAB_WIDGET_TWG;
+        static const char *T_ADDON_ADO;
     protected:
     private:
 };

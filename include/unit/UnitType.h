@@ -1,11 +1,12 @@
 #ifndef UNITTYPE_H
 #define UNITTYPE_H
 
-class Unit;
-
 #include "Table.h"
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
+
+class Unit;
+class WidgetType;
 
 class UnitType : public Table
 {

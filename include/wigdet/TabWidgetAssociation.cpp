@@ -42,6 +42,8 @@ namespace Wt
 
 #include "Organization.h"
 
+#include "Addon.h"
+
 TabWidgetAssociation::TabWidgetAssociation()
 {
 }

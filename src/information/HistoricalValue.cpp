@@ -20,6 +20,7 @@
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
 
 HistoricalValue::HistoricalValue()
 {

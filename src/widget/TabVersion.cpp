@@ -35,6 +35,8 @@ namespace Wt
 
 #include "Organization.h"
 
+#include "Addon.h"
+
 TabVersion::TabVersion()
 {
     //ctor

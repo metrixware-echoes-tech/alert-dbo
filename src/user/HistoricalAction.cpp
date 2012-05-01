@@ -48,6 +48,8 @@ namespace Wt
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 std::string HistoricalAction::TRIGRAM = "UHA";
 
 HistoricalAction::HistoricalAction()

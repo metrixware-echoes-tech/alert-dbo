@@ -42,11 +42,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/probe/Probe.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/organization/Organization.o \
-	${OBJECTDIR}/src/unit/UnitType.o \
-	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
+	${OBJECTDIR}/src/user/UserProfile.o \
+	${OBJECTDIR}/src/unit/UnitType.o \
 	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
+	${OBJECTDIR}/src/addon/Addon.o \
 	${OBJECTDIR}/src/widget/WidgetValue.o \
 	${OBJECTDIR}/src/unit/Unit.o \
 	${OBJECTDIR}/src/information/Value.o \
@@ -130,20 +131,20 @@ ${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
 
-${OBJECTDIR}/src/unit/UnitType.o: src/unit/UnitType.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/unit
+${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/UnitType.o src/unit/UnitType.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
 
 ${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
 
-${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
+${OBJECTDIR}/src/unit/UnitType.o: src/unit/UnitType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/unit
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/UnitType.o src/unit/UnitType.cpp
 
 ${OBJECTDIR}/src/widget/Tab.o: src/widget/Tab.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
@@ -154,6 +155,11 @@ ${OBJECTDIR}/src/user/UserAction.o: src/user/UserAction.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserAction.o src/user/UserAction.cpp
+
+${OBJECTDIR}/src/addon/Addon.o: src/addon/Addon.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/addon
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/Addon.o src/addon/Addon.cpp
 
 ${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget

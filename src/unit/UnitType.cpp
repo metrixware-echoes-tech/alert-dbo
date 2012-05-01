@@ -1,9 +1,6 @@
 #include "ProbeId.h"
 #include "Probe.h"
 
-#include "WidgetType.h"
-#include "Widget.h"
-
 #include "UnitType.h"
 
 class UnitType;
@@ -31,9 +28,14 @@ namespace Wt
 
 #include "Organization.h"
 
+#include "WidgetType.h"
+#include "Widget.h"
+
 #include "Tab.h"
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
+
+#include "Addon.h"
 
 UnitType::UnitType()
 {

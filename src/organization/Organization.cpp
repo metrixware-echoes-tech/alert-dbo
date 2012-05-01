@@ -18,6 +18,8 @@
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 std::string Organization::TRIGRAM = "ORG";
 
 Organization::Organization()

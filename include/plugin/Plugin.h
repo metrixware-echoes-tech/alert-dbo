@@ -10,6 +10,7 @@
 class Value;
 class HistoricalValue;
 class Information2;
+class Addon;
 
 class Plugin : public Table
 {
@@ -20,6 +21,7 @@ class Plugin : public Table
         Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
         Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
         Wt::Dbo::collection<Wt::Dbo::ptr<Information2> > informations;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Addon> > addons;
 
         template<class Action>
         void persist(Action& a)
@@ -39,6 +41,10 @@ class Plugin : public Table
                              informations,
                              Wt::Dbo::ManyToMany,
                              "TJ_INF_PLG");
+            Wt::Dbo::hasMany(a,
+                             addons,
+                             Wt::Dbo::ManyToMany,
+                             "TJ_ADO_PLG"); 
        }
     protected:
     private:

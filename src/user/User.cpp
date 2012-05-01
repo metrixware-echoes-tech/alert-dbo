@@ -52,6 +52,8 @@ namespace Wt
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 #include <string>
 #include <Wt/Dbo/Impl>
 #include <Wt/Auth/Dbo/AuthInfo>

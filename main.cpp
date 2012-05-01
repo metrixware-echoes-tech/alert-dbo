@@ -36,6 +36,8 @@
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 
 Wt::WApplication *createApplication(const Wt::WEnvironment& env)
 {

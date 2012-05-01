@@ -33,6 +33,8 @@
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 
 
 using namespace std;
@@ -59,6 +61,7 @@ const char *Constants::T_WIDGET_WGT = "T_WIDGET_WGT";
 const char *Constants::T_TAB_TAB = "T_TAB_TAB";
 const char *Constants::T_TAB_VERSION_TVS = "T_TAB_VERSION_TVS";
 const char *Constants::T_TAB_WIDGET_TWG = "T_TAB_WIDGET_TWG";
+const char *Constants::T_ADDON_ADO = "T_ADDON_ADO";
 
 Constants::Constants()
 {

@@ -36,6 +36,8 @@ namespace Wt
 #include "TabVersion.h"
 #include "TabWidgetAssociation.h"
 
+#include "Addon.h"
+
 WidgetType::WidgetType()
 {
     //ctor
