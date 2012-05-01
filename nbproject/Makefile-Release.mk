@@ -34,8 +34,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/widget/WidgetType.o \
 	${OBJECTDIR}/src/tools/Session.o \
 	${OBJECTDIR}/src/organization/OrganizationType.o \
+	${OBJECTDIR}/include/wigdet/TabWidgetAssociation.o \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/probe/Probe.o \
 	${OBJECTDIR}/main.o \
@@ -43,13 +45,17 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/unit/UnitType.o \
 	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
+	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
+	${OBJECTDIR}/src/widget/WidgetValue.o \
 	${OBJECTDIR}/src/unit/Unit.o \
 	${OBJECTDIR}/src/information/Value.o \
+	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
-	${OBJECTDIR}/src/tools/Table.o \
+	${OBJECTDIR}/src/widget/Widget.o \
 	${OBJECTDIR}/src/organization/OrganizationValue.o \
+	${OBJECTDIR}/src/tools/Table.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
 	${OBJECTDIR}/src/user/User.o \
@@ -84,6 +90,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/src/widget/WidgetType.o: src/widget/WidgetType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetType.o src/widget/WidgetType.cpp
+
 ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
@@ -93,6 +104,11 @@ ${OBJECTDIR}/src/organization/OrganizationType.o: src/organization/OrganizationT
 	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
+
+${OBJECTDIR}/include/wigdet/TabWidgetAssociation.o: include/wigdet/TabWidgetAssociation.cpp 
+	${MKDIR} -p ${OBJECTDIR}/include/wigdet
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/include/wigdet/TabWidgetAssociation.o include/wigdet/TabWidgetAssociation.cpp
 
 ${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
@@ -129,10 +145,20 @@ ${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
 
+${OBJECTDIR}/src/widget/Tab.o: src/widget/Tab.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Tab.o src/widget/Tab.cpp
+
 ${OBJECTDIR}/src/user/UserAction.o: src/user/UserAction.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserAction.o src/user/UserAction.cpp
+
+${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
 
 ${OBJECTDIR}/src/unit/Unit.o: src/unit/Unit.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/unit
@@ -144,6 +170,11 @@ ${OBJECTDIR}/src/information/Value.o: src/information/Value.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Value.o src/information/Value.cpp
 
+${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
+
 ${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
@@ -154,15 +185,20 @@ ${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
 
-${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
+${OBJECTDIR}/src/widget/Widget.o: src/widget/Widget.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Widget.o src/widget/Widget.cpp
 
 ${OBJECTDIR}/src/organization/OrganizationValue.o: src/organization/OrganizationValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationValue.o src/organization/OrganizationValue.cpp
+
+${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
 
 ${OBJECTDIR}/src/user/UserValue.o: src/user/UserValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user

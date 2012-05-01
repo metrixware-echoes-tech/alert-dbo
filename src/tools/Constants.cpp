@@ -23,8 +23,15 @@
 
 #include "Organization.h"
 
+#include "WidgetType.h"
+#include "Widget.h"
+
 #include "Unit.h"
 #include "UnitType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
 
 
 
@@ -47,6 +54,11 @@ const char *Constants::T_PLUGIN_PLG = "T_PLUGIN_PLG";
 const char *Constants::T_WIDGET_VALUE_WVA = "T_WIDGET_VALUE_WVA";
 const char *Constants::T_UNIT_UNT = "T_UNIT_UNT";
 const char *Constants::T_UNIT_TYPE_UTY = "T_UNIT_TYPE_UTY";
+const char *Constants::T_WIDGET_TYPE_WTY = "T_WIDGET_TYPE_WTY";
+const char *Constants::T_WIDGET_WGT = "T_WIDGET_WGT";
+const char *Constants::T_TAB_TAB = "T_TAB_TAB";
+const char *Constants::T_TAB_VERSION_TVS = "T_TAB_VERSION_TVS";
+const char *Constants::T_TAB_WIDGET_TWG = "T_TAB_WIDGET_TWG";
 
 Constants::Constants()
 {

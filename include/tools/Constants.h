@@ -29,9 +29,14 @@ class Constants
         static const char *T_HISTORICAL_VALUE_VAL;
         static const char *T_INFORMATION_INF;
         static const char *T_PLUGIN_PLG;
-        static const char *T_WIDGET_VALUE_WVA;
         static const char *T_UNIT_UNT;
         static const char *T_UNIT_TYPE_UTY;
+        static const char *T_WIDGET_VALUE_WVA;
+        static const char *T_WIDGET_TYPE_WTY;
+        static const char *T_WIDGET_WGT;
+        static const char *T_TAB_TAB;
+        static const char *T_TAB_VERSION_TVS;
+        static const char *T_TAB_WIDGET_TWG;
     protected:
     private:
 };

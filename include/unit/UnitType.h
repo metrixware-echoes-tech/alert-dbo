@@ -15,6 +15,8 @@ class UnitType : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Unit> > units;
         
+        Wt::Dbo::collection<Wt::Dbo::ptr<WidgetType> > widgetTypes;
+        
         template<class Action>
         void persist(Action& a)
         {
@@ -22,6 +24,14 @@ class UnitType : public Table
                              units,
                              Wt::Dbo::ManyToOne,
                              "UUN");
+            
+
+            //TJ
+            Wt::Dbo::hasMany(a,
+                             widgetTypes,
+                             Wt::Dbo::ManyToMany,
+                             "TJ_WTY_UTY");
+
             
         }
     protected:

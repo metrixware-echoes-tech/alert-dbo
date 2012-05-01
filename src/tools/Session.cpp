@@ -19,8 +19,15 @@
 //#include "ProbeId.h"
 #include "Organization.h"
 
+#include "WidgetType.h"
+#include "Widget.h"
+
 #include "Unit.h"
 #include "UnitType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
 
 #include "Wt/Auth/AuthService"
 #include "Wt/Auth/HashFunction"
@@ -91,6 +98,13 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     
     mapClass<Unit>(Constants::T_UNIT_UNT);
     mapClass<UnitType>(Constants::T_UNIT_TYPE_UTY);
+    
+    mapClass<Widget>(Constants::T_WIDGET_WGT);
+    mapClass<WidgetType>(Constants::T_WIDGET_TYPE_WTY);
+    
+    mapClass<Tab>(Constants::T_TAB_TAB);
+    mapClass<TabVersion>(Constants::T_TAB_VERSION_TVS);
+    mapClass<TabWidgetAssociation>(Constants::T_TAB_WIDGET_TWG);
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");

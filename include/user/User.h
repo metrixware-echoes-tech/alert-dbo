@@ -76,7 +76,7 @@ class User : public Table
             Wt::Dbo::belongsTo(a, userRole, "URO");
             Wt::Dbo::belongsTo(a, userProfile, "UPR");
 
-//            //User id as foreign key in other tables
+            //User id as foreign key in other tables
 
             Wt::Dbo::hasMany(a,
                              parents,

@@ -6,10 +6,18 @@
 #include "HistoricalValue.h"
 #include "Value.h"
 #include "Information.h"
+
 #include "Plugin.h"
+
+#include "WidgetType.h"
+#include "Widget.h"
 
 #include "Unit.h"
 #include "UnitType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
 
 Plugin::Plugin()
 {

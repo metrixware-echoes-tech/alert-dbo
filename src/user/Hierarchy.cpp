@@ -19,8 +19,15 @@
 #include "HistoricalValue.h"
 #include "Value.h"
 
+#include "Widget.h"
+#include "WidgetType.h"
+
 #include "Unit.h"
 #include "UnitType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
 
 Hierarchy::Hierarchy()
 {
