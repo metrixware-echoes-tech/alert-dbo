@@ -34,47 +34,47 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/897718345/UserValue.o \
-	${OBJECTDIR}/_ext/533110974/Widget.o \
-	${OBJECTDIR}/_ext/2040786078/AlertCriteria.o \
-	${OBJECTDIR}/_ext/897552023/Option.o \
-	${OBJECTDIR}/_ext/897718345/UserField.o \
-	${OBJECTDIR}/_ext/533110974/TabVersion.o \
-	${OBJECTDIR}/_ext/897718345/UserRole.o \
-	${OBJECTDIR}/_ext/2054826738/Probe.o \
-	${OBJECTDIR}/_ext/533110974/Tab.o \
-	${OBJECTDIR}/_ext/533110974/WidgetValue.o \
-	${OBJECTDIR}/_ext/897718345/HistoricalAction.o \
-	${OBJECTDIR}/_ext/2058431773/Constants.o \
-	${OBJECTDIR}/_ext/2040546690/Addon.o \
+	${OBJECTDIR}/src/organization/OrganizationType.o \
+	${OBJECTDIR}/src/widget/WidgetType.o \
+	${OBJECTDIR}/src/tools/Session.o \
+	${OBJECTDIR}/src/alert/AlertValue.o \
+	${OBJECTDIR}/src/media/Media.o \
+	${OBJECTDIR}/src/alert/AlertType.o \
+	${OBJECTDIR}/src/probe/Probe.o \
+	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/_ext/897552023/Pack.o \
-	${OBJECTDIR}/_ext/730237903/Plugin.o \
-	${OBJECTDIR}/_ext/2040786078/AlertHisto.o \
-	${OBJECTDIR}/_ext/2040786078/Alert.o \
-	${OBJECTDIR}/_ext/2058431773/AuthApplication.o \
+	${OBJECTDIR}/src/alert/AlertParam.o \
+	${OBJECTDIR}/src/organization/Organization.o \
+	${OBJECTDIR}/src/tools/PostgresConnector.o \
+	${OBJECTDIR}/src/user/UserProfile.o \
+	${OBJECTDIR}/src/unit/UnitType.o \
+	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
-	${OBJECTDIR}/_ext/1707745554/HistoricalValue.o \
-	${OBJECTDIR}/_ext/2051658534/Media.o \
-	${OBJECTDIR}/_ext/1707745554/Value.o \
-	${OBJECTDIR}/_ext/2058431773/PostgresConnector.o \
-	${OBJECTDIR}/_ext/1118651471/OrganizationType.o \
-	${OBJECTDIR}/_ext/1707745554/Information.o \
-	${OBJECTDIR}/_ext/897713666/UnitType.o \
-	${OBJECTDIR}/_ext/2040786078/AlertValue.o \
-	${OBJECTDIR}/_ext/2058431773/Session.o \
-	${OBJECTDIR}/_ext/897713666/Unit.o \
-	${OBJECTDIR}/_ext/1118651471/OrganizationValue.o \
-	${OBJECTDIR}/_ext/897718345/UserProfile.o \
-	${OBJECTDIR}/_ext/2058431773/Table.o \
-	${OBJECTDIR}/_ext/2040786078/AlertParam.o \
+	${OBJECTDIR}/src/widget/WidgetValue.o \
+	${OBJECTDIR}/src/asset/Asset.o \
+	${OBJECTDIR}/src/addon/Addon.o \
+	${OBJECTDIR}/src/unit/Unit.o \
+	${OBJECTDIR}/src/information/Value.o \
+	${OBJECTDIR}/src/widget/TabVersion.o \
+	${OBJECTDIR}/src/tools/Constants.o \
+	${OBJECTDIR}/src/plugin/Plugin.o \
+	${OBJECTDIR}/src/alert/AlertCriteria.o \
+	${OBJECTDIR}/src/widget/Widget.o \
+	${OBJECTDIR}/src/organization/OrganizationValue.o \
+	${OBJECTDIR}/src/tools/Table.o \
+	${OBJECTDIR}/src/alert/Alert.o \
+	${OBJECTDIR}/src/user/UserValue.o \
+	${OBJECTDIR}/src/user/UserRole.o \
+	${OBJECTDIR}/src/user/User.o \
+	${OBJECTDIR}/src/user/UserField.o \
+	${OBJECTDIR}/src/user/HistoricalAction.o \
+	${OBJECTDIR}/src/information/Information.o \
+	${OBJECTDIR}/src/alert/AlertHisto.o \
+	${OBJECTDIR}/src/user/Hierarchy.o \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
-	${OBJECTDIR}/_ext/2041007666/Asset.o \
-	${OBJECTDIR}/_ext/897718345/Hierarchy.o \
-	${OBJECTDIR}/_ext/1118651471/Organization.o \
-	${OBJECTDIR}/_ext/897718345/User.o \
-	${OBJECTDIR}/_ext/533110974/WidgetType.o \
-	${OBJECTDIR}/_ext/2040786078/AlertType.o
+	${OBJECTDIR}/src/pack/Pack.o \
+	${OBJECTDIR}/src/information/HistoricalValue.o \
+	${OBJECTDIR}/src/pack/Option.o
 
 
 # C Compiler Flags
@@ -101,210 +101,210 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/_ext/897718345/UserValue.o: /home/tom/dev/echoes-alert/dbo/src/user/UserValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897718345
+${OBJECTDIR}/src/organization/OrganizationType.o: src/organization/OrganizationType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897718345/UserValue.o /home/tom/dev/echoes-alert/dbo/src/user/UserValue.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
 
-${OBJECTDIR}/_ext/533110974/Widget.o: /home/tom/dev/echoes-alert/dbo/src/widget/Widget.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533110974
+${OBJECTDIR}/src/widget/WidgetType.o: src/widget/WidgetType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533110974/Widget.o /home/tom/dev/echoes-alert/dbo/src/widget/Widget.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetType.o src/widget/WidgetType.cpp
 
-${OBJECTDIR}/_ext/2040786078/AlertCriteria.o: /home/tom/dev/echoes-alert/dbo/src/alert/AlertCriteria.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2040786078
+${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2040786078/AlertCriteria.o /home/tom/dev/echoes-alert/dbo/src/alert/AlertCriteria.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
 
-${OBJECTDIR}/_ext/897552023/Option.o: /home/tom/dev/echoes-alert/dbo/src/pack/Option.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897552023
+${OBJECTDIR}/src/alert/AlertValue.o: src/alert/AlertValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897552023/Option.o /home/tom/dev/echoes-alert/dbo/src/pack/Option.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertValue.o src/alert/AlertValue.cpp
 
-${OBJECTDIR}/_ext/897718345/UserField.o: /home/tom/dev/echoes-alert/dbo/src/user/UserField.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897718345
+${OBJECTDIR}/src/media/Media.o: src/media/Media.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/media
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897718345/UserField.o /home/tom/dev/echoes-alert/dbo/src/user/UserField.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/Media.o src/media/Media.cpp
 
-${OBJECTDIR}/_ext/533110974/TabVersion.o: /home/tom/dev/echoes-alert/dbo/src/widget/TabVersion.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533110974
+${OBJECTDIR}/src/alert/AlertType.o: src/alert/AlertType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533110974/TabVersion.o /home/tom/dev/echoes-alert/dbo/src/widget/TabVersion.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertType.o src/alert/AlertType.cpp
 
-${OBJECTDIR}/_ext/897718345/UserRole.o: /home/tom/dev/echoes-alert/dbo/src/user/UserRole.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897718345
+${OBJECTDIR}/src/probe/Probe.o: src/probe/Probe.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/probe
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897718345/UserRole.o /home/tom/dev/echoes-alert/dbo/src/user/UserRole.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
 
-${OBJECTDIR}/_ext/2054826738/Probe.o: /home/tom/dev/echoes-alert/dbo/src/probe/Probe.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2054826738
+${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2054826738/Probe.o /home/tom/dev/echoes-alert/dbo/src/probe/Probe.cpp
-
-${OBJECTDIR}/_ext/533110974/Tab.o: /home/tom/dev/echoes-alert/dbo/src/widget/Tab.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533110974
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533110974/Tab.o /home/tom/dev/echoes-alert/dbo/src/widget/Tab.cpp
-
-${OBJECTDIR}/_ext/533110974/WidgetValue.o: /home/tom/dev/echoes-alert/dbo/src/widget/WidgetValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533110974
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533110974/WidgetValue.o /home/tom/dev/echoes-alert/dbo/src/widget/WidgetValue.cpp
-
-${OBJECTDIR}/_ext/897718345/HistoricalAction.o: /home/tom/dev/echoes-alert/dbo/src/user/HistoricalAction.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897718345
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897718345/HistoricalAction.o /home/tom/dev/echoes-alert/dbo/src/user/HistoricalAction.cpp
-
-${OBJECTDIR}/_ext/2058431773/Constants.o: /home/tom/dev/echoes-alert/dbo/src/tools/Constants.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2058431773
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2058431773/Constants.o /home/tom/dev/echoes-alert/dbo/src/tools/Constants.cpp
-
-${OBJECTDIR}/_ext/2040546690/Addon.o: /home/tom/dev/echoes-alert/dbo/src/addon/Addon.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2040546690
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2040546690/Addon.o /home/tom/dev/echoes-alert/dbo/src/addon/Addon.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
-${OBJECTDIR}/_ext/897552023/Pack.o: /home/tom/dev/echoes-alert/dbo/src/pack/Pack.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897552023
+${OBJECTDIR}/src/alert/AlertParam.o: src/alert/AlertParam.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897552023/Pack.o /home/tom/dev/echoes-alert/dbo/src/pack/Pack.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertParam.o src/alert/AlertParam.cpp
 
-${OBJECTDIR}/_ext/730237903/Plugin.o: /home/tom/dev/echoes-alert/dbo/src/plugin/Plugin.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/730237903
+${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/730237903/Plugin.o /home/tom/dev/echoes-alert/dbo/src/plugin/Plugin.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
 
-${OBJECTDIR}/_ext/2040786078/AlertHisto.o: /home/tom/dev/echoes-alert/dbo/src/alert/AlertHisto.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2040786078
+${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2040786078/AlertHisto.o /home/tom/dev/echoes-alert/dbo/src/alert/AlertHisto.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
 
-${OBJECTDIR}/_ext/2040786078/Alert.o: /home/tom/dev/echoes-alert/dbo/src/alert/Alert.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2040786078
+${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2040786078/Alert.o /home/tom/dev/echoes-alert/dbo/src/alert/Alert.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
 
-${OBJECTDIR}/_ext/2058431773/AuthApplication.o: /home/tom/dev/echoes-alert/dbo/src/tools/AuthApplication.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2058431773
+${OBJECTDIR}/src/unit/UnitType.o: src/unit/UnitType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/unit
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2058431773/AuthApplication.o /home/tom/dev/echoes-alert/dbo/src/tools/AuthApplication.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/UnitType.o src/unit/UnitType.cpp
+
+${OBJECTDIR}/src/widget/Tab.o: src/widget/Tab.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Tab.o src/widget/Tab.cpp
 
 ${OBJECTDIR}/src/user/UserAction.o: src/user/UserAction.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserAction.o src/user/UserAction.cpp
 
-${OBJECTDIR}/_ext/1707745554/HistoricalValue.o: /home/tom/dev/echoes-alert/dbo/src/information/HistoricalValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1707745554
+${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1707745554/HistoricalValue.o /home/tom/dev/echoes-alert/dbo/src/information/HistoricalValue.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
 
-${OBJECTDIR}/_ext/2051658534/Media.o: /home/tom/dev/echoes-alert/dbo/src/media/Media.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2051658534
+${OBJECTDIR}/src/asset/Asset.o: src/asset/Asset.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/asset
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2051658534/Media.o /home/tom/dev/echoes-alert/dbo/src/media/Media.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/asset/Asset.o src/asset/Asset.cpp
 
-${OBJECTDIR}/_ext/1707745554/Value.o: /home/tom/dev/echoes-alert/dbo/src/information/Value.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1707745554
+${OBJECTDIR}/src/addon/Addon.o: src/addon/Addon.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/addon
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1707745554/Value.o /home/tom/dev/echoes-alert/dbo/src/information/Value.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/Addon.o src/addon/Addon.cpp
 
-${OBJECTDIR}/_ext/2058431773/PostgresConnector.o: /home/tom/dev/echoes-alert/dbo/src/tools/PostgresConnector.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2058431773
+${OBJECTDIR}/src/unit/Unit.o: src/unit/Unit.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/unit
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2058431773/PostgresConnector.o /home/tom/dev/echoes-alert/dbo/src/tools/PostgresConnector.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/Unit.o src/unit/Unit.cpp
 
-${OBJECTDIR}/_ext/1118651471/OrganizationType.o: /home/tom/dev/echoes-alert/dbo/src/organization/OrganizationType.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1118651471
+${OBJECTDIR}/src/information/Value.o: src/information/Value.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1118651471/OrganizationType.o /home/tom/dev/echoes-alert/dbo/src/organization/OrganizationType.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Value.o src/information/Value.cpp
 
-${OBJECTDIR}/_ext/1707745554/Information.o: /home/tom/dev/echoes-alert/dbo/src/information/Information.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1707745554
+${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1707745554/Information.o /home/tom/dev/echoes-alert/dbo/src/information/Information.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
 
-${OBJECTDIR}/_ext/897713666/UnitType.o: /home/tom/dev/echoes-alert/dbo/src/unit/UnitType.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897713666
+${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897713666/UnitType.o /home/tom/dev/echoes-alert/dbo/src/unit/UnitType.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Constants.o src/tools/Constants.cpp
 
-${OBJECTDIR}/_ext/2040786078/AlertValue.o: /home/tom/dev/echoes-alert/dbo/src/alert/AlertValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2040786078
+${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2040786078/AlertValue.o /home/tom/dev/echoes-alert/dbo/src/alert/AlertValue.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
 
-${OBJECTDIR}/_ext/2058431773/Session.o: /home/tom/dev/echoes-alert/dbo/src/tools/Session.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2058431773
+${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2058431773/Session.o /home/tom/dev/echoes-alert/dbo/src/tools/Session.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
 
-${OBJECTDIR}/_ext/897713666/Unit.o: /home/tom/dev/echoes-alert/dbo/src/unit/Unit.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897713666
+${OBJECTDIR}/src/widget/Widget.o: src/widget/Widget.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897713666/Unit.o /home/tom/dev/echoes-alert/dbo/src/unit/Unit.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Widget.o src/widget/Widget.cpp
 
-${OBJECTDIR}/_ext/1118651471/OrganizationValue.o: /home/tom/dev/echoes-alert/dbo/src/organization/OrganizationValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1118651471
+${OBJECTDIR}/src/organization/OrganizationValue.o: src/organization/OrganizationValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1118651471/OrganizationValue.o /home/tom/dev/echoes-alert/dbo/src/organization/OrganizationValue.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationValue.o src/organization/OrganizationValue.cpp
 
-${OBJECTDIR}/_ext/897718345/UserProfile.o: /home/tom/dev/echoes-alert/dbo/src/user/UserProfile.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897718345
+${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897718345/UserProfile.o /home/tom/dev/echoes-alert/dbo/src/user/UserProfile.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
 
-${OBJECTDIR}/_ext/2058431773/Table.o: /home/tom/dev/echoes-alert/dbo/src/tools/Table.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2058431773
+${OBJECTDIR}/src/alert/Alert.o: src/alert/Alert.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2058431773/Table.o /home/tom/dev/echoes-alert/dbo/src/tools/Table.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/Alert.o src/alert/Alert.cpp
 
-${OBJECTDIR}/_ext/2040786078/AlertParam.o: /home/tom/dev/echoes-alert/dbo/src/alert/AlertParam.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2040786078
+${OBJECTDIR}/src/user/UserValue.o: src/user/UserValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2040786078/AlertParam.o /home/tom/dev/echoes-alert/dbo/src/alert/AlertParam.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserValue.o src/user/UserValue.cpp
+
+${OBJECTDIR}/src/user/UserRole.o: src/user/UserRole.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
+
+${OBJECTDIR}/src/user/User.o: src/user/User.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/User.o src/user/User.cpp
+
+${OBJECTDIR}/src/user/UserField.o: src/user/UserField.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserField.o src/user/UserField.cpp
+
+${OBJECTDIR}/src/user/HistoricalAction.o: src/user/HistoricalAction.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/HistoricalAction.o src/user/HistoricalAction.cpp
+
+${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
+
+${OBJECTDIR}/src/alert/AlertHisto.o: src/alert/AlertHisto.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertHisto.o src/alert/AlertHisto.cpp
+
+${OBJECTDIR}/src/user/Hierarchy.o: src/user/Hierarchy.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/Hierarchy.o src/user/Hierarchy.cpp
 
 ${OBJECTDIR}/src/widget/TabWidgetAssociation.o: src/widget/TabWidgetAssociation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabWidgetAssociation.o src/widget/TabWidgetAssociation.cpp
 
-${OBJECTDIR}/_ext/2041007666/Asset.o: /home/tom/dev/echoes-alert/dbo/src/asset/Asset.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2041007666
+${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2041007666/Asset.o /home/tom/dev/echoes-alert/dbo/src/asset/Asset.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Pack.o src/pack/Pack.cpp
 
-${OBJECTDIR}/_ext/897718345/Hierarchy.o: /home/tom/dev/echoes-alert/dbo/src/user/Hierarchy.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897718345
+${OBJECTDIR}/src/information/HistoricalValue.o: src/information/HistoricalValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897718345/Hierarchy.o /home/tom/dev/echoes-alert/dbo/src/user/Hierarchy.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/HistoricalValue.o src/information/HistoricalValue.cpp
 
-${OBJECTDIR}/_ext/1118651471/Organization.o: /home/tom/dev/echoes-alert/dbo/src/organization/Organization.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1118651471
+${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1118651471/Organization.o /home/tom/dev/echoes-alert/dbo/src/organization/Organization.cpp
-
-${OBJECTDIR}/_ext/897718345/User.o: /home/tom/dev/echoes-alert/dbo/src/user/User.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/897718345
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/897718345/User.o /home/tom/dev/echoes-alert/dbo/src/user/User.cpp
-
-${OBJECTDIR}/_ext/533110974/WidgetType.o: /home/tom/dev/echoes-alert/dbo/src/widget/WidgetType.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/533110974
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/533110974/WidgetType.o /home/tom/dev/echoes-alert/dbo/src/widget/WidgetType.cpp
-
-${OBJECTDIR}/_ext/2040786078/AlertType.o: /home/tom/dev/echoes-alert/dbo/src/alert/AlertType.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2040786078
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2040786078/AlertType.o /home/tom/dev/echoes-alert/dbo/src/alert/AlertType.cpp
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Option.o src/pack/Option.cpp
 
 # Subprojects
 .build-subprojects:

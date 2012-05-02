@@ -11,6 +11,32 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>include/primaryKeys</sourceRootElem>
+                <sourceRootElem>include/alert</sourceRootElem>
+                <sourceRootElem>include/addon</sourceRootElem>
+                <sourceRootElem>include/asset</sourceRootElem>
+                <sourceRootElem>include/information</sourceRootElem>
+                <sourceRootElem>include/media</sourceRootElem>
+                <sourceRootElem>include/organization</sourceRootElem>
+                <sourceRootElem>include/pack</sourceRootElem>
+                <sourceRootElem>include/plugin</sourceRootElem>
+                <sourceRootElem>include/probe</sourceRootElem>
+                <sourceRootElem>include/tools</sourceRootElem>
+                <sourceRootElem>include/unit</sourceRootElem>
+                <sourceRootElem>include/user</sourceRootElem>
+                <sourceRootElem>include/widget</sourceRootElem>
+                <sourceRootElem>src/addon</sourceRootElem>
+                <sourceRootElem>src/alert</sourceRootElem>
+                <sourceRootElem>src/asset</sourceRootElem>
+                <sourceRootElem>src/information</sourceRootElem>
+                <sourceRootElem>src/media</sourceRootElem>
+                <sourceRootElem>src/organization</sourceRootElem>
+                <sourceRootElem>src/pack</sourceRootElem>
+                <sourceRootElem>src/plugin</sourceRootElem>
+                <sourceRootElem>src/probe</sourceRootElem>
+                <sourceRootElem>src/tools</sourceRootElem>
+                <sourceRootElem>src/unit</sourceRootElem>
+                <sourceRootElem>src/user</sourceRootElem>
+                <sourceRootElem>src/widget</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
