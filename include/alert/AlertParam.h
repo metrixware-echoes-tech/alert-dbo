@@ -1,13 +1,31 @@
 #ifndef ALERTPARAM_H
 #define ALERTPARAM_H
 
-#include <Wt/Dbo/Dbo>
+#include "Table.h"
 
-class AlertParam
+#include "AlertValue.h"
+
+#include <Wt/Dbo/Dbo>
+#include <Wt/Dbo/WtSqlTraits>
+
+class AlertValue;
+
+class AlertParam : public Table
 {
     public:
         AlertParam();
         virtual ~AlertParam();
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
+        
+        template<class Action>
+        void persist(Action& a)
+        {
+            Wt::Dbo::hasMany(a,
+                             alertValues,
+                             Wt::Dbo::ManyToOne,
+                             "APA");
+        }
+        
     protected:
     private:
 };

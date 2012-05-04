@@ -41,6 +41,8 @@ class Constants
         static const char *T_ALERT_ALE;
         static const char *T_ALERT_HISTO_AHI;
         static const char *T_ALERT_VALUE_AVA;
+        static const char *T_ALERT_PARAM_APA;
+        static const char *T_ALERT_TYPE_ATY;
     protected:
     private:
 };

@@ -1,14 +1,17 @@
+#include "UserField.h"
+#include "UserRole.h"
+#include "UserProfile.h"
+#include "User.h"
 #include "Constants.h"
+
+#include "Unit.h"
+
 #include "Hierarchy.h"
 #include "HistoricalAction.h"
-#include "UserProfile.h"
 #include "UserAction.h"
-#include "UserRole.h"
-#include "UserField.h"
 #include "UserValue.h"
 #include "UserValueId.h"
 #include "HistoricalAction.h"
-#include "User.h"
 
 #include "Plugin.h"
 
@@ -26,7 +29,6 @@
 #include "WidgetType.h"
 #include "Widget.h"
 
-#include "Unit.h"
 #include "UnitType.h"
 
 #include "Tab.h"
@@ -38,6 +40,8 @@
 #include "Alert.h"
 #include "AlertHisto.h"
 #include "AlertValue.h"
+#include "AlertParam.h"
+#include "AlertType.h"
 
 
 
@@ -69,6 +73,8 @@ const char *Constants::T_ADDON_ADO = "T_ADDON_ADO";
 const char *Constants::T_ALERT_ALE = "T_ALERT_ALE";
 const char *Constants::T_ALERT_HISTO_AHI = "T_ALERT_HISTO_AHI";
 const char *Constants::T_ALERT_VALUE_AVA = "T_ALERT_VALUE_AVA";
+const char *Constants::T_ALERT_PARAM_APA = "T_ALERT_PARAM_APA";
+const char *Constants::T_ALERT_TYPE_ATY= "T_ALERT_TYPE_ATY";
 
 Constants::Constants()
 {

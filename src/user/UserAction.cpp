@@ -1,9 +1,11 @@
-#include "User.h"
+#include "Unit.h"
 #include "UserRole.h"
+
+#include "UserField.h"
+#include "UserProfile.h"
+#include "User.h"
 #include "UserValue.h"
 #include "UserValueId.h"
-#include "UserProfile.h"
-#include "UserField.h"
 #include "HistoricalAction.h"
 #include "Hierarchy.h"
 #include "UserAction.h"
@@ -22,7 +24,6 @@
 #include "WidgetType.h"
 #include "Widget.h"
 
-#include "Unit.h"
 #include "UnitType.h"
 
 #include "Tab.h"

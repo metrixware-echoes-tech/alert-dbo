@@ -1,59 +1,5 @@
 #include "User.h"
 
-class User;
-namespace Wt
-{
-    namespace Dbo
-    {
-        template<>
-        struct dbo_traits<User> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "USR_ID";
-            }
-            static const char *versionField()
-            {
-                return 0;
-            }
-        };
-    }  
-}
-
-#include "Constants.h"
-#include "Hierarchy.h"
-#include "HistoricalAction.h"
-#include "UserProfile.h"
-#include "UserAction.h"
-#include "UserRole.h"
-#include "UserField.h"
-#include "UserValue.h"
-#include "UserValueId.h"
-#include "HistoricalAction.h"
-
-#include "Organization.h"
-
-#include "Probe.h"
-#include "ProbeId.h"
-
-#include "Plugin.h"
-
-#include "Information.h"
-#include "HistoricalValue.h"
-#include "Value.h"
-
-#include "Widget.h"
-#include "WidgetType.h"
-
-#include "Unit.h"
-#include "UnitType.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
 #include <string>
 #include <Wt/Dbo/Impl>
 #include <Wt/Auth/Dbo/AuthInfo>

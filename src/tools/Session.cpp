@@ -1,13 +1,15 @@
+#include "Session.h"
+
+#include "UserField.h"
+#include "UserProfile.h"
+#include "UserRole.h"
+#include "User.h"
 #include "Constants.h"
+#include "Unit.h"
+#include "HistoricalAction.h"
 #include "Hierarchy.h"
 #include "UserAction.h"
-#include "UserRole.h"
-#include "UserProfile.h"
-#include "UserField.h"
 #include "UserValue.h"
-#include "User.h"
-#include "HistoricalAction.h"
-#include "Session.h"
 
 #include "Plugin.h"
 
@@ -16,13 +18,11 @@
 #include "Value.h"
 
 #include "Probe.h"
-//#include "ProbeId.h"
 #include "Organization.h"
 
 #include "WidgetType.h"
 #include "Widget.h"
 
-#include "Unit.h"
 #include "UnitType.h"
 
 #include "Tab.h"
@@ -34,6 +34,8 @@
 #include "Alert.h"
 #include "AlertHisto.h"
 #include "AlertValue.h"
+#include "AlertParam.h"
+#include "AlertType.h"
 
 #include "Wt/Auth/AuthService"
 #include "Wt/Auth/HashFunction"
@@ -117,6 +119,8 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<Alert>(Constants::T_ALERT_ALE);
     mapClass<AlertHisto>(Constants::T_ALERT_HISTO_AHI);
     mapClass<AlertValue>(Constants::T_ALERT_VALUE_AVA);
+    mapClass<AlertParam>(Constants::T_ALERT_PARAM_APA);
+    mapClass<AlertType>(Constants::T_ALERT_TYPE_ATY);
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");

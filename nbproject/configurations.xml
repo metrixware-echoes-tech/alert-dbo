@@ -55,6 +55,7 @@
           <itemPath>include/tools/PostgresConnector.h</itemPath>
           <itemPath>include/tools/Session.h</itemPath>
           <itemPath>include/tools/Table.h</itemPath>
+          <itemPath>include/primaryKeys/dboSpecialization.h</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
           <itemPath>include/unit/Unit.h</itemPath>

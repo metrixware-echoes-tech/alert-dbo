@@ -2,6 +2,7 @@
 #define TABLE_H
 
 #include <string>
+#include "dboSpecialization.h"
 
 class Table //classe abstraite
 {

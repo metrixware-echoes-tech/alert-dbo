@@ -2,7 +2,8 @@
 #define USERFIELD_H
 
 #include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
+
+class UserField;
 
 class User;
 class UserValue;

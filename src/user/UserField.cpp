@@ -1,20 +1,5 @@
 #include "UserField.h"
 
-namespace Wt
-{
-    namespace Dbo
-    {        
-        template<>
-        struct dbo_traits<UserField> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "UFI_ID";
-            }
-        };
-    }
-}
-
 #include "UserAction.h"
 #include "Hierarchy.h"
 #include "HierarchyId.h"

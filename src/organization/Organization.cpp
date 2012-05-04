@@ -1,3 +1,5 @@
+#include "Unit.h"
+
 #include "Probe.h"
 #include "ProbeId.h"
 #include "Organization.h"
@@ -11,7 +13,6 @@
 #include "WidgetType.h"
 #include "Widget.h"
 
-#include "Unit.h"
 #include "UnitType.h"
 
 #include "Tab.h"
