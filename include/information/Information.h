@@ -1,10 +1,31 @@
 #ifndef INFORMATION_H
 #define INFORMATION_H
 
+#include "Table.h"
+
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "Table.h"
+#include "Probe.h"
+#include "ProbeId.h"
+
+#include "HistoricalValue.h"
+#include "Value.h"
+#include "Plugin.h"
+
+#include "Organization.h"
+
+#include "Widget.h"
+#include "WidgetType.h"
+
+#include "Unit.h"
+#include "UnitType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
+
+#include "Addon.h"
 
 class Value;
 class HistoricalValue;

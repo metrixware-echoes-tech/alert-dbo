@@ -1,4 +1,5 @@
 #include "Alert.h"
+#include "AlertCriteria.h"
 
 
 Alert::Alert()

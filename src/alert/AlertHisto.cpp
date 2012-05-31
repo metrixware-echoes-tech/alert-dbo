@@ -2,6 +2,7 @@
 #include "AlertHisto.h"
 
 #include "AlertValue.h"
+#include "AlertCriteria.h"
 
 AlertHisto::AlertHisto()
 {

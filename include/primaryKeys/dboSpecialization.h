@@ -9,6 +9,7 @@
 #define	DBOSPECIALIZATION_H
 
 #include <Wt/Dbo/Dbo>
+#include <Wt/Dbo/SqlTraits>
 
 class UserField;
 class UserRole;
@@ -20,6 +21,10 @@ class AlertParam;
 class AlertValue;
 class Alert;
 class AlertType;
+class WidgetValue;
+class WidgetType;
+
+//#include "WidgetValueId.h"
 
 namespace Wt
 {
@@ -33,6 +38,16 @@ namespace Wt
                 return "UFI_ID";
             }
         };
+        
+        template<>
+        struct dbo_traits<WidgetType> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "WTY_ID";
+            }
+        };
+        
         template<>
         struct dbo_traits<UserRole> : public dbo_default_traits
         {
@@ -105,6 +120,13 @@ namespace Wt
                 return "ATY_ID";
             }
         };
+//        template<>
+//        struct dbo_traits<WidgetValue> : public dbo_default_traits
+//        {
+//            typedef WidgetValueId IdType;
+//            static IdType invalidId() { return WidgetValueId(); }
+//            static const char *surrogateIdField() { return 0; }
+//        };
     }
 }
 

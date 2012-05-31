@@ -1,42 +1,5 @@
 #include "Session.h"
 
-#include "UserField.h"
-#include "UserProfile.h"
-#include "UserRole.h"
-#include "User.h"
-#include "Constants.h"
-#include "Unit.h"
-#include "HistoricalAction.h"
-#include "Hierarchy.h"
-#include "UserAction.h"
-#include "UserValue.h"
-
-#include "Plugin.h"
-
-#include "Information.h"
-#include "HistoricalValue.h"
-#include "Value.h"
-
-#include "Probe.h"
-#include "Organization.h"
-
-#include "WidgetType.h"
-#include "Widget.h"
-
-#include "UnitType.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Alert.h"
-#include "AlertHisto.h"
-#include "AlertValue.h"
-#include "AlertParam.h"
-#include "AlertType.h"
-
 #include "Wt/Auth/AuthService"
 #include "Wt/Auth/HashFunction"
 #include "Wt/Auth/PasswordService"
@@ -109,6 +72,7 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     
     mapClass<Widget>(Constants::T_WIDGET_WGT);
     mapClass<WidgetType>(Constants::T_WIDGET_TYPE_WTY);
+    mapClass<WidgetValue>(Constants::T_WIDGET_VALUE_WVA);
     
     mapClass<Tab>(Constants::T_TAB_TAB);
     mapClass<TabVersion>(Constants::T_TAB_VERSION_TVS);
@@ -121,6 +85,7 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<AlertValue>(Constants::T_ALERT_VALUE_AVA);
     mapClass<AlertParam>(Constants::T_ALERT_PARAM_APA);
     mapClass<AlertType>(Constants::T_ALERT_TYPE_ATY);
+    mapClass<AlertCriteria>(Constants::T_ALERT_CRITERIA_ACR);
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");

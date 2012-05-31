@@ -28,6 +28,7 @@
 
 #include "WidgetType.h"
 #include "Widget.h"
+#include "WidgetValueId.h"
 
 #include "UnitType.h"
 
@@ -74,7 +75,8 @@ const char *Constants::T_ALERT_ALE = "T_ALERT_ALE";
 const char *Constants::T_ALERT_HISTO_AHI = "T_ALERT_HISTO_AHI";
 const char *Constants::T_ALERT_VALUE_AVA = "T_ALERT_VALUE_AVA";
 const char *Constants::T_ALERT_PARAM_APA = "T_ALERT_PARAM_APA";
-const char *Constants::T_ALERT_TYPE_ATY= "T_ALERT_TYPE_ATY";
+const char *Constants::T_ALERT_TYPE_ATY = "T_ALERT_TYPE_ATY";
+const char *Constants::T_ALERT_CRITERIA_ACR = "T_ALERT_CRITERIA_ACR";
 
 Constants::Constants()
 {

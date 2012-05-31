@@ -1,8 +1,12 @@
 #ifndef ALERTTYPE_H
 #define ALERTTYPE_H
 
+#include "Table.h"
+
 #include <Wt/Dbo/Dbo>
 
+class Alert;
+class AlertCriteria;
 
 class AlertType : public Table
 {
@@ -10,6 +14,7 @@ class AlertType : public Table
         AlertType();
         virtual ~AlertType();
         Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertCriteria> > alertCriterias;
         
         template<class Action>
         void persist(Action& a)
@@ -18,6 +23,10 @@ class AlertType : public Table
                              alerts,
                              Wt::Dbo::ManyToOne,
                              "ATY");
+            Wt::Dbo::hasMany(a,
+                             alertCriterias,
+                             Wt::Dbo::ManyToMany,
+                             "TJ_ATY_ACR");
         }
         
     protected:

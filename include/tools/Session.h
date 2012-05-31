@@ -7,6 +7,45 @@
 #include <Wt/Dbo/ptr>
 #include <Wt/Dbo/backend/Postgres>
 
+#include "Information.h"
+#include "HistoricalValue.h"
+#include "Value.h"
+
+#include "UserField.h"
+#include "UserProfile.h"
+#include "UserRole.h"
+#include "User.h"
+#include "Constants.h"
+#include "Unit.h"
+#include "HistoricalAction.h"
+#include "Hierarchy.h"
+#include "UserAction.h"
+#include "UserValue.h"
+
+#include "Plugin.h"
+
+#include "Probe.h"
+#include "Organization.h"
+
+#include "WidgetType.h"
+#include "WidgetValue.h"
+#include "Widget.h"
+
+#include "UnitType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
+
+#include "Addon.h"
+
+#include "Alert.h"
+#include "AlertHisto.h"
+#include "AlertValue.h"
+#include "AlertParam.h"
+#include "AlertType.h"
+#include "AlertCriteria.h"
+
 class User;
 
 typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;

@@ -13,6 +13,8 @@ class Hierarchy : public Table
     public:
         Hierarchy();
         virtual ~Hierarchy();
+        
+        static std::string TRIGRAM;
 
         HierarchyId pk;
 

@@ -9,6 +9,7 @@
 #include <Wt/Dbo/WtSqlTraits>
 
 class AlertValue;
+class AlertCriteria;
 
 class AlertParam : public Table
 {
@@ -16,6 +17,7 @@ class AlertParam : public Table
         AlertParam();
         virtual ~AlertParam();
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertCriteria> > alertCriterias;
         
         template<class Action>
         void persist(Action& a)
@@ -24,6 +26,10 @@ class AlertParam : public Table
                              alertValues,
                              Wt::Dbo::ManyToOne,
                              "APA");
+            Wt::Dbo::hasMany(a,
+                             alertCriterias,
+                             Wt::Dbo::ManyToMany,
+                             "TJ_ACR_APA");
         }
         
     protected:

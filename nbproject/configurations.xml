@@ -45,6 +45,7 @@
           <itemPath>include/primaryKeys/HierarchyId.h</itemPath>
           <itemPath>include/primaryKeys/ProbeId.h</itemPath>
           <itemPath>include/primaryKeys/UserValueId.h</itemPath>
+          <itemPath>include/primaryKeys/WidgetValueId.h</itemPath>
         </logicalFolder>
         <logicalFolder name="probe" displayName="probe" projectFiles="true">
           <itemPath>include/probe/Probe.h</itemPath>

@@ -1,4 +1,6 @@
+
 #include "User.h"
+#include "Hierarchy.h"
 #include "UserAction.h"
 #include "UserProfile.h"
 #include "UserRole.h"
@@ -6,7 +8,6 @@
 #include "UserValue.h"
 #include "UserValueId.h"
 #include "HistoricalAction.h"
-#include "Hierarchy.h"
 
 #include "Organization.h"
 
@@ -30,6 +31,8 @@
 #include "TabWidgetAssociation.h"
 
 #include "Addon.h"
+
+std::string Hierarchy::TRIGRAM = "HRC";
 
 Hierarchy::Hierarchy()
 {
