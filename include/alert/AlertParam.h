@@ -3,10 +3,13 @@
 
 #include "Table.h"
 
-#include "AlertValue.h"
-
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
+
+#include "AlertValue.h"
+#include "AlertCriteria.h"
+#include "AlertType.h"
+#include "Alert.h"
 
 class AlertValue;
 class AlertCriteria;

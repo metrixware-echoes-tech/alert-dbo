@@ -5,6 +5,27 @@
 
 #include "Table.h"
 
+#include "Probe.h"
+#include "ProbeId.h"
+
+#include "Information.h"
+#include "Plugin.h"
+#include "Value.h"
+
+#include "Organization.h"
+
+#include "Widget.h"
+#include "WidgetType.h"
+
+#include "Unit.h"
+#include "UnitType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
+
+#include "Addon.h"
+
 class Plugin;
 class Probe;
 class Information2;

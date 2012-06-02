@@ -12,6 +12,28 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
+#include "Probe.h"
+#include "ProbeId.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+
+#include "Widget.h"
+#include "WidgetType.h"
+
+#include "Unit.h"
+#include "UnitType.h"
+
+#include "Information.h"
+#include "HistoricalValue.h"
+#include "Value.h"
+
+#include "Plugin.h"
+
+#include "Organization.h"
+
+#include "Addon.h"
+
 class Tab;
 class Widget;
 class TabVersion;

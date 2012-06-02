@@ -9,9 +9,27 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 
-//class User;
-class Probe;
+#include "Unit.h"
 
+#include "Probe.h"
+#include "ProbeId.h"
+
+#include "Value.h"
+#include "Information.h"
+#include "HistoricalValue.h"
+
+#include "Plugin.h"
+
+#include "WidgetType.h"
+#include "Widget.h"
+
+#include "UnitType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
+
+#include "Addon.h"
 
 class Organization : public Table
 {
@@ -28,7 +46,7 @@ class Organization : public Table
         // methods
 
         // dbo collections (This table id as foreign key in other tables)
-//        Wt::Dbo::collection<Wt::Dbo::ptr<User> > user;
+        Wt::Dbo::collection<Wt::Dbo::ptr<User> > user;
         Wt::Dbo::collection<Wt::Dbo::ptr<Probe> > probes;
 
         template<class Action>
@@ -53,10 +71,10 @@ class Organization : public Table
 
             //User id as foreign key in other tables
 
-//            Wt::Dbo::hasMany(a,
-//                             user,
-//                             Wt::Dbo::ManyToMany,
-//                             "TJ_USR_ORG");
+            Wt::Dbo::hasMany(a,
+                             user,
+                             Wt::Dbo::ManyToMany,
+                             "TJ_USR_ORG");
             Wt::Dbo::hasMany(a,
                              probes,
                              Wt::Dbo::ManyToOne,

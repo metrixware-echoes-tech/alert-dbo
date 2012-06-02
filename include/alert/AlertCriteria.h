@@ -6,6 +6,10 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
+#include "AlertType.h"
+#include "AlertParam.h"
+#include "Alert.h"
+
 class AlertType;
 class AlertParam;
 class AlertCriteria : public Table

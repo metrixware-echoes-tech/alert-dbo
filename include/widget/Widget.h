@@ -1,9 +1,31 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
-    #include "Table.h"
-    #include <Wt/Dbo/Dbo>
-    #include <Wt/Dbo/WtSqlTraits>
+#include "Table.h"
+#include <Wt/Dbo/Dbo>
+#include <Wt/Dbo/WtSqlTraits>
+
+#include "Probe.h"
+#include "ProbeId.h"
+
+#include "Unit.h"
+#include "UnitType.h"
+
+#include "HistoricalValue.h"
+#include "Value.h"
+#include "Information.h"
+
+#include "Plugin.h"
+
+#include "Organization.h"
+
+#include "WidgetType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
+
+#include "Addon.h"
 
 class WidgetType;
 class Tab;

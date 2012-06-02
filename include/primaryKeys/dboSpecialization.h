@@ -14,15 +14,24 @@
 class UserField;
 class UserRole;
 class Unit;
+class UnitType;
 class User;
 class UserProfile;
+class UserValue;
+class UserAction;
 class HistoricalAction;
 class AlertParam;
 class AlertValue;
 class Alert;
+class AlertHisto;
 class AlertType;
 class WidgetValue;
 class WidgetType;
+class Addon;
+class Tab;
+class TabVersion;
+class TabWidgetAssociation;
+class Widget;
 
 //#include "WidgetValueId.h"
 
@@ -118,6 +127,74 @@ namespace Wt
             static const char *surrogateIdField()
             {
                 return "ATY_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<UnitType> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "UTY_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<UserAction> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "ACT_ID";
+            }
+            static const char *versionField()
+            {
+                return 0;
+            }
+        };
+        template<>
+        struct dbo_traits<Addon> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "ADO_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<AlertHisto> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "AHI_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<Tab> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "TAB_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<TabVersion> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "TVS_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<TabWidgetAssociation> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "TWG_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<Widget> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "WGT_ID";
             }
         };
 //        template<>

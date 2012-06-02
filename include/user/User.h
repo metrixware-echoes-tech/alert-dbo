@@ -45,13 +45,13 @@
 #include <Wt/WDateTime>
 #include <Wt/WGlobal>
 
-class UserRole;
-class UserProfile;
+//class UserRole;
+//class UserProfile;
 class Hierarchy;
-class UserField;
-class UserValue;
-class HistoricalAction;
-class Organization;
+//class UserField;
+//class UserValue;
+//class HistoricalAction;
+//class Organization;
 
 class User : public Table
 {

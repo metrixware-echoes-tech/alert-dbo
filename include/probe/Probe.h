@@ -6,6 +6,26 @@
 #include "ProbeId.h"
 #include "Table.h"
 
+#include "Unit.h"
+#include "Organization.h"
+
+#include "Plugin.h"
+
+#include "Information.h"
+#include "HistoricalValue.h"
+#include "Value.h"
+
+#include "WidgetType.h"
+#include "Widget.h"
+
+#include "UnitType.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
+
+#include "Addon.h"
+
 class Organization;
 class Value;
 class HistoricalValue;

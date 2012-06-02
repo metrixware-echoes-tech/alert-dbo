@@ -5,6 +5,27 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
+#include "ProbeId.h"
+#include "Probe.h"
+
+#include "Unit.h"
+
+#include "HistoricalValue.h"
+#include "Value.h"
+#include "Plugin.h"
+#include "Information.h"
+
+#include "Organization.h"
+
+#include "WidgetType.h"
+#include "Widget.h"
+
+#include "Tab.h"
+#include "TabVersion.h"
+#include "TabWidgetAssociation.h"
+
+#include "Addon.h"
+
 class Unit;
 class WidgetType;
 

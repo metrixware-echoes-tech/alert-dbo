@@ -5,6 +5,9 @@
 
 #include <Wt/Dbo/Dbo>
 
+#include "Alert.h"
+#include "AlertCriteria.h"
+
 class Alert;
 class AlertCriteria;
 

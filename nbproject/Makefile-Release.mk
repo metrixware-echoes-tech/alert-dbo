@@ -15,8 +15,8 @@ NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
 CC=gcc
-CCC=g++
-CXX=g++
+CCC=distcc
+CXX=distcc
 FC=gfortran
 AS=as
 
@@ -34,9 +34,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/organization/OrganizationType.o \
 	${OBJECTDIR}/src/widget/WidgetType.o \
 	${OBJECTDIR}/src/tools/Session.o \
-	${OBJECTDIR}/src/organization/OrganizationType.o \
 	${OBJECTDIR}/src/alert/AlertValue.o \
 	${OBJECTDIR}/src/media/Media.o \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
@@ -44,8 +44,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/probe/Probe.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/alert/AlertParam.o \
-	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
+	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/unit/UnitType.o \
 	${OBJECTDIR}/src/widget/Tab.o \
@@ -58,10 +58,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
-	${OBJECTDIR}/src/alert/AlertCriteria.o \
 	${OBJECTDIR}/src/widget/Widget.o \
 	${OBJECTDIR}/src/organization/OrganizationValue.o \
 	${OBJECTDIR}/src/tools/Table.o \
+	${OBJECTDIR}/src/alert/AlertCriteria.o \
 	${OBJECTDIR}/src/alert/Alert.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
@@ -101,6 +101,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/src/organization/OrganizationType.o: src/organization/OrganizationType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
+
 ${OBJECTDIR}/src/widget/WidgetType.o: src/widget/WidgetType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
@@ -110,11 +115,6 @@ ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
-
-${OBJECTDIR}/src/organization/OrganizationType.o: src/organization/OrganizationType.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
 
 ${OBJECTDIR}/src/alert/AlertValue.o: src/alert/AlertValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
@@ -151,15 +151,15 @@ ${OBJECTDIR}/src/alert/AlertParam.o: src/alert/AlertParam.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertParam.o src/alert/AlertParam.cpp
 
-${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
-
 ${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
+
+${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
 
 ${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
@@ -221,11 +221,6 @@ ${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
 
-${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
-
 ${OBJECTDIR}/src/widget/Widget.o: src/widget/Widget.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
@@ -240,6 +235,11 @@ ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
+
+${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
 
 ${OBJECTDIR}/src/alert/Alert.o: src/alert/Alert.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert

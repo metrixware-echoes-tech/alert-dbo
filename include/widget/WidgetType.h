@@ -5,6 +5,8 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
+#include "User.h"
+
 #include "UnitType.h"
 #include "Unit.h"
 

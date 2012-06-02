@@ -6,6 +6,7 @@
 #include "AlertValue.h"
 #include "AlertParam.h"
 #include "AlertType.h"
+#include "AlertCriteria.h"
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
