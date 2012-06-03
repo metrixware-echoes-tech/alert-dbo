@@ -1,9 +1,9 @@
 #ifndef USERFIELD_H
 #define USERFIELD_H
 
+#include "Table.h"
 #include <Wt/Dbo/Dbo>
 
-#include "UserAction.h"
 #include "Hierarchy.h"
 #include "HierarchyId.h"
 #include "HistoricalAction.h"
@@ -12,7 +12,7 @@
 #include "UserRole.h"
 #include "UserValue.h"
 #include "UserValueId.h"
-
+#include "UserAction.h"
 
 #include "Organization.h"
 
@@ -41,7 +41,7 @@
 class User;
 class UserValue;
 
-class UserField
+class UserField : public Table
 {
     public:
         UserField();

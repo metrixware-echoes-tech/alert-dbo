@@ -1,14 +1,5 @@
 #include "Session.h"
 
-#include "Wt/Auth/AuthService"
-#include "Wt/Auth/HashFunction"
-#include "Wt/Auth/PasswordService"
-#include "Wt/Auth/PasswordStrengthValidator"
-#include "Wt/Auth/PasswordVerifier"
-#include "Wt/Auth/GoogleService"
-#include "Wt/Auth/Dbo/AuthInfo"
-#include "Wt/Auth/Dbo/UserDatabase"
-
 using namespace Wt;
 
 namespace

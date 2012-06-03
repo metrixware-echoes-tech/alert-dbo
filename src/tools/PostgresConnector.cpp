@@ -1,4 +1,3 @@
-#include "Session.h"
 #include "PostgresConnector.h"
 
 namespace odb = Wt::Dbo;
