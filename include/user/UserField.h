@@ -17,7 +17,6 @@
 #include "Organization.h"
 
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "Plugin.h"
 
@@ -37,6 +36,9 @@
 
 #include "Addon.h"
 
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 class User;
 class UserValue;
@@ -46,6 +48,8 @@ class UserField : public Table
     public:
         UserField();
         virtual ~UserField();
+        
+        static std::string TRIGRAM;
 
         Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 

@@ -1,10 +1,11 @@
 #ifndef PROBE_H
 #define PROBE_H
 
+#include "Table.h"
 #include <Wt/Dbo/Dbo>
 
-#include "ProbeId.h"
-#include "Table.h"
+#include "Probe.h"
+
 
 #include "Unit.h"
 #include "Organization.h"
@@ -17,6 +18,7 @@
 
 #include "WidgetType.h"
 #include "Widget.h"
+#include "WidgetValueId.h"
 
 #include "UnitType.h"
 
@@ -25,6 +27,10 @@
 #include "TabWidgetAssociation.h"
 
 #include "Addon.h"
+
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 class Organization;
 class Value;
@@ -36,7 +42,9 @@ class Probe : public Table
         Probe();
         virtual ~Probe();
 
-        ProbeId pk;
+//        ProbeId pk;
+        
+        Wt::Dbo::ptr<Organization> organization;
 
         Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
         Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
@@ -44,7 +52,8 @@ class Probe : public Table
         template<class Action>
         void persist(Action& a)
         {
-            Wt::Dbo::id (a, pk, "PRIMARY_KEY");
+//            Wt::Dbo::id (a, pk, "PRIMARY_KEY");
+            Wt::Dbo::belongsTo(a, organization, "ORG");
 
             Wt::Dbo::hasMany(a,
                              values,

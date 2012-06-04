@@ -9,8 +9,8 @@
 
 #include "Unit.h"
 
+
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "Organization.h"
 
@@ -29,6 +29,9 @@
 
 #include "Addon.h"
 
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 class Value;
 class HistoricalValue;

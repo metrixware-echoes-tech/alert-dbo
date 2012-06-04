@@ -1,6 +1,8 @@
 #ifndef USERPROFILE_H
 #define USERPROFILE_H
 
+#include "Table.h"
+
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
@@ -18,8 +20,8 @@
 
 #include "Organization.h"
 
+
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "Plugin.h"
 
@@ -38,13 +40,19 @@
 
 #include "Addon.h"
 
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
+
 //class User;
 
-class UserProfile
+class UserProfile : public Table
 {
 public:
     UserProfile();
     virtual ~UserProfile();
+    
+    static std::string TRIGRAM;
 
     Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 

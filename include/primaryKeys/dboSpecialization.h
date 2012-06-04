@@ -25,13 +25,21 @@ class AlertValue;
 class Alert;
 class AlertHisto;
 class AlertType;
-class WidgetValue;
+class AlertCriteria;
+//class WidgetValue;
 class WidgetType;
 class Addon;
 class Tab;
 class TabVersion;
 class TabWidgetAssociation;
 class Widget;
+class Value;
+class Plugin;
+class Organization;
+class Information2;
+class HistoricalValue;
+class Probe;
+class SourceParameter;
 
 //#include "WidgetValueId.h"
 
@@ -195,6 +203,70 @@ namespace Wt
             static const char *surrogateIdField()
             {
                 return "WGT_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<Value> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "VAL_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<Plugin> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "PLG_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<Organization> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "ORG_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<Information2> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "INF_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<HistoricalValue> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "HVA_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<AlertCriteria> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "ACR_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<Probe> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "PRB_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<SourceParameter> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "SRP_ID";
             }
         };
 //        template<>

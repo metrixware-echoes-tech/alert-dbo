@@ -5,8 +5,8 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
+
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "Unit.h"
 #include "UnitType.h"
@@ -26,6 +26,10 @@
 #include "TabWidgetAssociation.h"
 
 #include "Addon.h"
+
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 class WidgetType;
 class Tab;

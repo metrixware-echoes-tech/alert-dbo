@@ -13,7 +13,7 @@ const char *Constants::T_HISTORICAL_ACTION_HAC = "T_HISTORICAL_ACTION_HAC";
 const char *Constants::T_ORGANIZATION_ORG = "T_ORGANIZATION_ORG";
 const char *Constants::T_PROBE_PRB = "T_PROBE_PRB";
 const char *Constants::T_VALUE_VAL = "T_VALUE_VAL";
-const char *Constants::T_HISTORICAL_VALUE_VAL = "T_HISTORICAL_VALUE_VAL";
+const char *Constants::T_HISTORICAL_VALUE_HVA = "T_HISTORICAL_VALUE_HVA";
 const char *Constants::T_INFORMATION_INF = "T_INFORMATION_INF";
 const char *Constants::T_PLUGIN_PLG = "T_PLUGIN_PLG";
 const char *Constants::T_WIDGET_VALUE_WVA = "T_WIDGET_VALUE_WVA";
@@ -31,6 +31,9 @@ const char *Constants::T_ALERT_VALUE_AVA = "T_ALERT_VALUE_AVA";
 const char *Constants::T_ALERT_PARAM_APA = "T_ALERT_PARAM_APA";
 const char *Constants::T_ALERT_TYPE_ATY = "T_ALERT_TYPE_ATY";
 const char *Constants::T_ALERT_CRITERIA_ACR = "T_ALERT_CRITERIA_ACR";
+const char *Constants::T_SOURCE_SRC = "T_SOURCE_SRC";
+const char *Constants::T_SOURCE_PARAMETER_SRP = "T_SOURCE_PARAMETER_SRP";
+const char *Constants::T_SOURCE_PARAMETER_VALUE_SPV = "T_SOURCE_PARAMETER_VALUE_SPV";
 
 Constants::Constants()
 {

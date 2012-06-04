@@ -23,7 +23,6 @@
 #include "Organization.h"
 
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "Plugin.h"
 
@@ -41,6 +40,10 @@
 #include "TabWidgetAssociation.h"
 
 #include "Addon.h"
+
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 class HistoricalAction;
 

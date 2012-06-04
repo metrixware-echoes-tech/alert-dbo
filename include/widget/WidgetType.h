@@ -26,6 +26,10 @@
 
 #include "Addon.h"
 
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
+
 class UnitType;
 class Widget;
 

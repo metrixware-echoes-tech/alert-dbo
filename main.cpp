@@ -2,7 +2,7 @@
 #include <Wt/WContainerWidget>
 #include <Wt/WServer>
 
-//#include "dboSpecialization.h"
+#include "dboSpecialization.h"
 
 #include "UserProfile.h"
 #include "UserRole.h"
@@ -18,7 +18,7 @@
 #include "UserValue.h"
 #include "UserAction.h"
 
-#include "Probe.h"
+
 
 #include "Organization.h"
 
@@ -45,6 +45,10 @@
 
 #include "Alert.h"
 #include "AlertHisto.h"
+
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 
 Wt::WApplication *createApplication(const Wt::WEnvironment& env)

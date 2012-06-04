@@ -11,8 +11,7 @@
 
 #include "Unit.h"
 
-#include "Probe.h"
-#include "ProbeId.h"
+
 
 #include "Value.h"
 #include "Information.h"
@@ -30,6 +29,10 @@
 #include "TabWidgetAssociation.h"
 
 #include "Addon.h"
+
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 class Organization : public Table
 {

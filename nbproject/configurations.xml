@@ -40,10 +40,14 @@
         </logicalFolder>
         <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
           <itemPath>include/plugin/Plugin.h</itemPath>
+          <itemPath>include/plugin/Source.h</itemPath>
+          <itemPath>include/plugin/SourceParameter.h</itemPath>
+          <itemPath>include/plugin/SourceParameterValue.h</itemPath>
         </logicalFolder>
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
           <itemPath>include/primaryKeys/HierarchyId.h</itemPath>
-          <itemPath>include/primaryKeys/ProbeId.h</itemPath>
+          <itemPath>include/primaryKeys/SourceId.h</itemPath>
+          <itemPath>include/primaryKeys/SourceParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/UserValueId.h</itemPath>
           <itemPath>include/primaryKeys/WidgetValueId.h</itemPath>
         </logicalFolder>
@@ -125,6 +129,9 @@
         </logicalFolder>
         <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
           <itemPath>src/plugin/Plugin.cpp</itemPath>
+          <itemPath>src/plugin/Source.cpp</itemPath>
+          <itemPath>src/plugin/SourceParameter.cpp</itemPath>
+          <itemPath>src/plugin/SourceParameterValue.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="probe" displayName="probe" projectFiles="true">
           <itemPath>src/probe/Probe.cpp</itemPath>

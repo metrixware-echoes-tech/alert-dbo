@@ -32,7 +32,7 @@
 
 #include "Plugin.h"
 
-#include "Probe.h"
+
 #include "Organization.h"
 
 #include "WidgetType.h"
@@ -53,6 +53,10 @@
 #include "AlertParam.h"
 #include "AlertType.h"
 #include "AlertCriteria.h"
+
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 class User;
 

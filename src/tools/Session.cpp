@@ -56,14 +56,14 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
     mapClass<Probe>(Constants::T_PROBE_PRB);
     mapClass<Value>(Constants::T_VALUE_VAL);
-    mapClass<HistoricalValue>(Constants::T_HISTORICAL_VALUE_VAL);
+    mapClass<HistoricalValue>(Constants::T_HISTORICAL_VALUE_HVA);
     
     mapClass<Unit>(Constants::T_UNIT_UNT);
     mapClass<UnitType>(Constants::T_UNIT_TYPE_UTY);
     
     mapClass<Widget>(Constants::T_WIDGET_WGT);
     mapClass<WidgetType>(Constants::T_WIDGET_TYPE_WTY);
-    mapClass<WidgetValue>(Constants::T_WIDGET_VALUE_WVA);
+//    mapClass<WidgetValue>(Constants::T_WIDGET_VALUE_WVA);
     
     mapClass<Tab>(Constants::T_TAB_TAB);
     mapClass<TabVersion>(Constants::T_TAB_VERSION_TVS);
@@ -77,6 +77,10 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<AlertParam>(Constants::T_ALERT_PARAM_APA);
     mapClass<AlertType>(Constants::T_ALERT_TYPE_ATY);
     mapClass<AlertCriteria>(Constants::T_ALERT_CRITERIA_ACR);
+    
+    mapClass<Source>(Constants::T_SOURCE_SRC);
+    mapClass<SourceParameter>(Constants::T_SOURCE_PARAMETER_SRP);
+    mapClass<SourceParameterValue>(Constants::T_SOURCE_PARAMETER_VALUE_SPV);
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");

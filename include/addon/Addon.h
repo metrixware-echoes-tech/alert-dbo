@@ -7,8 +7,8 @@
 
 #include "Unit.h"
 
+
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "Plugin.h"
 
@@ -28,6 +28,10 @@
 #include "TabWidgetAssociation.h"
 #include "TabVersion.h"
 
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
+
 class Plugin;
 
 class Addon : public Table
@@ -36,16 +40,15 @@ class Addon : public Table
         Addon();
         virtual ~Addon();
         
-        Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
         
         template<class Action>
         void persist(Action& a)
         {
-            //TJ
             Wt::Dbo::hasMany(a,
-                             plugins,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_ADO_PLG"); 
+                             sources,
+                             Wt::Dbo::ManyToOne,
+                             "SRC"); 
         }
     protected:
     private:

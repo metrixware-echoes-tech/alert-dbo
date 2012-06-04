@@ -7,7 +7,7 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "ProbeId.h"
+#include "Probe.h"
 #include "UserValueId.h"
 
 #include "UserField.h"
@@ -32,8 +32,8 @@
 #include "HistoricalValue.h"
 #include "Value.h"
 
+
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "Organization.h"
 
@@ -55,6 +55,9 @@
 #include "AlertParam.h"
 #include "AlertType.h"
 
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 
 class Constants
@@ -73,7 +76,7 @@ class Constants
         static const char *T_ORGANIZATION_ORG;
         static const char *T_PROBE_PRB;
         static const char *T_VALUE_VAL;
-        static const char *T_HISTORICAL_VALUE_VAL;
+        static const char *T_HISTORICAL_VALUE_HVA;
         static const char *T_INFORMATION_INF;
         static const char *T_PLUGIN_PLG;
         static const char *T_UNIT_UNT;
@@ -91,6 +94,9 @@ class Constants
         static const char *T_ALERT_PARAM_APA;
         static const char *T_ALERT_TYPE_ATY;
         static const char *T_ALERT_CRITERIA_ACR;
+        static const char *T_SOURCE_SRC;
+        static const char *T_SOURCE_PARAMETER_SRP;
+        static const char *T_SOURCE_PARAMETER_VALUE_SPV;
     protected:
     private:
 };

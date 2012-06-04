@@ -17,8 +17,8 @@
 
 #include "Organization.h"
 
+
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "Plugin.h"
 
@@ -41,6 +41,9 @@
 #include "UserValueId.h"
 #include "HierarchyId.h"
 
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 //class User;
 
 class Hierarchy : public Table

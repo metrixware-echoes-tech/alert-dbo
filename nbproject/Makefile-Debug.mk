@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/WidgetType.o \
 	${OBJECTDIR}/src/tools/Session.o \
 	${OBJECTDIR}/src/alert/AlertValue.o \
+	${OBJECTDIR}/src/plugin/SourceParameter.o \
 	${OBJECTDIR}/src/media/Media.o \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/alert/AlertType.o \
@@ -58,6 +59,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
+	${OBJECTDIR}/src/plugin/SourceParameterValue.o \
 	${OBJECTDIR}/src/widget/Widget.o \
 	${OBJECTDIR}/src/organization/OrganizationValue.o \
 	${OBJECTDIR}/src/tools/Table.o \
@@ -72,6 +74,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/AlertHisto.o \
 	${OBJECTDIR}/src/user/Hierarchy.o \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
+	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
 	${OBJECTDIR}/src/information/HistoricalValue.o \
 	${OBJECTDIR}/src/pack/Option.o
@@ -120,6 +123,11 @@ ${OBJECTDIR}/src/alert/AlertValue.o: src/alert/AlertValue.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertValue.o src/alert/AlertValue.cpp
+
+${OBJECTDIR}/src/plugin/SourceParameter.o: src/plugin/SourceParameter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameter.o src/plugin/SourceParameter.cpp
 
 ${OBJECTDIR}/src/media/Media.o: src/media/Media.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/media
@@ -221,6 +229,11 @@ ${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
 
+${OBJECTDIR}/src/plugin/SourceParameterValue.o: src/plugin/SourceParameterValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameterValue.o src/plugin/SourceParameterValue.cpp
+
 ${OBJECTDIR}/src/widget/Widget.o: src/widget/Widget.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
@@ -290,6 +303,11 @@ ${OBJECTDIR}/src/widget/TabWidgetAssociation.o: src/widget/TabWidgetAssociation.
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabWidgetAssociation.o src/widget/TabWidgetAssociation.cpp
+
+${OBJECTDIR}/src/plugin/Source.o: src/plugin/Source.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Source.o src/plugin/Source.cpp
 
 ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack

@@ -1,6 +1,8 @@
 #ifndef USERVALUE_H
 #define USERVALUE_H
 
+#include "Table.h"
+
 #include <Wt/Dbo/Dbo>
 
 #include "UserProfile.h"
@@ -10,15 +12,14 @@
 #include "Unit.h"
 #include "HistoricalAction.h"
 
-
 #include "UserValueId.h"
 #include "UserAction.h"
 #include "Hierarchy.h"
 
 #include "Organization.h"
 
+
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "Plugin.h"
 
@@ -39,15 +40,20 @@
 
 #include "UserValueId.h"
 
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 //class User;
 //class UserField;
 
-class UserValue
+class UserValue : public Table
 {
     public:
         UserValue();
         virtual ~UserValue();
+        
+        static std::string TRIGRAM;
         
         UserValueId uvid;
 

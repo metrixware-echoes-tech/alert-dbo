@@ -6,8 +6,8 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
+
 #include "Probe.h"
-#include "ProbeId.h"
 
 #include "HistoricalValue.h"
 #include "Value.h"
@@ -26,6 +26,10 @@
 #include "TabWidgetAssociation.h"
 
 #include "Addon.h"
+
+#include "Source.h"
+#include "SourceParameter.h"
+#include "SourceParameterValue.h"
 
 class Value;
 class HistoricalValue;
