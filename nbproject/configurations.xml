@@ -22,6 +22,7 @@
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>include/information/HistoricalValue.h</itemPath>
           <itemPath>include/information/Information.h</itemPath>
+          <itemPath>include/information/Syslog.h</itemPath>
           <itemPath>include/information/Value.h</itemPath>
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">
@@ -111,6 +112,7 @@
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>src/information/HistoricalValue.cpp</itemPath>
           <itemPath>src/information/Information.cpp</itemPath>
+          <itemPath>src/information/Syslog.cpp</itemPath>
           <itemPath>src/information/Value.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">

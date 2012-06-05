@@ -24,6 +24,7 @@ public:
     static std::string TRIGRAM;
     
     Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameterValue> > sourceParameterValues;
+    Wt::Dbo::collection<Wt::Dbo::ptr<Addon> > Addons;
     
     template<class Action>
     void persist(Action& a)
@@ -32,6 +33,12 @@ public:
                         sourceParameterValues,
                         Wt::Dbo::ManyToOne,
                         "SRP");
+        
+        //TJ
+        Wt::Dbo::hasMany(a,
+                        Addons,
+                        Wt::Dbo::ManyToMany,
+                        "TJ_ADO_SRP");
     }
 private:
 

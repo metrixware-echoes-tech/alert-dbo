@@ -49,6 +49,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class UserRole;
 class UserProfile;
 class Hierarchy;

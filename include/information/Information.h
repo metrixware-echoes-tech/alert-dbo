@@ -31,6 +31,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class Value;
 class HistoricalValue;
 class Plugin;
@@ -42,6 +44,8 @@ class Information2 : public Table
     public:
         Information2();
         virtual ~Information2();
+        
+        static std::string TRIGRAM;
         
         Wt::Dbo::ptr<Unit> unit;
 
@@ -64,13 +68,6 @@ class Information2 : public Table
                              historicalValues,
                              Wt::Dbo::ManyToOne,
                              "HIN");
-
-            //TJ
-
-            Wt::Dbo::hasMany(a,
-                             plugins,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_INF_PLG");
 
         }
     protected:

@@ -31,6 +31,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class WidgetType;
 class Tab;
 class TabWidgetAssociation;

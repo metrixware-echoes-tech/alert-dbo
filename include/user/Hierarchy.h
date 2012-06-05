@@ -44,6 +44,8 @@
 #include "Source.h"
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
+
+#include "Asset.h"
 //class User;
 
 class Hierarchy : public Table

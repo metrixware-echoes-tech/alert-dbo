@@ -34,6 +34,7 @@ const char *Constants::T_ALERT_CRITERIA_ACR = "T_ALERT_CRITERIA_ACR";
 const char *Constants::T_SOURCE_SRC = "T_SOURCE_SRC";
 const char *Constants::T_SOURCE_PARAMETER_SRP = "T_SOURCE_PARAMETER_SRP";
 const char *Constants::T_SOURCE_PARAMETER_VALUE_SPV = "T_SOURCE_PARAMETER_VALUE_SPV";
+const char *Constants::T_ASSET_AST = "T_ASSET_AST";
 
 Constants::Constants()
 {

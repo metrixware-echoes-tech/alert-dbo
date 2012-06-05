@@ -32,6 +32,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class Plugin;
 
 class Addon : public Table
@@ -41,6 +43,7 @@ class Addon : public Table
         virtual ~Addon();
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
+        Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameter> > sourceParameters;
         
         template<class Action>
         void persist(Action& a)
@@ -49,6 +52,12 @@ class Addon : public Table
                              sources,
                              Wt::Dbo::ManyToOne,
                              "SRC"); 
+            
+            //TJ
+            Wt::Dbo::hasMany(a,
+                             sourceParameters,
+                             Wt::Dbo::ManyToMany,
+                             "TJ_ADO_SRP"); 
         }
     protected:
     private:

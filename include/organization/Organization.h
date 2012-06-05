@@ -34,6 +34,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class Organization : public Table
 {
     public:

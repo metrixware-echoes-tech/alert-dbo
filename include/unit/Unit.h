@@ -44,6 +44,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class Information2;
 class UnitType;
 

@@ -38,6 +38,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class Tab;
 class Widget;
 class TabVersion;

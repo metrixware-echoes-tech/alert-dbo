@@ -30,6 +30,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class UnitType;
 class Widget;
 

@@ -58,6 +58,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class User;
 
 typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;

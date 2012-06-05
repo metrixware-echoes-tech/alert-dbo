@@ -67,10 +67,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/Alert.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
+	${OBJECTDIR}/src/information/Syslog.o \
+	${OBJECTDIR}/src/information/Information.o \
+	${OBJECTDIR}/src/user/HistoricalAction.o \
 	${OBJECTDIR}/src/user/User.o \
 	${OBJECTDIR}/src/user/UserField.o \
-	${OBJECTDIR}/src/user/HistoricalAction.o \
-	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/alert/AlertHisto.o \
 	${OBJECTDIR}/src/user/Hierarchy.o \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
@@ -269,6 +270,21 @@ ${OBJECTDIR}/src/user/UserRole.o: src/user/UserRole.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
 
+${OBJECTDIR}/src/information/Syslog.o: src/information/Syslog.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Syslog.o src/information/Syslog.cpp
+
+${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
+
+${OBJECTDIR}/src/user/HistoricalAction.o: src/user/HistoricalAction.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/HistoricalAction.o src/user/HistoricalAction.cpp
+
 ${OBJECTDIR}/src/user/User.o: src/user/User.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
@@ -278,16 +294,6 @@ ${OBJECTDIR}/src/user/UserField.o: src/user/UserField.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserField.o src/user/UserField.cpp
-
-${OBJECTDIR}/src/user/HistoricalAction.o: src/user/HistoricalAction.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/HistoricalAction.o src/user/HistoricalAction.cpp
-
-${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
 
 ${OBJECTDIR}/src/alert/AlertHisto.o: src/alert/AlertHisto.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert

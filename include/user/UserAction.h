@@ -45,6 +45,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class HistoricalAction;
 
 class UserAction : public Table

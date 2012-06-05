@@ -32,6 +32,10 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
+#include "Syslog.h"
+
 class Organization;
 class Value;
 class HistoricalValue;
@@ -48,6 +52,8 @@ class Probe : public Table
 
         Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
         Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
+        
+        Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
 
         template<class Action>
         void persist(Action& a)
@@ -63,6 +69,10 @@ class Probe : public Table
                              historicalValues,
                              Wt::Dbo::ManyToOne,
                              "HPR");
+            Wt::Dbo::hasMany(a,
+                             syslogs,
+                             Wt::Dbo::ManyToOne,
+                             "PRB");
         };
 
     protected:

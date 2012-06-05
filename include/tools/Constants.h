@@ -59,6 +59,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 
 class Constants
 {
@@ -97,6 +99,7 @@ class Constants
         static const char *T_SOURCE_SRC;
         static const char *T_SOURCE_PARAMETER_SRP;
         static const char *T_SOURCE_PARAMETER_VALUE_SPV;
+        static const char *T_ASSET_AST;
     protected:
     private:
 };

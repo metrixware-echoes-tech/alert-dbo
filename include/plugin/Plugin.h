@@ -33,10 +33,10 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
-class Value;
-class HistoricalValue;
-class Information2;
-class Addon;
+#include "Asset.h"
+
+class Source;
+class Asset;
 
 class Plugin : public Table
 {
@@ -44,33 +44,23 @@ class Plugin : public Table
         Plugin();
         virtual ~Plugin();
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
-        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Information2> > informations;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Addon> > addons;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
 
         template<class Action>
         void persist(Action& a)
         {
-            //User id as foreign key in other tables
+            //Plugin id as foreign key in other tables
             Wt::Dbo::hasMany(a,
-                             values,
+                             sources,
                              Wt::Dbo::ManyToOne,
                              "VPL");
-            Wt::Dbo::hasMany(a,
-                             historicalValues,
-                             Wt::Dbo::ManyToOne,
-                             "HPL");
-
+            
             //TJ
             Wt::Dbo::hasMany(a,
-                             informations,
+                             assets,
                              Wt::Dbo::ManyToMany,
-                             "TJ_INF_PLG");
-            Wt::Dbo::hasMany(a,
-                             addons,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_ADO_PLG"); 
+                             "TJ_AST_PLG");
        }
     protected:
     private:

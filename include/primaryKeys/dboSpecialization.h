@@ -40,6 +40,7 @@ class Information2;
 class HistoricalValue;
 class Probe;
 class SourceParameter;
+class Asset;
 
 //#include "WidgetValueId.h"
 
@@ -267,6 +268,14 @@ namespace Wt
             static const char *surrogateIdField()
             {
                 return "SRP_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<Asset> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "AST_ID";
             }
         };
 //        template<>

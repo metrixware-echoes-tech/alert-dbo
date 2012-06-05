@@ -30,6 +30,8 @@
 #include "SourceParameter.h"
 #include "SourceParameterValue.h"
 
+#include "Asset.h"
+
 class Plugin;
 class Probe;
 class Information2;
@@ -39,15 +41,15 @@ class HistoricalValue : public Table
     public:
         HistoricalValue();
         virtual ~HistoricalValue();
+        
+        static std::string TRIGRAM;
 
-        Wt::Dbo::ptr<Plugin> plugin;
         Wt::Dbo::ptr<Probe> probe;
         Wt::Dbo::ptr<Information2> information;
 
         template<class Action>
         void persist(Action& a)
         {
-            Wt::Dbo::belongsTo(a, plugin, "HOR");
             Wt::Dbo::belongsTo(a, probe, "HPR");
             Wt::Dbo::belongsTo(a, information, "HIN");
         }

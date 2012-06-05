@@ -81,6 +81,8 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<Source>(Constants::T_SOURCE_SRC);
     mapClass<SourceParameter>(Constants::T_SOURCE_PARAMETER_SRP);
     mapClass<SourceParameterValue>(Constants::T_SOURCE_PARAMETER_VALUE_SPV);
+    
+    mapClass<Asset>(Constants::T_ASSET_AST);
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");
