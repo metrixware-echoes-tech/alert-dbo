@@ -34,17 +34,19 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/plugin/Search.o \
 	${OBJECTDIR}/src/organization/OrganizationType.o \
 	${OBJECTDIR}/src/widget/WidgetType.o \
 	${OBJECTDIR}/src/tools/Session.o \
 	${OBJECTDIR}/src/alert/AlertValue.o \
 	${OBJECTDIR}/src/plugin/SourceParameter.o \
 	${OBJECTDIR}/src/media/Media.o \
-	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/alert/AlertType.o \
 	${OBJECTDIR}/src/probe/Probe.o \
+	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/alert/AlertParam.o \
+	${OBJECTDIR}/src/plugin/SearchParameterValue.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/user/UserProfile.o \
@@ -52,11 +54,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
 	${OBJECTDIR}/src/widget/WidgetValue.o \
-	${OBJECTDIR}/src/asset/Asset.o \
-	${OBJECTDIR}/src/addon/Addon.o \
-	${OBJECTDIR}/src/unit/Unit.o \
 	${OBJECTDIR}/src/information/Value.o \
 	${OBJECTDIR}/src/widget/TabVersion.o \
+	${OBJECTDIR}/src/asset/Asset.o \
+	${OBJECTDIR}/src/addon/Addon.o \
+	${OBJECTDIR}/src/plugin/SearchType.o \
+	${OBJECTDIR}/src/unit/Unit.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
 	${OBJECTDIR}/src/plugin/SourceParameterValue.o \
@@ -78,7 +81,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
 	${OBJECTDIR}/src/information/HistoricalValue.o \
-	${OBJECTDIR}/src/pack/Option.o
+	${OBJECTDIR}/src/pack/Option.o \
+	${OBJECTDIR}/src/plugin/SearchParameter.o
 
 
 # C Compiler Flags
@@ -104,6 +108,11 @@ LDLIBSOPTIONS=-lwt -lwtdbo -lwtdbopostgres -lwthttp -lboost_signals -lboost_syst
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/src/plugin/Search.o: src/plugin/Search.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Search.o src/plugin/Search.cpp
 
 ${OBJECTDIR}/src/organization/OrganizationType.o: src/organization/OrganizationType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
@@ -135,11 +144,6 @@ ${OBJECTDIR}/src/media/Media.o: src/media/Media.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/Media.o src/media/Media.cpp
 
-${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
-
 ${OBJECTDIR}/src/alert/AlertType.o: src/alert/AlertType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
@@ -150,6 +154,11 @@ ${OBJECTDIR}/src/probe/Probe.o: src/probe/Probe.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
 
+${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
@@ -159,6 +168,11 @@ ${OBJECTDIR}/src/alert/AlertParam.o: src/alert/AlertParam.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertParam.o src/alert/AlertParam.cpp
+
+${OBJECTDIR}/src/plugin/SearchParameterValue.o: src/plugin/SearchParameterValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameterValue.o src/plugin/SearchParameterValue.cpp
 
 ${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
@@ -195,6 +209,16 @@ ${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
 
+${OBJECTDIR}/src/information/Value.o: src/information/Value.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Value.o src/information/Value.cpp
+
+${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
+
 ${OBJECTDIR}/src/asset/Asset.o: src/asset/Asset.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/asset
 	${RM} $@.d
@@ -205,20 +229,15 @@ ${OBJECTDIR}/src/addon/Addon.o: src/addon/Addon.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/Addon.o src/addon/Addon.cpp
 
+${OBJECTDIR}/src/plugin/SearchType.o: src/plugin/SearchType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchType.o src/plugin/SearchType.cpp
+
 ${OBJECTDIR}/src/unit/Unit.o: src/unit/Unit.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/unit
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/Unit.o src/unit/Unit.cpp
-
-${OBJECTDIR}/src/information/Value.o: src/information/Value.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Value.o src/information/Value.cpp
-
-${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/widget
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
 
 ${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
@@ -329,6 +348,11 @@ ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Option.o src/pack/Option.cpp
+
+${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameter.o src/plugin/SearchParameter.cpp
 
 # Subprojects
 .build-subprojects:

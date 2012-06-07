@@ -41,6 +41,9 @@ class HistoricalValue;
 class Probe;
 class SourceParameter;
 class Asset;
+class Syslog;
+class SearchType;
+class SearchParameter;
 
 //#include "WidgetValueId.h"
 
@@ -276,6 +279,30 @@ namespace Wt
             static const char *surrogateIdField()
             {
                 return "AST_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<Syslog> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "SLO_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<SearchType> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "STY_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<SearchParameter> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return "SEP_ID";
             }
         };
 //        template<>

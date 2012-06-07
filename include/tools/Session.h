@@ -60,6 +60,13 @@
 
 #include "Asset.h"
 
+#include "Syslog.h"
+
+#include "Search.h"
+#include "SearchType.h"
+#include "SearchParameter.h"
+#include "SearchParameterValue.h"
+
 class User;
 
 typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;

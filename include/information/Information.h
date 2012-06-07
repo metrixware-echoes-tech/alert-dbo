@@ -33,12 +33,6 @@
 
 #include "Asset.h"
 
-class Value;
-class HistoricalValue;
-class Plugin;
-class Unit;
-
-
 class Information2 : public Table
 {
     public:

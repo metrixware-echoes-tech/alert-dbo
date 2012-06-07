@@ -83,6 +83,15 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<SourceParameterValue>(Constants::T_SOURCE_PARAMETER_VALUE_SPV);
     
     mapClass<Asset>(Constants::T_ASSET_AST);
+    
+    mapClass<Syslog>(Constants::T_SYSLOG_SLO);
+    
+    mapClass<Search>(Constants::T_SEARCH_SEA);
+    mapClass<SearchType>(Constants::T_SEARCH_TYPE_STY);
+    mapClass<SearchParameter>(Constants::T_SEARCH_PARAMETER_SEP);
+    mapClass<SearchParameterValue>(Constants::T_SEARCH_PARAMETER_VALUE_SEV);
+    
+    
 
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");
