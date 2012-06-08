@@ -54,7 +54,7 @@ class Plugin : public Table
             Wt::Dbo::hasMany(a,
                              sources,
                              Wt::Dbo::ManyToOne,
-                             "VPL");
+                             "SRC_PLG");
             
             //TJ
             Wt::Dbo::hasMany(a,

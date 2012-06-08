@@ -34,9 +34,17 @@
 
 #include "Asset.h"
 
+#include "Syslog.h"
+
+#include "InformationId.h"
+
 class Plugin;
 class Probe;
-class Information2;
+class Asset;
+class Syslog;
+//class Information2;
+
+
 
 class Value : public Table
 {
@@ -45,15 +53,19 @@ class Value : public Table
         virtual ~Value();
         
         static std::string TRIGRAM;
-
-        Wt::Dbo::ptr<Probe> probe;
-        Wt::Dbo::ptr<Information2> information;
+        
+        Wt::Dbo::ptr<Asset> asset;
+        Wt::Dbo::ptr<Syslog> syslog;
+        InformationId informationId;
 
         template<class Action>
         void persist(Action& a)
         {
-            Wt::Dbo::belongsTo(a, probe, "VPR");
-            Wt::Dbo::belongsTo(a, information, "VIN");
+            Wt::Dbo::field(a, informationId.searchId.id, "SEA_ID");
+            Wt::Dbo::field(a, informationId.searchId.sourceId.id, "SRC_ID");
+            Wt::Dbo::field(a, informationId.searchId.sourceId.plugin, "PLG_ID");
+            Wt::Dbo::belongsTo(a, asset, "VAL_AST");
+            Wt::Dbo::belongsTo(a, syslog, "VAL_SLO");
         }
 
     protected:

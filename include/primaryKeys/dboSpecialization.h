@@ -234,14 +234,6 @@ namespace Wt
             }
         };
         template<>
-        struct dbo_traits<Information2> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "INF_ID";
-            }
-        };
-        template<>
         struct dbo_traits<HistoricalValue> : public dbo_default_traits
         {
             static const char *surrogateIdField()

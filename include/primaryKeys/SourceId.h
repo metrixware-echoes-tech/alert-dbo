@@ -51,7 +51,7 @@ namespace Wt
                    const std::string& name, int size = -1)
         {
             field(a, soid.id, "SRC_ID");
-            Wt::Dbo::belongsTo(a, soid.plugin, "PLG_ID");
+            Wt::Dbo::belongsTo(a, soid.plugin, "SRC_PLG");
         }
         template<>
         struct dbo_traits<Source> : public dbo_default_traits

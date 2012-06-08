@@ -19,9 +19,21 @@ class Asset : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
         
+        Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
+        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
+        
         template<class Action>
         void persist(Action& a)
-        {         
+        { 
+            Wt::Dbo::hasMany(a,
+                             values,
+                             Wt::Dbo::ManyToOne,
+                             "VAL_AST");
+            Wt::Dbo::hasMany(a,
+                             historicalValues,
+                             Wt::Dbo::ManyToOne,
+                             "HVA_AST");
+            
             //TJ
             Wt::Dbo::hasMany(a,
                              plugins,

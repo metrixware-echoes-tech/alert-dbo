@@ -32,9 +32,11 @@
 
 #include "Asset.h"
 
+#include "InformationId.h"
+
 class Plugin;
 class Probe;
-class Information2;
+//class Information2;
 
 class HistoricalValue : public Table
 {
@@ -43,15 +45,19 @@ class HistoricalValue : public Table
         virtual ~HistoricalValue();
         
         static std::string TRIGRAM;
-
-        Wt::Dbo::ptr<Probe> probe;
-        Wt::Dbo::ptr<Information2> information;
+        
+        Wt::Dbo::ptr<Asset> asset;
+        Wt::Dbo::ptr<Syslog> syslog;
+        InformationId informationId;
 
         template<class Action>
         void persist(Action& a)
         {
-            Wt::Dbo::belongsTo(a, probe, "HPR");
-            Wt::Dbo::belongsTo(a, information, "HIN");
+            Wt::Dbo::field(a, informationId.searchId.id, "SEA_ID");
+            Wt::Dbo::field(a, informationId.searchId.sourceId.id, "SRC_ID");
+            Wt::Dbo::field(a, informationId.searchId.sourceId.plugin, "PLG_ID");
+            Wt::Dbo::belongsTo(a, asset, "HVA_AST");
+            Wt::Dbo::belongsTo(a, syslog, "HVA_SLO");
         }
 
     protected:
