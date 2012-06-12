@@ -57,9 +57,14 @@ class HistoricalAction : public Table
         virtual ~HistoricalAction();
 
         static std::string TRIGRAM;
-
+        
 	// attributes
+        Wt::WDateTime dateTime;
         Wt::WDateTime deleteTag;
+    //RHI : need 3 more fields
+        //  before;
+      //  after;
+      //  relative;
 
 	// methods
 
@@ -101,6 +106,8 @@ class HistoricalAction : public Table
                              actions,
                              Wt::Dbo::ManyToOne,
                              "ACT");
+            mapClassAttributesDates["DATETIME"]=this->dateTime;            
+            mapClassAttributesDates["DELETE"]=this->deleteTag;
 
         }
 };

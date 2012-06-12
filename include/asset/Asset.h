@@ -17,6 +17,12 @@ class Asset : public Table
         
         static std::string TRIGRAM;
         
+        std::string name;
+      //  bool assetIsHost;
+        Wt::WDateTime deleteTag;
+        
+        //RHI: foreign key probe_id to add.
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
@@ -39,6 +45,11 @@ class Asset : public Table
                              plugins,
                              Wt::Dbo::ManyToMany,
                              "TJ_AST_PLG");
+            mapClassAttributesStrings["NAME"]=this->name;
+     //     mapClassAttributesBools["IS_HOST"]=this->assetIsHost;
+            mapClassAttributesDates["DELETE"]=this->deleteTag;
+            
+            
        }
         
     protected:

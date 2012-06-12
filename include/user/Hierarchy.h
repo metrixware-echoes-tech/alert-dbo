@@ -55,6 +55,9 @@ class Hierarchy : public Table
         virtual ~Hierarchy();
         
         static std::string TRIGRAM;
+        
+        Wt::WDateTime deleteTag;
+        //RHI : PK/FK USR_ID and USR_ID_CHILD to add
 
         HierarchyId pk;
 
@@ -63,6 +66,7 @@ class Hierarchy : public Table
         {
 
             Wt::Dbo::id (a, pk, "PRIMARY_KEY");
+            mapClassAttributesDates["DELETE"]=this->deleteTag;
         }
     protected:
     private:

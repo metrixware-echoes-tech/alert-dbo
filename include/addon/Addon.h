@@ -42,6 +42,11 @@ class Addon : public Table
         Addon();
         virtual ~Addon();
         
+        static std::string TRIGRAM;
+        
+        std::string name;
+        Wt::WDateTime deleteTag;
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
         Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameter> > sourceParameters;
         
@@ -58,6 +63,8 @@ class Addon : public Table
                              sourceParameters,
                              Wt::Dbo::ManyToMany,
                              "TJ_ADO_SRP"); 
+            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesDates["DELETE"]=this->deleteTag;
         }
     protected:
     private:

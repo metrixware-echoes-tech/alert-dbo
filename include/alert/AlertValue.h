@@ -17,8 +17,12 @@ class AlertValue : public Table
         AlertValue();
         virtual ~AlertValue();
         
+        static std::string TRIGRAM;
+        
+        std::string value;
         Wt::Dbo::ptr<Alert> alert;
         Wt::Dbo::ptr<AlertParam> alertParam;
+        Wt::WDateTime deleteTag;
         
         template<class Action>
         void persist(Action& a)
@@ -26,7 +30,8 @@ class AlertValue : public Table
             Wt::Dbo::id(a,alert,"AVA");
             
             Wt::Dbo::belongsTo(a,alertParam,"APA");
-            
+            mapClassAttributesStrings["VALUE"]=this->value;
+            mapClassAttributesDates["DELETE"]=this->deleteTag;       
         }
     protected:
     private:

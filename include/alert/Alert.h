@@ -19,6 +19,14 @@ class Alert : public Table
     public:
         Alert();
         virtual ~Alert();
+        
+        static std::string TRIGRAM;
+        
+        std::string name;
+        Wt::WDateTime date;
+        Wt::WDateTime deleteTag;
+        
+        // RHI: manque TJ_ALE_USR_MED
         Wt::Dbo::ptr<AlertType> alertType;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertHisto> > alertHistos;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
@@ -36,6 +44,9 @@ class Alert : public Table
                              alertValues,
                              Wt::Dbo::ManyToOne,
                              "ALE_ID");
+            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesDates["DATE"]=this->date;
+            mapClassAttributesDates["DELETE"]=this->deleteTag;
         }
     protected:
     private:

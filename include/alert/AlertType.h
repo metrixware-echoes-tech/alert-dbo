@@ -16,6 +16,12 @@ class AlertType : public Table
     public:
         AlertType();
         virtual ~AlertType();
+        
+        static std::string TRIGRAM;
+        
+        std::string name;
+        Wt::WDateTime deleteTag;
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertCriteria> > alertCriterias;
         
@@ -30,6 +36,8 @@ class AlertType : public Table
                              alertCriterias,
                              Wt::Dbo::ManyToMany,
                              "TJ_ATY_ACR");
+            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesDates["DELETE"]=this->deleteTag;
         }
         
     protected:
