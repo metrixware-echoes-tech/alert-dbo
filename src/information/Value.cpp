@@ -1,7 +1,7 @@
 // ordres des includes important !
 #include "Value.h"
 
-Value::Value()
+Value::Value() : Table()
 {
     //ctor
 }

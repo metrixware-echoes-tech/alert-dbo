@@ -1,8 +1,11 @@
 #ifndef VALUE_H
 #define VALUE_H
 
+#include <Wt/Dbo/Types>
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
+#include <Wt/WDateTime>
+#include <Wt/WGlobal>
 
 #include "Table.h"
 
@@ -57,6 +60,10 @@ class Value : public Table
         Wt::Dbo::ptr<Asset> asset;
         Wt::Dbo::ptr<Syslog> syslog;
         InformationId informationId;
+        int mNumSubSearch;
+        std::string value;
+        Wt::WDateTime CreatedDate;
+        //Wt::WDateTime deleteTag;
 
         template<class Action>
         void persist(Action& a)
@@ -66,6 +73,8 @@ class Value : public Table
             Wt::Dbo::field(a, informationId.searchId.sourceId.plugin, "PLG_ID");
             Wt::Dbo::belongsTo(a, asset, "VAL_AST");
             Wt::Dbo::belongsTo(a, syslog, "VAL_SLO");
+            
+            Wt::Dbo::field(a,mNumSubSearch, "SUB_SEARCH_NUM");
         }
 
     protected:

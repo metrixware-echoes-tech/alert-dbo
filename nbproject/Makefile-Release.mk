@@ -71,8 +71,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
 	${OBJECTDIR}/src/information/Syslog.o \
-	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/user/HistoricalAction.o \
+	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/user/User.o \
 	${OBJECTDIR}/src/user/UserField.o \
 	${OBJECTDIR}/src/alert/AlertHisto.o \
@@ -294,15 +294,15 @@ ${OBJECTDIR}/src/information/Syslog.o: src/information/Syslog.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Syslog.o src/information/Syslog.cpp
 
-${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
-
 ${OBJECTDIR}/src/user/HistoricalAction.o: src/user/HistoricalAction.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/HistoricalAction.o src/user/HistoricalAction.cpp
+
+${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
 
 ${OBJECTDIR}/src/user/User.o: src/user/User.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user

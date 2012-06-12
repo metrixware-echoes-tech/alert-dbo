@@ -10,7 +10,6 @@ std::string User::TRIGRAM = "USR";
 
 User::User() : Table()
 {
-
 }
 
 User::User(std::string firstName, std::string lastName, std::string eMail, std::string password) : Table()

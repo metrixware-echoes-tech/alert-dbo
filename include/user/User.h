@@ -72,7 +72,6 @@ class User : public Table
         std::string lastName;
         std::string eMail;
         std::string password;
-        Wt::WDateTime deleteTag;
 
         static std::string getName();
 
@@ -90,15 +89,14 @@ class User : public Table
         template<class Action>
         void persist(Action& a)
         {
-            std::map <std::string,std::string> mapClassAttributesStrings;
+            
             mapClassAttributesStrings["FIRST_NAME"]=this->firstName;
             mapClassAttributesStrings["LAST_NAME"]=this->lastName;
             mapClassAttributesStrings["MAIL"]=this->eMail;
             mapClassAttributesStrings["PWD"]=this->password;
 
-            std::map <std::string,Wt::WDateTime> mapClassAttributesDates;
             mapClassAttributesDates["DELETE"]=this->deleteTag;
-
+            
             std::map<std::string,std::string>::iterator itStrings;
             for(itStrings = mapClassAttributesStrings.begin(); itStrings != mapClassAttributesStrings.end(); ++itStrings)
             {
@@ -110,7 +108,7 @@ class User : public Table
             {
                 Wt::Dbo::field(a, (*itDates).second, formatColumnName(*this,(*itDates).first));
             }
-
+            
             //Other tables ids as foreign keys for user table
 
             Wt::Dbo::belongsTo(a, userRole, "URO");
