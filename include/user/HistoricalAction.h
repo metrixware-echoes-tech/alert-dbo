@@ -61,10 +61,10 @@ class HistoricalAction : public Table
 	// attributes
         Wt::WDateTime dateTime;
         Wt::WDateTime deleteTag;
-    //RHI : need 3 more fields
-        //  before;
-      //  after;
-      //  relative;
+    
+        int actionBefore;
+        int actionAfter;
+        int actionRelative;
 
 	// methods
 
@@ -108,6 +108,10 @@ class HistoricalAction : public Table
                              "ACT");
             mapClassAttributesDates["DATETIME"]=this->dateTime;            
             mapClassAttributesDates["DELETE"]=this->deleteTag;
+            //mapClassAttributesInts["DEFORE"]=this->actionBefore;
+           // mapClassAttributesInts["AFTER"]=this->actionAfter;
+           // mapClassAttributesInts["RELATIVE"]=this->actionRelative;
+            
 
         }
 };

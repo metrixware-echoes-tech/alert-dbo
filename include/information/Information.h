@@ -47,7 +47,10 @@ class Information2 : public Table
         
         Wt::Dbo::ptr<Unit> unit;
         
-        
+        std::string name;
+        int subSearchNumber;
+        Wt::WDateTime deleteTag;
+                   
 //        Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
 //        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
 //        //TJ
@@ -68,6 +71,9 @@ class Information2 : public Table
 //                             historicalValues,
 //                             Wt::Dbo::ManyToOne,
 //                             "HIN");
+            mapClassAttributesDates["DELETE"]=this->deleteTag;
+            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesDates["SUB-SEA_NUM"]=this->subSearchNumber;       
 
         }
     protected:
