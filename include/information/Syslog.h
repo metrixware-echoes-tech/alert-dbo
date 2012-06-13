@@ -20,6 +20,17 @@ public:
     Syslog();
     Syslog(const Syslog& orig);
     virtual ~Syslog();
+
+    static std::string TRIGRAM;
+    Wt::WDateTime deleteTag;
+    std::string sd;
+    Wt::WDateTime rcptDate;  
+    Wt::WDateTime sentDate;
+    std::string hostname;
+    std::string appName;
+    int procId;
+    int msgId;
+    int syslogVers;
     
     Wt::Dbo::ptr<Probe> probe;
     Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
@@ -38,6 +49,14 @@ public:
                             historicalValues,
                             Wt::Dbo::ManyToOne,
                             "HVA_SLO");
+        mapClassAttributesStrings["SD"]=this->sd;  
+        mapClassAttributesDates["RCPT_DATE"]=this->rcptDate;  
+        mapClassAttributesDates["SENT_DATE"]=this->sentDate;
+        mapClassAttributesStrings["HOSTNAME"]=this->hostname;          
+        mapClassAttributesStrings["APP-NAME"]=this->appName;  
+      //  mapClassAttributesInts["PROCID"]=this->procId; 
+      //  mapClassAttributesInts["MSGID"]=this->msgId; 
+      //  mapClassAttributesInts["VER"]=this->syslogVers;         
     }
 private:
 

@@ -45,11 +45,19 @@ class Organization : public Table
         static std::string TRIGRAM;
 
         // attributes
+        std::string name;
+        std::string address;
+        std::string cp;
+        std::string city;
+        
         Wt::WDateTime deleteTag;
 
 
         // methods
 
+        //RHI : manque lien avec PACK et ORGANISATION VALUE et TYPE
+        
+        
         // dbo collections (This table id as foreign key in other tables)
         Wt::Dbo::collection<Wt::Dbo::ptr<User> > user;
         Wt::Dbo::collection<Wt::Dbo::ptr<Probe> > probes;
@@ -84,6 +92,10 @@ class Organization : public Table
                              probes,
                              Wt::Dbo::ManyToOne,
                              "ORG_ID");
+            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesStrings["ADR"]=this->address;   
+            mapClassAttributesStrings["CP"]=this->cp;
+            mapClassAttributesStrings["CITY"]=this->city;                  
        }
 };
 

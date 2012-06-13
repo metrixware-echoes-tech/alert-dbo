@@ -56,6 +56,8 @@ class UserAction : public Table
         virtual ~UserAction();
 
         static std::string TRIGRAM;
+        
+        std::string name;
 
 	// attributes
 	Wt::WDateTime deleteTag;
@@ -68,7 +70,7 @@ class UserAction : public Table
         Wt::Dbo::ptr<HistoricalAction> historicalAction;
 
         template<class Action>
-        void persist(Action& a)
+        void persist(Action& a) 
         {
             std::map <std::string,std::string> mapClassAttributesStrings;
 
@@ -90,7 +92,7 @@ class UserAction : public Table
             //Other tables ids as foreign keys for user table
 
             Wt::Dbo::belongsTo(a, historicalAction, "ACT");
-
+            mapClassAttributesStrings["NAME"]=this->name;            
         }
 };
 namespace Wt {

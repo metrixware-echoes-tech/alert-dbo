@@ -24,7 +24,8 @@ public:
     virtual ~Source();
     
     static std::string TRIGRAM;
-
+    Wt::WDateTime deleteTag;  
+    
     SourceId pk;
     
     Wt::Dbo::ptr<Addon> addon;
@@ -35,6 +36,7 @@ public:
         Wt::Dbo::id (a, pk, "PRIMARY_KEY");
         
         Wt::Dbo::belongsTo(a, addon, "ADO");
+        mapClassAttributesDates["DELETE"]=this->deleteTag;        
     }
      
 private:

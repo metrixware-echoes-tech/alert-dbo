@@ -23,6 +23,10 @@ public:
     
     static std::string TRIGRAM;
     
+    Wt::WDateTime deleteTag;          
+    std::string name;
+    std::string format;    
+    
     Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameterValue> > sourceParameterValues;
     Wt::Dbo::collection<Wt::Dbo::ptr<Addon> > Addons;
     
@@ -39,6 +43,9 @@ public:
                         Addons,
                         Wt::Dbo::ManyToMany,
                         "TJ_ADO_SRP");
+        mapClassAttributesDates["DELETE"]=this->deleteTag;
+        mapClassAttributesStrings["NAME"]=this->name;    
+        mapClassAttributesStrings["FORMAT"]=this->format;         
     }
 private:
 

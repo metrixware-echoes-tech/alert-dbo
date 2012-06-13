@@ -19,6 +19,11 @@ public:
     SearchParameter(const SearchParameter& orig);
     virtual ~SearchParameter();
     
+    Wt::WDateTime deleteTag;
+    static std::string TRIGRAM;             
+    std::string name;
+    std::string format;    
+    
     Wt::Dbo::collection<Wt::Dbo::ptr<SearchType> > searchTypes;
     
     template<class Action>
@@ -28,6 +33,9 @@ public:
                         searchTypes,
                         Wt::Dbo::ManyToMany,
                         "TJ_STY_SEP");
+        mapClassAttributesDates["DELETE"]=this->deleteTag;
+        mapClassAttributesStrings["NAME"]=this->name;            
+        mapClassAttributesStrings["FORMAT"]=this->format;           
     }
 private:
 

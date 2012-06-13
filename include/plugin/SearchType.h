@@ -14,11 +14,15 @@
 
 #include "Search.h"
 
-class SearchType {
+class SearchType : public Table {
 public:
     SearchType();
     SearchType(const SearchType& orig);
     virtual ~SearchType();
+    
+    Wt::WDateTime deleteTag;
+    static std::string TRIGRAM;             
+    std::string name;
     
     Wt::Dbo::collection<Wt::Dbo::ptr<Search> > searches;
     Wt::Dbo::collection<Wt::Dbo::ptr<SearchParameter> > searchParameters;
@@ -37,6 +41,8 @@ public:
                         searchParameters,
                         Wt::Dbo::ManyToMany,
                         "TJ_STY_SEP");
+        mapClassAttributesDates["DELETE"]=this->deleteTag;
+        mapClassAttributesStrings["NAME"]=this->name;  
     }
     
 private:

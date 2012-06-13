@@ -25,6 +25,10 @@ public:
     
     static std::string TRIGRAM;
     
+    Wt::WDateTime deleteTag;          
+    std::string value;
+   
+    
     SourceParameterValueId pk;
     
     //Wt::Dbo::ptr<SourceParameter> sourceParameter;
@@ -34,6 +38,8 @@ public:
     {
         Wt::Dbo::id (a, pk, "PRIMARY_KEY");
         //Wt::Dbo::belongsTo(a, sourceParameter, "SRP");
+        mapClassAttributesDates["DELETE"]=this->deleteTag;
+        mapClassAttributesStrings["VALUE"]=this->value;         
     }
 private:
 

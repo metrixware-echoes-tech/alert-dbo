@@ -45,8 +45,14 @@ class Probe : public Table
     public:
         Probe();
         virtual ~Probe();
+   
 
 //        ProbeId pk;
+        
+       Wt::WDateTime deleteTag;
+       static std::string TRIGRAM;             
+       std::string name;
+       std::string key;
         
         Wt::Dbo::ptr<Organization> organization;
 
@@ -73,6 +79,9 @@ class Probe : public Table
                              syslogs,
                              Wt::Dbo::ManyToOne,
                              "PRB");
+            mapClassAttributesDates["DELETE"]=this->deleteTag;
+            mapClassAttributesStrings["NAME"]=this->name;            
+            mapClassAttributesStrings["KEY"]=this->key;              
         };
 
     protected:

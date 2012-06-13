@@ -73,7 +73,7 @@ class Information2 : public Table
 //                             "HIN");
             mapClassAttributesDates["DELETE"]=this->deleteTag;
             mapClassAttributesStrings["NAME"]=this->name;
-            mapClassAttributesDates["SUB-SEA_NUM"]=this->subSearchNumber;       
+            mapClassAttributesStrings["SUB-SEA_NUM"]=this->subSearchNumber;       
 
         }
     protected:

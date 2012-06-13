@@ -15,11 +15,15 @@
 #include "SearchParameterValueId.h"
 #include "SearchParameter.h"
 
-class SearchParameterValue {
+class SearchParameterValue : public Table {
 public:
     SearchParameterValue();
     SearchParameterValue(const SearchParameterValue& orig);
     virtual ~SearchParameterValue();
+    
+    Wt::WDateTime deleteTag;
+    static std::string TRIGRAM;             
+    std::string value;
     
     SearchParameterValueId searchParameterValueId;
     
@@ -27,6 +31,8 @@ public:
     void persist(Action& a)
     {
         Wt::Dbo::id(a,searchParameterValueId,"PRIMARY_KEY");
+        mapClassAttributesDates["DELETE"]=this->deleteTag;
+        mapClassAttributesStrings["VALUE"]=this->value;  
     }
 private:
 
