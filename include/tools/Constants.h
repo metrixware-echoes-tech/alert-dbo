@@ -1,67 +1,15 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#include "Table.h"
+#include "MainIncludeFile.h"
 
 #include <string>
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "Probe.h"
 #include "UserValueId.h"
 
-#include "UserField.h"
-#include "UserRole.h"
-#include "UserProfile.h"
-#include "User.h"
-
-#include "Unit.h"
-
-#include "Hierarchy.h"
-#include "HistoricalAction.h"
-#include "UserAction.h"
-#include "UserValue.h"
-#include "UserValueId.h"
-#include "HistoricalAction.h"
-
-#include "Plugin.h"
-
-#include "Information.h"
-
-#include "Information.h"
-#include "HistoricalValue.h"
-#include "Value.h"
-
-
-#include "Probe.h"
-
-#include "Organization.h"
-
-#include "WidgetType.h"
-#include "Widget.h"
 #include "WidgetValueId.h"
-
-#include "UnitType.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Alert.h"
-#include "AlertHisto.h"
-#include "AlertValue.h"
-#include "AlertParam.h"
-#include "AlertType.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
-
-#include "Syslog.h"
 
 
 class Constants

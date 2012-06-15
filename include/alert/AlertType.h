@@ -1,12 +1,9 @@
 #ifndef ALERTTYPE_H
 #define ALERTTYPE_H
 
-#include "Table.h"
-
 #include <Wt/Dbo/Dbo>
 
-#include "Alert.h"
-#include "AlertCriteria.h"
+#include "MainIncludeFile.h"
 
 class Alert;
 class AlertCriteria;

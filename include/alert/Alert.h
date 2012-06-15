@@ -1,14 +1,10 @@
 #ifndef ALERT_H
 #define ALERT_H
 
-#include "Table.h"
-#include "AlertHisto.h"
-#include "AlertValue.h"
-#include "AlertParam.h"
-#include "AlertType.h"
-#include "AlertCriteria.h"
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
+
+#include "MainIncludeFile.h"
 
 class AlertHisto;
 class AlertValue;

@@ -22,7 +22,7 @@ AS=as
 
 # Macros
 CND_PLATFORM=GNU-Linux-x86
-CND_CONF=Debug
+CND_CONF=SharedObject
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -89,8 +89,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-std=c++0x
-CXXFLAGS=-std=c++0x
+CCFLAGS=-std=c++0x -fPIC
+CXXFLAGS=-std=c++0x -fPIC
 
 # Fortran Compiler Flags
 FFLAGS=

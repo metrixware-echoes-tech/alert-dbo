@@ -8,14 +8,11 @@
 #ifndef SEARCH_H
 #define	SEARCH_H
 
-#include "Table.h"
-
 #include "Wt/Dbo/Dbo"
 
+#include "MainIncludeFile.h"
+
 #include "SearchId.h"
-#include "Plugin.h"
-#include "SearchType.h"
-#include "SearchParameter.h"
 
 class Search : public Table {
 public:

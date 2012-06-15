@@ -3,5 +3,6 @@
 #
 # NOCDDL
 #
-# Debug configuration
+# SharedObject configuration
 # Release configuration
+# Application configuration

@@ -1,49 +1,14 @@
 #ifndef USERFIELD_H
 #define USERFIELD_H
 
-#include "Table.h"
 #include <Wt/Dbo/Dbo>
 
-#include "Hierarchy.h"
+#include "MainIncludeFile.h"
 #include "HierarchyId.h"
-#include "HistoricalAction.h"
-#include "User.h"
-#include "UserProfile.h"
-#include "UserRole.h"
-#include "UserValue.h"
 #include "UserValueId.h"
-#include "UserAction.h"
 
-#include "Organization.h"
-
-#include "Probe.h"
-
-#include "Plugin.h"
-
-#include "Information.h"
-#include "HistoricalValue.h"
-#include "Value.h"
-
-#include "Widget.h"
-#include "WidgetType.h"
-
-#include "Unit.h"
-#include "UnitType.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
-
-class User;
-class UserValue;
+//class User;
+//class UserValue;
 
 class UserField : public Table
 {

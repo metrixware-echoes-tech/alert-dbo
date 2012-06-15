@@ -8,11 +8,9 @@
 #ifndef SEARCHTYPE_H
 #define	SEARCHTYPE_H
 
-#include "Table.h"
-
 #include <Wt/Dbo/Dbo>
 
-#include "Search.h"
+#include "MainIncludeFile.h"
 
 class SearchType : public Table {
 public:

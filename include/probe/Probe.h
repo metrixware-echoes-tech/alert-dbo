@@ -1,40 +1,9 @@
 #ifndef PROBE_H
 #define PROBE_H
 
-#include "Table.h"
 #include <Wt/Dbo/Dbo>
 
-#include "Probe.h"
-
-
-#include "Unit.h"
-#include "Organization.h"
-
-#include "Plugin.h"
-
-#include "Information.h"
-#include "HistoricalValue.h"
-#include "Value.h"
-
-#include "WidgetType.h"
-#include "Widget.h"
-#include "WidgetValueId.h"
-
-#include "UnitType.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
-
-#include "Syslog.h"
+#include "MainIncludeFile.h"
 
 class Organization;
 class Value;

@@ -1,7 +1,6 @@
 #ifndef ACTION_H
 #define ACTION_H
 
-#include "Table.h"
 #include <string>
 
 // include Dbo
@@ -9,45 +8,9 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 
-#include "Hierarchy.h"
-#include "Unit.h"
-#include "UserRole.h"
+#include "MainIncludeFile.h"
 
-#include "UserField.h"
-#include "UserProfile.h"
-#include "User.h"
-#include "UserValue.h"
-#include "UserValueId.h"
-#include "HistoricalAction.h"
-
-#include "Organization.h"
-
-#include "Probe.h"
-
-#include "Plugin.h"
-
-#include "Information.h"
-#include "HistoricalValue.h"
-#include "Value.h"
-
-#include "WidgetType.h"
-#include "Widget.h"
-
-#include "UnitType.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
-
-class HistoricalAction;
+//class HistoricalAction;
 
 class UserAction : public Table
 {

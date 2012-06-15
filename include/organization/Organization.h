@@ -1,7 +1,6 @@
 #ifndef ORGANIZATION_H
 #define ORGANIZATION_H
 
-#include "Table.h"
 #include <string>
 
 // include Dbo
@@ -9,32 +8,7 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 
-#include "Unit.h"
-
-
-
-#include "Value.h"
-#include "Information.h"
-#include "HistoricalValue.h"
-
-#include "Plugin.h"
-
-#include "WidgetType.h"
-#include "Widget.h"
-
-#include "UnitType.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
+#include "MainIncludeFile.h"
 
 class Organization : public Table
 {

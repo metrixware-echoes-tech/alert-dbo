@@ -5,35 +5,7 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 
-#include "Table.h"
-
-#include "Unit.h"
-
-
-#include "Probe.h"
-
-#include "Organization.h"
-
-#include "HistoricalValue.h"
-#include "Value.h"
-#include "Information.h"
-
-#include "WidgetType.h"
-#include "Widget.h"
-
-#include "UnitType.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
+#include "MainIncludeFile.h"
 
 class Source;
 class Asset;

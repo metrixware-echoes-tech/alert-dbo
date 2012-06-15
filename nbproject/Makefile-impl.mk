@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=dbo
 
 # Active Configuration
-DEFAULTCONF=Debug
+DEFAULTCONF=SharedObject
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Debug Release 
+ALLCONFS=SharedObject Release Application 
 
 
 # build

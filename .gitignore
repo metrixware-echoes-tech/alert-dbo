@@ -17,3 +17,7 @@
 /dist/Release/
 .dep.inc
 
+/build/Application/
+/dist/Application/
+/build/SharedObject/
+/dist/SharedObject/

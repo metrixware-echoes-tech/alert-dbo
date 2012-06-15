@@ -8,12 +8,9 @@
 #ifndef SOURCEPARAMETERVALUE_H
 #define	SOURCEPARAMETERVALUE_H
 
-#include "Table.h"
+#include "MainIncludeFile.h"
 #include "SourceParameterValueId.h"
 #include <Wt/Dbo/Dbo>
-#include "SourceParameter.h"
-
-#include "Plugin.h"
 
 class SourceParameter;
 

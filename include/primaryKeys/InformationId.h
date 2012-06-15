@@ -8,8 +8,9 @@
 #ifndef INFORMATIONID_H
 #define	INFORMATIONID_H
 
+#include "MainIncludeFile.h"
+
 #include "SearchId.h"
-#include "Information.h"
 
 class Information2;
 

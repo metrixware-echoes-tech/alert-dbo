@@ -65,6 +65,7 @@
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>include/tools/AuthApplication.h</itemPath>
           <itemPath>include/tools/Constants.h</itemPath>
+          <itemPath>include/tools/MainIncludeFile.h</itemPath>
           <itemPath>include/tools/PostgresConnector.h</itemPath>
           <itemPath>include/tools/Session.h</itemPath>
           <itemPath>include/tools/Table.h</itemPath>
@@ -224,7 +225,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="2">
+    <conf name="SharedObject" type="2">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
@@ -248,7 +249,7 @@
             <pElem>include/widget</pElem>
             <pElem>include/primaryKeys</pElem>
           </incDir>
-          <commandLine>-std=c++0x</commandLine>
+          <commandLine>-std=c++0x -fPIC</commandLine>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
@@ -280,6 +281,44 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+      </compileType>
+    </conf>
+    <conf name="Application" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <commandlineTool>distcc</commandlineTool>
+          <incDir>
+            <pElem>include/addon</pElem>
+            <pElem>include/alert</pElem>
+            <pElem>include/asset</pElem>
+            <pElem>include/information</pElem>
+            <pElem>include/media</pElem>
+            <pElem>include/organization</pElem>
+            <pElem>include/pack</pElem>
+            <pElem>include/plugin</pElem>
+            <pElem>include/probe</pElem>
+            <pElem>include/tools</pElem>
+            <pElem>include/unit</pElem>
+            <pElem>include/user</pElem>
+            <pElem>include/widget</pElem>
+            <pElem>include/primaryKeys</pElem>
+          </incDir>
+          <commandLine>-std=c++0x -fPIC</commandLine>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>wt</linkerLibLibItem>
+            <linkerLibLibItem>wtdbo</linkerLibLibItem>
+            <linkerLibLibItem>wtdbopostgres</linkerLibLibItem>
+            <linkerLibLibItem>wthttp</linkerLibLibItem>
+            <linkerLibLibItem>boost_signals</linkerLibLibItem>
+            <linkerLibLibItem>boost_system</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
     </conf>
   </confs>

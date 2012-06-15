@@ -8,8 +8,7 @@
 #ifndef SEARCHPARAMETER_H
 #define	SEARCHPARAMETER_H
 
-#include "Table.h"
-#include "SearchType.h"
+#include "MainIncludeFile.h"
 
 #include <Wt/Dbo/Dbo>
 

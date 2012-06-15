@@ -5,11 +5,9 @@
  * Created on 5 juin 2012, 17:44
  */
 
-#include "Table.h"
-
 #include <Wt/Dbo/Dbo>
 
-#include "Probe.h"
+#include "MainIncludeFile.h"
 
 #ifndef SYSLOG_H
 #define	SYSLOG_H

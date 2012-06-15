@@ -1,11 +1,9 @@
 #ifndef ASSET_H
 #define ASSET_H
 
-#include "Table.h"
-
 #include <Wt/Dbo/Dbo>
 
-#include "Plugin.h"
+#include "MainIncludeFile.h"
 
 class Plugin;
 

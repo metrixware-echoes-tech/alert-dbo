@@ -9,7 +9,7 @@
 
 class Session;
 
-class PostgresConnector
+class WTDBO_API PostgresConnector
 {
     public:
         PostgresConnector(std::string databaseName,std::string userName,std::string databaseURL,std::string databasePort,std::string userPwd);

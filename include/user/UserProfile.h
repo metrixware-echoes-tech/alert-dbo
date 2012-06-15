@@ -1,52 +1,12 @@
 #ifndef USERPROFILE_H
 #define USERPROFILE_H
 
-#include "Table.h"
-
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "UserRole.h"
-#include "User.h"
-#include "Unit.h"
-
-#include "HistoricalAction.h"
-
-#include "UserAction.h"
-#include "UserField.h"
-#include "Hierarchy.h"
-#include "UserValue.h"
+#include "MainIncludeFile.h"
 #include "UserValueId.h"
 
-#include "Organization.h"
-
-
-#include "Probe.h"
-
-#include "Plugin.h"
-
-#include "Information.h"
-#include "HistoricalValue.h"
-#include "Value.h"
-
-#include "WidgetType.h"
-#include "Widget.h"
-
-#include "UnitType.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
-
-//class User;
 
 class UserProfile : public Table
 {

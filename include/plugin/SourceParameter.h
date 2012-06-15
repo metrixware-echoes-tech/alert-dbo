@@ -8,8 +8,7 @@
 #ifndef SOURCEPARAMETER_H
 #define	SOURCEPARAMETER_H
 
-#include "Table.h"
-#include "SourceParameterValue.h"
+#include "MainIncludeFile.h"
 
 #include <Wt/Dbo/Dbo>
 

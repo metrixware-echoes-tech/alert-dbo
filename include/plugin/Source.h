@@ -8,13 +8,10 @@
 #ifndef SOURCE_H
 #define	SOURCE_H
 
-#include "Table.h"
 #include <Wt/Dbo/Dbo>
 
+#include "MainIncludeFile.h"
 #include "SourceId.h"
-#include "Plugin.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
 
 class Source : public Table
 {
