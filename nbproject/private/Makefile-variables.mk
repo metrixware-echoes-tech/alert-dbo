@@ -6,3 +6,4 @@
 # SharedObject configuration
 # Release configuration
 # Application configuration
+# Static_Lib configuration

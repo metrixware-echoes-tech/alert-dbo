@@ -307,7 +307,7 @@
             <pElem>include/widget</pElem>
             <pElem>include/primaryKeys</pElem>
           </incDir>
-          <commandLine>-std=c++0x -fPIC</commandLine>
+          <commandLine>-std=c++0x</commandLine>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
@@ -319,6 +319,36 @@
             <linkerLibLibItem>boost_system</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Static_Lib" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <commandlineTool>distcc</commandlineTool>
+          <incDir>
+            <pElem>include/addon</pElem>
+            <pElem>include/alert</pElem>
+            <pElem>include/asset</pElem>
+            <pElem>include/information</pElem>
+            <pElem>include/media</pElem>
+            <pElem>include/organization</pElem>
+            <pElem>include/pack</pElem>
+            <pElem>include/plugin</pElem>
+            <pElem>include/probe</pElem>
+            <pElem>include/tools</pElem>
+            <pElem>include/unit</pElem>
+            <pElem>include/user</pElem>
+            <pElem>include/widget</pElem>
+            <pElem>include/primaryKeys</pElem>
+          </incDir>
+          <commandLine>-std=c++0x</commandLine>
+        </ccTool>
+        <archiverTool>
+        </archiverTool>
       </compileType>
     </conf>
   </confs>

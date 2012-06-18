@@ -22,7 +22,7 @@ AS=as
 
 # Macros
 CND_PLATFORM=GNU-Linux-x86
-CND_CONF=Application
+CND_CONF=Static_Lib
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -103,11 +103,13 @@ LDLIBSOPTIONS=-lwt -lwtdbo -lwtdbopostgres -lwthttp -lboost_signals -lboost_syst
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
 
 ${OBJECTDIR}/src/plugin/Search.o: src/plugin/Search.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
@@ -360,7 +362,7 @@ ${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dbo
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
 
 # Subprojects
 .clean-subprojects:

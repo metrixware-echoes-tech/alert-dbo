@@ -51,6 +51,10 @@
                     <name>Application</name>
                     <type>1</type>
                 </confElem>
+                <confElem>
+                    <name>Static_Lib</name>
+                    <type>3</type>
+                </confElem>
             </confList>
         </data>
     </configuration>

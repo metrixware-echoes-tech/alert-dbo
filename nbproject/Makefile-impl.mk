@@ -31,7 +31,7 @@ DEFAULTCONF=SharedObject
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=SharedObject Release Application 
+ALLCONFS=SharedObject Release Application Static_Lib 
 
 
 # build

@@ -30,6 +30,14 @@ CND_ARTIFACT_PATH_Application=dist/Application/GNU-Linux-x86/dbo
 CND_PACKAGE_DIR_Application=dist/Application/GNU-Linux-x86/package
 CND_PACKAGE_NAME_Application=dbo.tar
 CND_PACKAGE_PATH_Application=dist/Application/GNU-Linux-x86/package/dbo.tar
+# Static_Lib configuration
+CND_PLATFORM_Static_Lib=GNU-Linux-x86
+CND_ARTIFACT_DIR_Static_Lib=dist/Static_Lib/GNU-Linux-x86
+CND_ARTIFACT_NAME_Static_Lib=libdbo.a
+CND_ARTIFACT_PATH_Static_Lib=dist/Static_Lib/GNU-Linux-x86/libdbo.a
+CND_PACKAGE_DIR_Static_Lib=dist/Static_Lib/GNU-Linux-x86/package
+CND_PACKAGE_NAME_Static_Lib=dbo.tar
+CND_PACKAGE_PATH_Static_Lib=dist/Static_Lib/GNU-Linux-x86/package/dbo.tar
 #
 # include compiler specific variables
 #
