@@ -4,7 +4,7 @@
 #include <Wt/Dbo/Dbo>
 
 #include "MainIncludeFile.h"
-#include "HierarchyId.h"
+#include "UserHierarchyId.h"
 #include "UserValueId.h"
 
 //class User;
@@ -25,6 +25,8 @@ class UserField : public Table
         template<class Action>
         void persist(Action& a)
         {
+            FIELD_FILLER();
+            
             Wt::Dbo::hasMany(a,
                              users,
                              Wt::Dbo::ManyToMany,

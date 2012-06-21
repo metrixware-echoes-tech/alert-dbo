@@ -15,10 +15,10 @@
 
 class UserRole;
 class UserProfile;
-class Hierarchy;
+class UserHierarchy;
 class UserField;
 class UserValue;
-class HistoricalAction;
+class UserHistoricalAction;
 class Organization;
 
 class User : public Table
@@ -40,12 +40,13 @@ class User : public Table
         Wt::Dbo::ptr<UserRole> userRole;
         Wt::Dbo::ptr<UserProfile> userProfile;
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<UserField> > userFields;
         Wt::Dbo::collection<Wt::Dbo::ptr<UserValue> > userValues;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy> > parents;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Hierarchy> > children;
-        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalAction> > historicalActions;
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserHierarchy> > parents;
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserHierarchy> > children;
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserHistoricalAction> > historicalActions;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
 
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserField> > userFields;
         Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
 
         template<class Action>
@@ -56,10 +57,8 @@ class User : public Table
             mapClassAttributesStrings["LAST_NAME"]=this->lastName;
             mapClassAttributesStrings["MAIL"]=this->eMail;
             mapClassAttributesStrings["PWD"]=this->password;
-
-            mapClassAttributesDates["DELETE"]=this->deleteTag;
             
-            TAMACRO();
+            FIELD_FILLER();
             
             //Other tables ids as foreign keys for user table
 
@@ -84,6 +83,10 @@ class User : public Table
                              historicalActions,
                              Wt::Dbo::ManyToOne,
                              "UHA");
+            Wt::Dbo::hasMany(a,
+                             alertAcks,
+                             Wt::Dbo::ManyToOne,
+                             "ACK_USR");
 //
 //
 //            // join tables
@@ -100,7 +103,6 @@ class User : public Table
 
 
         }
-        void test();
 };
 
 // Auth

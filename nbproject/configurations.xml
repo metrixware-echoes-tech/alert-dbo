@@ -10,8 +10,8 @@
         </logicalFolder>
         <logicalFolder name="alert" displayName="alert" projectFiles="true">
           <itemPath>include/alert/Alert.h</itemPath>
+          <itemPath>include/alert/AlertAcknowledge.h</itemPath>
           <itemPath>include/alert/AlertCriteria.h</itemPath>
-          <itemPath>include/alert/AlertHisto.h</itemPath>
           <itemPath>include/alert/AlertParam.h</itemPath>
           <itemPath>include/alert/AlertType.h</itemPath>
           <itemPath>include/alert/AlertValue.h</itemPath>
@@ -50,12 +50,12 @@
           <itemPath>include/plugin/SourceParameterValue.h</itemPath>
         </logicalFolder>
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
-          <itemPath>include/primaryKeys/HierarchyId.h</itemPath>
           <itemPath>include/primaryKeys/InformationId.h</itemPath>
           <itemPath>include/primaryKeys/SearchId.h</itemPath>
           <itemPath>include/primaryKeys/SearchParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/SourceId.h</itemPath>
           <itemPath>include/primaryKeys/SourceParameterValueId.h</itemPath>
+          <itemPath>include/primaryKeys/UserHierarchyId.h</itemPath>
           <itemPath>include/primaryKeys/UserValueId.h</itemPath>
           <itemPath>include/primaryKeys/WidgetValueId.h</itemPath>
         </logicalFolder>
@@ -65,6 +65,7 @@
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>include/tools/AuthApplication.h</itemPath>
           <itemPath>include/tools/Constants.h</itemPath>
+          <itemPath>include/tools/MacroTrigram.h</itemPath>
           <itemPath>include/tools/MainIncludeFile.h</itemPath>
           <itemPath>include/tools/PostgresConnector.h</itemPath>
           <itemPath>include/tools/Session.h</itemPath>
@@ -76,11 +77,11 @@
           <itemPath>include/unit/UnitType.h</itemPath>
         </logicalFolder>
         <logicalFolder name="user" displayName="user" projectFiles="true">
-          <itemPath>include/user/Hierarchy.h</itemPath>
-          <itemPath>include/user/HistoricalAction.h</itemPath>
           <itemPath>include/user/User.h</itemPath>
           <itemPath>include/user/UserAction.h</itemPath>
           <itemPath>include/user/UserField.h</itemPath>
+          <itemPath>include/user/UserHierarchy.h</itemPath>
+          <itemPath>include/user/UserHistoricalAction.h</itemPath>
           <itemPath>include/user/UserProfile.h</itemPath>
           <itemPath>include/user/UserRole.h</itemPath>
           <itemPath>include/user/UserValue.h</itemPath>
@@ -108,8 +109,8 @@
         </logicalFolder>
         <logicalFolder name="alert" displayName="alert" projectFiles="true">
           <itemPath>src/alert/Alert.cpp</itemPath>
+          <itemPath>src/alert/AlertAcknowledge.cpp</itemPath>
           <itemPath>src/alert/AlertCriteria.cpp</itemPath>
-          <itemPath>src/alert/AlertHisto.cpp</itemPath>
           <itemPath>src/alert/AlertParam.cpp</itemPath>
           <itemPath>src/alert/AlertType.cpp</itemPath>
           <itemPath>src/alert/AlertValue.cpp</itemPath>
@@ -162,11 +163,11 @@
           <itemPath>src/unit/UnitType.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="user" displayName="user" projectFiles="true">
-          <itemPath>src/user/Hierarchy.cpp</itemPath>
-          <itemPath>src/user/HistoricalAction.cpp</itemPath>
           <itemPath>src/user/User.cpp</itemPath>
           <itemPath>src/user/UserAction.cpp</itemPath>
           <itemPath>src/user/UserField.cpp</itemPath>
+          <itemPath>src/user/UserHierarchy.cpp</itemPath>
+          <itemPath>src/user/UserHistoricalAction.cpp</itemPath>
           <itemPath>src/user/UserProfile.cpp</itemPath>
           <itemPath>src/user/UserRole.cpp</itemPath>
           <itemPath>src/user/UserValue.cpp</itemPath>

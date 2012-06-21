@@ -42,8 +42,8 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     setConnection(*pgBackend);
 
     mapClass<UserAction>(Constants::T_ACTION_ACT);
-    mapClass<Hierarchy>(Constants::T_HIERARCHY_HRC);
-    mapClass<HistoricalAction>(Constants::T_HISTORICAL_ACTION_HAC);
+    mapClass<UserHierarchy>(Constants::T_USER_HIERARCHY_UHI);
+    mapClass<UserHistoricalAction>(Constants::T_USER_HISTORICAL_ACTION_UHA);
     mapClass<User>(Constants::T_USER_USR);
     mapClass<UserRole>(Constants::T_USER_ROLE_URO);
     mapClass<UserProfile>(Constants::T_USER_PROFILE_UPR);
@@ -72,7 +72,7 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<Addon>(Constants::T_ADDON_ADO);
     
     mapClass<Alert>(Constants::T_ALERT_ALE);
-    mapClass<AlertHisto>(Constants::T_ALERT_HISTO_AHI);
+    mapClass<AlertAcknowledge>(Constants::T_ALERT_ACKNOWLEDGE_ACK);
     mapClass<AlertValue>(Constants::T_ALERT_VALUE_AVA);
     mapClass<AlertParam>(Constants::T_ALERT_PARAM_APA);
     mapClass<AlertType>(Constants::T_ALERT_TYPE_ATY);

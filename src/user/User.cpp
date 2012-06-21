@@ -35,9 +35,3 @@ std::string User::getName()
     return Constants::T_USER_USR;
 }
 
-void User::test()
-{
-
-
-}
-

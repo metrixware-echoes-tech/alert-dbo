@@ -1,5 +1,6 @@
-// ordres des includes important !
 #include "Value.h"
+
+std::string Value::TRIGRAM = "VAL";
 
 Value::Value() : Table()
 {

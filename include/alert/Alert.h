@@ -6,7 +6,7 @@
 
 #include "MainIncludeFile.h"
 
-class AlertHisto;
+class AlertAcknowledge;
 class AlertValue;
 class AlertType;
 
@@ -20,29 +20,30 @@ class Alert : public Table
         
         std::string name;
         Wt::WDateTime date;
-        Wt::WDateTime deleteTag;
         
         // RHI: manque TJ_ALE_USR_MED
         Wt::Dbo::ptr<AlertType> alertType;
-        Wt::Dbo::collection<Wt::Dbo::ptr<AlertHisto> > alertHistos;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
         
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesDates["DATE"]=this->date;
+            
+            FIELD_FILLER();
+            
             Wt::Dbo::belongsTo(a, alertType,"ATY");
             
             Wt::Dbo::hasMany(a,
-                             alertHistos,
+                             alertAcks,
                              Wt::Dbo::ManyToOne,
-                             "ALH");
+                             "ACK_ALE");
             Wt::Dbo::hasMany(a,
                              alertValues,
                              Wt::Dbo::ManyToOne,
                              "ALE_ID");
-            mapClassAttributesStrings["NAME"]=this->name;
-            mapClassAttributesDates["DATE"]=this->date;
-            mapClassAttributesDates["DELETE"]=this->deleteTag;
         }
     protected:
     private:

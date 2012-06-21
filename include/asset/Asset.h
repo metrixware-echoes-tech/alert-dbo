@@ -6,6 +6,7 @@
 #include "MainIncludeFile.h"
 
 class Plugin;
+class Probe;
 
 class Asset : public Table
 {
@@ -16,10 +17,9 @@ class Asset : public Table
         static std::string TRIGRAM;
         
         std::string name;
-      //  bool assetIsHost;
-        Wt::WDateTime deleteTag;
+        bool assetIsHost;
         
-        //RHI: foreign key probe_id to add.
+        Wt::Dbo::ptr<Probe> probe;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
         
@@ -29,6 +29,13 @@ class Asset : public Table
         template<class Action>
         void persist(Action& a)
         { 
+            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesBools["IS_HOST"]=this->assetIsHost;
+            
+            FIELD_FILLER();
+            
+            Wt::Dbo::belongsTo(a,probe,"AST_PRB");
+            
             Wt::Dbo::hasMany(a,
                              values,
                              Wt::Dbo::ManyToOne,
@@ -43,9 +50,7 @@ class Asset : public Table
                              plugins,
                              Wt::Dbo::ManyToMany,
                              "TJ_AST_PLG");
-            mapClassAttributesStrings["NAME"]=this->name;
-     //     mapClassAttributesBools["IS_HOST"]=this->assetIsHost;
-            mapClassAttributesDates["DELETE"]=this->deleteTag;
+            
             
             
        }

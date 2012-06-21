@@ -19,16 +19,18 @@ class AlertValue : public Table
         std::string value;
         Wt::Dbo::ptr<Alert> alert;
         Wt::Dbo::ptr<AlertParam> alertParam;
-        Wt::WDateTime deleteTag;
         
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesStrings["VALUE"]=this->value; 
+            
+            FIELD_FILLER();
+            
             Wt::Dbo::id(a,alert,"AVA");
             
             Wt::Dbo::belongsTo(a,alertParam,"APA");
-            mapClassAttributesStrings["VALUE"]=this->value;
-            mapClassAttributesDates["DELETE"]=this->deleteTag;       
+                 
         }
     protected:
     private:

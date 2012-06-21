@@ -21,7 +21,8 @@ public:
     template<class Action>
     void persist(Action& a)
     {
-        //Wt::Dbo::belongsTo(a, user, User::getName().c_str());
+        FIELD_FILLER();
+        
         Wt::Dbo::hasMany(a,
                          users,
                          Wt::Dbo::ManyToOne,

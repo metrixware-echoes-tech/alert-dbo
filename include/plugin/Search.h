@@ -34,13 +34,16 @@ public:
     template<class Action>
     void persist(Action& a)
     {
-        Wt::Dbo::id (a, pk, "PRIMARY_KEY");
-        
-        Wt::Dbo::belongsTo(a, searchType, "STY");
         mapClassAttributesDates["DELETE"]=this->deleteTag;
        // mapClassAttributesInt["NB_VALUE"]=this->nbValue;        
         mapClassAttributesStrings["PERIOD"]=this->period;        
-      //  mapClassAttributesBools["IS_STATIC"]=this->searchIsStatic;              
+        mapClassAttributesBools["IS_STATIC"]=this->searchIsStatic; 
+        
+        FIELD_FILLER();
+        
+        Wt::Dbo::id (a, pk, "PRIMARY_KEY");
+        
+        Wt::Dbo::belongsTo(a, searchType, "STY");
     }
     
 private:

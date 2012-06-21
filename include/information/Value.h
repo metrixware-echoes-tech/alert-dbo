@@ -35,11 +35,11 @@ class Value : public Table
         int mNumSubSearch;
         std::string value;
         Wt::WDateTime CreatedDate;
-        //Wt::WDateTime deleteTag;
 
         template<class Action>
         void persist(Action& a)
         {
+            FIELD_FILLER();
             Wt::Dbo::field(a, informationId.searchId.id, "SEA_ID");
             Wt::Dbo::field(a, informationId.searchId.sourceId.id, "SRC_ID");
             Wt::Dbo::field(a, informationId.searchId.sourceId.plugin, "PLG_ID");

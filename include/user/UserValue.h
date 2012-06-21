@@ -18,7 +18,8 @@ class UserValue : public Table
         template<class Action>
         void persist(Action& a)
         {
-            Wt::Dbo::id(a,uvid,"PK_TEST");
+            FIELD_FILLER();
+            Wt::Dbo::id(a,uvid,"PRIMARY_KEY");
         }
     protected:
     private:

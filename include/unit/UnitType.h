@@ -15,6 +15,8 @@ class UnitType : public Table
         UnitType();
         virtual ~UnitType();
         
+        static std::string TRIGRAM;
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<Unit> > units;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<WidgetType> > widgetTypes;
@@ -22,6 +24,8 @@ class UnitType : public Table
         template<class Action>
         void persist(Action& a)
         {
+            FIELD_FILLER();
+            
             Wt::Dbo::hasMany(a,
                              units,
                              Wt::Dbo::ManyToOne,

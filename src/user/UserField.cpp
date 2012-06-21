@@ -1,6 +1,6 @@
 #include "UserField.h"
 
-std::string UserField::TRIGRAM = "UFI";
+std::string UserField::TRIGRAM = TRIGRAM_USER_FIELD;
 
 UserField::UserField()
 {

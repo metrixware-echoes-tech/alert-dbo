@@ -11,23 +11,23 @@
 #include <Wt/Dbo/Dbo>
 
 class User;
-class Hierarchy;
+class UserHierarchy;
 
-struct HierarchyId
+struct UserHierarchyId
 {
     Wt::Dbo::ptr<User> parent;
     Wt::Dbo::ptr<User> child;
 
-    HierarchyId(Wt::Dbo::ptr<User> p, Wt::Dbo::ptr<User> c)
+    UserHierarchyId(Wt::Dbo::ptr<User> p, Wt::Dbo::ptr<User> c)
         : parent(p), child(c) { }
 
-    HierarchyId(){ }
+    UserHierarchyId(){ }
 
-    bool operator== (const HierarchyId& other) const {
+    bool operator== (const UserHierarchyId& other) const {
         return parent == other.parent && child == other.child;
     }
 
-    bool operator< (const HierarchyId& other) const {
+    bool operator< (const UserHierarchyId& other) const {
         if (parent < other.parent)
             return true;
         else
@@ -35,7 +35,7 @@ struct HierarchyId
     }
 };
 
-inline std::ostream& operator<< (std::ostream& o, const HierarchyId& pk)
+inline std::ostream& operator<< (std::ostream& o, const UserHierarchyId& pk)
 {
     return o << "(" << pk.parent << ")";
 }
@@ -45,17 +45,17 @@ namespace Wt
     namespace Dbo
     {
         template <class Action>
-        void field(Action& a, HierarchyId& hiid,
+        void field(Action& a, UserHierarchyId& hiid,
                    const std::string& name, int size = -1)
         {
             Wt::Dbo::belongsTo(a, hiid.parent, "UPA");
             Wt::Dbo::belongsTo(a, hiid.child, "UCH");
         }
         template<>
-        struct dbo_traits<Hierarchy> : public dbo_default_traits
+        struct dbo_traits<UserHierarchy> : public dbo_default_traits
         {
-            typedef HierarchyId IdType;
-            static IdType invalidId() { return HierarchyId(); }
+            typedef UserHierarchyId IdType;
+            static IdType invalidId() { return UserHierarchyId(); }
             static const char *surrogateIdField() { return 0; }
         };
     }

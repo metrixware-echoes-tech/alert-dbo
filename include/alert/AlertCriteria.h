@@ -17,7 +17,6 @@ class AlertCriteria : public Table
         static std::string TRIGRAM;
         
         std::string name;
-        Wt::WDateTime deleteTag;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertType> > alertTypes;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertParam> > alertParams;
@@ -25,10 +24,11 @@ class AlertCriteria : public Table
         template<class Action>
         void persist(Action& a)
         {
-            Wt::Dbo::hasMany(a,alertParams,Wt::Dbo::ManyToMany,"TJ_ACR_APA");
-            Wt::Dbo::hasMany(a,alertTypes,Wt::Dbo::ManyToMany,"TJ_ATY_ACR");
             mapClassAttributesStrings["NAME"]=this->name;
             mapClassAttributesDates["DELETE"]=this->deleteTag;
+            FIELD_FILLER();
+            Wt::Dbo::hasMany(a,alertParams,Wt::Dbo::ManyToMany,"TJ_ACR_APA");
+            Wt::Dbo::hasMany(a,alertTypes,Wt::Dbo::ManyToMany,"TJ_ATY_ACR");
         }
     protected:
     private:

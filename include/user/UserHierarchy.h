@@ -8,27 +8,24 @@
 
 #include "MainIncludeFile.h"
 
-#include "HierarchyId.h"
+#include "UserHierarchyId.h"
 
-class Hierarchy : public Table
+class UserHierarchy : public Table
 {
     public:
-        Hierarchy();
-        virtual ~Hierarchy();
+        UserHierarchy();
+        virtual ~UserHierarchy();
         
         static std::string TRIGRAM;
         
-        Wt::WDateTime deleteTag;
-        //RHI : PK/FK USR_ID and USR_ID_CHILD to add
-
-        HierarchyId pk;
+        UserHierarchyId pk;
 
         template<class Action>
         void persist(Action& a)
         {
 
-            Wt::Dbo::id (a, pk, "PRIMARY_KEY");
-            mapClassAttributesDates["DELETE"]=this->deleteTag;
+            FIELD_FILLER();
+            Wt::Dbo::id(a,pk,"PRIMARY_KEY");
         }
     protected:
     private:

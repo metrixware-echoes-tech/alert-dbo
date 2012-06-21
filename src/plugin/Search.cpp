@@ -7,6 +7,8 @@
 
 #include "Search.h"
 
+std::string Search::TRIGRAM = "SEA";
+
 Search::Search()
 {
 }

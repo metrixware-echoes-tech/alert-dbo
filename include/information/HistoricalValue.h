@@ -30,16 +30,17 @@ class HistoricalValue : public Table
 
         template<class Action>
         void persist(Action& a)
-        {
+        {   
+            mapClassAttributesDates["CREA_DATE"]=this->creationDate;  
+            mapClassAttributesStrings["VALUE"]=this->value;             
+            mapClassAttributesInts["SEA-SUB_NUM"]=this->subSearchNumber;
+            FIELD_FILLER();
             Wt::Dbo::field(a, informationId.searchId.id, "SEA_ID");
             Wt::Dbo::field(a, informationId.searchId.sourceId.id, "SRC_ID");
             Wt::Dbo::field(a, informationId.searchId.sourceId.plugin, "PLG_ID");
             Wt::Dbo::belongsTo(a, asset, "HVA_AST");
             Wt::Dbo::belongsTo(a, syslog, "HVA_SLO");
-            mapClassAttributesDates["DELETE"]=this->deleteTag;
-            mapClassAttributesDates["CREA_DATE"]=this->creationDate;  
-            mapClassAttributesStrings["VALUE"]=this->value;             
-        //RHI : map class for the int type     mapClassAttributesInt["SEA-SUB_NUM"]=this->subSearchNumber;
+            
         }
 
     protected:

@@ -19,11 +19,11 @@ class Constants
         virtual ~Constants();
         static const char *T_USER_USR;
         static const char *T_USER_ROLE_URO;
-        static const char *T_HIERARCHY_HRC;
+        static const char *T_USER_HIERARCHY_UHI;
         static const char *T_USER_PROFILE_UPR;
         static const char *T_USER_VALUE_UVA;
         static const char *T_USER_FIELD_UFI;
-        static const char *T_HISTORICAL_ACTION_HAC;
+        static const char *T_USER_HISTORICAL_ACTION_UHA;
         static const char *T_ACTION_ACT;
         static const char *T_ORGANIZATION_ORG;
         static const char *T_PROBE_PRB;
@@ -41,7 +41,7 @@ class Constants
         static const char *T_TAB_WIDGET_TWG;
         static const char *T_ADDON_ADO;
         static const char *T_ALERT_ALE;
-        static const char *T_ALERT_HISTO_AHI;
+        static const char *T_ALERT_ACKNOWLEDGE_ACK;
         static const char *T_ALERT_VALUE_AVA;
         static const char *T_ALERT_PARAM_APA;
         static const char *T_ALERT_TYPE_ATY;

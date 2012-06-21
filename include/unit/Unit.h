@@ -15,18 +15,24 @@ class Unit : public Table
         Unit();
         virtual ~Unit();
         
+        static std::string TRIGRAM;
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<Information2> > informations;
         Wt::Dbo::ptr<UnitType> unitType;
         
         template<class Action>
         void persist(Action& a)
         {
+            FIELD_FILLER();
+            
             Wt::Dbo::belongsTo(a, unitType, "UUN");
             
             Wt::Dbo::hasMany(a,
                              informations,
                              Wt::Dbo::ManyToOne,
                              "UIN");
+            
+            
             
         }
     protected:

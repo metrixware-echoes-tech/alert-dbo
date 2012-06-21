@@ -19,50 +19,25 @@ class UserAction : public Table
         virtual ~UserAction();
 
         static std::string TRIGRAM;
-        
-        std::string name;
-
 	// attributes
-	Wt::WDateTime deleteTag;
-
-
+        std::string name;
 	// methods
 
-
 	// dbo pointers (Other tables ids as foreign keys for this table)
-        Wt::Dbo::ptr<HistoricalAction> historicalAction;
+        Wt::Dbo::ptr<UserHistoricalAction> historicalAction;
 
         template<class Action>
         void persist(Action& a) 
         {
-            std::map <std::string,std::string> mapClassAttributesStrings;
-
-            std::map <std::string,Wt::WDateTime> mapClassAttributesDates;
-            mapClassAttributesDates["DELETE"]=this->deleteTag;
-
-            std::map<std::string,std::string>::iterator itStrings;
-            for(itStrings = mapClassAttributesStrings.begin(); itStrings != mapClassAttributesStrings.end(); ++itStrings)
-            {
-                Wt::Dbo::field(a, (*itStrings).second, formatColumnName(*this,(*itStrings).first));
-            }
-
-            std::map<std::string,Wt::WDateTime>::iterator itDates;
-            for(itDates = mapClassAttributesDates.begin(); itDates != mapClassAttributesDates.end(); ++itDates)
-            {
-                Wt::Dbo::field(a, (*itDates).second, formatColumnName(*this,(*itDates).first));
-            }
+            mapClassAttributesStrings["NAME"]=this->name;
+            
+            FIELD_FILLER();
 
             //Other tables ids as foreign keys for user table
-
             Wt::Dbo::belongsTo(a, historicalAction, "ACT");
-            mapClassAttributesStrings["NAME"]=this->name;            
+                     
         }
 };
-namespace Wt {
-    namespace Dbo {
-        
-    }
-}
         
 
 

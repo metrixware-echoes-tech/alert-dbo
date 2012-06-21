@@ -7,6 +7,7 @@
 #include "MainIncludeFile.h"
 #include "UserValueId.h"
 
+class User;
 
 class UserProfile : public Table
 {
@@ -21,6 +22,7 @@ public:
     template<class Action>
     void persist(Action& a)
     {
+        FIELD_FILLER();
         //Wt::Dbo::belongsTo(a, user, User::getName().c_str());
         Wt::Dbo::hasMany(a,
                          users,

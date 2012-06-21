@@ -11,6 +11,8 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/SqlTraits>
 
+class Table;
+
 class UserField;
 class UserRole;
 class Unit;
@@ -19,11 +21,11 @@ class User;
 class UserProfile;
 class UserValue;
 class UserAction;
-class HistoricalAction;
+class UserHistoricalAction;
 class AlertParam;
 class AlertValue;
 class Alert;
-class AlertHisto;
+class AlertAcknowledge;
 class AlertType;
 class AlertCriteria;
 //class WidgetValue;
@@ -46,20 +48,33 @@ class SearchType;
 class SearchParameter;
 
 //#include "WidgetValueId.h"
+#include "MacroTrigram.h"
 
 namespace Wt
 {
     namespace Dbo
-    {        
+    {   
+        // TSA : i'd like to know why this doesn't work ?!
+        /*template<typename T>
+        struct dbo_traits<T*> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                std::string res = T::TRIGRAM + T::SEP + "ID";
+                return res.c_str();
+            }
+        };*/
+        
         template<>
         struct dbo_traits<UserField> : public dbo_default_traits
         {
             static const char *surrogateIdField()
             {
+                std::string res = std::string(TRIGRAM_USER_FIELD) + std::string("TEST_ID");
+                //return res.c_str();
                 return "UFI_ID";
             }
         };
-        
         template<>
         struct dbo_traits<WidgetType> : public dbo_default_traits
         {
@@ -94,7 +109,7 @@ namespace Wt
             }
         };
         template<>
-        struct dbo_traits<HistoricalAction> : public dbo_default_traits
+        struct dbo_traits<UserHistoricalAction> : public dbo_default_traits
         {
             static const char *surrogateIdField()
             {
@@ -116,15 +131,7 @@ namespace Wt
             {
                 return "APA_ID";
             }
-        };
-        template<>
-        struct dbo_traits<AlertValue> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return 0;
-            }
-        };
+        };      
         template<>
         struct dbo_traits<Alert> : public dbo_default_traits
         {
@@ -156,10 +163,6 @@ namespace Wt
             {
                 return "ACT_ID";
             }
-            static const char *versionField()
-            {
-                return 0;
-            }
         };
         template<>
         struct dbo_traits<Addon> : public dbo_default_traits
@@ -170,11 +173,11 @@ namespace Wt
             }
         };
         template<>
-        struct dbo_traits<AlertHisto> : public dbo_default_traits
+        struct dbo_traits<AlertAcknowledge> : public dbo_default_traits
         {
             static const char *surrogateIdField()
             {
-                return "AHI_ID";
+                return "ACK_ID";
             }
         };
         template<>
@@ -295,6 +298,14 @@ namespace Wt
             static const char *surrogateIdField()
             {
                 return "SEP_ID";
+            }
+        };
+        template<>
+        struct dbo_traits<AlertValue> : public dbo_default_traits
+        {
+            static const char *surrogateIdField()
+            {
+                return 0;
             }
         };
 //        template<>

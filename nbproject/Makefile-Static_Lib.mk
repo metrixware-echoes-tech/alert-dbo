@@ -34,6 +34,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/alert/AlertAcknowledge.o \
 	${OBJECTDIR}/src/plugin/Search.o \
 	${OBJECTDIR}/src/organization/OrganizationType.o \
 	${OBJECTDIR}/src/widget/WidgetType.o \
@@ -48,6 +49,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/AlertParam.o \
 	${OBJECTDIR}/src/plugin/SearchParameterValue.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
+	${OBJECTDIR}/src/user/UserHierarchy.o \
 	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/unit/UnitType.o \
@@ -70,13 +72,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/Alert.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
+	${OBJECTDIR}/src/user/UserHistoricalAction.o \
 	${OBJECTDIR}/src/information/Syslog.o \
-	${OBJECTDIR}/src/user/HistoricalAction.o \
 	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/user/User.o \
 	${OBJECTDIR}/src/user/UserField.o \
-	${OBJECTDIR}/src/alert/AlertHisto.o \
-	${OBJECTDIR}/src/user/Hierarchy.o \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
@@ -99,7 +99,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lwt -lwtdbo -lwtdbopostgres -lwthttp -lboost_signals -lboost_system
+LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -110,6 +110,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a: ${OBJECTFILES}
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
+
+${OBJECTDIR}/src/alert/AlertAcknowledge.o: src/alert/AlertAcknowledge.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertAcknowledge.o src/alert/AlertAcknowledge.cpp
 
 ${OBJECTDIR}/src/plugin/Search.o: src/plugin/Search.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
@@ -180,6 +185,11 @@ ${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
+
+${OBJECTDIR}/src/user/UserHierarchy.o: src/user/UserHierarchy.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHierarchy.o src/user/UserHierarchy.cpp
 
 ${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
@@ -291,15 +301,15 @@ ${OBJECTDIR}/src/user/UserRole.o: src/user/UserRole.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
 
+${OBJECTDIR}/src/user/UserHistoricalAction.o: src/user/UserHistoricalAction.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHistoricalAction.o src/user/UserHistoricalAction.cpp
+
 ${OBJECTDIR}/src/information/Syslog.o: src/information/Syslog.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Syslog.o src/information/Syslog.cpp
-
-${OBJECTDIR}/src/user/HistoricalAction.o: src/user/HistoricalAction.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/HistoricalAction.o src/user/HistoricalAction.cpp
 
 ${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
@@ -315,16 +325,6 @@ ${OBJECTDIR}/src/user/UserField.o: src/user/UserField.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserField.o src/user/UserField.cpp
-
-${OBJECTDIR}/src/alert/AlertHisto.o: src/alert/AlertHisto.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertHisto.o src/alert/AlertHisto.cpp
-
-${OBJECTDIR}/src/user/Hierarchy.o: src/user/Hierarchy.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/Hierarchy.o src/user/Hierarchy.cpp
 
 ${OBJECTDIR}/src/widget/TabWidgetAssociation.o: src/widget/TabWidgetAssociation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
