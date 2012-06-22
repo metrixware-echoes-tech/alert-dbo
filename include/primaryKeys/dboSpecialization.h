@@ -70,9 +70,7 @@ namespace Wt
         {
             static const char *surrogateIdField()
             {
-                std::string res = std::string(TRIGRAM_USER_FIELD) + std::string("TEST_ID");
-                //return res.c_str();
-                return "UFI_ID";
+                return TRIGRAM_USER_FIELD;
             }
         };
         template<>

@@ -8,7 +8,8 @@
 #ifndef MACROTRIGRAM_H
 #define	MACROTRIGRAM_H
 
-#define TRIGRAM_USER_FIELD "UFI"
+
+#define TRIGRAM_USER_FIELD "UFI_ID"
 
 
 #endif	/* MACROTRIGRAM_H */
