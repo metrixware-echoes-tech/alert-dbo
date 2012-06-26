@@ -67,7 +67,7 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     
     mapClass<Tab>(Constants::T_TAB_TAB);
     mapClass<TabVersion>(Constants::T_TAB_VERSION_TVS);
-    mapClass<TabWidgetAssociation>(Constants::T_TAB_WIDGET_TWG);
+//    mapClass<TabWidgetAssociation>(Constants::T_TAB_WIDGET_TWG);
     
     mapClass<Addon>(Constants::T_ADDON_ADO);
     

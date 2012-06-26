@@ -17,6 +17,7 @@ class Information2;
 struct InformationId
 {
     SearchId searchId;
+    std::string subSearchNumber;
 
     InformationId(SearchId ptr)
         : searchId(ptr) { }
@@ -51,6 +52,7 @@ namespace Wt
             field(a, infid.searchId.id, "SEA_ID");
             field(a, infid.searchId.sourceId.id, "SRC_ID");
             field(a, infid.searchId.sourceId.plugin, "PLG_ID");
+            field(a, infid.subSearchNumber, "SUB_SEA_NUM");
         }
         template<>
         struct dbo_traits<Information2> : public dbo_default_traits

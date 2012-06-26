@@ -1,5 +1,7 @@
 #include "Plugin.h"
 
+std::string Plugin::TRIGRAM = TRIGRAM_PLUGIN;
+
 Plugin::Plugin()
 {
     //ctor

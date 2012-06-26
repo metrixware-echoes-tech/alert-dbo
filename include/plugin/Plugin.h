@@ -16,7 +16,6 @@ class Plugin : public Table
         Plugin();
         virtual ~Plugin();
 
-        Wt::WDateTime deleteTag;
         static std::string TRIGRAM;
         std::string name;
         std::string desc;
@@ -27,6 +26,9 @@ class Plugin : public Table
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesStrings["NAME"]=this->name;            
+            mapClassAttributesStrings["DESC"]=this->desc;            
+            FIELD_FILLER();
             //Plugin id as foreign key in other tables
             Wt::Dbo::hasMany(a,
                              sources,
@@ -38,9 +40,6 @@ class Plugin : public Table
                              assets,
                              Wt::Dbo::ManyToMany,
                              "TJ_AST_PLG");
-            mapClassAttributesDates["DELETE"]=this->deleteTag;
-            mapClassAttributesStrings["NAME"]=this->name;            
-            mapClassAttributesStrings["DESC"]=this->desc;            
        }
     protected:
     private:

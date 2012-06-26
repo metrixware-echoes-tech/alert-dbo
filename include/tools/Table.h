@@ -15,7 +15,6 @@ class Table //classe abstraite
 
         static std::string SEP;
         static std::string TABLE_PREFIX;
-        static std::string ID;
         
         Wt::WDateTime deleteTag;
 

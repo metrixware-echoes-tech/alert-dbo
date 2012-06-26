@@ -72,7 +72,7 @@
 
 #include "Tab.h"
 #include "TabVersion.h"
-#include "TabWidgetAssociation.h"
+//#include "TabWidgetAssociation.h"
 
 #include "Addon.h"
 

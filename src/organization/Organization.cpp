@@ -1,6 +1,6 @@
 #include "Organization.h"
 
-std::string Organization::TRIGRAM = "ORG";
+std::string Organization::TRIGRAM = TRIGRAM_ORGANIZATION;
 
 Organization::Organization()
 {

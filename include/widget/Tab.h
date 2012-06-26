@@ -1,40 +1,15 @@
 #ifndef TAB_H
 #define TAB_H
 
-#include "Table.h"
+
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "Probe.h"
-
-
-#include "WidgetType.h"
-#include "Widget.h"
-
-#include "Unit.h"
-#include "UnitType.h"
-
-#include "HistoricalValue.h"
-#include "Value.h"
-#include "Plugin.h"
-#include "Information.h"
-
-#include "Organization.h"
-
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
+#include "MainIncludeFile.h"
 
 class Widget;
 class TabVersion;
-class TabWidgetAssociation;
+//class TabWidgetAssociation;
 
 class Tab : public Table
 {
@@ -42,7 +17,7 @@ class Tab : public Table
         Tab();
         virtual ~Tab();
         Wt::Dbo::ptr<Widget> widget;
-        Wt::Dbo::ptr<TabWidgetAssociation> tabWidgetAssociation;
+//        Wt::Dbo::ptr<TabWidgetAssociation> tabWidgetAssociation;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Widget> > widgets;
         
@@ -53,7 +28,7 @@ class Tab : public Table
         {
             Wt::Dbo::belongsTo(a, widget, "WGT");
             
-            Wt::Dbo::belongsTo(a,tabWidgetAssociation,"TWG2");
+//            Wt::Dbo::belongsTo(a,tabWidgetAssociation,"TWG2");
             
             Wt::Dbo::hasMany(a,
                              tabVersions,

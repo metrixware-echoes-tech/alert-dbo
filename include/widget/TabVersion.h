@@ -6,35 +6,11 @@
 #include <Wt/Dbo/WtSqlTraits>
 
 
-#include "Probe.h"
-
-#include "Tab.h"
-#include "TabWidgetAssociation.h"
-
-#include "WidgetType.h"
-#include "Widget.h"
-
-#include "Unit.h"
-#include "UnitType.h"
-
-#include "Value.h"
-#include "Information.h"
-#include "Plugin.h"
-#include "HistoricalValue.h"
-
-#include "Organization.h"
-
-#include "Addon.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
+#include "MainIncludeFile.h"
 
 class Tab;
 class UnitType;
-class TabWidgetAssociation;
+//class TabWidgetAssociation;
 
 class TabVersion : public Table
 {
@@ -44,7 +20,7 @@ class TabVersion : public Table
         
         Wt::Dbo::ptr<Tab> tab;
         
-        Wt::Dbo::collection<Wt::Dbo::ptr<TabWidgetAssociation> > tabWidgetAssociations;
+//        Wt::Dbo::collection<Wt::Dbo::ptr<TabWidgetAssociation> > tabWidgetAssociations;
         
         template<class Action>
         void persist(Action& a)
@@ -52,10 +28,10 @@ class TabVersion : public Table
             Wt::Dbo::belongsTo(a, tab, "TAB");
             
             //TJ
-            Wt::Dbo::hasMany(a,
-                             tabWidgetAssociations,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_TWG_TVS");
+//            Wt::Dbo::hasMany(a,
+//                             tabWidgetAssociations,
+//                             Wt::Dbo::ManyToMany,
+//                             "TJ_TWG_TVS");
         }
     protected:
     private:

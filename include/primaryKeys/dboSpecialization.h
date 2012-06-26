@@ -33,7 +33,7 @@ class WidgetType;
 class Addon;
 class Tab;
 class TabVersion;
-class TabWidgetAssociation;
+//class TabWidgetAssociation;
 class Widget;
 class Value;
 class Plugin;
@@ -47,7 +47,6 @@ class Syslog;
 class SearchType;
 class SearchParameter;
 
-//#include "WidgetValueId.h"
 #include "MacroTrigram.h"
 
 namespace Wt
@@ -65,254 +64,37 @@ namespace Wt
             }
         };*/
         
-        template<>
-        struct dbo_traits<UserField> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return TRIGRAM_USER_FIELD;
-            }
-        };
-        template<>
-        struct dbo_traits<WidgetType> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "WTY_ID";
-            }
-        };
         
-        template<>
-        struct dbo_traits<UserRole> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "URO_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Unit> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "UNT_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<User> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "USR_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<UserHistoricalAction> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "HAC_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<UserProfile> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "UPR_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<AlertParam> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "APA_ID";
-            }
-        };      
-        template<>
-        struct dbo_traits<Alert> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "ALE_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<AlertType> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "ATY_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<UnitType> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "UTY_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<UserAction> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "ACT_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Addon> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "ADO_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<AlertAcknowledge> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "ACK_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Tab> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "TAB_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<TabVersion> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "TVS_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<TabWidgetAssociation> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "TWG_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Widget> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "WGT_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Value> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "VAL_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Plugin> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "PLG_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Organization> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "ORG_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<HistoricalValue> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "HVA_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<AlertCriteria> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "ACR_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Probe> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "PRB_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<SourceParameter> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "SRP_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Asset> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "AST_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<Syslog> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "SLO_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<SearchType> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "STY_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<SearchParameter> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return "SEP_ID";
-            }
-        };
-        template<>
-        struct dbo_traits<AlertValue> : public dbo_default_traits
-        {
-            static const char *surrogateIdField()
-            {
-                return 0;
-            }
-        };
-//        template<>
-//        struct dbo_traits<WidgetValue> : public dbo_default_traits
-//        {
-//            typedef WidgetValueId IdType;
-//            static IdType invalidId() { return WidgetValueId(); }
-//            static const char *surrogateIdField() { return 0; }
-//        };
+        TEMPLATE_TRIGRAM(UserField,TRIGRAM_USER_FIELD ID);
+        TEMPLATE_TRIGRAM(UserRole,TRIGRAM_USER_ROLE ID);
+        TEMPLATE_TRIGRAM(WidgetType,TRIGRAM_WIDGET_TYPE ID);
+        TEMPLATE_TRIGRAM(Unit,TRIGRAM_UNIT ID);
+        TEMPLATE_TRIGRAM(User,TRIGRAM_USER ID);
+        TEMPLATE_TRIGRAM(UserHistoricalAction, TRIGRAM_USER_HISTORICAL_ACTION ID);
+        TEMPLATE_TRIGRAM(UserProfile, TRIGRAM_USER_PROFILE ID);
+        TEMPLATE_TRIGRAM(AlertParam, TRIGRAM_ALERT_PARAM ID);
+        TEMPLATE_TRIGRAM(Alert,TRIGRAM_ALERT ID);
+        TEMPLATE_TRIGRAM(AlertType,TRIGRAM_ALERT_TYPE ID);
+        TEMPLATE_TRIGRAM(UnitType,TRIGRAM_UNIT_TYPE ID);
+        TEMPLATE_TRIGRAM(UserAction,TRIGRAM_USER_ACTION ID);
+        TEMPLATE_TRIGRAM(Addon,TRIGRAM_ADDON ID);
+        TEMPLATE_TRIGRAM(AlertAcknowledge,TRIGRAM_ACKNOWLEDGE ID);
+        TEMPLATE_TRIGRAM(Tab,TRIGRAM_TAB ID);
+        TEMPLATE_TRIGRAM(TabVersion,TRIGRAM_TAB_VERSION ID);
+        TEMPLATE_TRIGRAM(Widget,TRIGRAM_WIDGET ID);
+        TEMPLATE_TRIGRAM(Value,TRIGRAM_VALUE ID);
+        TEMPLATE_TRIGRAM(Plugin,TRIGRAM_PLUGIN ID);
+        TEMPLATE_TRIGRAM(Organization,TRIGRAM_ORGANIZATION ID);
+        TEMPLATE_TRIGRAM(HistoricalValue,TRIGRAM_HISTORICAL_VALUE ID);
+        TEMPLATE_TRIGRAM(AlertCriteria,TRIGRAM_ALERT_CRITERIA ID);
+        TEMPLATE_TRIGRAM(Probe,TRIGRAM_PROBE ID);
+        TEMPLATE_TRIGRAM(SourceParameter,TRIGRAM_SOURCE_PARAMETER ID);
+        TEMPLATE_TRIGRAM(Asset,TRIGRAM_ASSET ID);
+        TEMPLATE_TRIGRAM(Syslog,TRIGRAM_SYSLOG ID);
+        TEMPLATE_TRIGRAM(SearchType,TRIGRAM_SEARCH_TYPE ID);
+        TEMPLATE_TRIGRAM(SearchParameter,TRIGRAM_SEARCH_PARAMETER ID);
+        TEMPLATE_TRIGRAM(AlertValue, 0);
+
     }
 }
 

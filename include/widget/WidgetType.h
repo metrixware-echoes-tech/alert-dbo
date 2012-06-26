@@ -1,36 +1,10 @@
 #ifndef WIDGETTYPE_H
 #define WIDGETTYPE_H
 
-#include "Table.h"
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "User.h"
-
-#include "UnitType.h"
-#include "Unit.h"
-
-#include "Information.h"
-#include "HistoricalValue.h"
-#include "Value.h"
-
-#include "Plugin.h"
-
-#include "Organization.h"
-
-#include "Widget.h"
-
-#include "Tab.h"
-#include "TabVersion.h"
-#include "TabWidgetAssociation.h"
-
-#include "Addon.h"
-
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
-
-#include "Asset.h"
+#include "MainIncludeFile.h"
 
 class UnitType;
 class Widget;
