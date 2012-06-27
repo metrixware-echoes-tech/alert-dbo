@@ -21,8 +21,7 @@ public:
     virtual ~SourceParameter();
     
     static std::string TRIGRAM;
-    
-    Wt::WDateTime deleteTag;          
+              
     std::string name;
     std::string format;    
     
@@ -31,20 +30,21 @@ public:
     
     template<class Action>
     void persist(Action& a)
-    {
+    {   
+        mapClassAttributesStrings["NAME"]=this->name;    
+        mapClassAttributesStrings["FORMAT"]=this->format;  
+        FIELD_FILLER();
         Wt::Dbo::hasMany(a,
                         sourceParameterValues,
                         Wt::Dbo::ManyToOne,
-                        "SRP");
+                        "SPV_SRP");
         
         //TJ
         Wt::Dbo::hasMany(a,
                         Addons,
                         Wt::Dbo::ManyToMany,
                         "TJ_ADO_SRP");
-        mapClassAttributesDates["DELETE"]=this->deleteTag;
-        mapClassAttributesStrings["NAME"]=this->name;    
-        mapClassAttributesStrings["FORMAT"]=this->format;         
+               
     }
 private:
 

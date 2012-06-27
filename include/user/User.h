@@ -62,27 +62,27 @@ class User : public Table
             
             //Other tables ids as foreign keys for user table
 
-            Wt::Dbo::belongsTo(a, userRole, "URO");
-            Wt::Dbo::belongsTo(a, userProfile, "UPR");
+            Wt::Dbo::belongsTo(a, userRole, "USR_URO");
+            Wt::Dbo::belongsTo(a, userProfile, "USR_UPR");
 
             //User id as foreign key in other tables
 
             Wt::Dbo::hasMany(a,
                              parents,
                              Wt::Dbo::ManyToOne,
-                             "UPA");
+                             "UHI_UPA");
             Wt::Dbo::hasMany(a,
                              children,
                              Wt::Dbo::ManyToOne,
-                             "UCH");
+                             "UHI_UCH");
             Wt::Dbo::hasMany(a,
                              userValues,
                              Wt::Dbo::ManyToOne,
-                             "UVA_UFI");
+                             "UVA_USR");
             Wt::Dbo::hasMany(a,
                              historicalActions,
                              Wt::Dbo::ManyToOne,
-                             "UHA");
+                             "UHA_USR");
             Wt::Dbo::hasMany(a,
                              alertAcks,
                              Wt::Dbo::ManyToOne,

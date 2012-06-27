@@ -15,18 +15,23 @@ public:
     virtual ~UserRole();
     
     static std::string TRIGRAM;
+    
+    std::string name;
 
     Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
     template<class Action>
     void persist(Action& a)
     {
+        mapClassAttributesStrings["NAME"]=this->name;
         FIELD_FILLER();
         
         Wt::Dbo::hasMany(a,
                          users,
                          Wt::Dbo::ManyToOne,
-                         "URO");
+                         "USR_URO");
+        
+        
     }
 
 

@@ -7,6 +7,8 @@
 
 #include "SourceParameterValue.h"
 
+std::string SourceParameterValue::TRIGRAM = TRIGRAM_SOURCE_PARAMETER_VALUE;
+
 SourceParameterValue::SourceParameterValue()
 {
 }

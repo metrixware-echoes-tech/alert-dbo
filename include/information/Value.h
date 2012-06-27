@@ -39,6 +39,8 @@ class Value : public Table
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesDates["CREA_DATE"]=this->CreatedDate;
+            mapClassAttributesStrings["VALUE"]=this->value;
             FIELD_FILLER();
             Wt::Dbo::field(a, informationId.searchId.id, "SEA_ID");
             Wt::Dbo::field(a, informationId.searchId.sourceId.id, "SRC_ID");

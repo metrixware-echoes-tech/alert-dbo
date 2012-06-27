@@ -1,6 +1,6 @@
 #include "Value.h"
 
-std::string Value::TRIGRAM = "VAL";
+std::string Value::TRIGRAM = TRIGRAM_VALUE;
 
 Value::Value() : Table()
 {

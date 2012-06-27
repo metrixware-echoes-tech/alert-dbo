@@ -49,8 +49,8 @@ namespace Wt
         void field(Action& a, UserValueId& uvid,
                    const std::string& name, int size = -1)
         {
-            Wt::Dbo::belongsTo(a, uvid.user, "USR_ID");
-            Wt::Dbo::belongsTo(a, uvid.userField, "UFI_ID");
+            Wt::Dbo::belongsTo(a, uvid.user, "UVA_USR");
+            Wt::Dbo::belongsTo(a, uvid.userField, "UVA_UFI");
         }
         template<>
         struct dbo_traits<UserValue> : public dbo_default_traits

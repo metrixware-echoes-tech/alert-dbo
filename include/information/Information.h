@@ -21,7 +21,6 @@ class Information2 : public Table
         Wt::Dbo::ptr<Unit> unit;
         
         std::string name;
-        Wt::WDateTime deleteTag;
                    
 
 
@@ -32,7 +31,7 @@ class Information2 : public Table
             mapClassAttributesStrings["NAME"]=this->name;
             FIELD_FILLER();
             Wt::Dbo::id(a,pk,"PRIMARY_KEY");
-            Wt::Dbo::belongsTo(a, unit, "UIN");
+            Wt::Dbo::belongsTo(a, unit, "INF_UNT");
         }    
 
     protected:

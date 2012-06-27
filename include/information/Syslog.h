@@ -20,7 +20,6 @@ public:
     virtual ~Syslog();
 
     static std::string TRIGRAM;
-    Wt::WDateTime deleteTag;
     std::string sd;
     Wt::WDateTime rcptDate;  
     Wt::WDateTime sentDate;
@@ -28,7 +27,7 @@ public:
     std::string appName;
     int procId;
     int msgId;
-    int syslogVers;
+    int version;
     
     Wt::Dbo::ptr<Probe> probe;
     Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
@@ -37,7 +36,17 @@ public:
     template<class Action>
     void persist(Action& a)
     {
-        Wt::Dbo::belongsTo(a, probe, "PRB");
+        mapClassAttributesStrings["SD"]=this->sd;  
+        mapClassAttributesDates["RCPT_DATE"]=this->rcptDate;  
+        mapClassAttributesDates["SENT_DATE"]=this->sentDate;
+        mapClassAttributesStrings["HOSTNAME"]=this->hostname;          
+        mapClassAttributesStrings["APP_NAME"]=this->appName;  
+        mapClassAttributesInts["PROC_ID"]=this->procId;
+        mapClassAttributesInts["MSG_ID"]=this->msgId;
+        mapClassAttributesInts["VERSION"]=this->version;
+        FIELD_FILLER();
+        
+        Wt::Dbo::belongsTo(a, probe, "SLO_PRB");
         
         Wt::Dbo::hasMany(a,
                              values,
@@ -47,14 +56,7 @@ public:
                             historicalValues,
                             Wt::Dbo::ManyToOne,
                             "HVA_SLO");
-        mapClassAttributesStrings["SD"]=this->sd;  
-        mapClassAttributesDates["RCPT_DATE"]=this->rcptDate;  
-        mapClassAttributesDates["SENT_DATE"]=this->sentDate;
-        mapClassAttributesStrings["HOSTNAME"]=this->hostname;          
-        mapClassAttributesStrings["APP-NAME"]=this->appName;  
-      //  mapClassAttributesInts["PROCID"]=this->procId; 
-      //  mapClassAttributesInts["MSGID"]=this->msgId; 
-      //  mapClassAttributesInts["VER"]=this->syslogVers;         
+            
     }
 private:
 

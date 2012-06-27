@@ -23,7 +23,6 @@ class UserHistoricalAction : public Table
         
 	// attributes
         Wt::WDateTime dateTime;
-        Wt::WDateTime deleteTag;
     
         int actionBefore;
         int actionAfter;
@@ -36,26 +35,26 @@ class UserHistoricalAction : public Table
         Wt::Dbo::ptr<User> user;
 
 	// dbo collections (This table id as foreign key in other tables)
-        Wt::Dbo::collection<Wt::Dbo::ptr<UserAction> > actions;
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserAction> > userActions;
 
         template<class Action>
         void persist(Action& a)
         {
             mapClassAttributesDates["DATETIME"]=this->dateTime;            
-            mapClassAttributesInts["DEFORE"]=this->actionBefore;
+            mapClassAttributesInts["BEFORE"]=this->actionBefore;
             mapClassAttributesInts["AFTER"]=this->actionAfter;
             mapClassAttributesInts["RELATIVE"]=this->actionRelative;
             FIELD_FILLER();
             //Other tables ids as foreign keys for user table
 
-            Wt::Dbo::belongsTo(a, user, "UHA");
+            Wt::Dbo::belongsTo(a, user, "UHA_USR");
 
             //User id as foreign key in other tables
 
             Wt::Dbo::hasMany(a,
-                             actions,
+                             userActions,
                              Wt::Dbo::ManyToOne,
-                             "ACT");
+                             "UAC_HAC");
             
             
             

@@ -18,7 +18,6 @@ public:
     SearchType(const SearchType& orig);
     virtual ~SearchType();
     
-    Wt::WDateTime deleteTag;
     static std::string TRIGRAM;             
     std::string name;
     
@@ -29,18 +28,19 @@ public:
     template<class Action>
     void persist(Action& a)
     {
+        mapClassAttributesStrings["NAME"]=this->name;
+        FIELD_FILLER();
         Wt::Dbo::hasMany(a,
                          searches,
                          Wt::Dbo::ManyToOne,
-                         "STY");
+                         "SEA_STY");
         
         
         Wt::Dbo::hasMany(a,
                         searchParameters,
                         Wt::Dbo::ManyToMany,
                         "TJ_STY_SEP");
-        mapClassAttributesDates["DELETE"]=this->deleteTag;
-        mapClassAttributesStrings["NAME"]=this->name;  
+        
     }
     
 private:

@@ -49,7 +49,7 @@ namespace Wt
         void field(Action& a, SourceParameterValueId& spvid,
                    const std::string& name, int size = -1)
         {
-            Wt::Dbo::belongsTo(a, spvid.sourceParameter, "SRP_ID");
+            Wt::Dbo::belongsTo(a, spvid.sourceParameter, "SPV_SRP");
             field(a, spvid.sourceId.id, "SRC_ID");
             field(a, spvid.sourceId.plugin, "PLG_ID");
         }

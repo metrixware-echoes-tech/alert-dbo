@@ -17,6 +17,8 @@ class UnitType : public Table
         
         static std::string TRIGRAM;
         
+        std::string name;
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<Unit> > units;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<WidgetType> > widgetTypes;
@@ -24,12 +26,13 @@ class UnitType : public Table
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesStrings["NAME"]=this->name;
             FIELD_FILLER();
             
             Wt::Dbo::hasMany(a,
                              units,
                              Wt::Dbo::ManyToOne,
-                             "UUN");
+                             "UNT_UTY");
             
 
             //TJ

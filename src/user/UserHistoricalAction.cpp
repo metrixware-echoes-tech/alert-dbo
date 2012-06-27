@@ -1,6 +1,6 @@
 #include "UserHistoricalAction.h"
 
-std::string UserHistoricalAction::TRIGRAM = "UHA";
+std::string UserHistoricalAction::TRIGRAM = TRIGRAM_USER_HISTORICAL_ACTION;
 
 UserHistoricalAction::UserHistoricalAction()
 {

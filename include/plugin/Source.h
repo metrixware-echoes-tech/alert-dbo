@@ -30,10 +30,10 @@ public:
     template<class Action>
     void persist(Action& a)
     {
+        FIELD_FILLER();
         Wt::Dbo::id (a, pk, "PRIMARY_KEY");
         
-        Wt::Dbo::belongsTo(a, addon, "ADO");
-        mapClassAttributesDates["DELETE"]=this->deleteTag;        
+        Wt::Dbo::belongsTo(a, addon, "SRC_ADO");    
     }
      
 private:

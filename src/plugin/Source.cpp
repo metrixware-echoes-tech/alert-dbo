@@ -7,7 +7,7 @@
 
 #include "Source.h"
 
-std::string Source::TRIGRAM = "SRC";
+std::string Source::TRIGRAM = TRIGRAM_SOURCE;
 
 Source::Source()
 {

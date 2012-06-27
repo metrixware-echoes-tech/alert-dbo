@@ -12,29 +12,35 @@
 
 #include <Wt/Dbo/Dbo>
 
+class SearchParameterValue;
+
 class SearchParameter : public Table {
 public:
     SearchParameter();
     SearchParameter(const SearchParameter& orig);
     virtual ~SearchParameter();
     
-    Wt::WDateTime deleteTag;
     static std::string TRIGRAM;             
     std::string name;
     std::string format;    
     
+    Wt::Dbo::collection<Wt::Dbo::ptr<SearchParameterValue> > searchParameterValues;
     Wt::Dbo::collection<Wt::Dbo::ptr<SearchType> > searchTypes;
     
     template<class Action>
     void persist(Action& a)
     {
+        mapClassAttributesStrings["NAME"]=this->name;            
+        mapClassAttributesStrings["FORMAT"]=this->format;
+        FIELD_FILLER();
+        Wt::Dbo::hasMany(a,
+                        searchParameterValues,
+                        Wt::Dbo::ManyToMany,
+                        "SEV_SEP");
         Wt::Dbo::hasMany(a,
                         searchTypes,
                         Wt::Dbo::ManyToMany,
                         "TJ_STY_SEP");
-        mapClassAttributesDates["DELETE"]=this->deleteTag;
-        mapClassAttributesStrings["NAME"]=this->name;            
-        mapClassAttributesStrings["FORMAT"]=this->format;           
     }
 private:
 

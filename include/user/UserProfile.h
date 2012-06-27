@@ -16,18 +16,22 @@ public:
     virtual ~UserProfile();
     
     static std::string TRIGRAM;
+    
+    std::string name;
 
     Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
     template<class Action>
     void persist(Action& a)
     {
+        mapClassAttributesStrings["name"]=this->name;
+        
         FIELD_FILLER();
         //Wt::Dbo::belongsTo(a, user, User::getName().c_str());
         Wt::Dbo::hasMany(a,
                          users,
                          Wt::Dbo::ManyToOne,
-                         "UPR");
+                         "USR_UPR");
     }
 
 };

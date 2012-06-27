@@ -17,6 +17,9 @@ class UserField : public Table
         virtual ~UserField();
         
         static std::string TRIGRAM;
+        
+        std::string name;
+        std::string format;
 
         Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
@@ -25,6 +28,8 @@ class UserField : public Table
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesStrings["FORMAT"]=this->format;
             FIELD_FILLER();
             
             Wt::Dbo::hasMany(a,

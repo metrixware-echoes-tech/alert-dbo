@@ -7,6 +7,8 @@
 
 #include "SearchParameterValue.h"
 
+std::string SearchParameterValue::TRIGRAM = TRIGRAM_SEARCH_PARAMETER_VALUE;
+
 SearchParameterValue::SearchParameterValue()
 {
 }

@@ -6,7 +6,7 @@
 
 DBO_INSTANTIATE_TEMPLATES(User);
 
-std::string User::TRIGRAM = "USR";
+std::string User::TRIGRAM = TRIGRAM_USER;
 
 User::User() : Table()
 {

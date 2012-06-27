@@ -21,22 +21,19 @@ public:
     virtual ~SourceParameterValue();
     
     static std::string TRIGRAM;
-    
-    Wt::WDateTime deleteTag;          
+            
     std::string value;
    
     
     SourceParameterValueId pk;
     
-    //Wt::Dbo::ptr<SourceParameter> sourceParameter;
     
     template<class Action>
     void persist(Action& a)
     {
+        mapClassAttributesStrings["VALUE"]=this->value; 
+        FIELD_FILLER();
         Wt::Dbo::id (a, pk, "PRIMARY_KEY");
-        //Wt::Dbo::belongsTo(a, sourceParameter, "SRP");
-        mapClassAttributesDates["DELETE"]=this->deleteTag;
-        mapClassAttributesStrings["VALUE"]=this->value;         
     }
 private:
 

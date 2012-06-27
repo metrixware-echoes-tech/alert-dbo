@@ -1,6 +1,6 @@
 #include "UserRole.h"
 
-std::string UserRole::TRIGRAM = "URO";
+std::string UserRole::TRIGRAM = TRIGRAM_USER_ROLE;
 
 UserRole::UserRole()
 {

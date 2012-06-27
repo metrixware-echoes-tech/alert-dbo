@@ -50,7 +50,7 @@ namespace Wt
         void field(Action& a, SearchParameterValueId& spvid,
                    const std::string& name, int size = -1)
         {
-            Wt::Dbo::belongsTo(a, spvid.searchParameter, "SEP_ID");
+            Wt::Dbo::belongsTo(a, spvid.searchParameter, "SEV_SEP");
             field(a, spvid.searchId.id, "SEA_ID");
             field(a, spvid.searchId.sourceId.id, "SRC_ID");
             field(a, spvid.searchId.sourceId.plugin, "PLG_ID");

@@ -1,6 +1,6 @@
 #include "UnitType.h"
 
-std::string UnitType::TRIGRAM = "UTY";
+std::string UnitType::TRIGRAM = TRIGRAM_UNIT_TYPE;
 
 UnitType::UnitType()
 {

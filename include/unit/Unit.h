@@ -17,20 +17,26 @@ class Unit : public Table
         
         static std::string TRIGRAM;
         
+        std::string name;
+        std::string longName;
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<Information2> > informations;
         Wt::Dbo::ptr<UnitType> unitType;
         
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesStrings["LONG_NAME"]=this->longName;
+            
             FIELD_FILLER();
             
-            Wt::Dbo::belongsTo(a, unitType, "UUN");
+            Wt::Dbo::belongsTo(a, unitType, "UNT_UTY");
             
             Wt::Dbo::hasMany(a,
                              informations,
                              Wt::Dbo::ManyToOne,
-                             "UIN");
+                             "INF_UNT");
             
             
             

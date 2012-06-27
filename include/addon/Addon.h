@@ -28,7 +28,7 @@ class Addon : public Table
             Wt::Dbo::hasMany(a,
                              sources,
                              Wt::Dbo::ManyToOne,
-                             "SRC"); 
+                             "SRC_ADO"); 
             
             //TJ
             Wt::Dbo::hasMany(a,

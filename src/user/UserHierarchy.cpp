@@ -1,6 +1,6 @@
 #include "UserHierarchy.h"
 
-std::string UserHierarchy::TRIGRAM = "UHI";
+std::string UserHierarchy::TRIGRAM = TRIGRAM_USER_HIERARCHY;
 
 UserHierarchy::UserHierarchy()
 {

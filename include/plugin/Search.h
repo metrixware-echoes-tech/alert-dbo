@@ -21,7 +21,6 @@ public:
     virtual ~Search();
     
     static std::string TRIGRAM;
-    Wt::WDateTime deleteTag; 
     int nbValue;
     std::string period;
     bool searchIsStatic;
@@ -34,8 +33,7 @@ public:
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesDates["DELETE"]=this->deleteTag;
-       // mapClassAttributesInt["NB_VALUE"]=this->nbValue;        
+        mapClassAttributesInts["NB_VALUE"]=this->nbValue;        
         mapClassAttributesStrings["PERIOD"]=this->period;        
         mapClassAttributesBools["IS_STATIC"]=this->searchIsStatic; 
         
@@ -43,7 +41,7 @@ public:
         
         Wt::Dbo::id (a, pk, "PRIMARY_KEY");
         
-        Wt::Dbo::belongsTo(a, searchType, "STY");
+        Wt::Dbo::belongsTo(a, searchType, "SEA_STY");
     }
     
 private:

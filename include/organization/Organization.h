@@ -51,7 +51,7 @@ class Organization : public Table
             Wt::Dbo::hasMany(a,
                              probes,
                              Wt::Dbo::ManyToOne,
-                             "ORG_ID");
+                             "PRB_ORG");
                               
        }
 };

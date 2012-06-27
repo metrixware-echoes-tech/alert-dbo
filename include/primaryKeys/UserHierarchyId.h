@@ -48,8 +48,8 @@ namespace Wt
         void field(Action& a, UserHierarchyId& hiid,
                    const std::string& name, int size = -1)
         {
-            Wt::Dbo::belongsTo(a, hiid.parent, "UPA");
-            Wt::Dbo::belongsTo(a, hiid.child, "UCH");
+            Wt::Dbo::belongsTo(a, hiid.parent, "UHI_UPA");
+            Wt::Dbo::belongsTo(a, hiid.child, "UHI_UCH");
         }
         template<>
         struct dbo_traits<UserHierarchy> : public dbo_default_traits

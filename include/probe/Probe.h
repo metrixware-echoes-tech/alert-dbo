@@ -14,43 +14,33 @@ class Probe : public Table
     public:
         Probe();
         virtual ~Probe();
-   
-
-//        ProbeId pk;
         
-       Wt::WDateTime deleteTag;
        static std::string TRIGRAM;             
        std::string name;
        std::string key;
         
         Wt::Dbo::ptr<Organization> organization;
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
-        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
-        
         Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
 
         template<class Action>
         void persist(Action& a)
         {
-//            Wt::Dbo::id (a, pk, "PRIMARY_KEY");
-            Wt::Dbo::belongsTo(a, organization, "ORG");
+            mapClassAttributesStrings["NAME"]=this->name;            
+            mapClassAttributesStrings["KEY"]=this->key; 
+            FIELD_FILLER();
+            Wt::Dbo::belongsTo(a, organization, "PRB_ORG");
 
-            Wt::Dbo::hasMany(a,
-                             values,
-                             Wt::Dbo::ManyToOne,
-                             "VPR");
-            Wt::Dbo::hasMany(a,
-                             historicalValues,
-                             Wt::Dbo::ManyToOne,
-                             "HPR");
             Wt::Dbo::hasMany(a,
                              syslogs,
                              Wt::Dbo::ManyToOne,
-                             "PRB");
-            mapClassAttributesDates["DELETE"]=this->deleteTag;
-            mapClassAttributesStrings["NAME"]=this->name;            
-            mapClassAttributesStrings["KEY"]=this->key;              
+                             "SLO_PRB");
+            Wt::Dbo::hasMany(a,
+                             assets,
+                             Wt::Dbo::ManyToOne,
+                             "AST_PRB");
+                         
         };
 
     protected:
