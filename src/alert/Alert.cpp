@@ -1,6 +1,6 @@
 #include "Alert.h"
 
-std::string Alert::TRIGRAM = "ALE";
+std::string Alert::TRIGRAM = TRIGRAM_ALERT;
 
 Alert::Alert()
 {

@@ -31,7 +31,7 @@ class AlertType : public Table
             Wt::Dbo::hasMany(a,
                              alerts,
                              Wt::Dbo::ManyToOne,
-                             "ATY");
+                             "ALE_ATY");
             Wt::Dbo::hasMany(a,
                              alertCriterias,
                              Wt::Dbo::ManyToMany,

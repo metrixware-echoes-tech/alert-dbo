@@ -18,15 +18,15 @@ class SearchParameterValue;
 struct SearchParameterValueId
 {
     Wt::Dbo::ptr<SearchParameter> searchParameter;
-    SearchId searchId;
+    Wt::Dbo::ptr<Search> search;
 
     SearchParameterValueId(Wt::Dbo::ptr<SearchParameter> searchParameter, SourceId sourceId)
-        : searchParameter(searchParameter), searchId(searchId) { }
+        : searchParameter(searchParameter), search(search) { }
 
     SearchParameterValueId(){ }
 
     bool operator== (const SearchParameterValueId& other) const {
-        return searchParameter == other.searchParameter && searchId == other.searchId;
+        return searchParameter == other.searchParameter && search == other.search;
     }
 
     bool operator< (const SearchParameterValueId& other) const {
@@ -51,9 +51,7 @@ namespace Wt
                    const std::string& name, int size = -1)
         {
             Wt::Dbo::belongsTo(a, spvid.searchParameter, "SEV_SEP");
-            field(a, spvid.searchId.id, "SEA_ID");
-            field(a, spvid.searchId.sourceId.id, "SRC_ID");
-            field(a, spvid.searchId.sourceId.plugin, "PLG_ID");
+            field(a, spvid.search, "");
         }
         template<>
         struct dbo_traits<SearchParameterValue> : public dbo_default_traits

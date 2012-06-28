@@ -7,14 +7,12 @@
 #include <Wt/WDateTime>
 #include <Wt/WGlobal>
 
-#include "Table.h"
-
 #include "MainIncludeFile.h"
 
 #include "InformationId.h"
 
 class Plugin;
-class Probe;
+//class Probe;
 class Asset;
 class Syslog;
 //class Information2;

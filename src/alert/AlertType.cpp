@@ -1,6 +1,6 @@
 #include "AlertType.h"
 
-std::string AlertType::TRIGRAM = "ATY";
+std::string AlertType::TRIGRAM = TRIGRAM_ALERT_TYPE;
 
 AlertType::AlertType()
 {

@@ -29,7 +29,7 @@ class AlertValue : public Table
             
             Wt::Dbo::id(a,alert,"AVA");
             
-            Wt::Dbo::belongsTo(a,alertParam,"APA");
+            Wt::Dbo::belongsTo(a,alertParam,"AVA_APA");
                  
         }
     protected:

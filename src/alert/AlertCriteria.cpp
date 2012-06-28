@@ -1,6 +1,6 @@
 #include "AlertCriteria.h"
 
-std::string AlertCriteria::TRIGRAM = "ACR";
+std::string AlertCriteria::TRIGRAM = TRIGRAM_ALERT_CRITERIA;
 
 AlertCriteria::AlertCriteria()
 {

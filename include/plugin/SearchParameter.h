@@ -35,7 +35,7 @@ public:
         FIELD_FILLER();
         Wt::Dbo::hasMany(a,
                         searchParameterValues,
-                        Wt::Dbo::ManyToMany,
+                        Wt::Dbo::ManyToOne,
                         "SEV_SEP");
         Wt::Dbo::hasMany(a,
                         searchTypes,

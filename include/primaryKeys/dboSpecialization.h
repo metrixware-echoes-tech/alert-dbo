@@ -47,7 +47,10 @@ class Syslog;
 class SearchType;
 class SearchParameter;
 
+//class Source;
+
 #include "MacroTrigram.h"
+
 
 namespace Wt
 {
@@ -78,7 +81,7 @@ namespace Wt
         TEMPLATE_TRIGRAM(UnitType,TRIGRAM_UNIT_TYPE ID);
         TEMPLATE_TRIGRAM(UserAction,TRIGRAM_USER_ACTION ID);
         TEMPLATE_TRIGRAM(Addon,TRIGRAM_ADDON ID);
-        TEMPLATE_TRIGRAM(AlertAcknowledge,TRIGRAM_ACKNOWLEDGE ID);
+        TEMPLATE_TRIGRAM(AlertAcknowledge,TRIGRAM_ALERT_ACKNOWLEDGE ID);
         TEMPLATE_TRIGRAM(Tab,TRIGRAM_TAB ID);
         TEMPLATE_TRIGRAM(TabVersion,TRIGRAM_TAB_VERSION ID);
         TEMPLATE_TRIGRAM(Widget,TRIGRAM_WIDGET ID);

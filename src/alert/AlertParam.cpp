@@ -1,6 +1,6 @@
 #include "AlertParam.h"
 
-std::string AlertParam::TRIGRAM = "APA";
+std::string AlertParam::TRIGRAM = TRIGRAM_ALERT_PARAM;
 
 AlertParam::AlertParam()
 {

@@ -34,7 +34,7 @@ class Alert : public Table
             
             FIELD_FILLER();
             
-            Wt::Dbo::belongsTo(a, alertType,"ATY");
+            Wt::Dbo::belongsTo(a, alertType,"ALE_ATY");
             
             Wt::Dbo::hasMany(a,
                              alertAcks,

@@ -34,7 +34,7 @@ class AlertParam : public Table
             Wt::Dbo::hasMany(a,
                              alertValues,
                              Wt::Dbo::ManyToOne,
-                             "APA");
+                             "AVA_APA");
             Wt::Dbo::hasMany(a,
                              alertCriterias,
                              Wt::Dbo::ManyToMany,

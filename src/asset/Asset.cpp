@@ -1,6 +1,6 @@
 #include "Asset.h"
 
-std::string Asset::TRIGRAM = "AST";
+std::string Asset::TRIGRAM = TRIGRAM_ASSET;
 
 Asset::Asset()
 {
