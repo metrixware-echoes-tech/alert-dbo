@@ -1,6 +1,6 @@
 #include "UserAction.h"
 
-std::string UserAction::TRIGRAM = "UAC";
+std::string UserAction::TRIGRAM = TRIGRAM_USER_ACTION;
 
 UserAction::UserAction()
 {

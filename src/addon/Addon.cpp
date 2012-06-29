@@ -1,6 +1,6 @@
 #include "Addon.h"
 
-std::string Addon::TRIGRAM = "ADO";
+std::string Addon::TRIGRAM = TRIGRAM_ADDON;
 
 Addon::Addon()
 {

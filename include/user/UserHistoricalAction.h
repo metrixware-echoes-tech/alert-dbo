@@ -54,7 +54,7 @@ class UserHistoricalAction : public Table
             Wt::Dbo::hasMany(a,
                              userActions,
                              Wt::Dbo::ManyToOne,
-                             "UAC_HAC");
+                             "UAC_UHA");
             
             
             

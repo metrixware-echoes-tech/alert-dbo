@@ -3,6 +3,8 @@
 
 #include "MainIncludeFile.h"
 
+#include "MacroTrigram.h"
+
 #include <string>
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
@@ -24,7 +26,7 @@ class Constants
         static const char *T_USER_VALUE_UVA;
         static const char *T_USER_FIELD_UFI;
         static const char *T_USER_HISTORICAL_ACTION_UHA;
-        static const char *T_ACTION_ACT;
+        static const char *T_USER_ACTION_UAC;
         static const char *T_ORGANIZATION_ORG;
         static const char *T_PROBE_PRB;
         static const char *T_VALUE_VAL;

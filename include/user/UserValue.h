@@ -12,12 +12,14 @@ class UserValue : public Table
         virtual ~UserValue();
         
         static std::string TRIGRAM;
+        std::string value;
         
         UserValueId uvid;
 
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesStrings["VALUE"]=this->value;
             FIELD_FILLER();
             Wt::Dbo::id(a,uvid,"PRIMARY_KEY");
         }

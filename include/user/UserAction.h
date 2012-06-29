@@ -24,7 +24,7 @@ class UserAction : public Table
 	// methods
 
 	// dbo pointers (Other tables ids as foreign keys for this table)
-        Wt::Dbo::ptr<UserHistoricalAction> historicalAction;
+        Wt::Dbo::ptr<UserHistoricalAction> userHistoricalAction;
 
         template<class Action>
         void persist(Action& a) 
@@ -34,7 +34,7 @@ class UserAction : public Table
             FIELD_FILLER();
 
             //Other tables ids as foreign keys for user table
-            Wt::Dbo::belongsTo(a, historicalAction, "ACT");
+            Wt::Dbo::belongsTo(a, userHistoricalAction, "UAC_UHA");
                      
         }
 };

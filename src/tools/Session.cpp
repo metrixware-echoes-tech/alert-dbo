@@ -41,7 +41,7 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
 
     setConnection(*pgBackend);
 
-    mapClass<UserAction>(Constants::T_ACTION_ACT);
+    mapClass<UserAction>(Constants::T_USER_ACTION_UAC);
     mapClass<UserHierarchy>(Constants::T_USER_HIERARCHY_UHI);
     mapClass<UserHistoricalAction>(Constants::T_USER_HISTORICAL_ACTION_UHA);
     mapClass<User>(Constants::T_USER_USR);

@@ -24,7 +24,7 @@ public:
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["name"]=this->name;
+        mapClassAttributesStrings["NAME"]=this->name;
         
         FIELD_FILLER();
         //Wt::Dbo::belongsTo(a, user, User::getName().c_str());
