@@ -31,7 +31,7 @@ public:
     void persist(Action& a)
     {
         FIELD_FILLER();
-        Wt::Dbo::id (a, pk, "PRIMARY_KEY");
+        Wt::Dbo::id (a, pk, "SRC_ID");
         
         Wt::Dbo::belongsTo(a, addon, "SRC_ADO");    
     }

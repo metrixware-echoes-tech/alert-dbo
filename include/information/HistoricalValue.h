@@ -9,7 +9,7 @@
 
 class Plugin;
 class Probe;
-//class Information2;
+class Information2;
 
 class HistoricalValue : public Table
 {
@@ -26,7 +26,8 @@ class HistoricalValue : public Table
         
         Wt::Dbo::ptr<Asset> asset;
         Wt::Dbo::ptr<Syslog> syslog;
-        InformationId informationId;
+        Wt::Dbo::ptr<Information2> information;
+//        InformationId informationId;
 
         template<class Action>
         void persist(Action& a)
@@ -35,9 +36,7 @@ class HistoricalValue : public Table
             mapClassAttributesStrings["VALUE"]=this->value;             
             mapClassAttributesInts["SEA-SUB_NUM"]=this->subSearchNumber;
             FIELD_FILLER();
-            Wt::Dbo::field(a, informationId.searchId.id, "SEA_ID");
-            Wt::Dbo::field(a, informationId.searchId.sourceId.id, "SRC_ID");
-            Wt::Dbo::field(a, informationId.searchId.sourceId.plugin, "PLG_ID");
+            Wt::Dbo::field(a, information, "");
             Wt::Dbo::belongsTo(a, asset, "HVA_AST");
             Wt::Dbo::belongsTo(a, syslog, "HVA_SLO");
             

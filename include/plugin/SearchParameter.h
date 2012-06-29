@@ -24,7 +24,6 @@ public:
     std::string name;
     std::string format;    
     
-    Wt::Dbo::collection<Wt::Dbo::ptr<SearchParameterValue> > searchParameterValues;
     Wt::Dbo::collection<Wt::Dbo::ptr<SearchType> > searchTypes;
     
     template<class Action>
@@ -33,10 +32,6 @@ public:
         mapClassAttributesStrings["NAME"]=this->name;            
         mapClassAttributesStrings["FORMAT"]=this->format;
         FIELD_FILLER();
-        Wt::Dbo::hasMany(a,
-                        searchParameterValues,
-                        Wt::Dbo::ManyToOne,
-                        "SEV_SEP");
         Wt::Dbo::hasMany(a,
                         searchTypes,
                         Wt::Dbo::ManyToMany,

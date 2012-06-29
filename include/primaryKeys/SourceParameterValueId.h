@@ -13,19 +13,20 @@
 
 class SourceParameter;
 class SourceParameterValue;
+class Source;
 
 struct SourceParameterValueId
 {
     Wt::Dbo::ptr<SourceParameter> sourceParameter;
-    SourceId sourceId;
+    Wt::Dbo::ptr<Source> source;
 
-    SourceParameterValueId(Wt::Dbo::ptr<SourceParameter> sourceParameter, SourceId sourceId)
-        : sourceParameter(sourceParameter), sourceId(sourceId) { }
+    SourceParameterValueId(Wt::Dbo::ptr<SourceParameter> sourceParameter, Wt::Dbo::ptr<Source> source)
+        : sourceParameter(sourceParameter), source(source) { }
 
     SourceParameterValueId(){ }
 
     bool operator== (const SourceParameterValueId& other) const {
-        return sourceParameter == other.sourceParameter && sourceId == other.sourceId;
+        return sourceParameter == other.sourceParameter && source == other.source;
     }
 
     bool operator< (const SourceParameterValueId& other) const {
@@ -49,9 +50,8 @@ namespace Wt
         void field(Action& a, SourceParameterValueId& spvid,
                    const std::string& name, int size = -1)
         {
-            Wt::Dbo::belongsTo(a, spvid.sourceParameter, "SPV_SRP");
-            field(a, spvid.sourceId.id, "SRC_ID");
-            field(a, spvid.sourceId.plugin, "PLG_ID");
+            field(a, spvid.sourceParameter, "SRP_ID");
+            field(a, spvid.source, "SRC_ID");
         }
         template<>
         struct dbo_traits<SourceParameterValue> : public dbo_default_traits

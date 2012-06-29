@@ -15,7 +15,7 @@ class Plugin;
 //class Probe;
 class Asset;
 class Syslog;
-//class Information2;
+class Information2;
 
 
 
@@ -29,7 +29,8 @@ class Value : public Table
         
         Wt::Dbo::ptr<Asset> asset;
         Wt::Dbo::ptr<Syslog> syslog;
-        InformationId informationId;
+//        Wt::Dbo::ptr<Information2> information;
+
         int mNumSubSearch;
         std::string value;
         Wt::WDateTime CreatedDate;
@@ -40,9 +41,6 @@ class Value : public Table
             mapClassAttributesDates["CREA_DATE"]=this->CreatedDate;
             mapClassAttributesStrings["VALUE"]=this->value;
             FIELD_FILLER();
-            Wt::Dbo::field(a, informationId.searchId.id, "SEA_ID");
-            Wt::Dbo::field(a, informationId.searchId.sourceId.id, "SRC_ID");
-            Wt::Dbo::field(a, informationId.searchId.sourceId.plugin, "PLG_ID");
             Wt::Dbo::belongsTo(a, asset, "VAL_AST");
             Wt::Dbo::belongsTo(a, syslog, "VAL_SLO");
             

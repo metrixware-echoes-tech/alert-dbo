@@ -30,7 +30,7 @@ public:
     {
         mapClassAttributesStrings["VALUE"]=this->value;  
         FIELD_FILLER();
-        Wt::Dbo::id(a,searchParameterValueId,"PRIMARY_KEY");
+        Wt::Dbo::id(a,searchParameterValueId,"SEV_ID");
         
     }
 private:

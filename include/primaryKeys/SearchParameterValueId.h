@@ -20,7 +20,7 @@ struct SearchParameterValueId
     Wt::Dbo::ptr<SearchParameter> searchParameter;
     Wt::Dbo::ptr<Search> search;
 
-    SearchParameterValueId(Wt::Dbo::ptr<SearchParameter> searchParameter, SourceId sourceId)
+    SearchParameterValueId(Wt::Dbo::ptr<SearchParameter> searchParameter, Wt::Dbo::ptr<Search> search)
         : searchParameter(searchParameter), search(search) { }
 
     SearchParameterValueId(){ }
@@ -50,8 +50,8 @@ namespace Wt
         void field(Action& a, SearchParameterValueId& spvid,
                    const std::string& name, int size = -1)
         {
-            Wt::Dbo::belongsTo(a, spvid.searchParameter, "SEV_SEP");
-            field(a, spvid.search, "");
+            field(a, spvid.search, "SEA_ID");
+            field(a, spvid.searchParameter, "SEP_ID");
         }
         template<>
         struct dbo_traits<SearchParameterValue> : public dbo_default_traits

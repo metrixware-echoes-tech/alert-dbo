@@ -39,7 +39,7 @@ public:
         
         FIELD_FILLER();
         
-        Wt::Dbo::id (a, pk, "PRIMARY_KEY");
+        Wt::Dbo::id (a, pk, "SEA_ID");
         
         Wt::Dbo::belongsTo(a, searchType, "SEA_STY");
     }

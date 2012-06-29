@@ -13,23 +13,24 @@
 #include "SearchId.h"
 
 class Information2;
+class Search;
 
 struct InformationId
 {
-    SearchId searchId;
+    Wt::Dbo::ptr<Search> search;
     std::string subSearchNumber;
 
-    InformationId(SearchId ptr)
-        : searchId(ptr) { }
+    InformationId(Wt::Dbo::ptr<Search> ptr)
+        : search(ptr) { }
 
     InformationId(){ }
 
     bool operator== (const InformationId& other) const {
-        return searchId == other.searchId;
+        return search == other.search;
     }
 
     bool operator< (const InformationId& other) const {
-        if (searchId < other.searchId)
+        if (search < other.search)
             return true;
         else
             return false;
@@ -38,7 +39,7 @@ struct InformationId
 
 inline std::ostream& operator<< (std::ostream& o, const InformationId& pk)
 {
-    return o << "(" << pk.searchId << ")";
+    return o << "(" << pk.search << ")";
 }
 
 namespace Wt
@@ -49,10 +50,8 @@ namespace Wt
         void field(Action& a, InformationId& infid,
                    const std::string& name, int size = -1)
         {
-            field(a, infid.searchId.id, "SEA_ID");
-            field(a, infid.searchId.sourceId.id, "SRC_ID");
-            field(a, infid.searchId.sourceId.plugin, "PLG_ID");
-            field(a, infid.subSearchNumber, "SUB_SEA_NUM");
+            field(a, infid.search, "INF_ID");
+            field(a, infid.subSearchNumber, "INF_ID");
         }
         template<>
         struct dbo_traits<Information2> : public dbo_default_traits

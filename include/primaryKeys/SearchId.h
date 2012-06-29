@@ -18,15 +18,15 @@ class Source;
 struct SearchId
 {
     int id;
-    SourceId sourceId;
+    Wt::Dbo::ptr<Source> source;
 
-    SearchId(int id, SourceId ptr)
-        : id(id), sourceId(ptr) { }
+    SearchId(int id, Wt::Dbo::ptr<Source> ptr)
+        : id(id), source(ptr) { }
 
     SearchId(){ }
 
     bool operator== (const SearchId& other) const {
-        return id == other.id && sourceId == other.sourceId;
+        return id == other.id && source == other.source;
     }
 
     bool operator< (const SearchId& other) const {
@@ -51,8 +51,7 @@ namespace Wt
                    const std::string& name, int size = -1)
         {
             field(a, srid.id, "SEA_ID");
-            field(a, srid.sourceId.id, "SRC_ID");
-            field(a, srid.sourceId.plugin, "PLG_ID");
+            field(a, srid.source, "SEA_ID");
         }
         template<>
         struct dbo_traits<Search> : public dbo_default_traits
