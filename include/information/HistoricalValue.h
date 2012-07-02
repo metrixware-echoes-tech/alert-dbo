@@ -19,9 +19,7 @@ class HistoricalValue : public Table
         
         static std::string TRIGRAM;
         
-        int subSearchNumber;
         Wt::WDateTime creationDate;        
-        Wt::WDateTime deleteTag;
         std::string value;
         
         Wt::Dbo::ptr<Asset> asset;
@@ -34,11 +32,11 @@ class HistoricalValue : public Table
         {   
             mapClassAttributesDates["CREA_DATE"]=this->creationDate;  
             mapClassAttributesStrings["VALUE"]=this->value;             
-            mapClassAttributesInts["SEA-SUB_NUM"]=this->subSearchNumber;
             FIELD_FILLER();
-            Wt::Dbo::field(a, information, "");
             Wt::Dbo::belongsTo(a, asset, "HVA_AST");
             Wt::Dbo::belongsTo(a, syslog, "HVA_SLO");
+            Wt::Dbo::field(a,information, "INF_ID");
+
             
         }
 

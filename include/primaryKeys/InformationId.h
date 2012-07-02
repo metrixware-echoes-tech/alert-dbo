@@ -50,8 +50,8 @@ namespace Wt
         void field(Action& a, InformationId& infid,
                    const std::string& name, int size = -1)
         {
-            field(a, infid.search, "INF_ID");
-            field(a, infid.subSearchNumber, "INF_ID");
+            field(a, infid.search, "SEA_ID");
+            field(a, infid.subSearchNumber, "SUB_SEA_NUM");
         }
         template<>
         struct dbo_traits<Information2> : public dbo_default_traits

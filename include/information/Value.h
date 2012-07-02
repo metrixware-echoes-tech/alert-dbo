@@ -29,9 +29,8 @@ class Value : public Table
         
         Wt::Dbo::ptr<Asset> asset;
         Wt::Dbo::ptr<Syslog> syslog;
-//        Wt::Dbo::ptr<Information2> information;
+        Wt::Dbo::ptr<Information2> information;
 
-        int mNumSubSearch;
         std::string value;
         Wt::WDateTime CreatedDate;
 
@@ -43,8 +42,7 @@ class Value : public Table
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, asset, "VAL_AST");
             Wt::Dbo::belongsTo(a, syslog, "VAL_SLO");
-            
-            Wt::Dbo::field(a,mNumSubSearch, "SUB_SEARCH_NUM");
+            Wt::Dbo::field(a,information, "INF_ID");
         }
 
     protected:
