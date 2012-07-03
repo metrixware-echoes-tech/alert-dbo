@@ -31,6 +31,7 @@ class Organization : public Table
         // dbo collections (This table id as foreign key in other tables)
         Wt::Dbo::collection<Wt::Dbo::ptr<User> > user;
         Wt::Dbo::collection<Wt::Dbo::ptr<Probe> > probes;
+        Wt::Dbo::ptr<Pack> pack;
 
         template<class Action>
         void persist(Action& a)
@@ -52,6 +53,7 @@ class Organization : public Table
                              probes,
                              Wt::Dbo::ManyToOne,
                              "PRB_ORG");
+            Wt::Dbo::belongsTo(a, pack, "ORG_PCK");
                               
        }
 };
