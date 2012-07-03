@@ -1,5 +1,7 @@
 #include "Pack.h"
 
+std::string Pack::TRIGRAM = TRIGRAM_PACK;
+
 Pack::Pack()
 {
     //ctor

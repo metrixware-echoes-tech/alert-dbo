@@ -91,6 +91,9 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<SearchParameter>(Constants::T_SEARCH_PARAMETER_SEP);
     mapClass<SearchParameterValue>(Constants::T_SEARCH_PARAMETER_VALUE_SEV);
     
+    mapClass<Pack>(Constants::T_PACK_PCK);
+    
+    mapClass<Option>(Constants::T_OPTION_OPT);
     
 
     mapClass<AuthInfo>("auth_info");

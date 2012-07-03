@@ -46,6 +46,8 @@
 #define TRIGRAM_SEARCH_TYPE "STY"
 #define TRIGRAM_SEARCH_PARAMETER "SEP"
 #define TRIGRAM_SEARCH_PARAMETER_VALUE "SEV"
+#define TRIGRAM_PACK "PCK"
+#define TRIGRAM_OPTION "OPT"
 
 #define TEMPLATE_TRIGRAM(CLASS, TRIGRAM) template<> \
         struct dbo_traits<CLASS> : public dbo_default_traits \

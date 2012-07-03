@@ -96,6 +96,9 @@
 
 #include "Syslog.h"
 
+#include "Pack.h"
+#include "Option.h"
+
 
             
 
