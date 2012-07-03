@@ -12,6 +12,7 @@ const char *Constants::T_USER_HIERARCHY_UHI = "T_USER_HIERARCHY_UHI";
 const char *Constants::T_USER_ACTION_UAC = "T_USER_ACTION_ACT";
 const char *Constants::T_USER_HISTORICAL_ACTION_UHA = "T_USER_HISTORICAL_ACTION_UHA";
 const char *Constants::T_ORGANIZATION_ORG = "T_ORGANIZATION_ORG";
+const char *Constants::T_ORGANIZATION_TYPE_OTY = "T_ORGANIZATION_TYPE_OTY";
 const char *Constants::T_PROBE_PRB = "T_PROBE_PRB";
 const char *Constants::T_VALUE_VAL = "T_VALUE_VAL";
 const char *Constants::T_HISTORICAL_VALUE_HVA = "T_HISTORICAL_VALUE_HVA";

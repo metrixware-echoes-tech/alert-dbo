@@ -28,6 +28,7 @@ class Constants
         static const char *T_USER_HISTORICAL_ACTION_UHA;
         static const char *T_USER_ACTION_UAC;
         static const char *T_ORGANIZATION_ORG;
+        static const char *T_ORGANIZATION_TYPE_OTY;
         static const char *T_PROBE_PRB;
         static const char *T_VALUE_VAL;
         static const char *T_HISTORICAL_VALUE_HVA;

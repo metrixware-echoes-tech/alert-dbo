@@ -58,6 +58,7 @@
 #include "UserAction.h"
 
 #include "Organization.h"
+#include "OrganizationType.h"
 
 #include "Information.h"
 #include "Value.h"

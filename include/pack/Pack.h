@@ -15,22 +15,21 @@ class Pack : public Table
         std::string name;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Option> > option;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organisation;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
         template<class Action>
         void persist(Action& a)
         {
             mapClassAttributesStrings["NAME"]=this->name;                       
-            
+            FIELD_FILLER();            
             Wt::Dbo::hasMany(a,
                              option,
                              Wt::Dbo::ManyToMany,
                              "TJ_PCK_OPT");
                     
             Wt::Dbo::hasMany(a,
-                             organisation,
+                             organization,
                              Wt::Dbo::ManyToOne,
                              "ORG_PCK");
-            FIELD_FILLER();
         }
         
     protected:

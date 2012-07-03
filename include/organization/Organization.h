@@ -32,7 +32,8 @@ class Organization : public Table
         Wt::Dbo::collection<Wt::Dbo::ptr<User> > user;
         Wt::Dbo::collection<Wt::Dbo::ptr<Probe> > probes;
         Wt::Dbo::ptr<Pack> pack;
-
+        Wt::Dbo::ptr<OrganizationType> organizationType;
+        
         template<class Action>
         void persist(Action& a)
         {
@@ -54,7 +55,7 @@ class Organization : public Table
                              Wt::Dbo::ManyToOne,
                              "PRB_ORG");
             Wt::Dbo::belongsTo(a, pack, "ORG_PCK");
-                              
+            Wt::Dbo::belongsTo(a, organizationType, "ORG_OTY");                  
        }
 };
 

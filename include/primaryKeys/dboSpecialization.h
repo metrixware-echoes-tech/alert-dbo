@@ -38,6 +38,7 @@ class Widget;
 class Value;
 class Plugin;
 class Organization;
+class OrganizationType;
 class Information2;
 class HistoricalValue;
 class Probe;
@@ -90,6 +91,7 @@ namespace Wt
         TEMPLATE_TRIGRAM(Value,TRIGRAM_VALUE ID);
         TEMPLATE_TRIGRAM(Plugin,TRIGRAM_PLUGIN ID);
         TEMPLATE_TRIGRAM(Organization,TRIGRAM_ORGANIZATION ID);
+        TEMPLATE_TRIGRAM(OrganizationType,TRIGRAM_ORGANIZATION_TYPE ID);
         TEMPLATE_TRIGRAM(HistoricalValue,TRIGRAM_HISTORICAL_VALUE ID);
         TEMPLATE_TRIGRAM(AlertCriteria,TRIGRAM_ALERT_CRITERIA ID);
         TEMPLATE_TRIGRAM(Probe,TRIGRAM_PROBE ID);

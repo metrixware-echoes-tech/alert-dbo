@@ -1,5 +1,7 @@
 #include "OrganizationType.h"
 
+std::string OrganizationType::TRIGRAM = TRIGRAM_ORGANIZATION_TYPE;
+
 OrganizationType::OrganizationType()
 {
     //ctor
