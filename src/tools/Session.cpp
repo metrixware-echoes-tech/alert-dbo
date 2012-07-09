@@ -55,6 +55,8 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<Information2>(Constants::T_INFORMATION_INF);
     mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
     mapClass<OrganizationType>(Constants::T_ORGANIZATION_TYPE_OTY);
+    mapClass<OrganizationValue>(Constants::T_ORGANIZATION_VALUE_OVA);
+    mapClass<OrganizationField>(Constants::T_ORGANIZATION_FIELD_OFI);
     mapClass<Probe>(Constants::T_PROBE_PRB);
     mapClass<Value>(Constants::T_VALUE_VAL);
     mapClass<HistoricalValue>(Constants::T_HISTORICAL_VALUE_HVA);

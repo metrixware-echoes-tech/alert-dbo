@@ -73,10 +73,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/user/UserHistoricalAction.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
-	${OBJECTDIR}/src/user/User.o \
 	${OBJECTDIR}/src/information/Syslog.o \
-	${OBJECTDIR}/src/user/UserField.o \
 	${OBJECTDIR}/src/information/Information.o \
+	${OBJECTDIR}/src/user/User.o \
+	${OBJECTDIR}/src/organization/OrganizationField.o \
+	${OBJECTDIR}/src/user/UserField.o \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
@@ -304,25 +305,30 @@ ${OBJECTDIR}/src/user/UserRole.o: src/user/UserRole.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
 
-${OBJECTDIR}/src/user/User.o: src/user/User.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/User.o src/user/User.cpp
-
 ${OBJECTDIR}/src/information/Syslog.o: src/information/Syslog.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Syslog.o src/information/Syslog.cpp
 
-${OBJECTDIR}/src/user/UserField.o: src/user/UserField.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserField.o src/user/UserField.cpp
-
 ${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
+
+${OBJECTDIR}/src/user/User.o: src/user/User.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/User.o src/user/User.cpp
+
+${OBJECTDIR}/src/organization/OrganizationField.o: src/organization/OrganizationField.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationField.o src/organization/OrganizationField.cpp
+
+${OBJECTDIR}/src/user/UserField.o: src/user/UserField.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserField.o src/user/UserField.cpp
 
 ${OBJECTDIR}/src/widget/TabWidgetAssociation.o: src/widget/TabWidgetAssociation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget

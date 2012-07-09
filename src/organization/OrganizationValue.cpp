@@ -1,6 +1,6 @@
 #include "OrganizationValue.h"
 
-//std::string OrganizationValue::TRIGRAM = TRIGRAM_ORGANIZATION_VALUE;
+std::string OrganizationValue::TRIGRAM = TRIGRAM_ORGANIZATION_VALUE;
 
 OrganizationValue::OrganizationValue()
 {

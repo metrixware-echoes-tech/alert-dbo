@@ -59,6 +59,8 @@
 
 #include "Organization.h"
 #include "OrganizationType.h"
+#include "OrganizationValue.h"
+#include "OrganizationField.h"
 
 #include "Information.h"
 #include "Value.h"

@@ -32,6 +32,7 @@
                        displayName="organization"
                        projectFiles="true">
           <itemPath>include/organization/Organization.h</itemPath>
+          <itemPath>include/organization/OrganizationField.h</itemPath>
           <itemPath>include/organization/OrganizationType.h</itemPath>
           <itemPath>include/organization/OrganizationValue.h</itemPath>
         </logicalFolder>
@@ -51,6 +52,7 @@
         </logicalFolder>
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
           <itemPath>include/primaryKeys/InformationId.h</itemPath>
+          <itemPath>include/primaryKeys/OrganizationValueId.h</itemPath>
           <itemPath>include/primaryKeys/SearchId.h</itemPath>
           <itemPath>include/primaryKeys/SearchParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/SourceId.h</itemPath>
@@ -131,6 +133,7 @@
                        displayName="organization"
                        projectFiles="true">
           <itemPath>src/organization/Organization.cpp</itemPath>
+          <itemPath>src/organization/OrganizationField.cpp</itemPath>
           <itemPath>src/organization/OrganizationType.cpp</itemPath>
           <itemPath>src/organization/OrganizationValue.cpp</itemPath>
         </logicalFolder>

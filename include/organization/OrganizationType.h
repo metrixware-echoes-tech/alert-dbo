@@ -18,22 +18,22 @@ public:
         std::string name;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
-      //  Wt::Dbo::collection<Wt::Dbo::ptr<OrganizationField> > organizationField;   
+        Wt::Dbo::collection<Wt::Dbo::ptr<OrganizationField> > organizationField;   
     template<class Action>
     void persist(Action& a)
     {
         mapClassAttributesStrings["NAME"]=this->name;
         FIELD_FILLER();
-    /*    Wt::Dbo::hasMany(a,
+        Wt::Dbo::hasMany(a,
                          organizationField,
-                         Wt::Dbo::ManyToOne,
-                         "OFI_OTY");
+                         Wt::Dbo::ManyToMany,
+                         "TJ_OFI_OTY");
         
-       */ 
-            Wt::Dbo::hasMany(a,
-                             organization,
-                             Wt::Dbo::ManyToOne,
-                             "ORG_OTY");
+        
+        Wt::Dbo::hasMany(a,
+                        organization,
+                        Wt::Dbo::ManyToOne,
+                        "ORG_OTY");
 
 
     }
