@@ -46,6 +46,9 @@ Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
     mapClass<UserHistoricalAction>(Constants::T_USER_HISTORICAL_ACTION_UHA);
     mapClass<User>(Constants::T_USER_USR);
     mapClass<UserRole>(Constants::T_USER_ROLE_URO);
+    mapClass<UserRight>(Constants::T_USER_RIGHT_URI);
+    mapClass<AccessControlList>(Constants::T_ACCESS_CONTROL_LIST_ACL);    
+    mapClass<Space>(Constants::T_SPACE_SPA);     
     mapClass<UserProfile>(Constants::T_USER_PROFILE_UPR);
     mapClass<UserField>(Constants::T_USER_FIELD_UFI);
     mapClass<UserValue>(Constants::T_USER_VALUE_UVA);

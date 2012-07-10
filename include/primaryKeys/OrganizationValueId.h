@@ -12,7 +12,6 @@
 
 class Organization;
 class OrganizationValue;
-//class OrganizationField;
 
 struct OrganizationValueId
 {

@@ -5,6 +5,9 @@ using namespace std;
 const char *Constants::T_USER_USR = "T_USER_" TRIGRAM_USER;
 //TODO: TSA : do the same for each table
 const char *Constants::T_USER_ROLE_URO = "T_USER_ROLE_URO";
+const char *Constants::T_USER_RIGHT_URI = "T_USER_RIGHT_URI";
+const char *Constants::T_SPACE_SPA = "T_SPACE_SPA";
+const char *Constants::T_ACCESS_CONTROL_LIST_ACL = "T_ACCESS_CONTROL_LIST_ACL";
 const char *Constants::T_USER_PROFILE_UPR = "T_USER_PROFILE_UPR";
 const char *Constants::T_USER_FIELD_UFI = "T_USER_FIELD_UFI";
 const char *Constants::T_USER_VALUE_UVA = "T_USER_VALUE_UVA";

@@ -15,6 +15,9 @@ class Table;
 
 class UserField;
 class UserRole;
+class UserRight;
+class Space;
+class AccessControlList;
 class Unit;
 class UnitType;
 class User;
@@ -75,6 +78,8 @@ namespace Wt
         
         TEMPLATE_TRIGRAM(UserField,TRIGRAM_USER_FIELD ID);
         TEMPLATE_TRIGRAM(UserRole,TRIGRAM_USER_ROLE ID);
+        TEMPLATE_TRIGRAM(UserRight,TRIGRAM_USER_RIGHT ID);  
+        TEMPLATE_TRIGRAM(Space,TRIGRAM_SPACE ID);         
         TEMPLATE_TRIGRAM(WidgetType,TRIGRAM_WIDGET_TYPE ID);
         TEMPLATE_TRIGRAM(Unit,TRIGRAM_UNIT ID);
         TEMPLATE_TRIGRAM(User,TRIGRAM_USER ID);
