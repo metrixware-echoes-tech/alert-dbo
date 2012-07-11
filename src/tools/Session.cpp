@@ -32,14 +32,17 @@ void Session::configureAuth()
     myPasswordService.setAttemptThrottlingEnabled(true);
     myPasswordService.setStrengthValidator(new Auth::PasswordStrengthValidator());
 
-    if (Auth::GoogleService::configured())
-        myOAuthServices.push_back(new Auth::GoogleService(myAuthService));
+//    if (Auth::GoogleService::configured())
+//        myOAuthServices.push_back(new Auth::GoogleService(myAuthService));
 }
 
-Session::Session(Wt::Dbo::backend::Postgres *pgBackend)
+Session::Session()
+: connection_("hostaddr=127.0.0.1 port=5432 dbname=echoes user=echoes password=toto")
 {
 
-    setConnection(*pgBackend);
+    connection_.setProperty("show-queries", "true");
+
+    setConnection(connection_);
 
     mapClass<UserAction>(Constants::T_USER_ACTION_UAC);
     mapClass<UserHierarchy>(Constants::T_USER_HIERARCHY_UHI);

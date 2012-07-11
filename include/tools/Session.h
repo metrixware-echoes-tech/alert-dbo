@@ -29,7 +29,7 @@ class Session : public Wt::Dbo::Session
 public:
   static void configureAuth();
 
-  Session(Wt::Dbo::backend::Postgres *pgBackend);
+  Session();
   ~Session();
 
   Wt::Dbo::ptr<User> user() const;

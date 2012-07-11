@@ -6,27 +6,26 @@
 #include <Wt/Auth/AuthWidget>
 #include <Wt/Auth/PasswordService>
 
-#include "PostgresConnector.h"
+//#include "PostgresConnector.h"
 #include "Session.h"
 
-class PostgresConnector;
+//class PostgresConnector;
 class Session;
 
 class AuthApplication : public Wt::WApplication
 {
 public:
     AuthApplication(const Wt::WEnvironment& env)
-        : Wt::WApplication(env)
+        : Wt::WApplication(env),
+        maSession()
     {
-        pgc = new PostgresConnector("echoes","echoes","127.0.0.1","5432","toto");
-        maSession = pgc->getSession();
-        maSession->login().changed().connect(this, &AuthApplication::authEvent);
+        maSession.login().changed().connect(this, &AuthApplication::authEvent);
 
         useStyleSheet("css/style.css");
 
         Wt::Auth::AuthWidget *authWidget
-            = new Wt::Auth::AuthWidget(Session::auth(), (*maSession).users(),
-                                       (*maSession).login());
+            = new Wt::Auth::AuthWidget(Session::auth(), (maSession).users(),
+                                       (maSession).login());
 
         authWidget->model()->addPasswordAuth(&Session::passwordAuth());
         authWidget->model()->addOAuth(Session::oAuth());
@@ -39,15 +38,15 @@ public:
 
     void authEvent()
     {
-        if ((*maSession).login().loggedIn())
-            Wt::log("notice") << "User " << (*maSession).login().user().id()
+        if ((maSession).login().loggedIn())
+            Wt::log("notice") << "User " << (maSession).login().user().id()
                               << " logged in.";
         else
             Wt::log("notice") << "User logged out.";
     }
 
-    Session *maSession;
-    PostgresConnector *pgc;
+    Session maSession;
+//    PostgresConnector *pgc;
 
 private:
 
