@@ -32,6 +32,7 @@
                        displayName="organization"
                        projectFiles="true">
           <itemPath>include/organization/Organization.h</itemPath>
+          <itemPath>include/organization/OrganizationField.h</itemPath>
           <itemPath>include/organization/OrganizationType.h</itemPath>
           <itemPath>include/organization/OrganizationValue.h</itemPath>
         </logicalFolder>
@@ -50,7 +51,9 @@
           <itemPath>include/plugin/SourceParameterValue.h</itemPath>
         </logicalFolder>
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
+          <itemPath>include/primaryKeys/AccessControlListId.h</itemPath>
           <itemPath>include/primaryKeys/InformationId.h</itemPath>
+          <itemPath>include/primaryKeys/OrganizationValueId.h</itemPath>
           <itemPath>include/primaryKeys/SearchId.h</itemPath>
           <itemPath>include/primaryKeys/SearchParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/SourceId.h</itemPath>
@@ -77,12 +80,15 @@
           <itemPath>include/unit/UnitType.h</itemPath>
         </logicalFolder>
         <logicalFolder name="user" displayName="user" projectFiles="true">
+          <itemPath>include/user/AccessControlList.h</itemPath>
+          <itemPath>include/user/Space.h</itemPath>
           <itemPath>include/user/User.h</itemPath>
           <itemPath>include/user/UserAction.h</itemPath>
           <itemPath>include/user/UserField.h</itemPath>
           <itemPath>include/user/UserHierarchy.h</itemPath>
           <itemPath>include/user/UserHistoricalAction.h</itemPath>
           <itemPath>include/user/UserProfile.h</itemPath>
+          <itemPath>include/user/UserRight.h</itemPath>
           <itemPath>include/user/UserRole.h</itemPath>
           <itemPath>include/user/UserValue.h</itemPath>
         </logicalFolder>
@@ -131,6 +137,7 @@
                        displayName="organization"
                        projectFiles="true">
           <itemPath>src/organization/Organization.cpp</itemPath>
+          <itemPath>src/organization/OrganizationField.cpp</itemPath>
           <itemPath>src/organization/OrganizationType.cpp</itemPath>
           <itemPath>src/organization/OrganizationValue.cpp</itemPath>
         </logicalFolder>
@@ -163,12 +170,15 @@
           <itemPath>src/unit/UnitType.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="user" displayName="user" projectFiles="true">
+          <itemPath>src/user/AccessControlList.cpp</itemPath>
+          <itemPath>src/user/Space.cpp</itemPath>
           <itemPath>src/user/User.cpp</itemPath>
           <itemPath>src/user/UserAction.cpp</itemPath>
           <itemPath>src/user/UserField.cpp</itemPath>
           <itemPath>src/user/UserHierarchy.cpp</itemPath>
           <itemPath>src/user/UserHistoricalAction.cpp</itemPath>
           <itemPath>src/user/UserProfile.cpp</itemPath>
+          <itemPath>src/user/UserRight.cpp</itemPath>
           <itemPath>src/user/UserRole.cpp</itemPath>
           <itemPath>src/user/UserValue.cpp</itemPath>
         </logicalFolder>

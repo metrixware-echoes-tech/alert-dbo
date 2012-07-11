@@ -56,9 +56,14 @@
 #include "UserHistoricalAction.h"
 #include "UserValue.h"
 #include "UserAction.h"
+#include "UserRight.h"
+#include "Space.h"
+#include "AccessControlList.h"
 
 #include "Organization.h"
 #include "OrganizationType.h"
+#include "OrganizationValue.h"
+#include "OrganizationField.h"
 
 #include "Information.h"
 #include "Value.h"

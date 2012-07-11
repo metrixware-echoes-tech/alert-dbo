@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/organization/OrganizationType.o \
 	${OBJECTDIR}/src/widget/WidgetType.o \
 	${OBJECTDIR}/src/tools/Session.o \
+	${OBJECTDIR}/src/user/Space.o \
 	${OBJECTDIR}/src/alert/AlertValue.o \
 	${OBJECTDIR}/src/plugin/SourceParameter.o \
 	${OBJECTDIR}/src/media/Media.o \
@@ -73,15 +74,18 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
 	${OBJECTDIR}/src/user/UserHistoricalAction.o \
+	${OBJECTDIR}/src/user/UserRight.o \
 	${OBJECTDIR}/src/information/Syslog.o \
 	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/user/User.o \
+	${OBJECTDIR}/src/organization/OrganizationField.o \
 	${OBJECTDIR}/src/user/UserField.o \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
 	${OBJECTDIR}/src/information/HistoricalValue.o \
 	${OBJECTDIR}/src/pack/Option.o \
+	${OBJECTDIR}/src/user/AccessControlList.o \
 	${OBJECTDIR}/src/plugin/SearchParameter.o
 
 
@@ -135,6 +139,11 @@ ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
+
+${OBJECTDIR}/src/user/Space.o: src/user/Space.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/Space.o src/user/Space.cpp
 
 ${OBJECTDIR}/src/alert/AlertValue.o: src/alert/AlertValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
@@ -306,6 +315,11 @@ ${OBJECTDIR}/src/user/UserHistoricalAction.o: src/user/UserHistoricalAction.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHistoricalAction.o src/user/UserHistoricalAction.cpp
 
+${OBJECTDIR}/src/user/UserRight.o: src/user/UserRight.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRight.o src/user/UserRight.cpp
+
 ${OBJECTDIR}/src/information/Syslog.o: src/information/Syslog.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
@@ -320,6 +334,11 @@ ${OBJECTDIR}/src/user/User.o: src/user/User.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/User.o src/user/User.cpp
+
+${OBJECTDIR}/src/organization/OrganizationField.o: src/organization/OrganizationField.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/organization
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationField.o src/organization/OrganizationField.cpp
 
 ${OBJECTDIR}/src/user/UserField.o: src/user/UserField.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
@@ -350,6 +369,11 @@ ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Option.o src/pack/Option.cpp
+
+${OBJECTDIR}/src/user/AccessControlList.o: src/user/AccessControlList.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude/addon -Iinclude/alert -Iinclude/asset -Iinclude/information -Iinclude/media -Iinclude/organization -Iinclude/pack -Iinclude/plugin -Iinclude/probe -Iinclude/tools -Iinclude/unit -Iinclude/user -Iinclude/widget -Iinclude/primaryKeys -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/AccessControlList.o src/user/AccessControlList.cpp
 
 ${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin

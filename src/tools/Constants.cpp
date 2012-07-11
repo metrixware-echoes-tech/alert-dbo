@@ -5,6 +5,9 @@ using namespace std;
 const char *Constants::T_USER_USR = "T_USER_" TRIGRAM_USER;
 //TODO: TSA : do the same for each table
 const char *Constants::T_USER_ROLE_URO = "T_USER_ROLE_URO";
+const char *Constants::T_USER_RIGHT_URI = "T_USER_RIGHT_URI";
+const char *Constants::T_SPACE_SPA = "T_SPACE_SPA";
+const char *Constants::T_ACCESS_CONTROL_LIST_ACL = "T_ACCESS_CONTROL_LIST_ACL";
 const char *Constants::T_USER_PROFILE_UPR = "T_USER_PROFILE_UPR";
 const char *Constants::T_USER_FIELD_UFI = "T_USER_FIELD_UFI";
 const char *Constants::T_USER_VALUE_UVA = "T_USER_VALUE_UVA";
@@ -13,6 +16,8 @@ const char *Constants::T_USER_ACTION_UAC = "T_USER_ACTION_ACT";
 const char *Constants::T_USER_HISTORICAL_ACTION_UHA = "T_USER_HISTORICAL_ACTION_UHA";
 const char *Constants::T_ORGANIZATION_ORG = "T_ORGANIZATION_ORG";
 const char *Constants::T_ORGANIZATION_TYPE_OTY = "T_ORGANIZATION_TYPE_OTY";
+const char *Constants::T_ORGANIZATION_VALUE_OVA = "T_ORGANIZATION_VALUE_OVA";
+const char *Constants::T_ORGANIZATION_FIELD_OFI = "T_ORGANIZATION_FIELD_OFI";
 const char *Constants::T_PROBE_PRB = "T_PROBE_PRB";
 const char *Constants::T_VALUE_VAL = "T_VALUE_VAL";
 const char *Constants::T_HISTORICAL_VALUE_HVA = "T_HISTORICAL_VALUE_HVA";

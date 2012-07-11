@@ -21,6 +21,9 @@ class Constants
         virtual ~Constants();
         static const char *T_USER_USR;
         static const char *T_USER_ROLE_URO;
+        static const char *T_USER_RIGHT_URI;   
+        static const char *T_SPACE_SPA;
+        static const char *T_ACCESS_CONTROL_LIST_ACL;        
         static const char *T_USER_HIERARCHY_UHI;
         static const char *T_USER_PROFILE_UPR;
         static const char *T_USER_VALUE_UVA;
@@ -29,6 +32,8 @@ class Constants
         static const char *T_USER_ACTION_UAC;
         static const char *T_ORGANIZATION_ORG;
         static const char *T_ORGANIZATION_TYPE_OTY;
+        static const char *T_ORGANIZATION_VALUE_OVA;  
+        static const char *T_ORGANIZATION_FIELD_OFI;         
         static const char *T_PROBE_PRB;
         static const char *T_VALUE_VAL;
         static const char *T_HISTORICAL_VALUE_HVA;

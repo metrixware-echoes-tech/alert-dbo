@@ -15,6 +15,9 @@ class Table;
 
 class UserField;
 class UserRole;
+class UserRight;
+class Space;
+class AccessControlList;
 class Unit;
 class UnitType;
 class User;
@@ -39,6 +42,8 @@ class Value;
 class Plugin;
 class Organization;
 class OrganizationType;
+class OrganizationValue;
+class OrganizationField;
 class Information2;
 class HistoricalValue;
 class Probe;
@@ -73,6 +78,8 @@ namespace Wt
         
         TEMPLATE_TRIGRAM(UserField,TRIGRAM_USER_FIELD ID);
         TEMPLATE_TRIGRAM(UserRole,TRIGRAM_USER_ROLE ID);
+        TEMPLATE_TRIGRAM(UserRight,TRIGRAM_USER_RIGHT ID);  
+        TEMPLATE_TRIGRAM(Space,TRIGRAM_SPACE ID);         
         TEMPLATE_TRIGRAM(WidgetType,TRIGRAM_WIDGET_TYPE ID);
         TEMPLATE_TRIGRAM(Unit,TRIGRAM_UNIT ID);
         TEMPLATE_TRIGRAM(User,TRIGRAM_USER ID);
@@ -92,6 +99,7 @@ namespace Wt
         TEMPLATE_TRIGRAM(Plugin,TRIGRAM_PLUGIN ID);
         TEMPLATE_TRIGRAM(Organization,TRIGRAM_ORGANIZATION ID);
         TEMPLATE_TRIGRAM(OrganizationType,TRIGRAM_ORGANIZATION_TYPE ID);
+        TEMPLATE_TRIGRAM(OrganizationField,TRIGRAM_ORGANIZATION_FIELD ID);        
         TEMPLATE_TRIGRAM(HistoricalValue,TRIGRAM_HISTORICAL_VALUE ID);
         TEMPLATE_TRIGRAM(AlertCriteria,TRIGRAM_ALERT_CRITERIA ID);
         TEMPLATE_TRIGRAM(Probe,TRIGRAM_PROBE ID);

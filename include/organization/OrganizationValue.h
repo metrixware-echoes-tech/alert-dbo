@@ -10,15 +10,28 @@
 
 #include "MainIncludeFile.h"
 #include "Wt/Dbo/Dbo"
+#include "OrganizationValueId.h"
 
 class OrganizationValue : public Table {
-    public:
-        OrganizationValue();
-        virtual ~OrganizationValue();
+public:
+    OrganizationValue();
+    virtual ~OrganizationValue();
+
+    static std::string TRIGRAM;
+    std::string value;
+
+    OrganizationValueId pk;
+
+    template<class Action>
+    void persist(Action& a)
+    {
+        mapClassAttributesStrings["VALUE"]=this->value;        
         
-        static std::string TRIGRAM;
-        std::string value;        
+        FIELD_FILLER();
         
+        Wt::Dbo::id (a, pk, "OVA_ID");
+        
+    }
     private:
 };
 
