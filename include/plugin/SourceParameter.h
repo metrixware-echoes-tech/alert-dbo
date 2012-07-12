@@ -8,7 +8,7 @@
 #ifndef SOURCEPARAMETER_H
 #define	SOURCEPARAMETER_H
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 #include <Wt/Dbo/Dbo>
 

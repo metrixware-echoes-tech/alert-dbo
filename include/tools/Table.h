@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "dboSpecialization.h"
+#include "tools/dboSpecialization.h"
 
 #include <Wt/WDateTime>
 

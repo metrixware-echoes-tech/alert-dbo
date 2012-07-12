@@ -4,7 +4,7 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 class Alert;
 

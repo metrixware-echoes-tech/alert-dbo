@@ -3,7 +3,7 @@
 
 #include <Wt/Dbo/Dbo>
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 class Alert;
 class AlertCriteria;

@@ -1,4 +1,4 @@
-#include "UserRole.h"
+#include "user/UserRole.h"
 
 std::string UserRole::TRIGRAM = TRIGRAM_USER_ROLE;
 

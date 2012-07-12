@@ -73,7 +73,7 @@
           <itemPath>include/tools/PostgresConnector.h</itemPath>
           <itemPath>include/tools/Session.h</itemPath>
           <itemPath>include/tools/Table.h</itemPath>
-          <itemPath>include/primaryKeys/dboSpecialization.h</itemPath>
+          <itemPath>include/tools/dboSpecialization.h</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
           <itemPath>include/unit/Unit.h</itemPath>
@@ -245,20 +245,7 @@
         <ccTool>
           <commandlineTool>distcc</commandlineTool>
           <incDir>
-            <pElem>include/addon</pElem>
-            <pElem>include/alert</pElem>
-            <pElem>include/asset</pElem>
-            <pElem>include/information</pElem>
-            <pElem>include/media</pElem>
-            <pElem>include/organization</pElem>
-            <pElem>include/pack</pElem>
-            <pElem>include/plugin</pElem>
-            <pElem>include/probe</pElem>
-            <pElem>include/tools</pElem>
-            <pElem>include/unit</pElem>
-            <pElem>include/user</pElem>
-            <pElem>include/widget</pElem>
-            <pElem>include/primaryKeys</pElem>
+            <pElem>include</pElem>
           </incDir>
           <commandLine>-std=c++0x -fPIC</commandLine>
         </ccTool>
@@ -303,20 +290,7 @@
         <ccTool>
           <commandlineTool>distcc</commandlineTool>
           <incDir>
-            <pElem>include/addon</pElem>
-            <pElem>include/alert</pElem>
-            <pElem>include/asset</pElem>
-            <pElem>include/information</pElem>
-            <pElem>include/media</pElem>
-            <pElem>include/organization</pElem>
-            <pElem>include/pack</pElem>
-            <pElem>include/plugin</pElem>
-            <pElem>include/probe</pElem>
-            <pElem>include/tools</pElem>
-            <pElem>include/unit</pElem>
-            <pElem>include/user</pElem>
-            <pElem>include/widget</pElem>
-            <pElem>include/primaryKeys</pElem>
+            <pElem>include</pElem>
           </incDir>
           <commandLine>-std=c++0x</commandLine>
         </ccTool>
@@ -341,20 +315,7 @@
         <ccTool>
           <commandlineTool>distcc</commandlineTool>
           <incDir>
-            <pElem>include/addon</pElem>
-            <pElem>include/alert</pElem>
-            <pElem>include/asset</pElem>
-            <pElem>include/information</pElem>
-            <pElem>include/media</pElem>
-            <pElem>include/organization</pElem>
-            <pElem>include/pack</pElem>
-            <pElem>include/plugin</pElem>
-            <pElem>include/probe</pElem>
-            <pElem>include/tools</pElem>
-            <pElem>include/unit</pElem>
-            <pElem>include/user</pElem>
-            <pElem>include/widget</pElem>
-            <pElem>include/primaryKeys</pElem>
+            <pElem>include</pElem>
           </incDir>
           <commandLine>-std=c++0x</commandLine>
         </ccTool>

@@ -1,4 +1,4 @@
-#include "AlertCriteria.h"
+#include "alert/AlertCriteria.h"
 
 std::string AlertCriteria::TRIGRAM = TRIGRAM_ALERT_CRITERIA;
 

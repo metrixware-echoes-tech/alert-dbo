@@ -1,11 +1,11 @@
-#include "Widget.h"
-
-Widget::Widget()
-{
-    //ctor
-}
-
-Widget::~Widget()
-{
-    //dtor
-}
+//#include "widget/Widget.h"
+//
+//Widget::Widget()
+//{
+//    //ctor
+//}
+//
+//Widget::~Widget()
+//{
+//    //dtor
+//}

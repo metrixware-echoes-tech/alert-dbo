@@ -7,7 +7,7 @@
 #include <Wt/Auth/PasswordService>
 
 //#include "PostgresConnector.h"
-#include "Session.h"
+#include "tools/Session.h"
 
 //class PostgresConnector;
 class Session;

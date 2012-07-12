@@ -7,9 +7,9 @@
 #include <Wt/WDateTime>
 #include <Wt/WGlobal>
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
-#include "InformationId.h"
+#include "primaryKeys/InformationId.h"
 
 class Plugin;
 //class Probe;

@@ -5,7 +5,7 @@
  * Created on 7 juin 2012, 15:26
  */
 
-#include "SearchType.h"
+#include "plugin/SearchType.h"
 
 std::string SearchType::TRIGRAM = TRIGRAM_SEARCH_TYPE;
 

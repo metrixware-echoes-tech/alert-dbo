@@ -5,7 +5,7 @@
  * Created on 4 juin 2012, 17:41
  */
 
-#include "SourceParameter.h"
+#include "plugin/SourceParameter.h"
 
 std::string SourceParameter::TRIGRAM = TRIGRAM_SOURCE_PARAMETER;
 

@@ -10,8 +10,8 @@
 
 #include <Wt/Dbo/Dbo>
 
-#include "MainIncludeFile.h"
-#include "SourceId.h"
+#include "tools/MainIncludeFile.h"
+#include "primaryKeys/SourceId.h"
 
 class Source : public Table
 {

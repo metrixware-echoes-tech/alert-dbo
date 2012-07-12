@@ -1,4 +1,4 @@
-#include "OrganizationType.h"
+#include "organization/OrganizationType.h"
 
 std::string OrganizationType::TRIGRAM = TRIGRAM_ORGANIZATION_TYPE;
 

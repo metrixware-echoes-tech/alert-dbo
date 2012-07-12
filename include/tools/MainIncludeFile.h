@@ -38,72 +38,74 @@
             }
 /* END FIELD_FILLER */
 
-#include "Table.h"
-#include "dboSpecialization.h"
-#include "MacroTrigram.h"
+#include "tools/Table.h"
+#include "tools/dboSpecialization.h"
+#include "tools/MacroTrigram.h"
 
 
-#include "User.h"
-#include "UserHierarchy.h"
-#include "UserProfile.h"
-#include "UserRole.h"
-#include "UserField.h"
+#include "user/User.h"
+#include "user/UserHierarchy.h"
+#include "user/UserProfile.h"
+#include "user/UserRole.h"
+#include "user/UserField.h"
 
-#include "Constants.h"
+#include "tools/Constants.h"
 
-#include "Unit.h"
-#include "UserHierarchy.h"
-#include "UserHistoricalAction.h"
-#include "UserValue.h"
-#include "UserAction.h"
-#include "UserRight.h"
-#include "Space.h"
-#include "AccessControlList.h"
+#include "unit/Unit.h"
+#include "user/UserHierarchy.h"
+#include "user/UserHistoricalAction.h"
+#include "user/UserValue.h"
+#include "user/UserAction.h"
+#include "user/UserRight.h"
+#include "user/Space.h"
+#include "user/AccessControlList.h"
 
-#include "Organization.h"
-#include "OrganizationType.h"
-#include "OrganizationValue.h"
-#include "OrganizationField.h"
+#include "organization/Organization.h"
+#include "organization/OrganizationType.h"
+#include "organization/OrganizationValue.h"
+#include "organization/OrganizationField.h"
 
-#include "Information.h"
-#include "Value.h"
-#include "HistoricalValue.h"
+#include "information/Information.h"
+#include "information/Value.h"
+#include "information/HistoricalValue.h"
 
-#include "Plugin.h"
+#include "plugin/Plugin.h"
 
-#include "WidgetType.h"
-#include "Widget.h"
+//#include "widget/WidgetType.h"
+//#include "widget/Widget.h"
 
-#include "UnitType.h"
+#include "unit/UnitType.h"
 
-#include "Tab.h"
-#include "TabVersion.h"
+//#include "widget/Tab.h"
+//#include "widget/TabVersion.h"
 //#include "TabWidgetAssociation.h"
 
-#include "Addon.h"
+#include "addon/Addon.h"
 
-#include "Alert.h"
-#include "AlertAcknowledge.h"
-#include "AlertCriteria.h"
-#include "AlertType.h"
-#include "AlertValue.h"
-#include "AlertParam.h"
+#include "alert/Alert.h"
+#include "alert/AlertAcknowledge.h"
+#include "alert/AlertCriteria.h"
+#include "alert/AlertType.h"
+#include "alert/AlertValue.h"
+#include "alert/AlertParam.h"
 
-#include "Source.h"
-#include "SourceParameter.h"
-#include "SourceParameterValue.h"
+#include "plugin/Source.h"
+#include "plugin/SourceParameter.h"
+#include "plugin/SourceParameterValue.h"
 
-#include "Asset.h"
+#include "asset/Asset.h"
 
-#include "Search.h"
-#include "SearchType.h"
-#include "SearchParameter.h"
-#include "SearchParameterValue.h"
+#include "plugin/Search.h"
+#include "plugin/SearchType.h"
+#include "plugin/SearchParameter.h"
+#include "plugin/SearchParameterValue.h"
 
-#include "Syslog.h"
+#include "information/Syslog.h"
 
-#include "Pack.h"
-#include "Option.h"
+#include "pack/Pack.h"
+#include "pack/Option.h"
+
+#include "probe/Probe.h"
 
 
             

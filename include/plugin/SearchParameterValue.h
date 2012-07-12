@@ -8,11 +8,11 @@
 #ifndef SEARCHPARAMETERVALUE_H
 #define	SEARCHPARAMETERVALUE_H
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 #include <Wt/Dbo/Dbo>
 
-#include "SearchParameterValueId.h"
+#include "primaryKeys/SearchParameterValueId.h"
 
 class SearchParameterValue : public Table {
 public:

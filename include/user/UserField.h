@@ -3,9 +3,9 @@
 
 #include <Wt/Dbo/Dbo>
 
-#include "MainIncludeFile.h"
-#include "UserHierarchyId.h"
-#include "UserValueId.h"
+#include "tools/MainIncludeFile.h"
+#include "primaryKeys/UserHierarchyId.h"
+#include "primaryKeys/UserValueId.h"
 
 //class User;
 //class UserValue;

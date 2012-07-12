@@ -5,7 +5,7 @@
  * Created on 5 juin 2012, 17:44
  */
 
-#include "Syslog.h"
+#include "information/Syslog.h"
 
 std::string Syslog::TRIGRAM = TRIGRAM_SYSLOG;
 

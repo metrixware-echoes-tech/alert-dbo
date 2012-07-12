@@ -1,4 +1,4 @@
-#include "Value.h"
+#include "information/Value.h"
 
 std::string Value::TRIGRAM = TRIGRAM_VALUE;
 

@@ -1,4 +1,4 @@
-#include "Session.h"
+#include "tools/Session.h"
 
 using namespace Wt;
 
@@ -70,12 +70,12 @@ Session::Session()
     mapClass<Unit>(Constants::T_UNIT_UNT);
     mapClass<UnitType>(Constants::T_UNIT_TYPE_UTY);
     
-    mapClass<Widget>(Constants::T_WIDGET_WGT);
-    mapClass<WidgetType>(Constants::T_WIDGET_TYPE_WTY);
+//    mapClass<Widget>(Constants::T_WIDGET_WGT);
+//    mapClass<WidgetType>(Constants::T_WIDGET_TYPE_WTY);
 //    mapClass<WidgetValue>(Constants::T_WIDGET_VALUE_WVA);
     
-    mapClass<Tab>(Constants::T_TAB_TAB);
-    mapClass<TabVersion>(Constants::T_TAB_VERSION_TVS);
+//    mapClass<Tab>(Constants::T_TAB_TAB);
+//    mapClass<TabVersion>(Constants::T_TAB_VERSION_TVS);
 //    mapClass<TabWidgetAssociation>(Constants::T_TAB_WIDGET_TWG);
     
     mapClass<Addon>(Constants::T_ADDON_ADO);

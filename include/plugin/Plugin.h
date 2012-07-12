@@ -5,7 +5,7 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 class Source;
 class Asset;

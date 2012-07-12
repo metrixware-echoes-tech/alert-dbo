@@ -1,4 +1,4 @@
-#include "User.h"
+#include "user/User.h"
 
 #include <string>
 #include <Wt/Dbo/Impl>

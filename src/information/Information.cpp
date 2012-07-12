@@ -1,4 +1,4 @@
-#include "Information.h"
+#include "information/Information.h"
 
 std::string Information2::TRIGRAM = TRIGRAM_INFORMATION;
 

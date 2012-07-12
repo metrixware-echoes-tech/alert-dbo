@@ -1,4 +1,4 @@
-#include "UserHierarchy.h"
+#include "user/UserHierarchy.h"
 
 std::string UserHierarchy::TRIGRAM = TRIGRAM_USER_HIERARCHY;
 

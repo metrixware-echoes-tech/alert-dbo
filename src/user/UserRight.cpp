@@ -1,4 +1,4 @@
-#include "UserRight.h"
+#include "user/UserRight.h"
 
 std::string UserRight::TRIGRAM = TRIGRAM_USER_RIGHT;
 

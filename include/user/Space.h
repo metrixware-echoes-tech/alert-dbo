@@ -9,7 +9,7 @@
 #define	SPACE_H
 
 #include <Wt/Dbo/Dbo>
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 class Space : public Table
 {

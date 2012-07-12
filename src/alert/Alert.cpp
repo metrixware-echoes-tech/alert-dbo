@@ -1,4 +1,4 @@
-#include "Alert.h"
+#include "alert/Alert.h"
 
 std::string Alert::TRIGRAM = TRIGRAM_ALERT;
 

@@ -8,8 +8,8 @@
 #ifndef SOURCEPARAMETERVALUE_H
 #define	SOURCEPARAMETERVALUE_H
 
-#include "MainIncludeFile.h"
-#include "SourceParameterValueId.h"
+#include "tools/MainIncludeFile.h"
+#include "primaryKeys/SourceParameterValueId.h"
 #include <Wt/Dbo/Dbo>
 
 class SourceParameter;

@@ -32,12 +32,12 @@ class AlertAcknowledge;
 class AlertType;
 class AlertCriteria;
 //class WidgetValue;
-class WidgetType;
+//class WidgetType;
 class Addon;
-class Tab;
-class TabVersion;
+//class Tab;
+//class TabVersion;
 //class TabWidgetAssociation;
-class Widget;
+//class Widget;
 class Value;
 class Plugin;
 class Organization;
@@ -57,7 +57,7 @@ class Option;
 
 //class Source;
 
-#include "MacroTrigram.h"
+#include "tools/MacroTrigram.h"
 
 
 namespace Wt
@@ -80,7 +80,7 @@ namespace Wt
         TEMPLATE_TRIGRAM(UserRole,TRIGRAM_USER_ROLE ID);
         TEMPLATE_TRIGRAM(UserRight,TRIGRAM_USER_RIGHT ID);  
         TEMPLATE_TRIGRAM(Space,TRIGRAM_SPACE ID);         
-        TEMPLATE_TRIGRAM(WidgetType,TRIGRAM_WIDGET_TYPE ID);
+//        TEMPLATE_TRIGRAM(WidgetType,TRIGRAM_WIDGET_TYPE ID);
         TEMPLATE_TRIGRAM(Unit,TRIGRAM_UNIT ID);
         TEMPLATE_TRIGRAM(User,TRIGRAM_USER ID);
         TEMPLATE_TRIGRAM(UserHistoricalAction, TRIGRAM_USER_HISTORICAL_ACTION ID);
@@ -92,9 +92,9 @@ namespace Wt
         TEMPLATE_TRIGRAM(UserAction,TRIGRAM_USER_ACTION ID);
         TEMPLATE_TRIGRAM(Addon,TRIGRAM_ADDON ID);
         TEMPLATE_TRIGRAM(AlertAcknowledge,TRIGRAM_ALERT_ACKNOWLEDGE ID);
-        TEMPLATE_TRIGRAM(Tab,TRIGRAM_TAB ID);
-        TEMPLATE_TRIGRAM(TabVersion,TRIGRAM_TAB_VERSION ID);
-        TEMPLATE_TRIGRAM(Widget,TRIGRAM_WIDGET ID);
+//        TEMPLATE_TRIGRAM(Tab,TRIGRAM_TAB ID);
+//        TEMPLATE_TRIGRAM(TabVersion,TRIGRAM_TAB_VERSION ID);
+//        TEMPLATE_TRIGRAM(Widget,TRIGRAM_WIDGET ID);
         TEMPLATE_TRIGRAM(Value,TRIGRAM_VALUE ID);
         TEMPLATE_TRIGRAM(Plugin,TRIGRAM_PLUGIN ID);
         TEMPLATE_TRIGRAM(Organization,TRIGRAM_ORGANIZATION ID);

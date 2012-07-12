@@ -7,7 +7,7 @@
 
 #include <Wt/Dbo/Dbo>
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 #ifndef SYSLOG_H
 #define	SYSLOG_H

@@ -8,9 +8,9 @@
 #ifndef ORGANIZATIONVALUE_H
 #define ORGANIZATIONVALUE_H
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 #include "Wt/Dbo/Dbo"
-#include "OrganizationValueId.h"
+#include "primaryKeys/OrganizationValueId.h"
 
 class OrganizationValue : public Table {
 public:

@@ -1,4 +1,4 @@
-#include "OrganizationField.h"
+#include "organization/OrganizationField.h"
 
 std::string OrganizationField::TRIGRAM = TRIGRAM_ORGANIZATION_FIELD;
 

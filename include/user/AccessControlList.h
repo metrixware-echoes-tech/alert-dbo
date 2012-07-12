@@ -8,9 +8,9 @@
 #ifndef ACCESSCONTROLLIST_H
 #define	ACCESSCONTROLLIST_H
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 #include "Wt/Dbo/Dbo"
-#include "AccessControlListId.h"
+#include "primaryKeys/AccessControlListId.h"
 
 class AccessControlList : public Table {
 public:

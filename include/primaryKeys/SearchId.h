@@ -9,7 +9,7 @@
 #define	SEARCHID_H
 
 #include <Wt/Dbo/Dbo>
-#include "SourceId.h"
+#include "primaryKeys/SourceId.h"
 
 class Search;
 class Source;

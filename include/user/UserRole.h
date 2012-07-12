@@ -5,8 +5,8 @@
 #include <Wt/Dbo/backend/Postgres>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "MainIncludeFile.h"
-#include "UserValueId.h"
+#include "tools/MainIncludeFile.h"
+#include "primaryKeys/UserValueId.h"
 
 class UserRole : public Table
 {

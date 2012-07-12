@@ -9,8 +9,8 @@
 #define	SEARCHPARAMETERVALUEID_H
 
 #include <Wt/Dbo/Dbo>
-#include "SourceId.h"
-#include "SearchId.h"
+#include "primaryKeys/SourceId.h"
+#include "primaryKeys/SearchId.h"
 
 class SearchParameter;
 class SearchParameterValue;

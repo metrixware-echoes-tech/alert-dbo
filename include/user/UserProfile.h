@@ -4,8 +4,8 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "MainIncludeFile.h"
-#include "UserValueId.h"
+#include "tools/MainIncludeFile.h"
+#include "primaryKeys/UserValueId.h"
 
 class User;
 

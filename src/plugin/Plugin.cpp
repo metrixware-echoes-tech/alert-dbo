@@ -1,4 +1,4 @@
-#include "Plugin.h"
+#include "plugin/Plugin.h"
 
 std::string Plugin::TRIGRAM = TRIGRAM_PLUGIN;
 

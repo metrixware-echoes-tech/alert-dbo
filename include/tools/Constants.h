@@ -1,17 +1,17 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
-#include "MacroTrigram.h"
+#include "tools/MacroTrigram.h"
 
 #include <string>
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "UserValueId.h"
+#include "primaryKeys/UserValueId.h"
 
-#include "WidgetValueId.h"
+#include "primaryKeys/WidgetValueId.h"
 
 
 class Constants

@@ -2,11 +2,11 @@
 #include <Wt/WContainerWidget>
 #include <Wt/WServer>
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
-#include "PostgresConnector.h"
-#include "AuthApplication.h"
-#include "Session.h"
+//#include "PostgresConnector.h"
+#include "tools/AuthApplication.h"
+#include "tools/Session.h"
 
 Wt::WApplication *createApplication(const Wt::WEnvironment& env)
 {

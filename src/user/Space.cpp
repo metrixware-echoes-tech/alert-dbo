@@ -1,4 +1,4 @@
-#include "Space.h"
+#include "user/Space.h"
 
 std::string Space::TRIGRAM = TRIGRAM_SPACE;
 

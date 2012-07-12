@@ -1,4 +1,4 @@
-#include "Addon.h"
+#include "addon/Addon.h"
 
 std::string Addon::TRIGRAM = TRIGRAM_ADDON;
 

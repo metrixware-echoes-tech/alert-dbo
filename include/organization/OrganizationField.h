@@ -8,7 +8,7 @@
 #ifndef ORGANIZATIONFIELD_H
 #define	ORGANIZATIONFIELD_H
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 #include "Wt/Dbo/Dbo"
 
 class OrganizationField : public Table {

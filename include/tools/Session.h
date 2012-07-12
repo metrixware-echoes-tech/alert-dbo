@@ -15,7 +15,7 @@
 #include <Wt/Dbo/ptr>
 #include <Wt/Dbo/backend/Postgres>
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 class User;
 class Search;

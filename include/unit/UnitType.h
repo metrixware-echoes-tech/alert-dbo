@@ -4,10 +4,10 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 class Unit;
-class WidgetType;
+//class WidgetType;
 
 class UnitType : public Table
 {
@@ -21,7 +21,7 @@ class UnitType : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Unit> > units;
         
-        Wt::Dbo::collection<Wt::Dbo::ptr<WidgetType> > widgetTypes;
+//        Wt::Dbo::collection<Wt::Dbo::ptr<WidgetType> > widgetTypes;
         
         template<class Action>
         void persist(Action& a)
@@ -36,10 +36,10 @@ class UnitType : public Table
             
 
             //TJ
-            Wt::Dbo::hasMany(a,
-                             widgetTypes,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_WTY_UTY");
+//            Wt::Dbo::hasMany(a,
+//                             widgetTypes,
+//                             Wt::Dbo::ManyToMany,
+//                             "TJ_WTY_UTY");
 
             
         }

@@ -1,4 +1,4 @@
-#include "HistoricalValue.h"
+#include "information/HistoricalValue.h"
 
 std::string HistoricalValue::TRIGRAM = TRIGRAM_HISTORICAL_VALUE;
 

@@ -9,7 +9,7 @@
 #define	SOURCEPARAMETERVALUEID_H
 
 #include <Wt/Dbo/Dbo>
-#include "SourceId.h"
+#include "primaryKeys/SourceId.h"
 
 class SourceParameter;
 class SourceParameterValue;

@@ -1,4 +1,4 @@
-#include "UserProfile.h"
+#include "user/UserProfile.h"
 
 std::string UserProfile::TRIGRAM = TRIGRAM_USER_PROFILE;
 

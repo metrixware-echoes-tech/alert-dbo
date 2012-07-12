@@ -1,4 +1,4 @@
-#include "AlertAcknowledge.h"
+#include "alert/AlertAcknowledge.h"
 
 std::string AlertAcknowledge::TRIGRAM = TRIGRAM_ALERT_ACKNOWLEDGE;
 

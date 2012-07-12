@@ -10,9 +10,9 @@
 
 #include "Wt/Dbo/Dbo"
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
-#include "SearchId.h"
+#include "primaryKeys/SearchId.h"
 
 class Search : public Table {
 public:

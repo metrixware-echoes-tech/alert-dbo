@@ -9,7 +9,7 @@
 #define	USERRIGHT_H
 
 #include <Wt/Dbo/Dbo>
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
 class UserRight : public Table
 {

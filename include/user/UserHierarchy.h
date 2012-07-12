@@ -6,9 +6,9 @@
 
 
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 
-#include "UserHierarchyId.h"
+#include "primaryKeys/UserHierarchyId.h"
 
 class UserHierarchy : public Table
 {

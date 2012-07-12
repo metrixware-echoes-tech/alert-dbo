@@ -1,4 +1,4 @@
-#include "UserValue.h"
+#include "user/UserValue.h"
 
 std::string UserValue::TRIGRAM = TRIGRAM_USER_VALUE;
 

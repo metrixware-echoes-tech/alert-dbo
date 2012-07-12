@@ -1,4 +1,4 @@
-#include "Organization.h"
+#include "organization/Organization.h"
 
 std::string Organization::TRIGRAM = TRIGRAM_ORGANIZATION;
 

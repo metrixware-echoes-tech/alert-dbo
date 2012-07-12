@@ -5,7 +5,7 @@
  * Created on 7 juin 2012, 15:23
  */
 
-#include "Search.h"
+#include "plugin/Search.h"
 
 std::string Search::TRIGRAM = TRIGRAM_SEARCH;
 

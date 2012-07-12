@@ -7,7 +7,7 @@
 #ifndef ORGANIZATIONTYPE_H
 #define ORGANIZATIONTYPE_H
 
-#include "MainIncludeFile.h"
+#include "tools/MainIncludeFile.h"
 #include "Wt/Dbo/Dbo"
 
 class OrganizationType : public Table {

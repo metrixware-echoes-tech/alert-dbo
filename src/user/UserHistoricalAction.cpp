@@ -1,4 +1,4 @@
-#include "UserHistoricalAction.h"
+#include "user/UserHistoricalAction.h"
 
 std::string UserHistoricalAction::TRIGRAM = TRIGRAM_USER_HISTORICAL_ACTION;
 

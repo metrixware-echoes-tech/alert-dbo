@@ -1,11 +1,11 @@
-#include "WidgetType.h"
-
-WidgetType::WidgetType()
-{
-    //ctor
-}
-
-WidgetType::~WidgetType()
-{
-    //dtor
-}
+//#include "widget/WidgetType.h"
+//
+//WidgetType::WidgetType()
+//{
+//    //ctor
+//}
+//
+//WidgetType::~WidgetType()
+//{
+//    //dtor
+//}
