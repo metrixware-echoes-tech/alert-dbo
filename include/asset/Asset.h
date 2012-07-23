@@ -23,8 +23,8 @@ class Asset : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
         
-        Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
-        Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
+        Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > historicalValues;
         
         template<class Action>
         void persist(Action& a)

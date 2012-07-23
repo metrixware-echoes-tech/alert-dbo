@@ -20,6 +20,7 @@ class UserField;
 class UserValue;
 class UserHistoricalAction;
 class Organization;
+class MediaValue;
 
 class User : public Table
 {
@@ -45,9 +46,12 @@ class User : public Table
         Wt::Dbo::collection<Wt::Dbo::ptr<UserHierarchy> > children;
         Wt::Dbo::collection<Wt::Dbo::ptr<UserHistoricalAction> > historicalActions;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
-
+        Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues;
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<UserField> > userFields;
         Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
+        
+        
 
         template<class Action>
         void persist(Action& a)
@@ -87,6 +91,10 @@ class User : public Table
                              alertAcks,
                              Wt::Dbo::ManyToOne,
                              "ACK_USR");
+            Wt::Dbo::hasMany(a,
+                             mediaValues,
+                             Wt::Dbo::ManyToOne,
+                             "MEV_USR");
 //
 //
 //            // join tables

@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/organization/OrganizationType.o \
 	${OBJECTDIR}/src/widget/WidgetType.o \
 	${OBJECTDIR}/src/tools/Session.o \
+	${OBJECTDIR}/src/media/MediaValue.o \
 	${OBJECTDIR}/src/user/Space.o \
 	${OBJECTDIR}/src/alert/AlertValue.o \
 	${OBJECTDIR}/src/plugin/SourceParameter.o \
@@ -49,20 +50,18 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/alert/AlertParam.o \
 	${OBJECTDIR}/src/plugin/SearchParameterValue.o \
+	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/user/UserHierarchy.o \
 	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/user/UserProfile.o \
-	${OBJECTDIR}/src/unit/UnitType.o \
 	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
 	${OBJECTDIR}/src/widget/WidgetValue.o \
-	${OBJECTDIR}/src/information/Value.o \
 	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/asset/Asset.o \
 	${OBJECTDIR}/src/addon/Addon.o \
 	${OBJECTDIR}/src/plugin/SearchType.o \
-	${OBJECTDIR}/src/unit/Unit.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
 	${OBJECTDIR}/src/plugin/SourceParameterValue.o \
@@ -73,6 +72,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/Alert.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
+	${OBJECTDIR}/src/alert/AlertTracking.o \
 	${OBJECTDIR}/src/user/UserHistoricalAction.o \
 	${OBJECTDIR}/src/user/UserRight.o \
 	${OBJECTDIR}/src/information/Syslog.o \
@@ -81,12 +81,14 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/organization/OrganizationField.o \
 	${OBJECTDIR}/src/user/UserField.o \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
+	${OBJECTDIR}/src/unit/InformationUnit.o \
+	${OBJECTDIR}/src/unit/InformationUnitType.o \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
-	${OBJECTDIR}/src/information/HistoricalValue.o \
 	${OBJECTDIR}/src/pack/Option.o \
 	${OBJECTDIR}/src/user/AccessControlList.o \
-	${OBJECTDIR}/src/plugin/SearchParameter.o
+	${OBJECTDIR}/src/plugin/SearchParameter.o \
+	${OBJECTDIR}/src/information/InformationValue.o
 
 
 # C Compiler Flags
@@ -138,6 +140,11 @@ ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
 
+${OBJECTDIR}/src/media/MediaValue.o: src/media/MediaValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/media
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/MediaValue.o src/media/MediaValue.cpp
+
 ${OBJECTDIR}/src/user/Space.o: src/user/Space.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
@@ -188,6 +195,11 @@ ${OBJECTDIR}/src/plugin/SearchParameterValue.o: src/plugin/SearchParameterValue.
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameterValue.o src/plugin/SearchParameterValue.cpp
 
+${OBJECTDIR}/src/information/InformationHistoricalValue.o: src/information/InformationHistoricalValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationHistoricalValue.o src/information/InformationHistoricalValue.cpp
+
 ${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
@@ -208,11 +220,6 @@ ${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
 
-${OBJECTDIR}/src/unit/UnitType.o: src/unit/UnitType.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/unit
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/UnitType.o src/unit/UnitType.cpp
-
 ${OBJECTDIR}/src/widget/Tab.o: src/widget/Tab.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
@@ -227,11 +234,6 @@ ${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
-
-${OBJECTDIR}/src/information/Value.o: src/information/Value.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Value.o src/information/Value.cpp
 
 ${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
@@ -252,11 +254,6 @@ ${OBJECTDIR}/src/plugin/SearchType.o: src/plugin/SearchType.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchType.o src/plugin/SearchType.cpp
-
-${OBJECTDIR}/src/unit/Unit.o: src/unit/Unit.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/unit
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/Unit.o src/unit/Unit.cpp
 
 ${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
@@ -308,6 +305,11 @@ ${OBJECTDIR}/src/user/UserRole.o: src/user/UserRole.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
 
+${OBJECTDIR}/src/alert/AlertTracking.o: src/alert/AlertTracking.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTracking.o src/alert/AlertTracking.cpp
+
 ${OBJECTDIR}/src/user/UserHistoricalAction.o: src/user/UserHistoricalAction.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
@@ -348,6 +350,16 @@ ${OBJECTDIR}/src/widget/TabWidgetAssociation.o: src/widget/TabWidgetAssociation.
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabWidgetAssociation.o src/widget/TabWidgetAssociation.cpp
 
+${OBJECTDIR}/src/unit/InformationUnit.o: src/unit/InformationUnit.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/unit
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnit.o src/unit/InformationUnit.cpp
+
+${OBJECTDIR}/src/unit/InformationUnitType.o: src/unit/InformationUnitType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/unit
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnitType.o src/unit/InformationUnitType.cpp
+
 ${OBJECTDIR}/src/plugin/Source.o: src/plugin/Source.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
@@ -357,11 +369,6 @@ ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Pack.o src/pack/Pack.cpp
-
-${OBJECTDIR}/src/information/HistoricalValue.o: src/information/HistoricalValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/HistoricalValue.o src/information/HistoricalValue.cpp
 
 ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
@@ -377,6 +384,11 @@ ${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameter.o src/plugin/SearchParameter.cpp
+
+${OBJECTDIR}/src/information/InformationValue.o: src/information/InformationValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationValue.o src/information/InformationValue.cpp
 
 # Subprojects
 .build-subprojects:

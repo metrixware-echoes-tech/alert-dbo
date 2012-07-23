@@ -23,8 +23,9 @@ class UserAction : public Table
         std::string name;
 	// methods
 
-	// dbo pointers (Other tables ids as foreign keys for this table)
-        Wt::Dbo::ptr<UserHistoricalAction> userHistoricalAction;
+
+        
+         Wt::Dbo::collection<Wt::Dbo::ptr<UserHistoricalAction> > userHistoricalActions;
 
         template<class Action>
         void persist(Action& a) 
@@ -32,9 +33,12 @@ class UserAction : public Table
             mapClassAttributesStrings["NAME"]=this->name;
             
             FIELD_FILLER();
+            
+            Wt::Dbo::hasMany(a,
+                             userHistoricalActions,
+                             Wt::Dbo::ManyToOne,
+                             "UHA_UAC");
 
-            //Other tables ids as foreign keys for user table
-            Wt::Dbo::belongsTo(a, userHistoricalAction, "UAC_UHA");
                      
         }
 };

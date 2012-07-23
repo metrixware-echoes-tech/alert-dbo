@@ -19,13 +19,13 @@ const char *Constants::T_ORGANIZATION_TYPE_OTY = "T_ORGANIZATION_TYPE_OTY";
 const char *Constants::T_ORGANIZATION_VALUE_OVA = "T_ORGANIZATION_VALUE_OVA";
 const char *Constants::T_ORGANIZATION_FIELD_OFI = "T_ORGANIZATION_FIELD_OFI";
 const char *Constants::T_PROBE_PRB = "T_PROBE_PRB";
-const char *Constants::T_VALUE_VAL = "T_VALUE_VAL";
-const char *Constants::T_HISTORICAL_VALUE_HVA = "T_HISTORICAL_VALUE_HVA";
+const char *Constants::T_INFORMATION_VALUE_IVA = "T_INFORMATION_VALUE_IVA";
+const char *Constants::T_INFORMATION_HISTORICAL_VALUE_IHV = "T_INFORMATION_HISTORICAL_VALUE_IHV";
 const char *Constants::T_INFORMATION_INF = "T_INFORMATION_INF";
 const char *Constants::T_PLUGIN_PLG = "T_PLUGIN_PLG";
 const char *Constants::T_WIDGET_VALUE_WVA = "T_WIDGET_VALUE_WVA";
-const char *Constants::T_UNIT_UNT = "T_UNIT_UNT";
-const char *Constants::T_UNIT_TYPE_UTY = "T_UNIT_TYPE_UTY";
+const char *Constants::T_INFORMATION_UNIT_UNT = "T_INFORMATION_UNIT_UNT";
+const char *Constants::T_INFORMATION_UNIT_TYPE_UTY = "T_INFORMATION_UNIT_TYPE_UTY";
 const char *Constants::T_WIDGET_TYPE_WTY = "T_WIDGET_TYPE_WTY";
 const char *Constants::T_WIDGET_WGT = "T_WIDGET_WGT";
 const char *Constants::T_TAB_TAB = "T_TAB_TAB";
@@ -38,6 +38,7 @@ const char *Constants::T_ALERT_VALUE_AVA = "T_ALERT_VALUE_AVA";
 const char *Constants::T_ALERT_PARAM_APA = "T_ALERT_PARAM_APA";
 const char *Constants::T_ALERT_TYPE_ATY = "T_ALERT_TYPE_ATY";
 const char *Constants::T_ALERT_CRITERIA_ACR = "T_ALERT_CRITERIA_ACR";
+const char *Constants::T_ALERT_TRACKING_ATR = "T_ALERT_TRACKING_ATR";
 const char *Constants::T_SOURCE_SRC = "T_SOURCE_SRC";
 const char *Constants::T_SOURCE_PARAMETER_SRP = "T_SOURCE_PARAMETER_SRP";
 const char *Constants::T_SOURCE_PARAMETER_VALUE_SPV = "T_SOURCE_PARAMETER_VALUE_SPV";
@@ -49,6 +50,8 @@ const char *Constants::T_SEARCH_PARAMETER_SEP = "T_SEARCH_PARAMETER_SEP";
 const char *Constants::T_SEARCH_PARAMETER_VALUE_SEV = "T_SEARCH_PARAMETER_VALUE_SEV";
 const char *Constants::T_PACK_PCK = "T_PACK_PCK";
 const char *Constants::T_OPTION_OPT = "T_OPTION_OPT";
+const char *Constants::T_MEDIA_MED = "T_MEDIA_MED";
+const char *Constants::T_MEDIA_VALUE_MEV = "T_MEDIA_VALUE_MEV";
 
 Constants::Constants()
 {

@@ -28,10 +28,12 @@ public:
     int procId;
     int msgId;
     int version;
+    // state : 0 = pending, 1 = processing, 2 = done
+    int state;
     
     Wt::Dbo::ptr<Probe> probe;
-    Wt::Dbo::collection<Wt::Dbo::ptr<Value> > values;
-    Wt::Dbo::collection<Wt::Dbo::ptr<HistoricalValue> > historicalValues;
+    Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
+    Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > historicalValues;
         
     template<class Action>
     void persist(Action& a)
@@ -44,8 +46,11 @@ public:
         mapClassAttributesInts["PROC_ID"]=this->procId;
         mapClassAttributesInts["MSG_ID"]=this->msgId;
         mapClassAttributesInts["VERSION"]=this->version;
-        FIELD_FILLER();
+        mapClassAttributesInts["STATE"]=this->state;
+     
         
+        FIELD_FILLER();
+
         Wt::Dbo::belongsTo(a, probe, "SLO_PRB");
         
         Wt::Dbo::hasMany(a,

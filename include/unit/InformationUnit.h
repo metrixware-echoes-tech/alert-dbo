@@ -7,13 +7,13 @@
 #include "tools/MainIncludeFile.h"
 
 class Information2;
-class UnitType;
+class InformationUnitType;
 
-class Unit : public Table
+class InformationUnit : public Table
 {
     public:
-        Unit();
-        virtual ~Unit();
+        InformationUnit();
+        virtual ~InformationUnit();
         
         static std::string TRIGRAM;
         
@@ -21,7 +21,7 @@ class Unit : public Table
         std::string longName;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Information2> > informations;
-        Wt::Dbo::ptr<UnitType> unitType;
+        Wt::Dbo::ptr<InformationUnitType> unitType;
         
         template<class Action>
         void persist(Action& a)

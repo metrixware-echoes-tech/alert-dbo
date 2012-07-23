@@ -13,6 +13,7 @@
           <itemPath>include/alert/AlertAcknowledge.h</itemPath>
           <itemPath>include/alert/AlertCriteria.h</itemPath>
           <itemPath>include/alert/AlertParam.h</itemPath>
+          <itemPath>include/alert/AlertTracking.h</itemPath>
           <itemPath>include/alert/AlertType.h</itemPath>
           <itemPath>include/alert/AlertValue.h</itemPath>
         </logicalFolder>
@@ -20,13 +21,14 @@
           <itemPath>include/asset/Asset.h</itemPath>
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
-          <itemPath>include/information/HistoricalValue.h</itemPath>
           <itemPath>include/information/Information.h</itemPath>
+          <itemPath>include/information/InformationHistoricalValue.h</itemPath>
+          <itemPath>include/information/InformationValue.h</itemPath>
           <itemPath>include/information/Syslog.h</itemPath>
-          <itemPath>include/information/Value.h</itemPath>
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>include/media/Media.h</itemPath>
+          <itemPath>include/media/MediaValue.h</itemPath>
         </logicalFolder>
         <logicalFolder name="organization"
                        displayName="organization"
@@ -76,8 +78,8 @@
           <itemPath>include/tools/dboSpecialization.h</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
-          <itemPath>include/unit/Unit.h</itemPath>
-          <itemPath>include/unit/UnitType.h</itemPath>
+          <itemPath>include/unit/InformationUnit.h</itemPath>
+          <itemPath>include/unit/InformationUnitType.h</itemPath>
         </logicalFolder>
         <logicalFolder name="user" displayName="user" projectFiles="true">
           <itemPath>include/user/AccessControlList.h</itemPath>
@@ -118,6 +120,7 @@
           <itemPath>src/alert/AlertAcknowledge.cpp</itemPath>
           <itemPath>src/alert/AlertCriteria.cpp</itemPath>
           <itemPath>src/alert/AlertParam.cpp</itemPath>
+          <itemPath>src/alert/AlertTracking.cpp</itemPath>
           <itemPath>src/alert/AlertType.cpp</itemPath>
           <itemPath>src/alert/AlertValue.cpp</itemPath>
         </logicalFolder>
@@ -125,13 +128,14 @@
           <itemPath>src/asset/Asset.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
-          <itemPath>src/information/HistoricalValue.cpp</itemPath>
           <itemPath>src/information/Information.cpp</itemPath>
+          <itemPath>src/information/InformationHistoricalValue.cpp</itemPath>
+          <itemPath>src/information/InformationValue.cpp</itemPath>
           <itemPath>src/information/Syslog.cpp</itemPath>
-          <itemPath>src/information/Value.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>src/media/Media.cpp</itemPath>
+          <itemPath>src/media/MediaValue.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="organization"
                        displayName="organization"
@@ -166,8 +170,8 @@
           <itemPath>src/tools/Table.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
-          <itemPath>src/unit/Unit.cpp</itemPath>
-          <itemPath>src/unit/UnitType.cpp</itemPath>
+          <itemPath>src/unit/InformationUnit.cpp</itemPath>
+          <itemPath>src/unit/InformationUnitType.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="user" displayName="user" projectFiles="true">
           <itemPath>src/user/AccessControlList.cpp</itemPath>
@@ -255,8 +259,6 @@
             <linkerLibLibItem>wtdbo</linkerLibLibItem>
             <linkerLibLibItem>wtdbopostgres</linkerLibLibItem>
             <linkerLibLibItem>wthttp</linkerLibLibItem>
-            <linkerLibLibItem>boost_signals</linkerLibLibItem>
-            <linkerLibLibItem>boost_system</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

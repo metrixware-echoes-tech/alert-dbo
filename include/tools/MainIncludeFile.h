@@ -51,7 +51,7 @@
 
 #include "tools/Constants.h"
 
-#include "unit/Unit.h"
+#include "unit/InformationUnit.h"
 #include "user/UserHierarchy.h"
 #include "user/UserHistoricalAction.h"
 #include "user/UserValue.h"
@@ -66,15 +66,15 @@
 #include "organization/OrganizationField.h"
 
 #include "information/Information.h"
-#include "information/Value.h"
-#include "information/HistoricalValue.h"
+#include "information/InformationHistoricalValue.h"
+#include "information/InformationValue.h"
 
 #include "plugin/Plugin.h"
 
 //#include "widget/WidgetType.h"
 //#include "widget/Widget.h"
 
-#include "unit/UnitType.h"
+#include "unit/InformationUnitType.h"
 
 //#include "widget/Tab.h"
 //#include "widget/TabVersion.h"
@@ -88,6 +88,7 @@
 #include "alert/AlertType.h"
 #include "alert/AlertValue.h"
 #include "alert/AlertParam.h"
+#include "alert/AlertTracking.h"
 
 #include "plugin/Source.h"
 #include "plugin/SourceParameter.h"
@@ -106,6 +107,9 @@
 #include "pack/Option.h"
 
 #include "probe/Probe.h"
+
+#include "media/Media.h"
+#include "media/MediaValue.h"
 
 
             

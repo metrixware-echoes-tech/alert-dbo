@@ -35,12 +35,12 @@ class Constants
         static const char *T_ORGANIZATION_VALUE_OVA;  
         static const char *T_ORGANIZATION_FIELD_OFI;         
         static const char *T_PROBE_PRB;
-        static const char *T_VALUE_VAL;
-        static const char *T_HISTORICAL_VALUE_HVA;
+        static const char *T_INFORMATION_VALUE_IVA;
+        static const char *T_INFORMATION_HISTORICAL_VALUE_IHV;
         static const char *T_INFORMATION_INF;
         static const char *T_PLUGIN_PLG;
-        static const char *T_UNIT_UNT;
-        static const char *T_UNIT_TYPE_UTY;
+        static const char *T_INFORMATION_UNIT_UNT;
+        static const char *T_INFORMATION_UNIT_TYPE_UTY;
         static const char *T_WIDGET_VALUE_WVA;
         static const char *T_WIDGET_TYPE_WTY;
         static const char *T_WIDGET_WGT;
@@ -54,6 +54,7 @@ class Constants
         static const char *T_ALERT_PARAM_APA;
         static const char *T_ALERT_TYPE_ATY;
         static const char *T_ALERT_CRITERIA_ACR;
+        static const char *T_ALERT_TRACKING_ATR;
         static const char *T_SOURCE_SRC;
         static const char *T_SOURCE_PARAMETER_SRP;
         static const char *T_SOURCE_PARAMETER_VALUE_SPV;
@@ -65,6 +66,8 @@ class Constants
         static const char *T_SEARCH_PARAMETER_VALUE_SEV;
         static const char *T_PACK_PCK;
         static const char *T_OPTION_OPT;
+        static const char *T_MEDIA_MED;
+        static const char *T_MEDIA_VALUE_MEV;
     protected:
     private:
 };

@@ -13,7 +13,6 @@ class Table //classe abstraite
         Table();
         virtual ~Table();
 
-        static std::string SEP;
         static std::string TABLE_PREFIX;
         
         Wt::WDateTime deleteTag;
@@ -48,7 +47,7 @@ class Table //classe abstraite
 template<typename T>
 std::string Table::formatColumnName(const T &x, std::string value)
 {
-    return T::TRIGRAM + Table::SEP + value;
+    return T::TRIGRAM + SEP + value;
 }
 #endif
 

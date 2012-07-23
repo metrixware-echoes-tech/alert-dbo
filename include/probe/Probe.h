@@ -6,8 +6,8 @@
 #include "tools/MainIncludeFile.h"
 
 class Organization;
-class Value;
-class HistoricalValue;
+class InformationValue;
+class InformationValue;
 
 class Probe : public Table
 {

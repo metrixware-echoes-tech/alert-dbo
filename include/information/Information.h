@@ -18,7 +18,7 @@ class Information2 : public Table
         
         InformationId pk;
         
-        Wt::Dbo::ptr<Unit> unit;
+        Wt::Dbo::ptr<InformationUnit> unit;
         
         std::string name;
                    

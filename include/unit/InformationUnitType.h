@@ -6,20 +6,20 @@
 
 #include "tools/MainIncludeFile.h"
 
-class Unit;
+class InformationUnit;
 //class WidgetType;
 
-class UnitType : public Table
+class InformationUnitType : public Table
 {
     public:
-        UnitType();
-        virtual ~UnitType();
+        InformationUnitType();
+        virtual ~InformationUnitType();
         
         static std::string TRIGRAM;
         
         std::string name;
         
-        Wt::Dbo::collection<Wt::Dbo::ptr<Unit> > units;
+        Wt::Dbo::collection<Wt::Dbo::ptr<InformationUnit> > units;
         
 //        Wt::Dbo::collection<Wt::Dbo::ptr<WidgetType> > widgetTypes;
         

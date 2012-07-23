@@ -33,9 +33,10 @@ class UserHistoricalAction : public Table
 
 	// dbo pointers (Other tables ids as foreign keys for this table)
         Wt::Dbo::ptr<User> user;
+        Wt::Dbo::ptr<UserAction> userAction;
 
 	// dbo collections (This table id as foreign key in other tables)
-        Wt::Dbo::collection<Wt::Dbo::ptr<UserAction> > userActions;
+//        Wt::Dbo::collection<Wt::Dbo::ptr<UserAction> > userActions;
 
         template<class Action>
         void persist(Action& a)
@@ -48,15 +49,9 @@ class UserHistoricalAction : public Table
             //Other tables ids as foreign keys for user table
 
             Wt::Dbo::belongsTo(a, user, "UHA_USR");
-
-            //User id as foreign key in other tables
-
-            Wt::Dbo::hasMany(a,
-                             userActions,
-                             Wt::Dbo::ManyToOne,
-                             "UAC_UHA");
             
-            
+            Wt::Dbo::belongsTo(a,userAction,"UHA_UAC");
+
             
 
         }

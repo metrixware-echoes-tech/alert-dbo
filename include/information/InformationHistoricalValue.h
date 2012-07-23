@@ -1,5 +1,5 @@
-#ifndef VALUE_H
-#define VALUE_H
+#ifndef INFORMATIONHISTORICALVALUE_H
+#define INFORMATIONHISTORICALVALUE_H
 
 #include <Wt/Dbo/Types>
 #include <Wt/Dbo/Dbo>
@@ -19,11 +19,11 @@ class Information2;
 
 
 
-class Value : public Table
+class InformationHistoricalValue : public Table
 {
     public:
-        Value();
-        virtual ~Value();
+        InformationHistoricalValue();
+        virtual ~InformationHistoricalValue();
         
         static std::string TRIGRAM;
         
@@ -40,13 +40,13 @@ class Value : public Table
             mapClassAttributesDates["CREA_DATE"]=this->CreatedDate;
             mapClassAttributesStrings["VALUE"]=this->value;
             FIELD_FILLER();
-            Wt::Dbo::belongsTo(a, asset, "VAL_AST");
-            Wt::Dbo::belongsTo(a, syslog, "VAL_SLO");
-            Wt::Dbo::field(a,information, "INF_ID");
+            Wt::Dbo::belongsTo(a, asset, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_ASSET);
+            Wt::Dbo::belongsTo(a, syslog, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG);
+            Wt::Dbo::field(a,information, TRIGRAM_INFORMATION ID);
         }
 
     protected:
     private:
 };
 
-#endif // VALUE_H
+#endif // INFORMATIONHISTORICALVALUE_H

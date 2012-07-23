@@ -64,11 +64,11 @@ Session::Session()
     mapClass<OrganizationValue>(Constants::T_ORGANIZATION_VALUE_OVA);
     mapClass<OrganizationField>(Constants::T_ORGANIZATION_FIELD_OFI);
     mapClass<Probe>(Constants::T_PROBE_PRB);
-    mapClass<Value>(Constants::T_VALUE_VAL);
-    mapClass<HistoricalValue>(Constants::T_HISTORICAL_VALUE_HVA);
+    mapClass<InformationValue>(Constants::T_INFORMATION_VALUE_IVA);
+    mapClass<InformationValue>(Constants::T_INFORMATION_HISTORICAL_VALUE_IHV);
     
-    mapClass<Unit>(Constants::T_UNIT_UNT);
-    mapClass<UnitType>(Constants::T_UNIT_TYPE_UTY);
+    mapClass<InformationUnit>(Constants::T_INFORMATION_UNIT_UNT);
+    mapClass<InformationUnitType>(Constants::T_INFORMATION_UNIT_TYPE_UTY);
     
 //    mapClass<Widget>(Constants::T_WIDGET_WGT);
 //    mapClass<WidgetType>(Constants::T_WIDGET_TYPE_WTY);
@@ -86,6 +86,7 @@ Session::Session()
     mapClass<AlertParam>(Constants::T_ALERT_PARAM_APA);
     mapClass<AlertType>(Constants::T_ALERT_TYPE_ATY);
     mapClass<AlertCriteria>(Constants::T_ALERT_CRITERIA_ACR);
+    mapClass<AlertTracking>(Constants::T_ALERT_TRACKING_ATR);
     
     mapClass<Source>(Constants::T_SOURCE_SRC);
     mapClass<SourceParameter>(Constants::T_SOURCE_PARAMETER_SRP);
@@ -103,6 +104,9 @@ Session::Session()
     mapClass<Pack>(Constants::T_PACK_PCK);
     
     mapClass<Option>(Constants::T_OPTION_OPT);
+    
+    mapClass<Media>(Constants::T_MEDIA_MED);
+    mapClass<MediaValue>(Constants::T_MEDIA_VALUE_MEV);
     
 
     mapClass<AuthInfo>("auth_info");
