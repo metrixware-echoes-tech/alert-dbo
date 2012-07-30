@@ -65,7 +65,7 @@ Session::Session()
     mapClass<OrganizationField>(Constants::T_ORGANIZATION_FIELD_OFI);
     mapClass<Probe>(Constants::T_PROBE_PRB);
     mapClass<InformationValue>(Constants::T_INFORMATION_VALUE_IVA);
-    mapClass<InformationValue>(Constants::T_INFORMATION_HISTORICAL_VALUE_IHV);
+    mapClass<InformationHistoricalValue>(Constants::T_INFORMATION_HISTORICAL_VALUE_IHV);
     
     mapClass<InformationUnit>(Constants::T_INFORMATION_UNIT_UNT);
     mapClass<InformationUnitType>(Constants::T_INFORMATION_UNIT_TYPE_UTY);
@@ -87,6 +87,7 @@ Session::Session()
     mapClass<AlertType>(Constants::T_ALERT_TYPE_ATY);
     mapClass<AlertCriteria>(Constants::T_ALERT_CRITERIA_ACR);
     mapClass<AlertTracking>(Constants::T_ALERT_TRACKING_ATR);
+    mapClass<AlertTrackingEvent>(Constants::T_ALERT_TRACKING_EVENT_ATE);
     
     mapClass<Source>(Constants::T_SOURCE_SRC);
     mapClass<SourceParameter>(Constants::T_SOURCE_PARAMETER_SRP);

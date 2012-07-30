@@ -32,6 +32,7 @@ class AlertAcknowledge;
 class AlertType;
 class AlertCriteria;
 class AlertTracking;
+class AlertTrackingEvent;
 //class WidgetValue;
 //class WidgetType;
 class Addon;
@@ -87,6 +88,7 @@ namespace Wt
         TEMPLATE_TRIGRAM(Addon,TRIGRAM_ADDON ID);
         TEMPLATE_TRIGRAM(AlertAcknowledge,TRIGRAM_ALERT_ACKNOWLEDGE ID);
         TEMPLATE_TRIGRAM(AlertTracking,TRIGRAM_ALERT_TRACKING ID);
+        TEMPLATE_TRIGRAM(AlertTrackingEvent,TRIGRAM_ALERT_TRACKING_EVENT ID);
 
         TEMPLATE_TRIGRAM(InformationValue,TRIGRAM_INFORMATION_VALUE ID);
         TEMPLATE_TRIGRAM(Plugin,TRIGRAM_PLUGIN ID);

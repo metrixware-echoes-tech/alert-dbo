@@ -3,7 +3,8 @@
 #
 # NOCDDL
 #
-# SharedObject configuration
+# SharedObjectWthttpd configuration
 # Release configuration
 # Application configuration
 # Static_Lib configuration
+# SharedObjectFcgid configuration

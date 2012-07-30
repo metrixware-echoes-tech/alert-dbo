@@ -32,6 +32,8 @@ class MediaValue : public Table
 
             Wt::Dbo::belongsTo(a,media,TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
             Wt::Dbo::belongsTo(a,user,TRIGRAM_MEDIA_VALUE SEP TRIGRAM_USER);
+            
+            
         }
     protected:
     private:

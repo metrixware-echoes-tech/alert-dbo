@@ -39,6 +39,7 @@ const char *Constants::T_ALERT_PARAM_APA = "T_ALERT_PARAM_APA";
 const char *Constants::T_ALERT_TYPE_ATY = "T_ALERT_TYPE_ATY";
 const char *Constants::T_ALERT_CRITERIA_ACR = "T_ALERT_CRITERIA_ACR";
 const char *Constants::T_ALERT_TRACKING_ATR = "T_ALERT_TRACKING_ATR";
+const char *Constants::T_ALERT_TRACKING_EVENT_ATE = "T_ALERT_TRACKING_EVENT_ATE";
 const char *Constants::T_SOURCE_SRC = "T_SOURCE_SRC";
 const char *Constants::T_SOURCE_PARAMETER_SRP = "T_SOURCE_PARAMETER_SRP";
 const char *Constants::T_SOURCE_PARAMETER_VALUE_SPV = "T_SOURCE_PARAMETER_VALUE_SPV";

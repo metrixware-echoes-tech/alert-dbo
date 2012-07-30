@@ -89,6 +89,7 @@
 #include "alert/AlertValue.h"
 #include "alert/AlertParam.h"
 #include "alert/AlertTracking.h"
+#include "alert/AlertTrackingEvent.h"
 
 #include "plugin/Source.h"
 #include "plugin/SourceParameter.h"

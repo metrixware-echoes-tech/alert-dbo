@@ -32,6 +32,8 @@ class AlertTracking : public Table
 
         Wt::Dbo::ptr<MediaValue> mediaValue;
         Wt::Dbo::ptr<Alert> alert;
+        
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertTrackingEvent> > alertTrackingEvents;
 
         template<class Action>
         void persist(Action& a)
@@ -50,6 +52,11 @@ class AlertTracking : public Table
 
             Wt::Dbo::belongsTo(a,mediaValue,TRIGRAM_ALERT_TRACKING SEP TRIGRAM_MEDIA_VALUE);
             Wt::Dbo::belongsTo(a,alert,TRIGRAM_ALERT_TRACKING SEP TRIGRAM_ALERT);
+            
+            Wt::Dbo::hasMany(a,
+                             alertTrackingEvents,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
         }
     protected:
     private:

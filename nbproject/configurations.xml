@@ -14,6 +14,7 @@
           <itemPath>include/alert/AlertCriteria.h</itemPath>
           <itemPath>include/alert/AlertParam.h</itemPath>
           <itemPath>include/alert/AlertTracking.h</itemPath>
+          <itemPath>include/alert/AlertTrackingEvent.h</itemPath>
           <itemPath>include/alert/AlertType.h</itemPath>
           <itemPath>include/alert/AlertValue.h</itemPath>
         </logicalFolder>
@@ -121,6 +122,7 @@
           <itemPath>src/alert/AlertCriteria.cpp</itemPath>
           <itemPath>src/alert/AlertParam.cpp</itemPath>
           <itemPath>src/alert/AlertTracking.cpp</itemPath>
+          <itemPath>src/alert/AlertTrackingEvent.cpp</itemPath>
           <itemPath>src/alert/AlertType.cpp</itemPath>
           <itemPath>src/alert/AlertValue.cpp</itemPath>
         </logicalFolder>
@@ -240,7 +242,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="SharedObject" type="2">
+    <conf name="SharedObjectWthttpd" type="2">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
@@ -323,6 +325,29 @@
         </ccTool>
         <archiverTool>
         </archiverTool>
+      </compileType>
+    </conf>
+    <conf name="SharedObjectFcgid" type="2">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <commandlineTool>distcc</commandlineTool>
+          <incDir>
+            <pElem>include</pElem>
+          </incDir>
+          <commandLine>-std=c++0x -fPIC</commandLine>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>wt</linkerLibLibItem>
+            <linkerLibLibItem>wtdbo</linkerLibLibItem>
+            <linkerLibLibItem>wtdbopostgres</linkerLibLibItem>
+            <linkerLibLibItem>wtfcgi</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
     </conf>
   </confs>

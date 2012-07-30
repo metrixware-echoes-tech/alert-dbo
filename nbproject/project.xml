@@ -40,7 +40,7 @@
             </sourceRootList>
             <confList>
                 <confElem>
-                    <name>SharedObject</name>
+                    <name>SharedObjectWthttpd</name>
                     <type>2</type>
                 </confElem>
                 <confElem>
@@ -54,6 +54,10 @@
                 <confElem>
                     <name>Static_Lib</name>
                     <type>3</type>
+                </confElem>
+                <confElem>
+                    <name>SharedObjectFcgid</name>
+                    <type>2</type>
                 </confElem>
             </confList>
         </data>

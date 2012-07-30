@@ -55,6 +55,7 @@ class Constants
         static const char *T_ALERT_TYPE_ATY;
         static const char *T_ALERT_CRITERIA_ACR;
         static const char *T_ALERT_TRACKING_ATR;
+        static const char *T_ALERT_TRACKING_EVENT_ATE;
         static const char *T_SOURCE_SRC;
         static const char *T_SOURCE_PARAMETER_SRP;
         static const char *T_SOURCE_PARAMETER_VALUE_SPV;
