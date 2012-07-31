@@ -11,6 +11,8 @@
 #include <tools/MainIncludeFile.h>
 #include <Wt/Dbo/Dbo>
 
+#include <boost/optional.hpp>
+
 class AlertTrackingEvent : public Table
 {
 public:
@@ -18,6 +20,7 @@ public:
     AlertTrackingEvent(const AlertTrackingEvent& orig);
     virtual ~AlertTrackingEvent();
     static std::string TRIGRAM;
+//    boost::optional<std::string> eventValue;
     std::string eventValue;
     
      Wt::Dbo::ptr<AlertTracking> alertTracking;
@@ -26,6 +29,7 @@ public:
     void persist(Action& a)
     {
         mapClassAttributesStrings["EVENT_VALUE"]=this->eventValue;
+//        Wt::Dbo::field(a, this->eventValue, formatColumnName(*this,"EVENT_VALUE"));
         FIELD_FILLER();
         Wt::Dbo::belongsTo(a,alertTracking,TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
     }

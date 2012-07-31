@@ -21,14 +21,14 @@ class AlertTracking : public Table
         static std::string TRIGRAM;
         
         
-        std::string senderSrv;
+        boost::optional<std::string> senderSrv;
         Wt::WDateTime sendDate;
-        std::string receiverSrv;
+        boost::optional<std::string> receiverSrv;
         Wt::WDateTime receiveDate;
-        std::string ackGw;
-        std::string ackPort;
-        std::string ackId;
-        std::string ackEvent;
+        boost::optional<std::string> ackGw;
+        boost::optional<std::string> ackPort;
+        boost::optional<std::string> ackId;
+        boost::optional<std::string> ackEvent;
 
         Wt::Dbo::ptr<MediaValue> mediaValue;
         Wt::Dbo::ptr<Alert> alert;
@@ -38,12 +38,12 @@ class AlertTracking : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["SENDER_SRV"]=this->senderSrv;
-            mapClassAttributesStrings["RECEIVER_SRV"]=this->receiverSrv;
-            mapClassAttributesStrings["ACK_GW"]=this->ackGw;
-            mapClassAttributesStrings["ACK_PORT"]=this->ackPort;
-            mapClassAttributesStrings["ACK_ID"]=this->ackId;
-            mapClassAttributesStrings["ACK_EVENT"]=this->ackEvent;
+            mapClassAttributesStringsNn["SENDER_SRV"]=this->senderSrv;
+            mapClassAttributesStringsNn["RECEIVER_SRV"]=this->receiverSrv;
+            mapClassAttributesStringsNn["ACK_GW"]=this->ackGw;
+            mapClassAttributesStringsNn["ACK_PORT"]=this->ackPort;
+            mapClassAttributesStringsNn["ACK_ID"]=this->ackId;
+            mapClassAttributesStringsNn["ACK_EVENT"]=this->ackEvent;
             mapClassAttributesDates["SEND_DATE"]=this->sendDate;
             mapClassAttributesDates["RECEIV_DATE"]=this->receiveDate;
             

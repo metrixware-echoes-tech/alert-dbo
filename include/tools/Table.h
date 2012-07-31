@@ -4,6 +4,7 @@
 #include <string>
 
 #include "tools/dboSpecialization.h"
+#include "boost/optional.hpp"
 
 #include <Wt/WDateTime>
 
@@ -34,6 +35,7 @@ class Table //classe abstraite
         std::map <std::string,Wt::WDateTime> mapClassAttributesDates;
         std::map <std::string,bool> mapClassAttributesBools;
         std::map <std::string,int> mapClassAttributesInts;
+        std::map <std::string,boost::optional<std::string>> mapClassAttributesStringsNn;
 
 };
 
