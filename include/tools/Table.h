@@ -35,7 +35,7 @@ class Table //classe abstraite
         std::map <std::string,Wt::WDateTime> mapClassAttributesDates;
         std::map <std::string,bool> mapClassAttributesBools;
         std::map <std::string,int> mapClassAttributesInts;
-        std::map <std::string,boost::optional<std::string>> mapClassAttributesStringsNn;
+        std::map <std::string,boost::optional<std::string> > mapClassAttributesStringsNn;
 
 };
 
