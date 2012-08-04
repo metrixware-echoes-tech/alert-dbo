@@ -19,10 +19,10 @@ class Organization : public Table
         static std::string TRIGRAM;
 
         // attributes
-        std::string name;
-        std::string address;
-        std::string cp;
-        std::string city;
+        Wt::WString name;
+        Wt::WString address;
+        Wt::WString cp;
+        Wt::WString city;
         // methods
 
         //RHI : manque lien avec PACK et ORGANISATION VALUE et TYPE
@@ -37,10 +37,10 @@ class Organization : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;
-            mapClassAttributesStrings["ADR"]=this->address;   
-            mapClassAttributesStrings["CP"]=this->cp;
-            mapClassAttributesStrings["CITY"]=this->city;
+            mapClassAttributesStrings["NAME"]=&this->name;
+            mapClassAttributesStrings["ADR"]=&this->address;   
+            mapClassAttributesStrings["CP"]=&this->cp;
+            mapClassAttributesStrings["CITY"]=&this->city;
             
             FIELD_FILLER();
 

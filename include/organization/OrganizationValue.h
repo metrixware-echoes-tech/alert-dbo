@@ -18,14 +18,14 @@ public:
     virtual ~OrganizationValue();
 
     static std::string TRIGRAM;
-    std::string value;
+    Wt::WString value;
 
     OrganizationValueId pk;
 
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["VALUE"]=this->value;        
+        mapClassAttributesStrings["VALUE"]=&this->value;        
         
         FIELD_FILLER();
         

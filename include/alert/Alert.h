@@ -18,19 +18,24 @@ class Alert : public Table
         
         static std::string TRIGRAM;
         
-        std::string name;
+        Wt::WString name;
         Wt::WDateTime date;
+
+        
+//        const Wt::WString& name_() const {return *name;};
         
         // RHI: manque TJ_ALE_USR_MED
         Wt::Dbo::ptr<AlertType> alertType;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
-        Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
+//        Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
         
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;
-            mapClassAttributesDates["DATE"]=this->date;
+            mapClassAttributesStrings["NAME"]=&this->name;
+            mapClassAttributesDates["DATE"]=&this->date;
+            
+//            Wt::Dbo::field(a, this->name, formatColumnName(*this,"NAME"));
             
             FIELD_FILLER();
             
@@ -40,10 +45,10 @@ class Alert : public Table
                              alertAcks,
                              Wt::Dbo::ManyToOne,
                              "ACK_ALE");
-            Wt::Dbo::hasMany(a,
-                             alertValues,
-                             Wt::Dbo::ManyToOne,
-                             "ALE_ID");
+//            Wt::Dbo::hasMany(a,
+//                             alertValues,
+//                             Wt::Dbo::ManyToOne,
+//                             "ALE_ID");
         }
     protected:
     private:

@@ -17,7 +17,7 @@ class InformationUnitType : public Table
         
         static std::string TRIGRAM;
         
-        std::string name;
+        Wt::WString name;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<InformationUnit> > units;
         
@@ -26,7 +26,7 @@ class InformationUnitType : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesStrings["NAME"]=&this->name;
             FIELD_FILLER();
             
             Wt::Dbo::hasMany(a,

@@ -41,10 +41,10 @@ class UserHistoricalAction : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesDates["DATETIME"]=this->dateTime;            
-            mapClassAttributesInts["BEFORE"]=this->actionBefore;
-            mapClassAttributesInts["AFTER"]=this->actionAfter;
-            mapClassAttributesInts["RELATIVE"]=this->actionRelative;
+            mapClassAttributesDates["DATETIME"]=&this->dateTime;            
+            mapClassAttributesInts["BEFORE"]=&this->actionBefore;
+            mapClassAttributesInts["AFTER"]=&this->actionAfter;
+            mapClassAttributesInts["RELATIVE"]=&this->actionRelative;
             FIELD_FILLER();
             //Other tables ids as foreign keys for user table
 

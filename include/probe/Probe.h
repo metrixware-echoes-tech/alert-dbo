@@ -15,9 +15,9 @@ class Probe : public Table
         Probe();
         virtual ~Probe();
         
-       static std::string TRIGRAM;             
-       std::string name;
-       std::string key;
+        static std::string TRIGRAM;             
+        Wt::WString name;
+        Wt::WString key;
         
         Wt::Dbo::ptr<Organization> organization;
 
@@ -27,8 +27,8 @@ class Probe : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;            
-            mapClassAttributesStrings["KEY"]=this->key; 
+            mapClassAttributesStrings["NAME"]=&this->name;            
+            mapClassAttributesStrings["KEY"]=&this->key; 
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, organization, "PRB_ORG");
 

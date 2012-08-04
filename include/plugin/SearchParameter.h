@@ -21,16 +21,16 @@ public:
     virtual ~SearchParameter();
     
     static std::string TRIGRAM;             
-    std::string name;
-    std::string format;    
+    Wt::WString name;
+    Wt::WString format;    
     
     Wt::Dbo::collection<Wt::Dbo::ptr<SearchType> > searchTypes;
     
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["NAME"]=this->name;            
-        mapClassAttributesStrings["FORMAT"]=this->format;
+        mapClassAttributesStrings["NAME"]=&this->name;            
+        mapClassAttributesStrings["FORMAT"]=&this->format;
         FIELD_FILLER();
         Wt::Dbo::hasMany(a,
                         searchTypes,

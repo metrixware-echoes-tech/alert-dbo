@@ -22,18 +22,21 @@ public:
     
     static std::string TRIGRAM;
             
-    std::string value;
+    Wt::WString value;
    
     
     SourceParameterValueId pk;
+    Wt::Dbo::ptr<SourceParameter> sourceParameter;
     
     
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["VALUE"]=this->value; 
+        mapClassAttributesStrings["VALUE"]=&this->value; 
         FIELD_FILLER();
         Wt::Dbo::id (a, pk, "PRIMARY_KEY");
+        
+        Wt::Dbo::belongsTo(a, sourceParameter, "SPV_SRP");
     }
 private:
 

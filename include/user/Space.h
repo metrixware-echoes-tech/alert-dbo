@@ -19,12 +19,12 @@ public:
     
     static std::string TRIGRAM;
     
-    std::string name;
+    Wt::WString name;
     
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["NAME"]=this->name;
+        mapClassAttributesStrings["NAME"]=&this->name;
         FIELD_FILLER();            
     }
 };

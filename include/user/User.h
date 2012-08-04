@@ -31,10 +31,10 @@ class User : public Table
 
         static std::string TRIGRAM;
 
-        std::string firstName;
-        std::string lastName;
-        std::string eMail;
-        std::string password;
+        Wt::WString firstName;
+        Wt::WString lastName;
+        Wt::WString eMail;
+        Wt::WString password;
 
         static std::string getName();
 
@@ -57,10 +57,10 @@ class User : public Table
         void persist(Action& a)
         {
             
-            mapClassAttributesStrings["FIRST_NAME"]=this->firstName;
-            mapClassAttributesStrings["LAST_NAME"]=this->lastName;
-            mapClassAttributesStrings["MAIL"]=this->eMail;
-            mapClassAttributesStrings["PWD"]=this->password;
+            mapClassAttributesStrings["FIRST_NAME"]=&this->firstName;
+            mapClassAttributesStrings["LAST_NAME"]=&this->lastName;
+            mapClassAttributesStrings["MAIL"]=&this->eMail;
+            mapClassAttributesStrings["PWD"]=&this->password;
             
             FIELD_FILLER();
             

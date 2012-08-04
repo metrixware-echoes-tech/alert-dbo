@@ -31,11 +31,12 @@ class Table //classe abstraite
             
         }
     protected:
-        std::map <std::string,std::string> mapClassAttributesStrings;
-        std::map <std::string,Wt::WDateTime> mapClassAttributesDates;
-        std::map <std::string,bool> mapClassAttributesBools;
-        std::map <std::string,int> mapClassAttributesInts;
-        std::map <std::string,boost::optional<std::string> > mapClassAttributesStringsNn;
+        std::map <std::string,Wt::WString*> mapClassAttributesStrings;
+        std::map <std::string,Wt::WDateTime*> mapClassAttributesDates;
+        std::map <std::string,bool*> mapClassAttributesBools;
+        std::map <std::string,int*> mapClassAttributesInts;
+        std::map <std::string,boost::optional<Wt::WString>* > mapClassAttributesStringsNn;
+        std::map <std::string,boost::optional<int>* > mapClassAttributesIntsNn;
 
 };
 

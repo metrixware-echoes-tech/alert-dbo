@@ -20,7 +20,7 @@ class InformationValue : public Table
         static std::string TRIGRAM;
         
         Wt::WDateTime creationDate;        
-        std::string value;
+        Wt::WString value;
         
         Wt::Dbo::ptr<Asset> asset;
         Wt::Dbo::ptr<Syslog> syslog;
@@ -30,8 +30,8 @@ class InformationValue : public Table
         template<class Action>
         void persist(Action& a)
         {   
-            mapClassAttributesDates["CREA_DATE"]=this->creationDate;  
-            mapClassAttributesStrings["VALUE"]=this->value;             
+            mapClassAttributesDates["CREA_DATE"]=&this->creationDate;  
+            mapClassAttributesStrings["VALUE"]=&this->value;             
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, asset, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_ASSET);
             Wt::Dbo::belongsTo(a, syslog, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_SYSLOG);

@@ -16,7 +16,7 @@ class Asset : public Table
         
         static std::string TRIGRAM;
         
-        std::string name;
+        Wt::WString name;
         bool assetIsHost;
         
         Wt::Dbo::ptr<Probe> probe;
@@ -24,13 +24,13 @@ class Asset : public Table
         Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
-        Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > historicalValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<InformationHistoricalValue> > historicalValues;
         
         template<class Action>
         void persist(Action& a)
         { 
-            mapClassAttributesStrings["NAME"]=this->name;
-            mapClassAttributesBools["IS_HOST"]=this->assetIsHost;
+            mapClassAttributesStrings["NAME"]=&this->name;
+            mapClassAttributesBools["IS_HOST"]=&this->assetIsHost;
             
             FIELD_FILLER();
             
@@ -39,11 +39,11 @@ class Asset : public Table
             Wt::Dbo::hasMany(a,
                              values,
                              Wt::Dbo::ManyToOne,
-                             "VAL_AST");
+                             TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_ASSET);
             Wt::Dbo::hasMany(a,
                              historicalValues,
                              Wt::Dbo::ManyToOne,
-                             "HVA_AST");
+                             TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_ASSET);
             
             //TJ
             Wt::Dbo::hasMany(a,

@@ -20,33 +20,33 @@ public:
     virtual ~Syslog();
 
     static std::string TRIGRAM;
-    std::string sd;
+    Wt::WString sd;
     Wt::WDateTime rcptDate;  
     Wt::WDateTime sentDate;
-    std::string hostname;
-    std::string appName;
+    Wt::WString hostname;
+    Wt::WString appName;
     int procId;
     int msgId;
-    int version;
+    boost::optional<int> version;
     // state : 0 = pending, 1 = processing, 2 = done
     int state;
     
     Wt::Dbo::ptr<Probe> probe;
     Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
-    Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > historicalValues;
+    Wt::Dbo::collection<Wt::Dbo::ptr<InformationHistoricalValue> > historicalValues;
         
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["SD"]=this->sd;  
-        mapClassAttributesDates["RCPT_DATE"]=this->rcptDate;  
-        mapClassAttributesDates["SENT_DATE"]=this->sentDate;
-        mapClassAttributesStrings["HOSTNAME"]=this->hostname;          
-        mapClassAttributesStrings["APP_NAME"]=this->appName;  
-        mapClassAttributesInts["PROC_ID"]=this->procId;
-        mapClassAttributesInts["MSG_ID"]=this->msgId;
-        mapClassAttributesInts["VERSION"]=this->version;
-        mapClassAttributesInts["STATE"]=this->state;
+        mapClassAttributesStrings["SD"]=&this->sd;  
+        mapClassAttributesDates["RCPT_DATE"]=&this->rcptDate;  
+        mapClassAttributesDates["SENT_DATE"]=&this->sentDate;
+        mapClassAttributesStrings["HOSTNAME"]=&this->hostname;          
+        mapClassAttributesStrings["APP_NAME"]=&this->appName;  
+        mapClassAttributesInts["PROC_ID"]=&this->procId;
+        mapClassAttributesInts["MSG_ID"]=&this->msgId;
+        mapClassAttributesIntsNn["VERSION"]=&this->version;
+        mapClassAttributesInts["STATE"]=&this->state;
      
         
         FIELD_FILLER();
@@ -56,11 +56,11 @@ public:
         Wt::Dbo::hasMany(a,
                              values,
                              Wt::Dbo::ManyToOne,
-                             "VAL_SLO");
+                             TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_SYSLOG);
         Wt::Dbo::hasMany(a,
                             historicalValues,
                             Wt::Dbo::ManyToOne,
-                            "HVA_SLO");
+                            TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG);
             
     }
 private:

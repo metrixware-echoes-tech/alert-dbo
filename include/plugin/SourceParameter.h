@@ -22,8 +22,8 @@ public:
     
     static std::string TRIGRAM;
               
-    std::string name;
-    std::string format;    
+    Wt::WString name;
+    Wt::WString format;    
     
     Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameterValue> > sourceParameterValues;
     Wt::Dbo::collection<Wt::Dbo::ptr<Addon> > Addons;
@@ -31,8 +31,8 @@ public:
     template<class Action>
     void persist(Action& a)
     {   
-        mapClassAttributesStrings["NAME"]=this->name;    
-        mapClassAttributesStrings["FORMAT"]=this->format;  
+        mapClassAttributesStrings["NAME"]=&this->name;    
+        mapClassAttributesStrings["FORMAT"]=&this->format;  
         FIELD_FILLER();
         Wt::Dbo::hasMany(a,
                         sourceParameterValues,

@@ -18,7 +18,7 @@ public:
     virtual ~AccessControlList();
 
     static std::string TRIGRAM;
-    std::string value;
+    Wt::WString value;
 
     AccessControlListId pk;
 

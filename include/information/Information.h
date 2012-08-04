@@ -20,7 +20,7 @@ class Information2 : public Table
         
         Wt::Dbo::ptr<InformationUnit> unit;
         
-        std::string name;
+        Wt::WString name;
                    
 
 
@@ -28,7 +28,7 @@ class Information2 : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesStrings["NAME"]=&this->name;
             FIELD_FILLER();
             Wt::Dbo::id(a,pk,"PRIMARY_KEY");
             Wt::Dbo::belongsTo(a, unit, "INF_UNT");

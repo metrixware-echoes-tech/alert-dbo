@@ -16,7 +16,7 @@ class Addon : public Table
         
         static std::string TRIGRAM;
         
-        std::string name;
+        Wt::WString name;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
         Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameter> > sourceParameters;
@@ -24,7 +24,7 @@ class Addon : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesStrings["NAME"]=&this->name;
             FIELD_FILLER();
             Wt::Dbo::hasMany(a,
                              sources,

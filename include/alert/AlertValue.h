@@ -16,14 +16,14 @@ class AlertValue : public Table
         
         static std::string TRIGRAM;
         
-        std::string value;
+        Wt::WString value;
         Wt::Dbo::ptr<Alert> alert;
         Wt::Dbo::ptr<AlertParam> alertParam;
         
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["VALUE"]=this->value; 
+            mapClassAttributesStrings["VALUE"]=&this->value; 
             
             FIELD_FILLER();
             

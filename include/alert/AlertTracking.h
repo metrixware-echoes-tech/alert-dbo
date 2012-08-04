@@ -21,14 +21,14 @@ class AlertTracking : public Table
         static std::string TRIGRAM;
         
         
-        boost::optional<std::string> senderSrv;
+        boost::optional<Wt::WString> senderSrv;
         Wt::WDateTime sendDate;
-        boost::optional<std::string> receiverSrv;
+        boost::optional<Wt::WString> receiverSrv;
         Wt::WDateTime receiveDate;
-        boost::optional<std::string> ackGw;
-        boost::optional<std::string> ackPort;
-        boost::optional<std::string> ackId;
-        boost::optional<std::string> ackEvent;
+        boost::optional<Wt::WString> ackGw;
+        boost::optional<Wt::WString> ackPort;
+        boost::optional<Wt::WString> ackId;
+        boost::optional<Wt::WString> ackEvent;
 
         Wt::Dbo::ptr<MediaValue> mediaValue;
         Wt::Dbo::ptr<Alert> alert;
@@ -38,14 +38,14 @@ class AlertTracking : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStringsNn["SENDER_SRV"]=this->senderSrv;
-            mapClassAttributesStringsNn["RECEIVER_SRV"]=this->receiverSrv;
-            mapClassAttributesStringsNn["ACK_GW"]=this->ackGw;
-            mapClassAttributesStringsNn["ACK_PORT"]=this->ackPort;
-            mapClassAttributesStringsNn["ACK_ID"]=this->ackId;
-            mapClassAttributesStringsNn["ACK_EVENT"]=this->ackEvent;
-            mapClassAttributesDates["SEND_DATE"]=this->sendDate;
-            mapClassAttributesDates["RECEIV_DATE"]=this->receiveDate;
+            mapClassAttributesStringsNn["SENDER_SRV"]=&this->senderSrv;
+            mapClassAttributesStringsNn["RECEIVER_SRV"]=&this->receiverSrv;
+            mapClassAttributesStringsNn["ACK_GW"]=&this->ackGw;
+            mapClassAttributesStringsNn["ACK_PORT"]=&this->ackPort;
+            mapClassAttributesStringsNn["ACK_ID"]=&this->ackId;
+            mapClassAttributesStringsNn["ACK_EVENT"]=&this->ackEvent;
+            mapClassAttributesDates["SEND_DATE"]=&this->sendDate;
+            mapClassAttributesDates["RECEIV_DATE"]=&this->receiveDate;
             
             
             FIELD_FILLER();

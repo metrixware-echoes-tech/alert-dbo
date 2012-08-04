@@ -16,7 +16,7 @@ class AlertType : public Table
         
         static std::string TRIGRAM;
         
-        std::string name;
+        Wt::WString name;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertCriteria> > alertCriterias;
@@ -24,7 +24,7 @@ class AlertType : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesStrings["NAME"]=&this->name;
             
             FIELD_FILLER();
             

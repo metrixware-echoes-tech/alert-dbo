@@ -17,8 +17,8 @@ class InformationUnit : public Table
         
         static std::string TRIGRAM;
         
-        std::string name;
-        std::string longName;
+        Wt::WString name;
+        Wt::WString longName;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Information2> > informations;
         Wt::Dbo::ptr<InformationUnitType> unitType;
@@ -26,8 +26,8 @@ class InformationUnit : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;
-            mapClassAttributesStrings["LONG_NAME"]=this->longName;
+            mapClassAttributesStrings["NAME"]=&this->name;
+            mapClassAttributesStrings["LONG_NAME"]=&this->longName;
             
             FIELD_FILLER();
             

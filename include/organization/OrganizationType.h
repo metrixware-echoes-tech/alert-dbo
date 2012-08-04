@@ -15,14 +15,14 @@ public:
         OrganizationType();
         virtual ~OrganizationType();
         static std::string TRIGRAM;
-        std::string name;
+        Wt::WString name;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
         Wt::Dbo::collection<Wt::Dbo::ptr<OrganizationField> > organizationField;   
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["NAME"]=this->name;
+        mapClassAttributesStrings["NAME"]=&this->name;
         FIELD_FILLER();
         Wt::Dbo::hasMany(a,
                          organizationField,

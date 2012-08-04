@@ -17,16 +17,16 @@ class AlertAcknowledge : public Table
         Wt::Dbo::ptr<Alert> alert;
         Wt::Dbo::ptr<User> user;
         
-        std::string ackState;
-        std::string isLast;
+        Wt::WString ackState;
+        Wt::WString isLast;
         
         static std::string TRIGRAM;
         
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["STATE"]=this->ackState;
-            mapClassAttributesStrings["IS_LAST"]=this->isLast;
+            mapClassAttributesStrings["STATE"]=&this->ackState;
+            mapClassAttributesStrings["IS_LAST"]=&this->isLast;
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, alert, "ACK_ALE");
             Wt::Dbo::belongsTo(a, user, "ACK_USR");

@@ -12,14 +12,14 @@ class Pack : public Table
         virtual ~Pack();
         
         static std::string TRIGRAM;
-        std::string name;
+        Wt::WString name;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Option> > option;
         Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;                       
+            mapClassAttributesStrings["NAME"]=&this->name;                       
             FIELD_FILLER();            
             Wt::Dbo::hasMany(a,
                              option,

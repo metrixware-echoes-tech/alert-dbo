@@ -21,15 +21,16 @@ public:
     virtual ~AlertTrackingEvent();
     static std::string TRIGRAM;
 //    boost::optional<std::string> eventValue;
-    std::string eventValue;
+    Wt::WString value;
+    Wt::WDateTime date;
     
      Wt::Dbo::ptr<AlertTracking> alertTracking;
     
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["EVENT_VALUE"]=this->eventValue;
-//        Wt::Dbo::field(a, this->eventValue, formatColumnName(*this,"EVENT_VALUE"));
+        mapClassAttributesStrings["VALUE"]=&this->value;
+        mapClassAttributesDates["DATE"]=&this->date;
         FIELD_FILLER();
         Wt::Dbo::belongsTo(a,alertTracking,TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
     }

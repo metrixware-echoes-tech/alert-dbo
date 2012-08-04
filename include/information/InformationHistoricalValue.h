@@ -31,14 +31,14 @@ class InformationHistoricalValue : public Table
         Wt::Dbo::ptr<Syslog> syslog;
         Wt::Dbo::ptr<Information2> information;
 
-        std::string value;
+        Wt::WString value;
         Wt::WDateTime CreatedDate;
 
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesDates["CREA_DATE"]=this->CreatedDate;
-            mapClassAttributesStrings["VALUE"]=this->value;
+            mapClassAttributesDates["CREA_DATE"]=&this->CreatedDate;
+            mapClassAttributesStrings["VALUE"]=&this->value;
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, asset, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_ASSET);
             Wt::Dbo::belongsTo(a, syslog, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG);

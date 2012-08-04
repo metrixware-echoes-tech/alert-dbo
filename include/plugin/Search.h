@@ -22,7 +22,7 @@ public:
     
     static std::string TRIGRAM;
     int nbValue;
-    std::string period;
+    Wt::WString period;
     bool searchIsStatic;
     
     SearchId pk;
@@ -33,9 +33,9 @@ public:
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesInts["NB_VALUE"]=this->nbValue;        
-        mapClassAttributesStrings["PERIOD"]=this->period;        
-        mapClassAttributesBools["IS_STATIC"]=this->searchIsStatic; 
+        mapClassAttributesInts["NB_VALUE"]=&this->nbValue;        
+        mapClassAttributesStrings["PERIOD"]=&this->period;        
+        mapClassAttributesBools["IS_STATIC"]=&this->searchIsStatic; 
         
         FIELD_FILLER();
         

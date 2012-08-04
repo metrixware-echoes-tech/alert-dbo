@@ -20,7 +20,7 @@ class UserAction : public Table
 
         static std::string TRIGRAM;
 	// attributes
-        std::string name;
+        Wt::WString name;
 	// methods
 
 
@@ -30,7 +30,7 @@ class UserAction : public Table
         template<class Action>
         void persist(Action& a) 
         {
-            mapClassAttributesStrings["NAME"]=this->name;
+            mapClassAttributesStrings["NAME"]=&this->name;
             
             FIELD_FILLER();
             

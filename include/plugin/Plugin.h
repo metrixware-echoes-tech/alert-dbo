@@ -17,23 +17,23 @@ class Plugin : public Table
         virtual ~Plugin();
 
         static std::string TRIGRAM;
-        std::string name;
-        std::string desc;
+        Wt::WString name;
+        Wt::WString desc;
         
-        Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
+//        Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
         Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
 
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["NAME"]=this->name;            
-            mapClassAttributesStrings["DESC"]=this->desc;            
+            mapClassAttributesStrings["NAME"]=&this->name;            
+            mapClassAttributesStrings["DESC"]=&this->desc;            
             FIELD_FILLER();
             //Plugin id as foreign key in other tables
-            Wt::Dbo::hasMany(a,
-                             sources,
-                             Wt::Dbo::ManyToOne,
-                             "SRC_PLG");
+//            Wt::Dbo::hasMany(a,
+//                             sources,
+//                             Wt::Dbo::ManyToOne,
+//                             "SRC_PLG");
             
             //TJ
             Wt::Dbo::hasMany(a,

@@ -21,14 +21,14 @@ public:
     virtual ~SearchParameterValue();
     
     static std::string TRIGRAM;             
-    std::string value;
+    Wt::WString value;
     
     SearchParameterValueId searchParameterValueId;
     
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["VALUE"]=this->value;  
+        mapClassAttributesStrings["VALUE"]=&this->value;  
         FIELD_FILLER();
         Wt::Dbo::id(a,searchParameterValueId,"SEV_ID");
         
