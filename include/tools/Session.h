@@ -29,7 +29,7 @@ class Session : public Wt::Dbo::Session
 public:
   static void configureAuth();
 
-  Session();
+  Session(std::string connectionParams);
   ~Session();
 
   Wt::Dbo::ptr<User> user() const;

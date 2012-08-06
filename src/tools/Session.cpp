@@ -36,10 +36,10 @@ void Session::configureAuth()
 //        myOAuthServices.push_back(new Auth::GoogleService(myAuthService));
 }
 
-Session::Session()
-: connection_("hostaddr=127.0.0.1 port=5432 dbname=echoes user=echoes password=toto")
+Session::Session(std::string connectionParams)
+: connection_(connectionParams)
 {
-
+    //"hostaddr=127.0.0.1 port=5432 dbname=echoes user=echoes password=toto"
     connection_.setProperty("show-queries", "true");
 
     setConnection(connection_);

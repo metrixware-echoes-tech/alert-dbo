@@ -17,7 +17,7 @@ class AuthApplication : public Wt::WApplication
 public:
     AuthApplication(const Wt::WEnvironment& env)
         : Wt::WApplication(env),
-        maSession()
+        maSession("hostaddr=127.0.0.1 port=5432 dbname=echoes user=echoes password=toto")
     {
         maSession.login().changed().connect(this, &AuthApplication::authEvent);
 
