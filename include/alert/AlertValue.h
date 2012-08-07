@@ -19,6 +19,7 @@ class AlertValue : public Table
         Wt::WString value;
         Wt::Dbo::ptr<Alert> alert;
         Wt::Dbo::ptr<AlertParam> alertParam;
+        Wt::Dbo::ptr<Information2> information;
         
         template<class Action>
         void persist(Action& a)
@@ -27,9 +28,11 @@ class AlertValue : public Table
             
             FIELD_FILLER();
             
-            Wt::Dbo::id(a,alert,"AVA");
+            Wt::Dbo::belongsTo(a,alert,TRIGRAM_ALERT_VALUE SEP TRIGRAM_ALERT);
             
-            Wt::Dbo::belongsTo(a,alertParam,"AVA_APA");
+            Wt::Dbo::belongsTo(a,alertParam,TRIGRAM_ALERT_VALUE SEP TRIGRAM_ALERT_PARAM);
+            
+            Wt::Dbo::belongsTo(a,information,TRIGRAM_ALERT_VALUE SEP TRIGRAM_INFORMATION);
                  
         }
     protected:

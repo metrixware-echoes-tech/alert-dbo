@@ -27,7 +27,7 @@ class Alert : public Table
         // RHI: manque TJ_ALE_USR_MED
         Wt::Dbo::ptr<AlertType> alertType;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
-//        Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
         
         template<class Action>
         void persist(Action& a)
@@ -45,10 +45,10 @@ class Alert : public Table
                              alertAcks,
                              Wt::Dbo::ManyToOne,
                              "ACK_ALE");
-//            Wt::Dbo::hasMany(a,
-//                             alertValues,
-//                             Wt::Dbo::ManyToOne,
-//                             "ALE_ID");
+            Wt::Dbo::hasMany(a,
+                             alertValues,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_ALERT_VALUE SEP TRIGRAM_ALERT);
         }
     protected:
     private:

@@ -51,7 +51,7 @@ namespace Wt
                    const std::string& name, int size = -1)
         {
             field(a, infid.search, "SEA_ID");
-            field(a, infid.subSearchNumber, "VALUE_NUM");
+            field(a, infid.subSearchNumber, TRIGRAM_INFORMATION SEP "VALUE_NUM");
         }
         template<>
         struct dbo_traits<Information2> : public dbo_default_traits

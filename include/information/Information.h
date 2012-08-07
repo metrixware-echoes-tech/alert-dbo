@@ -20,6 +20,8 @@ class Information2 : public Table
         
         Wt::Dbo::ptr<InformationUnit> unit;
         
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
+        
         Wt::WString name;
                    
 
@@ -32,6 +34,11 @@ class Information2 : public Table
             FIELD_FILLER();
             Wt::Dbo::id(a,pk,"PRIMARY_KEY");
             Wt::Dbo::belongsTo(a, unit, "INF_UNT");
+            
+            Wt::Dbo::hasMany(a,
+                             alertValues,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_ALERT_VALUE SEP TRIGRAM_INFORMATION);
         }    
 
     protected:
