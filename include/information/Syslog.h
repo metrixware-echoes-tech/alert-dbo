@@ -25,8 +25,10 @@ public:
     Wt::WDateTime sentDate;
     Wt::WString hostname;
     Wt::WString appName;
+    Wt::WString msgId;
+    int priority;
     int procId;
-    int msgId;
+    
     boost::optional<int> version;
     // state : 0 = pending, 1 = processing, 2 = done
     int state;
@@ -43,8 +45,9 @@ public:
         mapClassAttributesDates["SENT_DATE"]=&this->sentDate;
         mapClassAttributesStrings["HOSTNAME"]=&this->hostname;          
         mapClassAttributesStrings["APP_NAME"]=&this->appName;  
+        mapClassAttributesStrings["MSG_ID"]=&this->msgId;
         mapClassAttributesInts["PROC_ID"]=&this->procId;
-        mapClassAttributesInts["MSG_ID"]=&this->msgId;
+        mapClassAttributesInts["PRI"]=&this->priority;
         mapClassAttributesIntsNn["VERSION"]=&this->version;
         mapClassAttributesInts["STATE"]=&this->state;
      

@@ -18,7 +18,7 @@ class Search;
 struct InformationId
 {
     Wt::Dbo::ptr<Search> search;
-    std::string subSearchNumber;
+    int subSearchNumber;
 
     InformationId(Wt::Dbo::ptr<Search> ptr)
         : search(ptr) { }
@@ -51,7 +51,7 @@ namespace Wt
                    const std::string& name, int size = -1)
         {
             field(a, infid.search, "SEA_ID");
-            field(a, infid.subSearchNumber, "SUB_SEA_NUM");
+            field(a, infid.subSearchNumber, "VALUE_NUM");
         }
         template<>
         struct dbo_traits<Information2> : public dbo_default_traits
