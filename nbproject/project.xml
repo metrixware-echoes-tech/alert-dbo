@@ -40,23 +40,11 @@
             </sourceRootList>
             <confList>
                 <confElem>
-                    <name>SharedObjectWthttpd</name>
-                    <type>2</type>
-                </confElem>
-                <confElem>
-                    <name>Release</name>
-                    <type>1</type>
-                </confElem>
-                <confElem>
-                    <name>Application</name>
-                    <type>1</type>
-                </confElem>
-                <confElem>
                     <name>Static_Lib</name>
                     <type>3</type>
                 </confElem>
                 <confElem>
-                    <name>SharedObjectFcgid</name>
+                    <name>SharedObject</name>
                     <type>2</type>
                 </confElem>
             </confList>

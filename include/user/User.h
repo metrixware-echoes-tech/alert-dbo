@@ -10,6 +10,7 @@
 #include <Wt/Dbo/WtSqlTraits>
 #include <Wt/WDateTime>
 #include <Wt/WGlobal>
+#include <Wt/Auth/AbstractUserDatabase>
 
 #include "tools/MainIncludeFile.h"
 
@@ -22,11 +23,19 @@ class UserHistoricalAction;
 class Organization;
 class MediaValue;
 
+typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
+
 class User : public Table
 {
     public:
-        User();
-        User(std::string firstName, std::string lastName, std::string eMail, std::string password);
+        User() : Table() {};
+        User(std::string firstName, std::string lastName, std::string eMail, std::string password) : Table()
+        {
+            this->firstName = firstName;
+            this->lastName = lastName;
+            this->eMail = eMail;
+            this->password = password;
+        };
         virtual ~User();
 
         static std::string TRIGRAM;
@@ -114,8 +123,8 @@ class User : public Table
 };
 
 // Auth
-typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
+//typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
 
-//DBO_EXTERN_TEMPLATES(User);
+DBO_EXTERN_TEMPLATES(User);
 
 #endif // USER_H

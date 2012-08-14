@@ -20,15 +20,13 @@
 class User;
 class Search;
 
-typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
-
 typedef Wt::Auth::Dbo::UserDatabase<AuthInfo> UserDatabase;
 
 class Session : public Wt::Dbo::Session
 {
 public:
   static void configureAuth();
-
+  
   Session(std::string connectionParams);
   ~Session();
 

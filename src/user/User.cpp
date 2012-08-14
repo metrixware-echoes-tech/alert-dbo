@@ -1,24 +1,13 @@
 #include "user/User.h"
 
-#include <string>
-#include <Wt/Dbo/Impl>
-#include <Wt/Auth/Dbo/AuthInfo>
+//#include <string>
+//#include <Wt/Dbo/Impl>
+//#include <Wt/Auth/Dbo/AuthInfo>
 
 DBO_INSTANTIATE_TEMPLATES(User);
 
 std::string User::TRIGRAM = TRIGRAM_USER;
 
-User::User() : Table()
-{
-}
-
-User::User(std::string firstName, std::string lastName, std::string eMail, std::string password) : Table()
-{
-    this->firstName = firstName;
-    this->lastName = lastName;
-    this->eMail = eMail;
-    this->password = password;
-}
 User::~User()
 {
     //dtor

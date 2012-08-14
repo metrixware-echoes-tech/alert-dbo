@@ -51,6 +51,8 @@
 
 /* END FIELD_FILLER */
 
+#include <Wt/Auth/User>
+
 #include "tools/Table.h"
 #include "tools/dboSpecialization.h"
 #include "tools/MacroTrigram.h"

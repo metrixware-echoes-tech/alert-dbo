@@ -47,14 +47,13 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/alert/AlertType.o \
 	${OBJECTDIR}/src/probe/Probe.o \
-	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/alert/AlertParam.o \
 	${OBJECTDIR}/src/plugin/SearchParameterValue.o \
-	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
+	${OBJECTDIR}/src/user/UserProfile.o \
+	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
 	${OBJECTDIR}/src/user/UserHierarchy.o \
 	${OBJECTDIR}/src/organization/Organization.o \
-	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
 	${OBJECTDIR}/src/widget/WidgetValue.o \
@@ -86,9 +85,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/unit/InformationUnitType.o \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
+	${OBJECTDIR}/src/plugin/SearchParameter.o \
 	${OBJECTDIR}/src/pack/Option.o \
 	${OBJECTDIR}/src/user/AccessControlList.o \
-	${OBJECTDIR}/src/plugin/SearchParameter.o \
 	${OBJECTDIR}/src/information/InformationValue.o
 
 
@@ -183,11 +182,6 @@ ${OBJECTDIR}/src/probe/Probe.o: src/probe/Probe.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
-
 ${OBJECTDIR}/src/alert/AlertParam.o: src/alert/AlertParam.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
@@ -198,15 +192,20 @@ ${OBJECTDIR}/src/plugin/SearchParameterValue.o: src/plugin/SearchParameterValue.
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameterValue.o src/plugin/SearchParameterValue.cpp
 
-${OBJECTDIR}/src/information/InformationHistoricalValue.o: src/information/InformationHistoricalValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationHistoricalValue.o src/information/InformationHistoricalValue.cpp
-
 ${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
+
+${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
+
+${OBJECTDIR}/src/information/InformationHistoricalValue.o: src/information/InformationHistoricalValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationHistoricalValue.o src/information/InformationHistoricalValue.cpp
 
 ${OBJECTDIR}/src/user/UserHierarchy.o: src/user/UserHierarchy.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
@@ -217,11 +216,6 @@ ${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
-
-${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
 
 ${OBJECTDIR}/src/widget/Tab.o: src/widget/Tab.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
@@ -378,6 +372,11 @@ ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Pack.o src/pack/Pack.cpp
 
+${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameter.o src/plugin/SearchParameter.cpp
+
 ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
@@ -387,11 +386,6 @@ ${OBJECTDIR}/src/user/AccessControlList.o: src/user/AccessControlList.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/AccessControlList.o src/user/AccessControlList.cpp
-
-${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameter.o src/plugin/SearchParameter.cpp
 
 ${OBJECTDIR}/src/information/InformationValue.o: src/information/InformationValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information

@@ -36,6 +36,7 @@ void Session::configureAuth()
 //        myOAuthServices.push_back(new Auth::GoogleService(myAuthService));
 }
 
+
 Session::Session(std::string connectionParams)
 : connection_(connectionParams)
 {
@@ -115,18 +116,7 @@ Session::Session(std::string connectionParams)
     mapClass<AuthInfo::AuthTokenType>("auth_token");
 //    mapClass<AuthInfo>("T_AUTH_INFO_AIN");
 //    mapClass<AuthInfo::AuthIdentityType>("T_AUTH_IDENTITY_AID");
-//    mapClass<AuthInfo::AuthTokenType>("T_AUTH_TOKEN_ATO");
-
-    try
-    {
-        createTables();
-        std::cerr << "Created database." << std::endl;
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-        std::cerr << "createTables problem : Session.cpp";
-    }
+//    mapClass<AuthInfo::AuthTokenType>("T_AUTH_TOKEN_ATO");nn
 
     users_ = new UserDatabase(*this);
 }
@@ -136,7 +126,7 @@ Session::~Session()
     delete users_;
 }
 
-Auth::AbstractUserDatabase& Session::users()
+Wt::Auth::AbstractUserDatabase& Session::users()
 {
     return *users_;
 }
@@ -145,6 +135,7 @@ Wt::Dbo::ptr<User> Session::user() const
 {
     if (login_.loggedIn())
     {
+//        users_ = new UserDatabase(*this);
         Wt::Dbo::ptr<AuthInfo> authInfo = users_->find(login_.user());
         return authInfo->user();
     }

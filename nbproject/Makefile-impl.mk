@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=dbo
 
 # Active Configuration
-DEFAULTCONF=SharedObjectWthttpd
+DEFAULTCONF=Static_Lib
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=SharedObjectWthttpd Release Application Static_Lib SharedObjectFcgid 
+ALLCONFS=Static_Lib SharedObject 
 
 
 # build
