@@ -25,14 +25,14 @@ class UserProfile;
 class UserValue;
 class UserAction;
 class UserHistoricalAction;
-class AlertParam;
 class AlertValue;
 class Alert;
 class AlertAcknowledge;
-class AlertType;
 class AlertCriteria;
+class AlertSequence;
 class AlertTracking;
 class AlertTrackingEvent;
+class Engine;
 //class WidgetValue;
 //class WidgetType;
 class Addon;
@@ -81,14 +81,15 @@ namespace Wt
         TEMPLATE_TRIGRAM(User,TRIGRAM_USER ID);
         TEMPLATE_TRIGRAM(UserHistoricalAction, TRIGRAM_USER_HISTORICAL_ACTION ID);
         TEMPLATE_TRIGRAM(UserProfile, TRIGRAM_USER_PROFILE ID);
-        TEMPLATE_TRIGRAM(AlertParam, TRIGRAM_ALERT_PARAM ID);
         TEMPLATE_TRIGRAM(Alert,TRIGRAM_ALERT ID);
-        TEMPLATE_TRIGRAM(AlertType,TRIGRAM_ALERT_TYPE ID);    
         TEMPLATE_TRIGRAM(UserAction,TRIGRAM_USER_ACTION ID);
         TEMPLATE_TRIGRAM(Addon,TRIGRAM_ADDON ID);
         TEMPLATE_TRIGRAM(AlertAcknowledge,TRIGRAM_ALERT_ACKNOWLEDGE ID);
+        TEMPLATE_TRIGRAM(AlertSequence,TRIGRAM_ALERT_SEQUENCE ID);
         TEMPLATE_TRIGRAM(AlertTracking,TRIGRAM_ALERT_TRACKING ID);
         TEMPLATE_TRIGRAM(AlertTrackingEvent,TRIGRAM_ALERT_TRACKING_EVENT ID);
+        
+        TEMPLATE_TRIGRAM(Engine,TRIGRAM_ENGINE ID);
 
         TEMPLATE_TRIGRAM(InformationValue,TRIGRAM_INFORMATION_VALUE ID);
         TEMPLATE_TRIGRAM(Plugin,TRIGRAM_PLUGIN ID);

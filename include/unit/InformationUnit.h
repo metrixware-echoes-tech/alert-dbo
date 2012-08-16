@@ -20,6 +20,7 @@ class InformationUnit : public Table
         Wt::WString name;
         Wt::WString longName;
         
+        Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues;
         Wt::Dbo::collection<Wt::Dbo::ptr<Information2> > informations;
         Wt::Dbo::ptr<InformationUnitType> unitType;
         
@@ -37,6 +38,8 @@ class InformationUnit : public Table
                              informations,
                              Wt::Dbo::ManyToOne,
                              "INF_UNT");
+            
+            Wt::Dbo::hasMany(a,mediaValues,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
             
             
             

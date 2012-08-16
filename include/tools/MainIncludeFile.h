@@ -100,11 +100,12 @@
 #include "alert/Alert.h"
 #include "alert/AlertAcknowledge.h"
 #include "alert/AlertCriteria.h"
-#include "alert/AlertType.h"
 #include "alert/AlertValue.h"
-#include "alert/AlertParam.h"
+#include "alert/AlertSequence.h"
 #include "alert/AlertTracking.h"
 #include "alert/AlertTrackingEvent.h"
+
+#include "engine/Engine.h"
 
 #include "plugin/Source.h"
 #include "plugin/SourceParameter.h"

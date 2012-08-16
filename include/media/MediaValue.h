@@ -23,15 +23,24 @@ class MediaValue : public Table
 
         Wt::Dbo::ptr<Media> media;
         Wt::Dbo::ptr<User> user;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertTracking> > alertTrackings;
+        
+        bool notifEndOfAlert;
+        int snoozeDuration;
+        
 
         template<class Action>
         void persist(Action& a)
         {
             mapClassAttributesStrings["VALUE"]=&this->value;
+            mapClassAttributesBools["NOTIF_END_OF_ALERT"]=&this->notifEndOfAlert;
+            mapClassAttributesInts["SNOOZE"]=&this->snoozeDuration;
             FIELD_FILLER();
 
             Wt::Dbo::belongsTo(a,media,TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
             Wt::Dbo::belongsTo(a,user,TRIGRAM_MEDIA_VALUE SEP TRIGRAM_USER);
+            
+            Wt::Dbo::hasMany(a, alertTrackings, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_MEDIA_VALUE);
             
             
         }

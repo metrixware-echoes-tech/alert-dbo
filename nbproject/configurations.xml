@@ -12,7 +12,7 @@
           <itemPath>include/alert/Alert.h</itemPath>
           <itemPath>include/alert/AlertAcknowledge.h</itemPath>
           <itemPath>include/alert/AlertCriteria.h</itemPath>
-          <itemPath>include/alert/AlertParam.h</itemPath>
+          <itemPath>include/alert/AlertSequence.h</itemPath>
           <itemPath>include/alert/AlertTracking.h</itemPath>
           <itemPath>include/alert/AlertTrackingEvent.h</itemPath>
           <itemPath>include/alert/AlertType.h</itemPath>
@@ -20,6 +20,9 @@
         </logicalFolder>
         <logicalFolder name="asset" displayName="asset" projectFiles="true">
           <itemPath>include/asset/Asset.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="engine" displayName="engine" projectFiles="true">
+          <itemPath>include/engine/Engine.h</itemPath>
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>include/information/Information.h</itemPath>
@@ -120,7 +123,7 @@
           <itemPath>src/alert/Alert.cpp</itemPath>
           <itemPath>src/alert/AlertAcknowledge.cpp</itemPath>
           <itemPath>src/alert/AlertCriteria.cpp</itemPath>
-          <itemPath>src/alert/AlertParam.cpp</itemPath>
+          <itemPath>src/alert/AlertSequence.cpp</itemPath>
           <itemPath>src/alert/AlertTracking.cpp</itemPath>
           <itemPath>src/alert/AlertTrackingEvent.cpp</itemPath>
           <itemPath>src/alert/AlertType.cpp</itemPath>
@@ -128,6 +131,9 @@
         </logicalFolder>
         <logicalFolder name="asset" displayName="asset" projectFiles="true">
           <itemPath>src/asset/Asset.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="engine" displayName="engine" projectFiles="true">
+          <itemPath>src/engine/Engine.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>src/information/Information.cpp</itemPath>
@@ -238,6 +244,8 @@
     <Elem>src/unit</Elem>
     <Elem>src/user</Elem>
     <Elem>src/widget</Elem>
+    <Elem>include/engine</Elem>
+    <Elem>src/engine</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

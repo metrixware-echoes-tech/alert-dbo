@@ -47,11 +47,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/alert/AlertType.o \
 	${OBJECTDIR}/src/probe/Probe.o \
-	${OBJECTDIR}/src/alert/AlertParam.o \
+	${OBJECTDIR}/src/engine/Engine.o \
 	${OBJECTDIR}/src/plugin/SearchParameterValue.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
+	${OBJECTDIR}/src/alert/AlertSequence.o \
 	${OBJECTDIR}/src/user/UserHierarchy.o \
 	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/widget/Tab.o \
@@ -85,9 +86,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/unit/InformationUnitType.o \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
-	${OBJECTDIR}/src/plugin/SearchParameter.o \
 	${OBJECTDIR}/src/pack/Option.o \
 	${OBJECTDIR}/src/user/AccessControlList.o \
+	${OBJECTDIR}/src/plugin/SearchParameter.o \
 	${OBJECTDIR}/src/information/InformationValue.o
 
 
@@ -180,10 +181,10 @@ ${OBJECTDIR}/src/probe/Probe.o: src/probe/Probe.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
 
-${OBJECTDIR}/src/alert/AlertParam.o: src/alert/AlertParam.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/alert
+${OBJECTDIR}/src/engine/Engine.o: src/engine/Engine.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/engine
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertParam.o src/alert/AlertParam.cpp
+	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/engine/Engine.o src/engine/Engine.cpp
 
 ${OBJECTDIR}/src/plugin/SearchParameterValue.o: src/plugin/SearchParameterValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
@@ -204,6 +205,11 @@ ${OBJECTDIR}/src/information/InformationHistoricalValue.o: src/information/Infor
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationHistoricalValue.o src/information/InformationHistoricalValue.cpp
+
+${OBJECTDIR}/src/alert/AlertSequence.o: src/alert/AlertSequence.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertSequence.o src/alert/AlertSequence.cpp
 
 ${OBJECTDIR}/src/user/UserHierarchy.o: src/user/UserHierarchy.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
@@ -370,11 +376,6 @@ ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Pack.o src/pack/Pack.cpp
 
-${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameter.o src/plugin/SearchParameter.cpp
-
 ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
@@ -384,6 +385,11 @@ ${OBJECTDIR}/src/user/AccessControlList.o: src/user/AccessControlList.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/AccessControlList.o src/user/AccessControlList.cpp
+
+${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameter.o src/plugin/SearchParameter.cpp
 
 ${OBJECTDIR}/src/information/InformationValue.o: src/information/InformationValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information

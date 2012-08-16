@@ -28,7 +28,6 @@ class AlertTracking : public Table
         boost::optional<Wt::WString> ackGw;
         boost::optional<Wt::WString> ackPort;
         boost::optional<Wt::WString> ackId;
-        boost::optional<Wt::WString> ackEvent;
 
         Wt::Dbo::ptr<MediaValue> mediaValue;
         Wt::Dbo::ptr<Alert> alert;
@@ -43,7 +42,6 @@ class AlertTracking : public Table
             mapClassAttributesStringsNn["ACK_GW"]=&this->ackGw;
             mapClassAttributesStringsNn["ACK_PORT"]=&this->ackPort;
             mapClassAttributesStringsNn["ACK_ID"]=&this->ackId;
-            mapClassAttributesStringsNn["ACK_EVENT"]=&this->ackEvent;
             mapClassAttributesDates["SEND_DATE"]=&this->sendDate;
             mapClassAttributesDates["RECEIV_DATE"]=&this->receiveDate;
             

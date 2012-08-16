@@ -37,6 +37,8 @@
                 <sourceRootElem>src/unit</sourceRootElem>
                 <sourceRootElem>src/user</sourceRootElem>
                 <sourceRootElem>src/widget</sourceRootElem>
+                <sourceRootElem>include/engine</sourceRootElem>
+                <sourceRootElem>src/engine</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
