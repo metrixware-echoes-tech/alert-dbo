@@ -127,7 +127,7 @@ Session::~Session()
     delete users_;
 }
 
-Wt::Auth::AbstractUserDatabase& Session::users()
+UserDatabase& Session::users()
 {
     return *users_;
 }

@@ -9,18 +9,18 @@
 #include "Wt/Auth/PasswordVerifier"
 #include "Wt/Auth/GoogleService"
 #include "Wt/Auth/Dbo/AuthInfo"
-#include "Wt/Auth/Dbo/UserDatabase"
 
 #include <Wt/Dbo/Session>
 #include <Wt/Dbo/ptr>
 #include <Wt/Dbo/backend/Postgres>
 
+#include "tools/EchoesAlertDatabase.h"
 #include "tools/MainIncludeFile.h"
 
 class User;
 class Search;
 
-typedef Wt::Auth::Dbo::UserDatabase<AuthInfo> UserDatabase;
+typedef EchoesAlertDatabase<AuthInfo,User> UserDatabase;
 
 class Session : public Wt::Dbo::Session
 {
@@ -32,7 +32,7 @@ public:
 
   Wt::Dbo::ptr<User> user() const;
 
-  Wt::Auth::AbstractUserDatabase& users();
+  UserDatabase& users();
   Wt::Auth::Login& login() { return login_; }
 
   static const Wt::Auth::AuthService& auth();

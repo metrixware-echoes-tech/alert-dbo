@@ -74,6 +74,7 @@
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>include/tools/AuthApplication.h</itemPath>
           <itemPath>include/tools/Constants.h</itemPath>
+          <itemPath>include/tools/EchoesAlertDatabase.h</itemPath>
           <itemPath>include/tools/MacroTrigram.h</itemPath>
           <itemPath>include/tools/MainIncludeFile.h</itemPath>
           <itemPath>include/tools/PostgresConnector.h</itemPath>

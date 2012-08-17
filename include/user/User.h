@@ -11,6 +11,7 @@
 #include <Wt/WDateTime>
 #include <Wt/WGlobal>
 #include <Wt/Auth/AbstractUserDatabase>
+#include <Wt/Auth/Dbo/AuthInfo>
 
 #include "tools/MainIncludeFile.h"
 
@@ -23,9 +24,11 @@ class UserHistoricalAction;
 class Organization;
 class MediaValue;
 
+class User;
 typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
+typedef Wt::Dbo::collection< Wt::Dbo::ptr<User> > Users;
 
-class User : public Table
+class User : public Table, public Wt::Dbo::Dbo<User>
 {
     public:
         User() : Table() {};
@@ -59,6 +62,10 @@ class User : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<UserField> > userFields;
         Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
+        
+        
+        //link to auth_info table
+        Wt::Dbo::collection< Wt::Dbo::ptr<AuthInfo> > authInfos;
         
         
 
@@ -116,7 +123,9 @@ class User : public Table
                              organizations,
                              Wt::Dbo::ManyToMany,
                              "TJ_USR_ORG");
-
+            
+            
+            Wt::Dbo::hasMany(a, authInfos, Wt::Dbo::ManyToOne, "user");
 
 
         }
