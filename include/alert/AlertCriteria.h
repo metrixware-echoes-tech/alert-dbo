@@ -14,17 +14,20 @@ class AlertCriteria : public Table
         
         static std::string TRIGRAM;
         Wt::WString name;
-        Wt::Dbo::collection<Wt::Dbo::ptr<InformationUnit> > informationUnits;
+        Wt::Dbo::collection<Wt::Dbo::ptr<InformationUnitType> > informationUnitTypes;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
         
         
         template<class Action>
         void persist(Action& a)
         {
             mapClassAttributesStrings["NAME"]=&this->name;
-            mapClassAttributesDates["DELETE"]=&this->deleteTag;
             FIELD_FILLER();
             
-            Wt::Dbo::hasMany(a,informationUnits,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
+            Wt::Dbo::hasMany(a,alertValues,Wt::Dbo::ManyToOne, TRIGRAM_ALERT_VALUE SEP TRIGRAM_ALERT_CRITERIA);
+            
+            Wt::Dbo::hasMany(a,informationUnitTypes,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
+            
         }
     protected:
     private:

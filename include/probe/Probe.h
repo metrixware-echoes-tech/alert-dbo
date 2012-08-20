@@ -17,7 +17,7 @@ class Probe : public Table
         
         static std::string TRIGRAM;             
         Wt::WString name;
-        Wt::WString key;
+        Wt::WString cert;
         
         Wt::Dbo::ptr<Organization> organization;
 
@@ -28,7 +28,7 @@ class Probe : public Table
         void persist(Action& a)
         {
             mapClassAttributesStrings["NAME"]=&this->name;            
-            mapClassAttributesStrings["KEY"]=&this->key; 
+            mapClassAttributesStrings["CERT"]=&this->cert; 
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, organization, "PRB_ORG");
 

@@ -21,7 +21,7 @@ class InformationUnitType : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<InformationUnit> > units;
         
-//        Wt::Dbo::collection<Wt::Dbo::ptr<WidgetType> > widgetTypes;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertCriteria> > alertCriterias;
         
         template<class Action>
         void persist(Action& a)
@@ -36,10 +36,7 @@ class InformationUnitType : public Table
             
 
             //TJ
-//            Wt::Dbo::hasMany(a,
-//                             widgetTypes,
-//                             Wt::Dbo::ManyToMany,
-//                             "TJ_WTY_UTY");
+            Wt::Dbo::hasMany(a, alertCriterias, Wt::Dbo::ManyToMany,"TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
 
             
         }
