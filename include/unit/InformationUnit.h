@@ -32,12 +32,12 @@ class InformationUnit : public Table
             
             FIELD_FILLER();
             
-            Wt::Dbo::belongsTo(a, unitType, "UNT_UTY");
+            Wt::Dbo::belongsTo(a, unitType, TRIGRAM_INFORMATION_UNIT SEP TRIGRAM_INFORMATION_UNIT_TYPE);
             
             Wt::Dbo::hasMany(a,
                              informations,
                              Wt::Dbo::ManyToOne,
-                             "INF_UNT");
+                             TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
             
             Wt::Dbo::hasMany(a,mediaValues,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
             

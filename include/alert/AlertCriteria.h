@@ -26,7 +26,7 @@ class AlertCriteria : public Table
             
             Wt::Dbo::hasMany(a,alertValues,Wt::Dbo::ManyToOne, TRIGRAM_ALERT_VALUE SEP TRIGRAM_ALERT_CRITERIA);
             
-            Wt::Dbo::hasMany(a,informationUnitTypes,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
+            Wt::Dbo::hasMany(a,informationUnitTypes,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT_TYPE);
             
         }
     protected:

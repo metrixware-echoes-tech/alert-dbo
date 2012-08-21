@@ -22,6 +22,8 @@ class InformationValue : public Table
         Wt::WDateTime creationDate;        
         Wt::WString value;
         
+        int state;
+        
         Wt::Dbo::ptr<Asset> asset;
         Wt::Dbo::ptr<Syslog> syslog;
         Wt::Dbo::ptr<Information2> information;
@@ -32,6 +34,7 @@ class InformationValue : public Table
         {   
             mapClassAttributesDates["CREA_DATE"]=&this->creationDate;  
             mapClassAttributesStrings["VALUE"]=&this->value;             
+            mapClassAttributesInts["STATE"]=&this->state;
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, asset, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_ASSET);
             Wt::Dbo::belongsTo(a, syslog, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_SYSLOG);

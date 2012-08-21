@@ -32,11 +32,11 @@ class InformationUnitType : public Table
             Wt::Dbo::hasMany(a,
                              units,
                              Wt::Dbo::ManyToOne,
-                             "UNT_UTY");
+                             TRIGRAM_INFORMATION_UNIT SEP TRIGRAM_INFORMATION_UNIT_TYPE);
             
 
             //TJ
-            Wt::Dbo::hasMany(a, alertCriterias, Wt::Dbo::ManyToMany,"TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
+            Wt::Dbo::hasMany(a, alertCriterias, Wt::Dbo::ManyToMany,"TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT_TYPE);
 
             
         }

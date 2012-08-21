@@ -33,7 +33,7 @@ class Information2 : public Table
             mapClassAttributesStrings["NAME"]=&this->name;
             FIELD_FILLER();
             Wt::Dbo::id(a,pk,"PRIMARY_KEY");
-            Wt::Dbo::belongsTo(a, unit, "INF_UNT");
+            Wt::Dbo::belongsTo(a, unit, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
             
             Wt::Dbo::hasMany(a,
                              alertValues,
