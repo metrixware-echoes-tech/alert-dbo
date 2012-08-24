@@ -24,6 +24,7 @@ MyOAuth myOAuthServices;
 void Session::configureAuth()
 {
     myAuthService.setAuthTokensEnabled(true, "logincookie");
+    myAuthService.setIdentityPolicy(Auth::EmailAddressIdentity);
     myAuthService.setEmailVerificationEnabled(true);
 
     Auth::PasswordVerifier *verifier = new Auth::PasswordVerifier();
