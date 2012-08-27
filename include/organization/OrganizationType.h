@@ -15,6 +15,14 @@ public:
         OrganizationType();
         virtual ~OrganizationType();
         static std::string TRIGRAM;
+        
+        enum eType 
+        {
+            Company = 1, 
+            Individual = 2, 
+            Association = 3 
+        };
+        
         Wt::WString name;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
