@@ -36,6 +36,11 @@
             { \
                 Wt::Dbo::field(a, *itInts->second, formatColumnName(*this,(*itInts).first)); \
             } \
+            std::map<std::string,short*>::iterator itShorts; \
+            for(itShorts = mapClassAttributesShorts.begin(); itShorts != mapClassAttributesShorts.end(); ++itShorts) \
+            { \
+                Wt::Dbo::field(a, *itShorts->second, formatColumnName(*this,(*itShorts).first)); \
+            } \
             std::map<std::string,boost::optional<Wt::WString>* >::iterator itStringsNn; \
             for(itStringsNn = mapClassAttributesStringsNn.begin(); itStringsNn != mapClassAttributesStringsNn.end(); ++itStringsNn) \
             { \

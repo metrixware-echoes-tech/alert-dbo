@@ -31,6 +31,8 @@ class Alert : public Table
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertTracking> > alertTrackings;
         
+        Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues; 
+        
         Wt::Dbo::ptr<AlertValue> alertValue;
         Wt::Dbo::ptr<AlertSequence> alertSequence;
         Wt::Dbo::ptr<Engine> engine;
@@ -45,14 +47,9 @@ class Alert : public Table
             
             FIELD_FILLER();
             
-            Wt::Dbo::hasMany(a,
-                             alertAcks,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_ALERT_ACKNOWLEDGE SEP TRIGRAM_ALERT);
-            Wt::Dbo::hasMany(a,
-                             alertTrackings,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_ALERT_TRACKING SEP TRIGRAM_ALERT);
+            Wt::Dbo::hasMany(a, alertAcks, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_ACKNOWLEDGE SEP TRIGRAM_ALERT);
+            Wt::Dbo::hasMany(a, alertTrackings, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_ALERT);
+            Wt::Dbo::hasMany(a, mediaValues, Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_MEDIA_VALUE SEP TRIGRAM_ALERT);
             
             Wt::Dbo::belongsTo(a,alertValue, TRIGRAM_ALERT SEP TRIGRAM_ALERT_VALUE);
             Wt::Dbo::belongsTo(a,alertSequence, TRIGRAM_ALERT_SEQUENCE SEP "FIRST_ID");

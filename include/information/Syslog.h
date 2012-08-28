@@ -31,7 +31,7 @@ public:
     
     boost::optional<int> version;
     // state : 0 = pending, 1 = processing, 2 = done
-    int state;
+    short state;
     
     Wt::Dbo::ptr<Probe> probe;
     Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
@@ -49,7 +49,7 @@ public:
         mapClassAttributesInts["PROC_ID"]=&this->procId;
         mapClassAttributesInts["PRI"]=&this->priority;
         mapClassAttributesIntsNn["VERSION"]=&this->version;
-        mapClassAttributesInts["STATE"]=&this->state;
+        mapClassAttributesShorts["STATE"]=&this->state;
      
         
         FIELD_FILLER();

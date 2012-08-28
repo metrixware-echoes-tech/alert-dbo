@@ -37,6 +37,7 @@ class Table //classe abstraite
         std::map <std::string,int*> mapClassAttributesInts;
         std::map <std::string,boost::optional<Wt::WString>* > mapClassAttributesStringsNn;
         std::map <std::string,boost::optional<int>* > mapClassAttributesIntsNn;
+        std::map <std::string,short*> mapClassAttributesShorts;
 
 };
 

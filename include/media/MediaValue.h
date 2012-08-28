@@ -25,6 +25,8 @@ class MediaValue : public Table
         Wt::Dbo::ptr<User> user;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertTracking> > alertTrackings;
         
+        Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
+        
         bool notifEndOfAlert;
         int snoozeDuration;
         
@@ -41,6 +43,11 @@ class MediaValue : public Table
             Wt::Dbo::belongsTo(a,user,TRIGRAM_MEDIA_VALUE SEP TRIGRAM_USER);
             
             Wt::Dbo::hasMany(a, alertTrackings, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_MEDIA_VALUE);
+            
+            Wt::Dbo::hasMany(a,
+                             alerts,
+                             Wt::Dbo::ManyToMany,
+                             "TJ" SEP TRIGRAM_MEDIA_VALUE SEP TRIGRAM_ALERT);
             
             
         }
