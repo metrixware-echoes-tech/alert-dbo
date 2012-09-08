@@ -24,10 +24,13 @@ class AlertValue : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertSequence> > alertSequences;
         
+        Wt::WString lot_key_value;
+        
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["VALUE"]=&this->value; 
+            mapClassAttributesStrings["VALUE"]=&this->value;
+            mapClassAttributesStrings["LOT_KEY_VALUE"]=&this->lot_key_value;
             
             FIELD_FILLER();
             
