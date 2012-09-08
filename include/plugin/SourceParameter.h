@@ -25,7 +25,7 @@ public:
     Wt::WString name;
     Wt::WString format;    
     
-    Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameterValue> > sourceParameterValues;
+//    Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameterValue> > sourceParameterValues;
     Wt::Dbo::collection<Wt::Dbo::ptr<Addon> > Addons;
     
     template<class Action>
@@ -34,10 +34,10 @@ public:
         mapClassAttributesStrings["NAME"]=&this->name;    
         mapClassAttributesStrings["FORMAT"]=&this->format;  
         FIELD_FILLER();
-        Wt::Dbo::hasMany(a,
-                        sourceParameterValues,
-                        Wt::Dbo::ManyToOne,
-                        "SPV_SRP");
+//        Wt::Dbo::hasMany(a,
+//                        sourceParameterValues,
+//                        Wt::Dbo::ManyToOne,
+//                        "SPV_SRP");
         
         //TJ
         Wt::Dbo::hasMany(a,

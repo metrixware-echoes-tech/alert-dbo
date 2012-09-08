@@ -28,6 +28,9 @@ public:
     SearchId pk;
     Wt::Dbo::ptr<SearchType> searchType;
     
+    Wt::WString lot_key_value;        
+
+    
     //RHI : manque 2 poiinteurs, vers SOURCE et SEARCH_PARAMETER_VALUE
     
     template<class Action>
@@ -35,7 +38,8 @@ public:
     {
         mapClassAttributesInts["NB_VALUE"]=&this->nbValue;        
         mapClassAttributesStrings["PERIOD"]=&this->period;        
-        mapClassAttributesBools["IS_STATIC"]=&this->searchIsStatic; 
+        mapClassAttributesBools["IS_STATIC"]=&this->searchIsStatic;
+        mapClassAttributesStrings["LOT_KEY_VALUE"]=&this->lot_key_value;
         
         FIELD_FILLER();
         

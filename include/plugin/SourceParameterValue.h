@@ -26,7 +26,6 @@ public:
    
     
     SourceParameterValueId pk;
-    Wt::Dbo::ptr<SourceParameter> sourceParameter;
     
     
     template<class Action>
@@ -35,8 +34,6 @@ public:
         mapClassAttributesStrings["VALUE"]=&this->value; 
         FIELD_FILLER();
         Wt::Dbo::id (a, pk, "PRIMARY_KEY");
-        
-        Wt::Dbo::belongsTo(a, sourceParameter, "SPV_SRP");
     }
 private:
 
