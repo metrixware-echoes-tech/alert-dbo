@@ -24,6 +24,7 @@ class InformationValue : public Table
         
         short state;
         int lotNumber;
+        int lineNumber;
         
         Wt::Dbo::ptr<Asset> asset;
         Wt::Dbo::ptr<Syslog> syslog;
@@ -37,6 +38,8 @@ class InformationValue : public Table
             mapClassAttributesStrings["VALUE"]=&this->value;             
             mapClassAttributesShorts["STATE"]=&this->state;
             mapClassAttributesInts["LOT_NUM"]=&this->lotNumber;
+            mapClassAttributesInts["LINE_NUM"]=&this->lineNumber;
+            
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, asset, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_ASSET);
             Wt::Dbo::belongsTo(a, syslog, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_SYSLOG);

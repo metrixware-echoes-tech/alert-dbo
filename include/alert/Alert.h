@@ -20,14 +20,14 @@ class Alert : public Table
         static std::string TRIGRAM;
         
         Wt::WString name;
-        Wt::WDateTime creaDate;
-        Wt::WDateTime lastAttempt;
+        Wt::WDateTime creaDate; //creation date of the alert
+        Wt::WDateTime lastAttempt; //last time an engine process the alert (use to detect a zombie alert thread)
+        Wt::WDateTime lastSend; //last time the alert was send to a media
         int threadSleep;
 
         
 //        const Wt::WString& name_() const {return *name;};
         
-        // RHI: manque TJ_ALE_USR_MED
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertTracking> > alertTrackings;
         
@@ -43,7 +43,9 @@ class Alert : public Table
             mapClassAttributesStrings["NAME"]=&this->name;
             mapClassAttributesDates["CREA_DATE"]=&this->creaDate;
             mapClassAttributesDates["LAST_ATTEMPT"]=&this->lastAttempt;
+            mapClassAttributesDates["LAST_SEND"]=&this->lastSend;           
             mapClassAttributesInts["THREAD_SLEEP"]=&this->threadSleep;
+
             
             FIELD_FILLER();
             
