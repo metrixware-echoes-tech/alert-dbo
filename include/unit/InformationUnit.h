@@ -38,8 +38,9 @@ class InformationUnit : public Table
                              informations,
                              Wt::Dbo::ManyToOne,
                              TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
-            
-            Wt::Dbo::hasMany(a,mediaValues,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
+         
+            //modif RHI 10/09/12 la TJ avec alertcriteria ne se fait pas avec cette table mais avec IUT
+         //   Wt::Dbo::hasMany(a,mediaValues,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
             
             
             

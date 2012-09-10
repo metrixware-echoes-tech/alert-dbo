@@ -22,7 +22,6 @@ class Alert : public Table
         Wt::WString name;
         Wt::WDateTime creaDate; //creation date of the alert
         Wt::WDateTime lastAttempt; //last time an engine process the alert (use to detect a zombie alert thread)
-        Wt::WDateTime lastSend; //last time the alert was send to a media
         int threadSleep;
 
         
@@ -42,8 +41,7 @@ class Alert : public Table
         {
             mapClassAttributesStrings["NAME"]=&this->name;
             mapClassAttributesDates["CREA_DATE"]=&this->creaDate;
-            mapClassAttributesDates["LAST_ATTEMPT"]=&this->lastAttempt;
-            mapClassAttributesDates["LAST_SEND"]=&this->lastSend;           
+            mapClassAttributesDates["LAST_ATTEMPT"]=&this->lastAttempt;      
             mapClassAttributesInts["THREAD_SLEEP"]=&this->threadSleep;
 
             

@@ -23,6 +23,7 @@ class MediaValue : public Table
 
         Wt::Dbo::ptr<Media> media;
         Wt::Dbo::ptr<User> user;
+        Wt::WDateTime lastSend; //last time the alert was send to a media
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertTracking> > alertTrackings;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
@@ -37,6 +38,7 @@ class MediaValue : public Table
             mapClassAttributesStrings["VALUE"]=&this->value;
             mapClassAttributesBools["NOTIF_END_OF_ALERT"]=&this->notifEndOfAlert;
             mapClassAttributesInts["SNOOZE"]=&this->snoozeDuration;
+            mapClassAttributesDates["LAST_SEND"]=&this->lastSend;                 
             FIELD_FILLER();
 
             Wt::Dbo::belongsTo(a,media,TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
