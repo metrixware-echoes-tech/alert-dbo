@@ -22,6 +22,7 @@ AS=as
 
 # Macros
 CND_PLATFORM=GNU-Linux-x86
+CND_DLIB_EXT=so
 CND_CONF=Static_Lib
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -64,12 +65,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
-	${OBJECTDIR}/src/plugin/SourceParameterValue.o \
 	${OBJECTDIR}/src/alert/AlertTrackingEvent.o \
-	${OBJECTDIR}/src/alert/AlertCriteria.o \
+	${OBJECTDIR}/src/plugin/SourceParameterValue.o \
 	${OBJECTDIR}/src/widget/Widget.o \
 	${OBJECTDIR}/src/organization/OrganizationValue.o \
 	${OBJECTDIR}/src/tools/Table.o \
+	${OBJECTDIR}/src/alert/AlertCriteria.o \
 	${OBJECTDIR}/src/alert/Alert.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
@@ -268,20 +269,15 @@ ${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
 
-${OBJECTDIR}/src/plugin/SourceParameterValue.o: src/plugin/SourceParameterValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameterValue.o src/plugin/SourceParameterValue.cpp
-
 ${OBJECTDIR}/src/alert/AlertTrackingEvent.o: src/alert/AlertTrackingEvent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTrackingEvent.o src/alert/AlertTrackingEvent.cpp
 
-${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/alert
+${OBJECTDIR}/src/plugin/SourceParameterValue.o: src/plugin/SourceParameterValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameterValue.o src/plugin/SourceParameterValue.cpp
 
 ${OBJECTDIR}/src/widget/Widget.o: src/widget/Widget.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
@@ -297,6 +293,11 @@ ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
+
+${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
 
 ${OBJECTDIR}/src/alert/Alert.o: src/alert/Alert.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert

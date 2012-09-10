@@ -20,17 +20,17 @@ struct InformationId
     Wt::Dbo::ptr<Search> search;
     int subSearchNumber;
 
-    InformationId(Wt::Dbo::ptr<Search> ptr)
-        : search(ptr) { }
+    InformationId(Wt::Dbo::ptr<Search> ptr, int ssn)
+        : search(ptr), subSearchNumber(ssn) { }
 
     InformationId(){ }
 
     bool operator== (const InformationId& other) const {
-        return search == other.search;
+        return search == other.search && subSearchNumber == other.subSearchNumber;
     }
 
     bool operator< (const InformationId& other) const {
-        if (search < other.search)
+        if ((search < other.search) || (subSearchNumber < other.subSearchNumber))
             return true;
         else
             return false;
@@ -39,7 +39,7 @@ struct InformationId
 
 inline std::ostream& operator<< (std::ostream& o, const InformationId& pk)
 {
-    return o << "(" << pk.search << ")";
+    return o << "(" << pk.search << ")" << "(" << pk.subSearchNumber << ")";
 }
 
 namespace Wt
