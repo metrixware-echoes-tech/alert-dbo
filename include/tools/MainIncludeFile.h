@@ -127,6 +127,8 @@
 
 #include "pack/Pack.h"
 #include "pack/Option.h"
+#include "pack/PackOption.h"
+#include "pack/OptionValue.h"
 
 #include "probe/Probe.h"
 

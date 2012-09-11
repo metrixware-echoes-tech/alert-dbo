@@ -84,8 +84,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
 	${OBJECTDIR}/src/unit/InformationUnit.o \
 	${OBJECTDIR}/src/unit/InformationUnitType.o \
+	${OBJECTDIR}/src/pack/PackOption.o \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
+	${OBJECTDIR}/src/pack/OptionValue.o \
 	${OBJECTDIR}/src/pack/Option.o \
 	${OBJECTDIR}/src/user/AccessControlList.o \
 	${OBJECTDIR}/src/plugin/SearchParameter.o \
@@ -368,6 +370,11 @@ ${OBJECTDIR}/src/unit/InformationUnitType.o: src/unit/InformationUnitType.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnitType.o src/unit/InformationUnitType.cpp
 
+${OBJECTDIR}/src/pack/PackOption.o: src/pack/PackOption.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/pack
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/PackOption.o src/pack/PackOption.cpp
+
 ${OBJECTDIR}/src/plugin/Source.o: src/plugin/Source.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
@@ -377,6 +384,11 @@ ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Pack.o src/pack/Pack.cpp
+
+${OBJECTDIR}/src/pack/OptionValue.o: src/pack/OptionValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/pack
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/OptionValue.o src/pack/OptionValue.cpp
 
 ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack

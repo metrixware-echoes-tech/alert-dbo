@@ -17,7 +17,7 @@ class AlertValue : public Table
         static std::string TRIGRAM;
         
         Wt::WString value;
-        Wt::WString keyValue;
+        boost::optional<Wt::WString> keyValue;
         Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
         Wt::Dbo::ptr<Information2> information;
         Wt::Dbo::ptr<AlertCriteria> alertCriteria;
@@ -29,7 +29,7 @@ class AlertValue : public Table
         void persist(Action& a)
         {
             mapClassAttributesStrings["VALUE"]=&this->value;
-            mapClassAttributesStrings["KEY_VALUE"]=&this->keyValue;            
+            mapClassAttributesStringsNn["KEY_VALUE"]=&this->keyValue;            
             
             FIELD_FILLER();
             

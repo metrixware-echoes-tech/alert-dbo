@@ -21,10 +21,6 @@ class Pack : public Table
         {
             mapClassAttributesStrings["NAME"]=&this->name;                       
             FIELD_FILLER();            
-            Wt::Dbo::hasMany(a,
-                             option,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_PCK_OPT");
                     
             Wt::Dbo::hasMany(a,
                              organization,

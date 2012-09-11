@@ -67,6 +67,8 @@ class Constants
         static const char *T_SEARCH_PARAMETER_SEP;
         static const char *T_SEARCH_PARAMETER_VALUE_SEV;
         static const char *T_PACK_PCK;
+        static const char *T_PACK_OPTION_POP;
+        static const char *T_OPTION_VALUE_OPV;        
         static const char *T_OPTION_OPT;
         static const char *T_MEDIA_MED;
         static const char *T_MEDIA_VALUE_MEV;

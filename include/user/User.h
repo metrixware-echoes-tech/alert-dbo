@@ -52,6 +52,8 @@ class User : public Table, public Wt::Dbo::Dbo<User>
 
         Wt::Dbo::ptr<UserRole> userRole;
         Wt::Dbo::ptr<UserProfile> userProfile;
+        
+        Wt::Dbo::ptr<Organization> currentOrganization;
 
         Wt::Dbo::collection<Wt::Dbo::ptr<UserValue> > userValues;
         Wt::Dbo::collection<Wt::Dbo::ptr<UserHierarchy> > parents;
@@ -83,6 +85,7 @@ class User : public Table, public Wt::Dbo::Dbo<User>
             //Other tables ids as foreign keys for user table
 
             Wt::Dbo::belongsTo(a, userRole, "USR_URO");
+            Wt::Dbo::belongsTo(a, currentOrganization, "CURRENT");            
             Wt::Dbo::belongsTo(a, userProfile, "USR_UPR");
 
             //User id as foreign key in other tables

@@ -56,6 +56,8 @@ class Syslog;
 class SearchType;
 class SearchParameter;
 class Pack;
+class PackOption;
+class OptionValue;
 class Option;
 class Media;
 class MediaValue;
@@ -105,6 +107,8 @@ namespace Wt
         TEMPLATE_TRIGRAM(SearchType,TRIGRAM_SEARCH_TYPE ID);
         TEMPLATE_TRIGRAM(SearchParameter,TRIGRAM_SEARCH_PARAMETER ID);
         TEMPLATE_TRIGRAM(Pack,TRIGRAM_PACK ID);
+//        TEMPLATE_TRIGRAM(PackOption,TRIGRAM_PACK_OPTION ID);
+//        TEMPLATE_TRIGRAM(OptionValue,TRIGRAM_OPTION_VALUE ID);        
         TEMPLATE_TRIGRAM(Option,TRIGRAM_OPTION ID);
         TEMPLATE_TRIGRAM(Media,TRIGRAM_MEDIA ID);
         TEMPLATE_TRIGRAM(MediaValue,TRIGRAM_MEDIA_VALUE ID);

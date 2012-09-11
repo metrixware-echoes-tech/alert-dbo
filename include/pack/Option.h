@@ -19,11 +19,6 @@ class Option : public Table
         {
             mapClassAttributesStrings["NAME"]=&this->name;                       
             FIELD_FILLER();
-            
-            Wt::Dbo::hasMany(a,
-                             pack,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_PCK_OPT");
         }
     protected:
     private:

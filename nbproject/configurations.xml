@@ -44,7 +44,9 @@
         </logicalFolder>
         <logicalFolder name="pack" displayName="pack" projectFiles="true">
           <itemPath>include/pack/Option.h</itemPath>
+          <itemPath>include/pack/OptionValue.h</itemPath>
           <itemPath>include/pack/Pack.h</itemPath>
+          <itemPath>include/pack/PackOption.h</itemPath>
         </logicalFolder>
         <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
           <itemPath>include/plugin/Plugin.h</itemPath>
@@ -59,7 +61,9 @@
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
           <itemPath>include/primaryKeys/AccessControlListId.h</itemPath>
           <itemPath>include/primaryKeys/InformationId.h</itemPath>
+          <itemPath>include/primaryKeys/OptionValueId.h</itemPath>
           <itemPath>include/primaryKeys/OrganizationValueId.h</itemPath>
+          <itemPath>include/primaryKeys/PackOptionId.h</itemPath>
           <itemPath>include/primaryKeys/SearchId.h</itemPath>
           <itemPath>include/primaryKeys/SearchParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/SourceId.h</itemPath>
@@ -156,7 +160,9 @@
         </logicalFolder>
         <logicalFolder name="pack" displayName="pack" projectFiles="true">
           <itemPath>src/pack/Option.cpp</itemPath>
+          <itemPath>src/pack/OptionValue.cpp</itemPath>
           <itemPath>src/pack/Pack.cpp</itemPath>
+          <itemPath>src/pack/PackOption.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
           <itemPath>src/plugin/Plugin.cpp</itemPath>

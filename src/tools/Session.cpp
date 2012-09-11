@@ -106,6 +106,8 @@ Session::Session(std::string connectionParams)
     mapClass<SearchParameterValue>(Constants::T_SEARCH_PARAMETER_VALUE_SEV);
     
     mapClass<Pack>(Constants::T_PACK_PCK);
+    mapClass<PackOption>(Constants::T_PACK_OPTION_POP);
+    mapClass<OptionValue>(Constants::T_OPTION_VALUE_OPV);
     
     mapClass<Option>(Constants::T_OPTION_OPT);
     

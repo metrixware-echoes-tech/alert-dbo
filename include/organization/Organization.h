@@ -25,7 +25,7 @@ class Organization : public Table
         Wt::WString city;
         // methods
 
-        //RHI : manque lien avec PACK et ORGANISATION VALUE et TYPE
+        Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
         
         
         // dbo collections (This table id as foreign key in other tables)
@@ -54,6 +54,10 @@ class Organization : public Table
                              probes,
                              Wt::Dbo::ManyToOne,
                              "PRB_ORG");
+            Wt::Dbo::hasMany(a,
+                            users,
+                            Wt::Dbo::ManyToOne,
+                            "CURRENT");            
             Wt::Dbo::belongsTo(a, pack, "ORG_PCK");
             Wt::Dbo::belongsTo(a, organizationType, "ORG_OTY");                  
        }
