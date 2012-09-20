@@ -15,15 +15,15 @@ NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
 CC=gcc
-CCC=distcc
-CXX=distcc
+CCC=g++-4.4
+CXX=g++-4.4
 FC=gfortran
 AS=as
 
 # Macros
 CND_PLATFORM=GNU-Linux-x86
 CND_DLIB_EXT=so
-CND_CONF=Static_Lib
+CND_CONF=Release_SharedObject
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -99,8 +99,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-std=c++0x
-CXXFLAGS=-std=c++0x
+CCFLAGS=-std=c++0x -fPIC
+CXXFLAGS=-std=c++0x -fPIC
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -109,307 +109,305 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-lwt -lwtdbo -lwtdbopostgres
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
+	g++-4.4 -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT} -s -fPIC ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/src/alert/AlertAcknowledge.o: src/alert/AlertAcknowledge.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertAcknowledge.o src/alert/AlertAcknowledge.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertAcknowledge.o src/alert/AlertAcknowledge.cpp
 
 ${OBJECTDIR}/src/plugin/Search.o: src/plugin/Search.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Search.o src/plugin/Search.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Search.o src/plugin/Search.cpp
 
 ${OBJECTDIR}/src/organization/OrganizationType.o: src/organization/OrganizationType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
 
 ${OBJECTDIR}/src/widget/WidgetType.o: src/widget/WidgetType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetType.o src/widget/WidgetType.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetType.o src/widget/WidgetType.cpp
 
 ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
 
 ${OBJECTDIR}/src/user/Space.o: src/user/Space.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/Space.o src/user/Space.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/Space.o src/user/Space.cpp
 
 ${OBJECTDIR}/src/media/MediaValue.o: src/media/MediaValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/media
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/MediaValue.o src/media/MediaValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/MediaValue.o src/media/MediaValue.cpp
 
 ${OBJECTDIR}/src/alert/AlertValue.o: src/alert/AlertValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertValue.o src/alert/AlertValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertValue.o src/alert/AlertValue.cpp
 
 ${OBJECTDIR}/src/plugin/SourceParameter.o: src/plugin/SourceParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameter.o src/plugin/SourceParameter.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameter.o src/plugin/SourceParameter.cpp
 
 ${OBJECTDIR}/src/media/Media.o: src/media/Media.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/media
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/Media.o src/media/Media.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/Media.o src/media/Media.cpp
 
 ${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
 
 ${OBJECTDIR}/src/alert/AlertType.o: src/alert/AlertType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertType.o src/alert/AlertType.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertType.o src/alert/AlertType.cpp
 
 ${OBJECTDIR}/src/probe/Probe.o: src/probe/Probe.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/probe
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
 
 ${OBJECTDIR}/src/engine/Engine.o: src/engine/Engine.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/engine
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/engine/Engine.o src/engine/Engine.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/engine/Engine.o src/engine/Engine.cpp
 
 ${OBJECTDIR}/src/plugin/SearchParameterValue.o: src/plugin/SearchParameterValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameterValue.o src/plugin/SearchParameterValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameterValue.o src/plugin/SearchParameterValue.cpp
 
 ${OBJECTDIR}/src/information/InformationHistoricalValue.o: src/information/InformationHistoricalValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationHistoricalValue.o src/information/InformationHistoricalValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationHistoricalValue.o src/information/InformationHistoricalValue.cpp
 
 ${OBJECTDIR}/src/alert/AlertSequence.o: src/alert/AlertSequence.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertSequence.o src/alert/AlertSequence.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertSequence.o src/alert/AlertSequence.cpp
 
 ${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
 
 ${OBJECTDIR}/src/user/UserHierarchy.o: src/user/UserHierarchy.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHierarchy.o src/user/UserHierarchy.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHierarchy.o src/user/UserHierarchy.cpp
 
 ${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
 
 ${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
 
 ${OBJECTDIR}/src/widget/Tab.o: src/widget/Tab.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Tab.o src/widget/Tab.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Tab.o src/widget/Tab.cpp
 
 ${OBJECTDIR}/src/user/UserAction.o: src/user/UserAction.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserAction.o src/user/UserAction.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserAction.o src/user/UserAction.cpp
 
 ${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
 
 ${OBJECTDIR}/src/asset/Asset.o: src/asset/Asset.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/asset
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/asset/Asset.o src/asset/Asset.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/asset/Asset.o src/asset/Asset.cpp
 
 ${OBJECTDIR}/src/addon/Addon.o: src/addon/Addon.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/Addon.o src/addon/Addon.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/Addon.o src/addon/Addon.cpp
 
 ${OBJECTDIR}/src/plugin/SearchType.o: src/plugin/SearchType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchType.o src/plugin/SearchType.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchType.o src/plugin/SearchType.cpp
 
 ${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
 
 ${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Constants.o src/tools/Constants.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Constants.o src/tools/Constants.cpp
 
 ${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
 
 ${OBJECTDIR}/src/alert/AlertTrackingEvent.o: src/alert/AlertTrackingEvent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTrackingEvent.o src/alert/AlertTrackingEvent.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTrackingEvent.o src/alert/AlertTrackingEvent.cpp
 
 ${OBJECTDIR}/src/plugin/SourceParameterValue.o: src/plugin/SourceParameterValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameterValue.o src/plugin/SourceParameterValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameterValue.o src/plugin/SourceParameterValue.cpp
 
 ${OBJECTDIR}/src/widget/Widget.o: src/widget/Widget.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Widget.o src/widget/Widget.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Widget.o src/widget/Widget.cpp
 
 ${OBJECTDIR}/src/organization/OrganizationValue.o: src/organization/OrganizationValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationValue.o src/organization/OrganizationValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationValue.o src/organization/OrganizationValue.cpp
 
 ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
 
 ${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
 
 ${OBJECTDIR}/src/alert/Alert.o: src/alert/Alert.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/Alert.o src/alert/Alert.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/Alert.o src/alert/Alert.cpp
 
 ${OBJECTDIR}/src/user/UserValue.o: src/user/UserValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserValue.o src/user/UserValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserValue.o src/user/UserValue.cpp
 
 ${OBJECTDIR}/src/user/UserRole.o: src/user/UserRole.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
 
 ${OBJECTDIR}/src/user/UserHistoricalAction.o: src/user/UserHistoricalAction.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHistoricalAction.o src/user/UserHistoricalAction.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHistoricalAction.o src/user/UserHistoricalAction.cpp
 
 ${OBJECTDIR}/src/alert/AlertTracking.o: src/alert/AlertTracking.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTracking.o src/alert/AlertTracking.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTracking.o src/alert/AlertTracking.cpp
 
 ${OBJECTDIR}/src/user/UserRight.o: src/user/UserRight.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRight.o src/user/UserRight.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRight.o src/user/UserRight.cpp
 
 ${OBJECTDIR}/src/information/Syslog.o: src/information/Syslog.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Syslog.o src/information/Syslog.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Syslog.o src/information/Syslog.cpp
 
 ${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
 
 ${OBJECTDIR}/src/user/User.o: src/user/User.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/User.o src/user/User.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/User.o src/user/User.cpp
 
 ${OBJECTDIR}/src/organization/OrganizationField.o: src/organization/OrganizationField.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationField.o src/organization/OrganizationField.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationField.o src/organization/OrganizationField.cpp
 
 ${OBJECTDIR}/src/user/UserField.o: src/user/UserField.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserField.o src/user/UserField.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserField.o src/user/UserField.cpp
 
 ${OBJECTDIR}/src/widget/TabWidgetAssociation.o: src/widget/TabWidgetAssociation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabWidgetAssociation.o src/widget/TabWidgetAssociation.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabWidgetAssociation.o src/widget/TabWidgetAssociation.cpp
 
 ${OBJECTDIR}/src/unit/InformationUnit.o: src/unit/InformationUnit.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/unit
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnit.o src/unit/InformationUnit.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnit.o src/unit/InformationUnit.cpp
 
 ${OBJECTDIR}/src/plugin/Source.o: src/plugin/Source.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Source.o src/plugin/Source.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Source.o src/plugin/Source.cpp
 
 ${OBJECTDIR}/src/unit/InformationUnitType.o: src/unit/InformationUnitType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/unit
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnitType.o src/unit/InformationUnitType.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnitType.o src/unit/InformationUnitType.cpp
 
 ${OBJECTDIR}/src/pack/PackOption.o: src/pack/PackOption.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/PackOption.o src/pack/PackOption.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/PackOption.o src/pack/PackOption.cpp
 
 ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Pack.o src/pack/Pack.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Pack.o src/pack/Pack.cpp
 
 ${OBJECTDIR}/src/pack/OptionValue.o: src/pack/OptionValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/OptionValue.o src/pack/OptionValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/OptionValue.o src/pack/OptionValue.cpp
 
 ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Option.o src/pack/Option.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Option.o src/pack/Option.cpp
 
 ${OBJECTDIR}/src/user/AccessControlList.o: src/user/AccessControlList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/AccessControlList.o src/user/AccessControlList.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/AccessControlList.o src/user/AccessControlList.cpp
 
 ${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameter.o src/plugin/SearchParameter.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameter.o src/plugin/SearchParameter.cpp
 
 ${OBJECTDIR}/src/information/InformationValue.o: src/information/InformationValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationValue.o src/information/InformationValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationValue.o src/information/InformationValue.cpp
 
 # Subprojects
 .build-subprojects:
@@ -417,7 +415,7 @@ ${OBJECTDIR}/src/information/InformationValue.o: src/information/InformationValu
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT}
 
 # Subprojects
 .clean-subprojects:

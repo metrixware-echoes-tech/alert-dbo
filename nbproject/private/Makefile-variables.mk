@@ -4,4 +4,5 @@
 # NOCDDL
 #
 # Static_Lib configuration
-# SharedObject configuration
+# Debug_SharedObject configuration
+# Release_SharedObject configuration

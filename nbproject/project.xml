@@ -46,7 +46,11 @@
                     <type>3</type>
                 </confElem>
                 <confElem>
-                    <name>SharedObject</name>
+                    <name>Debug_SharedObject</name>
+                    <type>2</type>
+                </confElem>
+                <confElem>
+                    <name>Release_SharedObject</name>
                     <type>2</type>
                 </confElem>
             </confList>

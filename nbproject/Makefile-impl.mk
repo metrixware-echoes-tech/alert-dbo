@@ -31,7 +31,7 @@ DEFAULTCONF=Static_Lib
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Static_Lib SharedObject 
+ALLCONFS=Static_Lib Debug_SharedObject Release_SharedObject 
 
 
 # build

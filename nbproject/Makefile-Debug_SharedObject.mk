@@ -22,7 +22,8 @@ AS=as
 
 # Macros
 CND_PLATFORM=GNU-Linux-x86
-CND_CONF=SharedObject
+CND_DLIB_EXT=so
+CND_CONF=Debug_SharedObject
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -64,12 +65,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
-	${OBJECTDIR}/src/plugin/SourceParameterValue.o \
 	${OBJECTDIR}/src/alert/AlertTrackingEvent.o \
-	${OBJECTDIR}/src/alert/AlertCriteria.o \
+	${OBJECTDIR}/src/plugin/SourceParameterValue.o \
 	${OBJECTDIR}/src/widget/Widget.o \
 	${OBJECTDIR}/src/organization/OrganizationValue.o \
 	${OBJECTDIR}/src/tools/Table.o \
+	${OBJECTDIR}/src/alert/AlertCriteria.o \
 	${OBJECTDIR}/src/alert/Alert.o \
 	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
@@ -83,9 +84,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/user/UserField.o \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
 	${OBJECTDIR}/src/unit/InformationUnit.o \
+	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/unit/InformationUnitType.o \
 	${OBJECTDIR}/src/pack/PackOption.o \
-	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/pack/Pack.o \
 	${OBJECTDIR}/src/pack/OptionValue.o \
 	${OBJECTDIR}/src/pack/Option.o \
@@ -112,11 +113,11 @@ LDLIBSOPTIONS=-lwt -lwtdbo -lwtdbopostgres
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.so
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT}
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.so: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.so -fPIC ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -shared -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT} -fPIC ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/src/alert/AlertAcknowledge.o: src/alert/AlertAcknowledge.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
@@ -268,20 +269,15 @@ ${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
 
-${OBJECTDIR}/src/plugin/SourceParameterValue.o: src/plugin/SourceParameterValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameterValue.o src/plugin/SourceParameterValue.cpp
-
 ${OBJECTDIR}/src/alert/AlertTrackingEvent.o: src/alert/AlertTrackingEvent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTrackingEvent.o src/alert/AlertTrackingEvent.cpp
 
-${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/alert
+${OBJECTDIR}/src/plugin/SourceParameterValue.o: src/plugin/SourceParameterValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
+	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameterValue.o src/plugin/SourceParameterValue.cpp
 
 ${OBJECTDIR}/src/widget/Widget.o: src/widget/Widget.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
@@ -297,6 +293,11 @@ ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
+
+${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
 
 ${OBJECTDIR}/src/alert/Alert.o: src/alert/Alert.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
@@ -363,6 +364,11 @@ ${OBJECTDIR}/src/unit/InformationUnit.o: src/unit/InformationUnit.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnit.o src/unit/InformationUnit.cpp
 
+${OBJECTDIR}/src/plugin/Source.o: src/plugin/Source.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Source.o src/plugin/Source.cpp
+
 ${OBJECTDIR}/src/unit/InformationUnitType.o: src/unit/InformationUnitType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/unit
 	${RM} $@.d
@@ -372,11 +378,6 @@ ${OBJECTDIR}/src/pack/PackOption.o: src/pack/PackOption.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/PackOption.o src/pack/PackOption.cpp
-
-${OBJECTDIR}/src/plugin/Source.o: src/plugin/Source.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Source.o src/plugin/Source.cpp
 
 ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
@@ -414,7 +415,7 @@ ${OBJECTDIR}/src/information/InformationValue.o: src/information/InformationValu
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.so
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT}
 
 # Subprojects
 .clean-subprojects:
