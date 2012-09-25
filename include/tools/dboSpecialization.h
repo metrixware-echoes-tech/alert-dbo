@@ -29,6 +29,7 @@ class AlertValue;
 class Alert;
 class AlertAcknowledge;
 class AlertCriteria;
+class AlertMediaSpecialization;
 class AlertSequence;
 class AlertTracking;
 class AlertTrackingEvent;
@@ -113,6 +114,7 @@ namespace Wt
         TEMPLATE_TRIGRAM(Media,TRIGRAM_MEDIA ID);
         TEMPLATE_TRIGRAM(MediaValue,TRIGRAM_MEDIA_VALUE ID);
         TEMPLATE_TRIGRAM(AlertValue, TRIGRAM_ALERT_VALUE ID);
+        TEMPLATE_TRIGRAM(AlertMediaSpecialization, TRIGRAM_ALERT_MEDIA_SPECIALIZATION ID);
 
     }
 }

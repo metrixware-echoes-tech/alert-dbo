@@ -1,0 +1,21 @@
+/* 
+ * File:   AlertMediaSpecialization.h
+ * Author: tsa
+ *
+ * Created on 24 septembre 2012, 14:27
+ */
+
+#ifndef ALERTMEDIASPECIALIZATION_H
+#define	ALERTMEDIASPECIALIZATION_H
+
+class AlertMediaSpecialization {
+public:
+    AlertMediaSpecialization();
+    AlertMediaSpecialization(const AlertMediaSpecialization& orig);
+    virtual ~AlertMediaSpecialization();
+private:
+
+};
+
+#endif	/* ALERTMEDIASPECIALIZATION_H */
+

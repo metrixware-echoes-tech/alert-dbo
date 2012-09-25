@@ -12,6 +12,7 @@
           <itemPath>include/alert/Alert.h</itemPath>
           <itemPath>include/alert/AlertAcknowledge.h</itemPath>
           <itemPath>include/alert/AlertCriteria.h</itemPath>
+          <itemPath>include/alert/AlertMediaSpecialization.h</itemPath>
           <itemPath>include/alert/AlertSequence.h</itemPath>
           <itemPath>include/alert/AlertTracking.h</itemPath>
           <itemPath>include/alert/AlertTrackingEvent.h</itemPath>
@@ -128,6 +129,7 @@
           <itemPath>src/alert/Alert.cpp</itemPath>
           <itemPath>src/alert/AlertAcknowledge.cpp</itemPath>
           <itemPath>src/alert/AlertCriteria.cpp</itemPath>
+          <itemPath>src/alert/AlertMediaSpecialization.cpp</itemPath>
           <itemPath>src/alert/AlertSequence.cpp</itemPath>
           <itemPath>src/alert/AlertTracking.cpp</itemPath>
           <itemPath>src/alert/AlertTrackingEvent.cpp</itemPath>

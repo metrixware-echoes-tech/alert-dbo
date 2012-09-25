@@ -105,6 +105,7 @@
 #include "alert/Alert.h"
 #include "alert/AlertAcknowledge.h"
 #include "alert/AlertCriteria.h"
+#include "alert/AlertMediaSpecialization.h"
 #include "alert/AlertValue.h"
 #include "alert/AlertSequence.h"
 #include "alert/AlertTracking.h"

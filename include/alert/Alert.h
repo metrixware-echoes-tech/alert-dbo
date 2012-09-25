@@ -29,8 +29,9 @@ class Alert : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertTracking> > alertTrackings;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertMediaSpecialization> > alertMediaSpecializations;
         
-        Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues;
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
         
         Wt::Dbo::ptr<AlertValue> alertValue;
@@ -50,7 +51,8 @@ class Alert : public Table
             
             Wt::Dbo::hasMany(a, alertAcks, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_ACKNOWLEDGE SEP TRIGRAM_ALERT);
             Wt::Dbo::hasMany(a, alertTrackings, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_ALERT);
-            Wt::Dbo::hasMany(a, mediaValues, Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_MEDIA_VALUE SEP TRIGRAM_ALERT);
+            Wt::Dbo::hasMany(a, alertMediaSpecializations, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_ALERT);
+            
             Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ASSET SEP TRIGRAM_ALERT);
             
             Wt::Dbo::belongsTo(a,alertValue, TRIGRAM_ALERT SEP TRIGRAM_ALERT_VALUE);

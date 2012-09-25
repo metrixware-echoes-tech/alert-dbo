@@ -59,10 +59,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
 	${OBJECTDIR}/src/widget/WidgetValue.o \
+	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/asset/Asset.o \
 	${OBJECTDIR}/src/addon/Addon.o \
 	${OBJECTDIR}/src/plugin/SearchType.o \
-	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
 	${OBJECTDIR}/src/alert/AlertTrackingEvent.o \
@@ -87,6 +87,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/unit/InformationUnitType.o \
 	${OBJECTDIR}/src/pack/PackOption.o \
+	${OBJECTDIR}/src/alert/AlertMediaSpecialization.o \
 	${OBJECTDIR}/src/pack/Pack.o \
 	${OBJECTDIR}/src/pack/OptionValue.o \
 	${OBJECTDIR}/src/pack/Option.o \
@@ -239,6 +240,11 @@ ${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
 
+${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
+
 ${OBJECTDIR}/src/asset/Asset.o: src/asset/Asset.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/asset
 	${RM} $@.d
@@ -253,11 +259,6 @@ ${OBJECTDIR}/src/plugin/SearchType.o: src/plugin/SearchType.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchType.o src/plugin/SearchType.cpp
-
-${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/widget
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
 
 ${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
@@ -378,6 +379,11 @@ ${OBJECTDIR}/src/pack/PackOption.o: src/pack/PackOption.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/PackOption.o src/pack/PackOption.cpp
+
+${OBJECTDIR}/src/alert/AlertMediaSpecialization.o: src/alert/AlertMediaSpecialization.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMediaSpecialization.o src/alert/AlertMediaSpecialization.cpp
 
 ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
