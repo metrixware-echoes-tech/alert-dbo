@@ -30,7 +30,7 @@ struct SearchId
     }
 
     bool operator< (const SearchId& other) const {
-        if (id < other.id)
+        if ((id < other.id) || (source < other.source))
             return true;
         else
             return false;
@@ -39,7 +39,7 @@ struct SearchId
 
 inline std::ostream& operator<< (std::ostream& o, const SearchId& pk)
 {
-    return o << "(" << pk.id << ")";
+    return o << "(" << pk.id << ")" << "(" << pk.source << ")";
 }
 
 namespace Wt
