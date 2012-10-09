@@ -55,6 +55,7 @@
           <itemPath>include/plugin/SearchParameter.h</itemPath>
           <itemPath>include/plugin/SearchParameterValue.h</itemPath>
           <itemPath>include/plugin/SearchType.h</itemPath>
+          <itemPath>include/plugin/SearchUnit.h</itemPath>
           <itemPath>include/plugin/Source.h</itemPath>
           <itemPath>include/plugin/SourceParameter.h</itemPath>
           <itemPath>include/plugin/SourceParameterValue.h</itemPath>
@@ -67,6 +68,7 @@
           <itemPath>include/primaryKeys/PackOptionId.h</itemPath>
           <itemPath>include/primaryKeys/SearchId.h</itemPath>
           <itemPath>include/primaryKeys/SearchParameterValueId.h</itemPath>
+          <itemPath>include/primaryKeys/SearchUnitId.h</itemPath>
           <itemPath>include/primaryKeys/SourceId.h</itemPath>
           <itemPath>include/primaryKeys/SourceParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/UserHierarchyId.h</itemPath>
@@ -172,6 +174,7 @@
           <itemPath>src/plugin/SearchParameter.cpp</itemPath>
           <itemPath>src/plugin/SearchParameterValue.cpp</itemPath>
           <itemPath>src/plugin/SearchType.cpp</itemPath>
+          <itemPath>src/plugin/SearchUnit.cpp</itemPath>
           <itemPath>src/plugin/Source.cpp</itemPath>
           <itemPath>src/plugin/SourceParameter.cpp</itemPath>
           <itemPath>src/plugin/SourceParameterValue.cpp</itemPath>

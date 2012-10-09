@@ -123,6 +123,7 @@
 #include "plugin/SearchType.h"
 #include "plugin/SearchParameter.h"
 #include "plugin/SearchParameterValue.h"
+#include "plugin/SearchUnit.h"
 
 #include "information/Syslog.h"
 

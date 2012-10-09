@@ -28,6 +28,7 @@ public:
     SearchId pk;
     Wt::Dbo::ptr<SearchType> searchType;
     
+    
     int pos_key_value;        
 
     
@@ -46,6 +47,7 @@ public:
         Wt::Dbo::id (a, pk, "SEA_ID");
         
         Wt::Dbo::belongsTo(a, searchType, "SEA_STY");
+
     }
     
 private:

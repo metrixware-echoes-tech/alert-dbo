@@ -56,6 +56,7 @@ class Asset;
 class Syslog;
 class SearchType;
 class SearchParameter;
+class SearchUnit;
 class Pack;
 class PackOption;
 class OptionValue;
@@ -107,6 +108,7 @@ namespace Wt
         TEMPLATE_TRIGRAM(Syslog,TRIGRAM_SYSLOG ID);
         TEMPLATE_TRIGRAM(SearchType,TRIGRAM_SEARCH_TYPE ID);
         TEMPLATE_TRIGRAM(SearchParameter,TRIGRAM_SEARCH_PARAMETER ID);
+//        TEMPLATE_TRIGRAM(SearchUnit,TRIGRAM_SEARCH_UNIT ID);        
         TEMPLATE_TRIGRAM(Pack,TRIGRAM_PACK ID);
 //        TEMPLATE_TRIGRAM(PackOption,TRIGRAM_PACK_OPTION ID);
 //        TEMPLATE_TRIGRAM(OptionValue,TRIGRAM_OPTION_VALUE ID);        

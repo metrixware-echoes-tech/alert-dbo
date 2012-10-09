@@ -6,8 +6,8 @@
 
 #include "tools/MainIncludeFile.h"
 
-class Information2;
 class InformationUnitType;
+class Search;
 
 class InformationUnit : public Table
 {
@@ -21,7 +21,7 @@ class InformationUnit : public Table
         Wt::WString longName;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Information2> > informations;
+        Wt::Dbo::collection<Wt::Dbo::ptr<SearchUnit> > searchUnits;
         Wt::Dbo::ptr<InformationUnitType> unitType;
         
         template<class Action>
@@ -35,15 +35,10 @@ class InformationUnit : public Table
             Wt::Dbo::belongsTo(a, unitType, TRIGRAM_INFORMATION_UNIT SEP TRIGRAM_INFORMATION_UNIT_TYPE);
             
             Wt::Dbo::hasMany(a,
-                             informations,
+                             searchUnits,
                              Wt::Dbo::ManyToOne,
-                             TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
+                             "SEU_INU");
          
-            //modif RHI 10/09/12 la TJ avec alertcriteria ne se fait pas avec cette table mais avec IUT
-         //   Wt::Dbo::hasMany(a,mediaValues,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT);
-            
-            
-            
         }
     protected:
     private:

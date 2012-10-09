@@ -14,23 +14,25 @@
 
 class Information2;
 class Search;
+class InformationUnit;
 
 struct InformationId
 {
     Wt::Dbo::ptr<Search> search;
-    int subSearchNumber;
+    int subSearchNumber; 
+    Wt::Dbo::ptr<InformationUnit> unit;
 
-    InformationId(Wt::Dbo::ptr<Search> ptr, int ssn)
-        : search(ptr), subSearchNumber(ssn) { }
+    InformationId(Wt::Dbo::ptr<Search> ptr, int ssn, Wt::Dbo::ptr<InformationUnit> ptrUnit)
+        : search(ptr), subSearchNumber(ssn), unit(ptrUnit) { }
 
     InformationId(){ }
 
     bool operator== (const InformationId& other) const {
-        return search == other.search && subSearchNumber == other.subSearchNumber;
+        return search == other.search && subSearchNumber == other.subSearchNumber && unit == other.unit;
     }
 
     bool operator< (const InformationId& other) const {
-        if ((search < other.search) || (subSearchNumber < other.subSearchNumber))
+        if ((search < other.search) || (subSearchNumber < other.subSearchNumber) || unit < other.unit)
             return true;
         else
             return false;
@@ -39,7 +41,7 @@ struct InformationId
 
 inline std::ostream& operator<< (std::ostream& o, const InformationId& pk)
 {
-    return o << "(" << pk.search << ")" << "(" << pk.subSearchNumber << ")";
+    return o << "(" << pk.search << ")" << "(" << pk.subSearchNumber << ")" << "(" << pk.unit << ")";
 }
 
 namespace Wt
@@ -52,6 +54,7 @@ namespace Wt
         {
             field(a, infid.search, "SEA_ID");
             field(a, infid.subSearchNumber, TRIGRAM_INFORMATION SEP "VALUE_NUM");
+            field(a, infid.unit, TRIGRAM_INFORMATION_UNIT "_ID");
         }
         template<>
         struct dbo_traits<Information2> : public dbo_default_traits

@@ -51,6 +51,7 @@ const char *Constants::T_SEARCH_SEA = "T_SEARCH_SEA";
 const char *Constants::T_SEARCH_TYPE_STY = "T_SEARCH_TYPE_STY";
 const char *Constants::T_SEARCH_PARAMETER_SEP = "T_SEARCH_PARAMETER_SEP";
 const char *Constants::T_SEARCH_PARAMETER_VALUE_SEV = "T_SEARCH_PARAMETER_VALUE_SEV";
+const char *Constants::T_SEARCH_UNIT_SEU = "T_SEARCH_UNIT_SEU";
 const char *Constants::T_PACK_PCK = "T_PACK_PCK";
 const char *Constants::T_PACK_OPTION_POP = "T_PACK_OPTION_POP";
 const char *Constants::T_OPTION_VALUE_OPV = "T_OPTION_VALUE_OPV";

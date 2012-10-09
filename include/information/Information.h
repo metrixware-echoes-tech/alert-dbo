@@ -18,14 +18,9 @@ class Information2 : public Table
         
         InformationId pk;
         
-        Wt::Dbo::ptr<InformationUnit> unit;
-        
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
         
         Wt::WString name;
-                   
-
-
 
         template<class Action>
         void persist(Action& a)
@@ -33,7 +28,6 @@ class Information2 : public Table
             mapClassAttributesStrings["NAME"]=&this->name;
             FIELD_FILLER();
             Wt::Dbo::id(a,pk,"PRIMARY_KEY");
-            Wt::Dbo::belongsTo(a, unit, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
             
             Wt::Dbo::hasMany(a,
                              alertValues,

@@ -59,10 +59,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
 	${OBJECTDIR}/src/widget/WidgetValue.o \
-	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/asset/Asset.o \
 	${OBJECTDIR}/src/addon/Addon.o \
 	${OBJECTDIR}/src/plugin/SearchType.o \
+	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
 	${OBJECTDIR}/src/alert/AlertTrackingEvent.o \
@@ -79,6 +79,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/user/UserRight.o \
 	${OBJECTDIR}/src/information/Syslog.o \
 	${OBJECTDIR}/src/information/Information.o \
+	${OBJECTDIR}/src/plugin/SearchUnit.o \
 	${OBJECTDIR}/src/user/User.o \
 	${OBJECTDIR}/src/organization/OrganizationField.o \
 	${OBJECTDIR}/src/user/UserField.o \
@@ -242,11 +243,6 @@ ${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
 
-${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/widget
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
-
 ${OBJECTDIR}/src/asset/Asset.o: src/asset/Asset.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/asset
 	${RM} $@.d
@@ -261,6 +257,11 @@ ${OBJECTDIR}/src/plugin/SearchType.o: src/plugin/SearchType.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchType.o src/plugin/SearchType.cpp
+
+${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/widget
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
 
 ${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
@@ -341,6 +342,11 @@ ${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
+
+${OBJECTDIR}/src/plugin/SearchUnit.o: src/plugin/SearchUnit.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/plugin
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchUnit.o src/plugin/SearchUnit.cpp
 
 ${OBJECTDIR}/src/user/User.o: src/user/User.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
