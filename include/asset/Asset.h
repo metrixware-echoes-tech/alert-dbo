@@ -19,6 +19,10 @@ class Asset : public Table
         Wt::WString name;
         bool assetIsHost;
         
+        Wt::WString distribName;
+        Wt::WString distribRelease;
+        Wt::WString architecture;
+        
         Wt::Dbo::ptr<Probe> probe;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
@@ -32,6 +36,9 @@ class Asset : public Table
         { 
             mapClassAttributesStrings["NAME"]=&this->name;
             mapClassAttributesBools["IS_HOST"]=&this->assetIsHost;
+            mapClassAttributesStrings["DISTRIB_NAME"]=&this->distribName;
+            mapClassAttributesStrings["DISTRIB_RELEASE"]=&this->distribRelease;
+            mapClassAttributesStrings["ARCHITECTURE"]=&this->architecture;
             
             FIELD_FILLER();
             
