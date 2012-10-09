@@ -19,9 +19,9 @@ class Asset : public Table
         Wt::WString name;
         bool assetIsHost;
         
-        Wt::WString distribName;
-        Wt::WString distribRelease;
-        Wt::WString architecture;
+        boost::optional<Wt::WString> distribName;
+        boost::optional<Wt::WString> distribRelease;
+        boost::optional<Wt::WString> architecture;
         
         Wt::Dbo::ptr<Probe> probe;
         
@@ -36,9 +36,9 @@ class Asset : public Table
         { 
             mapClassAttributesStrings["NAME"]=&this->name;
             mapClassAttributesBools["IS_HOST"]=&this->assetIsHost;
-            mapClassAttributesStrings["DISTRIB_NAME"]=&this->distribName;
-            mapClassAttributesStrings["DISTRIB_RELEASE"]=&this->distribRelease;
-            mapClassAttributesStrings["ARCHITECTURE"]=&this->architecture;
+            mapClassAttributesStringsNn["DISTRIB_NAME"]=&this->distribName;
+            mapClassAttributesStringsNn["DISTRIB_RELEASE"]=&this->distribRelease;
+            mapClassAttributesStringsNn["ARCHITECTURE"]=&this->architecture;
             
             FIELD_FILLER();
             

@@ -22,7 +22,7 @@ public:
     static std::string TRIGRAM;
     
     SearchUnitId pk;
-    Wt::Dbo::ptr<Probe> informationUnit;
+    Wt::Dbo::ptr<InformationUnit> informationUnit;
     
     template<class Action>
     void persist(Action& a)
