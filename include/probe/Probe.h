@@ -22,6 +22,7 @@ class Probe : public Table
         Wt::Dbo::ptr<Organization> organization;
 
         Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
+        Wt::Dbo::collection<Wt::Dbo::ptr<SyslogHistory> > syslogsHistory;
         Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
 
         template<class Action>
@@ -30,16 +31,22 @@ class Probe : public Table
             mapClassAttributesStrings["NAME"]=&this->name;            
             mapClassAttributesStrings["CERT"]=&this->cert; 
             FIELD_FILLER();
-            Wt::Dbo::belongsTo(a, organization, "PRB_ORG");
+            Wt::Dbo::belongsTo(a, organization, TRIGRAM_PROBE SEP TRIGRAM_ORGANIZATION);
 
             Wt::Dbo::hasMany(a,
                              syslogs,
                              Wt::Dbo::ManyToOne,
-                             "SLO_PRB");
+                             TRIGRAM_SYSLOG SEP TRIGRAM_PROBE);
+            
+            Wt::Dbo::hasMany(a,
+                             syslogsHistory,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_SYSLOG_HISTORY SEP TRIGRAM_PROBE);
+            
             Wt::Dbo::hasMany(a,
                              assets,
                              Wt::Dbo::ManyToOne,
-                             "AST_PRB");
+                             TRIGRAM_ASSET SEP TRIGRAM_PROBE);
                          
         };
 

@@ -47,6 +47,7 @@ const char *Constants::T_SOURCE_PARAMETER_SRP = "T_SOURCE_PARAMETER_SRP";
 const char *Constants::T_SOURCE_PARAMETER_VALUE_SPV = "T_SOURCE_PARAMETER_VALUE_SPV";
 const char *Constants::T_ASSET_AST = "T_ASSET_AST";
 const char *Constants::T_SYSLOG_SLO = "T_SYSLOG_SLO";
+const char *Constants::T_SYSLOG_HISTORY_SLH = "T_SYSLOG_HISTORY_SLH";
 const char *Constants::T_SEARCH_SEA = "T_SEARCH_SEA";
 const char *Constants::T_SEARCH_TYPE_STY = "T_SEARCH_TYPE_STY";
 const char *Constants::T_SEARCH_PARAMETER_SEP = "T_SEARCH_PARAMETER_SEP";

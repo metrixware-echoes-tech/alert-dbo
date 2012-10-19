@@ -30,6 +30,7 @@
           <itemPath>include/information/InformationHistoricalValue.h</itemPath>
           <itemPath>include/information/InformationValue.h</itemPath>
           <itemPath>include/information/Syslog.h</itemPath>
+          <itemPath>include/information/SyslogHistory.h</itemPath>
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>include/media/Media.h</itemPath>
@@ -149,6 +150,7 @@
           <itemPath>src/information/InformationHistoricalValue.cpp</itemPath>
           <itemPath>src/information/InformationValue.cpp</itemPath>
           <itemPath>src/information/Syslog.cpp</itemPath>
+          <itemPath>src/information/SyslogHistory.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>src/media/Media.cpp</itemPath>

@@ -54,6 +54,7 @@ class Probe;
 class SourceParameter;
 class Asset;
 class Syslog;
+class SyslogHistory;
 class SearchType;
 class SearchParameter;
 class SearchUnit;
@@ -106,6 +107,7 @@ namespace Wt
         TEMPLATE_TRIGRAM(SourceParameter,TRIGRAM_SOURCE_PARAMETER ID);
         TEMPLATE_TRIGRAM(Asset,TRIGRAM_ASSET ID);
         TEMPLATE_TRIGRAM(Syslog,TRIGRAM_SYSLOG ID);
+        TEMPLATE_TRIGRAM(SyslogHistory,TRIGRAM_SYSLOG_HISTORY ID);
         TEMPLATE_TRIGRAM(SearchType,TRIGRAM_SEARCH_TYPE ID);
         TEMPLATE_TRIGRAM(SearchParameter,TRIGRAM_SEARCH_PARAMETER ID);
 //        TEMPLATE_TRIGRAM(SearchUnit,TRIGRAM_SEARCH_UNIT ID);        

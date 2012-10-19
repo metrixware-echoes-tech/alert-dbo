@@ -63,6 +63,7 @@ class Constants
         static const char *T_SOURCE_PARAMETER_VALUE_SPV;
         static const char *T_ASSET_AST;
         static const char *T_SYSLOG_SLO;
+        static const char *T_SYSLOG_HISTORY_SLH;
         static const char *T_SEARCH_SEA;
         static const char *T_SEARCH_TYPE_STY;
         static const char *T_SEARCH_PARAMETER_SEP;
