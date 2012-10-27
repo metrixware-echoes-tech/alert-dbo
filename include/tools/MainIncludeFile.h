@@ -50,6 +50,11 @@
             for(itIntsNn = mapClassAttributesIntsNn.begin(); itIntsNn != mapClassAttributesIntsNn.end(); ++itIntsNn) \
             { \
                 Wt::Dbo::field(a, *itIntsNn->second, formatColumnName(*this,(*itIntsNn).first)); \
+            } \
+            std::map<std::string,long long* >::iterator itSerials; \
+            for(itSerials = mapClassAttributesSerials.begin(); itSerials != mapClassAttributesSerials.end(); ++itSerials) \
+            { \
+                Wt::Dbo::field(a, *itSerials->second, formatColumnName(*this,(*itSerials).first)); \
             }
 
 

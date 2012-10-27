@@ -19,7 +19,6 @@ public:
     SyslogHistory(const SyslogHistory& orig);
     virtual ~SyslogHistory();
 
-    int sloId;
     static std::string TRIGRAM;
     Wt::WString sd;
     Wt::WDateTime rcptDate;  
@@ -41,7 +40,6 @@ public:
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesInts["SLO_ID"]=&this->sloId;
         mapClassAttributesStrings["SD"]=&this->sd;  
         mapClassAttributesDates["RCPT_DATE"]=&this->rcptDate;  
         mapClassAttributesDates["SENT_DATE"]=&this->sentDate;
@@ -52,7 +50,6 @@ public:
         mapClassAttributesInts["PRI"]=&this->priority;
         mapClassAttributesIntsNn["VERSION"]=&this->version;
         mapClassAttributesShorts["STATE"]=&this->state;
-     
         
         FIELD_FILLER();
 

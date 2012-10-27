@@ -50,12 +50,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/probe/Probe.o \
 	${OBJECTDIR}/src/engine/Engine.o \
 	${OBJECTDIR}/src/plugin/SearchParameterValue.o \
-	${OBJECTDIR}/src/tools/PostgresConnector.o \
-	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
 	${OBJECTDIR}/src/alert/AlertSequence.o \
+	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/user/UserHierarchy.o \
 	${OBJECTDIR}/src/organization/Organization.o \
+	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
 	${OBJECTDIR}/src/widget/WidgetValue.o \
@@ -76,8 +76,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/user/UserRole.o \
 	${OBJECTDIR}/src/user/UserHistoricalAction.o \
 	${OBJECTDIR}/src/alert/AlertTracking.o \
-	${OBJECTDIR}/src/information/SyslogHistory.o \
 	${OBJECTDIR}/src/user/UserRight.o \
+	${OBJECTDIR}/src/information/SyslogHistory.o \
 	${OBJECTDIR}/src/information/Syslog.o \
 	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/plugin/SearchUnit.o \
@@ -199,16 +199,6 @@ ${OBJECTDIR}/src/plugin/SearchParameterValue.o: src/plugin/SearchParameterValue.
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameterValue.o src/plugin/SearchParameterValue.cpp
 
-${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
-
-${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
-
 ${OBJECTDIR}/src/information/InformationHistoricalValue.o: src/information/InformationHistoricalValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
@@ -219,6 +209,11 @@ ${OBJECTDIR}/src/alert/AlertSequence.o: src/alert/AlertSequence.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertSequence.o src/alert/AlertSequence.cpp
 
+${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
+
 ${OBJECTDIR}/src/user/UserHierarchy.o: src/user/UserHierarchy.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
@@ -228,6 +223,11 @@ ${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/organization
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
+
+${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
 
 ${OBJECTDIR}/src/widget/Tab.o: src/widget/Tab.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
@@ -329,15 +329,15 @@ ${OBJECTDIR}/src/alert/AlertTracking.o: src/alert/AlertTracking.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTracking.o src/alert/AlertTracking.cpp
 
-${OBJECTDIR}/src/information/SyslogHistory.o: src/information/SyslogHistory.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/SyslogHistory.o src/information/SyslogHistory.cpp
-
 ${OBJECTDIR}/src/user/UserRight.o: src/user/UserRight.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRight.o src/user/UserRight.cpp
+
+${OBJECTDIR}/src/information/SyslogHistory.o: src/information/SyslogHistory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/SyslogHistory.o src/information/SyslogHistory.cpp
 
 ${OBJECTDIR}/src/information/Syslog.o: src/information/Syslog.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information

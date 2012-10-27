@@ -27,6 +27,8 @@ class UserHistoricalAction : public Table
         int actionBefore;
         int actionAfter;
         int actionRelative;
+        Wt::WString tableObject;
+        long long tableObjectId;
 
 	// methods
 
@@ -45,6 +47,8 @@ class UserHistoricalAction : public Table
             mapClassAttributesInts["BEFORE"]=&this->actionBefore;
             mapClassAttributesInts["AFTER"]=&this->actionAfter;
             mapClassAttributesInts["RELATIVE"]=&this->actionRelative;
+            mapClassAttributesStrings["TABLE_OBJECT"]=&this->tableObject;
+            mapClassAttributesSerials["TAO_ID"]=&this->tableObjectId;
             FIELD_FILLER();
             //Other tables ids as foreign keys for user table
 
