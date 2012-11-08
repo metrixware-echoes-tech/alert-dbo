@@ -19,6 +19,7 @@ class UserRight;
 class Space;
 class AccessControlList;
 class InformationUnit;
+class InformationSubUnit;
 class InformationUnitType;
 class User;
 class UserProfile;
@@ -82,6 +83,7 @@ namespace Wt
         TEMPLATE_TRIGRAM(Space,TRIGRAM_SPACE ID);         
 
         TEMPLATE_TRIGRAM(InformationUnit,TRIGRAM_INFORMATION_UNIT ID);
+        TEMPLATE_TRIGRAM(InformationSubUnit,TRIGRAM_INFORMATION_SUB_UNIT ID);
         TEMPLATE_TRIGRAM(InformationUnitType,TRIGRAM_INFORMATION_UNIT_TYPE ID);
         TEMPLATE_TRIGRAM(User,TRIGRAM_USER ID);
         TEMPLATE_TRIGRAM(UserHistoricalAction, TRIGRAM_USER_HISTORICAL_ACTION ID);

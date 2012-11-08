@@ -87,6 +87,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
 	${OBJECTDIR}/src/unit/InformationUnit.o \
 	${OBJECTDIR}/src/plugin/Source.o \
+	${OBJECTDIR}/src/unit/InformationSubUnit.o \
 	${OBJECTDIR}/src/unit/InformationUnitType.o \
 	${OBJECTDIR}/src/pack/PackOption.o \
 	${OBJECTDIR}/src/alert/AlertMediaSpecialization.o \
@@ -383,6 +384,11 @@ ${OBJECTDIR}/src/plugin/Source.o: src/plugin/Source.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Source.o src/plugin/Source.cpp
+
+${OBJECTDIR}/src/unit/InformationSubUnit.o: src/unit/InformationSubUnit.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/unit
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationSubUnit.o src/unit/InformationSubUnit.cpp
 
 ${OBJECTDIR}/src/unit/InformationUnitType.o: src/unit/InformationUnitType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/unit

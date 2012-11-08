@@ -5,6 +5,7 @@
 #include <Wt/Dbo/WtSqlTraits>
 
 #include "tools/MainIncludeFile.h"
+#include "InformationSubUnit.h"
 
 class InformationUnitType;
 class Search;
@@ -17,18 +18,18 @@ class InformationUnit : public Table
         
         static std::string TRIGRAM;
         
-        Wt::WString name;
-        Wt::WString longName;
-        
+        Wt::WString name; 
+       
         Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues;
         Wt::Dbo::collection<Wt::Dbo::ptr<SearchUnit> > searchUnits;
+        Wt::Dbo::collection<Wt::Dbo::ptr<InformationSubUnit> > informationSubUnits;
         Wt::Dbo::ptr<InformationUnitType> unitType;
+        
         
         template<class Action>
         void persist(Action& a)
         {
             mapClassAttributesStrings["NAME"]=&this->name;
-            mapClassAttributesStrings["LONG_NAME"]=&this->longName;
             
             FIELD_FILLER();
             
@@ -37,7 +38,12 @@ class InformationUnit : public Table
             Wt::Dbo::hasMany(a,
                              searchUnits,
                              Wt::Dbo::ManyToOne,
-                             "SEU_INU");
+                             "SEU" SEP TRIGRAM_INFORMATION_UNIT);
+            
+            Wt::Dbo::hasMany(a,
+                             informationSubUnits,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_INFORMATION_SUB_UNIT SEP TRIGRAM_INFORMATION_UNIT);
          
         }
     protected:

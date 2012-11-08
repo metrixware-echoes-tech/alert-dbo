@@ -40,6 +40,7 @@ class Constants
         static const char *T_INFORMATION_INF;
         static const char *T_PLUGIN_PLG;
         static const char *T_INFORMATION_UNIT_UNT;
+        static const char *T_INFORMATION_SUB_UNIT_ISU;
         static const char *T_INFORMATION_UNIT_TYPE_UTY;
         static const char *T_WIDGET_VALUE_WVA;
         static const char *T_WIDGET_TYPE_WTY;

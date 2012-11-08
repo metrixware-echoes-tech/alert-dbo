@@ -25,6 +25,7 @@ const char *Constants::T_INFORMATION_INF = "T_INFORMATION_INF";
 const char *Constants::T_PLUGIN_PLG = "T_PLUGIN_PLG";
 const char *Constants::T_WIDGET_VALUE_WVA = "T_WIDGET_VALUE_WVA";
 const char *Constants::T_INFORMATION_UNIT_UNT = "T_INFORMATION_UNIT_UNT";
+const char *Constants::T_INFORMATION_SUB_UNIT_ISU = "T_INFORMATION_SUB_UNIT_ISU";
 const char *Constants::T_INFORMATION_UNIT_TYPE_UTY = "T_INFORMATION_UNIT_TYPE_UTY";
 const char *Constants::T_WIDGET_TYPE_WTY = "T_WIDGET_TYPE_WTY";
 const char *Constants::T_WIDGET_WGT = "T_WIDGET_WGT";

@@ -22,14 +22,14 @@ class Information2 : public Table
         
         Wt::WString name;
         bool display;
-        bool calculate;
+        boost::optional<Wt::WString>calculate;
 
         template<class Action>
         void persist(Action& a)
         {
             mapClassAttributesStrings["NAME"]=&this->name;
             mapClassAttributesBools["DISPLAY"]=&this->display;
-            mapClassAttributesBools["CALCULATE"]=&this->calculate;
+            mapClassAttributesStringsNn["CALCULATE"]=&this->calculate;
             FIELD_FILLER();
             Wt::Dbo::id(a,pk,"PRIMARY_KEY");
             

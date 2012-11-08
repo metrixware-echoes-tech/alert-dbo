@@ -100,6 +100,7 @@
 //#include "widget/Widget.h"
 
 #include "unit/InformationUnitType.h"
+#include "unit/InformationSubUnit.h"
 
 //#include "widget/Tab.h"
 //#include "widget/TabVersion.h"

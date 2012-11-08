@@ -70,6 +70,7 @@ Session::Session(std::string connectionParams)
     mapClass<InformationHistoricalValue>(Constants::T_INFORMATION_HISTORICAL_VALUE_IHV);
     
     mapClass<InformationUnit>(Constants::T_INFORMATION_UNIT_UNT);
+    mapClass<InformationSubUnit>(Constants::T_INFORMATION_SUB_UNIT_ISU);
     mapClass<InformationUnitType>(Constants::T_INFORMATION_UNIT_TYPE_UTY);
     
 //    mapClass<Widget>(Constants::T_WIDGET_WGT);
