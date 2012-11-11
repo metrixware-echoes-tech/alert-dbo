@@ -14,8 +14,8 @@ class Pack : public Table
         static std::string TRIGRAM;
         Wt::WString name;
         
-        Wt::Dbo::collection<Wt::Dbo::ptr<Option> > option;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
+        Wt::Dbo::collection<Wt::Dbo::ptr<PackOption> > packOptions;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
         template<class Action>
         void persist(Action& a)
         {
@@ -23,9 +23,14 @@ class Pack : public Table
             FIELD_FILLER();            
                     
             Wt::Dbo::hasMany(a,
-                             organization,
+                             organizations,
                              Wt::Dbo::ManyToOne,
-                             "ORG_PCK");
+                             TRIGRAM_ORGANIZATION SEP TRIGRAM_PACK);
+            
+            Wt::Dbo::hasMany(a,
+                             packOptions,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_PACK_OPTION SEP TRIGRAM_PACK);
         }
         
     protected:

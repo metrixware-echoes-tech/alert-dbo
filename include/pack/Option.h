@@ -13,12 +13,17 @@ class Option : public Table
         static std::string TRIGRAM;
         Wt::WString name;
         
-        Wt::Dbo::collection<Wt::Dbo::ptr<Pack> > pack;
+        Wt::Dbo::collection<Wt::Dbo::ptr<PackOption> > packOptions;
         template<class Action>
         void persist(Action& a)
         {
             mapClassAttributesStrings["NAME"]=&this->name;                       
             FIELD_FILLER();
+            
+            Wt::Dbo::hasMany(a,
+                             packOptions,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION );
         }
     protected:
     private:

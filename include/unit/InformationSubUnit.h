@@ -28,7 +28,7 @@ public:
     void persist(Action& a)
     {
         mapClassAttributesStrings["NAME"]=&this->name;
-        mapClassAttributesInts["NAME"]=&this->factor;
+        mapClassAttributesInts["FACTOR"]=&this->factor;
 
         FIELD_FILLER();
 

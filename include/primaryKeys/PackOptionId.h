@@ -50,8 +50,8 @@ namespace Wt
         void field(Action& a, PackOptionId& spvid,
                    const std::string& name, int size = -1)
         {
-            field(a, spvid.pack, "PCK_ID");
-            field(a, spvid.option, "OPT_ID");
+            field(a, spvid.pack, TRIGRAM_PACK_OPTION SEP TRIGRAM_PACK);
+            field(a, spvid.option, TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION);
         }
         template<>
         struct dbo_traits<PackOption> : public dbo_default_traits
