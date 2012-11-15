@@ -23,6 +23,7 @@ class Organization : public Table
         Wt::WString address;
         Wt::WString cp;
         Wt::WString city;
+        Wt::WString token;
         // methods
 
         Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
@@ -41,6 +42,7 @@ class Organization : public Table
             mapClassAttributesStrings["ADR"]=&this->address;   
             mapClassAttributesStrings["CP"]=&this->cp;
             mapClassAttributesStrings["CITY"]=&this->city;
+            mapClassAttributesStrings["TOKEN"]=&this->token;
             
             FIELD_FILLER();
 
@@ -49,17 +51,17 @@ class Organization : public Table
             Wt::Dbo::hasMany(a,
                              user,
                              Wt::Dbo::ManyToMany,
-                             "TJ_USR_ORG");
+                             "TJ" SEP TRIGRAM_USER SEP TRIGRAM_ORGANIZATION);
             Wt::Dbo::hasMany(a,
                              probes,
                              Wt::Dbo::ManyToOne,
-                             "PRB_ORG");
+                             TRIGRAM_PROBE SEP TRIGRAM_ORGANIZATION);
             Wt::Dbo::hasMany(a,
                             users,
                             Wt::Dbo::ManyToOne,
                             "CURRENT");            
-            Wt::Dbo::belongsTo(a, pack, "ORG_PCK");
-            Wt::Dbo::belongsTo(a, organizationType, "ORG_OTY");                  
+            Wt::Dbo::belongsTo(a, pack, TRIGRAM_ORGANIZATION SEP TRIGRAM_PACK);
+            Wt::Dbo::belongsTo(a, organizationType, TRIGRAM_ORGANIZATION SEP TRIGRAM_ORGANIZATION_TYPE);                  
        }
 };
 
