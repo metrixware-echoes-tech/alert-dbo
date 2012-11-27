@@ -32,8 +32,6 @@ public:
     int pos_key_value;        
 
     
-    //RHI : manque 2 poiinteurs, vers SOURCE et SEARCH_PARAMETER_VALUE
-    
     template<class Action>
     void persist(Action& a)
     {

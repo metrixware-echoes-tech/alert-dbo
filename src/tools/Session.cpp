@@ -129,10 +129,10 @@ Session::Session(std::string connectionParams)
     users_ = new UserDatabase(*this);
 }
 
-Session::~Session()
-{
-    delete users_;
-}
+//Session::~Session()
+//{
+//    delete users_;
+//}
 
 UserDatabase& Session::users()
 {

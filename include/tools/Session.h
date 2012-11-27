@@ -28,7 +28,7 @@ public:
   static void configureAuth();
   
   Session(std::string connectionParams);
-  ~Session();
+//  ~Session();
 
   Wt::Dbo::ptr<User> user() const;
 

@@ -20,7 +20,6 @@ class InformationUnit : public Table
         
         Wt::WString name; 
        
-        Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues;
         Wt::Dbo::collection<Wt::Dbo::ptr<SearchUnit> > searchUnits;
         Wt::Dbo::collection<Wt::Dbo::ptr<InformationSubUnit> > informationSubUnits;
         Wt::Dbo::ptr<InformationUnitType> unitType;
@@ -38,7 +37,7 @@ class InformationUnit : public Table
             Wt::Dbo::hasMany(a,
                              searchUnits,
                              Wt::Dbo::ManyToOne,
-                             "SEU" SEP TRIGRAM_INFORMATION_UNIT);
+                             TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
             
             Wt::Dbo::hasMany(a,
                              informationSubUnits,

@@ -30,9 +30,9 @@ public:
         
         FIELD_FILLER();
         
-        Wt::Dbo::id (a, pk, "SEU_ID");
+        Wt::Dbo::id (a, pk, TRIGRAM_SEARCH_UNIT SEP ID);
         
-        Wt::Dbo::belongsTo(a, informationUnit, "SEU_INU");
+        Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
     }
     
 private:
