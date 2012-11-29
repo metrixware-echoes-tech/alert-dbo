@@ -5,10 +5,9 @@
 #include <Wt/Dbo/WtSqlTraits>
 
 #include "tools/MainIncludeFile.h"
-#include "InformationSubUnit.h"
 
 class InformationUnitType;
-class Search;
+class SearchUnit;
 
 class InformationUnit : public Table
 {
