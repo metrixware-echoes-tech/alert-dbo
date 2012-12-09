@@ -34,8 +34,8 @@ public:
     short state;
     
     Wt::Dbo::ptr<Probe> probe;
-    Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
-    Wt::Dbo::collection<Wt::Dbo::ptr<InformationHistoricalValue> > historicalValues;
+//    Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
+//    Wt::Dbo::collection<Wt::Dbo::ptr<InformationHistoricalValue> > historicalValues;
         
     template<class Action>
     void persist(Action& a)
@@ -56,14 +56,14 @@ public:
 
         Wt::Dbo::belongsTo(a, probe, "SLO_PRB");
         
-        Wt::Dbo::hasMany(a,
-                             values,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_SYSLOG);
-        Wt::Dbo::hasMany(a,
-                            historicalValues,
-                            Wt::Dbo::ManyToOne,
-                            TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG);
+//        Wt::Dbo::hasMany(a,
+//                             values,
+//                             Wt::Dbo::ManyToOne,
+//                             TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_SYSLOG);
+//        Wt::Dbo::hasMany(a,
+//                            historicalValues,
+//                            Wt::Dbo::ManyToOne,
+//                            TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG);
             
     }
 private:

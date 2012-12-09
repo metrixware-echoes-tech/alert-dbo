@@ -17,10 +17,10 @@ class Source;
 
 struct SearchId
 {
-    int id;
+    long long id;
     Wt::Dbo::ptr<Source> source;
 
-    SearchId(int id, Wt::Dbo::ptr<Source> ptr)
+    SearchId(long long id, Wt::Dbo::ptr<Source> ptr)
         : id(id), source(ptr) { }
 
     SearchId(){ }

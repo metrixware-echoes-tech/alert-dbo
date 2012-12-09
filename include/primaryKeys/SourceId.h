@@ -17,10 +17,10 @@ class Source;
 
 struct SourceId
 {
-    int id;
+    long long id;
     Wt::Dbo::ptr<Plugin> plugin;
 
-    SourceId(int id, Wt::Dbo::ptr<Plugin> ptr)
+    SourceId(long long id, Wt::Dbo::ptr<Plugin> ptr)
         : id(id), plugin(ptr) { }
 
     SourceId(){ }
