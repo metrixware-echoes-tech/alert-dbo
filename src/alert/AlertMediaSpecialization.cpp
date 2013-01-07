@@ -7,7 +7,7 @@
 
 #include "alert/AlertMediaSpecialization.h"
 
-std::string AlertMediaSpecialization::TRIGRAM = TRIGRAM_ALERT_MEDIA_SPECIALIZATION;
+std::string AlertMediaSpecialization::TRIGRAM(TRIGRAM_ALERT_MEDIA_SPECIALIZATION);
 
 AlertMediaSpecialization::AlertMediaSpecialization() {
 }
@@ -16,5 +16,6 @@ AlertMediaSpecialization::AlertMediaSpecialization(const AlertMediaSpecializatio
 }
 
 AlertMediaSpecialization::~AlertMediaSpecialization() {
+
 }
 

@@ -7,7 +7,7 @@
 
 #include "plugin/SearchUnit.h"
 
-std::string SearchUnit::TRIGRAM = TRIGRAM_SEARCH_UNIT;
+std::string SearchUnit::TRIGRAM(TRIGRAM_SEARCH_UNIT);
 
 SearchUnit::SearchUnit() 
 {
@@ -17,6 +17,6 @@ SearchUnit::SearchUnit()
 
 SearchUnit::~SearchUnit() 
 {
-        //dtor
+
 }
 

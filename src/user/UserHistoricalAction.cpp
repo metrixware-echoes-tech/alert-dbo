@@ -1,6 +1,6 @@
 #include "user/UserHistoricalAction.h"
 
-std::string UserHistoricalAction::TRIGRAM = TRIGRAM_USER_HISTORICAL_ACTION;
+std::string UserHistoricalAction::TRIGRAM(TRIGRAM_USER_HISTORICAL_ACTION);
 
 UserHistoricalAction::UserHistoricalAction()
 {
@@ -9,5 +9,5 @@ UserHistoricalAction::UserHistoricalAction()
 
 UserHistoricalAction::~UserHistoricalAction()
 {
-    //dtor
+    
 }

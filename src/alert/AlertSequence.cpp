@@ -7,7 +7,7 @@
 
 #include "alert/AlertSequence.h"
 
-std::string AlertSequence::TRIGRAM = TRIGRAM_ALERT_SEQUENCE;
+std::string AlertSequence::TRIGRAM(TRIGRAM_ALERT_SEQUENCE);
 
 AlertSequence::AlertSequence()
 {
@@ -19,5 +19,6 @@ AlertSequence::AlertSequence(const AlertSequence& orig)
 
 AlertSequence::~AlertSequence()
 {
+
 }
 

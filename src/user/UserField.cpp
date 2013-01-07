@@ -1,6 +1,6 @@
 #include "user/UserField.h"
 
-std::string UserField::TRIGRAM = TRIGRAM_USER_FIELD;
+std::string UserField::TRIGRAM(TRIGRAM_USER_FIELD);
 
 UserField::UserField()
 {
@@ -9,5 +9,5 @@ UserField::UserField()
 
 UserField::~UserField()
 {
-    //dtor
+
 }

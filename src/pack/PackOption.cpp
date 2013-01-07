@@ -7,7 +7,7 @@
 
 #include "pack/PackOption.h"
 
-std::string PackOption::TRIGRAM = TRIGRAM_PACK_OPTION;
+std::string PackOption::TRIGRAM(TRIGRAM_PACK_OPTION);
 
 
 PackOption::PackOption() 
@@ -17,6 +17,6 @@ PackOption::PackOption()
 
 PackOption::~PackOption() 
 {
-    //dtor
+
 }
 

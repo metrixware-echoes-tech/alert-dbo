@@ -1,6 +1,6 @@
 #include "alert/AlertValue.h"
 
-std::string AlertValue::TRIGRAM = TRIGRAM_ALERT_VALUE;
+std::string AlertValue::TRIGRAM(TRIGRAM_ALERT_VALUE);
 
 AlertValue::AlertValue()
 {
@@ -9,5 +9,4 @@ AlertValue::AlertValue()
 
 AlertValue::~AlertValue()
 {
-    //dtor
 }

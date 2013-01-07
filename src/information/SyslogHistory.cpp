@@ -7,7 +7,7 @@
 
 #include "information/SyslogHistory.h"
 
-std::string SyslogHistory::TRIGRAM = TRIGRAM_SYSLOG_HISTORY;
+std::string SyslogHistory::TRIGRAM(TRIGRAM_SYSLOG_HISTORY);
 
 SyslogHistory::SyslogHistory()
 {

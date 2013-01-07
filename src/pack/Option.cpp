@@ -1,6 +1,6 @@
 #include "pack/Option.h"
 
-std::string Option::TRIGRAM = TRIGRAM_OPTION;
+std::string Option::TRIGRAM(TRIGRAM_OPTION);
 
 Option::Option()
 {
@@ -9,5 +9,4 @@ Option::Option()
 
 Option::~Option()
 {
-    //dtor
 }

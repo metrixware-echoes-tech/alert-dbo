@@ -7,7 +7,7 @@
 
 #include "plugin/SearchParameter.h"
 
-std::string SearchParameter::TRIGRAM = TRIGRAM_SEARCH_PARAMETER;
+std::string SearchParameter::TRIGRAM(TRIGRAM_SEARCH_PARAMETER);
 
 SearchParameter::SearchParameter()
 {

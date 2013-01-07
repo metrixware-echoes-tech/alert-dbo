@@ -5,11 +5,10 @@
 
 DBO_INSTANTIATE_TEMPLATES(User);
 
-std::string User::TRIGRAM = TRIGRAM_USER;
+std::string User::TRIGRAM(TRIGRAM_USER);
 
 User::~User()
 {
-    //dtor
 }
 
 /*template<>

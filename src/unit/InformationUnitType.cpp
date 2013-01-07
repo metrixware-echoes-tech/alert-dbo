@@ -1,6 +1,6 @@
 #include "unit/InformationUnitType.h"
 
-std::string InformationUnitType::TRIGRAM = TRIGRAM_INFORMATION_UNIT_TYPE;
+std::string InformationUnitType::TRIGRAM(TRIGRAM_INFORMATION_UNIT_TYPE);
 
 InformationUnitType::InformationUnitType()
 {
@@ -9,5 +9,5 @@ InformationUnitType::InformationUnitType()
 
 InformationUnitType::~InformationUnitType()
 {
-    //dtor
+
 }

@@ -7,7 +7,7 @@
 
 #include "plugin/Search.h"
 
-std::string Search::TRIGRAM = TRIGRAM_SEARCH;
+std::string Search::TRIGRAM(TRIGRAM_SEARCH);
 
 Search::Search()
 {
@@ -19,5 +19,6 @@ Search::Search(const Search& orig)
 
 Search::~Search()
 {
+
 }
 

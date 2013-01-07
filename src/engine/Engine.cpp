@@ -7,7 +7,7 @@
 
 #include "engine/Engine.h"
 
-std::string Engine::TRIGRAM = TRIGRAM_ENGINE;
+std::string Engine::TRIGRAM(TRIGRAM_ENGINE);
 
 Engine::Engine()
 {

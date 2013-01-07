@@ -7,7 +7,7 @@
 
 #include "plugin/SearchParameterValue.h"
 
-std::string SearchParameterValue::TRIGRAM = TRIGRAM_SEARCH_PARAMETER_VALUE;
+std::string SearchParameterValue::TRIGRAM(TRIGRAM_SEARCH_PARAMETER_VALUE);
 
 SearchParameterValue::SearchParameterValue()
 {
@@ -19,5 +19,6 @@ SearchParameterValue::SearchParameterValue(const SearchParameterValue& orig)
 
 SearchParameterValue::~SearchParameterValue()
 {
+
 }
 

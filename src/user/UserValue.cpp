@@ -1,6 +1,6 @@
 #include "user/UserValue.h"
 
-std::string UserValue::TRIGRAM = TRIGRAM_USER_VALUE;
+std::string UserValue::TRIGRAM(TRIGRAM_USER_VALUE);
 
 UserValue::UserValue()
 {
@@ -9,5 +9,5 @@ UserValue::UserValue()
 
 UserValue::~UserValue()
 {
-    //dtor
+
 }

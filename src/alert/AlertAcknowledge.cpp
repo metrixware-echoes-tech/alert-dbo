@@ -1,6 +1,6 @@
 #include "alert/AlertAcknowledge.h"
 
-std::string AlertAcknowledge::TRIGRAM = TRIGRAM_ALERT_ACKNOWLEDGE;
+std::string AlertAcknowledge::TRIGRAM(TRIGRAM_ALERT_ACKNOWLEDGE);
 
 AlertAcknowledge::AlertAcknowledge()
 {
@@ -9,5 +9,4 @@ AlertAcknowledge::AlertAcknowledge()
 
 AlertAcknowledge::~AlertAcknowledge()
 {
-    //dtor
 }

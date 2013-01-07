@@ -7,7 +7,7 @@
 
 #include "information/Syslog.h"
 
-std::string Syslog::TRIGRAM = TRIGRAM_SYSLOG;
+std::string Syslog::TRIGRAM(TRIGRAM_SYSLOG);
 
 Syslog::Syslog()
 {

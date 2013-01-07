@@ -1,6 +1,6 @@
 #include "user/UserRole.h"
 
-std::string UserRole::TRIGRAM = TRIGRAM_USER_ROLE;
+std::string UserRole::TRIGRAM(TRIGRAM_USER_ROLE);
 
 UserRole::UserRole()
 {
@@ -9,5 +9,5 @@ UserRole::UserRole()
 
 UserRole::~UserRole()
 {
-    //dtor
+
 }

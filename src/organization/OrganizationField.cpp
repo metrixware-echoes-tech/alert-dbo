@@ -1,6 +1,6 @@
 #include "organization/OrganizationField.h"
 
-std::string OrganizationField::TRIGRAM = TRIGRAM_ORGANIZATION_FIELD;
+std::string OrganizationField::TRIGRAM(TRIGRAM_ORGANIZATION_FIELD);
 
 OrganizationField::OrganizationField()
 {
@@ -9,5 +9,4 @@ OrganizationField::OrganizationField()
 
 OrganizationField::~OrganizationField()
 {
-    //dtor
 }

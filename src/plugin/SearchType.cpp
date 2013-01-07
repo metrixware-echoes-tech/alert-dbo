@@ -7,7 +7,7 @@
 
 #include "plugin/SearchType.h"
 
-std::string SearchType::TRIGRAM = TRIGRAM_SEARCH_TYPE;
+std::string SearchType::TRIGRAM(TRIGRAM_SEARCH_TYPE);
 
 SearchType::SearchType()
 {
@@ -19,5 +19,6 @@ SearchType::SearchType(const SearchType& orig)
 
 SearchType::~SearchType()
 {
+
 }
 

@@ -7,7 +7,7 @@
 
 #include "plugin/Source.h"
 
-std::string Source::TRIGRAM = TRIGRAM_SOURCE;
+std::string Source::TRIGRAM(TRIGRAM_SOURCE);
 
 Source::Source()
 {
@@ -19,5 +19,6 @@ Source::Source(const Source& orig)
 
 Source::~Source()
 {
+
 }
 

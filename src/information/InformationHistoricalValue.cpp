@@ -1,6 +1,6 @@
 #include "information/InformationHistoricalValue.h"
 
-std::string InformationHistoricalValue::TRIGRAM = TRIGRAM_INFORMATION_HISTORICAL_VALUE;
+std::string InformationHistoricalValue::TRIGRAM(TRIGRAM_INFORMATION_HISTORICAL_VALUE);
 
 InformationHistoricalValue::InformationHistoricalValue()
 {

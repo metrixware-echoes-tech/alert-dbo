@@ -7,7 +7,7 @@
 
 #include "pack/OptionValue.h"
 
-std::string OptionValue::TRIGRAM = TRIGRAM_OPTION_VALUE;
+std::string OptionValue::TRIGRAM(TRIGRAM_OPTION_VALUE);
 
 OptionValue::OptionValue()
 {
@@ -16,5 +16,5 @@ OptionValue::OptionValue()
 
 OptionValue::~OptionValue()
 {
-    //dtor
+
 }

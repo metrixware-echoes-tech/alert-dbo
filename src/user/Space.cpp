@@ -1,6 +1,6 @@
 #include "user/Space.h"
 
-std::string Space::TRIGRAM = TRIGRAM_SPACE;
+std::string Space::TRIGRAM(TRIGRAM_SPACE);
 
 Space::Space()
 {
@@ -9,7 +9,6 @@ Space::Space()
 
 Space::~Space()
 {
-    //dtor
 }
 
 

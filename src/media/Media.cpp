@@ -1,6 +1,6 @@
 #include "media/Media.h"
 
-std::string Media::TRIGRAM = TRIGRAM_MEDIA;
+std::string Media::TRIGRAM(TRIGRAM_MEDIA);
 
 Media::Media()
 {
@@ -9,5 +9,5 @@ Media::Media()
 
 Media::~Media()
 {
-    //dtor
+
 }

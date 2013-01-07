@@ -1,6 +1,6 @@
 #include "pack/Pack.h"
 
-std::string Pack::TRIGRAM = TRIGRAM_PACK;
+std::string Pack::TRIGRAM(TRIGRAM_PACK);
 
 Pack::Pack()
 {
@@ -9,5 +9,5 @@ Pack::Pack()
 
 Pack::~Pack()
 {
-    //dtor
+
 }

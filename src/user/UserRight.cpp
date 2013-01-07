@@ -1,6 +1,6 @@
 #include "user/UserRight.h"
 
-std::string UserRight::TRIGRAM = TRIGRAM_USER_RIGHT;
+std::string UserRight::TRIGRAM(TRIGRAM_USER_RIGHT);
 
 UserRight::UserRight()
 {
@@ -9,6 +9,6 @@ UserRight::UserRight()
 
 UserRight::~UserRight()
 {
-    //dtor
+
 }
 

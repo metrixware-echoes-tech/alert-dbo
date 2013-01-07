@@ -1,6 +1,6 @@
 #include "user/UserAction.h"
 
-std::string UserAction::TRIGRAM = TRIGRAM_USER_ACTION;
+std::string UserAction::TRIGRAM(TRIGRAM_USER_ACTION);
 
 UserAction::UserAction()
 {
@@ -9,5 +9,5 @@ UserAction::UserAction()
 
 UserAction::~UserAction()
 {
-    //dtor
+
 }

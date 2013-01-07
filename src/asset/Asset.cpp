@@ -1,6 +1,6 @@
 #include "asset/Asset.h"
 
-std::string Asset::TRIGRAM = TRIGRAM_ASSET;
+std::string Asset::TRIGRAM(TRIGRAM_ASSET);
 
 Asset::Asset()
 {
@@ -9,5 +9,5 @@ Asset::Asset()
 
 Asset::~Asset()
 {
-    //dtor
+
 }

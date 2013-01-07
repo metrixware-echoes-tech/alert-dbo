@@ -1,6 +1,6 @@
 #include "user/UserProfile.h"
 
-std::string UserProfile::TRIGRAM = TRIGRAM_USER_PROFILE;
+std::string UserProfile::TRIGRAM(TRIGRAM_USER_PROFILE);
 
 UserProfile::UserProfile()
 {
@@ -9,5 +9,5 @@ UserProfile::UserProfile()
 
 UserProfile::~UserProfile()
 {
-    //dtor
+
 }

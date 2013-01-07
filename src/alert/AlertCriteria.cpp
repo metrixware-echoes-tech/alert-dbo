@@ -1,6 +1,6 @@
 #include "alert/AlertCriteria.h"
 
-std::string AlertCriteria::TRIGRAM = TRIGRAM_ALERT_CRITERIA;
+std::string AlertCriteria::TRIGRAM(TRIGRAM_ALERT_CRITERIA);
 
 AlertCriteria::AlertCriteria()
 {
@@ -9,5 +9,5 @@ AlertCriteria::AlertCriteria()
 
 AlertCriteria::~AlertCriteria()
 {
-    //dtor
+
 }

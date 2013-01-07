@@ -1,6 +1,6 @@
 #include "user/AccessControlList.h"
 
-std::string AccessControlList::TRIGRAM = TRIGRAM_ACCESS_CONTROL_LIST;
+std::string AccessControlList::TRIGRAM(TRIGRAM_ACCESS_CONTROL_LIST);
 
 AccessControlList::AccessControlList()
 {
@@ -9,6 +9,6 @@ AccessControlList::AccessControlList()
 
 AccessControlList::~AccessControlList()
 {
-    //dtor
+
 }
 

@@ -7,7 +7,7 @@
 
 #include "unit/InformationSubUnit.h"
 
-std::string InformationSubUnit::TRIGRAM = TRIGRAM_INFORMATION_SUB_UNIT;
+std::string InformationSubUnit::TRIGRAM(TRIGRAM_INFORMATION_SUB_UNIT);
 
 InformationSubUnit::InformationSubUnit() {
 }
@@ -15,6 +15,8 @@ InformationSubUnit::InformationSubUnit() {
 InformationSubUnit::InformationSubUnit(const InformationSubUnit& orig) {
 }
 
-InformationSubUnit::~InformationSubUnit() {
+InformationSubUnit::~InformationSubUnit() 
+{
+
 }
 

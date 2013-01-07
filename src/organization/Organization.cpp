@@ -1,6 +1,6 @@
 #include "organization/Organization.h"
 
-std::string Organization::TRIGRAM = TRIGRAM_ORGANIZATION;
+std::string Organization::TRIGRAM(TRIGRAM_ORGANIZATION);
 
 Organization::Organization()
 {
@@ -9,5 +9,4 @@ Organization::Organization()
 
 Organization::~Organization()
 {
-    //dtor
 }

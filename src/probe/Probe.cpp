@@ -1,6 +1,6 @@
 #include "probe/Probe.h"
 
-std::string Probe::TRIGRAM = TRIGRAM_PROBE;
+std::string Probe::TRIGRAM(TRIGRAM_PROBE);
 
 Probe::Probe()
 {
@@ -9,5 +9,5 @@ Probe::Probe()
 
 Probe::~Probe()
 {
-    //dtor
+
 }

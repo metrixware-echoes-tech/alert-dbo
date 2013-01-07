@@ -7,7 +7,7 @@
 
 #include "alert/AlertTrackingEvent.h"
 
-std::string AlertTrackingEvent::TRIGRAM = TRIGRAM_ALERT_TRACKING_EVENT;
+std::string AlertTrackingEvent::TRIGRAM(TRIGRAM_ALERT_TRACKING_EVENT);
 
 AlertTrackingEvent::AlertTrackingEvent()
 {
