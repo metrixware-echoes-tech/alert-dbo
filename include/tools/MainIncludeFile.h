@@ -75,6 +75,7 @@
 #include "user/UserField.h"
 
 #include "tools/Constants.h"
+//#include "tools/SessionPool.h"
 
 #include "unit/InformationUnit.h"
 #include "user/UserHierarchy.h"

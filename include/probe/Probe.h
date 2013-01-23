@@ -48,7 +48,7 @@ class Probe : public Table
                              Wt::Dbo::ManyToOne,
                              TRIGRAM_ASSET SEP TRIGRAM_PROBE);
                          
-        };
+        }
 
     protected:
     private:

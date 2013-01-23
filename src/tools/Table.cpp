@@ -10,7 +10,7 @@ Table::Table()
 
 Table::~Table()
 {
-    //dtor
+
 }
 
 

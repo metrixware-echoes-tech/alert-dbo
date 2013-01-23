@@ -15,7 +15,7 @@ class InformationValue : public Table
 {
     public:
         InformationValue();
-        virtual ~InformationValue();
+        ~InformationValue();
         
         static std::string TRIGRAM;
         

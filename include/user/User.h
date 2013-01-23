@@ -137,6 +137,6 @@ class User : public Table, public Wt::Dbo::Dbo<User>
 // Auth
 //typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
 
-DBO_EXTERN_TEMPLATES(User);
+DBO_EXTERN_TEMPLATES(User)
 
 #endif // USER_H

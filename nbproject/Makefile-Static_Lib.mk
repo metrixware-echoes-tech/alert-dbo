@@ -45,9 +45,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/AlertValue.o \
 	${OBJECTDIR}/src/plugin/SourceParameter.o \
 	${OBJECTDIR}/src/media/Media.o \
-	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/alert/AlertType.o \
 	${OBJECTDIR}/src/probe/Probe.o \
+	${OBJECTDIR}/src/tools/SessionPool.o \
+	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/engine/Engine.o \
 	${OBJECTDIR}/src/plugin/SearchParameterValue.o \
 	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
@@ -175,11 +176,6 @@ ${OBJECTDIR}/src/media/Media.o: src/media/Media.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/Media.o src/media/Media.cpp
 
-${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
-
 ${OBJECTDIR}/src/alert/AlertType.o: src/alert/AlertType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
@@ -189,6 +185,16 @@ ${OBJECTDIR}/src/probe/Probe.o: src/probe/Probe.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/probe
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
+
+${OBJECTDIR}/src/tools/SessionPool.o: src/tools/SessionPool.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/SessionPool.o src/tools/SessionPool.cpp
+
+${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
 
 ${OBJECTDIR}/src/engine/Engine.o: src/engine/Engine.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/engine

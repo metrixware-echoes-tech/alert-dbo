@@ -24,7 +24,7 @@ class Media : public Table
             Wt::Dbo::hasMany(a,
                              mediaValues,
                              Wt::Dbo::ManyToOne,
-                             "MEV_MED");
+                             TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
 
        }
     protected:

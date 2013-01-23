@@ -3,7 +3,7 @@
 #include <Wt/Dbo/Impl>
 #include <Wt/Auth/Dbo/AuthInfo>
 
-DBO_INSTANTIATE_TEMPLATES(User);
+DBO_INSTANTIATE_TEMPLATES(User)
 
 std::string User::TRIGRAM(TRIGRAM_USER);
 

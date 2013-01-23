@@ -87,6 +87,7 @@
           <itemPath>include/tools/MainIncludeFile.h</itemPath>
           <itemPath>include/tools/PostgresConnector.h</itemPath>
           <itemPath>include/tools/Session.h</itemPath>
+          <itemPath>include/tools/SessionPool.h</itemPath>
           <itemPath>include/tools/Table.h</itemPath>
           <itemPath>include/tools/dboSpecialization.h</itemPath>
         </logicalFolder>
@@ -190,6 +191,7 @@
           <itemPath>src/tools/Constants.cpp</itemPath>
           <itemPath>src/tools/PostgresConnector.cpp</itemPath>
           <itemPath>src/tools/Session.cpp</itemPath>
+          <itemPath>src/tools/SessionPool.cpp</itemPath>
           <itemPath>src/tools/Table.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
@@ -289,11 +291,13 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <standard>8</standard>
           <commandlineTool>distcc</commandlineTool>
           <incDir>
             <pElem>include</pElem>
           </incDir>
-          <commandLine>-std=c++0x -fPIC</commandLine>
+          <commandLine>-pedantic -fPIC</commandLine>
+          <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
