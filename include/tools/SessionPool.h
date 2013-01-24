@@ -9,7 +9,7 @@
 #define	SESSIONPOOL_H
 
 #include "tools/Session.h"
-#include <mutex>
+#include <boost/thread/thread.hpp>
 
 class Session;
 
@@ -27,7 +27,7 @@ private:
         
     static SessionPool* instance;
     SessionPool();
-    static std::mutex mutex;
+    static boost::mutex mutex;
     
 };
 
