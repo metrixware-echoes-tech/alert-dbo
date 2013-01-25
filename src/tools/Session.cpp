@@ -1,4 +1,5 @@
 #include "tools/Session.h"
+#include "asset/AssetDistribution.h"
 
 using namespace Wt;
 
@@ -65,7 +66,11 @@ Session::Session(std::string connectionParams)
     mapClass<OrganizationType>(Constants::T_ORGANIZATION_TYPE_OTY);
     mapClass<OrganizationValue>(Constants::T_ORGANIZATION_VALUE_OVA);
     mapClass<OrganizationField>(Constants::T_ORGANIZATION_FIELD_OFI);
+    
     mapClass<Probe>(Constants::T_PROBE_PRB);
+    mapClass<ProbePackage>(Constants::T_PROBE_PACKAGE_PPA);
+    mapClass<ProbePackageParameter>(Constants::T_PROBE_PACKAGE_PARAMETER_PPP);
+    
     mapClass<InformationValue>(Constants::T_INFORMATION_VALUE_IVA);
     mapClass<InformationHistoricalValue>(Constants::T_INFORMATION_HISTORICAL_VALUE_IHV);
     
@@ -99,6 +104,9 @@ Session::Session(std::string connectionParams)
     mapClass<SourceParameterValue>(Constants::T_SOURCE_PARAMETER_VALUE_SPV);
     
     mapClass<Asset>(Constants::T_ASSET_AST);
+    mapClass<AssetArchitecture>(Constants::T_ASSET_ARCHITECTURE_ASA);
+    mapClass<AssetDistribution>(Constants::T_ASSET_DISTRIBUTION_ASD);
+    mapClass<AssetRelease>(Constants::T_ASSET_RELEASE_ASR);
     
     mapClass<Syslog>(Constants::T_SYSLOG_SLO);
     mapClass<SyslogHistory>(Constants::T_SYSLOG_HISTORY_SLH);

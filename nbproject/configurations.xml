@@ -21,6 +21,9 @@
         </logicalFolder>
         <logicalFolder name="asset" displayName="asset" projectFiles="true">
           <itemPath>include/asset/Asset.h</itemPath>
+          <itemPath>include/asset/AssetArchitecture.h</itemPath>
+          <itemPath>include/asset/AssetDistribution.h</itemPath>
+          <itemPath>include/asset/AssetRelease.h</itemPath>
         </logicalFolder>
         <logicalFolder name="engine" displayName="engine" projectFiles="true">
           <itemPath>include/engine/Engine.h</itemPath>
@@ -78,6 +81,8 @@
         </logicalFolder>
         <logicalFolder name="probe" displayName="probe" projectFiles="true">
           <itemPath>include/probe/Probe.h</itemPath>
+          <itemPath>include/probe/ProbePackage.h</itemPath>
+          <itemPath>include/probe/ProbePackageParameter.h</itemPath>
         </logicalFolder>
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>include/tools/AuthApplication.h</itemPath>
@@ -143,6 +148,9 @@
         </logicalFolder>
         <logicalFolder name="asset" displayName="asset" projectFiles="true">
           <itemPath>src/asset/Asset.cpp</itemPath>
+          <itemPath>src/asset/AssetArchitecture.cpp</itemPath>
+          <itemPath>src/asset/AssetDistribution.cpp</itemPath>
+          <itemPath>src/asset/AssetRelease.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="engine" displayName="engine" projectFiles="true">
           <itemPath>src/engine/Engine.cpp</itemPath>
@@ -185,6 +193,8 @@
         </logicalFolder>
         <logicalFolder name="probe" displayName="probe" projectFiles="true">
           <itemPath>src/probe/Probe.cpp</itemPath>
+          <itemPath>src/probe/ProbePackage.cpp</itemPath>
+          <itemPath>src/probe/ProbePackageParameter.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>src/tools/AuthApplication.cpp</itemPath>

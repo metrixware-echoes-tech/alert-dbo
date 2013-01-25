@@ -35,6 +35,8 @@ class Constants
         static const char *T_ORGANIZATION_VALUE_OVA;  
         static const char *T_ORGANIZATION_FIELD_OFI;         
         static const char *T_PROBE_PRB;
+        static const char *T_PROBE_PACKAGE_PPA;
+        static const char *T_PROBE_PACKAGE_PARAMETER_PPP;
         static const char *T_INFORMATION_VALUE_IVA;
         static const char *T_INFORMATION_HISTORICAL_VALUE_IHV;
         static const char *T_INFORMATION_INF;
@@ -63,6 +65,9 @@ class Constants
         static const char *T_SOURCE_PARAMETER_SRP;
         static const char *T_SOURCE_PARAMETER_VALUE_SPV;
         static const char *T_ASSET_AST;
+        static const char *T_ASSET_ARCHITECTURE_ASA;
+        static const char *T_ASSET_DISTRIBUTION_ASD;
+        static const char *T_ASSET_RELEASE_ASR;
         static const char *T_SYSLOG_SLO;
         static const char *T_SYSLOG_HISTORY_SLH;
         static const char *T_SEARCH_SEA;

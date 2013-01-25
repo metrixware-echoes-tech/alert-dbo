@@ -25,6 +25,10 @@ class Asset : public Table
         
         Wt::Dbo::ptr<Probe> probe;
         
+        Wt::Dbo::ptr<AssetArchitecture> assetArchitecture;
+        Wt::Dbo::ptr<AssetDistribution> assetDistribution;
+        Wt::Dbo::ptr<AssetRelease> assetRelease;
+        
         Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
@@ -36,13 +40,15 @@ class Asset : public Table
         { 
             mapClassAttributesStrings["NAME"]=&this->name;
             mapClassAttributesBools["IS_HOST"]=&this->assetIsHost;
-            mapClassAttributesStringsNn["DISTRIB_NAME"]=&this->distribName;
-            mapClassAttributesStringsNn["DISTRIB_RELEASE"]=&this->distribRelease;
-            mapClassAttributesStringsNn["ARCHITECTURE"]=&this->architecture;
             
             FIELD_FILLER();
             
             Wt::Dbo::belongsTo(a,probe,TRIGRAM_ASSET SEP TRIGRAM_PROBE);
+            
+            Wt::Dbo::belongsTo(a,assetArchitecture,TRIGRAM_ASSET SEP TRIGRAM_ASSET_ARCHITECTURE);
+            Wt::Dbo::belongsTo(a,assetDistribution,TRIGRAM_ASSET SEP TRIGRAM_ASSET_DISTRIBUTION);
+            Wt::Dbo::belongsTo(a,assetRelease,TRIGRAM_ASSET SEP TRIGRAM_ASSET_RELEASE);
+            
             
             Wt::Dbo::hasMany(a, values, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_ASSET);
             Wt::Dbo::hasMany(a, historicalValues, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_ASSET);

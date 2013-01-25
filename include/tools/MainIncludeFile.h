@@ -125,6 +125,9 @@
 #include "plugin/SourceParameterValue.h"
 
 #include "asset/Asset.h"
+#include "asset/AssetArchitecture.h"
+#include "asset/AssetDistribution.h"
+#include "asset/AssetRelease.h"
 
 #include "plugin/Search.h"
 #include "plugin/SearchType.h"
@@ -141,6 +144,8 @@
 #include "pack/OptionValue.h"
 
 #include "probe/Probe.h"
+#include "probe/ProbePackage.h"
+#include "probe/ProbePackageParameter.h"
 
 #include "media/Media.h"
 #include "media/MediaValue.h"

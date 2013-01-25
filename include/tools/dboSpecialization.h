@@ -52,8 +52,13 @@ class Information2;
 class InformationValue;
 class InformationHistoricalValue;
 class Probe;
+class ProbePackage;
+class ProbePackageParameter;
 class SourceParameter;
 class Asset;
+class AssetArchitecture;
+class AssetDistribution;
+class AssetRelease;
 class Syslog;
 class SyslogHistory;
 class SearchType;
@@ -105,9 +110,16 @@ namespace Wt
         TEMPLATE_TRIGRAM(OrganizationField,TRIGRAM_ORGANIZATION_FIELD ID)        
         TEMPLATE_TRIGRAM(InformationHistoricalValue,TRIGRAM_INFORMATION_HISTORICAL_VALUE ID)
         TEMPLATE_TRIGRAM(AlertCriteria,TRIGRAM_ALERT_CRITERIA ID)
+                
         TEMPLATE_TRIGRAM(Probe,TRIGRAM_PROBE ID)
+        TEMPLATE_TRIGRAM(ProbePackage,TRIGRAM_PROBE_PACKAGE ID)
+        TEMPLATE_TRIGRAM(ProbePackageParameter,TRIGRAM_PROBE_PACKAGE_PARAMETER ID)
+                
         TEMPLATE_TRIGRAM(SourceParameter,TRIGRAM_SOURCE_PARAMETER ID)
         TEMPLATE_TRIGRAM(Asset,TRIGRAM_ASSET ID)
+        TEMPLATE_TRIGRAM(AssetArchitecture,TRIGRAM_ASSET_ARCHITECTURE ID)
+        TEMPLATE_TRIGRAM(AssetDistribution,TRIGRAM_ASSET_DISTRIBUTION ID)
+        TEMPLATE_TRIGRAM(AssetRelease,TRIGRAM_ASSET_RELEASE ID)
         TEMPLATE_TRIGRAM(Syslog,TRIGRAM_SYSLOG ID)
         TEMPLATE_TRIGRAM(SyslogHistory,TRIGRAM_SYSLOG_HISTORY ID)
         TEMPLATE_TRIGRAM(SearchType,TRIGRAM_SEARCH_TYPE ID)
