@@ -15,8 +15,8 @@ NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
 CC=gcc
-CCC=distcc
-CXX=distcc
+CCC=DISTCC_FALLBACK=0 distcc
+CXX=DISTCC_FALLBACK=0 distcc
 FC=gfortran
 AS=as
 

@@ -302,7 +302,7 @@
       <compileType>
         <ccTool>
           <standard>8</standard>
-          <commandlineTool>distcc</commandlineTool>
+          <commandlineTool>DISTCC_FALLBACK=0 distcc</commandlineTool>
           <incDir>
             <pElem>include</pElem>
           </incDir>
