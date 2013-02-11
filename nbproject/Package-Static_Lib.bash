@@ -60,7 +60,7 @@ mkdir -p ${NBTMPDIR}
 # Copy files and create directories and links
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}/dbo/lib"
-copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0640
+copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
 
 
 # Generate tar file

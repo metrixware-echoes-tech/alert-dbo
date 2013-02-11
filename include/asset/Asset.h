@@ -18,12 +18,13 @@ class Asset : public Table
         
         Wt::WString name;
         bool assetIsHost;
-        
-        boost::optional<Wt::WString> distribName;
-        boost::optional<Wt::WString> distribRelease;
-        boost::optional<Wt::WString> architecture;
+//        boost::optional<Wt::WString> distribName;
+//        boost::optional<Wt::WString> distribRelease;
+//        boost::optional<Wt::WString> architecture;
         
         Wt::Dbo::ptr<Probe> probe;
+        
+        Wt::Dbo::ptr<Organization> organization;
         
         Wt::Dbo::ptr<AssetArchitecture> assetArchitecture;
         Wt::Dbo::ptr<AssetDistribution> assetDistribution;
@@ -44,6 +45,7 @@ class Asset : public Table
             FIELD_FILLER();
             
             Wt::Dbo::belongsTo(a,probe,TRIGRAM_ASSET SEP TRIGRAM_PROBE);
+            Wt::Dbo::belongsTo(a,organization, TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);
             
             Wt::Dbo::belongsTo(a,assetArchitecture,TRIGRAM_ASSET SEP TRIGRAM_ASSET_ARCHITECTURE);
             Wt::Dbo::belongsTo(a,assetDistribution,TRIGRAM_ASSET SEP TRIGRAM_ASSET_DISTRIBUTION);

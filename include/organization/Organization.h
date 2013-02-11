@@ -26,12 +26,13 @@ class Organization : public Table
         Wt::WString token;
         // methods
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
+        Wt::Dbo::collection<Wt::Dbo::ptr<User>> users;
         
         
         // dbo collections (This table id as foreign key in other tables)
-        Wt::Dbo::collection<Wt::Dbo::ptr<User> > user;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Probe> > probes;
+        Wt::Dbo::collection<Wt::Dbo::ptr<User>> user;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Probe>> probes;
+        Wt::Dbo::collection<Wt::Dbo::ptr<Asset>> assets;
         Wt::Dbo::ptr<Pack> pack;
         Wt::Dbo::ptr<OrganizationType> organizationType;
         
@@ -56,6 +57,10 @@ class Organization : public Table
                              probes,
                              Wt::Dbo::ManyToOne,
                              TRIGRAM_PROBE SEP TRIGRAM_ORGANIZATION);
+            Wt::Dbo::hasMany(a,
+                             assets,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);
             Wt::Dbo::hasMany(a,
                             users,
                             Wt::Dbo::ManyToOne,
