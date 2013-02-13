@@ -25,6 +25,8 @@ public:
     
     Wt::Dbo::ptr<ProbePackage> probePackage;
     
+    Wt::Dbo::collection<Wt::Dbo::ptr<Probe>> probes;
+    
     Wt::WString probeVersion;
     Wt::WString packageVersion;
     
@@ -41,6 +43,8 @@ public:
          Wt::Dbo::belongsTo(a,assetRelease,TRIGRAM_PROBE_PACKAGE_PARAMETER SEP TRIGRAM_ASSET_RELEASE);
          
          Wt::Dbo::belongsTo(a,probePackage,TRIGRAM_PROBE_PACKAGE_PARAMETER SEP TRIGRAM_PROBE_PACKAGE);
+         
+         Wt::Dbo::hasMany(a,probes,Wt::Dbo::ManyToOne, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
 
    }
     
