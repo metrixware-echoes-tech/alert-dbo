@@ -16,11 +16,9 @@ class Asset : public Table
         
         static std::string TRIGRAM;
         
+        
         Wt::WString name;
         bool assetIsHost;
-//        boost::optional<Wt::WString> distribName;
-//        boost::optional<Wt::WString> distribRelease;
-//        boost::optional<Wt::WString> architecture;
         
         Wt::Dbo::ptr<Probe> probe;
         
@@ -58,7 +56,12 @@ class Asset : public Table
             //TJ
             Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ASSET SEP TRIGRAM_PLUGIN);
             Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ASSET SEP TRIGRAM_ALERT);
+            
+            
        }
+        
+       virtual std::string toJSON();
+        
         
     protected:
     private:

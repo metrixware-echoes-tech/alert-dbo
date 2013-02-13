@@ -4,7 +4,7 @@ std::string Probe::TRIGRAM(TRIGRAM_PROBE);
 
 Probe::Probe()
 {
-    //ctor
+    this->jsonName = "probe";
 }
 
 Probe::~Probe()

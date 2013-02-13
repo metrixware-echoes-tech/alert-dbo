@@ -9,7 +9,9 @@
 
 std::string AssetArchitecture::TRIGRAM(TRIGRAM_ASSET_ARCHITECTURE);
 
-AssetArchitecture::AssetArchitecture() {
+AssetArchitecture::AssetArchitecture() 
+{
+    this->jsonName = "architecture";
 }
 
 AssetArchitecture::AssetArchitecture(const AssetArchitecture& orig) {
