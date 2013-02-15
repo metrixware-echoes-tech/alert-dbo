@@ -20,7 +20,7 @@ class Probe : public Table
         Wt::WString cert;
         
         Wt::Dbo::ptr<Organization> organization;
-        Wt::Dbo::ptr<ProbePackageParameter> probePackageParamater;
+        Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
 
         Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
         Wt::Dbo::collection<Wt::Dbo::ptr<SyslogHistory> > syslogsHistory;
@@ -33,7 +33,7 @@ class Probe : public Table
             mapClassAttributesStrings["CERT"]=&this->cert; 
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, organization, TRIGRAM_PROBE SEP TRIGRAM_ORGANIZATION);
-            Wt::Dbo::belongsTo(a, probePackageParamater, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
+            Wt::Dbo::belongsTo(a, probePackageParameter, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
 
             Wt::Dbo::hasMany(a,
                              syslogs,
