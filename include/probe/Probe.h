@@ -51,7 +51,8 @@ class Probe : public Table
                              TRIGRAM_ASSET SEP TRIGRAM_PROBE);
                          
         }
-
+        virtual std::string toJSON();
+        
     protected:
     private:
 };
