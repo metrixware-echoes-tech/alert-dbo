@@ -94,7 +94,7 @@ std::string Table::formatJSONForDboPtr(const T &x, bool column)
     res += "\t\"" + x->jsonName + "\" : ";
     res += "{\n";
 
-    if (!x->name.compare(""))
+    if (x->name != "")
     {
         std::string key2 = "NAME";
         std::string value2 = x->name.toUTF8();

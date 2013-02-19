@@ -27,6 +27,9 @@ class Media : public Table
                              TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
 
        }
+        
+       virtual std::string toJSON();
+        
     protected:
     private:
 };

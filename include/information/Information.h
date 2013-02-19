@@ -39,6 +39,8 @@ class Information2 : public Table
                              TRIGRAM_ALERT_VALUE SEP TRIGRAM_INFORMATION);
         }    
 
+        virtual std::string toJSON();
+        
     protected:
     private:
 };
