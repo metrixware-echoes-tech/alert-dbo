@@ -5,9 +5,27 @@ std::string Alert::TRIGRAM(TRIGRAM_ALERT);
 Alert::Alert()
 {
     //ctor
+    this->jsonName = "alert";
 }
 
 Alert::~Alert()
 {
     //dtor
+}
+
+
+std::string Alert::toJSON()
+{
+    std::string res = "";
+    res += Table::toJSON();
+    res += Table::formatJSONForDboPtr(this->alertValue);
+    res += Table::formatJSONForDboPtr(this->alertSequence);
+    res += Table::formatJSONForDboPtr(this->engine);
+   
+    res += Table::formatJSONForDboCollection(this->alertAcks, "alerts");
+    res += Table::formatJSONForDboCollection(this->alertTrackings, "plugins");
+    res += Table::formatJSONForDboCollection(this->alertMediaSpecializations, "information_values", false);    
+    
+    res += "}\n";
+    return res;
 }

@@ -10,6 +10,7 @@
 std::string AlertMediaSpecialization::TRIGRAM(TRIGRAM_ALERT_MEDIA_SPECIALIZATION);
 
 AlertMediaSpecialization::AlertMediaSpecialization() {
+    this->jsonName = "alertMediaSpecialization";
 }
 
 AlertMediaSpecialization::AlertMediaSpecialization(const AlertMediaSpecialization& orig) {
@@ -19,3 +20,13 @@ AlertMediaSpecialization::~AlertMediaSpecialization() {
 
 }
 
+std::string AlertMediaSpecialization::toJSON()
+{
+    std::string res = "";
+    res += Table::toJSON();
+    res += Table::formatJSONForDboPtr(this->alert);
+    res += Table::formatJSONForDboPtr(this->mediaValue);
+    
+    res += "}\n";
+    return res;
+}

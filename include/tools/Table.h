@@ -89,12 +89,12 @@ std::string Table::formatJSONForDboPtr(const T &x, bool column)
     std::string res = "";
     std::string key1 = "ID";
     std::string value1 = boost::lexical_cast<std::string>(x.id());
-    std::string key2 = "NAME";
-    std::string value2 = x->name.toUTF8();
+ //   std::string key2 = "NAME";
+ //   std::string value2 = x->name.toUTF8();
     res += "\t\"" + x->jsonName + "\" : ";
     res += "{\n";
     res += "\t " + produceResString(key1,value1,false);
-    res += "\t " + produceResString(key2,value2, true, false);
+ //   res += "\t " + produceResString(key2,value2, true, false);
     res += "\t}";
     if (column)
     {

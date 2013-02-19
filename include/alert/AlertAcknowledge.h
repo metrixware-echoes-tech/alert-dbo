@@ -32,6 +32,8 @@ class AlertAcknowledge : public Table
             Wt::Dbo::belongsTo(a, user, "ACK_USR");
         }
         
+        virtual std::string toJSON();
+        
     protected:
     private:
 };

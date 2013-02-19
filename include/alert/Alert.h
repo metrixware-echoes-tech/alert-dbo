@@ -60,6 +60,9 @@ class Alert : public Table
             Wt::Dbo::belongsTo(a,engine, TRIGRAM_ALERT SEP TRIGRAM_ENGINE);
 
         }
+        
+        virtual std::string toJSON();
+        
     protected:
     private:
 };

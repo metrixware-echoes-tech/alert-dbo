@@ -41,6 +41,9 @@ class AlertValue : public Table
             Wt::Dbo::hasMany(a, alertSequences,Wt::Dbo::ManyToOne, TRIGRAM_ALERT_SEQUENCE SEP TRIGRAM_ALERT_VALUE);
                  
         }
+        
+        virtual std::string toJSON();
+        
     protected:
     private:
 };
