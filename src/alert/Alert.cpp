@@ -18,10 +18,11 @@ std::string Alert::toJSON()
 {
     std::string res = "";
     res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->alertValue);
-    res += Table::formatJSONForDboPtr(this->alertSequence);
-    res += Table::formatJSONForDboPtr(this->engine);
+    res += Table::formatJSONForDboPtr(this->alertValue, true);
+    res += Table::formatJSONForDboPtr(this->alertSequence, true);
+    res += Table::formatJSONForDboPtr(this->engine, true);
    
+    res += Table::formatJSONForDboCollection(this->assets, "assets");
     res += Table::formatJSONForDboCollection(this->alertAcks, "alerts");
     res += Table::formatJSONForDboCollection(this->alertTrackings, "plugins");
     res += Table::formatJSONForDboCollection(this->alertMediaSpecializations, "information_values", false);    

@@ -5,6 +5,7 @@ std::string Table::TABLE_PREFIX("T");
 
 Table::Table()
 {
+    this->name = "";
     this->jsonName = "should_be_overriden";
 }
 

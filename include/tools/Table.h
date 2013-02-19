@@ -31,6 +31,7 @@ class Table //classe abstraite
 
         static std::string TABLE_PREFIX;
         
+        Wt::WString name;
         Wt::WDateTime deleteTag;
         std::string jsonName;
         
@@ -89,12 +90,22 @@ std::string Table::formatJSONForDboPtr(const T &x, bool column)
     std::string res = "";
     std::string key1 = "ID";
     std::string value1 = boost::lexical_cast<std::string>(x.id());
- //   std::string key2 = "NAME";
- //   std::string value2 = x->name.toUTF8();
+ 
     res += "\t\"" + x->jsonName + "\" : ";
     res += "{\n";
-    res += "\t " + produceResString(key1,value1,false);
- //   res += "\t " + produceResString(key2,value2, true, false);
+
+    if (!x->name.compare(""))
+    {
+        std::string key2 = "NAME";
+        std::string value2 = x->name.toUTF8();
+        res += "\t " + produceResString(key1,value1,false);
+        res += "\t " + produceResString(key2,value2, true, false);
+    }
+    else
+    {
+        res += "\t " + produceResString(key1,value1,false, false);
+    }
+
     res += "\t}";
     if (column)
     {
