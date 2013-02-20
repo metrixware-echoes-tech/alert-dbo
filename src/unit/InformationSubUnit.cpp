@@ -10,6 +10,7 @@
 std::string InformationSubUnit::TRIGRAM(TRIGRAM_INFORMATION_SUB_UNIT);
 
 InformationSubUnit::InformationSubUnit() {
+    this->jsonName = "information_sub_unit";
 }
 
 InformationSubUnit::InformationSubUnit(const InformationSubUnit& orig) {
@@ -20,3 +21,12 @@ InformationSubUnit::~InformationSubUnit()
 
 }
 
+std::string InformationSubUnit::toJSON()
+{
+    std::string res = "";
+    res += Table::toJSON();
+    res += Table::formatJSONForDboPtr(this->informationUnit , false);
+    
+    res += "}\n";
+    return res;
+}

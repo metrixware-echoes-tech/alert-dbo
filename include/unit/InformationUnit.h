@@ -44,6 +44,9 @@ class InformationUnit : public Table
                              TRIGRAM_INFORMATION_SUB_UNIT SEP TRIGRAM_INFORMATION_UNIT);
          
         }
+        
+       virtual std::string toJSON();
+        
     protected:
     private:
 };
