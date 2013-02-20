@@ -319,9 +319,15 @@ public:
         WithUser find(*this, user);
         return user_->lastLoginAttempt();
     }
-
-private:
+    
+//    Wt::Dbo::Session getSession()
+//    {
+//        return this->session_;
+//    }
+    
     Wt::Dbo::Session& session_;
+private:
+    
     mutable Wt::Dbo::ptr<DboType> user_;
     mutable std::string userProvider_;
     mutable Wt::WString userIdentity_;
