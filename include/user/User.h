@@ -28,7 +28,7 @@ class User;
 typedef Wt::Auth::Dbo::AuthInfo<User> AuthInfo;
 typedef Wt::Dbo::collection< Wt::Dbo::ptr<User> > Users;
 
-class User : public Table, public Wt::Dbo::Dbo<User>
+class User : public Table
 {
     public:
         User() : Table() {};

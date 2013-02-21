@@ -10,7 +10,7 @@
 #include <Wt/WDateTime>
 
 #define BOOL_STR(b) ((b)?"true":"false")
-#define quote(x) #x
+//#define quote(x) #x
 
 template<typename T>
 std::string to_string( const T & Value )
