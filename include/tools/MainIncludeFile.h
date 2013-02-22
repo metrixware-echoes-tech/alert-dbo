@@ -117,6 +117,7 @@
 #include "alert/AlertSequence.h"
 #include "alert/AlertTracking.h"
 #include "alert/AlertTrackingEvent.h"
+#include "alert/AlertMessageDefinition.h"
 
 #include "engine/Engine.h"
 

@@ -33,6 +33,7 @@ class Organization : public Table
         Wt::Dbo::collection<Wt::Dbo::ptr<User>> user;
         Wt::Dbo::collection<Wt::Dbo::ptr<Probe>> probes;
         Wt::Dbo::collection<Wt::Dbo::ptr<Asset>> assets;
+        Wt::Dbo::collection<Wt::Dbo::ptr<UserRole>> userRoles;
         Wt::Dbo::ptr<Pack> pack;
         Wt::Dbo::ptr<OrganizationType> organizationType;
         
@@ -61,6 +62,10 @@ class Organization : public Table
                              assets,
                              Wt::Dbo::ManyToOne,
                              TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);
+            Wt::Dbo::hasMany(a,
+                             userRoles,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_USER_ROLE SEP TRIGRAM_ORGANIZATION);
             Wt::Dbo::hasMany(a,
                             users,
                             Wt::Dbo::ManyToOne,

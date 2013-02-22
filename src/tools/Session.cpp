@@ -91,6 +91,7 @@ Session::Session(std::string connectionParams)
     mapClass<Alert>(Constants::T_ALERT_ALE);
     mapClass<AlertAcknowledge>(Constants::T_ALERT_ACKNOWLEDGE_ACK);
     mapClass<AlertMediaSpecialization>(Constants::T_ALERT_MEDIA_SPECIALIZATION_AMS);
+    mapClass<AlertMessageDefinition>(Constants::T_ALERT_MESSAGE_DEFINITION_AMD);
     mapClass<AlertValue>(Constants::T_ALERT_VALUE_AVA);
     mapClass<AlertCriteria>(Constants::T_ALERT_CRITERIA_ACR);
     mapClass<AlertSequence>(Constants::T_ALERT_SEQUENCE_ASE);

@@ -38,6 +38,7 @@ const char *Constants::T_ADDON_ADO = "T_ADDON_ADO";
 const char *Constants::T_ALERT_ALE = "T_ALERT_ALE";
 const char *Constants::T_ALERT_ACKNOWLEDGE_ACK = "T_ALERT_ACKNOWLEDGE_ACK";
 const char *Constants::T_ALERT_MEDIA_SPECIALIZATION_AMS = "T_ALERT_MEDIA_SPECIALIZATION_AMS";
+const char *Constants::T_ALERT_MESSAGE_DEFINITION_AMD = "T_ALERT_MESSAGE_DEFINITION_AMD";
 const char *Constants::T_ALERT_VALUE_AVA = "T_ALERT_VALUE_AVA";
 const char *Constants::T_ALERT_PARAM_APA = "T_ALERT_PARAM_APA";
 const char *Constants::T_ALERT_CRITERIA_ACR = "T_ALERT_CRITERIA_ACR";

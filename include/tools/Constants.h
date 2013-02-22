@@ -54,6 +54,7 @@ class Constants
         static const char *T_ALERT_ALE;
         static const char *T_ALERT_ACKNOWLEDGE_ACK;
         static const char *T_ALERT_MEDIA_SPECIALIZATION_AMS;
+        static const char *T_ALERT_MESSAGE_DEFINITION_AMD;
         static const char *T_ALERT_VALUE_AVA;
         static const char *T_ALERT_PARAM_APA;
         static const char *T_ALERT_SEQUENCE_ASE;

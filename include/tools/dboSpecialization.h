@@ -31,6 +31,7 @@ class Alert;
 class AlertAcknowledge;
 class AlertCriteria;
 class AlertMediaSpecialization;
+class AlertMessageDefinition;
 class AlertSequence;
 class AlertTracking;
 class AlertTrackingEvent;

@@ -74,6 +74,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/Widget.o \
 	${OBJECTDIR}/src/organization/OrganizationValue.o \
 	${OBJECTDIR}/src/tools/Table.o \
+	${OBJECTDIR}/src/alert/AlertMessageDefinition.o \
 	${OBJECTDIR}/src/alert/AlertCriteria.o \
 	${OBJECTDIR}/src/alert/Alert.o \
 	${OBJECTDIR}/src/user/UserValue.o \
@@ -323,6 +324,11 @@ ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
+
+${OBJECTDIR}/src/alert/AlertMessageDefinition.o: src/alert/AlertMessageDefinition.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageDefinition.o src/alert/AlertMessageDefinition.cpp
 
 ${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
