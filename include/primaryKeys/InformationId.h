@@ -41,7 +41,11 @@ struct InformationId
 
 inline std::ostream& operator<< (std::ostream& o, const InformationId& pk)
 {
-    return o << "(" << pk.search << ")" << "(" << pk.subSearchNumber << ")" << "(" << pk.unit << ")";
+    //return o << "(" << pk.search << ")" << "(" << pk.subSearchNumber << ")" << "(" << pk.unit << ")";
+    return o <<  pk.search.id()
+             << ",\n\t\t\"sub_search_number\": " << pk.subSearchNumber 
+             << ",\n\t\t\"unit_id\": " << pk.unit.id() ;
+             //<< "\n\t},";
 }
 
 namespace Wt

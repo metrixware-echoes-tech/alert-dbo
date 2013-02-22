@@ -39,7 +39,9 @@ struct SourceId
 
 inline std::ostream& operator<< (std::ostream& o, const SourceId& pk)
 {
-    return o << "(" << pk.id << ")" << "(" << pk.plugin << ")";
+    //return o << "(" << pk.id << ")" << "(" << pk.plugin << ")";
+    return o << "\"plugin_id\": " << pk.plugin.id() << ",\n\t\t"
+             << "\"source_id\": " << pk.id ;
 }
 
 namespace Wt

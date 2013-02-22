@@ -4,7 +4,7 @@ std::string Information2::TRIGRAM(TRIGRAM_INFORMATION);
 
 Information2::Information2()
 {
-     this->jsonName = "information2";
+     this->jsonName = "information";
     //ctor
 }
 
