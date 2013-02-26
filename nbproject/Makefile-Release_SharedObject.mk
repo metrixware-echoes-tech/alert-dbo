@@ -53,6 +53,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/engine/Engine.o \
 	${OBJECTDIR}/src/plugin/SearchParameterValue.o \
+	${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o \
 	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/user/UserProfile.o \
 	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
@@ -62,6 +63,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
 	${OBJECTDIR}/src/widget/WidgetValue.o \
+	${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o \
 	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/asset/Asset.o \
 	${OBJECTDIR}/src/addon/Addon.o \
@@ -77,12 +79,13 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/AlertMessageDefinition.o \
 	${OBJECTDIR}/src/alert/AlertCriteria.o \
 	${OBJECTDIR}/src/alert/Alert.o \
-	${OBJECTDIR}/src/user/UserValue.o \
 	${OBJECTDIR}/src/user/UserRole.o \
-	${OBJECTDIR}/src/user/UserHistoricalAction.o \
+	${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o \
 	${OBJECTDIR}/src/alert/AlertTracking.o \
-	${OBJECTDIR}/src/user/UserRight.o \
 	${OBJECTDIR}/src/information/SyslogHistory.o \
+	${OBJECTDIR}/src/user/UserValue.o \
+	${OBJECTDIR}/src/user/UserHistoricalAction.o \
+	${OBJECTDIR}/src/user/UserRight.o \
 	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/user/User.o \
 	${OBJECTDIR}/src/organization/OrganizationField.o \
@@ -91,6 +94,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/user/UserField.o \
 	${OBJECTDIR}/src/widget/TabWidgetAssociation.o \
 	${OBJECTDIR}/src/unit/InformationUnit.o \
+	${OBJECTDIR}/src/alert/AlertMessageAliasAsset.o \
 	${OBJECTDIR}/src/plugin/Source.o \
 	${OBJECTDIR}/src/unit/InformationUnitType.o \
 	${OBJECTDIR}/src/unit/InformationSubUnit.o \
@@ -220,6 +224,11 @@ ${OBJECTDIR}/src/plugin/SearchParameterValue.o: src/plugin/SearchParameterValue.
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameterValue.o src/plugin/SearchParameterValue.cpp
 
+${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o: src/alert/AlertMessageAliasPlugin.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o src/alert/AlertMessageAliasPlugin.cpp
+
 ${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
@@ -264,6 +273,11 @@ ${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/widget
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
+
+${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o: src/alert/AlertMessageAliasInformation.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o src/alert/AlertMessageAliasInformation.cpp
 
 ${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
@@ -340,35 +354,40 @@ ${OBJECTDIR}/src/alert/Alert.o: src/alert/Alert.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/Alert.o src/alert/Alert.cpp
 
-${OBJECTDIR}/src/user/UserValue.o: src/user/UserValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserValue.o src/user/UserValue.cpp
-
 ${OBJECTDIR}/src/user/UserRole.o: src/user/UserRole.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
 
-${OBJECTDIR}/src/user/UserHistoricalAction.o: src/user/UserHistoricalAction.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
+${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o: src/alert/AlertMessageAliasInformationCriteria.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHistoricalAction.o src/user/UserHistoricalAction.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o src/alert/AlertMessageAliasInformationCriteria.cpp
 
 ${OBJECTDIR}/src/alert/AlertTracking.o: src/alert/AlertTracking.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTracking.o src/alert/AlertTracking.cpp
 
-${OBJECTDIR}/src/user/UserRight.o: src/user/UserRight.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRight.o src/user/UserRight.cpp
-
 ${OBJECTDIR}/src/information/SyslogHistory.o: src/information/SyslogHistory.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/SyslogHistory.o src/information/SyslogHistory.cpp
+
+${OBJECTDIR}/src/user/UserValue.o: src/user/UserValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserValue.o src/user/UserValue.cpp
+
+${OBJECTDIR}/src/user/UserHistoricalAction.o: src/user/UserHistoricalAction.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHistoricalAction.o src/user/UserHistoricalAction.cpp
+
+${OBJECTDIR}/src/user/UserRight.o: src/user/UserRight.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/user
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRight.o src/user/UserRight.cpp
 
 ${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
@@ -409,6 +428,11 @@ ${OBJECTDIR}/src/unit/InformationUnit.o: src/unit/InformationUnit.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/unit
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnit.o src/unit/InformationUnit.cpp
+
+${OBJECTDIR}/src/alert/AlertMessageAliasAsset.o: src/alert/AlertMessageAliasAsset.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasAsset.o src/alert/AlertMessageAliasAsset.cpp
 
 ${OBJECTDIR}/src/plugin/Source.o: src/plugin/Source.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin

@@ -35,8 +35,8 @@ public:
     template<class Action>
     void persist(Action& a)
     {
-        mapClassAttributesStrings["VALUE"]=&this->message;
-        mapClassAttributesBools["IS_DEFAULT"]=&this->isCustom;
+        mapClassAttributesStrings["MESSAGE"]=&this->message;
+        mapClassAttributesBools["IS_CUSTOM"]=&this->isCustom;
         FIELD_FILLER();
         
         Wt::Dbo::id (a, pk, TRIGRAM_ALERT_MESSAGE_DEFINITION SEP ID);

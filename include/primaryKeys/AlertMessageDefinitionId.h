@@ -46,12 +46,12 @@ namespace Wt
     namespace Dbo
     {
         template <class Action>
-        void field(Action& a, AlertMessageDefinitionId& infid,
+        void field(Action& a, AlertMessageDefinitionId& amdid,
                    const std::string& name, int size = -1)
         {
-            field(a, infid.alert, TRIGRAM_ALERT SEP ID);
-            field(a, infid.userRole, TRIGRAM_USER_ROLE SEP ID);
-            field(a, infid.media, TRIGRAM_MEDIA SEP ID);
+            field(a, amdid.alert, TRIGRAM_ALERT ID);
+            field(a, amdid.userRole, TRIGRAM_USER_ROLE ID);
+            field(a, amdid.media, TRIGRAM_MEDIA ID);
         }
         template<>
         struct dbo_traits<AlertMessageDefinition> : public dbo_default_traits

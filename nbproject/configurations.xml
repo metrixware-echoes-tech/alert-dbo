@@ -13,6 +13,10 @@
           <itemPath>include/alert/AlertAcknowledge.h</itemPath>
           <itemPath>include/alert/AlertCriteria.h</itemPath>
           <itemPath>include/alert/AlertMediaSpecialization.h</itemPath>
+          <itemPath>include/alert/AlertMessageAliasAsset.h</itemPath>
+          <itemPath>include/alert/AlertMessageAliasInformation.h</itemPath>
+          <itemPath>include/alert/AlertMessageAliasInformationCriteria.h</itemPath>
+          <itemPath>include/alert/AlertMessageAliasPlugin.h</itemPath>
           <itemPath>include/alert/AlertMessageDefinition.h</itemPath>
           <itemPath>include/alert/AlertSequence.h</itemPath>
           <itemPath>include/alert/AlertTracking.h</itemPath>
@@ -67,6 +71,10 @@
         </logicalFolder>
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
           <itemPath>include/primaryKeys/AccessControlListId.h</itemPath>
+          <itemPath>include/primaryKeys/AlertMessageAliasAssetId.h</itemPath>
+          <itemPath>include/primaryKeys/AlertMessageAliasInformationCriteriaId.h</itemPath>
+          <itemPath>include/primaryKeys/AlertMessageAliasInformationId.h</itemPath>
+          <itemPath>include/primaryKeys/AlertMessageAliasPluginId.h</itemPath>
           <itemPath>include/primaryKeys/AlertMessageDefinitionId.h</itemPath>
           <itemPath>include/primaryKeys/InformationId.h</itemPath>
           <itemPath>include/primaryKeys/OptionValueId.h</itemPath>
@@ -142,6 +150,10 @@
           <itemPath>src/alert/AlertAcknowledge.cpp</itemPath>
           <itemPath>src/alert/AlertCriteria.cpp</itemPath>
           <itemPath>src/alert/AlertMediaSpecialization.cpp</itemPath>
+          <itemPath>src/alert/AlertMessageAliasAsset.cpp</itemPath>
+          <itemPath>src/alert/AlertMessageAliasInformation.cpp</itemPath>
+          <itemPath>src/alert/AlertMessageAliasInformationCriteria.cpp</itemPath>
+          <itemPath>src/alert/AlertMessageAliasPlugin.cpp</itemPath>
           <itemPath>src/alert/AlertMessageDefinition.cpp</itemPath>
           <itemPath>src/alert/AlertSequence.cpp</itemPath>
           <itemPath>src/alert/AlertTracking.cpp</itemPath>
