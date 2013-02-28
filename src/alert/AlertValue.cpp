@@ -16,7 +16,7 @@ std::string AlertValue::toJSON()
 {
     std::string res = "";
     res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->information);
+    res += Table::formatJSONForDboPtr(this->information, true, true);
     res += Table::formatJSONForDboPtr(this->alertCriteria);
    
     res += Table::formatJSONForDboCollection(this->alerts, "alerts");

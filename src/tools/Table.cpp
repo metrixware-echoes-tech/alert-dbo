@@ -96,12 +96,16 @@ std::string Table::toJSON()
     return res;
 }
 
-std::string Table::produceResString(std::string key, std::string value, bool quote, bool column)
+std::string Table::produceResString(std::string key, std::string value, bool quote, bool column, bool composite)
 {
     std::transform(key.begin(), key.end(), key.begin(), ::tolower);
     std::string resString = "\t";
     resString += "\"" + key +"\"";
     resString += ": ";
+    if (composite) // si c'est une pk composée
+    {
+        resString += "{\n\t\t";
+    }
     if (quote) 
     {
         resString += "\"";
@@ -111,11 +115,15 @@ std::string Table::produceResString(std::string key, std::string value, bool quo
     {
         resString += "\"";
     }
+    if (composite)
+    {
+        resString += "\n\t\t}";
+    }
     if (column)
     {
         resString += ",";
     }
-    resString += "\n";
+    resString += "\n";  
     return resString;
 }
 

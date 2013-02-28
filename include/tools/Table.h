@@ -42,7 +42,7 @@ class Table //classe abstraite
         std::string formatIdColumnName(const T &x);
         
         template<typename T>
-        std::string formatJSONForDboPtr(const T &x, bool column = true);
+        std::string formatJSONForDboPtr(const T &x, bool column = true, bool composite = false);
         
         template<typename T>
         std::string formatJSONForDboCollection(const T &x, std::string name, bool column = true);
@@ -56,7 +56,7 @@ class Table //classe abstraite
         virtual std::string toJSON();
         
         
-        std::string produceResString(std::string key, std::string value, bool quote = true, bool column = true);
+        std::string produceResString(std::string key, std::string value, bool quote = true, bool column = true, bool composite = false);
         
         
     protected:
@@ -85,7 +85,7 @@ std::string Table::formatColumnName(const T &x, std::string value)
 }
 
 template<typename T>
-std::string Table::formatJSONForDboPtr(const T &x, bool column)
+std::string Table::formatJSONForDboPtr(const T &x, bool column, bool composite)
 {
     std::string res = "";
     std::string key1 = "ID";
@@ -99,14 +99,14 @@ std::string Table::formatJSONForDboPtr(const T &x, bool column)
 
         if (x->name != "")
         {
-            std::string key2 = "NAME";
-            std::string value2 = x->name.toUTF8();
-            res += "\t " + produceResString(key1,value1,false);
-            res += "\t " + produceResString(key2,value2, true, false);
+                std::string key2 = "NAME";
+                std::string value2 = x->name.toUTF8();
+                res += "\t " + produceResString(key1,value1,false, true, composite);
+                res += "\t " + produceResString(key2,value2, true, false);
         }
         else
         {
-            res += "\t " + produceResString(key1,value1,false, false);
+            res += "\t " + produceResString(key1,value1,false, false, composite);
         }
         
         res += "\t}";
