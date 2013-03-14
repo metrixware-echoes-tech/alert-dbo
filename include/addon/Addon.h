@@ -20,6 +20,7 @@ class Addon : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
         Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameter> > sourceParameters;
+        Wt::Dbo::collection<Wt::Dbo::ptr<SearchType> > searchTypes;
         
         template<class Action>
         void persist(Action& a)
@@ -37,6 +38,10 @@ class Addon : public Table
                              Wt::Dbo::ManyToMany,
                              "TJ_ADO_SRP"); 
             
+            Wt::Dbo::hasMany(a,
+                             searchTypes,
+                             Wt::Dbo::ManyToMany,
+                             "TJ_ADO_STY");
         }
         
         virtual std::string toJSON();
