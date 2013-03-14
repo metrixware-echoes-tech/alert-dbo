@@ -38,6 +38,9 @@ class Addon : public Table
                              "TJ_ADO_SRP"); 
             
         }
+        
+        virtual std::string toJSON();
+        
     protected:
     private:
 };

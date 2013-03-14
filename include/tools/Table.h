@@ -28,9 +28,9 @@ class Table //classe abstraite
     public:
         Table();
         virtual ~Table();
-
+        void setId(long long id);
         static std::string TABLE_PREFIX;
-        
+        long long id;
         Wt::WString name;
         Wt::WDateTime deleteTag;
         std::string jsonName;

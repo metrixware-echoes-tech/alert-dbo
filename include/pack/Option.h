@@ -25,6 +25,9 @@ class Option : public Table
                              Wt::Dbo::ManyToOne,
                              TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION );
         }
+        
+        virtual std::string toJSON();
+        
     protected:
     private:
 };

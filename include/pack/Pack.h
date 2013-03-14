@@ -33,6 +33,8 @@ class Pack : public Table
                              TRIGRAM_PACK_OPTION SEP TRIGRAM_PACK);
         }
         
+        virtual std::string toJSON();
+        
     protected:
     private:
 };

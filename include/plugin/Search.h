@@ -47,7 +47,7 @@ public:
         Wt::Dbo::belongsTo(a, searchType, "SEA_STY");
 
     }
-    
+    virtual std::string toJSON();
 private:
 
 };

@@ -33,6 +33,9 @@ public:
         Wt::Dbo::id(a,searchParameterValueId,"SEV_ID");
         
     }
+    
+    virtual std::string toJSON();
+       
 private:
 
 };
