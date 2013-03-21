@@ -61,6 +61,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/widget/Tab.o \
 	${OBJECTDIR}/src/user/UserAction.o \
+	${OBJECTDIR}/src/tools/Enums.o \
 	${OBJECTDIR}/src/widget/WidgetValue.o \
 	${OBJECTDIR}/src/widget/TabVersion.o \
 	${OBJECTDIR}/src/asset/Asset.o \
@@ -258,6 +259,11 @@ ${OBJECTDIR}/src/user/UserAction.o: src/user/UserAction.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserAction.o src/user/UserAction.cpp
+
+${OBJECTDIR}/src/tools/Enums.o: src/tools/Enums.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Enums.o src/tools/Enums.cpp
 
 ${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
