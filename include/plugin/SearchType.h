@@ -23,7 +23,7 @@ public:
     
     Wt::Dbo::collection<Wt::Dbo::ptr<Search> > searches;
     Wt::Dbo::collection<Wt::Dbo::ptr<SearchParameter> > searchParameters;
-
+    Wt::Dbo::collection<Wt::Dbo::ptr<Addon> > addons;
     
     template<class Action>
     void persist(Action& a)
@@ -41,6 +41,10 @@ public:
                         Wt::Dbo::ManyToMany,
                         "TJ_STY_SEP");
         
+        Wt::Dbo::hasMany(a,
+                         addons,
+                         Wt::Dbo::ManyToMany,
+                         "TJ_ADO_STY");
     }
     
 private:
