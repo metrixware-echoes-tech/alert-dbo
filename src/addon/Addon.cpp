@@ -19,6 +19,7 @@ std::string Addon::toJSON()
     res += Table::toJSON();
 
     res += Table::formatJSONForDboCollection(this->sources, "sources");
+    res += Table::formatJSONForDboCollection(this->searchTypes, "search_types");
     res += Table::formatJSONForDboCollection(this->sourceParameters, "sources_parameters", false);
     
     

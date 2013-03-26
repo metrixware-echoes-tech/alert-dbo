@@ -47,6 +47,8 @@ public:
                          "TJ_ADO_STY");
     }
     
+    virtual std::string toJSON();
+    
 private:
 
 };

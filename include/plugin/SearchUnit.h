@@ -35,6 +35,8 @@ public:
         Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
     }
     
+    virtual std::string toJSON();
+    
 private:
 
 };

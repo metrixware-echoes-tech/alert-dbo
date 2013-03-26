@@ -46,6 +46,8 @@ public:
                         "TJ_ADO_SRP");
                
     }
+    
+    virtual std::string toJSON();
 private:
 
 };
