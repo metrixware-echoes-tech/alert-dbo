@@ -11,6 +11,7 @@ std::string Syslog::TRIGRAM(TRIGRAM_SYSLOG);
 
 Syslog::Syslog()
 {
+    this->jsonName = "syslog";
 }
 
 Syslog::Syslog(const Syslog& orig)
@@ -21,3 +22,12 @@ Syslog::~Syslog()
 {
 }
 
+std::string Syslog::toJSON()
+{
+    std::string res = "";
+    res += Table::toJSON();
+    res += Table::formatJSONForDboPtr(this->probe, false);
+    
+    res += "}\n";
+    return res;
+}

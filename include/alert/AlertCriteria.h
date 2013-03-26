@@ -29,6 +29,10 @@ class AlertCriteria : public Table
             Wt::Dbo::hasMany(a,informationUnitTypes,Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT_TYPE);
             
         }
+        
+        virtual std::string toJSON();
+        
+        
     protected:
     private:
 };

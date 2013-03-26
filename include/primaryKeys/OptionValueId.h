@@ -39,7 +39,9 @@ struct OptionValueId
 
 inline std::ostream& operator<< (std::ostream& o, const OptionValueId& pk)
 {
-    return o << "(" << pk.organization << ")";
+    //return o << "(" << pk.organization << ")";
+    return o << "\"option_id\": " << pk.option.id() << ",\n\t\t"
+         << "\"organization_id\": " << pk.organization.id() ;
 }
 
 namespace Wt

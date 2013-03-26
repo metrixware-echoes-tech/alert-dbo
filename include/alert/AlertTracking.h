@@ -56,6 +56,9 @@ class AlertTracking : public Table
                              Wt::Dbo::ManyToOne,
                              TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
         }
+        
+        virtual std::string toJSON();
+        
     protected:
     private:
 };

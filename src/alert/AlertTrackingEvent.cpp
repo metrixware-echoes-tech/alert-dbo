@@ -11,6 +11,7 @@ std::string AlertTrackingEvent::TRIGRAM(TRIGRAM_ALERT_TRACKING_EVENT);
 
 AlertTrackingEvent::AlertTrackingEvent()
 {
+    this->jsonName = "alertTrackingEvent";
 }
 
 AlertTrackingEvent::AlertTrackingEvent(const AlertTrackingEvent& orig)
@@ -21,3 +22,12 @@ AlertTrackingEvent::~AlertTrackingEvent()
 {
 }
 
+std::string AlertTrackingEvent::toJSON()
+{
+    std::string res = "";
+    res += Table::toJSON();
+    res += Table::formatJSONForDboPtr(this->alertTracking , false);
+    
+    res += "}\n";
+    return res;
+}

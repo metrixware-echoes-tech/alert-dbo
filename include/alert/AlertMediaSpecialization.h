@@ -36,6 +36,9 @@ public:
         Wt::Dbo::belongsTo(a,alert, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_ALERT);
         Wt::Dbo::belongsTo(a,mediaValue, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_MEDIA_VALUE);
     }
+    
+    virtual std::string toJSON();
+    
 private:
 
 };

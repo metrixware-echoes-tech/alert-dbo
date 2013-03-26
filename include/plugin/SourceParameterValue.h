@@ -35,6 +35,10 @@ public:
         FIELD_FILLER();
         Wt::Dbo::id (a, pk, "PRIMARY_KEY");
     }
+    
+    virtual std::string toJSON();
+    
+    
 private:
 
 };

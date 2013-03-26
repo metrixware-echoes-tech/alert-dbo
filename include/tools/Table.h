@@ -28,9 +28,10 @@ class Table //classe abstraite
     public:
         Table();
         virtual ~Table();
-
+        void setId(long long id);
         static std::string TABLE_PREFIX;
-        
+        long long id;
+        Wt::WString name;
         Wt::WDateTime deleteTag;
         std::string jsonName;
         
@@ -41,7 +42,7 @@ class Table //classe abstraite
         std::string formatIdColumnName(const T &x);
         
         template<typename T>
-        std::string formatJSONForDboPtr(const T &x, bool column = true);
+        std::string formatJSONForDboPtr(const T &x, bool column = true, bool composite = false);
         
         template<typename T>
         std::string formatJSONForDboCollection(const T &x, std::string name, bool column = true);
@@ -55,7 +56,7 @@ class Table //classe abstraite
         virtual std::string toJSON();
         
         
-        std::string produceResString(std::string key, std::string value, bool quote = true, bool column = true);
+        std::string produceResString(std::string key, std::string value, bool quote = true, bool column = true, bool composite = false);
         
         
     protected:
@@ -84,23 +85,39 @@ std::string Table::formatColumnName(const T &x, std::string value)
 }
 
 template<typename T>
-std::string Table::formatJSONForDboPtr(const T &x, bool column)
+std::string Table::formatJSONForDboPtr(const T &x, bool column, bool composite)
 {
     std::string res = "";
     std::string key1 = "ID";
-    std::string value1 = boost::lexical_cast<std::string>(x.id());
-    std::string key2 = "NAME";
-    std::string value2 = x->name.toUTF8();
-    res += "\t\"" + x->jsonName + "\" : ";
-    res += "{\n";
-    res += "\t " + produceResString(key1,value1,false);
-    res += "\t " + produceResString(key2,value2, true, false);
-    res += "\t}";
-    if (column)
+        
+    if(x)
     {
-        res += ",";
+        std::string value1 = boost::lexical_cast<std::string>(x.id());
+
+        res += "\t\"" + x->jsonName + "\" : ";
+        res += "{\n";
+
+        if (x->name != "")
+        {
+                std::string key2 = "NAME";
+                std::string value2 = x->name.toUTF8();
+                res += "\t " + produceResString(key1,value1,false, true, composite);
+                res += "\t " + produceResString(key2,value2, true, false);
+        }
+        else
+        {
+            res += "\t " + produceResString(key1,value1,false, false, composite);
+        }
+        
+        res += "\t}";
+        if (column)
+        {
+            res += ",";
+        }
+        res += "\n";
     }
-    res += "\n";
+
+
     return res;
 }
 

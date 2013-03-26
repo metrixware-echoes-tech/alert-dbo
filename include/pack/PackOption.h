@@ -32,6 +32,9 @@ public:
         Wt::Dbo::id (a, pk, "POP_ID");
         
     }
+ 
+    virtual std::string toJSON();
+        
     private:
 };
 

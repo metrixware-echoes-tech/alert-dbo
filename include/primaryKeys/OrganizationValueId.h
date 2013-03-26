@@ -38,7 +38,9 @@ struct OrganizationValueId
 
 inline std::ostream& operator<< (std::ostream& o, const OrganizationValueId& pk)
 {
-    return o << "(" << pk.organization << ")";
+    //return o << "(" << pk.organization << ")";
+    return o << "\"organization_id\": " << pk.organization.id() << ",\n\t\t"
+         << "\"orgnanization_field_id\": " << pk.organizationField.id() ;
 }
 
 namespace Wt

@@ -39,7 +39,9 @@ struct SearchParameterValueId
 
 inline std::ostream& operator<< (std::ostream& o, const SearchParameterValueId& pk)
 {
-    return o << "(" << pk.searchParameter << ")";
+   // return o << "(" << pk.searchParameter << ")";
+    return o <<  pk.search.id()
+             << ",\n\t\t\"search_parameter_id\": " << pk.searchParameter.id();
 }
 
 namespace Wt

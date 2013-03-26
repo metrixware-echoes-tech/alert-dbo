@@ -41,6 +41,8 @@ class Plugin : public Table
                              Wt::Dbo::ManyToMany,
                              "TJ_AST_PLG");
        }
+       virtual std::string toJSON();
+       
     protected:
     private:
 };

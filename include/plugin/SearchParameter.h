@@ -37,6 +37,9 @@ public:
                         Wt::Dbo::ManyToMany,
                         "TJ_STY_SEP");
     }
+    
+    virtual std::string toJSON();
+    
 private:
 
 };

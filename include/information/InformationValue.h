@@ -49,6 +49,8 @@ class InformationValue : public Table
 
             
         }
+        
+        virtual std::string toJSON();
 
     protected:
     private:

@@ -11,14 +11,13 @@ class AlertSequence;
 class AlertValue;
 class Engine;
 
-class Alert : public Table
+class Alert : public Table 
 {
     public:
         Alert();
         virtual ~Alert();
         
         static std::string TRIGRAM;
-        
         Wt::WString name;
         Wt::WDateTime creaDate; //creation date of the alert
         Wt::WDateTime lastAttempt; //last time an engine process the alert (use to detect a zombie alert thread)
@@ -45,7 +44,7 @@ class Alert : public Table
             mapClassAttributesDates["CREA_DATE"]=&this->creaDate;
             mapClassAttributesDates["LAST_ATTEMPT"]=&this->lastAttempt;      
             mapClassAttributesInts["THREAD_SLEEP"]=&this->threadSleep;
-
+            
             
             FIELD_FILLER();
             
@@ -58,8 +57,12 @@ class Alert : public Table
             Wt::Dbo::belongsTo(a,alertValue, TRIGRAM_ALERT SEP TRIGRAM_ALERT_VALUE);
             Wt::Dbo::belongsTo(a,alertSequence, TRIGRAM_ALERT_SEQUENCE SEP "FIRST_ID");
             Wt::Dbo::belongsTo(a,engine, TRIGRAM_ALERT SEP TRIGRAM_ENGINE);
-
+            
+    
         }
+        
+        virtual std::string toJSON();
+        
     protected:
     private:
 };

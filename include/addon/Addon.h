@@ -43,6 +43,9 @@ class Addon : public Table
                              Wt::Dbo::ManyToMany,
                              "TJ_ADO_STY");
         }
+        
+        virtual std::string toJSON();
+        
     protected:
     private:
 };

@@ -39,7 +39,9 @@ struct SearchUnitId
 
 inline std::ostream& operator<< (std::ostream& o, const SearchUnitId& pk)
 {
-    return o << "(" << pk.search << ")" << "(" << pk.infValueNum << ")";
+    //return o << "(" << pk.search << ")" << "(" << pk.infValueNum << ")";
+    return o <<  pk.search.id()
+         << ",\n\t\t\"inf_value_num\": " << pk.infValueNum;
 }
 
 namespace Wt

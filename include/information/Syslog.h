@@ -66,6 +66,9 @@ public:
 //                            TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG);
             
     }
+    
+    virtual std::string toJSON();
+    
 private:
 
 };

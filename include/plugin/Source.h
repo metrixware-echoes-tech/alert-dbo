@@ -35,6 +35,8 @@ public:
         
         Wt::Dbo::belongsTo(a, addon, "SRC_ADO");    
     }
+    
+    virtual std::string toJSON();
      
 private:
 

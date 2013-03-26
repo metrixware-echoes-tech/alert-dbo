@@ -39,7 +39,9 @@ struct SearchId
 
 inline std::ostream& operator<< (std::ostream& o, const SearchId& pk)
 {
-    return o << "(" << pk.id << ")" << "(" << pk.source << ")";
+    //return o << "(" << pk.id << ")" << "(" << pk.source << ")";
+    return o << pk.source.id()  << ",\n\t\t"
+             << "\"search_id\": " << pk.id;
 }
 
 namespace Wt

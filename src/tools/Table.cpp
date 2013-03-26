@@ -5,7 +5,9 @@ std::string Table::TABLE_PREFIX("T");
 
 Table::Table()
 {
+    this->name = "";
     this->jsonName = "should_be_overriden";
+    this->id = -2;
 }
 
 Table::~Table()
@@ -13,9 +15,19 @@ Table::~Table()
 
 }
 
+void Table::setId(long long idTmp)
+{
+    this->id = idTmp;
+}
+
 std::string Table::toJSON()
 {
     std::string resString = "";
+    if (this->id != -2)
+    {
+        resString = "{\n";
+        resString += "\t\"id\" : " + boost::lexical_cast<std::string>(this->id) + ",\n";
+    }
     std::map<std::string,Wt::WString*>::iterator itStrings;
     for(itStrings = mapClassAttributesStrings.begin(); itStrings != mapClassAttributesStrings.end(); ++itStrings)
     {
@@ -88,19 +100,23 @@ std::string Table::toJSON()
     
    
     // concatenate everything
-    std::string res = "{\n";
-    res += resString;
+    
+     std::string res = resString;
 //    res += "}\n";
 
     return res;
 }
 
-std::string Table::produceResString(std::string key, std::string value, bool quote, bool column)
+std::string Table::produceResString(std::string key, std::string value, bool quote, bool column, bool composite)
 {
     std::transform(key.begin(), key.end(), key.begin(), ::tolower);
     std::string resString = "\t";
     resString += "\"" + key +"\"";
     resString += ": ";
+    if (composite) // si c'est une pk composée
+    {
+        resString += "{\n\t\t";
+    }
     if (quote) 
     {
         resString += "\"";
@@ -110,11 +126,15 @@ std::string Table::produceResString(std::string key, std::string value, bool quo
     {
         resString += "\"";
     }
+    if (composite)
+    {
+        resString += "\n\t\t}";
+    }
     if (column)
     {
         resString += ",";
     }
-    resString += "\n";
+    resString += "\n";  
     return resString;
 }
 

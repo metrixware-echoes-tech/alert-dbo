@@ -32,6 +32,9 @@ public:
         Wt::Dbo::id (a, pk, "OPV_ID");
         
     }
+    
+    virtual std::string toJSON();
+    
     private:
 };
 

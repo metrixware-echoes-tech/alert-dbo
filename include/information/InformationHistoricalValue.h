@@ -48,6 +48,8 @@ class InformationHistoricalValue : public Table
             Wt::Dbo::field(a,information, TRIGRAM_INFORMATION ID);
         }
 
+        virtual std::string toJSON();        
+        
     protected:
     private:
 };
