@@ -22,7 +22,7 @@ public:
     
     static std::string TRIGRAM;
     int nbValue;
-    Wt::WString period;
+    int period;
     bool searchIsStatic;
     
     SearchId pk;
@@ -36,7 +36,7 @@ public:
     void persist(Action& a)
     {
         mapClassAttributesInts["NB_VALUE"]=&this->nbValue;        
-        mapClassAttributesStrings["PERIOD"]=&this->period;        
+        mapClassAttributesInts["PERIOD"]=&this->period;        
         mapClassAttributesBools["IS_STATIC"]=&this->searchIsStatic;
         mapClassAttributesInts["POS_KEY_VALUE"]=&this->pos_key_value;
         
