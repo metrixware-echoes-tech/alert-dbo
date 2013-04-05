@@ -32,7 +32,7 @@ class Asset : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
         Wt::Dbo::collection<Wt::Dbo::ptr<InformationHistoricalValue> > historicalValues;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
+        Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
         
         template<class Action>
         void persist(Action& a)
@@ -52,10 +52,11 @@ class Asset : public Table
             
             Wt::Dbo::hasMany(a, values, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_ASSET);
             Wt::Dbo::hasMany(a, historicalValues, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_ASSET);
+            Wt::Dbo::hasMany(a, alertValues, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_VALUE SEP TRIGRAM_ASSET);
+            
             
             //TJ
             Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ASSET SEP TRIGRAM_PLUGIN);
-            Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ASSET SEP TRIGRAM_ALERT);
             
             
        }

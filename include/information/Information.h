@@ -21,14 +21,16 @@ class Information2 : public Table
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
         
         Wt::WString name;
+        boost::optional<Wt::WString> desc;
         bool display;
-        boost::optional<Wt::WString>calculate;
+        boost::optional<Wt::WString> calculate;
 
         template<class Action>
         void persist(Action& a)
         {
             mapClassAttributesStrings["NAME"]=&this->name;
             mapClassAttributesBools["DISPLAY"]=&this->display;
+            mapClassAttributesStringsNn["DESC"]=&this->desc;
             mapClassAttributesStringsNn["CALCULATE"]=&this->calculate;
             FIELD_FILLER();
             Wt::Dbo::id(a,pk,"PRIMARY_KEY");

@@ -21,7 +21,6 @@ std::string Asset::toJSON()
     res += Table::formatJSONForDboPtr(this->assetDistribution);
     res += Table::formatJSONForDboPtr(this->assetRelease);
     
-    res += Table::formatJSONForDboCollection(this->alerts, "alerts");
     res += Table::formatJSONForDboCollection(this->plugins, "plugins");
     res += Table::formatJSONForDboCollection(this->values, "information_values");
     res += Table::formatJSONForDboCollection(this->historicalValues, "historical_information_values", false);
