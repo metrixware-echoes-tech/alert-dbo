@@ -28,6 +28,6 @@ std::string AlertTrackingEvent::toJSON()
     res += Table::toJSON();
     res += Table::formatJSONForDboPtr(this->alertTracking , false);
     
-    res += "}\n";
+    res += "}";
     return res;
 }

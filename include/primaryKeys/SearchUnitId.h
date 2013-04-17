@@ -23,7 +23,7 @@ struct SearchUnitId
     SearchUnitId(Wt::Dbo::ptr<Search> ptr, int ssn)
         : search(ptr), infValueNum(ssn) { }
 
-    SearchUnitId(){ }
+    SearchUnitId(){ infValueNum = 0; }
 
     bool operator== (const SearchUnitId& other) const {
         return search == other.search && infValueNum == other.infValueNum;

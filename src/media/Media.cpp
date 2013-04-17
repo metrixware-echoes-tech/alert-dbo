@@ -21,6 +21,6 @@ std::string Media::toJSON()
     res += Table::formatJSONForDboCollection(this->mediaValues, "media_values", false);
     
     
-    res += "}\n";
+    res += "}";
     return res;
 }

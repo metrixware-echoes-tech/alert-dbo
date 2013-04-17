@@ -21,6 +21,6 @@ std::string InformationHistoricalValue::toJSON()
     res += Table::formatJSONForDboPtr(this->syslogHistory);
     res += Table::formatJSONForDboPtr(this->information , false);
     
-    res += "}\n";
+    res += "}";
     return res;
 }

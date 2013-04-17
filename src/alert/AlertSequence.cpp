@@ -33,6 +33,6 @@ std::string AlertSequence::toJSON()
     
     res += Table::formatJSONForDboCollection(this->alerts, "alerts", false);
  
-    res += "}\n";
+    res += "}";
     return res;
 }

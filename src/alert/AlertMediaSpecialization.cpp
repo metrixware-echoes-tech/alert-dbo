@@ -27,6 +27,6 @@ std::string AlertMediaSpecialization::toJSON()
     res += Table::formatJSONForDboPtr(this->alert);
     res += Table::formatJSONForDboPtr(this->mediaValue, false);
     
-    res += "}\n";
+    res += "}";
     return res;
 }

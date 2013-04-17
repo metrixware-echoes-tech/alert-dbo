@@ -21,6 +21,6 @@ std::string InformationUnitType::toJSON()
     res += Table::formatJSONForDboCollection(this->alertCriterias, "alerts_criterias");
     res += Table::formatJSONForDboCollection(this->units, "units", false);
     
-    res += "}\n";
+    res += "}";
     return res;
 }

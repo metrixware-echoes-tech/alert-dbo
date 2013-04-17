@@ -25,7 +25,7 @@ struct InformationId
     InformationId(Wt::Dbo::ptr<Search> ptr, int ssn, Wt::Dbo::ptr<InformationUnit> ptrUnit)
         : search(ptr), subSearchNumber(ssn), unit(ptrUnit) { }
 
-    InformationId(){ }
+    InformationId(){ subSearchNumber = 0; }
 
     bool operator== (const InformationId& other) const {
         return search == other.search && subSearchNumber == other.subSearchNumber && unit == other.unit;

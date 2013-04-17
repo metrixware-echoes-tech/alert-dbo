@@ -30,6 +30,6 @@ std::string SearchParameter::toJSON()
     res += Table::formatJSONForDboCollection(this->searchTypes, "search_types", false);
     
     
-    res += "}\n";
+    res += "}";
     return res;
 }

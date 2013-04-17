@@ -23,6 +23,6 @@ std::string MediaValue::toJSON()
     res += Table::formatJSONForDboCollection(this->alertMediaSpecializations, "alerts_medias_specializations", false);
     
     
-    res += "}\n";
+    res += "}";
     return res;
 }

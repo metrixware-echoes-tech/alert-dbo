@@ -22,6 +22,6 @@ std::string InformationUnit::toJSON()
     res += Table::formatJSONForDboCollection(this->searchUnits, "search_units");
     res += Table::formatJSONForDboCollection(this->informationSubUnits, "information_sub_units", false);
    
-    res += "}\n";
+    res += "}";
     return res;
 }

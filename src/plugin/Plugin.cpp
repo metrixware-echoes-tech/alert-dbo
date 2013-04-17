@@ -20,6 +20,6 @@ std::string Plugin::toJSON()
     
     res += Table::formatJSONForDboCollection(this->assets, "assets", false);
 
-    res += "}\n";
+    res += "}";
     return res;
 }

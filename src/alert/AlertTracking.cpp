@@ -22,6 +22,6 @@ std::string AlertTracking::toJSON()
    
     res += Table::formatJSONForDboCollection(this->alertTrackingEvents, "alert_tracking_event" , false);
     
-    res += "}\n";
+    res += "}";
     return res;
 }

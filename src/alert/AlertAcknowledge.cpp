@@ -21,6 +21,6 @@ std::string AlertAcknowledge::toJSON()
     res += Table::formatJSONForDboPtr(this->user, false);
     
     
-    res += "}\n";
+    res += "}";
     return res;
 }

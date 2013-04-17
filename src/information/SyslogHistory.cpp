@@ -31,6 +31,6 @@ std::string SyslogHistory::toJSON()
     res += Table::formatJSONForDboCollection(this->values, "information_values");
     res += Table::formatJSONForDboCollection(this->historicalValues, "historical_information_values", false);
         
-    res += "}\n";
+    res += "}";
     return res;
 }

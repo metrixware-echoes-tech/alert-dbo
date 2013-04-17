@@ -29,6 +29,6 @@ std::string SearchUnit::toJSON()
     res += Table::toJSON();
     res += Table::formatJSONForDboPtr(this->informationUnit, false);
     
-    res += "}\n";
+    res += "}";
     return res;
 }

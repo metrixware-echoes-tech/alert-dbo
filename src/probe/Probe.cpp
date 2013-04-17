@@ -24,6 +24,6 @@ std::string Probe::toJSON()
     res += Table::formatJSONForDboCollection(this->assets, "assets");
     
     
-    res += "}\n";
+    res += "}";
     return res;
 }

@@ -23,7 +23,7 @@ struct SearchId
     SearchId(long long id, Wt::Dbo::ptr<Source> ptr)
         : id(id), source(ptr) { }
 
-    SearchId(){ }
+    SearchId(){ id = 0; }
 
     bool operator== (const SearchId& other) const {
         return id == other.id && source == other.source;

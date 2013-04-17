@@ -19,6 +19,6 @@ std::string Option::toJSON()
 
     res += Table::formatJSONForDboCollection(this->packOptions, "pack_option", false);
         
-    res += "}\n";
+    res += "}";
     return res;
 }

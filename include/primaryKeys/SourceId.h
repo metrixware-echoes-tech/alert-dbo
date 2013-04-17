@@ -23,7 +23,7 @@ struct SourceId
     SourceId(long long id, Wt::Dbo::ptr<Plugin> ptr)
         : id(id), plugin(ptr) { }
 
-    SourceId(){ }
+    SourceId(){ id = 0; }
 
     bool operator== (const SourceId& other) const {
         return id == other.id && plugin == other.plugin;

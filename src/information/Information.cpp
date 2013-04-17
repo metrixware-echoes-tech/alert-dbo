@@ -8,6 +8,16 @@ Information2::Information2()
     //ctor
 }
 
+Information2::Information2(const Information2 &orig)
+: Table(orig)
+{
+    this->alertValues = orig.alertValues;
+    this->calculate = orig.calculate;
+    this->desc = orig.desc;
+    this->display = orig.display;
+    this->pk = orig.pk;
+}
+
 Information2::~Information2()
 {
 }
@@ -21,6 +31,6 @@ std::string Information2::toJSON()
 
     res += Table::formatJSONForDboCollection(this->alertValues, "alert_values", false);
     
-    res += "}\n";
+    res += "}";
     return res;
 }

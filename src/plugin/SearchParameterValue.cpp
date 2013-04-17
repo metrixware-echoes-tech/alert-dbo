@@ -32,6 +32,6 @@ std::string SearchParameterValue::toJSON()
     res.replace(res.size()-2, 1, "");
     
     
-    res += "}\n";
+    res += "}";
     return res;
 }

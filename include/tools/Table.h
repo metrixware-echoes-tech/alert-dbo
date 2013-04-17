@@ -27,6 +27,7 @@ class Table //classe abstraite
 {
     public:
         Table();
+        Table(const Table& orig);
         virtual ~Table();
         void setId(long long id);
         static std::string TABLE_PREFIX;
@@ -93,7 +94,6 @@ std::string Table::formatJSONForDboPtr(const T &x, bool column, bool composite)
     if(x)
     {
         std::string value1 = boost::lexical_cast<std::string>(x.id());
-
         res += "\t\"" + x->jsonName + "\" : ";
         res += "{\n";
 

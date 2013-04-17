@@ -17,7 +17,7 @@ class Plugin : public Table
         virtual ~Plugin();
 
         static std::string TRIGRAM;
-        Wt::WString name;
+     //   Wt::WString name;
         Wt::WString desc;
         
 //        Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;

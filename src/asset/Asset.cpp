@@ -26,6 +26,6 @@ std::string Asset::toJSON()
     res += Table::formatJSONForDboCollection(this->historicalValues, "historical_information_values", false);
     
     
-    res += "}\n";
+    res += "}";
     return res;
 }

@@ -12,6 +12,7 @@ class Information2 : public Table
 {
     public:
         Information2();
+        Information2(const Information2& orig);
         virtual ~Information2();
         
         static std::string TRIGRAM;
@@ -20,7 +21,7 @@ class Information2 : public Table
         
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
         
-        Wt::WString name;
+   //     Wt::WString name;
         boost::optional<Wt::WString> desc;
         bool display;
         boost::optional<Wt::WString> calculate;

@@ -22,6 +22,6 @@ std::string AlertCriteria::toJSON()
     res += Table::formatJSONForDboCollection(this->informationUnitTypes , "information_unit_types");
     res += Table::formatJSONForDboCollection(this->alertValues, "alert_values", false);
   
-    res += "}\n";
+    res += "}";
     return res;
 }

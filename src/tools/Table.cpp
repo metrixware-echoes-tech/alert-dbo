@@ -10,6 +10,22 @@ Table::Table()
     this->id = -2;
 }
 
+Table::Table(const Table& orig) {
+    this->name = orig.name;
+    this->jsonName = orig.jsonName;
+    this->id = orig.id;
+    this->deleteTag = orig.deleteTag;
+    this->mapClassAttributesBools = orig.mapClassAttributesBools;
+    this->mapClassAttributesDates = orig.mapClassAttributesDates;
+    this->mapClassAttributesInts = orig.mapClassAttributesInts;
+    this->mapClassAttributesIntsNn = orig.mapClassAttributesIntsNn;
+    this->mapClassAttributesSerials = orig.mapClassAttributesSerials;
+    this->mapClassAttributesShorts = orig.mapClassAttributesShorts;
+    this->mapClassAttributesStrings = orig.mapClassAttributesStrings;
+    this->mapClassAttributesStringsNn = orig.mapClassAttributesStringsNn;
+}
+
+
 Table::~Table()
 {
 

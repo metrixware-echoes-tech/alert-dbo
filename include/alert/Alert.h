@@ -18,7 +18,7 @@ class Alert : public Table
         virtual ~Alert();
         
         static std::string TRIGRAM;
-        Wt::WString name;
+     //   Wt::WString name;
         Wt::WDateTime creaDate; //creation date of the alert
         Wt::WDateTime lastAttempt; //last time an engine process the alert (use to detect a zombie alert thread)
         int threadSleep;

@@ -31,6 +31,6 @@ std::string Source::toJSON()
     res += Table::toJSON();
     res += Table::formatJSONForDboPtr(this->addon, false);
    
-    res += "}\n";
+    res += "}";
     return res;
 }

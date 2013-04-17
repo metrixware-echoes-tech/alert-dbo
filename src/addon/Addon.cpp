@@ -23,6 +23,6 @@ std::string Addon::toJSON()
     res += Table::formatJSONForDboCollection(this->sourceParameters, "sources_parameters", false);
     
     
-    res += "}\n";
+    res += "}";
     return res;
 }

@@ -33,6 +33,6 @@ std::string SearchType::toJSON()
     res += Table::formatJSONForDboCollection(this->addons, "addons", false);
     
     
-    res += "}\n";
+    res += "}";
     return res;
 }

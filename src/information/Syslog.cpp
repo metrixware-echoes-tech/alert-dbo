@@ -28,6 +28,6 @@ std::string Syslog::toJSON()
     res += Table::toJSON();
     res += Table::formatJSONForDboPtr(this->probe, false);
     
-    res += "}\n";
+    res += "}";
     return res;
 }

@@ -27,6 +27,6 @@ std::string OptionValue::toJSON()
     res += "\"id\" : {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
     res += Table::toJSON();
     res.replace(res.size()-2, 1, "");
-    res += "}\n";
+    res += "}";
     return res;
 }
