@@ -11,6 +11,27 @@ User::~User()
 {
 }
 
+std::string User::toJSON()
+{
+    std::string res = "";
+    res += Table::toJSON();
+    res += Table::formatJSONForDboPtr(this->userRole);
+    res += Table::formatJSONForDboPtr(this->userProfile);
+    res += Table::formatJSONForDboPtr(this->currentOrganization);
+    
+    res += Table::formatJSONForDboCollection(this->userValues, "user_values");
+    res += Table::formatJSONForDboCollection(this->parents, "parents");
+    res += Table::formatJSONForDboCollection(this->children, "children");
+    res += Table::formatJSONForDboCollection(this->historicalActions, "historical_actions");
+    res += Table::formatJSONForDboCollection(this->alertAcks, "alert_acks");
+    res += Table::formatJSONForDboCollection(this->mediaValues, "media_values");
+    res += Table::formatJSONForDboCollection(this->userFields, "user_fields");
+    res += Table::formatJSONForDboCollection(this->organizations, "organizations", false);
+
+    res += "}";
+    return res;
+}
+
 /*template<>
 void QuiSuisJe<User>(const User & x)
 {

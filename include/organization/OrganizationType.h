@@ -45,6 +45,7 @@ public:
 
 
     }
+    virtual std::string toJSON();
 private:
 };
 

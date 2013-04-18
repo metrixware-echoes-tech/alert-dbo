@@ -31,7 +31,9 @@ typedef Wt::Dbo::collection< Wt::Dbo::ptr<User> > Users;
 class User : public Table
 {
     public:
-        User() : Table() {};
+        User() : Table() {
+        this->jsonName = "user";
+        };
         User(std::string firstName, std::string lastName, std::string eMail, std::string password) : Table()
         {
             this->firstName = firstName;
@@ -132,6 +134,7 @@ class User : public Table
 
 
         }
+        virtual std::string toJSON();
 };
 
 // Auth
