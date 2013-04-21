@@ -34,8 +34,7 @@ public:
         mapClassAttributesInts["NB_THREAD"]=&this->nbThread;
         FIELD_FILLER();
         
-        Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToOne, TRIGRAM_ALERT SEP TRIGRAM_ENGINE);
-        
+        Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToOne, TRIGRAM_ALERT SEP TRIGRAM_ENGINE);        
     }
 private:
 

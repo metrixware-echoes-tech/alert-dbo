@@ -45,6 +45,7 @@ const char *Constants::T_ALERT_SEQUENCE_ASE = "T_ALERT_SEQUENCE_ASE";
 const char *Constants::T_ALERT_TRACKING_ATR = "T_ALERT_TRACKING_ATR";
 const char *Constants::T_ALERT_TRACKING_EVENT_ATE = "T_ALERT_TRACKING_EVENT_ATE";
 const char *Constants::T_ENGINE_ENG = "T_ENGINE_ENG";
+const char *Constants::TJ_ENG_ORG = "TJ_ENG_ORG";
 const char *Constants::T_SOURCE_SRC = "T_SOURCE_SRC";
 const char *Constants::T_SOURCE_PARAMETER_SRP = "T_SOURCE_PARAMETER_SRP";
 const char *Constants::T_SOURCE_PARAMETER_VALUE_SPV = "T_SOURCE_PARAMETER_VALUE_SPV";

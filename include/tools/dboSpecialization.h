@@ -35,6 +35,7 @@ class AlertSequence;
 class AlertTracking;
 class AlertTrackingEvent;
 class Engine;
+class EngOrg;
 //class WidgetValue;
 //class WidgetType;
 class Addon;
@@ -136,9 +137,6 @@ namespace Wt
 
     }
 }
-
-
-        
 
 
 #endif	/* DBOSPECIALIZATION_H */

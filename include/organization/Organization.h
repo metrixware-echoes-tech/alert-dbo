@@ -64,7 +64,8 @@ class Organization : public Table
             Wt::Dbo::hasMany(a,
                             users,
                             Wt::Dbo::ManyToOne,
-                            "CURRENT");            
+                            "CURRENT"); 
+            
             Wt::Dbo::belongsTo(a, pack, TRIGRAM_ORGANIZATION SEP TRIGRAM_PACK);
             Wt::Dbo::belongsTo(a, organizationType, TRIGRAM_ORGANIZATION SEP TRIGRAM_ORGANIZATION_TYPE);                  
        }

@@ -98,6 +98,7 @@ Session::Session(std::string connectionParams)
     mapClass<AlertTrackingEvent>(Constants::T_ALERT_TRACKING_EVENT_ATE);
     
     mapClass<Engine>(Constants::T_ENGINE_ENG);
+    mapClass<EngOrg>(Constants::TJ_ENG_ORG);
     
     mapClass<Source>(Constants::T_SOURCE_SRC);
     mapClass<SourceParameter>(Constants::T_SOURCE_PARAMETER_SRP);

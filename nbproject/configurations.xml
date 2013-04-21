@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="84">
+<configurationDescriptor version="88">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -26,6 +26,7 @@
           <itemPath>include/asset/AssetRelease.h</itemPath>
         </logicalFolder>
         <logicalFolder name="engine" displayName="engine" projectFiles="true">
+          <itemPath>include/engine/EngOrg.h</itemPath>
           <itemPath>include/engine/Engine.h</itemPath>
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
@@ -66,6 +67,7 @@
         </logicalFolder>
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
           <itemPath>include/primaryKeys/AccessControlListId.h</itemPath>
+          <itemPath>include/primaryKeys/EngOrgId.h</itemPath>
           <itemPath>include/primaryKeys/InformationId.h</itemPath>
           <itemPath>include/primaryKeys/OptionValueId.h</itemPath>
           <itemPath>include/primaryKeys/OrganizationValueId.h</itemPath>
@@ -154,6 +156,7 @@
           <itemPath>src/asset/AssetRelease.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="engine" displayName="engine" projectFiles="true">
+          <itemPath>src/engine/EngOrg.cpp</itemPath>
           <itemPath>src/engine/Engine.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
@@ -283,6 +286,8 @@
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
         <ccTool>
@@ -295,11 +300,425 @@
         <archiverTool>
         </archiverTool>
       </compileType>
+      <item path="include/addon/Addon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/Alert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertAcknowledge.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertCriteria.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertMediaSpecialization.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertTrackingEvent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/Asset.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/AssetArchitecture.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/AssetDistribution.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/AssetRelease.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/engine/EngOrg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/InformationHistoricalValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/information/InformationValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/information/Syslog.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/SyslogHistory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/media/MediaValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/organization/Organization.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/organization/OrganizationField.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/organization/OrganizationType.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/organization/OrganizationValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/pack/OptionValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/pack/Pack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/pack/PackOption.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/Plugin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SearchParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SearchParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/plugin/SearchType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SearchUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/Source.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SourceParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SourceParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AccessControlListId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/InformationId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/OptionValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/OrganizationValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SearchId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SearchParameterValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SearchUnitId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SourceId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SourceParameterValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/UserHierarchyId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/UserValueId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/WidgetValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/probe/Probe.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/probe/ProbePackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/probe/ProbePackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/tools/AuthApplication.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/Constants.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/EchoesAlertDatabase.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/tools/Enums.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/MacroTrigram.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/MainIncludeFile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/PostgresConnector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/Session.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/SessionPool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/Table.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/unit/InformationSubUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/unit/InformationUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/unit/InformationUnitType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/AccessControlList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/Space.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/User.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserAction.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserField.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserHierarchy.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserHistoricalAction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/user/UserProfile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserRight.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserRole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/Tab.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/TabVersion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/TabWidgetAssociation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/widget/Widget.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/WidgetType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/WidgetValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/addon/Addon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/Alert.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertAcknowledge.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertCriteria.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertMediaSpecialization.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertSequence.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertTracking.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertTrackingEvent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/Asset.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/AssetArchitecture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/AssetDistribution.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/AssetRelease.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/engine/EngOrg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/InformationHistoricalValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/information/InformationValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/information/Syslog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/SyslogHistory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/media/MediaValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/organization/OrganizationField.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/organization/OrganizationType.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/organization/OrganizationValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pack/OptionValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pack/Pack.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pack/PackOption.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/Plugin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SearchParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/plugin/SearchType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/Source.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SourceParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/probe/Probe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/probe/ProbePackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/probe/ProbePackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tools/AuthApplication.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Constants.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Enums.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/PostgresConnector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/SessionPool.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Table.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/unit/InformationSubUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/unit/InformationUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/unit/InformationUnitType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/AccessControlList.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/Space.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/User.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserAction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserField.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserHierarchy.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserHistoricalAction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserProfile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserRight.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserRole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/Tab.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/TabVersion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/TabWidgetAssociation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/widget/Widget.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/WidgetType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/WidgetValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
     <conf name="Debug_SharedObject" type="2">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
         <ccTool>
@@ -319,11 +738,425 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="include/addon/Addon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/Alert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertAcknowledge.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertCriteria.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertMediaSpecialization.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertTrackingEvent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/Asset.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/AssetArchitecture.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/AssetDistribution.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/AssetRelease.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/engine/EngOrg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/InformationHistoricalValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/information/InformationValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/information/Syslog.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/SyslogHistory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/media/MediaValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/organization/Organization.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/organization/OrganizationField.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/organization/OrganizationType.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/organization/OrganizationValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/pack/OptionValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/pack/Pack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/pack/PackOption.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/Plugin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SearchParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SearchParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/plugin/SearchType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SearchUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/Source.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SourceParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SourceParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AccessControlListId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/InformationId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/OptionValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/OrganizationValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SearchId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SearchParameterValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SearchUnitId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SourceId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SourceParameterValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/UserHierarchyId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/UserValueId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/WidgetValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/probe/Probe.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/probe/ProbePackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/probe/ProbePackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/tools/AuthApplication.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/Constants.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/EchoesAlertDatabase.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/tools/Enums.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/MacroTrigram.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/MainIncludeFile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/PostgresConnector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/Session.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/SessionPool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/Table.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/unit/InformationSubUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/unit/InformationUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/unit/InformationUnitType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/AccessControlList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/Space.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/User.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserAction.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserField.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserHierarchy.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserHistoricalAction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/user/UserProfile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserRight.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserRole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/Tab.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/TabVersion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/TabWidgetAssociation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/widget/Widget.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/WidgetType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/WidgetValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/addon/Addon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/Alert.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertAcknowledge.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertCriteria.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertMediaSpecialization.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertSequence.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertTracking.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertTrackingEvent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/Asset.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/AssetArchitecture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/AssetDistribution.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/AssetRelease.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/engine/EngOrg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/InformationHistoricalValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/information/InformationValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/information/Syslog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/SyslogHistory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/media/MediaValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/organization/OrganizationField.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/organization/OrganizationType.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/organization/OrganizationValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pack/OptionValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pack/Pack.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pack/PackOption.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/Plugin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SearchParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/plugin/SearchType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/Source.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SourceParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/probe/Probe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/probe/ProbePackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/probe/ProbePackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tools/AuthApplication.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Constants.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Enums.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/PostgresConnector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/SessionPool.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Table.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/unit/InformationSubUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/unit/InformationUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/unit/InformationUnitType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/AccessControlList.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/Space.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/User.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserAction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserField.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserHierarchy.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserHistoricalAction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserProfile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserRight.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserRole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/Tab.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/TabVersion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/TabWidgetAssociation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/widget/Widget.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/WidgetType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/WidgetValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
     <conf name="Release_SharedObject" type="2">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
         <ccTool>
@@ -345,6 +1178,418 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="include/addon/Addon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/Alert.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertAcknowledge.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertCriteria.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertMediaSpecialization.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertTrackingEvent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/AlertValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/Asset.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/AssetArchitecture.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/AssetDistribution.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/asset/AssetRelease.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/engine/EngOrg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/InformationHistoricalValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/information/InformationValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/information/Syslog.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/SyslogHistory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/media/MediaValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/organization/Organization.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/organization/OrganizationField.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/organization/OrganizationType.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/organization/OrganizationValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/pack/OptionValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/pack/Pack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/pack/PackOption.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/Plugin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SearchParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SearchParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/plugin/SearchType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SearchUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/Source.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SourceParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/plugin/SourceParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AccessControlListId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/InformationId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/OptionValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/OrganizationValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SearchId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SearchParameterValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SearchUnitId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SourceId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/SourceParameterValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/UserHierarchyId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/UserValueId.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/primaryKeys/WidgetValueId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/probe/Probe.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/probe/ProbePackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/probe/ProbePackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/tools/AuthApplication.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/Constants.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/EchoesAlertDatabase.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/tools/Enums.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/MacroTrigram.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/MainIncludeFile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/PostgresConnector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/Session.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/SessionPool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/Table.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/unit/InformationSubUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/unit/InformationUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/unit/InformationUnitType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/AccessControlList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/Space.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/User.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserAction.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserField.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserHierarchy.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserHistoricalAction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/user/UserProfile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserRight.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserRole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/user/UserValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/Tab.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/TabVersion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/TabWidgetAssociation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/widget/Widget.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/WidgetType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/widget/WidgetValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/addon/Addon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/Alert.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertAcknowledge.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertCriteria.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertMediaSpecialization.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertSequence.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertTracking.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertTrackingEvent.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/alert/AlertValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/Asset.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/AssetArchitecture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/AssetDistribution.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/asset/AssetRelease.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/engine/EngOrg.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/InformationHistoricalValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/information/InformationValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/information/Syslog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/SyslogHistory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/media/MediaValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/organization/OrganizationField.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/organization/OrganizationType.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/organization/OrganizationValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pack/OptionValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pack/Pack.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/pack/PackOption.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/Plugin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SearchParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/plugin/SearchType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/Source.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/plugin/SourceParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/probe/Probe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/probe/ProbePackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/probe/ProbePackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tools/AuthApplication.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Constants.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Enums.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/PostgresConnector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/SessionPool.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tools/Table.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/unit/InformationSubUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/unit/InformationUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/unit/InformationUnitType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/AccessControlList.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/Space.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/User.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserAction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserField.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserHierarchy.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserHistoricalAction.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserProfile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserRight.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserRole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/user/UserValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/Tab.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/TabVersion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/TabWidgetAssociation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/widget/Widget.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/WidgetType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/widget/WidgetValue.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

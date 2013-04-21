@@ -119,6 +119,7 @@
 #include "alert/AlertTrackingEvent.h"
 
 #include "engine/Engine.h"
+#include "engine/EngOrg.h"
 
 #include "plugin/Source.h"
 #include "plugin/SourceParameter.h"
