@@ -117,6 +117,11 @@
 #include "alert/AlertSequence.h"
 #include "alert/AlertTracking.h"
 #include "alert/AlertTrackingEvent.h"
+#include "alert/AlertMessageDefinition.h"
+#include "alert/AlertMessageAliasAsset.h"
+#include "alert/AlertMessageAliasPlugin.h"
+#include "alert/AlertMessageAliasInformation.h"
+#include "alert/AlertMessageAliasInformationCriteria.h"
 
 #include "engine/Engine.h"
 #include "engine/EngOrg.h"

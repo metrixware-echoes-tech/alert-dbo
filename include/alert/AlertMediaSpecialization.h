@@ -21,6 +21,7 @@ public:
     Wt::WDateTime lastSend; //last time the alert was send to a media
     bool notifEndOfAlert;
     int snoozeDuration;
+    Wt::WString message;
     
     Wt::Dbo::ptr<Alert> alert;
     Wt::Dbo::ptr<MediaValue> mediaValue;
@@ -30,7 +31,9 @@ public:
     {
         mapClassAttributesBools["NOTIF_END_OF_ALERT"]=&this->notifEndOfAlert;
         mapClassAttributesInts["SNOOZE"]=&this->snoozeDuration;
-        mapClassAttributesDates["LAST_SEND"]=&this->lastSend;                 
+        mapClassAttributesDates["LAST_SEND"]=&this->lastSend;
+        mapClassAttributesStrings["MESSAGE"]=&this->message;
+        
         FIELD_FILLER();
         
         Wt::Dbo::belongsTo(a,alert, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_ALERT);

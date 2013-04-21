@@ -20,6 +20,7 @@ class MediaValue : public Table
         
         static std::string TRIGRAM;
         Wt::WString value;
+        bool isDefault;
 
         Wt::Dbo::ptr<Media> media;
         Wt::Dbo::ptr<User> user;
@@ -30,7 +31,8 @@ class MediaValue : public Table
         template<class Action>
         void persist(Action& a)
         {
-            mapClassAttributesStrings["VALUE"]=&this->value;             
+            mapClassAttributesStrings["VALUE"]=&this->value;
+            mapClassAttributesBools["IS_DEFAULT"]=&this->isDefault;
             FIELD_FILLER();
 
             Wt::Dbo::belongsTo(a,media,TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
