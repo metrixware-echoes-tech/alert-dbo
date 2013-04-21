@@ -40,6 +40,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/AlertAcknowledge.o \
 	${OBJECTDIR}/src/alert/AlertCriteria.o \
 	${OBJECTDIR}/src/alert/AlertMediaSpecialization.o \
+	${OBJECTDIR}/src/alert/AlertMessageAliasAsset.o \
+	${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o \
+	${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o \
+	${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o \
+	${OBJECTDIR}/src/alert/AlertMessageDefinition.o \
 	${OBJECTDIR}/src/alert/AlertSequence.o \
 	${OBJECTDIR}/src/alert/AlertTracking.o \
 	${OBJECTDIR}/src/alert/AlertTrackingEvent.o \
@@ -155,6 +160,31 @@ ${OBJECTDIR}/src/alert/AlertMediaSpecialization.o: src/alert/AlertMediaSpecializ
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMediaSpecialization.o src/alert/AlertMediaSpecialization.cpp
+
+${OBJECTDIR}/src/alert/AlertMessageAliasAsset.o: src/alert/AlertMessageAliasAsset.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasAsset.o src/alert/AlertMessageAliasAsset.cpp
+
+${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o: src/alert/AlertMessageAliasInformation.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o src/alert/AlertMessageAliasInformation.cpp
+
+${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o: src/alert/AlertMessageAliasInformationCriteria.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o src/alert/AlertMessageAliasInformationCriteria.cpp
+
+${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o: src/alert/AlertMessageAliasPlugin.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o src/alert/AlertMessageAliasPlugin.cpp
+
+${OBJECTDIR}/src/alert/AlertMessageDefinition.o: src/alert/AlertMessageDefinition.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} $@.d
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageDefinition.o src/alert/AlertMessageDefinition.cpp
 
 ${OBJECTDIR}/src/alert/AlertSequence.o: src/alert/AlertSequence.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert

@@ -324,6 +324,31 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="include/alert/AlertMessageAliasAsset.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageAliasInformation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageAliasInformationCriteria.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageAliasPlugin.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageDefinition.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
@@ -562,6 +587,31 @@
       <item path="src/alert/AlertCriteria.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertMediaSpecialization.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasAsset.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasInformation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasInformationCriteria.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasPlugin.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageDefinition.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -762,6 +812,31 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="include/alert/AlertMessageAliasAsset.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageAliasInformation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageAliasInformationCriteria.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageAliasPlugin.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageDefinition.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
@@ -1000,6 +1075,31 @@
       <item path="src/alert/AlertCriteria.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertMediaSpecialization.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasAsset.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasInformation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasInformationCriteria.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasPlugin.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageDefinition.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -1202,6 +1302,31 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="include/alert/AlertMessageAliasAsset.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageAliasInformation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageAliasInformationCriteria.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageAliasPlugin.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/alert/AlertMessageDefinition.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
@@ -1440,6 +1565,31 @@
       <item path="src/alert/AlertCriteria.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertMediaSpecialization.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasAsset.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasInformation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasInformationCriteria.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageAliasPlugin.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/alert/AlertMessageDefinition.cpp"
             ex="false"
             tool="1"
             flavor2="0">
