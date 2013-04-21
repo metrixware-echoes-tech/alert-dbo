@@ -1,59 +1,43 @@
-#include <Wt/WApplication>
-#include <Wt/WContainerWidget>
-#include <Wt/WServer>
+/* 
+ * DBO Create Table
+ * @author ECHOES Technologies (FPO)
+ * @date 21/04/2013
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2013 BY ECHOES TECHNOLGIES SAS
+ * 
+ */
 
-#include "tools/MainIncludeFile.h"
+#include <Wt/WLogger>
 
-//#include "PostgresConnector.h"
-#include "tools/AuthApplication.h"
-#include "tools/Session.h"
+#include "tools/SessionPool.h"
 
-Wt::WApplication *createApplication(const Wt::WEnvironment& env)
+using namespace std;
+
+SessionPool* SessionPool::instance = 0;
+std::string SessionPool::credentials = "";
+boost::mutex SessionPool::mutex;
+
+int main(int argc, char** argv)
 {
-    return new AuthApplication(env);
+    Session sessionThread("hostaddr=172.16.3.102 port=5432 dbname=echoes user=echoes password=toto");
+    
+    try 
+    {
+        Wt::Dbo::Transaction transaction(sessionThread);
+
+        sessionThread.createTables();
+        
+        transaction.commit();
+    }
+    catch (Wt::Dbo::Exception e)
+    {
+        Wt::log("error") << e.what();
+    }
+
+    return 0;
 }
 
-int main(int argc, char **argv)
-{
-    try
-    {
-
-
-        Wt::WServer server(argv[0]);
-
-        server.setServerConfiguration(argc, argv, WTHTTP_CONFIGURATION);
-        server.addEntryPoint(Wt::Application, createApplication,"", "/favicon.ico");
-
-        Session::configureAuth();
-
-        if (server.start())
-        {
-            Wt::WServer::waitForShutdown();
-            server.stop();
-        }
-    }
-    catch (Wt::WServer::Exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cerr << "exception: " << e.what() << std::endl;
-    }
-}
-//
-//
-//
-///*
-//
-//    PostgresConnector *pc = new PostgresConnector("echoes","echoes","127.0.0.1","5432","toto");
-//    Wt::Dbo::Session *maSession = pc->getSession();
-//    pc->generateModel(false);
-//
-//
-//
-//int main(int argc, char **argv)
-//{
-//    run();
-//}
-//*/
