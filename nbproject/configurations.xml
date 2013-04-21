@@ -236,6 +236,7 @@
           <itemPath>src/widget/WidgetValue.cpp</itemPath>
         </logicalFolder>
       </logicalFolder>
+      <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
