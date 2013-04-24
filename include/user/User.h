@@ -31,16 +31,8 @@ typedef Wt::Dbo::collection< Wt::Dbo::ptr<User> > Users;
 class User : public Table
 {
     public:
-        User() : Table() {
-        this->jsonName = "user";
-        };
-        User(std::string firstName, std::string lastName, std::string eMail, std::string password) : Table()
-        {
-            this->firstName = firstName;
-            this->lastName = lastName;
-            this->eMail = eMail;
-            this->password = password;
-        };
+        User();
+        User(std::string firstName, std::string lastName, std::string eMail, std::string password, std::string token);
         virtual ~User();
 
         static std::string TRIGRAM;
@@ -49,6 +41,7 @@ class User : public Table
         Wt::WString lastName;
         Wt::WString eMail;
         Wt::WString password;
+        Wt::WString token;
 
         static std::string getName();
 
@@ -81,6 +74,7 @@ class User : public Table
             mapClassAttributesStrings["LAST_NAME"]=&this->lastName;
             mapClassAttributesStrings["MAIL"]=&this->eMail;
             mapClassAttributesStrings["PWD"]=&this->password;
+            mapClassAttributesStrings["TOKEN"]=&this->token;
             
             FIELD_FILLER();
             
