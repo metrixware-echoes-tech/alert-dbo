@@ -23,7 +23,6 @@ class Probe : public Table
         Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
 
         Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
-        Wt::Dbo::collection<Wt::Dbo::ptr<SyslogHistory> > syslogsHistory;
         Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
 
         template<class Action>
@@ -39,12 +38,7 @@ class Probe : public Table
                              syslogs,
                              Wt::Dbo::ManyToOne,
                              TRIGRAM_SYSLOG SEP TRIGRAM_PROBE);
-            
-            Wt::Dbo::hasMany(a,
-                             syslogsHistory,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_SYSLOG_HISTORY SEP TRIGRAM_PROBE);
-            
+
             Wt::Dbo::hasMany(a,
                              assets,
                              Wt::Dbo::ManyToOne,

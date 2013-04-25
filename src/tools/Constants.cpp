@@ -59,7 +59,6 @@ const char *Constants::T_ASSET_ARCHITECTURE_ASA = "T_ASSET_ARCHITECTURE_ASA";
 const char *Constants::T_ASSET_DISTRIBUTION_ASD = "T_ASSET_DISTRIBUTION_ASD";
 const char *Constants::T_ASSET_RELEASE_ASR = "T_ASSET_RELEASE_ASR";
 const char *Constants::T_SYSLOG_SLO = "T_SYSLOG_SLO";
-const char *Constants::T_SYSLOG_HISTORY_SLH = "T_SYSLOG_HISTORY_SLH";
 const char *Constants::T_SEARCH_SEA = "T_SEARCH_SEA";
 const char *Constants::T_SEARCH_TYPE_STY = "T_SEARCH_TYPE_STY";
 const char *Constants::T_SEARCH_PARAMETER_SEP = "T_SEARCH_PARAMETER_SEP";

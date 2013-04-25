@@ -142,7 +142,6 @@
 #include "plugin/SearchUnit.h"
 
 #include "information/Syslog.h"
-#include "information/SyslogHistory.h"
 
 #include "pack/Pack.h"
 #include "pack/Option.h"
