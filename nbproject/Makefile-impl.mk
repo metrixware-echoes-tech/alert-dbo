@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=dbo
 
 # Active Configuration
-DEFAULTCONF=Static_Lib
+DEFAULTCONF=Debug_SharedObject
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Static_Lib Debug_SharedObject Release_SharedObject 
+ALLCONFS=Debug_SharedObject Release_SharedObject Create_Tables 
 
 
 # build
