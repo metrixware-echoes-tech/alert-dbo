@@ -1,3 +1,4 @@
-.dep.inc
+#Source: https://netbeans.org/kb/docs/java/import-eclipse.html#versioning
 /build/
 /dist/
+/nbproject/private/

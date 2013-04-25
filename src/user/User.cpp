@@ -7,6 +7,20 @@ DBO_INSTANTIATE_TEMPLATES(User)
 
 std::string User::TRIGRAM(TRIGRAM_USER);
 
+User::User() : Table()
+{
+    this->jsonName = "user";
+}
+
+User::User(std::string firstName, std::string lastName, std::string eMail, std::string password, std::string token) : Table()
+{
+    this->firstName = firstName;
+    this->lastName = lastName;
+    this->eMail = eMail;
+    this->password = password;
+    this->token = token;
+}
+
 User::~User()
 {
 }
