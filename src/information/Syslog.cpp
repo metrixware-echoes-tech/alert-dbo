@@ -27,6 +27,8 @@ std::string Syslog::toJSON()
     std::string res = "";
     res += Table::toJSON();
     res += Table::formatJSONForDboPtr(this->probe, false);
+    res += Table::formatJSONForDboCollection(this->values, "information_values");
+    res += Table::formatJSONForDboCollection(this->historicalValues, "historical_information_values", false);
     
     res += "}";
     return res;

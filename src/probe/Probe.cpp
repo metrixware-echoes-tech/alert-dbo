@@ -20,7 +20,6 @@ std::string Probe::toJSON()
     res += this->probePackageParameter.modify()->toJSON();
     
     res += Table::formatJSONForDboCollection(this->syslogs, "syslogs");
-    res += Table::formatJSONForDboCollection(this->syslogsHistory, "syslogs_history");
     res += Table::formatJSONForDboCollection(this->assets, "assets");
     
     

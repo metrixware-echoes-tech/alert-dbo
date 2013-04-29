@@ -115,7 +115,6 @@ Session::Session(std::string connectionParams)
     mapClass<AssetRelease>(Constants::T_ASSET_RELEASE_ASR);
     
     mapClass<Syslog>(Constants::T_SYSLOG_SLO);
-    mapClass<SyslogHistory>(Constants::T_SYSLOG_HISTORY_SLH);
     
     mapClass<Search>(Constants::T_SEARCH_SEA);
     mapClass<SearchType>(Constants::T_SEARCH_TYPE_STY);

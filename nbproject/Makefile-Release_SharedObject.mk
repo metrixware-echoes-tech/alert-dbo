@@ -60,7 +60,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
 	${OBJECTDIR}/src/information/InformationValue.o \
 	${OBJECTDIR}/src/information/Syslog.o \
-	${OBJECTDIR}/src/information/SyslogHistory.o \
 	${OBJECTDIR}/src/media/Media.o \
 	${OBJECTDIR}/src/media/MediaValue.o \
 	${OBJECTDIR}/src/organization/Organization.o \
@@ -260,11 +259,6 @@ ${OBJECTDIR}/src/information/Syslog.o: src/information/Syslog.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Syslog.o src/information/Syslog.cpp
-
-${OBJECTDIR}/src/information/SyslogHistory.o: src/information/SyslogHistory.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/SyslogHistory.o src/information/SyslogHistory.cpp
 
 ${OBJECTDIR}/src/media/Media.o: src/media/Media.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/media
