@@ -38,7 +38,7 @@ struct AlertMessageAliasAssetId
 
 inline std::ostream& operator<< (std::ostream& o, const AlertMessageAliasAssetId& pk)
 {
-    return o <<  pk.userRole.id()
+    return o << "\n\t\t\"user_role_id\": " << pk.userRole.id()
              << ",\n\t\t\"asset_id\": " << pk.asset.id()
              << ",\n\t\t\"media_id\": " << pk.media.id() ;
 }

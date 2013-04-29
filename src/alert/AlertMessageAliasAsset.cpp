@@ -24,10 +24,10 @@ AlertMessageAliasAsset::~AlertMessageAliasAsset()
 
 std::string AlertMessageAliasAsset::toJSON()
 {
-    std::string res = "";
+    std::string res = "{\n";
     res += Table::toJSON();
-    
-    
+    res += "\"id\" : {" + boost::lexical_cast<std::string>(this->pk) + " }\n";
     res += "}\n";
     return res;
 }
+
