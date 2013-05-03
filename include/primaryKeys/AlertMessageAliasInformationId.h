@@ -38,9 +38,9 @@ struct AlertMessageAliasInformationId
 
 inline std::ostream& operator<< (std::ostream& o, const AlertMessageAliasInformationId& pk)
 {
-    return o <<  pk.userRole.id()
-             << ",\n\t\t\"information_id\": " << pk.information.id()
-             << ",\n\t\t\"media_id\": " << pk.media.id() ;
+    return o << "\"role_id\": "  << pk.userRole.id()
+             << ",\n" << pk.information.id()
+             << ",\n\"media_id\": " << pk.media.id() ;
 }
 
 namespace Wt

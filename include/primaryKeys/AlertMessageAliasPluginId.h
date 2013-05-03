@@ -38,9 +38,9 @@ struct AlertMessageAliasPluginId
 
 inline std::ostream& operator<< (std::ostream& o, const AlertMessageAliasPluginId& pk)
 {
-    return o <<  pk.userRole.id()
-             << ",\n\t\t\"plugin_id\": " << pk.plugin.id()
-             << ",\n\t\t\"media_id\": " << pk.media.id() ;
+    return o << "\"plugin_id\": " << pk.plugin.id()
+             << ",\n\"role_id\": " << pk.userRole.id()
+             << ",\n\"media_id\": " << pk.media.id() ;
 }
 
 namespace Wt
