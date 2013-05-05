@@ -24,10 +24,9 @@ AlertMessageAliasInformationCriteria::~AlertMessageAliasInformationCriteria()
 
 std::string AlertMessageAliasInformationCriteria::toJSON()
 {
-    std::string res = "";
+    std::string res = "{\n";
     res += Table::toJSON();
-    
-    
+    res += "\"id\" : {\n" + boost::lexical_cast<std::string>(this->pk) + " }\n";
     res += "}\n";
     return res;
 }

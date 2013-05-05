@@ -39,10 +39,10 @@ struct AlertMessageAliasInformationCriteriaId
 
 inline std::ostream& operator<< (std::ostream& o, const AlertMessageAliasInformationCriteriaId& pk)
 {
-    return o <<  pk.userRole.id()
-             << ",\n\t\t\"information_id\": " << pk.information.id()
-             << ",\n\t\t\"alert_criteria_id\": " << pk.alertCriteria.id()
-             << ",\n\t\t\"media_id\": " << pk.media.id() ;
+    return o << "\"role_id\": "  << pk.userRole.id()
+             << ",\n" << pk.information.id()
+             << ",\n\"media_id\": " << pk.media.id() 
+             << ",\n\"alert_criteria_id\": " << pk.alertCriteria.id() ;
 }
 
 namespace Wt
@@ -56,7 +56,7 @@ namespace Wt
             field(a, aicid.userRole, TRIGRAM_USER_ROLE ID);
             field(a, aicid.information, TRIGRAM_INFORMATION ID);
             field(a, aicid.alertCriteria, TRIGRAM_ALERT_CRITERIA ID);
-            field(a, aicid.media, TRIGRAM_MEDIA SEP ID);
+            field(a, aicid.media, TRIGRAM_MEDIA ID);
         }
         template<>
         struct dbo_traits<AlertMessageAliasInformationCriteria> : public dbo_default_traits

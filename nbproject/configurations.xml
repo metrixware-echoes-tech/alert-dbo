@@ -71,6 +71,11 @@
         </logicalFolder>
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
           <itemPath>include/primaryKeys/AccessControlListId.h</itemPath>
+          <itemPath>include/primaryKeys/AlertMessageAliasAssetId.h</itemPath>
+          <itemPath>include/primaryKeys/AlertMessageAliasInformationCriteriaId.h</itemPath>
+          <itemPath>include/primaryKeys/AlertMessageAliasInformationId.h</itemPath>
+          <itemPath>include/primaryKeys/AlertMessageAliasPluginId.h</itemPath>
+          <itemPath>include/primaryKeys/AlertMessageDefinitionId.h</itemPath>
           <itemPath>include/primaryKeys/EngOrgId.h</itemPath>
           <itemPath>include/primaryKeys/InformationId.h</itemPath>
           <itemPath>include/primaryKeys/OptionValueId.h</itemPath>
@@ -447,6 +452,31 @@
             flavor2="0">
       </item>
       <item path="include/primaryKeys/AccessControlListId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasAssetId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasInformationCriteriaId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasInformationId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasPluginId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageDefinitionId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -934,6 +964,31 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="include/primaryKeys/AlertMessageAliasAssetId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasInformationCriteriaId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasInformationId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasPluginId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageDefinitionId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/InformationId.h"
@@ -1389,6 +1444,31 @@
             flavor2="0">
       </item>
       <item path="include/primaryKeys/AccessControlListId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasAssetId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasInformationCriteriaId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasInformationId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageAliasPluginId.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/primaryKeys/AlertMessageDefinitionId.h"
             ex="false"
             tool="3"
             flavor2="0">
