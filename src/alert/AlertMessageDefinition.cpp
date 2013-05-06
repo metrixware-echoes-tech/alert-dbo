@@ -26,9 +26,9 @@ std::string AlertMessageDefinition::toJSON()
 {
     std::string res = "";
     res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->alert);
-    res += Table::formatJSONForDboPtr(this->userRole);
-    res += Table::formatJSONForDboPtr(this->media);
+    res += Table::formatJSONForDboPtr(this->pk.alert);
+    res += Table::formatJSONForDboPtr(this->pk.userRole);
+    res += Table::formatJSONForDboPtr(this->pk.media);
     res += "}\n";
     return res;
 }

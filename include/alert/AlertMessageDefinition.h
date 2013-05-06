@@ -13,39 +13,34 @@
 
 #include "primaryKeys/AlertMessageDefinitionId.h"
 
-class AlertMessageDefinition : public Table {
-public:
-    AlertMessageDefinition();
-    AlertMessageDefinition(const AlertMessageDefinition& orig);
-    virtual ~AlertMessageDefinition();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString message;
-    bool isCustom;
-    
-    Wt::Dbo::ptr<Alert> alert;
-    Wt::Dbo::ptr<UserRole> userRole;
-    Wt::Dbo::ptr<Media> media;
-    
-    AlertMessageDefinitionId pk;
-    
-    
-    
-    template<class Action>
-    void persist(Action& a)
-    {
-        mapClassAttributesStrings["MESSAGE"]=&this->message;
-        mapClassAttributesBools["IS_CUSTOM"]=&this->isCustom;
-        FIELD_FILLER();
-        
-        Wt::Dbo::id (a, pk, TRIGRAM_ALERT_MESSAGE_DEFINITION SEP ID);
+class AlertMessageDefinition : public Table
+{
+    public:
+        AlertMessageDefinition();
+        AlertMessageDefinition(const AlertMessageDefinition& orig);
+        virtual ~AlertMessageDefinition();
 
-    }
-    
-    virtual std::string toJSON();
-    
-private:
+        static std::string TRIGRAM;
+
+        Wt::WString message;
+        bool isCustom;
+
+        AlertMessageDefinitionId pk;
+
+        template<class Action>
+        void persist(Action& a)
+        {
+            mapClassAttributesStrings["MESSAGE"]=&this->message;
+            mapClassAttributesBools["IS_CUSTOM"]=&this->isCustom;
+            FIELD_FILLER();
+
+            Wt::Dbo::id (a, pk, TRIGRAM_ALERT_MESSAGE_DEFINITION SEP ID);
+
+        }
+
+        virtual std::string toJSON();
+
+    private:
 
 };
 
