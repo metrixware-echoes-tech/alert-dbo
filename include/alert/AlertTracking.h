@@ -20,6 +20,8 @@ class AlertTracking : public Table
         
         static std::string TRIGRAM;
         
+        boost::optional<Wt::WString> content;
+        
         
         boost::optional<Wt::WString> senderSrv;
         Wt::WDateTime sendDate;
@@ -37,6 +39,7 @@ class AlertTracking : public Table
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesStringsNn["CONTENT"]=&this->content;
             mapClassAttributesStringsNn["SENDER_SRV"]=&this->senderSrv;
             mapClassAttributesStringsNn["RECEIVER_SRV"]=&this->receiverSrv;
             mapClassAttributesStringsNn["ACK_GW"]=&this->ackGw;

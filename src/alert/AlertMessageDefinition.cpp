@@ -25,6 +25,8 @@ AlertMessageDefinition::~AlertMessageDefinition()
 std::string AlertMessageDefinition::toJSON()
 {
     std::string res = "";
+    res = "{\n\t";
+    res += "\"id\" : {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
     res += Table::toJSON();
     res += Table::formatJSONForDboPtr(this->pk.alert);
     res += Table::formatJSONForDboPtr(this->pk.userRole);

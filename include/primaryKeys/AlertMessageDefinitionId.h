@@ -36,7 +36,7 @@ struct AlertMessageDefinitionId
 
 inline std::ostream& operator<< (std::ostream& o, const AlertMessageDefinitionId& pk)
 {
-    return o <<  pk.alert.id()
+    return o << "\"alert_id\": " << pk.alert.id()
              << ",\n\t\t\"user_role\": " << pk.userRole.id()
              << ",\n\t\t\"media_id\": " << pk.media.id() ;
 }
