@@ -21,6 +21,8 @@ class MediaValue : public Table
         static std::string TRIGRAM;
         Wt::WString value;
         bool isDefault;
+        Wt::WString token;
+        bool isConfirmed;
 
         Wt::Dbo::ptr<Media> media;
         Wt::Dbo::ptr<User> user;
@@ -33,6 +35,8 @@ class MediaValue : public Table
         {
             mapClassAttributesStrings["VALUE"]=&this->value;
             mapClassAttributesBools["IS_DEFAULT"]=&this->isDefault;
+            mapClassAttributesStrings["TOKEN"]=&this->token;
+            mapClassAttributesBools["IS_CONFIRMED"]=&this->isConfirmed;
             FIELD_FILLER();
 
             Wt::Dbo::belongsTo(a,media,TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
