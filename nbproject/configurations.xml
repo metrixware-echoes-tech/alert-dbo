@@ -1334,9 +1334,11 @@
           <linkerLibItems>
             <linkerLibLibItem>dbo</linkerLibLibItem>
             <linkerLibLibItem>wtdbopostgres</linkerLibLibItem>
+            <linkerLibLibItem>wtdbo</linkerLibLibItem>
             <linkerLibLibItem>wt</linkerLibLibItem>
             <linkerLibLibItem>boost_signals</linkerLibLibItem>
             <linkerLibLibItem>boost_system</linkerLibLibItem>
+            <linkerLibLibItem>stdc++</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
