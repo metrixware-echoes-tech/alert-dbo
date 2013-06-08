@@ -315,6 +315,59 @@ int main(int argc, char** argv)
         Wt::log("error") << e.what();
     }
 
-    return 0;
+
+    try 
+    {
+        Wt::Dbo::Transaction transaction(session);
+
+        Wt::log("info") << "Trigger IVA to IVH Creation";
+
+        session.execute
+        (
+" CREATE OR REPLACE FUNCTION trg_iva_ihv()\n"
+"   RETURNS trigger AS\n"
+" $BODY$\n"
+" BEGIN\n"
+"   INSERT INTO \"T_INFORMATION_HISTORICAL_VALUE_IHV\" VALUES \n"
+"     (\n"
+"       NEW.\"IVA_ID\",\n"
+"       0,\n"
+"       NEW.\"IVA_VALUE\",\n"
+"       NEW.\"IVA_CREA_DATE\",\n"
+"       NEW.\"IVA_DELETE\",\n"
+"       NEW.\"IVA_LINE_NUM\",\n"
+"       NEW.\"IVA_LOT_NUM\",\n"
+"       NEW.\"IVA_STATE\",\n"
+"       NEW.\"IVA_AST_AST_ID\",\n"
+"       NEW.\"IVA_SLO_SLO_ID\",\n"
+"       NEW.\"SEA_ID\",\n"
+"       NEW.\"SRC_ID\",\n"
+"       NEW.\"PLG_ID_PLG_ID\",\n"
+"       NEW.\"INF_VALUE_NUM\",\n"
+"       NEW.\"INU_ID_INU_ID\"\n"
+"     );\n"
+" RETURN NULL;\n"
+" END;\n"
+" $BODY$\n"
+" LANGUAGE plpgsql VOLATILE;"
+        );
+
+        session.execute
+        (
+" CREATE TRIGGER insert_iva\n"
+"   AFTER INSERT\n"
+"   ON \"T_INFORMATION_VALUE_IVA\"\n"
+"   FOR EACH ROW\n"
+"   EXECUTE PROCEDURE trg_iva_ihv();"
+        );
+
+        transaction.commit();
+    }
+    catch (std::exception& e)
+    {
+        Wt::log("error") << e.what();
+    }
+
+    return EXIT_SUCCESS;
 }
 
