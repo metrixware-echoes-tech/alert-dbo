@@ -40,7 +40,8 @@ void Session::configureAuth()
 
 
 Session::Session(std::string connectionParams)
-: connection_(connectionParams)
+: connection_(connectionParams),
+  users_(*this)
 {
     //"hostaddr=127.0.0.1 port=5432 dbname=echoes user=echoes password=toto"
 //    connection_.setProperty("show-queries", "true");
@@ -139,17 +140,17 @@ Session::Session(std::string connectionParams)
 //    mapClass<AuthInfo::AuthIdentityType>("T_AUTH_IDENTITY_AID");
 //    mapClass<AuthInfo::AuthTokenType>("T_AUTH_TOKEN_ATO");nn
 
-    users_ = new UserDatabase(*this);
+//    users_(*this);
 }
 
 Session::~Session()
 {
-    delete users_;
+
 }
 
 UserDatabase& Session::users()
 {
-    return *users_;
+    return users_;
 }
 
 Wt::Dbo::ptr<User> Session::user() const
@@ -157,7 +158,7 @@ Wt::Dbo::ptr<User> Session::user() const
     if (login_.loggedIn())
     {
 //        users_ = new UserDatabase(*this);
-        Wt::Dbo::ptr<AuthInfo> authInfo = users_->find(login_.user());
+        Wt::Dbo::ptr<AuthInfo> authInfo = users_.find(login_.user());
         return authInfo->user();
     }
     else

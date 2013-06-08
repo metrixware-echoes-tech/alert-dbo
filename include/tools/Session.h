@@ -41,7 +41,7 @@ public:
 
 private:
   Wt::Dbo::backend::Postgres connection_;
-  UserDatabase *users_;
+  UserDatabase users_;
   Wt::Auth::Login login_;
 };
 
