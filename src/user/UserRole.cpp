@@ -16,6 +16,7 @@ UserRole::~UserRole()
 std::string UserRole::toJSON()
 {
     std::string res = "";
+    res += "\t";
     res += Table::toJSON();
 
     res += Table::formatJSONForDboCollection(this->users, "users", false);
