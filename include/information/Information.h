@@ -6,7 +6,7 @@
 
 #include "tools/MainIncludeFile.h"
 
-#include "primaryKeys/InformationId.h"
+//#include "primaryKeys/InformationId.h"
 
 class Information2 : public Table
 {
@@ -17,9 +17,11 @@ class Information2 : public Table
         
         static std::string TRIGRAM;
         
-        InformationId pk;
+//        InformationId pk;
         
         Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<InformationHistoricalValue> > informationHistoricalValues;
+        Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > informationValues;
         
    //     Wt::WString name;
         boost::optional<Wt::WString> desc;
@@ -34,12 +36,20 @@ class Information2 : public Table
             mapClassAttributesStringsNn["DESC"]=&this->desc;
             mapClassAttributesStringsNn["CALCULATE"]=&this->calculate;
             FIELD_FILLER();
-            Wt::Dbo::id(a,pk,"PRIMARY_KEY");
+//            Wt::Dbo::id(a,pk,"PRIMARY_KEY");
             
             Wt::Dbo::hasMany(a,
                              alertValues,
                              Wt::Dbo::ManyToOne,
                              TRIGRAM_ALERT_VALUE SEP TRIGRAM_INFORMATION);
+            Wt::Dbo::hasMany(a,
+                             informationHistoricalValues,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_INFORMATION);
+            Wt::Dbo::hasMany(a,
+                             informationValues,
+                             Wt::Dbo::ManyToOne,
+                             TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_INFORMATION);
         }    
 
         virtual std::string toJSON();

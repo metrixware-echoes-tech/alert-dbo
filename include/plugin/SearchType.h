@@ -12,6 +12,8 @@
 
 #include "tools/MainIncludeFile.h"
 
+class Search;
+
 class SearchType : public Table {
 public:
     SearchType();

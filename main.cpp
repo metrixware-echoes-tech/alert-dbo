@@ -23,7 +23,8 @@ boost::mutex SessionPool::mutex;
 
 int main(int argc, char** argv)
 {
-    Session session("hostaddr=172.16.3.202 port=5432 dbname=echoes user=echoes password=toto");
+//    Session session("hostaddr=172.16.3.202 port=5432 dbname=echoes user=echoes password=toto");
+    Session session("hostaddr=127.0.0.1 port=5432 dbname=echoes user=echoes password=toto");
     
     try 
     {

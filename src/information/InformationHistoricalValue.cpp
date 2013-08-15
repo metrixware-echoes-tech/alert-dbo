@@ -19,7 +19,7 @@ std::string InformationHistoricalValue::toJSON()
     res += Table::toJSON();
     res += Table::formatJSONForDboPtr(this->asset);
     res += Table::formatJSONForDboPtr(this->syslog);
-    res += Table::formatJSONForDboPtr(this->information , false);
+//    res += Table::formatJSONForDboPtr(this->information , false);
     
     res += "}";
     return res;

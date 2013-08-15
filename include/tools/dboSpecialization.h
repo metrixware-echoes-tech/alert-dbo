@@ -18,6 +18,7 @@ class UserRole;
 class UserRight;
 class Space;
 class AccessControlList;
+class Information2;
 class InformationUnit;
 class InformationSubUnit;
 class InformationUnitType;
@@ -54,7 +55,6 @@ class Organization;
 class OrganizationType;
 class OrganizationValue;
 class OrganizationField;
-class Information2;
 class InformationValue;
 class InformationHistoricalValue;
 class Probe;
@@ -109,6 +109,7 @@ namespace Wt
         
         TEMPLATE_TRIGRAM(Engine,TRIGRAM_ENGINE ID)
 
+        TEMPLATE_TRIGRAM(Information2,TRIGRAM_INFORMATION ID)
         TEMPLATE_TRIGRAM(InformationValue,TRIGRAM_INFORMATION_VALUE ID)
         TEMPLATE_TRIGRAM(Plugin,TRIGRAM_PLUGIN ID)
         TEMPLATE_TRIGRAM(Organization,TRIGRAM_ORGANIZATION ID)

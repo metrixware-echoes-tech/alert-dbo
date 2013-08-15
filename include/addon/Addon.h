@@ -7,6 +7,7 @@
 #include "tools/MainIncludeFile.h"
 
 class Plugin;
+class Source;
 
 class Addon : public Table
 {

@@ -5,7 +5,7 @@
 
 #include "tools/MainIncludeFile.h"
 
-#include "primaryKeys/InformationId.h"
+//#include "primaryKeys/InformationId.h"
 
 class Plugin;
 class Syslog;
@@ -43,7 +43,7 @@ class InformationHistoricalValue : public Table
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, asset, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_ASSET);
             Wt::Dbo::belongsTo(a, syslog, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG, Wt::Dbo::OnDeleteSetNull);
-            Wt::Dbo::field(a,information, TRIGRAM_INFORMATION ID);
+            Wt::Dbo::belongsTo(a, information, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_INFORMATION);
         }
 
         virtual std::string toJSON();        
