@@ -41,8 +41,8 @@ class MediaValue : public Table
         {
             mapClassAttributesStrings["VALUE"]=&this->value;
             mapClassAttributesBools["IS_DEFAULT"]=&this->isDefault;
-//            mapClassAttributesStrings["TOKEN"]=&this->token;
-//            mapClassAttributesBools["IS_CONFIRMED"]=&this->isConfirmed;
+            mapClassAttributesStrings["TOKEN"]=&this->token;
+            mapClassAttributesBools["IS_CONFIRMED"]=&this->isConfirmed;
             FIELD_FILLER();
 
             Wt::Dbo::belongsTo(a,media,TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
