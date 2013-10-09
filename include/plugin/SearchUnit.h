@@ -1,8 +1,14 @@
 /* 
- * File:   SearchUnit.h
- * Author: rhi
- *
- * Created on 9 octobre 2012, 10:28
+ * Header of Search Unit Table
+ * @author ECHOES Technologies (RHI)
+ * @date 09/10/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef SEARCHUNIT_H
@@ -35,7 +41,7 @@ public:
         Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
     }
     
-    virtual std::string toJSON();
+    virtual std::string toJSON() const;
     
 private:
 

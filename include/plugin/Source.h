@@ -1,8 +1,14 @@
 /* 
- * File:   Source.h
- * Author: tsa
- *
- * Created on 4 juin 2012, 14:15
+ * Header of Source Table
+ * @author ECHOES Technologies (TSA)
+ * @date 04/06/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef SOURCE_H
@@ -36,7 +42,7 @@ public:
         Wt::Dbo::belongsTo(a, addon, "SRC_ADO");    
     }
     
-    virtual std::string toJSON();
+    virtual std::string toJSON() const;
      
 private:
 

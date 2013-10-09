@@ -1,8 +1,14 @@
 /* 
- * File:   Syslog.h
- * Author: tsa
- *
- * Created on 5 juin 2012, 17:44
+ * Header of Syslog Table
+ * @author ECHOES Technologies (TSA)
+ * @date 05/06/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #include <Wt/Dbo/Dbo>
@@ -67,7 +73,7 @@ public:
             
     }
     
-    virtual std::string toJSON();
+    virtual std::string toJSON() const;
     
 private:
 

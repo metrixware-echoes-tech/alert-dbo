@@ -1,5 +1,18 @@
-#ifndef HIERARCHY_H
-#define HIERARCHY_H
+/* 
+ * Header of User Hierarchy Table
+ * @author ECHOES Technologies (TSA)
+ * @date 18/04/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
+ */
+
+#ifndef USERHIERARCHY_H
+#define USERHIERARCHY_H
 
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
@@ -31,4 +44,5 @@ class UserHierarchy : public Table
     private:
 };
 
-#endif // HIERARCHY_H
+#endif // USERHIERARCHY_H
+

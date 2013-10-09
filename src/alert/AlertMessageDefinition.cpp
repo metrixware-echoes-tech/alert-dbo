@@ -1,8 +1,14 @@
 /* 
- * File:   AlertMessageDefinition.cpp
- * Author: tsa
+ * Alert Message Definition Table
+ * @author ECHOES Technologies (TSA)
+ * @date 22/02/2013
  * 
- * Created on 22 février 2013, 16:35
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #include "alert/AlertMessageDefinition.h"
@@ -22,11 +28,11 @@ AlertMessageDefinition::~AlertMessageDefinition()
 {
 }
 
-std::string AlertMessageDefinition::toJSON()
+std::string AlertMessageDefinition::toJSON() const
 {
     std::string res = "";
     res = "{\n\t";
-    res += "\"id\" : {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
+    res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
     res += Table::toJSON();
     res += Table::formatJSONForDboPtr(this->pk.alert);
     res += Table::formatJSONForDboPtr(this->pk.userRole);
@@ -34,5 +40,4 @@ std::string AlertMessageDefinition::toJSON()
     res += "}\n";
     return res;
 }
-
 

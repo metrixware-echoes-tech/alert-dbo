@@ -1,8 +1,14 @@
 /* 
- * File:   AlertMessageDefinition.h
- * Author: tsa
- *
- * Created on 22 février 2013, 16:35
+ * Header of Alert Message Definition Table
+ * @author ECHOES Technologies (TSA)
+ * @date 22/02/2013
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef ALERTMESSAGEDEFINITION_H
@@ -38,7 +44,7 @@ class AlertMessageDefinition : public Table
 
         }
 
-        virtual std::string toJSON();
+        virtual std::string toJSON() const;
 
     private:
 
