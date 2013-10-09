@@ -1,8 +1,14 @@
 /* 
- * File:   AlertAcknowledgeEvent.cpp
- * Author: tsa
+ * Alert Tracking Event Table
+ * @author ECHOES Technologies (TSA)
+ * @date 30/07/2012
  * 
- * Created on 30 juillet 2012, 17:02
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #include "alert/AlertTrackingEvent.h"
@@ -22,7 +28,7 @@ AlertTrackingEvent::~AlertTrackingEvent()
 {
 }
 
-std::string AlertTrackingEvent::toJSON()
+std::string AlertTrackingEvent::toJSON() const
 {
     std::string res = "";
     res += Table::toJSON();
@@ -31,3 +37,4 @@ std::string AlertTrackingEvent::toJSON()
     res += "}";
     return res;
 }
+
