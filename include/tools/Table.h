@@ -17,10 +17,12 @@
 #include <string>
 #include <sstream>
 
-#include "tools/dboSpecialization.h"
-#include "boost/optional.hpp"
+
+#include <boost/optional.hpp>
 
 #include <Wt/WDateTime>
+
+#include "tools/dboSpecialization.h"
 
 #define BOOL_STR(b) ((b)?"true":"false")
 //#define quote(x) #x
