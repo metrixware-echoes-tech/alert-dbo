@@ -27,6 +27,7 @@ class Session : public Wt::Dbo::Session
 public:
   static void configureAuth();
   
+  Session();
   Session(std::string connectionParams);
   ~Session();
 
@@ -38,11 +39,14 @@ public:
   static const Wt::Auth::AuthService& auth();
   static const Wt::Auth::PasswordService& passwordAuth();
   static const std::vector<const Wt::Auth::OAuthService *>& oAuth();
+  void initConnection(std::string connectionParams);
+  void initMapClass();
 
 private:
   Wt::Dbo::backend::Postgres connection_;
   UserDatabase users_;
   Wt::Auth::Login login_;
+  
 };
 
 #endif // SESSION_H_
