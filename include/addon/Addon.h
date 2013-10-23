@@ -52,7 +52,7 @@ public:
         Wt::Dbo::hasMany(a, addonPackageParameter, Wt::Dbo::ManyToOne, TRIGRAM_ADDON_PACKAGE_PARAMETER SEP TRIGRAM_ADDON);
     }
 
-    virtual std::string toJSON();
+    virtual std::string toJSON() const;
 
 protected:
 private:
