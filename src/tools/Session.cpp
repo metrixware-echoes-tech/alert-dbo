@@ -88,6 +88,10 @@ Session::Session(std::string connectionParams)
 //    mapClass<TabWidgetAssociation>(Constants::T_TAB_WIDGET_TWG);
     
     mapClass<Addon>(Constants::T_ADDON_ADO);
+    mapClass<AddonCommonPackage>(Constants::T_ADDON_COMMON_PACKAGE_CPA);
+    mapClass<AddonCommonPackageParameter>(Constants::T_ADDON_COMMON_PACKAGE_PARAMETER_CPP);
+    mapClass<AddonPackage>(Constants::T_ADDON_PACKAGE_APA);
+    mapClass<AddonPackageParameter>(Constants::T_ADDON_PACKAGE_PARAMETER_APP);
     
     mapClass<Alert>(Constants::T_ALERT_ALE);
     mapClass<AlertAcknowledge>(Constants::T_ALERT_ACKNOWLEDGE_ACK);

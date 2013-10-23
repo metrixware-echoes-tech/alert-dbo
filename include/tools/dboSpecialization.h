@@ -44,6 +44,10 @@ class EngOrg;
 //class WidgetValue;
 //class WidgetType;
 class Addon;
+class AddonCommonPackage;
+class AddonCommonPackageParameter;
+class AddonPackage;
+class AddonPackageParameter;
 //class Tab;
 //class TabVersion;
 //class TabWidgetAssociation;
@@ -102,6 +106,10 @@ namespace Wt
         TEMPLATE_TRIGRAM(Alert,TRIGRAM_ALERT ID)
         TEMPLATE_TRIGRAM(UserAction,TRIGRAM_USER_ACTION ID)
         TEMPLATE_TRIGRAM(Addon,TRIGRAM_ADDON ID)
+        TEMPLATE_TRIGRAM(AddonCommonPackage,TRIGRAM_ADDON_COMMON_PACKAGE ID)
+        TEMPLATE_TRIGRAM(AddonCommonPackageParameter,TRIGRAM_ADDON_COMMON_PACKAGE_PARAMETER ID)
+        TEMPLATE_TRIGRAM(AddonPackage,TRIGRAM_ADDON_PACKAGE ID)
+        TEMPLATE_TRIGRAM(AddonPackageParameter,TRIGRAM_ADDON_PACKAGE_PARAMETER ID)
         TEMPLATE_TRIGRAM(AlertAcknowledge,TRIGRAM_ALERT_ACKNOWLEDGE ID)
         TEMPLATE_TRIGRAM(AlertSequence,TRIGRAM_ALERT_SEQUENCE ID)
         TEMPLATE_TRIGRAM(AlertTracking,TRIGRAM_ALERT_TRACKING ID)
