@@ -1,8 +1,14 @@
 /* 
- * File:   AlertMediaSpecialization.cpp
- * Author: tsa
+ * Alert Media Specialization Table
+ * @author ECHOES Technologies (TSA)
+ * @date 24/09/2012
  * 
- * Created on 24 septembre 2012, 14:27
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #include "alert/AlertMediaSpecialization.h"
@@ -20,7 +26,7 @@ AlertMediaSpecialization::~AlertMediaSpecialization() {
 
 }
 
-std::string AlertMediaSpecialization::toJSON()
+std::string AlertMediaSpecialization::toJSON() const
 {
     std::string res = "";
     res += Table::toJSON();
@@ -30,3 +36,4 @@ std::string AlertMediaSpecialization::toJSON()
     res += "}";
     return res;
 }
+

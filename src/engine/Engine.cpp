@@ -1,8 +1,14 @@
 /* 
- * File:   Engine.cpp
- * Author: tsa
+ * Engine Table
+ * @author ECHOES Technologies (TSA)
+ * @date 16/08/2012
  * 
- * Created on 16 août 2012, 14:27
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #include "engine/Engine.h"

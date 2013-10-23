@@ -1,8 +1,14 @@
 /* 
- * File:   AlertTracking.h
- * Author: tsa
- *
- * Created on 23 juillet 2012, 16:31
+ * Header of Alert Tracking Table
+ * @author ECHOES Technologies (TSA)
+ * @date 23/07/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef ALERTTRACKING_H
@@ -60,7 +66,7 @@ class AlertTracking : public Table
                              TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
         }
         
-        virtual std::string toJSON();
+        virtual std::string toJSON() const;
         
     protected:
     private:

@@ -1,8 +1,14 @@
 /* 
- * File:   AlertSequence.h
- * Author: tsa
- *
- * Created on 15 août 2012, 15:21
+ * Header of Alert Sequence Table
+ * @author ECHOES Technologies (TSA)
+ * @date 15/08/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef ALERTSEQUENCE_H
@@ -45,7 +51,7 @@ public:
         
     }
     
-    virtual std::string toJSON();
+    virtual std::string toJSON() const;
     
 private:
 

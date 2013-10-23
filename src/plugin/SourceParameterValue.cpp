@@ -1,8 +1,14 @@
 /* 
- * File:   SourceParameterValue.cpp
- * Author: tsa
+ * Source Parameter Value Table
+ * @author ECHOES Technologies (TSA)
+ * @date 04/06/2012
  * 
- * Created on 4 juin 2012, 17:25
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #include "plugin/SourceParameterValue.h"
@@ -23,7 +29,7 @@ SourceParameterValue::~SourceParameterValue()
 
 }
 
-std::string SourceParameterValue::toJSON()
+std::string SourceParameterValue::toJSON() const
 {
     std::string res = "";
     res = "{\n\t";
@@ -35,3 +41,4 @@ std::string SourceParameterValue::toJSON()
     res += "}";
     return res;
 }
+

@@ -1,3 +1,16 @@
+/* 
+ * Header of Option Table
+ * @author ECHOES Technologies (TSA)
+ * @date 03/07/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
+ */
+
 #ifndef OPTION_H
 #define OPTION_H
 
@@ -26,10 +39,11 @@ class Option : public Table
                              TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION );
         }
         
-        virtual std::string toJSON();
+        virtual std::string toJSON() const;
         
     protected:
     private:
 };
 
 #endif // OPTION_H
+

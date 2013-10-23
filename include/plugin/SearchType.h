@@ -1,8 +1,14 @@
 /* 
- * File:   SearchType.h
- * Author: tsa
- *
- * Created on 7 juin 2012, 15:26
+ * Header of Search Type Table
+ * @author ECHOES Technologies (TSA)
+ * @date 07/06/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef SEARCHTYPE_H
@@ -47,7 +53,7 @@ public:
                          "TJ_ADO_STY");
     }
     
-    virtual std::string toJSON();
+    virtual std::string toJSON() const;
     
 private:
 

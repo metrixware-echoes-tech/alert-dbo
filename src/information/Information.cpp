@@ -1,3 +1,16 @@
+/* 
+ * Information Table
+ * @author ECHOES Technologies (TSA)
+ * @date 18/04/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
+ */
+
 #include "information/Information.h"
 
 std::string Information2::TRIGRAM(TRIGRAM_INFORMATION);
@@ -22,11 +35,11 @@ Information2::~Information2()
 {
 }
 
-std::string Information2::toJSON()
+std::string Information2::toJSON() const
 {
     std::string res = "";
     res = "{\n\t";
-    res += "\"id\" : {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
+    res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
     res += Table::toJSON();
 
     res += Table::formatJSONForDboCollection(this->alertValues, "alert_values", false);
@@ -34,3 +47,4 @@ std::string Information2::toJSON()
     res += "}";
     return res;
 }
+
