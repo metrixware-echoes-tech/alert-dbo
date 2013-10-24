@@ -1,8 +1,14 @@
 /* 
- * File:   EngOrg.h
- * Author: tsa
- *
- * Created on 21 avril 2013, 14:10
+ * Header of Engine Organization Table
+ * @author ECHOES Technologies (TSA)
+ * @date 21/04/2013
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef ENGORG_H

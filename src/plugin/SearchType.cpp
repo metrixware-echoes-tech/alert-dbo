@@ -1,8 +1,14 @@
 /* 
- * File:   SearchType.cpp
- * Author: tsa
+ * Search Type Table
+ * @author ECHOES Technologies (TSA)
+ * @date 07/06/2012
  * 
- * Created on 7 juin 2012, 15:26
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #include "plugin/SearchType.h"
@@ -23,7 +29,7 @@ SearchType::~SearchType()
 
 }
 
-std::string SearchType::toJSON()
+std::string SearchType::toJSON() const
 {
     std::string res = "";
     res += Table::toJSON();
@@ -36,3 +42,4 @@ std::string SearchType::toJSON()
     res += "}";
     return res;
 }
+

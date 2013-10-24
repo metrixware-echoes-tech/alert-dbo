@@ -39,6 +39,12 @@ void Session::configureAuth()
 }
 
 
+Session::Session() : users_(*this)
+{
+    
+}
+
+
 Session::Session(std::string connectionParams)
 : connection_(connectionParams),
   users_(*this)
@@ -47,7 +53,29 @@ Session::Session(std::string connectionParams)
 //    connection_.setProperty("show-queries", "true");
 
     setConnection(connection_);
+    
+    initMapClass();
+}
 
+Session::~Session()
+{
+
+}
+
+UserDatabase& Session::users()
+{
+    return users_;
+}
+
+void Session::initConnection(std::string connectionParams)
+{
+    connection_.connect(connectionParams);
+    setConnection(connection_);
+    
+}
+
+void Session::initMapClass()
+{
     mapClass<UserAction>(Constants::T_USER_ACTION_UAC);
     mapClass<UserHierarchy>(Constants::T_USER_HIERARCHY_UHI);
     mapClass<UserHistoricalAction>(Constants::T_USER_HISTORICAL_ACTION_UHA);
@@ -136,21 +164,9 @@ Session::Session(std::string connectionParams)
     mapClass<AuthInfo>("auth_info");
     mapClass<AuthInfo::AuthIdentityType>("auth_identity");
     mapClass<AuthInfo::AuthTokenType>("auth_token");
-//    mapClass<AuthInfo>("T_AUTH_INFO_AIN");
-//    mapClass<AuthInfo::AuthIdentityType>("T_AUTH_IDENTITY_AID");
-//    mapClass<AuthInfo::AuthTokenType>("T_AUTH_TOKEN_ATO");nn
-
-//    users_(*this);
-}
-
-Session::~Session()
-{
-
-}
-
-UserDatabase& Session::users()
-{
-    return users_;
+    //    mapClass<AuthInfo>("T_AUTH_INFO_AIN");
+    //    mapClass<AuthInfo::AuthIdentityType>("T_AUTH_IDENTITY_AID");
+    //    mapClass<AuthInfo::AuthTokenType>("T_AUTH_TOKEN_ATO");
 }
 
 Wt::Dbo::ptr<User> Session::user() const

@@ -1,3 +1,16 @@
+/* 
+ * Header of Information Table
+ * @author ECHOES Technologies (TSA)
+ * @date 18/04/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
+ */
+
 #ifndef INFORMATION_H
 #define INFORMATION_H
 
@@ -52,10 +65,11 @@ class Information2 : public Table
                              TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_INFORMATION);
         }    
 
-        virtual std::string toJSON();
+        virtual std::string toJSON() const;
         
     protected:
     private:
 };
 
 #endif // INFORMATION_H
+

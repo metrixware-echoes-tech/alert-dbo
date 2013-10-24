@@ -1,13 +1,28 @@
+/* 
+ * Header of Parent Class for Table
+ * @author ECHOES Technologies (TSA)
+ * @date 18/04/2012
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
+ */
+
 #ifndef TABLE_H
 #define TABLE_H
 
 #include <string>
 #include <sstream>
 
-#include "tools/dboSpecialization.h"
-#include "boost/optional.hpp"
+
+#include <boost/optional.hpp>
 
 #include <Wt/WDateTime>
+
+#include "tools/dboSpecialization.h"
 
 #define BOOL_STR(b) ((b)?"true":"false")
 //#define quote(x) #x
@@ -37,29 +52,27 @@ class Table //classe abstraite
         std::string jsonName;
         
         template<typename T>
-        std::string formatColumnName(const T &x, std::string value);
+        std::string formatColumnName(const T &x, std::string value) const;
         
         template<typename T>
-        std::string formatIdColumnName(const T &x);
+        std::string formatIdColumnName(const T &x) const;
         
         template<typename T>
-        std::string formatJSONForDboPtr(const T &x, bool column = true, bool composite = false);
+        std::string formatJSONForDboPtr(const T &x, bool column = true, bool composite = false) const;
         
         template<typename T>
-        std::string formatJSONForDboCollection(const T &x, std::string name, bool column = true);
+        std::string formatJSONForDboCollection(const T &x, std::string name, bool column = true) const;
         
         template<class Action>
         void persist(Action& a)
         {
             
         }
-        
-        virtual std::string toJSON();
-        
-        
-        std::string produceResString(std::string key, std::string value, bool quote = true, bool column = true, bool composite = false);
-        
-        
+
+        virtual std::string toJSON() const;
+
+        std::string produceResString(std::string key, std::string value, bool quote = true, bool column = true, bool composite = false) const;
+
     protected:
         std::map <std::string,Wt::WString*> mapClassAttributesStrings;
         std::map <std::string,Wt::WDateTime*> mapClassAttributesDates;
@@ -69,9 +82,7 @@ class Table //classe abstraite
         std::map <std::string,boost::optional<int>* > mapClassAttributesIntsNn;
         std::map <std::string,short*> mapClassAttributesShorts;
         std::map <std::string,long long*> mapClassAttributesSerials;
-        
 };
-
 
 /**
  * Definition and implementation of template functions must be in the same file.
@@ -80,13 +91,13 @@ class Table //classe abstraite
  */
 
 template<typename T>
-std::string Table::formatColumnName(const T &x, std::string value)
+std::string Table::formatColumnName(const T &x, std::string value) const
 {
     return T::TRIGRAM + SEP + value;
 }
 
 template<typename T>
-std::string Table::formatJSONForDboPtr(const T &x, bool column, bool composite)
+std::string Table::formatJSONForDboPtr(const T &x, bool column, bool composite) const
 {
     std::string res = "";
     std::string key1 = "ID";
@@ -122,13 +133,12 @@ std::string Table::formatJSONForDboPtr(const T &x, bool column, bool composite)
 }
 
 template<typename T>
-std::string Table::formatJSONForDboCollection(const T &x, std::string name, bool column)
+std::string Table::formatJSONForDboCollection(const T &x, std::string name, bool column) const
 {
     std::string res = "";
     std::string size = boost::lexical_cast<std::string>(x.size());
     res += produceResString(name, size, false, column);
     return res;
 }
-#endif
-
+#endif	/* TABLE_H */
 
