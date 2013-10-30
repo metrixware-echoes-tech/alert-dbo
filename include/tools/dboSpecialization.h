@@ -54,10 +54,16 @@ namespace Echoes {
         //class Widget;
         class InformationValue;
         class Plugin;
+        
+        class Filter;
+        class FilterType;
+        class FilterParameter;
+        
         class Organization;
         class OrganizationType;
         class OrganizationValue;
         class OrganizationField;
+        
         class InformationValue;
         class InformationHistoricalValue;
         class Probe;
@@ -70,6 +76,8 @@ namespace Echoes {
         class AssetRelease;
         class Syslog;
         class SyslogHistory;
+        class Source;
+        class Search;
         class SearchType;
         class SearchParameter;
         class SearchUnit;
@@ -110,7 +118,13 @@ namespace Wt {
 
         TEMPLATE_TRIGRAM(Echoes::Dbo::Information, TRIGRAM_INFORMATION ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::InformationValue, TRIGRAM_INFORMATION_VALUE ID)
+                
         TEMPLATE_TRIGRAM(Echoes::Dbo::Plugin, TRIGRAM_PLUGIN ID)
+                
+        TEMPLATE_TRIGRAM(Echoes::Dbo::Filter, TRIGRAM_FILTER ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::FilterType, TRIGRAM_FILTER_TYPE ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::FilterParameter, TRIGRAM_FILTER_PARAMETER ID)
+                
         TEMPLATE_TRIGRAM(Echoes::Dbo::Organization, TRIGRAM_ORGANIZATION ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::OrganizationType, TRIGRAM_ORGANIZATION_TYPE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::OrganizationField, TRIGRAM_ORGANIZATION_FIELD ID)
@@ -121,6 +135,7 @@ namespace Wt {
         TEMPLATE_TRIGRAM(Echoes::Dbo::ProbePackage, TRIGRAM_PROBE_PACKAGE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::ProbePackageParameter, TRIGRAM_PROBE_PACKAGE_PARAMETER ID)
 
+        TEMPLATE_TRIGRAM(Echoes::Dbo::Source, TRIGRAM_SOURCE ID)        
         TEMPLATE_TRIGRAM(Echoes::Dbo::SourceParameter, TRIGRAM_SOURCE_PARAMETER ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::Asset, TRIGRAM_ASSET ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AssetArchitecture, TRIGRAM_ASSET_ARCHITECTURE ID)
@@ -128,6 +143,8 @@ namespace Wt {
         TEMPLATE_TRIGRAM(Echoes::Dbo::AssetRelease, TRIGRAM_ASSET_RELEASE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::Syslog, TRIGRAM_SYSLOG ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::SyslogHistory, TRIGRAM_SYSLOG_HISTORY ID)
+        
+        TEMPLATE_TRIGRAM(Echoes::Dbo::Search, TRIGRAM_SEARCH ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::SearchType, TRIGRAM_SEARCH_TYPE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::SearchParameter, TRIGRAM_SEARCH_PARAMETER ID)
         //        TEMPLATE_TRIGRAM(Echoes::Dbo::SearchUnit,TRIGRAM_SEARCH_UNIT ID)        

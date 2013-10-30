@@ -23,6 +23,7 @@ namespace Echoes
 {
   namespace Dbo
   {
+    class Information;
     class InformationUnitType;
     class SearchUnit;
 
@@ -51,7 +52,7 @@ namespace Echoes
 
                 Wt::Dbo::belongsTo(a, unitType, TRIGRAM_INFORMATION_UNIT SEP TRIGRAM_INFORMATION_UNIT_TYPE);
 
-                Wt::Dbo::hasOne(a, information, TRIGRAM_INFORMATION_UNIT ID);
+                Wt::Dbo::hasOne(a, information, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
                 
                 Wt::Dbo::hasMany(a,
                         searchUnits,

@@ -57,6 +57,9 @@ namespace Echoes
         static const char *T_INFORMATION_HISTORICAL_VALUE_IHV;
         static const char *T_INFORMATION_INF;
         static const char *T_PLUGIN_PLG;
+        static const char *T_FILTER_FIL;
+        static const char *T_FILTER_TYPE_FTY;
+        static const char *T_FILTER_PARAMETER_FPA;
         static const char *T_INFORMATION_UNIT_INU;
         static const char *T_INFORMATION_SUB_UNIT_ISU;
         static const char *T_WIDGET_VALUE_WVA;

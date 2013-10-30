@@ -54,7 +54,7 @@ namespace Echoes {
                     FIELD_FILLER();
                     //            Wt::Dbo::id(a,pk,"PRIMARY_KEY");
 
-                    Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION_UNIT ID);
+                    Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
                     
                     Wt::Dbo::hasMany(a,
                             alertValues,

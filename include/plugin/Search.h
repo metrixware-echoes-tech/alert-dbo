@@ -18,8 +18,6 @@
 
 #include "tools/MainIncludeFile.h"
 
-#include "primaryKeys/SearchId.h"
-
 namespace Echoes
 {
   namespace Dbo
@@ -36,8 +34,9 @@ namespace Echoes
             int period;
             bool searchIsStatic;
 
-            SearchId pk;
             Wt::Dbo::ptr<SearchType> searchType;
+            
+            Wt::Dbo::ptr<Source> source;
 
 
             int pos_key_value;
@@ -52,9 +51,9 @@ namespace Echoes
 
                 FIELD_FILLER();
 
-                Wt::Dbo::id(a, pk, "SEA_ID");
-
-                Wt::Dbo::belongsTo(a, searchType, "SEA_STY");
+                Wt::Dbo::belongsTo(a, searchType, TRIGRAM_SEARCH SEP TRIGRAM_SEARCH_TYPE);
+                
+                Wt::Dbo::belongsTo(a, source, TRIGRAM_SEARCH SEP TRIGRAM_SOURCE);
 
             }
             virtual std::string toJSON() const;

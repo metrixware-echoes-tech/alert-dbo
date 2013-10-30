@@ -1,7 +1,7 @@
 /* 
- * Search Table
+ * Filgooetr Table
  * @author ECHOES Technologies (TSA)
- * @date 07/06/2012
+ * @date 30/10/2012
  * 
  * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
  * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
@@ -11,38 +11,38 @@
  * 
  */
 
-#include "plugin/Search.h"
+#include "filter/Filter.h"
 
 namespace Echoes
 {
     namespace Dbo
     {
-        std::string Search::TRIGRAM(TRIGRAM_SEARCH);
+        std::string Filter::TRIGRAM(TRIGRAM_FILTER);
 
-        Search::Search()
+        Filter::Filter()
         {
             this->jsonName = "search";
         }
 
-        Search::Search(const Search& orig)
+        Filter::Filter(const Filter& orig)
         {
         }
 
-        Search::~Search()
+        Filter::~Filter()
         {
-
         }
-
-        std::string Search::toJSON() const
+        
+        std::string Filter::toJSON() const
         {
             std::string res = "";
             res = "{\n\t";
             res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->searchType, false);
+            res += Table::formatJSONForDboPtr(this->filterType, false);
 
             res += "}";
             return res;
         }
+
     }
 }
 

@@ -56,6 +56,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/asset/AssetRelease.o \
 	${OBJECTDIR}/src/engine/EngOrg.o \
 	${OBJECTDIR}/src/engine/Engine.o \
+	${OBJECTDIR}/src/filter/Filter.o \
+	${OBJECTDIR}/src/filter/FilterParameter.o \
+	${OBJECTDIR}/src/filter/FilterType.o \
 	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
 	${OBJECTDIR}/src/information/InformationValue.o \
@@ -237,6 +240,21 @@ ${OBJECTDIR}/src/engine/Engine.o: src/engine/Engine.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/engine
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/engine/Engine.o src/engine/Engine.cpp
+
+${OBJECTDIR}/src/filter/Filter.o: src/filter/Filter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/filter
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/Filter.o src/filter/Filter.cpp
+
+${OBJECTDIR}/src/filter/FilterParameter.o: src/filter/FilterParameter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/filter
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/FilterParameter.o src/filter/FilterParameter.cpp
+
+${OBJECTDIR}/src/filter/FilterType.o: src/filter/FilterType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/filter
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/FilterType.o src/filter/FilterType.cpp
 
 ${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information

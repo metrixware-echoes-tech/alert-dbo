@@ -37,8 +37,8 @@ namespace Echoes
             //   Wt::WString name;
             Wt::WString desc;
 
-            //        Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
-            Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Source>> sources;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Asset>> assets;
 
             template<class Action>
             void persist(Action& a)
@@ -46,17 +46,18 @@ namespace Echoes
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["DESC"] = &this->desc;
                 FIELD_FILLER();
+                
                 //Plugin id as foreign key in other tables
-                //            Wt::Dbo::hasMany(a,
-                //                             sources,
-                //                             Wt::Dbo::ManyToOne,
-                //                             "SRC_PLG");
+                Wt::Dbo::hasMany(a,
+                                 sources,
+                                 Wt::Dbo::ManyToOne,
+                                 TRIGRAM_SOURCE SEP TRIGRAM_PLUGIN);
 
                 //TJ
                 Wt::Dbo::hasMany(a,
                         assets,
                         Wt::Dbo::ManyToMany,
-                        "TJ_AST_PLG");
+                        TABLE_JOINT_PREFIX SEP TRIGRAM_ASSET SEP TRIGRAM_PLUGIN);
             }
             virtual std::string toJSON() const;
 

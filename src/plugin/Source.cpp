@@ -37,7 +37,6 @@ namespace Echoes
         {
             std::string res = "";
             res = "{\n\t";
-            res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
             res += Table::toJSON();
             res += Table::formatJSONForDboPtr(this->addon, false);
 

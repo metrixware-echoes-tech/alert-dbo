@@ -99,6 +99,10 @@
 
 #include "plugin/Plugin.h"
 
+#include "filter/Filter.h"
+#include "filter/FilterType.h"
+#include "filter/FilterParameter.h"
+
 //#include "widget/WidgetType.h"
 //#include "widget/Widget.h"
 

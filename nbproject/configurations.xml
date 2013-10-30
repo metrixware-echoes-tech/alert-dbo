@@ -34,6 +34,11 @@
           <itemPath>include/engine/EngOrg.h</itemPath>
           <itemPath>include/engine/Engine.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="f1" displayName="filter" projectFiles="true">
+          <itemPath>include/filter/Filter.h</itemPath>
+          <itemPath>include/filter/FilterParameter.h</itemPath>
+          <itemPath>include/filter/FilterType.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>include/information/Information.h</itemPath>
           <itemPath>include/information/InformationHistoricalValue.h</itemPath>
@@ -171,6 +176,11 @@
           <itemPath>src/engine/EngOrg.cpp</itemPath>
           <itemPath>src/engine/Engine.cpp</itemPath>
         </logicalFolder>
+        <logicalFolder name="f1" displayName="filter" projectFiles="true">
+          <itemPath>src/filter/Filter.cpp</itemPath>
+          <itemPath>src/filter/FilterParameter.cpp</itemPath>
+          <itemPath>src/filter/FilterType.cpp</itemPath>
+        </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>src/information/Information.cpp</itemPath>
           <itemPath>src/information/InformationHistoricalValue.cpp</itemPath>
@@ -289,6 +299,12 @@
     <Elem>src/widget</Elem>
     <Elem>include/engine</Elem>
     <Elem>src/engine</Elem>
+    <Elem>include/filter</Elem>
+    <Elem>include/search</Elem>
+    <Elem>include/source</Elem>
+    <Elem>src/filter</Elem>
+    <Elem>src/search</Elem>
+    <Elem>src/source</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -376,6 +392,12 @@
       <item path="include/engine/EngOrg.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/Filter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -659,6 +681,12 @@
       <item path="src/engine/EngOrg.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/Filter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -877,6 +905,12 @@
       </item>
       <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/filter/Filter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterType.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/information/InformationHistoricalValue.h"
@@ -1160,6 +1194,12 @@
       </item>
       <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/filter/Filter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/information/InformationHistoricalValue.cpp"
@@ -1350,6 +1390,12 @@
       <item path="include/asset/AssetRelease.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/Filter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1606,6 +1652,12 @@
       <item path="src/asset/AssetRelease.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/Filter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
       </item>

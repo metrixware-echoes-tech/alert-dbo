@@ -17,7 +17,6 @@
 #include <Wt/Dbo/Dbo>
 
 #include "tools/MainIncludeFile.h"
-#include "primaryKeys/SourceId.h"
 
 namespace Echoes
 {
@@ -33,17 +32,21 @@ namespace Echoes
             static std::string TRIGRAM;
             Wt::WDateTime deleteTag;
 
-            SourceId pk;
-
             Wt::Dbo::ptr<Addon> addon;
+            Wt::Dbo::ptr<Plugin> plugin;
+            
+            Wt::Dbo::collection<Wt::Dbo::ptr<Search>> searches;
 
             template<class Action>
             void persist(Action& a)
             {
                 FIELD_FILLER();
-                Wt::Dbo::id(a, pk, "SRC_ID");
 
-                Wt::Dbo::belongsTo(a, addon, "SRC_ADO");
+                Wt::Dbo::belongsTo(a, addon, TRIGRAM_SOURCE SEP TRIGRAM_ADDON);
+                
+                Wt::Dbo::belongsTo(a, plugin, TRIGRAM_SOURCE SEP TRIGRAM_PLUGIN);
+                
+                Wt::Dbo::hasMany(a, searches, Wt::Dbo::ManyToOne, TRIGRAM_SEARCH SEP TRIGRAM_SOURCE);
             }
 
             virtual std::string toJSON() const;

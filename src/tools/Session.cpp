@@ -83,6 +83,10 @@ namespace Echoes
             mapClass<UserValue>(Constants::T_USER_VALUE_UVA);
 
             mapClass<Plugin>(Constants::T_PLUGIN_PLG);
+            
+            mapClass<Filter>(Constants::T_FILTER_FIL);
+            mapClass<FilterType>(Constants::T_FILTER_TYPE_FTY);
+            mapClass<FilterParameter>(Constants::T_FILTER_PARAMETER_FPA);
 
             mapClass<Information>(Constants::T_INFORMATION_INF);
             mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
