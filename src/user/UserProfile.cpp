@@ -13,15 +13,21 @@
 
 #include "user/UserProfile.h"
 
-std::string UserProfile::TRIGRAM(TRIGRAM_USER_PROFILE);
-
-UserProfile::UserProfile()
+namespace Echoes
 {
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string UserProfile::TRIGRAM(TRIGRAM_USER_PROFILE);
 
-UserProfile::~UserProfile()
-{
+        UserProfile::UserProfile()
+        {
+            //ctor
+        }
 
+        UserProfile::~UserProfile()
+        {
+
+        }
+    }
 }
 

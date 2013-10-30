@@ -18,37 +18,43 @@
 
 #include <Wt/Dbo/Dbo>
 
-class SearchParameterValue;
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class SearchParameterValue;
 
-class SearchParameter : public Table {
-public:
-    SearchParameter();
-    SearchParameter(const SearchParameter& orig);
-    virtual ~SearchParameter();
-    
-    static std::string TRIGRAM;             
-    Wt::WString name;
-    Wt::WString format;    
-    
-    Wt::Dbo::collection<Wt::Dbo::ptr<SearchType> > searchTypes;
-    
-    template<class Action>
-    void persist(Action& a)
+    class SearchParameter : public Table
     {
-        mapClassAttributesStrings["NAME"]=&this->name;            
-        mapClassAttributesStrings["FORMAT"]=&this->format;
-        FIELD_FILLER();
-        Wt::Dbo::hasMany(a,
+        public:
+            SearchParameter();
+            SearchParameter(const SearchParameter& orig);
+            virtual ~SearchParameter();
+
+            static std::string TRIGRAM;
+            Wt::WString name;
+            Wt::WString format;
+
+            Wt::Dbo::collection<Wt::Dbo::ptr<SearchType> > searchTypes;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStrings["FORMAT"] = &this->format;
+                FIELD_FILLER();
+                Wt::Dbo::hasMany(a,
                         searchTypes,
                         Wt::Dbo::ManyToMany,
                         "TJ_STY_SEP");
-    }
-    
-    virtual std::string toJSON() const;
+            }
 
-private:
+            virtual std::string toJSON() const;
 
-};
+        private:
+    };
+  }
+}
 
 #endif	/* SEARCHPARAMETER_H */
 

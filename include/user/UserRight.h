@@ -17,24 +17,30 @@
 #include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
 
-class UserRight : public Table
+namespace Echoes
 {
-public:
-    UserRight();
-    virtual ~UserRight();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString name;
-    
-    template<class Action>
-    void persist(Action& a)
-    {
-        mapClassAttributesStrings["NAME"]=&this->name;
-        FIELD_FILLER();            
-    }
-};
+  namespace Dbo
+  {
 
+    class UserRight : public Table
+    {
+        public:
+            UserRight();
+            virtual ~UserRight();
+
+            static std::string TRIGRAM;
+
+            Wt::WString name;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                FIELD_FILLER();
+            }
+    };
+  }
+}
 
 #endif	/* USERRIGHT_H */
 

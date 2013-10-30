@@ -18,31 +18,37 @@
 #include "Wt/Dbo/Dbo"
 #include "primaryKeys/PackOptionId.h"
 
-class PackOption : public Table {
-public:
-    PackOption();
-    virtual ~PackOption();
-
-    static std::string TRIGRAM;
-    Wt::WString value;
-
-    PackOptionId pk;
-
-    template<class Action>
-    void persist(Action& a)
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class PackOption : public Table
     {
-        mapClassAttributesStrings["VALUE"]=&this->value;        
-        
-        FIELD_FILLER();
-        
-        Wt::Dbo::id (a, pk, "POP_ID");
-        
-    }
- 
-    virtual std::string toJSON() const;
-        
-    private:
-};
+        public:
+            PackOption();
+            virtual ~PackOption();
+
+            static std::string TRIGRAM;
+            Wt::WString value;
+
+            PackOptionId pk;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["VALUE"] = &this->value;
+
+                FIELD_FILLER();
+
+                Wt::Dbo::id(a, pk, "POP_ID");
+            }
+
+            virtual std::string toJSON() const;
+
+        private:
+    };
+  }
+}
 
 #endif	/* PACKOPTION_H */
 

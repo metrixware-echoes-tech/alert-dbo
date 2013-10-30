@@ -17,44 +17,53 @@
 #include "tools/MainIncludeFile.h"
 #include "Wt/Dbo/Dbo"
 
-class OrganizationType : public Table {
-public:
-        OrganizationType();
-        virtual ~OrganizationType();
-        static std::string TRIGRAM;
-        
-        enum eType 
-        {
-            Company = 1, 
-            Individual = 2, 
-            Association = 3 
-        };
-        
-        Wt::WString name;
-        
-        Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
-        Wt::Dbo::collection<Wt::Dbo::ptr<OrganizationField> > organizationField;   
-    template<class Action>
-    void persist(Action& a)
+namespace Echoes
+{
+  namespace Dbo
+  {
+
+    class OrganizationType : public Table
     {
-        mapClassAttributesStrings["NAME"]=&this->name;
-        FIELD_FILLER();
-        Wt::Dbo::hasMany(a,
-                         organizationField,
-                         Wt::Dbo::ManyToMany,
-                         "TJ_OFI_OTY");
-        
-        
-        Wt::Dbo::hasMany(a,
+        public:
+            OrganizationType();
+            virtual ~OrganizationType();
+            static std::string TRIGRAM;
+
+            enum eType
+            {
+                Company = 1,
+                Individual = 2,
+                Association = 3
+            };
+
+            Wt::WString name;
+
+            Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
+            Wt::Dbo::collection<Wt::Dbo::ptr<OrganizationField> > organizationField;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                FIELD_FILLER();
+                Wt::Dbo::hasMany(a,
+                        organizationField,
+                        Wt::Dbo::ManyToMany,
+                        "TJ_OFI_OTY");
+
+
+                Wt::Dbo::hasMany(a,
                         organization,
                         Wt::Dbo::ManyToOne,
                         "ORG_OTY");
 
 
-    }
-    virtual std::string toJSON() const;
-private:
-};
+            }
+            virtual std::string toJSON() const;
+        private:
+    };
+  }
+}
 
 #endif // ORGANIZATIONTYPE_H
 

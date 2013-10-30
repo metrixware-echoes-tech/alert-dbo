@@ -13,27 +13,35 @@
 
 #include "unit/InformationSubUnit.h"
 
-std::string InformationSubUnit::TRIGRAM(TRIGRAM_INFORMATION_SUB_UNIT);
-
-InformationSubUnit::InformationSubUnit() {
-    this->jsonName = "information_sub_unit";
-}
-
-InformationSubUnit::InformationSubUnit(const InformationSubUnit& orig) {
-}
-
-InformationSubUnit::~InformationSubUnit() 
+namespace Echoes
 {
+    namespace Dbo
+    {
+        std::string InformationSubUnit::TRIGRAM(TRIGRAM_INFORMATION_SUB_UNIT);
 
-}
+        InformationSubUnit::InformationSubUnit()
+        {
+            this->jsonName = "information_sub_unit";
+        }
 
-std::string InformationSubUnit::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->informationUnit , false);
-    
-    res += "}";
-    return res;
+        InformationSubUnit::InformationSubUnit(const InformationSubUnit& orig)
+        {
+        }
+
+        InformationSubUnit::~InformationSubUnit()
+        {
+
+        }
+
+        std::string InformationSubUnit::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->informationUnit, false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

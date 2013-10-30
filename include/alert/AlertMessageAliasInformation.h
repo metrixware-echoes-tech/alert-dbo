@@ -14,38 +14,43 @@
 #ifndef ALERTMESSAGEALIASINFORMATION_H
 #define	ALERTMESSAGEALIASINFORMATION_H
 
-#include "tools/MainIncludeFile.h"
 #include <Wt/Dbo/Dbo>
-
+#include "tools/MainIncludeFile.h"
 #include "primaryKeys/AlertMessageAliasInformationId.h"
 
-class AlertMessageAliasInformation : public Table {
-public:
-    AlertMessageAliasInformation();
-    AlertMessageAliasInformation(const AlertMessageAliasInformation& orig);
-    virtual ~AlertMessageAliasInformation();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString alias;
-    
-    AlertMessageAliasInformationId pk;
-    
-    template<class Action>
-    void persist(Action& a)
+namespace Echoes
+{
+  namespace Dbo
+  {
+
+    class AlertMessageAliasInformation : public Table
     {
-        mapClassAttributesStrings["ALIAS"]=&this->alias;
+        public:
+            AlertMessageAliasInformation();
+            AlertMessageAliasInformation(const AlertMessageAliasInformation& orig);
+            virtual ~AlertMessageAliasInformation();
 
-        FIELD_FILLER();
-        
-        Wt::Dbo::id (a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_INFORMATION SEP ID);
+            static std::string TRIGRAM;
 
-    }
-    
-    virtual std::string toJSON() const;
-private:
+            Wt::WString alias;
 
-};
+            AlertMessageAliasInformationId pk;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["ALIAS"] = &this->alias;
+
+                FIELD_FILLER();
+
+                Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_INFORMATION SEP ID);
+            }
+
+            virtual std::string toJSON() const;
+        private:
+    };
+  }
+}
 
 #endif	/* ALERTMESSAGEALIASINFORMATION_H */
 

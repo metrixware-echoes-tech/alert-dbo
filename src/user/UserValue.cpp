@@ -13,15 +13,21 @@
 
 #include "user/UserValue.h"
 
-std::string UserValue::TRIGRAM(TRIGRAM_USER_VALUE);
-
-UserValue::UserValue()
+namespace Echoes
 {
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string UserValue::TRIGRAM(TRIGRAM_USER_VALUE);
 
-UserValue::~UserValue()
-{
+        UserValue::UserValue()
+        {
+            //ctor
+        }
 
+        UserValue::~UserValue()
+        {
+
+        }
+    }
 }
 

@@ -13,15 +13,21 @@
 
 #include "user/UserField.h"
 
-std::string UserField::TRIGRAM(TRIGRAM_USER_FIELD);
-
-UserField::UserField()
+namespace Echoes
 {
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string UserField::TRIGRAM(TRIGRAM_USER_FIELD);
 
-UserField::~UserField()
-{
+        UserField::UserField()
+        {
+            //ctor
+        }
 
+        UserField::~UserField()
+        {
+
+        }
+    }
 }
 

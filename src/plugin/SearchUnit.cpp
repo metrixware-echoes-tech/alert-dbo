@@ -13,29 +13,33 @@
 
 #include "plugin/SearchUnit.h"
 
-std::string SearchUnit::TRIGRAM(TRIGRAM_SEARCH_UNIT);
-
-SearchUnit::SearchUnit() 
+namespace Echoes
 {
-    this->jsonName = "search_unit";
-        //ctor
+    namespace Dbo
+    {
+        std::string SearchUnit::TRIGRAM(TRIGRAM_SEARCH_UNIT);
+
+        SearchUnit::SearchUnit()
+        {
+            this->jsonName = "search_unit";
+            //ctor
+        }
+
+        SearchUnit::~SearchUnit()
+        {
+
+        }
+
+        std::string SearchUnit::toJSON() const
+        {
+            std::string res = "";
+            res = "{\n\t";
+            res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->informationUnit, false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
-
-
-SearchUnit::~SearchUnit() 
-{
-
-}
-
-std::string SearchUnit::toJSON() const
-{
-    std::string res = "";
-    res = "{\n\t";
-    res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->informationUnit, false);
-    
-    res += "}";
-    return res;
-}
-

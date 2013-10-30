@@ -13,31 +13,37 @@
 
 #include "plugin/Search.h"
 
-std::string Search::TRIGRAM(TRIGRAM_SEARCH);
-
-Search::Search()
+namespace Echoes
 {
-    this->jsonName = "search";
-}
+    namespace Dbo
+    {
+        std::string Search::TRIGRAM(TRIGRAM_SEARCH);
 
-Search::Search(const Search& orig)
-{
-}
+        Search::Search()
+        {
+            this->jsonName = "search";
+        }
 
-Search::~Search()
-{
+        Search::Search(const Search& orig)
+        {
+        }
 
-}
+        Search::~Search()
+        {
 
-std::string Search::toJSON() const
-{
-    std::string res = "";
-    res = "{\n\t";
-    res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->searchType, false);    
-    
-    res += "}";
-    return res;
+        }
+
+        std::string Search::toJSON() const
+        {
+            std::string res = "";
+            res = "{\n\t";
+            res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->searchType, false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

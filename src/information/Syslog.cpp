@@ -13,30 +13,36 @@
 
 #include "information/Syslog.h"
 
-std::string Syslog::TRIGRAM(TRIGRAM_SYSLOG);
-
-Syslog::Syslog()
+namespace Echoes
 {
-    this->jsonName = "syslog";
-}
+    namespace Dbo
+    {
+        std::string Syslog::TRIGRAM(TRIGRAM_SYSLOG);
 
-Syslog::Syslog(const Syslog& orig)
-{
-}
+        Syslog::Syslog()
+        {
+            this->jsonName = "syslog";
+        }
 
-Syslog::~Syslog()
-{
-}
+        Syslog::Syslog(const Syslog& orig)
+        {
+        }
 
-std::string Syslog::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->probe, false);
-    res += Table::formatJSONForDboCollection(this->values, "information_values");
-    res += Table::formatJSONForDboCollection(this->historicalValues, "historical_information_values", false);
-    
-    res += "}";
-    return res;
+        Syslog::~Syslog()
+        {
+        }
+
+        std::string Syslog::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->probe, false);
+            res += Table::formatJSONForDboCollection(this->values, "information_values");
+            res += Table::formatJSONForDboCollection(this->historicalValues, "historical_information_values", false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

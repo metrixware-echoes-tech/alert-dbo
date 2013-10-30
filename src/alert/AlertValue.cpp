@@ -13,30 +13,36 @@
 
 #include "alert/AlertValue.h"
 
-std::string AlertValue::TRIGRAM(TRIGRAM_ALERT_VALUE);
-
-AlertValue::AlertValue()
+namespace Echoes
 {
-    this->jsonName = "alertValue";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string AlertValue::TRIGRAM(TRIGRAM_ALERT_VALUE);
 
-AlertValue::~AlertValue()
-{
-}
+        AlertValue::AlertValue()
+        {
+            this->jsonName = "alertValue";
+            //ctor
+        }
 
-std::string AlertValue::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->information, true, true);
-    res += Table::formatJSONForDboPtr(this->alertCriteria);
-    res += Table::formatJSONForDboPtr(this->asset);
-   
-    res += Table::formatJSONForDboCollection(this->alerts, "alerts");
-    res += Table::formatJSONForDboCollection(this->alertSequences, "alerts_sequences", false);
-    
-    res += "}";
-    return res;
+        AlertValue::~AlertValue()
+        {
+        }
+
+        std::string AlertValue::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->information, true, true);
+            res += Table::formatJSONForDboPtr(this->alertCriteria);
+            res += Table::formatJSONForDboPtr(this->asset);
+
+            res += Table::formatJSONForDboCollection(this->alerts, "alerts");
+            res += Table::formatJSONForDboCollection(this->alertSequences, "alerts_sequences", false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

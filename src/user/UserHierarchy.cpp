@@ -13,15 +13,21 @@
 
 #include "user/UserHierarchy.h"
 
-std::string UserHierarchy::TRIGRAM(TRIGRAM_USER_HIERARCHY);
-
-UserHierarchy::UserHierarchy()
+namespace Echoes
 {
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string UserHierarchy::TRIGRAM(TRIGRAM_USER_HIERARCHY);
 
-UserHierarchy::~UserHierarchy()
-{
+        UserHierarchy::UserHierarchy()
+        {
+            //ctor
+        }
 
+        UserHierarchy::~UserHierarchy()
+        {
+
+        }
+    }
 }
 

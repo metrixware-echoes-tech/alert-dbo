@@ -13,14 +13,23 @@
 
 #include "asset/AssetRelease.h"
 
-std::string AssetRelease::TRIGRAM(TRIGRAM_ASSET_RELEASE);
+namespace Echoes
+{
+    namespace Dbo
+    {
+        std::string AssetRelease::TRIGRAM(TRIGRAM_ASSET_RELEASE);
 
-AssetRelease::AssetRelease() {
-}
+        AssetRelease::AssetRelease()
+        {
+        }
 
-AssetRelease::AssetRelease(const AssetRelease& orig) {
-}
+        AssetRelease::AssetRelease(const AssetRelease& orig)
+        {
+        }
 
-AssetRelease::~AssetRelease() {
+        AssetRelease::~AssetRelease()
+        {
+        }
+    }
 }
 

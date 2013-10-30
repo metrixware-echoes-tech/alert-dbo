@@ -17,35 +17,41 @@
 #include "tools/MainIncludeFile.h"
 #include <Wt/Dbo/Dbo>
 
-class MediaValue;
-
-class Media : public Table
+namespace Echoes
 {
+  namespace Dbo
+  {
+    class MediaValue;
+
+    class Media : public Table
+    {
     public:
         Media();
         virtual ~Media();
         static std::string TRIGRAM;
         Wt::WString name;
-        
+
         Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues;
+
         template<class Action>
         void persist(Action& a)
-        { 
-            mapClassAttributesStrings["NAME"]=&this->name;
-            
+        {
+            mapClassAttributesStrings["NAME"] = &this->name;
+
             FIELD_FILLER();
             Wt::Dbo::hasMany(a,
-                             mediaValues,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
+                    mediaValues,
+                    Wt::Dbo::ManyToOne,
+                    TRIGRAM_MEDIA_VALUE SEP TRIGRAM_MEDIA);
+        }
 
-       }
-        
-       virtual std::string toJSON() const;
-        
+        virtual std::string toJSON() const;
+
     protected:
     private:
-};
+    };
+  }
+}
 
 #endif // MEDIA_H
 

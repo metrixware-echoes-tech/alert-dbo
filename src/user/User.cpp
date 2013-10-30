@@ -16,57 +16,63 @@
 #include <Wt/Dbo/Impl>
 #include <Wt/Auth/Dbo/AuthInfo>
 
-DBO_INSTANTIATE_TEMPLATES(User)
+//DBO_INSTANTIATE_TEMPLATES(Echoes::Dbo::User)
 
-std::string User::TRIGRAM(TRIGRAM_USER);
-
-User::User() : Table()
+namespace Echoes
 {
-    this->jsonName = "user";
-}
+    namespace Dbo
+    {
+        std::string User::TRIGRAM(TRIGRAM_USER);
 
-User::User(std::string firstName, std::string lastName, std::string eMail, std::string password, std::string token) : Table()
-{
-    this->firstName = firstName;
-    this->lastName = lastName;
-    this->eMail = eMail;
-    this->password = password;
-    this->token = token;
-}
+        User::User() : Table()
+        {
+            this->jsonName = "user";
+        }
 
-User::~User()
-{
-}
+        User::User(std::string firstName, std::string lastName, std::string eMail, std::string password, std::string token) : Table()
+        {
+            this->firstName = firstName;
+            this->lastName = lastName;
+            this->eMail = eMail;
+            this->password = password;
+            this->token = token;
+        }
 
-std::string User::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->userRole);
-    res += Table::formatJSONForDboPtr(this->userProfile);
-    res += Table::formatJSONForDboPtr(this->currentOrganization);
-    
-    res += Table::formatJSONForDboCollection(this->userValues, "user_values");
-    res += Table::formatJSONForDboCollection(this->parents, "parents");
-    res += Table::formatJSONForDboCollection(this->children, "children");
-    res += Table::formatJSONForDboCollection(this->historicalActions, "historical_actions");
-    res += Table::formatJSONForDboCollection(this->alertAcks, "alert_acks");
-    res += Table::formatJSONForDboCollection(this->mediaValues, "media_values");
-    res += Table::formatJSONForDboCollection(this->userFields, "user_fields");
-    res += Table::formatJSONForDboCollection(this->organizations, "organizations", false);
+        User::~User()
+        {
+        }
 
-    res += "}";
-    return res;
-}
+        std::string User::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->userRole);
+            res += Table::formatJSONForDboPtr(this->userProfile);
+            res += Table::formatJSONForDboPtr(this->currentOrganization);
 
-/*template<>
-void QuiSuisJe<User>(const User & x)
-{
-    cout << "Je suis un <User>" << endl;
-}*/
+            res += Table::formatJSONForDboCollection(this->userValues, "user_values");
+            res += Table::formatJSONForDboCollection(this->parents, "parents");
+            res += Table::formatJSONForDboCollection(this->children, "children");
+            res += Table::formatJSONForDboCollection(this->historicalActions, "historical_actions");
+            res += Table::formatJSONForDboCollection(this->alertAcks, "alert_acks");
+            res += Table::formatJSONForDboCollection(this->mediaValues, "media_values");
+            res += Table::formatJSONForDboCollection(this->userFields, "user_fields");
+            res += Table::formatJSONForDboCollection(this->organizations, "organizations", false);
 
-std::string User::getName()
-{
-    return Constants::T_USER_USR;
+            res += "}";
+            return res;
+        }
+
+        /*template<>
+        void QuiSuisJe<User>(const User & x)
+        {
+            cout << "Je suis un <User>" << endl;
+        }*/
+
+        std::string User::getName()
+        {
+            return Constants::T_USER_USR;
+        }
+    }
 }
 

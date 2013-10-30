@@ -17,36 +17,40 @@
 #include "tools/MainIncludeFile.h"
 #include <Wt/Dbo/Dbo>
 
-class InformationSubUnit : public Table 
+namespace Echoes
 {
-public:
-    InformationSubUnit();
-    InformationSubUnit(const InformationSubUnit& orig);
-    virtual ~InformationSubUnit();
-    
-    static std::string TRIGRAM;
-    int factor;
-    Wt::WString name;
-    
-    Wt::Dbo::ptr<InformationUnit> informationUnit;
-    
-    template<class Action>
-    void persist(Action& a)
+  namespace Dbo
+  {
+    class InformationSubUnit : public Table
     {
-        mapClassAttributesStrings["NAME"]=&this->name;
-        mapClassAttributesInts["FACTOR"]=&this->factor;
+        public:
+            InformationSubUnit();
+            InformationSubUnit(const InformationSubUnit& orig);
+            virtual ~InformationSubUnit();
 
-        FIELD_FILLER();
+            static std::string TRIGRAM;
+            int factor;
+            Wt::WString name;
 
-        Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION_SUB_UNIT SEP TRIGRAM_INFORMATION_UNIT);
+            Wt::Dbo::ptr<InformationUnit> informationUnit;
 
-    }
-    
-    virtual std::string toJSON() const;    
-    
-private:
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesInts["FACTOR"] = &this->factor;
 
-};
+                FIELD_FILLER();
+
+                Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION_SUB_UNIT SEP TRIGRAM_INFORMATION_UNIT);
+            }
+
+            virtual std::string toJSON() const;
+
+        private:
+    };
+  }
+}
 
 #endif	/* INFORMATIONSUBUNIT_H */
 

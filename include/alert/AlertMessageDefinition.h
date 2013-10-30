@@ -14,41 +14,44 @@
 #ifndef ALERTMESSAGEDEFINITION_H
 #define	ALERTMESSAGEDEFINITION_H
 
-#include "tools/MainIncludeFile.h"
 #include <Wt/Dbo/Dbo>
-
+#include "tools/MainIncludeFile.h"
 #include "primaryKeys/AlertMessageDefinitionId.h"
 
-class AlertMessageDefinition : public Table
+namespace Echoes
 {
-    public:
-        AlertMessageDefinition();
-        AlertMessageDefinition(const AlertMessageDefinition& orig);
-        virtual ~AlertMessageDefinition();
+  namespace Dbo
+  {
+    class AlertMessageDefinition : public Table
+    {
+        public:
+            AlertMessageDefinition();
+            AlertMessageDefinition(const AlertMessageDefinition& orig);
+            virtual ~AlertMessageDefinition();
 
-        static std::string TRIGRAM;
+            static std::string TRIGRAM;
 
-        Wt::WString message;
-        bool isCustom;
+            Wt::WString message;
+            bool isCustom;
 
-        AlertMessageDefinitionId pk;
+            AlertMessageDefinitionId pk;
 
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["MESSAGE"]=&this->message;
-            mapClassAttributesBools["IS_CUSTOM"]=&this->isCustom;
-            FIELD_FILLER();
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["MESSAGE"] = &this->message;
+                mapClassAttributesBools["IS_CUSTOM"] = &this->isCustom;
+                FIELD_FILLER();
 
-            Wt::Dbo::id (a, pk, TRIGRAM_ALERT_MESSAGE_DEFINITION SEP ID);
+                Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_DEFINITION SEP ID);
+            }
 
-        }
+            virtual std::string toJSON() const;
 
-        virtual std::string toJSON() const;
-
-    private:
-
-};
+        private:
+    };
+  }
+}
 
 #endif	/* ALERTMESSAGEDEFINITION_H */
 

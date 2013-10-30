@@ -13,31 +13,37 @@
 
 #include "alert/AlertMessageDefinition.h"
 
-std::string AlertMessageDefinition::TRIGRAM(TRIGRAM_ALERT_MESSAGE_DEFINITION);
-
-AlertMessageDefinition::AlertMessageDefinition()
+namespace Echoes
 {
-    this->jsonName = "alert_message_definition";
-}
+    namespace Dbo
+    {
+        std::string AlertMessageDefinition::TRIGRAM(TRIGRAM_ALERT_MESSAGE_DEFINITION);
 
-AlertMessageDefinition::AlertMessageDefinition(const AlertMessageDefinition& orig)
-{
-}
+        AlertMessageDefinition::AlertMessageDefinition()
+        {
+            this->jsonName = "alert_message_definition";
+        }
 
-AlertMessageDefinition::~AlertMessageDefinition()
-{
-}
+        AlertMessageDefinition::AlertMessageDefinition(const AlertMessageDefinition& orig)
+        {
+        }
 
-std::string AlertMessageDefinition::toJSON() const
-{
-    std::string res = "";
-    res = "{\n\t";
-    res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->pk.alert);
-    res += Table::formatJSONForDboPtr(this->pk.userRole);
-    res += Table::formatJSONForDboPtr(this->pk.media);
-    res += "}\n";
-    return res;
+        AlertMessageDefinition::~AlertMessageDefinition()
+        {
+        }
+
+        std::string AlertMessageDefinition::toJSON() const
+        {
+            std::string res = "";
+            res = "{\n\t";
+            res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->pk.alert);
+            res += Table::formatJSONForDboPtr(this->pk.userRole);
+            res += Table::formatJSONForDboPtr(this->pk.media);
+            res += "}\n";
+            return res;
+        }
+    }
 }
 

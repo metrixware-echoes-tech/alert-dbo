@@ -13,29 +13,35 @@
 
 #include "alert/AlertTracking.h"
 
-std::string AlertTracking::TRIGRAM(TRIGRAM_ALERT_TRACKING);
-
-AlertTracking::AlertTracking()
+namespace Echoes
 {
-    this->jsonName = "alertTracking";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string AlertTracking::TRIGRAM(TRIGRAM_ALERT_TRACKING);
 
-AlertTracking::~AlertTracking()
-{
+        AlertTracking::AlertTracking()
+        {
+            this->jsonName = "alertTracking";
+            //ctor
+        }
 
-}
+        AlertTracking::~AlertTracking()
+        {
 
-std::string AlertTracking::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->alert);
-    res += Table::formatJSONForDboPtr(this->mediaValue);
-   
-    res += Table::formatJSONForDboCollection(this->alertTrackingEvents, "alert_tracking_event" , false);
-    
-    res += "}";
-    return res;
+        }
+
+        std::string AlertTracking::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->alert);
+            res += Table::formatJSONForDboPtr(this->mediaValue);
+
+            res += Table::formatJSONForDboCollection(this->alertTrackingEvents, "alert_tracking_event", false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

@@ -19,34 +19,39 @@
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/SourceId.h"
 
-class Source : public Table
+namespace Echoes
 {
-public:
-    Source();
-    Source(const Source& orig);
-    virtual ~Source();
-    
-    static std::string TRIGRAM;
-    Wt::WDateTime deleteTag;  
-    
-    SourceId pk;
-    
-    Wt::Dbo::ptr<Addon> addon;
-    
-    template<class Action>
-    void persist(Action& a)
+  namespace Dbo
+  {
+    class Source : public Table
     {
-        FIELD_FILLER();
-        Wt::Dbo::id (a, pk, "SRC_ID");
-        
-        Wt::Dbo::belongsTo(a, addon, "SRC_ADO");    
-    }
-    
-    virtual std::string toJSON() const;
-     
-private:
+        public:
+            Source();
+            Source(const Source& orig);
+            virtual ~Source();
 
-};
+            static std::string TRIGRAM;
+            Wt::WDateTime deleteTag;
+
+            SourceId pk;
+
+            Wt::Dbo::ptr<Addon> addon;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                FIELD_FILLER();
+                Wt::Dbo::id(a, pk, "SRC_ID");
+
+                Wt::Dbo::belongsTo(a, addon, "SRC_ADO");
+            }
+
+            virtual std::string toJSON() const;
+
+        private:
+    };
+  }
+}
 
 #endif	/* SOURCE_H */
 

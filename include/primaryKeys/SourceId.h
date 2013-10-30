@@ -14,55 +14,69 @@
 class Plugin;
 class Source;
 
-
-struct SourceId
+namespace Echoes
 {
-    long long id;
-    Wt::Dbo::ptr<Plugin> plugin;
+  namespace Dbo
+  {
 
-    SourceId(long long id, Wt::Dbo::ptr<Plugin> ptr)
-        : id(id), plugin(ptr) { }
+    struct SourceId {
+        long long id;
+        Wt::Dbo::ptr<Plugin> plugin;
 
-    SourceId(){ id = 0; }
+        SourceId(long long id, Wt::Dbo::ptr<Plugin> ptr)
+        : id(id), plugin(ptr) {
+        }
 
-    bool operator== (const SourceId& other) const {
-        return id == other.id && plugin == other.plugin;
+        SourceId() {
+            id = 0;
+        }
+
+        bool operator==(const SourceId& other) const {
+            return id == other.id && plugin == other.plugin;
+        }
+
+        bool operator<(const SourceId& other) const {
+            if ((id < other.id) || (plugin < other.plugin))
+                return true;
+            else
+                return false;
+        }
+    };
+
+    inline std::ostream& operator<<(std::ostream& o, const SourceId& pk) {
+        //return o << "(" << pk.id << ")" << "(" << pk.plugin << ")";
+        return o << "\"plugin_id\": " << pk.plugin.id() << ",\n\t\t"
+                << "\"source_id\": " << pk.id;
     }
 
-    bool operator< (const SourceId& other) const {
-        if ((id < other.id) || (plugin < other.plugin))
-            return true;
-        else
-            return false;
-    }
-};
-
-inline std::ostream& operator<< (std::ostream& o, const SourceId& pk)
-{
-    //return o << "(" << pk.id << ")" << "(" << pk.plugin << ")";
-    return o << "\"plugin_id\": " << pk.plugin.id() << ",\n\t\t"
-             << "\"source_id\": " << pk.id ;
+  }
 }
 
 namespace Wt
 {
-    namespace Dbo
-    {
-        template <class Action>
-        void field(Action& a, SourceId& soid,
-                   const std::string& name, int size = -1)
-        {
-            field(a, soid.id, "SRC_ID");
-            field(a, soid.plugin, "PLG_ID");
-//            Wt::Dbo::belongsTo(a, soid.plugin, "SRC_PLG");
-        }
-        template<>
-        struct dbo_traits<Source> : public dbo_default_traits
-        {
-            typedef SourceId IdType;
-            static IdType invalidId() { return SourceId(); }
-            static const char *surrogateIdField() { return 0; }
-        };
+  namespace Dbo
+  {
+
+    template <class Action>
+    void field(Action& a, Echoes::Dbo::SourceId& soid,
+            const std::string& name, int size = -1) {
+        field(a, soid.id, TRIGRAM_SOURCE SEP ID);
+        field(a, soid.plugin, TRIGRAM_PLUGIN SEP ID);
+        //            Wt::Dbo::belongsTo(a, soid.plugin, "SRC_PLG");
     }
+
+    template<>
+    struct dbo_traits<Echoes::Dbo::Source> : public dbo_default_traits {
+        typedef Echoes::Dbo::SourceId IdType;
+
+        static IdType invalidId() {
+            return Echoes::Dbo::SourceId();
+        }
+
+        static const char *surrogateIdField() {
+            return 0;
+        }
+    };
+  }
 }
 #endif	/* SOURCEID_H */

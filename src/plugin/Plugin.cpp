@@ -13,27 +13,33 @@
 
 #include "plugin/Plugin.h"
 
-std::string Plugin::TRIGRAM(TRIGRAM_PLUGIN);
-
-Plugin::Plugin()
+namespace Echoes
 {
-    this->jsonName = "plugin";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string Plugin::TRIGRAM(TRIGRAM_PLUGIN);
 
-Plugin::~Plugin()
-{
+        Plugin::Plugin()
+        {
+            this->jsonName = "plugin";
+            //ctor
+        }
 
-}
+        Plugin::~Plugin()
+        {
 
-std::string Plugin::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    
-    res += Table::formatJSONForDboCollection(this->assets, "assets", false);
+        }
 
-    res += "}";
-    return res;
+        std::string Plugin::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+
+            res += Table::formatJSONForDboCollection(this->assets, "assets", false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

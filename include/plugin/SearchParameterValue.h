@@ -20,31 +20,36 @@
 
 #include "primaryKeys/SearchParameterValueId.h"
 
-class SearchParameterValue : public Table {
-public:
-    SearchParameterValue();
-    SearchParameterValue(const SearchParameterValue& orig);
-    virtual ~SearchParameterValue();
-    
-    static std::string TRIGRAM;             
-    Wt::WString value;
-    
-    SearchParameterValueId searchParameterValueId;
-    
-    template<class Action>
-    void persist(Action& a)
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class SearchParameterValue : public Table
     {
-        mapClassAttributesStrings["VALUE"]=&this->value;  
-        FIELD_FILLER();
-        Wt::Dbo::id(a,searchParameterValueId,"SEV_ID");
-        
-    }
-    
-    virtual std::string toJSON() const;
-       
-private:
+        public:
+            SearchParameterValue();
+            SearchParameterValue(const SearchParameterValue& orig);
+            virtual ~SearchParameterValue();
 
-};
+            static std::string TRIGRAM;
+            Wt::WString value;
+
+            SearchParameterValueId searchParameterValueId;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["VALUE"] = &this->value;
+                FIELD_FILLER();
+                Wt::Dbo::id(a, searchParameterValueId, "SEV_ID");
+            }
+
+            virtual std::string toJSON() const;
+
+        private:
+    };
+  }
+}
 
 #endif	/* SEARCHPARAMETERVALUE_H */
 

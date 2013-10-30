@@ -85,9 +85,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/tools/Enums.o \
-	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/tools/Session.o \
-	${OBJECTDIR}/src/tools/SessionPool.o \
 	${OBJECTDIR}/src/tools/Table.o \
 	${OBJECTDIR}/src/unit/InformationSubUnit.o \
 	${OBJECTDIR}/src/unit/InformationUnit.o \
@@ -385,20 +383,10 @@ ${OBJECTDIR}/src/tools/Enums.o: src/tools/Enums.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Enums.o src/tools/Enums.cpp
 
-${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
-
 ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
-
-${OBJECTDIR}/src/tools/SessionPool.o: src/tools/SessionPool.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/SessionPool.o src/tools/SessionPool.cpp
 
 ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools

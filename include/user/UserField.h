@@ -20,42 +20,45 @@
 #include "primaryKeys/UserHierarchyId.h"
 #include "primaryKeys/UserValueId.h"
 
-//class User;
-//class UserValue;
-
-class UserField : public Table
+namespace Echoes
 {
-    public:
-        UserField();
-        virtual ~UserField();
-        
-        static std::string TRIGRAM;
-        
-        Wt::WString name;
-        Wt::WString format;
+  namespace Dbo
+  {
+    class UserField : public Table
+    {
+        public:
+            UserField();
+            virtual ~UserField();
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
+            static std::string TRIGRAM;
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<UserValue> > userValues;
+            Wt::WString name;
+            Wt::WString format;
 
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["NAME"]=&this->name;
-            mapClassAttributesStrings["FORMAT"]=&this->format;
-            FIELD_FILLER();
-            
-            Wt::Dbo::hasMany(a,
-                             users,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_USR_UFI");
+            Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
-            Wt::Dbo::hasMany(a,
-                             userValues,
-                             Wt::Dbo::ManyToOne,
-                             "UVA_UFI");
-        }
-};
+            Wt::Dbo::collection<Wt::Dbo::ptr<UserValue> > userValues;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStrings["FORMAT"] = &this->format;
+                FIELD_FILLER();
+
+                Wt::Dbo::hasMany(a,
+                        users,
+                        Wt::Dbo::ManyToMany,
+                        "TJ_USR_UFI");
+
+                Wt::Dbo::hasMany(a,
+                        userValues,
+                        Wt::Dbo::ManyToOne,
+                        "UVA_UFI");
+            }
+    };
+  }
+}
 
 #endif // USERFIELD_H
 

@@ -20,45 +20,51 @@
 
 #include "tools/MainIncludeFile.h"
 
-class Source;
-class Asset;
-
-class Plugin : public Table
+namespace Echoes
 {
-    public:
-        Plugin();
-        virtual ~Plugin();
+  namespace Dbo
+  {
+    class Source;
+    class Asset;
 
-        static std::string TRIGRAM;
-     //   Wt::WString name;
-        Wt::WString desc;
-        
-//        Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
+    class Plugin : public Table
+    {
+        public:
+            Plugin();
+            virtual ~Plugin();
 
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["NAME"]=&this->name;            
-            mapClassAttributesStrings["DESC"]=&this->desc;            
-            FIELD_FILLER();
-            //Plugin id as foreign key in other tables
-//            Wt::Dbo::hasMany(a,
-//                             sources,
-//                             Wt::Dbo::ManyToOne,
-//                             "SRC_PLG");
-            
-            //TJ
-            Wt::Dbo::hasMany(a,
-                             assets,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_AST_PLG");
-       }
-       virtual std::string toJSON() const;
-       
-    protected:
-    private:
-};
+            static std::string TRIGRAM;
+            //   Wt::WString name;
+            Wt::WString desc;
+
+            //        Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStrings["DESC"] = &this->desc;
+                FIELD_FILLER();
+                //Plugin id as foreign key in other tables
+                //            Wt::Dbo::hasMany(a,
+                //                             sources,
+                //                             Wt::Dbo::ManyToOne,
+                //                             "SRC_PLG");
+
+                //TJ
+                Wt::Dbo::hasMany(a,
+                        assets,
+                        Wt::Dbo::ManyToMany,
+                        "TJ_AST_PLG");
+            }
+            virtual std::string toJSON() const;
+
+        protected:
+        private:
+    };
+  }
+}
 
 #endif // PLUGIN_H
 

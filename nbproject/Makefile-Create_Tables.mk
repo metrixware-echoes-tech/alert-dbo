@@ -80,9 +80,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/tools/Enums.o \
-	${OBJECTDIR}/src/tools/PostgresConnector.o \
 	${OBJECTDIR}/src/tools/Session.o \
-	${OBJECTDIR}/src/tools/SessionPool.o \
 	${OBJECTDIR}/src/tools/Table.o \
 	${OBJECTDIR}/src/unit/InformationSubUnit.o \
 	${OBJECTDIR}/src/unit/InformationUnit.o \
@@ -120,7 +118,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-Ldist/Debug_SharedObject/GNU-Linux-x86 -ldbo -lwtdbopostgres -lwtdbo -lwt -lboost_signals -lboost_system -lstdc++
+LDLIBSOPTIONS=-lwt -lwtdbo -lwtdbopostgres -lboost_signals -lboost_system -lstdc++
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -355,20 +353,10 @@ ${OBJECTDIR}/src/tools/Enums.o: src/tools/Enums.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Enums.o src/tools/Enums.cpp
 
-${OBJECTDIR}/src/tools/PostgresConnector.o: src/tools/PostgresConnector.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/PostgresConnector.o src/tools/PostgresConnector.cpp
-
 ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
-
-${OBJECTDIR}/src/tools/SessionPool.o: src/tools/SessionPool.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/SessionPool.o src/tools/SessionPool.cpp
 
 ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools

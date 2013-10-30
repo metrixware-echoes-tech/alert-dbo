@@ -18,36 +18,40 @@
 #include "primaryKeys/SourceParameterValueId.h"
 #include <Wt/Dbo/Dbo>
 
-class SourceParameter;
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class SourceParameter;
 
-class SourceParameterValue : public Table {
-public:
-    SourceParameterValue();
-    SourceParameterValue(const SourceParameterValue& orig);
-    virtual ~SourceParameterValue();
-    
-    static std::string TRIGRAM;
-            
-    Wt::WString value;
-   
-    
-    SourceParameterValueId pk;
-    
-    
-    template<class Action>
-    void persist(Action& a)
+    class SourceParameterValue : public Table
     {
-        mapClassAttributesStrings["VALUE"]=&this->value; 
-        FIELD_FILLER();
-        Wt::Dbo::id (a, pk, "PRIMARY_KEY");
-    }
-    
-    virtual std::string toJSON() const;
-    
-    
-private:
+        public:
+            SourceParameterValue();
+            SourceParameterValue(const SourceParameterValue& orig);
+            virtual ~SourceParameterValue();
 
-};
+            static std::string TRIGRAM;
+
+            Wt::WString value;
+
+
+            SourceParameterValueId pk;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["VALUE"] = &this->value;
+                FIELD_FILLER();
+                Wt::Dbo::id(a, pk, "PRIMARY_KEY");
+            }
+
+            virtual std::string toJSON() const;
+
+        private:
+    };
+  }
+}
 
 #endif	/* SOURCEPARAMETERVALUE_H */
 

@@ -7,15 +7,22 @@
 
 #include "tools/Enums.h"
 
-Enums::Enums()
+namespace Echoes
 {
-}
+    namespace Dbo
+    {
 
-Enums::Enums(const Enums& orig)
-{
-}
+        Enums::Enums()
+        {
+        }
 
-Enums::~Enums()
-{
-}
+        Enums::Enums(const Enums& orig)
+        {
+        }
 
+        Enums::~Enums()
+        {
+        }
+
+    }
+}

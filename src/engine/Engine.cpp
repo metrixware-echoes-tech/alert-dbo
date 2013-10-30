@@ -13,17 +13,23 @@
 
 #include "engine/Engine.h"
 
-std::string Engine::TRIGRAM(TRIGRAM_ENGINE);
-
-Engine::Engine()
+namespace Echoes
 {
-}
+    namespace Dbo
+    {
+        std::string Engine::TRIGRAM(TRIGRAM_ENGINE);
 
-Engine::Engine(const Engine& orig)
-{
-}
+        Engine::Engine()
+        {
+        }
 
-Engine::~Engine()
-{
+        Engine::Engine(const Engine& orig)
+        {
+        }
+
+        Engine::~Engine()
+        {
+        }
+    }
 }
 

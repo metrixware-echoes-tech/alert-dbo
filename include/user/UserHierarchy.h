@@ -17,32 +17,35 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Dbo/WtSqlTraits>
 
-
-
 #include "tools/MainIncludeFile.h"
 
 #include "primaryKeys/UserHierarchyId.h"
 
-class UserHierarchy : public Table
+namespace Echoes
 {
-    public:
-        UserHierarchy();
-        virtual ~UserHierarchy();
-        
-        static std::string TRIGRAM;
-        
-        UserHierarchyId pk;
+  namespace Dbo
+  {
+    class UserHierarchy : public Table
+    {
+        public:
+            UserHierarchy();
+            virtual ~UserHierarchy();
 
-        template<class Action>
-        void persist(Action& a)
-        {
+            static std::string TRIGRAM;
 
-            FIELD_FILLER();
-            Wt::Dbo::id(a,pk,"PRIMARY_KEY");
-        }
-    protected:
-    private:
-};
+            UserHierarchyId pk;
+
+            template<class Action>
+            void persist(Action& a) {
+
+                FIELD_FILLER();
+                Wt::Dbo::id(a, pk, "PRIMARY_KEY");
+            }
+        protected:
+        private:
+    };
+  }
+}
 
 #endif // USERHIERARCHY_H
 

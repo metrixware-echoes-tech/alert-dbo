@@ -12,57 +12,72 @@
 
 #include "primaryKeys/SearchId.h"
 
-class SearchUnit;
-class Search;
-
-struct SearchUnitId
+namespace Echoes
 {
-    Wt::Dbo::ptr<Search> search;
-    int infValueNum; 
+  namespace Dbo
+  {
 
-    SearchUnitId(Wt::Dbo::ptr<Search> ptr, int ssn)
-        : search(ptr), infValueNum(ssn) { }
+    class SearchUnit;
+    class Search;
 
-    SearchUnitId(){ infValueNum = 0; }
+    struct SearchUnitId {
+        Wt::Dbo::ptr<Search> search;
+        int infValueNum;
 
-    bool operator== (const SearchUnitId& other) const {
-        return search == other.search && infValueNum == other.infValueNum;
+        SearchUnitId(Wt::Dbo::ptr<Search> ptr, int ssn)
+        : search(ptr), infValueNum(ssn) {
+        }
+
+        SearchUnitId() {
+            infValueNum = 0;
+        }
+
+        bool operator==(const SearchUnitId& other) const {
+            return search == other.search && infValueNum == other.infValueNum;
+        }
+
+        bool operator<(const SearchUnitId& other) const {
+            if ((search < other.search) || (infValueNum < other.infValueNum))
+                return true;
+            else
+                return false;
+        }
+    };
+
+    inline std::ostream& operator<<(std::ostream& o, const SearchUnitId& pk) {
+        //return o << "(" << pk.search << ")" << "(" << pk.infValueNum << ")";
+        return o << pk.search.id()
+                << ",\n\t\t\"inf_value_num\": " << pk.infValueNum;
     }
 
-    bool operator< (const SearchUnitId& other) const {
-        if ((search < other.search) || (infValueNum < other.infValueNum))
-            return true;
-        else
-            return false;
-    }
-};
-
-inline std::ostream& operator<< (std::ostream& o, const SearchUnitId& pk)
-{
-    //return o << "(" << pk.search << ")" << "(" << pk.infValueNum << ")";
-    return o <<  pk.search.id()
-         << ",\n\t\t\"inf_value_num\": " << pk.infValueNum;
+  }
 }
 
 namespace Wt
 {
-    namespace Dbo
-    {
-        template <class Action>
-        void field(Action& a, SearchUnitId& suid,
-                   const std::string& name, int size = -1)
-        {
-            field(a, suid.search, "SEA_ID");
-            field(a, suid.infValueNum, TRIGRAM_INFORMATION SEP "VALUE_NUM");
-        }
-        template<>
-        struct dbo_traits<SearchUnit> : public dbo_default_traits
-        {
-            typedef SearchUnitId IdType;
-            static IdType invalidId() { return SearchUnitId(); }
-            static const char *surrogateIdField() { return 0; }
-        };
+  namespace Dbo
+  {
+
+    template <class Action>
+    void field(Action& a, Echoes::Dbo::SearchUnitId& suid,
+            const std::string& name, int size = -1) {
+        field(a, suid.search, TRIGRAM_SEARCH SEP ID);
+        field(a, suid.infValueNum, TRIGRAM_INFORMATION SEP "VALUE_NUM");
     }
+
+    template<>
+    struct dbo_traits<Echoes::Dbo::SearchUnit> : public dbo_default_traits {
+        typedef Echoes::Dbo::SearchUnitId IdType;
+
+        static IdType invalidId() {
+            return Echoes::Dbo::SearchUnitId();
+        }
+
+        static const char *surrogateIdField() {
+            return 0;
+        }
+    };
+  }
 }
 
 #endif	/* SEARCHUNITID_H */

@@ -13,28 +13,34 @@
 
 #include "information/InformationHistoricalValue.h"
 
-std::string InformationHistoricalValue::TRIGRAM(TRIGRAM_INFORMATION_HISTORICAL_VALUE);
-
-InformationHistoricalValue::InformationHistoricalValue()
+namespace Echoes
 {
-    this->jsonName = "information_historical_value";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string InformationHistoricalValue::TRIGRAM(TRIGRAM_INFORMATION_HISTORICAL_VALUE);
 
-InformationHistoricalValue::~InformationHistoricalValue()
-{
-    //dtor
-}
+        InformationHistoricalValue::InformationHistoricalValue()
+        {
+            this->jsonName = "information_historical_value";
+            //ctor
+        }
 
-std::string InformationHistoricalValue::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->asset);
-    res += Table::formatJSONForDboPtr(this->syslog);
-//    res += Table::formatJSONForDboPtr(this->information , false);
-    
-    res += "}";
-    return res;
+        InformationHistoricalValue::~InformationHistoricalValue()
+        {
+            //dtor
+        }
+
+        std::string InformationHistoricalValue::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->asset);
+            res += Table::formatJSONForDboPtr(this->syslog);
+            //    res += Table::formatJSONForDboPtr(this->information , false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

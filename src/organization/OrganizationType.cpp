@@ -13,28 +13,34 @@
 
 #include "organization/OrganizationType.h"
 
-std::string OrganizationType::TRIGRAM(TRIGRAM_ORGANIZATION_TYPE);
-
-OrganizationType::OrganizationType()
+namespace Echoes
 {
-    this->jsonName = "organization_type";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string OrganizationType::TRIGRAM(TRIGRAM_ORGANIZATION_TYPE);
 
-OrganizationType::~OrganizationType()
-{
+        OrganizationType::OrganizationType()
+        {
+            this->jsonName = "organization_type";
+            //ctor
+        }
 
-}
+        OrganizationType::~OrganizationType()
+        {
 
-std::string OrganizationType::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
+        }
 
-    res += Table::formatJSONForDboCollection(this->organization, "organization");
-    res += Table::formatJSONForDboCollection(this->organizationField, "organization_field", false);
+        std::string OrganizationType::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
 
-    res += "}";
-    return res;
+            res += Table::formatJSONForDboCollection(this->organization, "organization");
+            res += Table::formatJSONForDboCollection(this->organizationField, "organization_field", false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

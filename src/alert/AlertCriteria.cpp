@@ -13,28 +13,33 @@
 
 #include "alert/AlertCriteria.h"
 
-std::string AlertCriteria::TRIGRAM(TRIGRAM_ALERT_CRITERIA);
-
-AlertCriteria::AlertCriteria()
+namespace Echoes
 {
-    //ctor
-     this->jsonName = "alertCriteria";
-}
+    namespace Dbo
+    {
+        std::string AlertCriteria::TRIGRAM(TRIGRAM_ALERT_CRITERIA);
 
-AlertCriteria::~AlertCriteria()
-{
+        AlertCriteria::AlertCriteria()
+        {
+            //ctor
+            this->jsonName = "alertCriteria";
+        }
 
-}
+        AlertCriteria::~AlertCriteria()
+        {
 
+        }
 
-std::string AlertCriteria::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboCollection(this->informationUnitTypes , "information_unit_types");
-    res += Table::formatJSONForDboCollection(this->alertValues, "alert_values", false);
-    
-    res += "}";
-    return res;
+        std::string AlertCriteria::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboCollection(this->informationUnitTypes, "information_unit_types");
+            res += Table::formatJSONForDboCollection(this->alertValues, "alert_values", false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

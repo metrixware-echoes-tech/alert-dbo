@@ -20,32 +20,37 @@
 
 #include "primaryKeys/SearchUnitId.h"
 
-class SearchUnit : public Table {
-public:
-    SearchUnit();
-    virtual ~SearchUnit();
-    
-    static std::string TRIGRAM;
-    
-    SearchUnitId pk;
-    Wt::Dbo::ptr<InformationUnit> informationUnit;
-    
-    template<class Action>
-    void persist(Action& a)
-    {   
-        
-        FIELD_FILLER();
-        
-        Wt::Dbo::id (a, pk, TRIGRAM_SEARCH_UNIT SEP ID);
-        
-        Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
-    }
-    
-    virtual std::string toJSON() const;
-    
-private:
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class SearchUnit : public Table
+    {
+        public:
+            SearchUnit();
+            virtual ~SearchUnit();
 
-};
+            static std::string TRIGRAM;
+
+            SearchUnitId pk;
+            Wt::Dbo::ptr<InformationUnit> informationUnit;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                FIELD_FILLER();
+
+                Wt::Dbo::id(a, pk, TRIGRAM_SEARCH_UNIT SEP ID);
+
+                Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
+            }
+
+            virtual std::string toJSON() const;
+
+        private:
+    };
+  }
+}
 
 #endif	/* SEARCHUNIT_H */
 

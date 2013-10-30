@@ -18,28 +18,35 @@
 #include "Wt/Dbo/Dbo"
 #include "primaryKeys/OrganizationValueId.h"
 
-class OrganizationValue : public Table {
-public:
-    OrganizationValue();
-    virtual ~OrganizationValue();
-
-    static std::string TRIGRAM;
-    Wt::WString value;
-
-    OrganizationValueId pk;
-
-    template<class Action>
-    void persist(Action& a)
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class OrganizationValue : public Table
     {
-        mapClassAttributesStrings["VALUE"]=&this->value;        
-        
-        FIELD_FILLER();
-        
-        Wt::Dbo::id (a, pk, "OVA_ID");
-        
-    }
-    private:
-};
+        public:
+            OrganizationValue();
+            virtual ~OrganizationValue();
+
+            static std::string TRIGRAM;
+            Wt::WString value;
+
+            OrganizationValueId pk;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["VALUE"] = &this->value;
+
+                FIELD_FILLER();
+
+                Wt::Dbo::id(a, pk, "OVA_ID");
+
+            }
+        private:
+    };
+  }
+}
 
 #endif // ORGANIZATIONVALUE_H
 

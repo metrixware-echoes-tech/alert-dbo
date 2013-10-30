@@ -20,43 +20,48 @@
 
 #include "primaryKeys/SearchId.h"
 
-class Search : public Table {
-public:
-    Search();
-    Search(const Search& orig);
-    virtual ~Search();
-    
-    static std::string TRIGRAM;
-    int nbValue;
-    int period;
-    bool searchIsStatic;
-    
-    SearchId pk;
-    Wt::Dbo::ptr<SearchType> searchType;
-    
-    
-    int pos_key_value;        
-
-    
-    template<class Action>
-    void persist(Action& a)
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class Search : public Table
     {
-        mapClassAttributesInts["NB_VALUE"]=&this->nbValue;        
-        mapClassAttributesInts["PERIOD"]=&this->period;        
-        mapClassAttributesBools["IS_STATIC"]=&this->searchIsStatic;
-        mapClassAttributesInts["POS_KEY_VALUE"]=&this->pos_key_value;
-        
-        FIELD_FILLER();
-        
-        Wt::Dbo::id (a, pk, "SEA_ID");
-        
-        Wt::Dbo::belongsTo(a, searchType, "SEA_STY");
+        public:
+            Search();
+            Search(const Search& orig);
+            virtual ~Search();
 
-    }
-    virtual std::string toJSON() const;
-private:
+            static std::string TRIGRAM;
+            int nbValue;
+            int period;
+            bool searchIsStatic;
 
-};
+            SearchId pk;
+            Wt::Dbo::ptr<SearchType> searchType;
+
+
+            int pos_key_value;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesInts["NB_VALUE"] = &this->nbValue;
+                mapClassAttributesInts["PERIOD"] = &this->period;
+                mapClassAttributesBools["IS_STATIC"] = &this->searchIsStatic;
+                mapClassAttributesInts["POS_KEY_VALUE"] = &this->pos_key_value;
+
+                FIELD_FILLER();
+
+                Wt::Dbo::id(a, pk, "SEA_ID");
+
+                Wt::Dbo::belongsTo(a, searchType, "SEA_STY");
+
+            }
+            virtual std::string toJSON() const;
+        private:
+    };
+  }
+}
 
 #endif	/* SEARCH_H */
 

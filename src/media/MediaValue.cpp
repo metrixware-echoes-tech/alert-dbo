@@ -13,30 +13,35 @@
 
 #include "media/MediaValue.h"
 
-std::string MediaValue::TRIGRAM(TRIGRAM_MEDIA_VALUE);
-
-MediaValue::MediaValue()
+namespace Echoes
 {
-    this->jsonName = "media_value";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string MediaValue::TRIGRAM(TRIGRAM_MEDIA_VALUE);
 
-MediaValue::~MediaValue()
-{
-}
+        MediaValue::MediaValue()
+        {
+            this->jsonName = "media_value";
+            //ctor
+        }
 
-std::string MediaValue::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->media);
-    res += Table::formatJSONForDboPtr(this->user);
-    
-    res += Table::formatJSONForDboCollection(this->alertTrackings, "alerts_trackings");
-    res += Table::formatJSONForDboCollection(this->alertMediaSpecializations, "alerts_medias_specializations", false);
-    
-    
-    res += "}";
-    return res;
+        MediaValue::~MediaValue()
+        {
+        }
+
+        std::string MediaValue::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+            res += Table::formatJSONForDboPtr(this->media);
+            res += Table::formatJSONForDboPtr(this->user);
+
+            res += Table::formatJSONForDboCollection(this->alertTrackings, "alerts_trackings");
+            res += Table::formatJSONForDboCollection(this->alertMediaSpecializations, "alerts_medias_specializations", false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

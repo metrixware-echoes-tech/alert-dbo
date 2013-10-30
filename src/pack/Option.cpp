@@ -13,26 +13,32 @@
 
 #include "pack/Option.h"
 
-std::string Option::TRIGRAM(TRIGRAM_OPTION);
-
-Option::Option()
+namespace Echoes
 {
-    this->jsonName = "option";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string Option::TRIGRAM(TRIGRAM_OPTION);
 
-Option::~Option()
-{
-}
+        Option::Option()
+        {
+            this->jsonName = "option";
+            //ctor
+        }
 
-std::string Option::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
+        Option::~Option()
+        {
+        }
 
-    res += Table::formatJSONForDboCollection(this->packOptions, "pack_option", false);
-        
-    res += "}";
-    return res;
+        std::string Option::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+
+            res += Table::formatJSONForDboCollection(this->packOptions, "pack_option", false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

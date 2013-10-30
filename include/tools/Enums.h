@@ -14,15 +14,18 @@
 #ifndef ENUMS_H
 #define	ENUMS_H
 
-class Enums
+namespace Echoes
 {
+  namespace Dbo
+  {
+
+    class Enums {
     public:
         Enums();
         Enums(const Enums& orig);
         virtual ~Enums();
 
-        enum EReturnCode
-        {
+        enum EReturnCode {
             OK = 200,
             CREATED = 201,
             ACCEPTED = 202,
@@ -68,8 +71,8 @@ class Enums
             HTTP_VERSION_NOT_SUPPORTED = 505,
             BANDWIDTH_LIMIT_EXCEDED = 509
         };
-        enum EAlertCriteria
-        {
+
+        enum EAlertCriteria {
             LT = 1,
             LE = 2,
             EQ = 3,
@@ -77,22 +80,28 @@ class Enums
             GE = 5,
             GT = 6
         };
-        enum EInformationUnitType
-        {
+
+        enum EInformationUnitType {
             TEXT = 1,
             NUMBER = 2
         };
+
         enum EMedia {
             MAIL = 1,
             SMS = 2
         };
+
         enum EOption {
             QUOTA_ASSET = 1,
             QUOTA_SMS = 2
         };
     private:
 
-};
+    };
+
+  }
+}
+
 
 #endif	/* ENUMS_H */
 
