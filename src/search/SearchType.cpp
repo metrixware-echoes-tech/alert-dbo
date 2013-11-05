@@ -11,7 +11,7 @@
  * 
  */
 
-#include "plugin/SearchType.h"
+#include "search/SearchType.h"
 
 namespace Echoes
 {

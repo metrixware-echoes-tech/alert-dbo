@@ -51,6 +51,7 @@ namespace Echoes
             Wt::Dbo::collection<Wt::Dbo::ptr<Probe>> probes;
             Wt::Dbo::collection<Wt::Dbo::ptr<Asset>> assets;
             Wt::Dbo::collection<Wt::Dbo::ptr<UserRole>> userRoles;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Plugin>> plugins;
             Wt::Dbo::ptr<Pack> pack;
             Wt::Dbo::ptr<OrganizationType> organizationType;
 
@@ -66,27 +67,13 @@ namespace Echoes
                 FIELD_FILLER();
 
                 //User id as foreign key in other tables
+                Wt::Dbo::hasMany(a, probes, Wt::Dbo::ManyToOne, TRIGRAM_PROBE SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToOne, TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::hasMany(a, userRoles, Wt::Dbo::ManyToOne, TRIGRAM_USER_ROLE SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::hasMany(a, users, Wt::Dbo::ManyToOne, "CURRENT");
 
-                Wt::Dbo::hasMany(a,
-                        user,
-                        Wt::Dbo::ManyToMany,
-                        "TJ" SEP TRIGRAM_USER SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a,
-                        probes,
-                        Wt::Dbo::ManyToOne,
-                        TRIGRAM_PROBE SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a,
-                        assets,
-                        Wt::Dbo::ManyToOne,
-                        TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a,
-                        userRoles,
-                        Wt::Dbo::ManyToOne,
-                        TRIGRAM_USER_ROLE SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a,
-                        users,
-                        Wt::Dbo::ManyToOne,
-                        "CURRENT");
+                Wt::Dbo::hasMany(a, user, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_USER SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
 
                 Wt::Dbo::belongsTo(a, pack, TRIGRAM_ORGANIZATION SEP TRIGRAM_PACK);
                 Wt::Dbo::belongsTo(a, organizationType, TRIGRAM_ORGANIZATION SEP TRIGRAM_ORGANIZATION_TYPE);

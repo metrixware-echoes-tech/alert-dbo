@@ -60,6 +60,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/filter/FilterParameter.o \
 	${OBJECTDIR}/src/filter/FilterType.o \
 	${OBJECTDIR}/src/information/Information.o \
+	${OBJECTDIR}/src/information/InformationData.o \
 	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
 	${OBJECTDIR}/src/information/InformationValue.o \
 	${OBJECTDIR}/src/information/Syslog.o \
@@ -74,17 +75,19 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/pack/Pack.o \
 	${OBJECTDIR}/src/pack/PackOption.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
-	${OBJECTDIR}/src/plugin/Search.o \
-	${OBJECTDIR}/src/plugin/SearchParameter.o \
-	${OBJECTDIR}/src/plugin/SearchParameterValue.o \
-	${OBJECTDIR}/src/plugin/SearchType.o \
-	${OBJECTDIR}/src/plugin/SearchUnit.o \
-	${OBJECTDIR}/src/plugin/Source.o \
-	${OBJECTDIR}/src/plugin/SourceParameter.o \
-	${OBJECTDIR}/src/plugin/SourceParameterValue.o \
+	${OBJECTDIR}/src/plugin/PluginData.o \
+	${OBJECTDIR}/src/plugin/PluginReference.o \
 	${OBJECTDIR}/src/probe/Probe.o \
 	${OBJECTDIR}/src/probe/ProbePackage.o \
 	${OBJECTDIR}/src/probe/ProbePackageParameter.o \
+	${OBJECTDIR}/src/search/Search.o \
+	${OBJECTDIR}/src/search/SearchParameter.o \
+	${OBJECTDIR}/src/search/SearchParameterValue.o \
+	${OBJECTDIR}/src/search/SearchType.o \
+	${OBJECTDIR}/src/search/SearchUnit.o \
+	${OBJECTDIR}/src/source/Source.o \
+	${OBJECTDIR}/src/source/SourceParameter.o \
+	${OBJECTDIR}/src/source/SourceParameterValue.o \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/tools/Enums.o \
@@ -261,6 +264,11 @@ ${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
 
+${OBJECTDIR}/src/information/InformationData.o: src/information/InformationData.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/information
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationData.o src/information/InformationData.cpp
+
 ${OBJECTDIR}/src/information/InformationHistoricalValue.o: src/information/InformationHistoricalValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} $@.d
@@ -331,45 +339,15 @@ ${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
 
-${OBJECTDIR}/src/plugin/Search.o: src/plugin/Search.cpp 
+${OBJECTDIR}/src/plugin/PluginData.o: src/plugin/PluginData.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Search.o src/plugin/Search.cpp
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/PluginData.o src/plugin/PluginData.cpp
 
-${OBJECTDIR}/src/plugin/SearchParameter.o: src/plugin/SearchParameter.cpp 
+${OBJECTDIR}/src/plugin/PluginReference.o: src/plugin/PluginReference.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameter.o src/plugin/SearchParameter.cpp
-
-${OBJECTDIR}/src/plugin/SearchParameterValue.o: src/plugin/SearchParameterValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchParameterValue.o src/plugin/SearchParameterValue.cpp
-
-${OBJECTDIR}/src/plugin/SearchType.o: src/plugin/SearchType.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchType.o src/plugin/SearchType.cpp
-
-${OBJECTDIR}/src/plugin/SearchUnit.o: src/plugin/SearchUnit.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SearchUnit.o src/plugin/SearchUnit.cpp
-
-${OBJECTDIR}/src/plugin/Source.o: src/plugin/Source.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Source.o src/plugin/Source.cpp
-
-${OBJECTDIR}/src/plugin/SourceParameter.o: src/plugin/SourceParameter.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameter.o src/plugin/SourceParameter.cpp
-
-${OBJECTDIR}/src/plugin/SourceParameterValue.o: src/plugin/SourceParameterValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/SourceParameterValue.o src/plugin/SourceParameterValue.cpp
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/PluginReference.o src/plugin/PluginReference.cpp
 
 ${OBJECTDIR}/src/probe/Probe.o: src/probe/Probe.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/probe
@@ -385,6 +363,46 @@ ${OBJECTDIR}/src/probe/ProbePackageParameter.o: src/probe/ProbePackageParameter.
 	${MKDIR} -p ${OBJECTDIR}/src/probe
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/ProbePackageParameter.o src/probe/ProbePackageParameter.cpp
+
+${OBJECTDIR}/src/search/Search.o: src/search/Search.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/search
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/Search.o src/search/Search.cpp
+
+${OBJECTDIR}/src/search/SearchParameter.o: src/search/SearchParameter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/search
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/SearchParameter.o src/search/SearchParameter.cpp
+
+${OBJECTDIR}/src/search/SearchParameterValue.o: src/search/SearchParameterValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/search
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/SearchParameterValue.o src/search/SearchParameterValue.cpp
+
+${OBJECTDIR}/src/search/SearchType.o: src/search/SearchType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/search
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/SearchType.o src/search/SearchType.cpp
+
+${OBJECTDIR}/src/search/SearchUnit.o: src/search/SearchUnit.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/search
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/SearchUnit.o src/search/SearchUnit.cpp
+
+${OBJECTDIR}/src/source/Source.o: src/source/Source.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/source
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/source/Source.o src/source/Source.cpp
+
+${OBJECTDIR}/src/source/SourceParameter.o: src/source/SourceParameter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/source
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/source/SourceParameter.o src/source/SourceParameter.cpp
+
+${OBJECTDIR}/src/source/SourceParameterValue.o: src/source/SourceParameterValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/source
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/source/SourceParameterValue.o src/source/SourceParameterValue.cpp
 
 ${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools

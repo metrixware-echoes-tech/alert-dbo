@@ -11,7 +11,7 @@
  * 
  */
 
-#include "plugin/SearchUnit.h"
+#include "search/SearchUnit.h"
 
 namespace Echoes
 {

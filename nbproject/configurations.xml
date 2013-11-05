@@ -41,6 +41,7 @@
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>include/information/Information.h</itemPath>
+          <itemPath>include/information/InformationData.h</itemPath>
           <itemPath>include/information/InformationHistoricalValue.h</itemPath>
           <itemPath>include/information/InformationValue.h</itemPath>
           <itemPath>include/information/Syslog.h</itemPath>
@@ -65,14 +66,8 @@
         </logicalFolder>
         <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
           <itemPath>include/plugin/Plugin.h</itemPath>
-          <itemPath>include/plugin/Search.h</itemPath>
-          <itemPath>include/plugin/SearchParameter.h</itemPath>
-          <itemPath>include/plugin/SearchParameterValue.h</itemPath>
-          <itemPath>include/plugin/SearchType.h</itemPath>
-          <itemPath>include/plugin/SearchUnit.h</itemPath>
-          <itemPath>include/plugin/Source.h</itemPath>
-          <itemPath>include/plugin/SourceParameter.h</itemPath>
-          <itemPath>include/plugin/SourceParameterValue.h</itemPath>
+          <itemPath>include/plugin/PluginData.h</itemPath>
+          <itemPath>include/plugin/PluginReference.h</itemPath>
         </logicalFolder>
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
           <itemPath>include/primaryKeys/AccessControlListId.h</itemPath>
@@ -82,14 +77,12 @@
           <itemPath>include/primaryKeys/AlertMessageAliasPluginId.h</itemPath>
           <itemPath>include/primaryKeys/AlertMessageDefinitionId.h</itemPath>
           <itemPath>include/primaryKeys/EngOrgId.h</itemPath>
-          <itemPath>include/primaryKeys/InformationId.h</itemPath>
+          <itemPath>include/primaryKeys/InformationDataId.h</itemPath>
           <itemPath>include/primaryKeys/OptionValueId.h</itemPath>
           <itemPath>include/primaryKeys/OrganizationValueId.h</itemPath>
           <itemPath>include/primaryKeys/PackOptionId.h</itemPath>
-          <itemPath>include/primaryKeys/SearchId.h</itemPath>
           <itemPath>include/primaryKeys/SearchParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/SearchUnitId.h</itemPath>
-          <itemPath>include/primaryKeys/SourceId.h</itemPath>
           <itemPath>include/primaryKeys/SourceParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/UserHierarchyId.h</itemPath>
           <itemPath>include/primaryKeys/UserValueId.h</itemPath>
@@ -99,6 +92,18 @@
           <itemPath>include/probe/Probe.h</itemPath>
           <itemPath>include/probe/ProbePackage.h</itemPath>
           <itemPath>include/probe/ProbePackageParameter.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="search" displayName="search" projectFiles="true">
+          <itemPath>include/search/Search.h</itemPath>
+          <itemPath>include/search/SearchParameter.h</itemPath>
+          <itemPath>include/search/SearchParameterValue.h</itemPath>
+          <itemPath>include/search/SearchType.h</itemPath>
+          <itemPath>include/search/SearchUnit.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="source" displayName="source" projectFiles="true">
+          <itemPath>include/source/Source.h</itemPath>
+          <itemPath>include/source/SourceParameter.h</itemPath>
+          <itemPath>include/source/SourceParameterValue.h</itemPath>
         </logicalFolder>
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>include/tools/AuthApplication.h</itemPath>
@@ -183,6 +188,7 @@
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>src/information/Information.cpp</itemPath>
+          <itemPath>src/information/InformationData.cpp</itemPath>
           <itemPath>src/information/InformationHistoricalValue.cpp</itemPath>
           <itemPath>src/information/InformationValue.cpp</itemPath>
           <itemPath>src/information/Syslog.cpp</itemPath>
@@ -207,19 +213,25 @@
         </logicalFolder>
         <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
           <itemPath>src/plugin/Plugin.cpp</itemPath>
-          <itemPath>src/plugin/Search.cpp</itemPath>
-          <itemPath>src/plugin/SearchParameter.cpp</itemPath>
-          <itemPath>src/plugin/SearchParameterValue.cpp</itemPath>
-          <itemPath>src/plugin/SearchType.cpp</itemPath>
-          <itemPath>src/plugin/SearchUnit.cpp</itemPath>
-          <itemPath>src/plugin/Source.cpp</itemPath>
-          <itemPath>src/plugin/SourceParameter.cpp</itemPath>
-          <itemPath>src/plugin/SourceParameterValue.cpp</itemPath>
+          <itemPath>src/plugin/PluginData.cpp</itemPath>
+          <itemPath>src/plugin/PluginReference.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="probe" displayName="probe" projectFiles="true">
           <itemPath>src/probe/Probe.cpp</itemPath>
           <itemPath>src/probe/ProbePackage.cpp</itemPath>
           <itemPath>src/probe/ProbePackageParameter.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="search" displayName="search" projectFiles="true">
+          <itemPath>src/search/Search.cpp</itemPath>
+          <itemPath>src/search/SearchParameter.cpp</itemPath>
+          <itemPath>src/search/SearchParameterValue.cpp</itemPath>
+          <itemPath>src/search/SearchType.cpp</itemPath>
+          <itemPath>src/search/SearchUnit.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="source" displayName="source" projectFiles="true">
+          <itemPath>src/source/Source.cpp</itemPath>
+          <itemPath>src/source/SourceParameter.cpp</itemPath>
+          <itemPath>src/source/SourceParameterValue.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>src/tools/AuthApplication.cpp</itemPath>
@@ -401,6 +413,11 @@
       </item>
       <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/information/InformationData.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/information/InformationHistoricalValue.h"
             ex="false"
             tool="3"
@@ -447,27 +464,9 @@
       </item>
       <item path="include/plugin/Plugin.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/Search.h" ex="false" tool="3" flavor2="0">
+      <item path="include/plugin/PluginData.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/SearchParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/plugin/SearchType.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchUnit.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/Source.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/plugin/PluginReference.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/AccessControlListId.h"
             ex="false"
@@ -501,7 +500,7 @@
       </item>
       <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/InformationId.h"
+      <item path="include/primaryKeys/InformationDataId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -518,16 +517,12 @@
       </item>
       <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/SearchId.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/primaryKeys/SearchParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
       <item path="include/primaryKeys/SearchUnitId.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/primaryKeys/SourceId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/SourceParameterValueId.h"
             ex="false"
@@ -551,6 +546,28 @@
       <item path="include/probe/ProbePackage.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/probe/ProbePackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/search/Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/search/SearchType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/Source.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameterValue.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -690,6 +707,11 @@
       </item>
       <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/information/InformationData.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="src/information/InformationHistoricalValue.cpp"
             ex="false"
             tool="1"
@@ -733,33 +755,37 @@
       </item>
       <item path="src/plugin/Plugin.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/Search.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/plugin/PluginData.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/plugin/SearchType.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/Source.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/plugin/PluginReference.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/Probe.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/ProbePackage.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/ProbePackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/search/Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/search/SearchType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/Source.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameterValue.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -913,6 +939,11 @@
       </item>
       <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/information/InformationData.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/information/InformationHistoricalValue.h"
             ex="false"
             tool="3"
@@ -959,27 +990,9 @@
       </item>
       <item path="include/plugin/Plugin.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/Search.h" ex="false" tool="3" flavor2="0">
+      <item path="include/plugin/PluginData.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/SearchParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/plugin/SearchType.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchUnit.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/Source.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/plugin/PluginReference.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/AccessControlListId.h"
             ex="false"
@@ -1013,7 +1026,7 @@
       </item>
       <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/InformationId.h"
+      <item path="include/primaryKeys/InformationDataId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1030,16 +1043,12 @@
       </item>
       <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/SearchId.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/primaryKeys/SearchParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
       <item path="include/primaryKeys/SearchUnitId.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/primaryKeys/SourceId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/SourceParameterValueId.h"
             ex="false"
@@ -1063,6 +1072,28 @@
       <item path="include/probe/ProbePackage.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/probe/ProbePackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/search/Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/search/SearchType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/Source.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameterValue.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1202,6 +1233,11 @@
       </item>
       <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/information/InformationData.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="src/information/InformationHistoricalValue.cpp"
             ex="false"
             tool="1"
@@ -1245,33 +1281,37 @@
       </item>
       <item path="src/plugin/Plugin.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/Search.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/plugin/PluginData.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/plugin/SearchType.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/Source.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/plugin/PluginReference.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/Probe.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/ProbePackage.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/ProbePackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/search/Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/search/SearchType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/Source.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameterValue.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -1399,6 +1439,11 @@
       </item>
       <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/information/InformationData.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/information/InformationHistoricalValue.h"
             ex="false"
             tool="3"
@@ -1445,27 +1490,9 @@
       </item>
       <item path="include/plugin/Plugin.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/Search.h" ex="false" tool="3" flavor2="0">
+      <item path="include/plugin/PluginData.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/SearchParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/plugin/SearchType.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchUnit.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/Source.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/plugin/PluginReference.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/AccessControlListId.h"
             ex="false"
@@ -1497,7 +1524,7 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/primaryKeys/InformationId.h"
+      <item path="include/primaryKeys/InformationDataId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1514,16 +1541,12 @@
       </item>
       <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/SearchId.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/primaryKeys/SearchParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
       <item path="include/primaryKeys/SearchUnitId.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/primaryKeys/SourceId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/SourceParameterValueId.h"
             ex="false"
@@ -1547,6 +1570,28 @@
       <item path="include/probe/ProbePackage.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/probe/ProbePackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/search/Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/search/SearchType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchUnit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/Source.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameterValue.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1661,6 +1706,11 @@
       </item>
       <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/information/InformationData.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="src/information/InformationHistoricalValue.cpp"
             ex="false"
             tool="1"
@@ -1704,33 +1754,37 @@
       </item>
       <item path="src/plugin/Plugin.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/Search.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/plugin/PluginData.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/plugin/SearchType.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/Source.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/plugin/PluginReference.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/Probe.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/ProbePackage.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/ProbePackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/search/Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/search/SearchType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/Source.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameterValue.cpp"
             ex="false"
             tool="1"
             flavor2="0">

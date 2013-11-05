@@ -1,7 +1,7 @@
 /* 
- * Source Table
+ * Search Parameter Table
  * @author ECHOES Technologies (TSA)
- * @date 04/06/2012
+ * @date 07/06/2012
  * 
  * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
  * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
@@ -11,34 +11,33 @@
  * 
  */
 
-#include "plugin/Source.h"
+#include "search/SearchParameter.h"
 
 namespace Echoes
 {
     namespace Dbo
     {
-        std::string Source::TRIGRAM(TRIGRAM_SOURCE);
+        std::string SearchParameter::TRIGRAM(TRIGRAM_SEARCH_PARAMETER);
 
-        Source::Source()
+        SearchParameter::SearchParameter()
         {
-            this->jsonName = "source";
+            this->jsonName = "search_parameter";
         }
 
-        Source::Source(const Source& orig)
+        SearchParameter::SearchParameter(const SearchParameter& orig)
         {
         }
 
-        Source::~Source()
+        SearchParameter::~SearchParameter()
         {
-
         }
 
-        std::string Source::toJSON() const
+        std::string SearchParameter::toJSON() const
         {
             std::string res = "";
-            res = "{\n\t";
             res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->addon, false);
+
+            res += Table::formatJSONForDboCollection(this->searchTypes, "search_types", false);
 
             res += "}";
             return res;

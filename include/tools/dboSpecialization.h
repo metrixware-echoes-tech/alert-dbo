@@ -25,6 +25,7 @@ namespace Echoes {
         class InformationUnit;
         class InformationSubUnit;
         class InformationUnitType;
+        class InformationData;
         class User;
         class UserProfile;
         class UserValue;
@@ -53,7 +54,10 @@ namespace Echoes {
         //class TabWidgetAssociation;
         //class Widget;
         class InformationValue;
+        
         class Plugin;
+        class PluginReference;
+        class PluginData;
         
         class Filter;
         class FilterType;
@@ -118,8 +122,10 @@ namespace Wt {
 
         TEMPLATE_TRIGRAM(Echoes::Dbo::Information, TRIGRAM_INFORMATION ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::InformationValue, TRIGRAM_INFORMATION_VALUE ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::InformationData, TRIGRAM_INFORMATION_DATA ID)
                 
         TEMPLATE_TRIGRAM(Echoes::Dbo::Plugin, TRIGRAM_PLUGIN ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::PluginReference, TRIGRAM_PLUGIN_REFERENCE ID)
                 
         TEMPLATE_TRIGRAM(Echoes::Dbo::Filter, TRIGRAM_FILTER ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::FilterType, TRIGRAM_FILTER_TYPE ID)
@@ -163,3 +169,4 @@ namespace Wt {
 
 #endif	/* DBOSPECIALIZATION_H */
 
+//

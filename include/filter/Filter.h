@@ -30,13 +30,23 @@ namespace Echoes
         
         static std::string TRIGRAM;
         
+        int nbValue;
+        int posKeyValue;
+        
         Wt::Dbo::ptr<FilterType> filterType;
+        
+        Wt::Dbo::collection<Wt::Dbo::ptr<Search>> searches;
+        Wt::Dbo::collection<Wt::Dbo::ptr<InformationData>> informationDatas;
         
         template<class Action>
         void persist(Action& a)
         {
+            mapClassAttributesInts["NB_VALUE"] = &this->nbValue;
+            mapClassAttributesInts["POS_KEY_VALUE"] = &this->posKeyValue;
             FIELD_FILLER();
             Wt::Dbo::belongsTo(a, filterType, TRIGRAM_FILTER SEP TRIGRAM_FILTER_TYPE);
+            Wt::Dbo::hasMany(a, searches, Wt::Dbo::ManyToOne, TRIGRAM_SEARCH SEP TRIGRAM_FILTER);
+            Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_FILTER);
         }
         virtual std::string toJSON() const;
         

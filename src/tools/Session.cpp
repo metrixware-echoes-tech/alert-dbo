@@ -83,6 +83,8 @@ namespace Echoes
             mapClass<UserValue>(Constants::T_USER_VALUE_UVA);
 
             mapClass<Plugin>(Constants::T_PLUGIN_PLG);
+            mapClass<PluginReference>(Constants::T_PLUGIN_REFERENCE_PRE);
+            mapClass<PluginData>(Constants::T_PLUGIN_DATA_PDA);
             
             mapClass<Filter>(Constants::T_FILTER_FIL);
             mapClass<FilterType>(Constants::T_FILTER_TYPE_FTY);
@@ -104,6 +106,7 @@ namespace Echoes
             mapClass<InformationUnit>(Constants::T_INFORMATION_UNIT_INU);
             mapClass<InformationSubUnit>(Constants::T_INFORMATION_SUB_UNIT_ISU);
             mapClass<InformationUnitType>(Constants::TR_INFORMATION_UNIT_TYPE_IUT);
+            mapClass<InformationData>(Constants::T_INFORMATION_DATA_IDA);
 
             mapClass<Addon>(Constants::T_ADDON_ADO);
 

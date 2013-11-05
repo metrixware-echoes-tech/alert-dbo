@@ -38,6 +38,7 @@ namespace Echoes
 
             res += Table::formatJSONForDboCollection(this->users, "user");
             res += Table::formatJSONForDboCollection(this->probes, "probes");
+            res += Table::formatJSONForDboCollection(this->plugins, "plugins");
             res += Table::formatJSONForDboCollection(this->assets, "assets", false);
 
             res += "}";

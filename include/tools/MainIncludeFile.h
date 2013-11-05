@@ -96,8 +96,11 @@
 #include "information/Information.h"
 #include "information/InformationHistoricalValue.h"
 #include "information/InformationValue.h"
+#include "information/InformationData.h"
 
 #include "plugin/Plugin.h"
+#include "plugin/PluginReference.h"
+#include "plugin/PluginData.h"
 
 #include "filter/Filter.h"
 #include "filter/FilterType.h"
@@ -132,20 +135,20 @@
 #include "engine/Engine.h"
 #include "engine/EngOrg.h"
 
-#include "plugin/Source.h"
-#include "plugin/SourceParameter.h"
-#include "plugin/SourceParameterValue.h"
+#include "source/Source.h"
+#include "source/SourceParameter.h"
+#include "source/SourceParameterValue.h"
 
 #include "asset/Asset.h"
 #include "asset/AssetArchitecture.h"
 #include "asset/AssetDistribution.h"
 #include "asset/AssetRelease.h"
 
-#include "plugin/Search.h"
-#include "plugin/SearchType.h"
-#include "plugin/SearchParameter.h"
-#include "plugin/SearchParameterValue.h"
-#include "plugin/SearchUnit.h"
+#include "search/Search.h"
+#include "search/SearchType.h"
+#include "search/SearchParameter.h"
+#include "search/SearchParameterValue.h"
+#include "search/SearchUnit.h"
 
 #include "information/Syslog.h"
 

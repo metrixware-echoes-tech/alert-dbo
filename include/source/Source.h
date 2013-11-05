@@ -33,9 +33,10 @@ namespace Echoes
             Wt::WDateTime deleteTag;
 
             Wt::Dbo::ptr<Addon> addon;
-            Wt::Dbo::ptr<Plugin> plugin;
             
             Wt::Dbo::collection<Wt::Dbo::ptr<Search>> searches;
+
+            Wt::Dbo::collection<Wt::Dbo::ptr<Plugin>> plugins;
 
             template<class Action>
             void persist(Action& a)
@@ -44,9 +45,9 @@ namespace Echoes
 
                 Wt::Dbo::belongsTo(a, addon, TRIGRAM_SOURCE SEP TRIGRAM_ADDON);
                 
-                Wt::Dbo::belongsTo(a, plugin, TRIGRAM_SOURCE SEP TRIGRAM_PLUGIN);
-                
                 Wt::Dbo::hasMany(a, searches, Wt::Dbo::ManyToOne, TRIGRAM_SEARCH SEP TRIGRAM_SOURCE);
+                
+                Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_SOURCE);
             }
 
             virtual std::string toJSON() const;

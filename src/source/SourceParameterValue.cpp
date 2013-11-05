@@ -1,7 +1,7 @@
 /* 
- * Search Parameter Value Table
+ * Source Parameter Value Table
  * @author ECHOES Technologies (TSA)
- * @date 07/06/2012
+ * @date 04/06/2012
  * 
  * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
  * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
@@ -11,33 +11,33 @@
  * 
  */
 
-#include "plugin/SearchParameterValue.h"
+#include "source/SourceParameterValue.h"
 
 namespace Echoes
 {
     namespace Dbo
     {
-        std::string SearchParameterValue::TRIGRAM(TRIGRAM_SEARCH_PARAMETER_VALUE);
+        std::string SourceParameterValue::TRIGRAM(TRIGRAM_SOURCE_PARAMETER_VALUE);
 
-        SearchParameterValue::SearchParameterValue()
+        SourceParameterValue::SourceParameterValue()
         {
-            this->jsonName = "search_parameter_value";
+            this->jsonName = "source_parameter_value";
         }
 
-        SearchParameterValue::SearchParameterValue(const SearchParameterValue& orig)
+        SourceParameterValue::SourceParameterValue(const SourceParameterValue& orig)
         {
         }
 
-        SearchParameterValue::~SearchParameterValue()
+        SourceParameterValue::~SourceParameterValue()
         {
 
         }
 
-        std::string SearchParameterValue::toJSON() const
+        std::string SourceParameterValue::toJSON() const
         {
             std::string res = "";
             res = "{\n\t";
-            res += "\"id\": {" + boost::lexical_cast<std::string>(this->searchParameterValueId) + " },\n";
+            res += "\"id\" : {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
             res += Table::toJSON();
             res.replace(res.size() - 2, 1, "");
 

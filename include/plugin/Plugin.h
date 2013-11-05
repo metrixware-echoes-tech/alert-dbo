@@ -36,28 +36,29 @@ namespace Echoes
             static std::string TRIGRAM;
             //   Wt::WString name;
             Wt::WString desc;
+            Wt::WString versionRef;
+            Wt::WString versionClient;
+            
+            Wt::Dbo::ptr<PluginReference> pluginReference;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<Source>> sources;
-            Wt::Dbo::collection<Wt::Dbo::ptr<Asset>> assets;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Organization>> organizations;
 
             template<class Action>
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["DESC"] = &this->desc;
+                mapClassAttributesStrings["VERSION_REF"] = &this->versionRef;
+                mapClassAttributesStrings["VERSION_CLIENT"] = &this->versionClient;
                 FIELD_FILLER();
                 
-                //Plugin id as foreign key in other tables
-                Wt::Dbo::hasMany(a,
-                                 sources,
-                                 Wt::Dbo::ManyToOne,
-                                 TRIGRAM_SOURCE SEP TRIGRAM_PLUGIN);
-
+                Wt::Dbo::belongsTo(a, pluginReference, TRIGRAM_PLUGIN SEP TRIGRAM_PLUGIN_REFERENCE);
+                
                 //TJ
-                Wt::Dbo::hasMany(a,
-                        assets,
-                        Wt::Dbo::ManyToMany,
-                        TABLE_JOINT_PREFIX SEP TRIGRAM_ASSET SEP TRIGRAM_PLUGIN);
+                Wt::Dbo::hasMany(a, sources, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_SOURCE);
+                Wt::Dbo::hasMany(a, organizations, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
+                
             }
             virtual std::string toJSON() const;
 

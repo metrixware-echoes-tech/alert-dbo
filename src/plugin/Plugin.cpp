@@ -35,7 +35,7 @@ namespace Echoes
             std::string res = "";
             res += Table::toJSON();
 
-            res += Table::formatJSONForDboCollection(this->assets, "assets", false);
+            res += Table::formatJSONForDboCollection(this->organizations, "organizations", false);
 
             res += "}";
             return res;

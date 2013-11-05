@@ -30,30 +30,23 @@ namespace Echoes
             virtual ~Search();
 
             static std::string TRIGRAM;
-            int nbValue;
             int period;
-            bool searchIsStatic;
 
             Wt::Dbo::ptr<SearchType> searchType;
-            
             Wt::Dbo::ptr<Source> source;
-
-
-            int pos_key_value;
-
+            Wt::Dbo::ptr<Filter> filter;
+            
+            
             template<class Action>
             void persist(Action& a)
             {
-                mapClassAttributesInts["NB_VALUE"] = &this->nbValue;
                 mapClassAttributesInts["PERIOD"] = &this->period;
-                mapClassAttributesBools["IS_STATIC"] = &this->searchIsStatic;
-                mapClassAttributesInts["POS_KEY_VALUE"] = &this->pos_key_value;
 
                 FIELD_FILLER();
 
                 Wt::Dbo::belongsTo(a, searchType, TRIGRAM_SEARCH SEP TRIGRAM_SEARCH_TYPE);
-                
                 Wt::Dbo::belongsTo(a, source, TRIGRAM_SEARCH SEP TRIGRAM_SOURCE);
+                Wt::Dbo::belongsTo(a, filter, TRIGRAM_SEARCH SEP TRIGRAM_FILTER);
 
             }
             virtual std::string toJSON() const;
