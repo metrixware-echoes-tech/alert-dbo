@@ -41,7 +41,7 @@ void Session::configureAuth()
 
 Session::Session() : users_(*this)
 {
-    
+    initMapClass();        
 }
 
 
@@ -69,7 +69,8 @@ UserDatabase& Session::users()
 
 void Session::initConnection(std::string connectionParams)
 {
-    connection_.connect(connectionParams);
+    if (connection_.connection() == NULL)
+        connection_.connect(connectionParams);
     setConnection(connection_);
     
 }
