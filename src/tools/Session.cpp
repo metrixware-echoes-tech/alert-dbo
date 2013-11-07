@@ -35,38 +35,40 @@ namespace Echoes
         }
 
         Session::Session() : users_(*this)
-        {
+{
+    initMapClass();        
+}
 
-        }
 
-        Session::Session(std::string connectionParams)
-        : connection_(connectionParams),
-        users_(*this)
-        {
-            //"hostaddr=127.0.0.1 port=5432 dbname=echoes user=echoes password=toto"
-            //    connection_.setProperty("show-queries", "true");
+Session::Session(std::string connectionParams)
+: connection_(connectionParams),
+  users_(*this)
+{
+    //"hostaddr=127.0.0.1 port=5432 dbname=echoes user=echoes password=toto"
+//    connection_.setProperty("show-queries", "true");
 
-            setConnection(connection_);
+    setConnection(connection_);
+    
+    initMapClass();
+}
 
-            initMapClass();
-        }
+Session::~Session()
+{
 
-        Session::~Session()
-        {
+}
 
-        }
+UserDatabase& Session::users()
+{
+    return users_;
+}
 
-        UserDatabase& Session::users()
-        {
-            return users_;
-        }
-
-        void Session::initConnection(std::string connectionParams)
-        {
-            connection_.connect(connectionParams);
-            setConnection(connection_);
-
-        }
+void Session::initConnection(std::string connectionParams)
+{
+    if (connection_.connection() == NULL)
+        connection_.connect(connectionParams);
+    setConnection(connection_);
+    
+}
 
         void Session::initMapClass()
         {
