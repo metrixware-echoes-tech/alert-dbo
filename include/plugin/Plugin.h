@@ -40,9 +40,10 @@ namespace Echoes
             Wt::WString versionClient;
             
             Wt::Dbo::ptr<PluginReference> pluginReference;
-
+            Wt::Dbo::ptr<Organization> organization;
+            
             Wt::Dbo::collection<Wt::Dbo::ptr<Source>> sources;
-            Wt::Dbo::collection<Wt::Dbo::ptr<Organization>> organizations;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Asset>> assets;
 
             template<class Action>
             void persist(Action& a)
@@ -54,10 +55,11 @@ namespace Echoes
                 FIELD_FILLER();
                 
                 Wt::Dbo::belongsTo(a, pluginReference, TRIGRAM_PLUGIN SEP TRIGRAM_PLUGIN_REFERENCE);
+                Wt::Dbo::belongsTo(a, organization, TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
                 
                 //TJ
                 Wt::Dbo::hasMany(a, sources, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_SOURCE);
-                Wt::Dbo::hasMany(a, organizations, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_ASSET);
                 
             }
             virtual std::string toJSON() const;

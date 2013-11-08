@@ -36,7 +36,6 @@ namespace Echoes
             Wt::WString name;
             Wt::WString cert;
 
-            Wt::Dbo::ptr<Organization> organization;
             Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
@@ -48,7 +47,6 @@ namespace Echoes
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["CERT"] = &this->cert;
                 FIELD_FILLER();
-                Wt::Dbo::belongsTo(a, organization, TRIGRAM_PROBE SEP TRIGRAM_ORGANIZATION);
                 Wt::Dbo::belongsTo(a, probePackageParameter, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
 
                 Wt::Dbo::hasMany(a,
