@@ -49,18 +49,18 @@ namespace Echoes
                 Wt::Dbo::hasMany(a,
                         sources,
                         Wt::Dbo::ManyToOne,
-                        "SRC_ADO");
+                        TRIGRAM_SOURCE SEP TRIGRAM_ADDON);
 
                 //TJ
                 Wt::Dbo::hasMany(a,
                         sourceParameters,
                         Wt::Dbo::ManyToMany,
-                        "TJ_ADO_SRP");
+                        TABLE_JOINT_PREFIX SEP TRIGRAM_ADDON SEP TRIGRAM_SOURCE_PARAMETER);
 
                 Wt::Dbo::hasMany(a,
                         searchTypes,
                         Wt::Dbo::ManyToMany,
-                        "TJ_ADO_STY");
+                        TABLE_JOINT_PREFIX SEP TRIGRAM_ADDON SEP TRIGRAM_SEARCH_TYPE);
             }
 
             virtual std::string toJSON() const;

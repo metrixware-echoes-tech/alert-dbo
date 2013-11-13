@@ -22,7 +22,7 @@ namespace Echoes
         Wt::Dbo::ptr<OrganizationField> organizationField;
         Wt::Dbo::ptr<Organization> organization;
 
-        OrganizationValueId(Wt::Dbo::ptr<OrganizationField> organizationField, Wt::Dbo::ptr<Organization> organisation)
+        OrganizationValueId(Wt::Dbo::ptr<OrganizationField> organizationField, Wt::Dbo::ptr<Organization> organization)
         : organizationField(organizationField), organization(organization) {
         }
 

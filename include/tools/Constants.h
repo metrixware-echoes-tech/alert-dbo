@@ -75,7 +75,7 @@ namespace Echoes
         static const char *T_TAB_TAB;
         static const char *T_TAB_VERSION_TVS;
         //        static const char *T_TAB_WIDGET_TWG;
-        static const char *T_ADDON_ADO;
+        
         static const char *T_ALERT_ALE;
         static const char *T_ALERT_ACKNOWLEDGE_ACK;
         static const char *T_ALERT_MEDIA_SPECIALIZATION_AMS;
@@ -115,6 +115,7 @@ namespace Echoes
         static const char *TR_ALERT_CRITERIA_ACR;
         static const char *TR_OPTION_OPT;
         static const char *TR_MEDIA_MED;
+        static const char *TR_ADDON_ADO;
     protected:
     private:
     };

@@ -330,7 +330,7 @@
       <compileType>
         <ccTool>
           <standard>8</standard>
-          <commandlineTool>DISTCC_FALLBACK=0 distcc</commandlineTool>
+          <commandlineTool>DISTCC_FALLBACK=0 distcc g++-4.7</commandlineTool>
           <incDir>
             <pElem>include</pElem>
           </incDir>

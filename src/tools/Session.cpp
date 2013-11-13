@@ -110,7 +110,7 @@ void Session::initConnection(std::string connectionParams)
             mapClass<InformationUnitType>(Constants::TR_INFORMATION_UNIT_TYPE_IUT);
             mapClass<InformationData>(Constants::T_INFORMATION_DATA_IDA);
 
-            mapClass<Addon>(Constants::T_ADDON_ADO);
+            mapClass<Addon>(Constants::TR_ADDON_ADO);
 
             mapClass<Alert>(Constants::T_ALERT_ALE);
             mapClass<AlertAcknowledge>(Constants::T_ALERT_ACKNOWLEDGE_ACK);
