@@ -47,7 +47,6 @@ namespace Echoes
         static const char *T_USER_HISTORICAL_ACTION_UHA;
         static const char *T_USER_ACTION_UAC;
         static const char *T_ORGANIZATION_ORG;
-        static const char *T_ORGANIZATION_TYPE_OTY;
         static const char *T_ORGANIZATION_VALUE_OVA;
         static const char *T_ORGANIZATION_FIELD_OFI;
         static const char *T_PROBE_PRB;
@@ -58,7 +57,7 @@ namespace Echoes
         static const char *T_INFORMATION_HISTORICAL_VALUE_IHV;
         static const char *T_INFORMATION_INF;
         static const char *T_INFORMATION_UNIT_INU;
-        static const char *T_INFORMATION_SUB_UNIT_ISU;
+//        static const char *T_INFORMATION_SUB_UNIT_ISU;
         static const char *T_INFORMATION_DATA_IDA;
         
         static const char *T_PLUGIN_PLG;
@@ -100,7 +99,6 @@ namespace Echoes
         static const char *T_SYSLOG_SLO;
         static const char *T_SYSLOG_HISTORY_SLH;
         static const char *T_SEARCH_SEA;
-        static const char *T_SEARCH_TYPE_STY;
         static const char *T_SEARCH_PARAMETER_SEP;
         static const char *T_SEARCH_PARAMETER_VALUE_SEV;
         static const char *T_SEARCH_UNIT_SEU;
@@ -116,6 +114,8 @@ namespace Echoes
         static const char *TR_OPTION_OPT;
         static const char *TR_MEDIA_MED;
         static const char *TR_ADDON_ADO;
+        static const char *TR_SEARCH_TYPE_STY;
+        static const char *TR_ORGANIZATION_TYPE_OTY;        
     protected:
     private:
     };

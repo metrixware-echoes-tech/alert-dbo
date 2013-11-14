@@ -88,7 +88,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tools/Enums.o \
 	${OBJECTDIR}/src/tools/Session.o \
 	${OBJECTDIR}/src/tools/Table.o \
-	${OBJECTDIR}/src/unit/InformationSubUnit.o \
 	${OBJECTDIR}/src/unit/InformationUnit.o \
 	${OBJECTDIR}/src/unit/InformationUnitType.o \
 	${OBJECTDIR}/src/user/AccessControlList.o \
@@ -398,11 +397,6 @@ ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
-
-${OBJECTDIR}/src/unit/InformationSubUnit.o: src/unit/InformationSubUnit.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/unit
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationSubUnit.o src/unit/InformationSubUnit.cpp
 
 ${OBJECTDIR}/src/unit/InformationUnit.o: src/unit/InformationUnit.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/unit

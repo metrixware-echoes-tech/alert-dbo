@@ -117,7 +117,6 @@
           <itemPath>include/tools/dboSpecialization.h</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
-          <itemPath>include/unit/InformationSubUnit.h</itemPath>
           <itemPath>include/unit/InformationUnit.h</itemPath>
           <itemPath>include/unit/InformationUnitType.h</itemPath>
         </logicalFolder>
@@ -241,7 +240,6 @@
           <itemPath>src/tools/Table.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
-          <itemPath>src/unit/InformationSubUnit.cpp</itemPath>
           <itemPath>src/unit/InformationUnit.cpp</itemPath>
           <itemPath>src/unit/InformationUnitType.cpp</itemPath>
         </logicalFolder>
@@ -593,8 +591,6 @@
       </item>
       <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/unit/InformationSubUnit.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/unit/InformationUnit.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/unit/InformationUnitType.h" ex="false" tool="3" flavor2="0">
@@ -799,8 +795,6 @@
       <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Table.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/unit/InformationSubUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/unit/InformationUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1119,8 +1113,6 @@
       </item>
       <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/unit/InformationSubUnit.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/unit/InformationUnit.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/unit/InformationUnitType.h" ex="false" tool="3" flavor2="0">
@@ -1325,8 +1317,6 @@
       <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Table.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/unit/InformationSubUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/unit/InformationUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1617,8 +1607,6 @@
       </item>
       <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/unit/InformationSubUnit.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/unit/InformationUnit.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/unit/InformationUnitType.h" ex="false" tool="3" flavor2="0">
@@ -1798,8 +1786,6 @@
       <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Table.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/unit/InformationSubUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/unit/InformationUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>

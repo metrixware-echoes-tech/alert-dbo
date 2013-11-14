@@ -94,7 +94,7 @@ void Session::initConnection(std::string connectionParams)
 
             mapClass<Information>(Constants::T_INFORMATION_INF);
             mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
-            mapClass<OrganizationType>(Constants::T_ORGANIZATION_TYPE_OTY);
+            mapClass<OrganizationType>(Constants::TR_ORGANIZATION_TYPE_OTY);
             mapClass<OrganizationValue>(Constants::T_ORGANIZATION_VALUE_OVA);
             mapClass<OrganizationField>(Constants::T_ORGANIZATION_FIELD_OFI);
 
@@ -106,7 +106,7 @@ void Session::initConnection(std::string connectionParams)
             mapClass<InformationHistoricalValue>(Constants::T_INFORMATION_HISTORICAL_VALUE_IHV);
 
             mapClass<InformationUnit>(Constants::T_INFORMATION_UNIT_INU);
-            mapClass<InformationSubUnit>(Constants::T_INFORMATION_SUB_UNIT_ISU);
+//            mapClass<InformationSubUnit>(Constants::T_INFORMATION_SUB_UNIT_ISU);
             mapClass<InformationUnitType>(Constants::TR_INFORMATION_UNIT_TYPE_IUT);
             mapClass<InformationData>(Constants::T_INFORMATION_DATA_IDA);
 
@@ -141,7 +141,7 @@ void Session::initConnection(std::string connectionParams)
             mapClass<Syslog>(Constants::T_SYSLOG_SLO);
 
             mapClass<Search>(Constants::T_SEARCH_SEA);
-            mapClass<SearchType>(Constants::T_SEARCH_TYPE_STY);
+            mapClass<SearchType>(Constants::TR_SEARCH_TYPE_STY);
             mapClass<SearchParameter>(Constants::T_SEARCH_PARAMETER_SEP);
             mapClass<SearchParameterValue>(Constants::T_SEARCH_PARAMETER_VALUE_SEV);
             mapClass<SearchUnit>(Constants::T_SEARCH_UNIT_SEU);

@@ -36,17 +36,25 @@ namespace Echoes
             static std::string TRIGRAM;
 
             Wt::WString name;
+            
+            Wt::WString baseOperation;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<SearchUnit> > searchUnits;
-            Wt::Dbo::collection<Wt::Dbo::ptr<InformationSubUnit> > informationSubUnits;
+            
             Wt::Dbo::ptr<InformationUnitType> unitType;
             
             Wt::Dbo::weak_ptr<Information> information;
+            
+            Wt::Dbo::weak_ptr<InformationUnit> informationUnit;
+            Wt::Dbo::ptr<InformationUnit> informationUnitBelongTo;
+            
+            Wt::Dbo::collection<Wt::Dbo::ptr<InformationData>> informationDatas;
 
             template<class Action>
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStrings["BASE_OPERATION"] = &this->baseOperation;
 
                 FIELD_FILLER();
 
@@ -54,17 +62,12 @@ namespace Echoes
 
                 Wt::Dbo::hasOne(a, information, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
                 
-                Wt::Dbo::hasMany(a,
-                        searchUnits,
-                        Wt::Dbo::ManyToOne,
-                        TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
+                Wt::Dbo::hasMany(a, searchUnits, Wt::Dbo::ManyToOne, TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
+                Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION_UNIT);
 
-                Wt::Dbo::hasMany(a,
-                        informationSubUnits,
-                        Wt::Dbo::ManyToOne,
-                        TRIGRAM_INFORMATION_SUB_UNIT SEP TRIGRAM_INFORMATION_UNIT);
-                
-                
+                Wt::Dbo::belongsTo(a, informationUnitBelongTo, TRIGRAM_INFORMATION_UNIT SEP "BASE_ID");
+                Wt::Dbo::hasOne(a, informationUnit, TRIGRAM_INFORMATION_UNIT SEP "BASE_ID");
+            
             }
 
             virtual std::string toJSON() const;
