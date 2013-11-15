@@ -23,7 +23,6 @@ namespace Echoes {
         class AccessControlList;
         class Information;
         class InformationUnit;
-        class InformationSubUnit;
         class InformationUnitType;
         class InformationData;
         class User;
@@ -105,7 +104,6 @@ namespace Wt {
         TEMPLATE_TRIGRAM(Echoes::Dbo::Space, TRIGRAM_SPACE ID)
 
         TEMPLATE_TRIGRAM(Echoes::Dbo::InformationUnit, TRIGRAM_INFORMATION_UNIT ID)
-        TEMPLATE_TRIGRAM(Echoes::Dbo::InformationSubUnit, TRIGRAM_INFORMATION_SUB_UNIT ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::InformationUnitType, TRIGRAM_INFORMATION_UNIT_TYPE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::User, TRIGRAM_USER ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::UserHistoricalAction, TRIGRAM_USER_HISTORICAL_ACTION ID)

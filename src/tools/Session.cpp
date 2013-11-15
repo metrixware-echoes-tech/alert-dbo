@@ -130,7 +130,7 @@ void Session::initConnection(std::string connectionParams)
             mapClass<EngOrg>(Constants::TJ_ENG_ORG);
 
             mapClass<Source>(Constants::T_SOURCE_SRC);
-            mapClass<SourceParameter>(Constants::T_SOURCE_PARAMETER_SRP);
+            mapClass<SourceParameter>(Constants::TR_SOURCE_PARAMETER_SRP);
             mapClass<SourceParameterValue>(Constants::T_SOURCE_PARAMETER_VALUE_SPV);
 
             mapClass<Asset>(Constants::T_ASSET_AST);

@@ -90,7 +90,6 @@ namespace Echoes
         static const char *T_ALERT_TRACKING_EVENT_ATE;
         static const char *T_ENGINE_ENG;
         static const char *T_SOURCE_SRC;
-        static const char *T_SOURCE_PARAMETER_SRP;
         static const char *T_SOURCE_PARAMETER_VALUE_SPV;
         static const char *T_ASSET_AST;
         static const char *T_ASSET_ARCHITECTURE_ASA;
@@ -115,7 +114,8 @@ namespace Echoes
         static const char *TR_MEDIA_MED;
         static const char *TR_ADDON_ADO;
         static const char *TR_SEARCH_TYPE_STY;
-        static const char *TR_ORGANIZATION_TYPE_OTY;        
+        static const char *TR_ORGANIZATION_TYPE_OTY;
+        static const char *TR_SOURCE_PARAMETER_SRP;
     protected:
     private:
     };
