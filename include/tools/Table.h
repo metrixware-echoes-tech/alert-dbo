@@ -25,6 +25,7 @@
 #include "tools/dboSpecialization.h"
 
 
+
 #define BOOL_STR(b) ((b)?"true":"false")
 
 namespace Echoes
@@ -74,7 +75,7 @@ namespace Echoes
             }
 
             virtual std::string toJSON() const;
-            
+           
             std::string produceResString(std::string key, std::string value, bool quote = true, bool column = true, bool composite = false) const;
 
         protected:

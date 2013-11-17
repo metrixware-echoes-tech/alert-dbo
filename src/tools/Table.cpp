@@ -129,8 +129,7 @@ namespace Echoes
             // concatenate everything
 
             std::string res = resString;
-            //    res += "}\n";
-
+            res += "}\n";
             return res;
         }
             

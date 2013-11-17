@@ -110,12 +110,10 @@
           <itemPath>include/tools/Constants.h</itemPath>
           <itemPath>include/tools/EchoesAlertDatabase.h</itemPath>
           <itemPath>include/tools/Enums.h</itemPath>
-          <itemPath>include/tools/JsonSerializer.h</itemPath>
           <itemPath>include/tools/MacroTrigram.h</itemPath>
           <itemPath>include/tools/MainIncludeFile.h</itemPath>
           <itemPath>include/tools/Session.h</itemPath>
           <itemPath>include/tools/Table.h</itemPath>
-          <itemPath>include/tools/XmlSerializer.h</itemPath>
           <itemPath>include/tools/dboSpecialization.h</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
@@ -237,7 +235,6 @@
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>src/tools/AuthApplication.cpp</itemPath>
           <itemPath>src/tools/Constants.cpp</itemPath>
-          <itemPath>src/tools/JsonSerializer.cpp</itemPath>
           <itemPath>src/tools/Session.cpp</itemPath>
           <itemPath>src/tools/Table.cpp</itemPath>
         </logicalFolder>
@@ -585,8 +582,6 @@
       </item>
       <item path="include/tools/Enums.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/tools/JsonSerializer.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/tools/MacroTrigram.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/MainIncludeFile.h" ex="false" tool="3" flavor2="0">
@@ -594,8 +589,6 @@
       <item path="include/tools/Session.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Table.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/tools/XmlSerializer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -797,8 +790,6 @@
       <item path="src/tools/AuthApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Constants.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tools/JsonSerializer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1111,8 +1102,6 @@
       </item>
       <item path="include/tools/Enums.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/tools/JsonSerializer.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/tools/MacroTrigram.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/MainIncludeFile.h" ex="false" tool="3" flavor2="0">
@@ -1120,8 +1109,6 @@
       <item path="include/tools/Session.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Table.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/tools/XmlSerializer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1323,8 +1310,6 @@
       <item path="src/tools/AuthApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Constants.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tools/JsonSerializer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1609,8 +1594,6 @@
       </item>
       <item path="include/tools/Enums.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/tools/JsonSerializer.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/tools/MacroTrigram.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/MainIncludeFile.h" ex="false" tool="3" flavor2="0">
@@ -1618,8 +1601,6 @@
       <item path="include/tools/Session.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Table.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/tools/XmlSerializer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1796,8 +1777,6 @@
       <item path="src/tools/AuthApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Constants.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tools/JsonSerializer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
       </item>

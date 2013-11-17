@@ -8,6 +8,8 @@
 #ifndef MACROTRIGRAM_H
 #define	MACROTRIGRAM_H
 
+#define QUOTE(x) "\"" x "\""
+
 #define SEP "_"
 
 #define ID SEP "ID"

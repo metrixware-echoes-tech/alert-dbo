@@ -60,12 +60,6 @@ namespace Echoes
             return res;
         }
 
-        /*template<>
-        void QuiSuisJe<User>(const User & x)
-        {
-            cout << "Je suis un <User>" << endl;
-        }*/
-
         std::string User::getName()
         {
             return Constants::T_USER_USR;
