@@ -40,7 +40,6 @@ namespace Echoes
         static const char *T_USER_RIGHT_URI;
         static const char *T_SPACE_SPA;
         static const char *T_ACCESS_CONTROL_LIST_ACL;
-        static const char *T_USER_HIERARCHY_UHI;
         static const char *T_USER_PROFILE_UPR;
         static const char *T_USER_VALUE_UVA;
         static const char *T_USER_FIELD_UFI;
@@ -88,7 +87,6 @@ namespace Echoes
         static const char *T_ALERT_SEQUENCE_ASE;
         static const char *T_ALERT_TRACKING_ATR;
         static const char *T_ALERT_TRACKING_EVENT_ATE;
-        static const char *T_ENGINE_ENG;
         static const char *T_SOURCE_SRC;
         static const char *T_SOURCE_PARAMETER_VALUE_SPV;
         static const char *T_ASSET_AST;
@@ -116,6 +114,7 @@ namespace Echoes
         static const char *TR_SEARCH_TYPE_STY;
         static const char *TR_ORGANIZATION_TYPE_OTY;
         static const char *TR_SOURCE_PARAMETER_SRP;
+        static const char *TR_ENGINE_ENG;
     protected:
     private:
     };

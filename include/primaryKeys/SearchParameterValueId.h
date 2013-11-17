@@ -61,8 +61,8 @@ namespace Wt
     template <class Action>
     void field(Action& a, Echoes::Dbo::SearchParameterValueId& spvid,
             const std::string& name, int size = -1) {
-        field(a, spvid.search, TRIGRAM_SEARCH SEP ID);
-        field(a, spvid.searchParameter, TRIGRAM_SEARCH_PARAMETER SEP ID);
+        field(a, spvid.search, TRIGRAM_SEARCH ID);
+        field(a, spvid.searchParameter, TRIGRAM_SEARCH_PARAMETER ID);
     }
 
     template<>

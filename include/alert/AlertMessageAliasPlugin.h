@@ -42,7 +42,7 @@ namespace Echoes
 
                 FIELD_FILLER();
 
-                Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_PLUGIN SEP ID);
+                Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_PLUGIN ID);
 
             }
 

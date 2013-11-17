@@ -40,7 +40,7 @@ namespace Echoes
 
                 FIELD_FILLER();
 
-                Wt::Dbo::id(a, pk, TRIGRAM_OPTION_VALUE SEP ID);
+                Wt::Dbo::id(a, pk, TRIGRAM_OPTION_VALUE ID);
             }
 
             virtual std::string toJSON() const;

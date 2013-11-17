@@ -80,7 +80,6 @@
 //#include "tools/SessionPool.h"
 
 #include "unit/InformationUnit.h"
-#include "user/UserHierarchy.h"
 #include "user/UserHistoricalAction.h"
 #include "user/UserValue.h"
 #include "user/UserAction.h"

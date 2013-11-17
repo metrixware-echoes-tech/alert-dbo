@@ -33,7 +33,7 @@ namespace Echoes
         {
             FIELD_FILLER();
 
-            Wt::Dbo::id(a, pk, TRIGRAM_PLUGIN_DATA SEP ID);
+            Wt::Dbo::id(a, pk, TRIGRAM_PLUGIN_DATA ID);
         }
 
         

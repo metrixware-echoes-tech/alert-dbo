@@ -20,8 +20,10 @@
 #include <boost/optional.hpp>
 
 #include <Wt/WDateTime>
+#include <Wt/Dbo/Session>
 
 #include "tools/dboSpecialization.h"
+
 
 #define BOOL_STR(b) ((b)?"true":"false")
 
@@ -72,7 +74,7 @@ namespace Echoes
             }
 
             virtual std::string toJSON() const;
-
+            
             std::string produceResString(std::string key, std::string value, bool quote = true, bool column = true, bool composite = false) const;
 
         protected:
@@ -84,6 +86,7 @@ namespace Echoes
             std::map <std::string, boost::optional<int>* > mapClassAttributesIntsNn;
             std::map <std::string, short*> mapClassAttributesShorts;
             std::map <std::string, long long*> mapClassAttributesSerials;
+            
     };
 
     /**

@@ -41,7 +41,7 @@ namespace Echoes
 
                 FIELD_FILLER();
 
-                Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_INFORMATION_CRITERIA SEP ID);
+                Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_INFORMATION_CRITERIA ID);
             }
 
             virtual std::string toJSON() const;

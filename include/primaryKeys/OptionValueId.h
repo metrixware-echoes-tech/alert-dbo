@@ -59,8 +59,8 @@ namespace Wt
     template <class Action>
     void field(Action& a, Echoes::Dbo::OptionValueId& spvid,
             const std::string& name, int size = -1) {
-        field(a, spvid.option, TRIGRAM_OPTION SEP ID);
-        field(a, spvid.organization, TRIGRAM_ORGANIZATION SEP ID);
+        field(a, spvid.option, TRIGRAM_OPTION ID);
+        field(a, spvid.organization, TRIGRAM_ORGANIZATION ID);
     }
 
     template<>

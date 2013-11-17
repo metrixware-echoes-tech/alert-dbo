@@ -38,7 +38,6 @@ namespace Echoes
   {
     class UserRole;
     class UserProfile;
-    class UserHierarchy;
     class UserField;
     class UserValue;
     class UserHistoricalAction;
@@ -65,17 +64,14 @@ namespace Echoes
             Wt::Dbo::ptr<UserRole> userRole;
             Wt::Dbo::ptr<UserProfile> userProfile;
 
-            Wt::Dbo::ptr<Organization> currentOrganization;
+            Wt::Dbo::ptr<Organization> organization;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<UserValue> > userValues;
-            Wt::Dbo::collection<Wt::Dbo::ptr<UserHierarchy> > parents;
-            Wt::Dbo::collection<Wt::Dbo::ptr<UserHierarchy> > children;
             Wt::Dbo::collection<Wt::Dbo::ptr<UserHistoricalAction> > historicalActions;
             Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
             Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<UserField> > userFields;
-            Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
 
             //link to auth_info table
             Wt::Dbo::collection< Wt::Dbo::ptr<AuthInfo> > authInfos;
@@ -93,49 +89,19 @@ namespace Echoes
 
                 //Other tables ids as foreign keys for user table
 
-                Wt::Dbo::belongsTo(a, userRole, "USR_URO");
-                Wt::Dbo::belongsTo(a, currentOrganization, "CURRENT");
-                Wt::Dbo::belongsTo(a, userProfile, "USR_UPR");
+                Wt::Dbo::belongsTo(a, userRole, TRIGRAM_USER SEP TRIGRAM_USER_ROLE);
+                Wt::Dbo::belongsTo(a, organization, TRIGRAM_USER SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::belongsTo(a, userProfile, TRIGRAM_USER SEP TRIGRAM_USER_PROFILE);
 
                 //User id as foreign key in other tables
+                Wt::Dbo::hasMany(a, userValues, Wt::Dbo::ManyToOne, TRIGRAM_USER_VALUE SEP TRIGRAM_USER);
+                Wt::Dbo::hasMany(a, historicalActions, Wt::Dbo::ManyToOne, TRIGRAM_USER_HISTORICAL_ACTION SEP TRIGRAM_USER);
+                Wt::Dbo::hasMany(a, alertAcks, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_ACKNOWLEDGE SEP TRIGRAM_USER);
+                Wt::Dbo::hasMany(a, mediaValues, Wt::Dbo::ManyToOne, TRIGRAM_MEDIA_VALUE SEP TRIGRAM_USER);
 
-                Wt::Dbo::hasMany(a,
-                        parents,
-                        Wt::Dbo::ManyToOne,
-                        "UHI_UPA");
-                Wt::Dbo::hasMany(a,
-                        children,
-                        Wt::Dbo::ManyToOne,
-                        "UHI_UCH");
-                Wt::Dbo::hasMany(a,
-                        userValues,
-                        Wt::Dbo::ManyToOne,
-                        "UVA_USR");
-                Wt::Dbo::hasMany(a,
-                        historicalActions,
-                        Wt::Dbo::ManyToOne,
-                        "UHA_USR");
-                Wt::Dbo::hasMany(a,
-                        alertAcks,
-                        Wt::Dbo::ManyToOne,
-                        "ACK_USR");
-                Wt::Dbo::hasMany(a,
-                        mediaValues,
-                        Wt::Dbo::ManyToOne,
-                        "MEV_USR");
-                //
-                //
-                //            // join tables
-                Wt::Dbo::hasMany(a,
-                        userFields,
-                        Wt::Dbo::ManyToMany,
-                        "TJ_USR_UFI");
-
-                Wt::Dbo::hasMany(a,
-                        organizations,
-                        Wt::Dbo::ManyToMany,
-                        "TJ_USR_ORG");
-
+                // join tables
+                Wt::Dbo::hasMany(a, userFields, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_USER SEP TRIGRAM_USER_FIELD);
+                //"user" hard coded in auth Info
                 Wt::Dbo::hasMany(a, authInfos, Wt::Dbo::ManyToOne, "user");
             }
             virtual std::string toJSON() const;

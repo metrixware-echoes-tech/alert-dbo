@@ -85,6 +85,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/source/SourceParameterValue.o \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/tools/Constants.o \
+	${OBJECTDIR}/src/tools/JsonSerializer.o \
 	${OBJECTDIR}/src/tools/Session.o \
 	${OBJECTDIR}/src/tools/Table.o \
 	${OBJECTDIR}/src/unit/InformationUnit.o \
@@ -381,6 +382,11 @@ ${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Constants.o src/tools/Constants.cpp
+
+${OBJECTDIR}/src/tools/JsonSerializer.o: src/tools/JsonSerializer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/JsonSerializer.o src/tools/JsonSerializer.cpp
 
 ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools

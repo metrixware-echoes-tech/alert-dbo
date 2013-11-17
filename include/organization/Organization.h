@@ -43,11 +43,10 @@ namespace Echoes
             Wt::WString token;
             // methods
 
-            Wt::Dbo::collection<Wt::Dbo::ptr<User>> users;
 
 
             // dbo collections (This table id as foreign key in other tables)
-            Wt::Dbo::collection<Wt::Dbo::ptr<User>> user;
+            Wt::Dbo::collection<Wt::Dbo::ptr<User>> users;
             Wt::Dbo::collection<Wt::Dbo::ptr<Asset>> assets;
             Wt::Dbo::collection<Wt::Dbo::ptr<UserRole>> userRoles;
             Wt::Dbo::collection<Wt::Dbo::ptr<Plugin>> plugins;
@@ -69,9 +68,8 @@ namespace Echoes
                 Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToOne, TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);
                 Wt::Dbo::hasMany(a, userRoles, Wt::Dbo::ManyToOne, TRIGRAM_USER_ROLE SEP TRIGRAM_ORGANIZATION);
                 Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToOne, TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a, users, Wt::Dbo::ManyToOne, "CURRENT");
+                Wt::Dbo::hasMany(a, users, Wt::Dbo::ManyToOne, TRIGRAM_USER SEP TRIGRAM_ORGANIZATION);
 
-                Wt::Dbo::hasMany(a, user, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_USER SEP TRIGRAM_ORGANIZATION);
                 
 
                 Wt::Dbo::belongsTo(a, pack, TRIGRAM_ORGANIZATION SEP TRIGRAM_PACK);

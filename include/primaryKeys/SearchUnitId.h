@@ -61,7 +61,7 @@ namespace Wt
     template <class Action>
     void field(Action& a, Echoes::Dbo::SearchUnitId& suid,
             const std::string& name, int size = -1) {
-        field(a, suid.search, TRIGRAM_SEARCH SEP ID);
+        field(a, suid.search, TRIGRAM_SEARCH ID);
         field(a, suid.infValueNum, TRIGRAM_INFORMATION SEP "VALUE_NUM");
     }
 

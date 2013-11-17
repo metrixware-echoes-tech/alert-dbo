@@ -33,143 +33,149 @@
 #include <Wt/Dbo/Dbo>
 #include <Wt/Auth/Dbo/AuthInfo>
 
-#include "user/User.h"
+namespace boost
+{
+  namespace property_tree
+  {
+
+    // id_translator template specialization to add quotes " " to strings in json
+    template<>
+    struct id_translator<std::string> {
+        typedef std::string internal_type;
+        typedef std::string external_type;
+
+        boost::optional<std::string> get_value(const std::string &v) {
+            return v;
+        }
+
+        boost::optional<std::string> put_value(const std::string &v) {
+            return '"' + json_parser::create_escapes(v) + '"';
+        }
+    };
+
+   
+  }
+}
+
 
 namespace Wt
 {
   namespace Dbo
   {
-
     class JsonSerializer {
     public:
 
-        JsonSerializer(std::ostream& out, Session& s) : out_(out), s_(s) {
-//            indent_ = 1;
-        }
+        JsonSerializer(Session& s);
 
-        std::string transformFieldName(const std::string& fieldName)
-        {
-            std::string res = fieldName;
-            std::transform(res.begin(), res.end(), res.begin(), ::tolower);
-            res.erase(0, res.find_first_of("_") + 1);
-            return res;
-        }
-        std::string transformTableName(const std::string& fieldTable)
-        {
-            std::string res = fieldTable;
-            // Check if fieldTable has more than 1 '_'
-            if (res.find_first_of("_") != res.find_last_of("_"))
-            {
-                res =  transformFieldName(fieldTable);
-                res.erase(res.find_last_of("_"));
-            }
-            return res;
-        }
-        
+        std::string transformFieldName(const std::string& fieldName);
+        std::string transformTableName(const std::string& fieldTable);
+
         template <class V>
         void act(Wt::Dbo::FieldRef< V> field) {
-            root.put(transformFieldName(field.name()), field.value());
+            m_currentElem->put(transformFieldName(field.name()), field.value());
         }
+        // When the field is WDateTime or WString, field added as std::string to add quotes " " in json
         void act(Wt::Dbo::FieldRef< Wt::WDateTime> field) {
-            root.put(transformFieldName(field.name()), field.value().toString().toUTF8());
+            m_currentElem->put<std::string>(transformFieldName(field.name()), field.value().toString().toUTF8());
         }
-        
+        void act(Wt::Dbo::FieldRef< Wt::WString> field) {
+            m_currentElem->put<std::string>(transformFieldName(field.name()), field.value().toUTF8());
+        }
+
         template <class V>
         void actPtr(Wt::Dbo::PtrRef< V> field) {
             boost::property_tree::ptree elem;
-            if (field.id() > 0)
-            {
-                if (field.value().get()->deleteTag.isNull())
-                {
+            m_currentElem = &elem;
+            if (field.id() > 0) {
+                if (field.value().get()->deleteTag.isNull()) {
                     elem.put("id", field.id());
-                    // A NE PAS SUPPRIMER
-    //            const_cast<V&> (*field.value().get()).persist(*this);
-                    root.put_child(transformTableName(s_.tableName<V>()), elem);
+                    const_cast<V&> (*field.value().get()).persist(*this);
+                    m_currentElem->put_child(transformTableName(m_session.tableName<V>()), elem);
                 }
             }
+            m_currentElem = &m_root;
         }
-        void actPtr(Wt::Dbo::PtrRef< Wt::Auth::Dbo::AuthInfo<Echoes::Dbo::User>> field) {
-            
+        template<class S>
+        void actPtr(Wt::Dbo::PtrRef< Wt::Auth::Dbo::AuthInfo<S>> field) {
+
         }
-        
+
         template <class V>
         void actCollection(const Wt::Dbo::CollectionRef< V> & collec) {
-//            boost::property_tree::ptree arr;
-
-//            for (Wt::Dbo::ptr<V> &field : collec.value()) {
-//                if (field.isTransient()) {
-//                    if (field.value().get()->deleteTag.isNull()) {
-//                        boost::property_tree::ptree elem;
-//                        elem.put("id", field.id());
-//                        arr.push_back(std::make_pair("", elem));
-//                    }
-//                }
-//            }
             long long i = 0;
             for (Wt::Dbo::ptr<V> &field : collec.value()) {
-                if (field.isTransient()) {
+                if (field) {
                     if (field.get()->deleteTag.isNull()) {
                         i++;
                     }
                 }
             }
-//            root.put<long long>(transformTableName(s_.tableName<V>()), i);
-            const std::string tmp = transformTableName(s_.tableName<V>());
-            std::cout << "qu'avons nous là ? " << tmp << std::endl;
-            root.put<long long>(tmp, i);
+            m_currentElem->put<long long>(transformTableName(m_session.tableName<V>()), i);
         }
-        void actCollection(const Wt::Dbo::CollectionRef< Wt::Auth::Dbo::AuthInfo<Echoes::Dbo::User>> & collec) {
-
-        }
-        void actCollection(const Wt::Dbo::CollectionRef< Echoes::Dbo::Organization> & collec) {
+        template<class S>
+        void actCollection(const Wt::Dbo::CollectionRef< Wt::Auth::Dbo::AuthInfo<S>> &collec) {
 
         }
 
         template <class C>
-        void Serialize(C& c) const {
-            c.persist(this);
+        void serialize(C& c) {
+            const_cast<C&>(c).persist(*this);
         }
 
         template <class C>
-        void Serialize(Wt::Dbo::ptr< C> & c) {
-            if (c->deleteTag.isNull())
-            {
-                root.put("id", c.id());
+        void serialize(Wt::Dbo::ptr< C> & c) {
+            if (c->deleteTag.isNull()) {
+                m_currentElem->put("id", c.id());
                 const_cast<C&> (*c).persist(*this);
             }
 
-            std::stringstream ss;
-            boost::property_tree::json_parser::write_json(ss, root);
+            boost::property_tree::json_parser::write_json(m_ss, m_root);
 
-            out_ <<  ss.str();
+            if (!m_isCollection) {
+//                out_ << ss.str();
+                m_result = m_ss.str();
+            }
         }
-        void Serialize(Wt::Dbo::ptr< Wt::Auth::Dbo::AuthInfo<Echoes::Dbo::User>> & c) {
+        template<class S>
+        void serialize(Wt::Dbo::ptr< Wt::Auth::Dbo::AuthInfo<S>> &c) {
 
         }
 
         template <class C>
-        void Serialize(Wt::Dbo::collection< Wt::Dbo::ptr< C> >& cs) {
-//            Indent();
-//            out_ << "<" << s_.tableName<C>() << "s>" << std::endl;
-//            ++indent_;
+        void serialize(Wt::Dbo::collection< Wt::Dbo::ptr< C> >& cs) {
+            long unsigned int i = 0;
+            m_isCollection = true;
+            m_ss << "[\n";
             for (auto& c : cs) {
-                Serialize(c);
+                serialize(c);
+                if (i < cs.size() - 1) {
+                    std::string tmp = m_ss.str().erase(m_ss.str().size() - 1);
+                    m_ss.str("");
+                    m_ss.clear();
+                    m_ss << tmp;
+                    m_ss << ",\n";
+                }
+                i++;
             }
-//            --indent_;
-//            Indent();
-//            out_ << "</" << s_.tableName<C>() << "s>" << std::endl;
+//            out_ << ss.str() << "]\n";
+            m_result = m_ss.str() + "]\n";
         }
-        void Serialize(Wt::Dbo::collection< Wt::Dbo::ptr< Wt::Auth::Dbo::AuthInfo<Echoes::Dbo::User>> >& cs) {
-            
+        template<class S>
+        void serialize(Wt::Dbo::collection< Wt::Dbo::ptr< Wt::Auth::Dbo::AuthInfo<S>> >& cs) {
+
         }
-        
-        Session *session() { return &s_; }
+
+        std::string getResult();
+        void print();
+        Session *session();
     private:
 
-        std::ostream& out_;
-        Session& s_;
-//        int indent_;
-        boost::property_tree::ptree root;
+        std::ostream& m_out;
+        std::stringstream m_ss;
+        bool m_isCollection;
+        Session& m_session;
+        std::string m_result;
+        boost::property_tree::ptree m_root, *m_currentElem;
     };
 
   }

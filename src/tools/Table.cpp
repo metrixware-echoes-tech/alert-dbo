@@ -10,7 +10,6 @@
  * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
  * 
  */
-
 #include "tools/Table.h"
 
 namespace Echoes
@@ -134,7 +133,7 @@ namespace Echoes
 
             return res;
         }
-
+            
         std::string Table::produceResString(std::string key, std::string value, bool quote, bool column, bool composite) const
         {
             std::transform(key.begin(), key.end(), key.begin(), ::tolower);
