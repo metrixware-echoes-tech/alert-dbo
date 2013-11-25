@@ -36,7 +36,7 @@ namespace Echoes
             res += this->probePackageParameter.modify()->toJSON();
 
             res += Table::formatJSONForDboCollection(this->syslogs, "syslogs");
-            res += Table::formatJSONForDboCollection(this->assets, "assets");
+//            res += Table::formatJSONForDboCollection(this->assets, "assets");
 
             res += "}";
             return res;

@@ -33,7 +33,7 @@ namespace Echoes
         {
             std::string res = "";
             res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->probe);
+//            res += Table::formatJSONForDboPtr(this->probe);
             res += Table::formatJSONForDboPtr(this->assetArchitecture);
             res += Table::formatJSONForDboPtr(this->assetDistribution);
             res += Table::formatJSONForDboPtr(this->assetRelease);

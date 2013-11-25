@@ -37,9 +37,10 @@ namespace Echoes
             Wt::WString cert;
 
             Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
+            Wt::Dbo::ptr<Asset> asset;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
-            Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
+//            Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
 
             template<class Action>
             void persist(Action& a)
@@ -48,16 +49,17 @@ namespace Echoes
                 mapClassAttributesStrings["CERT"] = &this->cert;
                 FIELD_FILLER();
                 Wt::Dbo::belongsTo(a, probePackageParameter, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
+                Wt::Dbo::belongsTo(a, asset, TRIGRAM_PROBE SEP TRIGRAM_ASSET);
 
                 Wt::Dbo::hasMany(a,
                         syslogs,
                         Wt::Dbo::ManyToOne,
                         TRIGRAM_SYSLOG SEP TRIGRAM_PROBE);
 
-                Wt::Dbo::hasMany(a,
-                        assets,
-                        Wt::Dbo::ManyToOne,
-                        TRIGRAM_ASSET SEP TRIGRAM_PROBE);
+//                Wt::Dbo::hasMany(a,
+//                        assets,
+//                        Wt::Dbo::ManyToOne,
+//                        TRIGRAM_ASSET SEP TRIGRAM_PROBE);
 
             }
             virtual std::string toJSON() const;
