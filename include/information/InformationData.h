@@ -26,6 +26,7 @@ namespace Echoes
 
         Wt::Dbo::ptr<Information> information;
         Wt::Dbo::ptr<Filter> filter;
+        Wt::Dbo::ptr<Asset> asset;
         Wt::Dbo::ptr<InformationUnit> informationUnit;
         int filterFieldIndex;
 
@@ -36,6 +37,7 @@ namespace Echoes
             
             Wt::Dbo::belongsTo(a, information, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION);
             Wt::Dbo::belongsTo(a, filter, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_FILTER);
+            Wt::Dbo::belongsTo(a, asset, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_ASSET);
             Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION_UNIT);
 
         }
