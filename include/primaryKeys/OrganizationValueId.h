@@ -19,7 +19,7 @@ struct OrganizationValueId
     Wt::Dbo::ptr<Organization> organization;
 
     OrganizationValueId(Wt::Dbo::ptr<OrganizationField> organizationField, Wt::Dbo::ptr<Organization> organisation)
-        : organizationField(organizationField), organization(organization) { }
+        : organizationField(organizationField), organization(organisation) { }
 
     OrganizationValueId(){ }
 
