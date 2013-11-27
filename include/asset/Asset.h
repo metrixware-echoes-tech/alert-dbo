@@ -50,9 +50,6 @@ namespace Echoes
             Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<InformationData> > informationDatas;
-            Wt::Dbo::collection<Wt::Dbo::ptr<InformationValue> > values;
-            Wt::Dbo::collection<Wt::Dbo::ptr<InformationHistoricalValue> > historicalValues;
-            Wt::Dbo::collection<Wt::Dbo::ptr<AlertValue> > alertValues;
 
             template<class Action>
             void persist(Action& a)
@@ -70,11 +67,7 @@ namespace Echoes
                 Wt::Dbo::belongsTo(a, assetRelease, TRIGRAM_ASSET SEP TRIGRAM_ASSET_RELEASE);
 
                 Wt::Dbo::hasMany(a, probes, Wt::Dbo::ManyToOne, TRIGRAM_PROBE SEP TRIGRAM_ASSET);
-                Wt::Dbo::hasMany(a, values, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_ASSET);
                 Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_ASSET);
-                Wt::Dbo::hasMany(a, historicalValues, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_ASSET);
-                Wt::Dbo::hasMany(a, alertValues, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_VALUE SEP TRIGRAM_ASSET);
-
                 Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_ASSET);
             }
 

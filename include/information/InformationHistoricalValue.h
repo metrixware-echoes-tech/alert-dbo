@@ -43,9 +43,8 @@ namespace Echoes
             int lotNumber;
             int lineNumber;
 
-            Wt::Dbo::ptr<Asset> asset;
             Wt::Dbo::ptr<Syslog> syslog;
-            Wt::Dbo::ptr<Information> information;
+            Wt::Dbo::ptr<InformationData> informationData;
 
             template<class Action>
             void persist(Action& a)
@@ -56,9 +55,8 @@ namespace Echoes
                 mapClassAttributesInts["LOT_NUM"] = &this->lotNumber;
                 mapClassAttributesInts["LINE_NUM"] = &this->lineNumber;
                 FIELD_FILLER();
-                Wt::Dbo::belongsTo(a, asset, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_ASSET);
                 Wt::Dbo::belongsTo(a, syslog, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG, Wt::Dbo::OnDeleteSetNull);
-                Wt::Dbo::belongsTo(a, information, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_INFORMATION);
+                Wt::Dbo::belongsTo(a, informationData, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_INFORMATION_DATA);
             }
 
             virtual std::string toJSON() const;

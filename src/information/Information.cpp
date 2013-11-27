@@ -26,7 +26,6 @@ namespace Echoes {
         Information::Information(const Information &orig)
         : Table(orig)
         {
-            this->alertValues = orig.alertValues;
             this->calculate = orig.calculate;
             this->desc = orig.desc;
             this->display = orig.display;
@@ -40,13 +39,7 @@ namespace Echoes {
         std::string Information::toJSON() const
         {
             std::string res = "";
-            res = "{\n\t";
-        //    res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
             res += Table::toJSON();
-
-            res += Table::formatJSONForDboCollection(this->alertValues, "alert_values", false);
-
-            res += "}";
             return res;
         }
     }

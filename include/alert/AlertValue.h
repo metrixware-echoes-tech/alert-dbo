@@ -36,9 +36,8 @@ namespace Echoes
             Wt::WString value;
             boost::optional<Wt::WString> keyValue;
             Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
-            Wt::Dbo::ptr<Information> information;
+            Wt::Dbo::ptr<InformationData> informationData;
             Wt::Dbo::ptr<AlertCriteria> alertCriteria;
-            Wt::Dbo::ptr<Asset> asset;
 
 
             Wt::Dbo::collection<Wt::Dbo::ptr<AlertSequence> > alertSequences;
@@ -53,9 +52,8 @@ namespace Echoes
 
                 Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToOne, TRIGRAM_ALERT SEP TRIGRAM_ALERT_VALUE);
 
-                Wt::Dbo::belongsTo(a, information, TRIGRAM_ALERT_VALUE SEP TRIGRAM_INFORMATION);
+                Wt::Dbo::belongsTo(a, informationData, TRIGRAM_ALERT_VALUE SEP TRIGRAM_INFORMATION_DATA);
                 Wt::Dbo::belongsTo(a, alertCriteria, TRIGRAM_ALERT_VALUE SEP TRIGRAM_ALERT_CRITERIA);
-                Wt::Dbo::belongsTo(a, asset, TRIGRAM_ALERT_VALUE SEP TRIGRAM_ASSET);
 
                 Wt::Dbo::hasMany(a, alertSequences, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_SEQUENCE SEP TRIGRAM_ALERT_VALUE);
             }
