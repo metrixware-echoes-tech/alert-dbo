@@ -152,16 +152,16 @@
 #include "information/Syslog.h"
 
 #include "pack/Pack.h"
-#include "pack/Option.h"
+#include "pack/OptionType.h"
 #include "pack/PackOption.h"
-#include "pack/OptionValue.h"
+#include "pack/Option.h"
 
 #include "probe/Probe.h"
 #include "probe/ProbePackage.h"
 #include "probe/ProbePackageParameter.h"
 
+#include "media/MediaType.h"
 #include "media/Media.h"
-#include "media/MediaValue.h"
 
 #endif	/* MAININCLUDEFILE_H */
 

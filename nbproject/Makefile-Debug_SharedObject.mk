@@ -65,13 +65,13 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/information/InformationValue.o \
 	${OBJECTDIR}/src/information/Syslog.o \
 	${OBJECTDIR}/src/media/Media.o \
-	${OBJECTDIR}/src/media/MediaValue.o \
+	${OBJECTDIR}/src/media/MediaType.o \
 	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/organization/OrganizationField.o \
 	${OBJECTDIR}/src/organization/OrganizationType.o \
 	${OBJECTDIR}/src/organization/OrganizationValue.o \
 	${OBJECTDIR}/src/pack/Option.o \
-	${OBJECTDIR}/src/pack/OptionValue.o \
+	${OBJECTDIR}/src/pack/OptionType.o \
 	${OBJECTDIR}/src/pack/Pack.o \
 	${OBJECTDIR}/src/pack/PackOption.o \
 	${OBJECTDIR}/src/plugin/Plugin.o \
@@ -287,10 +287,10 @@ ${OBJECTDIR}/src/media/Media.o: src/media/Media.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/Media.o src/media/Media.cpp
 
-${OBJECTDIR}/src/media/MediaValue.o: src/media/MediaValue.cpp 
+${OBJECTDIR}/src/media/MediaType.o: src/media/MediaType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/media
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/MediaValue.o src/media/MediaValue.cpp
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/MediaType.o src/media/MediaType.cpp
 
 ${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
@@ -317,10 +317,10 @@ ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Option.o src/pack/Option.cpp
 
-${OBJECTDIR}/src/pack/OptionValue.o: src/pack/OptionValue.cpp 
+${OBJECTDIR}/src/pack/OptionType.o: src/pack/OptionType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/OptionValue.o src/pack/OptionValue.cpp
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/OptionType.o src/pack/OptionType.cpp
 
 ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack

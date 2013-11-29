@@ -41,7 +41,7 @@ namespace Echoes
             boost::optional<Wt::WString> ackPort;
             boost::optional<Wt::WString> ackId;
 
-            Wt::Dbo::ptr<MediaValue> mediaValue;
+            Wt::Dbo::ptr<Media> media;
             Wt::Dbo::ptr<Alert> alert;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<AlertTrackingEvent> > alertTrackingEvents;
@@ -60,7 +60,7 @@ namespace Echoes
 
                 FIELD_FILLER();
 
-                Wt::Dbo::belongsTo(a, mediaValue, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_MEDIA_VALUE);
+                Wt::Dbo::belongsTo(a, media, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_MEDIA);
                 Wt::Dbo::belongsTo(a, alert, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_ALERT);
 
                 Wt::Dbo::hasMany(a,
@@ -68,8 +68,6 @@ namespace Echoes
                         Wt::Dbo::ManyToOne,
                         TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
             }
-
-            virtual std::string toJSON() const;
 
         protected:
         private:

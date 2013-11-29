@@ -19,21 +19,21 @@ namespace Echoes
         Wt::Dbo::ptr<UserRole> userRole;
         Wt::Dbo::ptr<Information> information;
         Wt::Dbo::ptr<AlertCriteria> alertCriteria;
-        Wt::Dbo::ptr<Media> media;
+        Wt::Dbo::ptr<MediaType> mediaType;
 
-        AlertMessageAliasInformationCriteriaId(Wt::Dbo::ptr<UserRole> ptrUserRole, Wt::Dbo::ptr<Information> ptrInformation, Wt::Dbo::ptr<AlertCriteria> ptrAlertCriteria, Wt::Dbo::ptr<Media> ptrMedia)
-        : userRole(ptrUserRole), information(ptrInformation), alertCriteria(ptrAlertCriteria), media(ptrMedia) {
+        AlertMessageAliasInformationCriteriaId(Wt::Dbo::ptr<UserRole> ptrUserRole, Wt::Dbo::ptr<Information> ptrInformation, Wt::Dbo::ptr<AlertCriteria> ptrAlertCriteria, Wt::Dbo::ptr<MediaType> ptrMediaType)
+        : userRole(ptrUserRole), information(ptrInformation), alertCriteria(ptrAlertCriteria), mediaType(ptrMediaType) {
         }
 
         AlertMessageAliasInformationCriteriaId() {
         }
 
         bool operator==(const AlertMessageAliasInformationCriteriaId& other) const {
-            return userRole == other.userRole && information == other.information && alertCriteria == other.alertCriteria && media == other.media;
+            return userRole == other.userRole && information == other.information && alertCriteria == other.alertCriteria && mediaType == other.mediaType;
         }
 
         bool operator<(const AlertMessageAliasInformationCriteriaId& other) const {
-            if ((userRole < other.userRole) || (information < other.information) || (alertCriteria < other.alertCriteria) || media < other.media)
+            if ((userRole < other.userRole) || (information < other.information) || (alertCriteria < other.alertCriteria) || mediaType < other.mediaType)
                 return true;
             else
                 return false;
@@ -43,7 +43,7 @@ namespace Echoes
     inline std::ostream& operator<<(std::ostream& o, const AlertMessageAliasInformationCriteriaId& pk) {
         return o << "\"role_id\": " << pk.userRole.id()
                 << ",\n" << pk.information.id()
-                << ",\n\"media_id\": " << pk.media.id()
+                << ",\n\"media_id\": " << pk.mediaType.id()
                 << ",\n\"alert_criteria_id\": " << pk.alertCriteria.id();
     }
 
@@ -61,7 +61,7 @@ namespace Wt
         field(a, aicid.userRole, TRIGRAM_USER_ROLE ID);
         field(a, aicid.information, TRIGRAM_INFORMATION ID);
         field(a, aicid.alertCriteria, TRIGRAM_ALERT_CRITERIA ID);
-        field(a, aicid.media, TRIGRAM_MEDIA ID);
+        field(a, aicid.mediaType, TRIGRAM_MEDIA_TYPE ID);
     }
 
     template<>

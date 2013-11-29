@@ -101,15 +101,15 @@ namespace Echoes
         static const char *T_SEARCH_UNIT_SEU;
         static const char *T_PACK_PCK;
         static const char *T_PACK_OPTION_POP;
-        static const char *T_OPTION_VALUE_OPV;
-        static const char *T_MEDIA_VALUE_MEV;
+        static const char *T_OPTION_OPT;
+        static const char *T_MEDIA_MED;
 
         static const char *TJ_ENG_ORG;
 
         static const char *TR_INFORMATION_UNIT_TYPE_IUT;
         static const char *TR_ALERT_CRITERIA_ACR;
-        static const char *TR_OPTION_OPT;
-        static const char *TR_MEDIA_MED;
+        static const char *TR_OPTION_TYPE_OTP;
+        static const char *TR_MEDIA_TYPE_MTY;
         static const char *TR_ADDON_ADO;
         static const char *TR_SEARCH_TYPE_STY;
         static const char *TR_ORGANIZATION_TYPE_OTY;

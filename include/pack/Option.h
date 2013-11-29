@@ -1,7 +1,7 @@
 /* 
- * Header of Option Table
- * @author ECHOES Technologies (TSA)
- * @date 03/07/2012
+ * Header of Option Value Table
+ * @author ECHOES Technologies (RHI)
+ * @date 10/09/2012
  * 
  * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
  * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
@@ -12,10 +12,9 @@
  */
 
 #ifndef OPTION_H
-#define OPTION_H
+#define	OPTION_H
 
 #include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -27,30 +26,28 @@ namespace Echoes
         public:
             Option();
             virtual ~Option();
-            static std::string TRIGRAM;
-            Wt::WString name;
 
-            Wt::Dbo::collection<Wt::Dbo::ptr<PackOption> > packOptions;
+            static std::string TRIGRAM;
+            Wt::WString value;
+
+            Wt::Dbo::ptr<OptionType> optionType;
+            Wt::Dbo::ptr<Organization> organization;
 
             template<class Action>
             void persist(Action& a)
             {
-                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStrings["VALUE"] = &this->value;
+
                 FIELD_FILLER();
 
-                Wt::Dbo::hasMany(a,
-                        packOptions,
-                        Wt::Dbo::ManyToOne,
-                        TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION);
+                Wt::Dbo::belongsTo(a, optionType, TRIGRAM_OPTION SEP TRIGRAM_OPTION_TYPE);
+                Wt::Dbo::belongsTo(a, organization, TRIGRAM_OPTION SEP TRIGRAM_ORGANIZATION);
             }
 
-            virtual std::string toJSON() const;
-
-        protected:
         private:
     };
   }
 }
 
-#endif // OPTION_H
+#endif	/* OPTION_H */
 

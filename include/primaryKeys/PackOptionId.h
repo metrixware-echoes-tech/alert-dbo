@@ -17,21 +17,21 @@ namespace Echoes
 
     class Pack;
     class PackOption;
-    class Option;
+    class OptionType;
 
     struct PackOptionId {
         Wt::Dbo::ptr<Pack> pack;
-        Wt::Dbo::ptr<Option> option;
+        Wt::Dbo::ptr<OptionType> optionType;
 
-        PackOptionId(Wt::Dbo::ptr<Pack> pack, Wt::Dbo::ptr<Option> option)
-        : pack(pack), option(option) {
+        PackOptionId(Wt::Dbo::ptr<Pack> pack, Wt::Dbo::ptr<OptionType> optionType)
+        : pack(pack), optionType(optionType) {
         }
 
         PackOptionId() {
         }
 
         bool operator==(const PackOptionId& other) const {
-            return pack == other.pack && option == other.option;
+            return pack == other.pack && optionType == other.optionType;
         }
 
         bool operator<(const PackOptionId& other) const {
@@ -45,7 +45,7 @@ namespace Echoes
     inline std::ostream& operator<<(std::ostream& o, const PackOptionId& pk) {
         //return o << "(" << pk.pack << ")";
         return o << "\"pack_id\": " << pk.pack.id() << ",\n\t\t"
-                << "\"option_id\": " << pk.option.id();
+                << "\"option_id\": " << pk.optionType.id();
     }
 
   }
@@ -60,7 +60,7 @@ namespace Wt
     void field(Action& a, Echoes::Dbo::PackOptionId& spvid,
             const std::string& name, int size = -1) {
         field(a, spvid.pack, TRIGRAM_PACK_OPTION SEP TRIGRAM_PACK);
-        field(a, spvid.option, TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION);
+        field(a, spvid.optionType, TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION_TYPE);
     }
 
     template<>

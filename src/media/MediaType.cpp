@@ -1,5 +1,5 @@
 /* 
- * Organization Table
+ * Media Table
  * @author ECHOES Technologies (TSA)
  * @date 18/04/2012
  * 
@@ -11,24 +11,23 @@
  * 
  */
 
-#include "organization/Organization.h"
+#include "media/MediaType.h"
 
 namespace Echoes
 {
     namespace Dbo
     {
-        std::string Organization::TRIGRAM(TRIGRAM_ORGANIZATION);
+        std::string MediaType::TRIGRAM(TRIGRAM_MEDIA_TYPE);
 
-        Organization::Organization()
+        MediaType::MediaType()
         {
-            this->jsonName = "user";
             //ctor
         }
 
-        Organization::~Organization()
+        MediaType::~MediaType()
         {
-        }
 
+        }
 
     }
 }

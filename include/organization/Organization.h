@@ -50,8 +50,10 @@ namespace Echoes
             Wt::Dbo::collection<Wt::Dbo::ptr<Asset>> assets;
             Wt::Dbo::collection<Wt::Dbo::ptr<UserRole>> userRoles;
             Wt::Dbo::collection<Wt::Dbo::ptr<Plugin>> plugins;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Option>> options;
             Wt::Dbo::ptr<Pack> pack;
             Wt::Dbo::ptr<OrganizationType> organizationType;
+            
 
             template<class Action>
             void persist(Action& a)
@@ -70,12 +72,12 @@ namespace Echoes
                 Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToOne, TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
                 Wt::Dbo::hasMany(a, users, Wt::Dbo::ManyToOne, TRIGRAM_USER SEP TRIGRAM_ORGANIZATION);
 
+                Wt::Dbo::hasMany(a, options, Wt::Dbo::ManyToOne, TRIGRAM_OPTION SEP TRIGRAM_ORGANIZATION);
                 
 
                 Wt::Dbo::belongsTo(a, pack, TRIGRAM_ORGANIZATION SEP TRIGRAM_PACK);
                 Wt::Dbo::belongsTo(a, organizationType, TRIGRAM_ORGANIZATION SEP TRIGRAM_ORGANIZATION_TYPE);
             }
-            virtual std::string toJSON() const;
     };
   }
 }

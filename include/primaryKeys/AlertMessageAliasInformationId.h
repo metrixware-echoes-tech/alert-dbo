@@ -18,21 +18,21 @@ namespace Echoes
     struct AlertMessageAliasInformationId {
         Wt::Dbo::ptr<UserRole> userRole;
         Wt::Dbo::ptr<Information> information;
-        Wt::Dbo::ptr<Media> media;
+        Wt::Dbo::ptr<MediaType> mediaType;
 
-        AlertMessageAliasInformationId(Wt::Dbo::ptr<UserRole> ptrUserRole, Wt::Dbo::ptr<Information> ptrInformation, Wt::Dbo::ptr<Media> ptrMedia)
-        : userRole(ptrUserRole), information(ptrInformation), media(ptrMedia) {
+        AlertMessageAliasInformationId(Wt::Dbo::ptr<UserRole> ptrUserRole, Wt::Dbo::ptr<Information> ptrInformation, Wt::Dbo::ptr<MediaType> ptrMediaType)
+        : userRole(ptrUserRole), information(ptrInformation), mediaType(ptrMediaType) {
         }
 
         AlertMessageAliasInformationId() {
         }
 
         bool operator==(const AlertMessageAliasInformationId& other) const {
-            return userRole == other.userRole && information == other.information && media == other.media;
+            return userRole == other.userRole && information == other.information && mediaType == other.mediaType;
         }
 
         bool operator<(const AlertMessageAliasInformationId& other) const {
-            if ((userRole < other.userRole) || (information < other.information) || media < other.media)
+            if ((userRole < other.userRole) || (information < other.information) || mediaType < other.mediaType)
                 return true;
             else
                 return false;
@@ -42,7 +42,7 @@ namespace Echoes
     inline std::ostream& operator<<(std::ostream& o, const AlertMessageAliasInformationId& pk) {
         return o << "\"role_id\": " << pk.userRole.id()
                 << ",\n" << pk.information.id()
-                << ",\n\"media_id\": " << pk.media.id();
+                << ",\n\"media_id\": " << pk.mediaType.id();
     }
 
   }
@@ -58,7 +58,7 @@ namespace Wt
             const std::string& name, int size = -1) {
         field(a, aaiid.userRole, TRIGRAM_USER_ROLE ID);
         field(a, aaiid.information, TRIGRAM_INFORMATION ID);
-        field(a, aaiid.media, TRIGRAM_MEDIA ID);
+        field(a, aaiid.mediaType, TRIGRAM_MEDIA_TYPE ID);
     }
 
     template<>

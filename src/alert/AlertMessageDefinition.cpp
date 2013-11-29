@@ -40,7 +40,7 @@ namespace Echoes
             res += Table::toJSON();
             res += Table::formatJSONForDboPtr(this->pk.alert);
             res += Table::formatJSONForDboPtr(this->pk.userRole);
-            res += Table::formatJSONForDboPtr(this->pk.media);
+            res += Table::formatJSONForDboPtr(this->pk.mediaType);
             res += "}\n";
             return res;
         }

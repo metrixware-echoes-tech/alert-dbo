@@ -33,16 +33,6 @@ namespace Echoes
 
         }
 
-        std::string AlertMediaSpecialization::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->alert);
-            res += Table::formatJSONForDboPtr(this->mediaValue, false);
-
-            res += "}";
-            return res;
-        }
     }
 }
 

@@ -34,7 +34,7 @@ namespace Echoes
             Wt::WString message;
 
             Wt::Dbo::ptr<Alert> alert;
-            Wt::Dbo::ptr<MediaValue> mediaValue;
+            Wt::Dbo::ptr<Media> media;
 
             template<class Action>
             void persist(Action& a)
@@ -47,10 +47,8 @@ namespace Echoes
                 FIELD_FILLER();
 
                 Wt::Dbo::belongsTo(a, alert, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_ALERT);
-                Wt::Dbo::belongsTo(a, mediaValue, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_MEDIA_VALUE);
+                Wt::Dbo::belongsTo(a, media, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_MEDIA);
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };

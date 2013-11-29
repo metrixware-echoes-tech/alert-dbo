@@ -18,21 +18,21 @@ namespace Echoes
     struct AlertMessageDefinitionId {
         Wt::Dbo::ptr<Alert> alert;
         Wt::Dbo::ptr<UserRole> userRole;
-        Wt::Dbo::ptr<Media> media;
+        Wt::Dbo::ptr<MediaType> mediaType;
 
-        AlertMessageDefinitionId(Wt::Dbo::ptr<Alert> ptrAle, Wt::Dbo::ptr<UserRole> ptrUro, Wt::Dbo::ptr<Media> ptrMed)
-        : alert(ptrAle), userRole(ptrUro), media(ptrMed) {
+        AlertMessageDefinitionId(Wt::Dbo::ptr<Alert> ptrAle, Wt::Dbo::ptr<UserRole> ptrUro, Wt::Dbo::ptr<MediaType> ptrMedType)
+        : alert(ptrAle), userRole(ptrUro), mediaType(ptrMedType) {
         }
 
         AlertMessageDefinitionId() {
         }
 
         bool operator==(const AlertMessageDefinitionId& other) const {
-            return alert == other.alert && userRole == other.userRole && media == other.media;
+            return alert == other.alert && userRole == other.userRole && mediaType == other.mediaType;
         }
 
         bool operator<(const AlertMessageDefinitionId& other) const {
-            if ((alert < other.alert) || (userRole < other.userRole) || media < other.media)
+            if ((alert < other.alert) || (userRole < other.userRole) || mediaType < other.mediaType)
                 return true;
             else
                 return false;
@@ -42,7 +42,7 @@ namespace Echoes
     inline std::ostream& operator<<(std::ostream& o, const AlertMessageDefinitionId& pk) {
         return o << "\"alert_id\": " << pk.alert.id()
                 << ",\n\t\t\"user_role\": " << pk.userRole.id()
-                << ",\n\t\t\"media_id\": " << pk.media.id();
+                << ",\n\t\t\"media_id\": " << pk.mediaType.id();
     }
 
   }
@@ -58,7 +58,7 @@ namespace Wt
             const std::string& name, int size = -1) {
         field(a, amdid.alert, TRIGRAM_ALERT ID);
         field(a, amdid.userRole, TRIGRAM_USER_ROLE ID);
-        field(a, amdid.media, TRIGRAM_MEDIA ID);
+        field(a, amdid.mediaType, TRIGRAM_MEDIA_TYPE ID);
     }
 
     template<>

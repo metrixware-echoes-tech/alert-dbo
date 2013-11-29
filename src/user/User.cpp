@@ -42,24 +42,6 @@ namespace Echoes
         {
         }
 
-        std::string User::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->userRole);
-            res += Table::formatJSONForDboPtr(this->userProfile);
-            res += Table::formatJSONForDboPtr(this->organization);
-
-            res += Table::formatJSONForDboCollection(this->userValues, "user_values");
-            res += Table::formatJSONForDboCollection(this->historicalActions, "historical_actions");
-            res += Table::formatJSONForDboCollection(this->alertAcks, "alert_acks");
-            res += Table::formatJSONForDboCollection(this->mediaValues, "media_values");
-            res += Table::formatJSONForDboCollection(this->userFields, "user_fields");
-
-            res += "}";
-            return res;
-        }
-
         std::string User::getName()
         {
             return Constants::T_USER_USR;

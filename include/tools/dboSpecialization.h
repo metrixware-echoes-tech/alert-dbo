@@ -86,10 +86,10 @@ namespace Echoes {
         class SearchUnit;
         class Pack;
         class PackOption;
-        class OptionValue;
         class Option;
+        class OptionType;
+        class MediaType;
         class Media;
-        class MediaValue;
     }
 }
 
@@ -154,10 +154,10 @@ namespace Wt {
         //        TEMPLATE_TRIGRAM(Echoes::Dbo::SearchUnit,TRIGRAM_SEARCH_UNIT ID)        
         TEMPLATE_TRIGRAM(Echoes::Dbo::Pack, TRIGRAM_PACK ID)
         //        TEMPLATE_TRIGRAM(Echoes::Dbo::PackOption,TRIGRAM_PACK_OPTION ID)
-        //        TEMPLATE_TRIGRAM(Echoes::Dbo::OptionValue,TRIGRAM_OPTION_VALUE ID)        
-        TEMPLATE_TRIGRAM(Echoes::Dbo::Option, TRIGRAM_OPTION ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::Option,TRIGRAM_OPTION ID)        
+        TEMPLATE_TRIGRAM(Echoes::Dbo::OptionType, TRIGRAM_OPTION_TYPE ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::MediaType, TRIGRAM_MEDIA_TYPE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::Media, TRIGRAM_MEDIA ID)
-        TEMPLATE_TRIGRAM(Echoes::Dbo::MediaValue, TRIGRAM_MEDIA_VALUE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertValue, TRIGRAM_ALERT_VALUE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertMediaSpecialization, TRIGRAM_ALERT_MEDIA_SPECIALIZATION ID)
 

@@ -16,22 +16,22 @@ namespace Echoes
   {
 
     class Organization;
-    class OptionValue;
     class Option;
+    class OptionType;
 
     struct OptionValueId {
         Wt::Dbo::ptr<Organization> organization;
-        Wt::Dbo::ptr<Option> option;
+        Wt::Dbo::ptr<OptionType> optionType;
 
-        OptionValueId(Wt::Dbo::ptr<Organization> organization, Wt::Dbo::ptr<Option> option)
-        : organization(organization), option(option) {
+        OptionValueId(Wt::Dbo::ptr<Organization> organization, Wt::Dbo::ptr<OptionType> optionType)
+        : organization(organization), optionType(optionType) {
         }
 
         OptionValueId() {
         }
 
         bool operator==(const OptionValueId& other) const {
-            return organization == other.organization && option == other.option;
+            return organization == other.organization && optionType == other.optionType;
         }
 
         bool operator<(const OptionValueId& other) const {
@@ -44,7 +44,7 @@ namespace Echoes
 
     inline std::ostream& operator<<(std::ostream& o, const OptionValueId& pk) {
         //return o << "(" << pk.organization << ")";
-        return o << "\"option_id\": " << pk.option.id() << ",\n\t\t"
+        return o << "\"option_id\": " << pk.optionType.id() << ",\n\t\t"
                 << "\"organization_id\": " << pk.organization.id();
     }
 
@@ -59,12 +59,12 @@ namespace Wt
     template <class Action>
     void field(Action& a, Echoes::Dbo::OptionValueId& spvid,
             const std::string& name, int size = -1) {
-        field(a, spvid.option, TRIGRAM_OPTION ID);
+        field(a, spvid.optionType, TRIGRAM_OPTION_TYPE ID);
         field(a, spvid.organization, TRIGRAM_ORGANIZATION ID);
     }
 
     template<>
-    struct dbo_traits<Echoes::Dbo::OptionValue> : public dbo_default_traits {
+    struct dbo_traits<Echoes::Dbo::Option> : public dbo_default_traits {
         typedef Echoes::Dbo::OptionValueId IdType;
 
         static IdType invalidId() {

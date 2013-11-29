@@ -18,21 +18,21 @@ namespace Echoes
     struct AlertMessageAliasPluginId {
         Wt::Dbo::ptr<UserRole> userRole;
         Wt::Dbo::ptr<Plugin> plugin;
-        Wt::Dbo::ptr<Media> media;
+        Wt::Dbo::ptr<MediaType> mediaType;
 
-        AlertMessageAliasPluginId(Wt::Dbo::ptr<UserRole> ptrUserRole, Wt::Dbo::ptr<Plugin> ptrPlugin, Wt::Dbo::ptr<Media> ptrMedia)
-        : userRole(ptrUserRole), plugin(ptrPlugin), media(ptrMedia) {
+        AlertMessageAliasPluginId(Wt::Dbo::ptr<UserRole> ptrUserRole, Wt::Dbo::ptr<Plugin> ptrPlugin, Wt::Dbo::ptr<MediaType> ptrMediaType)
+        : userRole(ptrUserRole), plugin(ptrPlugin), mediaType(ptrMediaType) {
         }
 
         AlertMessageAliasPluginId() {
         }
 
         bool operator==(const AlertMessageAliasPluginId& other) const {
-            return userRole == other.userRole && plugin == other.plugin && media == other.media;
+            return userRole == other.userRole && plugin == other.plugin && mediaType == other.mediaType;
         }
 
         bool operator<(const AlertMessageAliasPluginId& other) const {
-            if ((userRole < other.userRole) || (plugin < other.plugin) || media < other.media)
+            if ((userRole < other.userRole) || (plugin < other.plugin) || mediaType < other.mediaType)
                 return true;
             else
                 return false;
@@ -42,7 +42,7 @@ namespace Echoes
     inline std::ostream& operator<<(std::ostream& o, const AlertMessageAliasPluginId& pk) {
         return o << "\"plugin_id\": " << pk.plugin.id()
                 << ",\n\"role_id\": " << pk.userRole.id()
-                << ",\n\"media_id\": " << pk.media.id();
+                << ",\n\"media_id\": " << pk.mediaType.id();
     }
 
   }
@@ -58,7 +58,7 @@ namespace Wt
             const std::string& name, int size = -1) {
         field(a, aapid.userRole, TRIGRAM_USER_ROLE ID);
         field(a, aapid.plugin, TRIGRAM_PLUGIN ID);
-        field(a, aapid.media, TRIGRAM_MEDIA ID);
+        field(a, aapid.mediaType, TRIGRAM_MEDIA_TYPE ID);
     }
 
     template<>

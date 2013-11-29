@@ -42,7 +42,7 @@ namespace Echoes
     class UserValue;
     class UserHistoricalAction;
     class Organization;
-    class MediaValue;
+    class Media;
 
     class User : public Table
     {
@@ -69,7 +69,7 @@ namespace Echoes
             Wt::Dbo::collection<Wt::Dbo::ptr<UserValue> > userValues;
             Wt::Dbo::collection<Wt::Dbo::ptr<UserHistoricalAction> > historicalActions;
             Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
-            Wt::Dbo::collection<Wt::Dbo::ptr<MediaValue> > mediaValues;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Media> > medias;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<UserField> > userFields;
 
@@ -97,14 +97,14 @@ namespace Echoes
                 Wt::Dbo::hasMany(a, userValues, Wt::Dbo::ManyToOne, TRIGRAM_USER_VALUE SEP TRIGRAM_USER);
                 Wt::Dbo::hasMany(a, historicalActions, Wt::Dbo::ManyToOne, TRIGRAM_USER_HISTORICAL_ACTION SEP TRIGRAM_USER);
                 Wt::Dbo::hasMany(a, alertAcks, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_ACKNOWLEDGE SEP TRIGRAM_USER);
-                Wt::Dbo::hasMany(a, mediaValues, Wt::Dbo::ManyToOne, TRIGRAM_MEDIA_VALUE SEP TRIGRAM_USER);
+                Wt::Dbo::hasMany(a, medias, Wt::Dbo::ManyToOne, TRIGRAM_MEDIA SEP TRIGRAM_USER);
 
                 // join tables
                 Wt::Dbo::hasMany(a, userFields, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_USER SEP TRIGRAM_USER_FIELD);
                 //"user" hard coded in auth Info
                 Wt::Dbo::hasMany(a, authInfos, Wt::Dbo::ManyToOne, "user");
             }
-            virtual std::string toJSON() const;
+
     };
 
     // Auth

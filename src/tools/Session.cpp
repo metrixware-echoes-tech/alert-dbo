@@ -147,12 +147,12 @@ void Session::initConnection(std::string connectionParams)
 
             mapClass<Pack>(Constants::T_PACK_PCK);
             mapClass<PackOption>(Constants::T_PACK_OPTION_POP);
-            mapClass<OptionValue>(Constants::T_OPTION_VALUE_OPV);
+            mapClass<Option>(Constants::T_OPTION_OPT);
 
-            mapClass<Option>(Constants::TR_OPTION_OPT);
+            mapClass<OptionType>(Constants::TR_OPTION_TYPE_OTP);
 
-            mapClass<Media>(Constants::TR_MEDIA_MED);
-            mapClass<MediaValue>(Constants::T_MEDIA_VALUE_MEV);
+            mapClass<MediaType>(Constants::TR_MEDIA_TYPE_MTY);
+            mapClass<Media>(Constants::T_MEDIA_MED);
 
             mapClass<AuthInfo>("auth_info");
             mapClass<AuthInfo::AuthIdentityType>("auth_identity");

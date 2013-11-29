@@ -16,26 +16,26 @@ namespace Echoes
   {
     class UserRole;
     class Asset;
-    class Media;
+    class MediaType;
 
     struct AlertMessageAliasAssetId {
         Wt::Dbo::ptr<UserRole> userRole;
         Wt::Dbo::ptr<Asset> asset;
-        Wt::Dbo::ptr<Media> media;
+        Wt::Dbo::ptr<MediaType> mediaType;
 
-        AlertMessageAliasAssetId(Wt::Dbo::ptr<UserRole> ptrUserRole, Wt::Dbo::ptr<Asset> ptrAsset, Wt::Dbo::ptr<Media> ptrMedia)
-        : userRole(ptrUserRole), asset(ptrAsset), media(ptrMedia) {
+        AlertMessageAliasAssetId(Wt::Dbo::ptr<UserRole> ptrUserRole, Wt::Dbo::ptr<Asset> ptrAsset, Wt::Dbo::ptr<MediaType> ptrMediaType)
+        : userRole(ptrUserRole), asset(ptrAsset), mediaType(ptrMediaType) {
         }
 
         AlertMessageAliasAssetId() {
         }
 
         bool operator==(const AlertMessageAliasAssetId& other) const {
-            return userRole == other.userRole && asset == other.asset && media == other.media;
+            return userRole == other.userRole && asset == other.asset && mediaType == other.mediaType;
         }
 
         bool operator<(const AlertMessageAliasAssetId& other) const {
-            if ((userRole < other.userRole) || (asset < other.asset) || media < other.media)
+            if ((userRole < other.userRole) || (asset < other.asset) || mediaType < other.mediaType)
                 return true;
             else
                 return false;
@@ -45,7 +45,7 @@ namespace Echoes
     inline std::ostream& operator<<(std::ostream& o, const AlertMessageAliasAssetId& pk) {
         return o << "\n\t\t\"user_role_id\": " << pk.userRole.id()
                 << ",\n\t\t\"asset_id\": " << pk.asset.id()
-                << ",\n\t\t\"media_id\": " << pk.media.id();
+                << ",\n\t\t\"media_id\": " << pk.mediaType.id();
     }
 
   }
@@ -61,7 +61,7 @@ namespace Wt
             const std::string& name, int size = -1) {
         field(a, aaaid.userRole, TRIGRAM_USER_ROLE ID);
         field(a, aaaid.asset, TRIGRAM_ASSET ID);
-        field(a, aaaid.media, TRIGRAM_MEDIA ID);
+        field(a, aaaid.mediaType, TRIGRAM_MEDIA_TYPE ID);
     }
 
     template<>

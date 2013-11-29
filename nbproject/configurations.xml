@@ -48,7 +48,7 @@
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>include/media/Media.h</itemPath>
-          <itemPath>include/media/MediaValue.h</itemPath>
+          <itemPath>include/media/MediaType.h</itemPath>
         </logicalFolder>
         <logicalFolder name="organization"
                        displayName="organization"
@@ -60,7 +60,7 @@
         </logicalFolder>
         <logicalFolder name="pack" displayName="pack" projectFiles="true">
           <itemPath>include/pack/Option.h</itemPath>
-          <itemPath>include/pack/OptionValue.h</itemPath>
+          <itemPath>include/pack/OptionType.h</itemPath>
           <itemPath>include/pack/Pack.h</itemPath>
           <itemPath>include/pack/PackOption.h</itemPath>
         </logicalFolder>
@@ -77,8 +77,6 @@
           <itemPath>include/primaryKeys/AlertMessageAliasPluginId.h</itemPath>
           <itemPath>include/primaryKeys/AlertMessageDefinitionId.h</itemPath>
           <itemPath>include/primaryKeys/EngOrgId.h</itemPath>
-          <itemPath>include/primaryKeys/InformationDataId.h</itemPath>
-          <itemPath>include/primaryKeys/OptionValueId.h</itemPath>
           <itemPath>include/primaryKeys/OrganizationValueId.h</itemPath>
           <itemPath>include/primaryKeys/PackOptionId.h</itemPath>
           <itemPath>include/primaryKeys/SearchParameterValueId.h</itemPath>
@@ -194,7 +192,7 @@
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>src/media/Media.cpp</itemPath>
-          <itemPath>src/media/MediaValue.cpp</itemPath>
+          <itemPath>src/media/MediaType.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="organization"
                        displayName="organization"
@@ -206,7 +204,7 @@
         </logicalFolder>
         <logicalFolder name="pack" displayName="pack" projectFiles="true">
           <itemPath>src/pack/Option.cpp</itemPath>
-          <itemPath>src/pack/OptionValue.cpp</itemPath>
+          <itemPath>src/pack/OptionType.cpp</itemPath>
           <itemPath>src/pack/Pack.cpp</itemPath>
           <itemPath>src/pack/PackOption.cpp</itemPath>
         </logicalFolder>
@@ -431,7 +429,7 @@
       </item>
       <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/media/MediaValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/media/MediaType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/organization/Organization.h"
             ex="false"
@@ -455,7 +453,7 @@
       </item>
       <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/pack/OptionValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/pack/OptionType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/pack/Pack.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -498,16 +496,6 @@
             flavor2="0">
       </item>
       <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/primaryKeys/InformationDataId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/OptionValueId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="include/primaryKeys/OrganizationValueId.h"
             ex="false"
@@ -723,7 +711,7 @@
       </item>
       <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/media/MediaValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/media/MediaType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -744,7 +732,7 @@
       </item>
       <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/pack/OptionValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/pack/OptionType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/pack/Pack.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -951,7 +939,7 @@
       </item>
       <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/media/MediaValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/media/MediaType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/organization/Organization.h"
             ex="false"
@@ -975,7 +963,7 @@
       </item>
       <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/pack/OptionValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/pack/OptionType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/pack/Pack.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1018,16 +1006,6 @@
             flavor2="0">
       </item>
       <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/primaryKeys/InformationDataId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/OptionValueId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="include/primaryKeys/OrganizationValueId.h"
             ex="false"
@@ -1243,7 +1221,7 @@
       </item>
       <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/media/MediaValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/media/MediaType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1264,7 +1242,7 @@
       </item>
       <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/pack/OptionValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/pack/OptionType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/pack/Pack.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1445,7 +1423,7 @@
       </item>
       <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/media/MediaValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/media/MediaType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/organization/Organization.h"
             ex="false"
@@ -1469,7 +1447,7 @@
       </item>
       <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/pack/OptionValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/pack/OptionType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/pack/Pack.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1507,16 +1485,6 @@
             flavor2="0">
       </item>
       <item path="include/primaryKeys/AlertMessageDefinitionId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/InformationDataId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/OptionValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1710,7 +1678,7 @@
       </item>
       <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/media/MediaValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/media/MediaType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1731,7 +1699,7 @@
       </item>
       <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/pack/OptionValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/pack/OptionType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/pack/Pack.cpp" ex="false" tool="1" flavor2="0">
       </item>

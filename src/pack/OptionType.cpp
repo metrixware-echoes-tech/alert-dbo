@@ -1,7 +1,7 @@
 /* 
- * Organization Table
+ * Option Table
  * @author ECHOES Technologies (TSA)
- * @date 18/04/2012
+ * @date 03/07/2012
  * 
  * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
  * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
@@ -11,24 +11,22 @@
  * 
  */
 
-#include "organization/Organization.h"
+#include "pack/OptionType.h"
 
 namespace Echoes
 {
     namespace Dbo
     {
-        std::string Organization::TRIGRAM(TRIGRAM_ORGANIZATION);
+        std::string OptionType::TRIGRAM(TRIGRAM_OPTION_TYPE);
 
-        Organization::Organization()
+        OptionType::OptionType()
         {
-            this->jsonName = "user";
             //ctor
         }
 
-        Organization::~Organization()
+        OptionType::~OptionType()
         {
         }
-
 
     }
 }
