@@ -34,8 +34,8 @@ namespace Echoes
 
             Wt::Dbo::ptr<SearchType> searchType;
             Wt::Dbo::ptr<Source> source;
-            Wt::Dbo::ptr<Filter> filter;
-            
+
+            Wt::Dbo::collection<Wt::Dbo::ptr<Filter>> filters;
             
             template<class Action>
             void persist(Action& a)
@@ -46,10 +46,8 @@ namespace Echoes
 
                 Wt::Dbo::belongsTo(a, searchType, TRIGRAM_SEARCH SEP TRIGRAM_SEARCH_TYPE);
                 Wt::Dbo::belongsTo(a, source, TRIGRAM_SEARCH SEP TRIGRAM_SOURCE);
-                Wt::Dbo::belongsTo(a, filter, TRIGRAM_SEARCH SEP TRIGRAM_FILTER);
-
+                Wt::Dbo::hasMany(a, filters, Wt::Dbo::ManyToOne, TRIGRAM_FILTER SEP TRIGRAM_SEARCH);
             }
-            virtual std::string toJSON() const;
         private:
     };
   }

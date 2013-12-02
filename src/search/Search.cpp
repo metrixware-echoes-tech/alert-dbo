@@ -32,17 +32,6 @@ namespace Echoes
         {
 
         }
-
-        std::string Search::toJSON() const
-        {
-            std::string res = "";
-            res = "{\n\t";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->searchType, false);
-
-            res += "}";
-            return res;
-        }
     }
 }
 

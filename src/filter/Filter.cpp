@@ -31,18 +31,6 @@ namespace Echoes
         Filter::~Filter()
         {
         }
-        
-        std::string Filter::toJSON() const
-        {
-            std::string res = "";
-            res = "{\n\t";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->filterType, false);
-
-            res += "}";
-            return res;
-        }
-
     }
 }
 
