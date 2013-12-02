@@ -35,7 +35,6 @@ namespace Echoes {
         class AlertAcknowledge;
         class AlertCriteria;
         class AlertMediaSpecialization;
-        class AlertMessageDefinition;
         class AlertMessageAliasAsset;
         class AlertMessageAliasPlugin;
         class AlertMessageAliasInformation;

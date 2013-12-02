@@ -17,7 +17,6 @@
           <itemPath>include/alert/AlertMessageAliasInformation.h</itemPath>
           <itemPath>include/alert/AlertMessageAliasInformationCriteria.h</itemPath>
           <itemPath>include/alert/AlertMessageAliasPlugin.h</itemPath>
-          <itemPath>include/alert/AlertMessageDefinition.h</itemPath>
           <itemPath>include/alert/AlertSequence.h</itemPath>
           <itemPath>include/alert/AlertTracking.h</itemPath>
           <itemPath>include/alert/AlertTrackingEvent.h</itemPath>
@@ -75,7 +74,6 @@
           <itemPath>include/primaryKeys/AlertMessageAliasInformationCriteriaId.h</itemPath>
           <itemPath>include/primaryKeys/AlertMessageAliasInformationId.h</itemPath>
           <itemPath>include/primaryKeys/AlertMessageAliasPluginId.h</itemPath>
-          <itemPath>include/primaryKeys/AlertMessageDefinitionId.h</itemPath>
           <itemPath>include/primaryKeys/EngOrgId.h</itemPath>
           <itemPath>include/primaryKeys/OrganizationValueId.h</itemPath>
           <itemPath>include/primaryKeys/PackOptionId.h</itemPath>
@@ -161,7 +159,6 @@
           <itemPath>src/alert/AlertMessageAliasInformation.cpp</itemPath>
           <itemPath>src/alert/AlertMessageAliasInformationCriteria.cpp</itemPath>
           <itemPath>src/alert/AlertMessageAliasPlugin.cpp</itemPath>
-          <itemPath>src/alert/AlertMessageDefinition.cpp</itemPath>
           <itemPath>src/alert/AlertSequence.cpp</itemPath>
           <itemPath>src/alert/AlertTracking.cpp</itemPath>
           <itemPath>src/alert/AlertTrackingEvent.cpp</itemPath>
@@ -375,11 +372,6 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/alert/AlertMessageDefinition.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
@@ -486,11 +478,6 @@
             flavor2="0">
       </item>
       <item path="include/primaryKeys/AlertMessageAliasPluginId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/AlertMessageDefinitionId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -653,11 +640,6 @@
             flavor2="0">
       </item>
       <item path="src/alert/AlertMessageAliasPlugin.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/alert/AlertMessageDefinition.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -885,11 +867,6 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/alert/AlertMessageDefinition.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
@@ -996,11 +973,6 @@
             flavor2="0">
       </item>
       <item path="include/primaryKeys/AlertMessageAliasPluginId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/AlertMessageDefinitionId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1163,11 +1135,6 @@
             flavor2="0">
       </item>
       <item path="src/alert/AlertMessageAliasPlugin.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/alert/AlertMessageDefinition.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -1480,11 +1447,6 @@
             flavor2="0">
       </item>
       <item path="include/primaryKeys/AlertMessageAliasPluginId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/AlertMessageDefinitionId.h"
             ex="false"
             tool="3"
             flavor2="0">

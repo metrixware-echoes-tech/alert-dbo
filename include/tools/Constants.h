@@ -77,7 +77,6 @@ namespace Echoes
         static const char *T_ALERT_ALE;
         static const char *T_ALERT_ACKNOWLEDGE_ACK;
         static const char *T_ALERT_MEDIA_SPECIALIZATION_AMS;
-        static const char *T_ALERT_MESSAGE_DEFINITION_AMD;
         static const char *T_ALERT_MESSAGE_ALIAS_ASSET_AAA;
         static const char *T_ALERT_MESSAGE_ALIAS_PLUGIN_AAP;
         static const char *T_ALERT_MESSAGE_ALIAS_INFORMATION_AAI;

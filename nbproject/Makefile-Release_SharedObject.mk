@@ -44,7 +44,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o \
 	${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o \
 	${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o \
-	${OBJECTDIR}/src/alert/AlertMessageDefinition.o \
 	${OBJECTDIR}/src/alert/AlertSequence.o \
 	${OBJECTDIR}/src/alert/AlertTracking.o \
 	${OBJECTDIR}/src/alert/AlertTrackingEvent.o \
@@ -181,11 +180,6 @@ ${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o: src/alert/AlertMessageAliasPlu
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} $@.d
 	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o src/alert/AlertMessageAliasPlugin.cpp
-
-${OBJECTDIR}/src/alert/AlertMessageDefinition.o: src/alert/AlertMessageDefinition.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageDefinition.o src/alert/AlertMessageDefinition.cpp
 
 ${OBJECTDIR}/src/alert/AlertSequence.o: src/alert/AlertSequence.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
