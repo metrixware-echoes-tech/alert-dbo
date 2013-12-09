@@ -330,6 +330,7 @@
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
+          <commandlineTool>distcc g++-4.7</commandlineTool>
           <linkerLibItems>
             <linkerLibLibItem>wt</linkerLibLibItem>
             <linkerLibLibItem>wtdbo</linkerLibLibItem>
@@ -819,7 +820,6 @@
           <developmentMode>6</developmentMode>
           <stripSymbols>true</stripSymbols>
           <standard>8</standard>
-          <commandlineTool>g++</commandlineTool>
           <incDir>
             <pElem>include</pElem>
           </incDir>
@@ -827,7 +827,6 @@
         </ccTool>
         <linkerTool>
           <stripSymbols>true</stripSymbols>
-          <commandlineTool>g++-4.4</commandlineTool>
           <linkerLibItems>
             <linkerLibLibItem>wt</linkerLibLibItem>
             <linkerLibLibItem>wtdbo</linkerLibLibItem>
