@@ -249,7 +249,7 @@ ${OBJECTDIR}/src/filter/FilterParameter.o: src/filter/FilterParameter.cpp
 ${OBJECTDIR}/src/filter/FilterParameterValue.o: src/filter/FilterParameterValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/filter
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/FilterParameterValue.o src/filter/FilterParameterValue.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++11 -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/FilterParameterValue.o src/filter/FilterParameterValue.cpp
 
 ${OBJECTDIR}/src/filter/FilterType.o: src/filter/FilterType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/filter
