@@ -134,7 +134,7 @@ LDLIBSOPTIONS=-lwt -lwtdbo -lwtdbopostgres -lboost_system -lboost_signals
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
+	distcc g++-4.7 -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
 
 ${OBJECTDIR}/src/addon/Addon.o: src/addon/Addon.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon

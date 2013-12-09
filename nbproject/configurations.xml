@@ -330,6 +330,7 @@
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
+          <commandlineTool>distcc g++-4.7</commandlineTool>
           <linkerLibItems>
             <linkerLibLibItem>wt</linkerLibLibItem>
             <linkerLibLibItem>wtdbo</linkerLibLibItem>
@@ -827,15 +828,14 @@
         <ccTool>
           <developmentMode>6</developmentMode>
           <stripSymbols>true</stripSymbols>
-          <commandlineTool>g++-4.4</commandlineTool>
+          <standard>8</standard>
           <incDir>
             <pElem>include</pElem>
           </incDir>
-          <commandLine>-std=c++0x -fPIC</commandLine>
+          <commandLine>-fPIC</commandLine>
         </ccTool>
         <linkerTool>
           <stripSymbols>true</stripSymbols>
-          <commandlineTool>g++-4.4</commandlineTool>
           <linkerLibItems>
             <linkerLibLibItem>wt</linkerLibLibItem>
             <linkerLibLibItem>wtdbo</linkerLibLibItem>
