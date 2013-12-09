@@ -44,7 +44,7 @@ namespace Echoes
         static const char *T_USER_VALUE_UVA;
         static const char *T_USER_FIELD_UFI;
         static const char *T_USER_HISTORICAL_ACTION_UHA;
-        static const char *T_USER_ACTION_UAC;
+        
         static const char *T_ORGANIZATION_ORG;
         static const char *T_ORGANIZATION_VALUE_OVA;
         static const char *T_ORGANIZATION_FIELD_OFI;
@@ -64,8 +64,7 @@ namespace Echoes
         static const char *T_PLUGIN_DATA_PDA;
         
         static const char *T_FILTER_FIL;
-        static const char *T_FILTER_TYPE_FTY;
-        static const char *T_FILTER_PARAMETER_FPA;
+        static const char *T_FILTER_PARAMETER_VALUE_FPV;
         
         static const char *T_WIDGET_VALUE_WVA;
         static const char *T_WIDGET_TYPE_WTY;
@@ -95,9 +94,7 @@ namespace Echoes
         static const char *T_SYSLOG_SLO;
         static const char *T_SYSLOG_HISTORY_SLH;
         static const char *T_SEARCH_SEA;
-        static const char *T_SEARCH_PARAMETER_SEP;
         static const char *T_SEARCH_PARAMETER_VALUE_SEV;
-        static const char *T_SEARCH_UNIT_SEU;
         static const char *T_PACK_PCK;
         static const char *T_PACK_OPTION_POP;
         static const char *T_OPTION_OPT;
@@ -114,6 +111,10 @@ namespace Echoes
         static const char *TR_ORGANIZATION_TYPE_OTY;
         static const char *TR_SOURCE_PARAMETER_SRP;
         static const char *TR_ENGINE_ENG;
+        static const char *TR_USER_ACTION_TYPE_UAT;
+        static const char *TR_SEARCH_PARAMETER_SEP;
+        static const char *TR_FILTER_TYPE_FTY;
+        static const char *TR_FILTER_PARAMETER_FPA;
     protected:
     private:
     };

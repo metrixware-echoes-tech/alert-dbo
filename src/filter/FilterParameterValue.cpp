@@ -1,5 +1,5 @@
 /* 
- * Search Parameter Value Table
+ * Filter Parameter Value Table
  * @author ECHOES Technologies (TSA)
  * @date 07/06/2012
  * 
@@ -11,22 +11,22 @@
  * 
  */
 
-#include "search/SearchParameterValue.h"
+#include "filter/FilterParameterValue.h"
 
 namespace Echoes
 {
     namespace Dbo
     {
-        std::string SearchParameterValue::TRIGRAM(TRIGRAM_SEARCH_PARAMETER_VALUE);
+        std::string FilterParameterValue::TRIGRAM(TRIGRAM_FILTER_PARAMETER_VALUE);
 
-        SearchParameterValue::SearchParameterValue()
+        FilterParameterValue::FilterParameterValue()
         {
         }
 
-        SearchParameterValue::~SearchParameterValue()
+        FilterParameterValue::~FilterParameterValue()
         {
-
         }
 
     }
 }
+

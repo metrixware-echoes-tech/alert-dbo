@@ -22,7 +22,6 @@ namespace Echoes
         
         FilterParameter::FilterParameter()
         {
-            this->jsonName = "filter_parameter";
         }
 
         FilterParameter::FilterParameter(const FilterParameter& orig)
@@ -33,16 +32,6 @@ namespace Echoes
         {
         }
         
-        std::string FilterParameter::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-
-            res += Table::formatJSONForDboCollection(this->filterTypes, "filter_types", false);
-
-            res += "}";
-            return res;
-        }
 
     }
 }

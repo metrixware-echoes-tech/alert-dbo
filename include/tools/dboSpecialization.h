@@ -28,7 +28,7 @@ namespace Echoes {
         class User;
         class UserProfile;
         class UserValue;
-        class UserAction;
+        class UserActionType;
         class UserHistoricalAction;
         class AlertValue;
         class Alert;
@@ -82,7 +82,6 @@ namespace Echoes {
         class Search;
         class SearchType;
         class SearchParameter;
-        class SearchUnit;
         class Pack;
         class PackOption;
         class Option;
@@ -108,7 +107,7 @@ namespace Wt {
         TEMPLATE_TRIGRAM(Echoes::Dbo::UserHistoricalAction, TRIGRAM_USER_HISTORICAL_ACTION ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::UserProfile, TRIGRAM_USER_PROFILE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::Alert, TRIGRAM_ALERT ID)
-        TEMPLATE_TRIGRAM(Echoes::Dbo::UserAction, TRIGRAM_USER_ACTION ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::UserActionType, TRIGRAM_USER_ACTION_TYPE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::Addon, TRIGRAM_ADDON ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertAcknowledge, TRIGRAM_ALERT_ACKNOWLEDGE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertSequence, TRIGRAM_ALERT_SEQUENCE ID)
@@ -150,7 +149,7 @@ namespace Wt {
         TEMPLATE_TRIGRAM(Echoes::Dbo::Search, TRIGRAM_SEARCH ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::SearchType, TRIGRAM_SEARCH_TYPE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::SearchParameter, TRIGRAM_SEARCH_PARAMETER ID)
-        //        TEMPLATE_TRIGRAM(Echoes::Dbo::SearchUnit,TRIGRAM_SEARCH_UNIT ID)        
+                
         TEMPLATE_TRIGRAM(Echoes::Dbo::Pack, TRIGRAM_PACK ID)
         //        TEMPLATE_TRIGRAM(Echoes::Dbo::PackOption,TRIGRAM_PACK_OPTION ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::Option,TRIGRAM_OPTION ID)        

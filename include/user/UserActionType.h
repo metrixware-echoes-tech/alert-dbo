@@ -27,11 +27,11 @@ namespace Echoes
 {
   namespace Dbo
   {
-    class UserAction : public Table
+    class UserActionType : public Table
     {
         public:
-            UserAction();
-            virtual ~UserAction();
+            UserActionType();
+            virtual ~UserActionType();
 
             static std::string TRIGRAM;
             // attributes
@@ -52,7 +52,7 @@ namespace Echoes
                 Wt::Dbo::hasMany(a,
                         userHistoricalActions,
                         Wt::Dbo::ManyToOne,
-                        "UHA_UAC");
+                        TRIGRAM_USER_HISTORICAL_ACTION SEP TRIGRAM_USER_ACTION_TYPE);
             }
     };
   }

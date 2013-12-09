@@ -57,6 +57,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/engine/Engine.o \
 	${OBJECTDIR}/src/filter/Filter.o \
 	${OBJECTDIR}/src/filter/FilterParameter.o \
+	${OBJECTDIR}/src/filter/FilterParameterValue.o \
 	${OBJECTDIR}/src/filter/FilterType.o \
 	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/information/InformationData.o \
@@ -83,7 +84,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/search/SearchParameter.o \
 	${OBJECTDIR}/src/search/SearchParameterValue.o \
 	${OBJECTDIR}/src/search/SearchType.o \
-	${OBJECTDIR}/src/search/SearchUnit.o \
 	${OBJECTDIR}/src/source/Source.o \
 	${OBJECTDIR}/src/source/SourceParameter.o \
 	${OBJECTDIR}/src/source/SourceParameterValue.o \
@@ -96,7 +96,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/user/AccessControlList.o \
 	${OBJECTDIR}/src/user/Space.o \
 	${OBJECTDIR}/src/user/User.o \
-	${OBJECTDIR}/src/user/UserAction.o \
+	${OBJECTDIR}/src/user/UserActionType.o \
 	${OBJECTDIR}/src/user/UserField.o \
 	${OBJECTDIR}/src/user/UserHierarchy.o \
 	${OBJECTDIR}/src/user/UserHistoricalAction.o \
@@ -246,6 +246,11 @@ ${OBJECTDIR}/src/filter/FilterParameter.o: src/filter/FilterParameter.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/FilterParameter.o src/filter/FilterParameter.cpp
 
+${OBJECTDIR}/src/filter/FilterParameterValue.o: src/filter/FilterParameterValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/filter
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/FilterParameterValue.o src/filter/FilterParameterValue.cpp
+
 ${OBJECTDIR}/src/filter/FilterType.o: src/filter/FilterType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/filter
 	${RM} $@.d
@@ -376,11 +381,6 @@ ${OBJECTDIR}/src/search/SearchType.o: src/search/SearchType.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/SearchType.o src/search/SearchType.cpp
 
-${OBJECTDIR}/src/search/SearchUnit.o: src/search/SearchUnit.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/search
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/SearchUnit.o src/search/SearchUnit.cpp
-
 ${OBJECTDIR}/src/source/Source.o: src/source/Source.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/source
 	${RM} $@.d
@@ -441,10 +441,10 @@ ${OBJECTDIR}/src/user/User.o: src/user/User.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/User.o src/user/User.cpp
 
-${OBJECTDIR}/src/user/UserAction.o: src/user/UserAction.cpp 
+${OBJECTDIR}/src/user/UserActionType.o: src/user/UserActionType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
 	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserAction.o src/user/UserAction.cpp
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserActionType.o src/user/UserActionType.cpp
 
 ${OBJECTDIR}/src/user/UserField.o: src/user/UserField.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user

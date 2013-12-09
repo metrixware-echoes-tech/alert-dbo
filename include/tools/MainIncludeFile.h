@@ -82,7 +82,7 @@
 #include "unit/InformationUnit.h"
 #include "user/UserHistoricalAction.h"
 #include "user/UserValue.h"
-#include "user/UserAction.h"
+#include "user/UserActionType.h"
 #include "user/UserRight.h"
 #include "user/Space.h"
 #include "user/AccessControlList.h"
@@ -104,6 +104,7 @@
 #include "filter/Filter.h"
 #include "filter/FilterType.h"
 #include "filter/FilterParameter.h"
+#include "filter/FilterParameterValue.h"
 
 //#include "widget/WidgetType.h"
 //#include "widget/Widget.h"
@@ -146,7 +147,6 @@
 #include "search/SearchType.h"
 #include "search/SearchParameter.h"
 #include "search/SearchParameterValue.h"
-#include "search/SearchUnit.h"
 
 #include "information/Syslog.h"
 

@@ -11,20 +11,20 @@
  * 
  */
 
-#include "user/UserAction.h"
+#include "user/UserActionType.h"
 
 namespace Echoes
 {
     namespace Dbo
     {
-        std::string UserAction::TRIGRAM(TRIGRAM_USER_ACTION);
+        std::string UserActionType::TRIGRAM(TRIGRAM_USER_ACTION_TYPE);
 
-        UserAction::UserAction()
+        UserActionType::UserActionType()
         {
             //ctor
         }
 
-        UserAction::~UserAction()
+        UserActionType::~UserActionType()
         {
 
         }

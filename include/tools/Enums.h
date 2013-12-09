@@ -33,13 +33,13 @@ namespace Echoes
             NUMBER = 2
         };
 
-        enum EMedia {
+        enum EMediaType {
             MAIL = 1,
             SMS = 2,
             MOBILE_APP = 3
         };
 
-        enum EOption {
+        enum EOptionType {
             QUOTA_ASSET = 1,
             QUOTA_SMS = 2
         };
@@ -59,11 +59,23 @@ namespace Echoes
         };
         
         enum ESearchType {
+            OID = 1,
+            PATH_LINE = 2,
+            PATH = 3,
+            PATH_LAST_LINE = 4,
+            QUERY = 5
+        };
+        
+        enum EFilterType {
+            ALL = 1,
+            REGEX = 2,
+            LOCATION = 3
+        };
+        
+        enum EFilterParameter {
             REGEX = 1,
-            LOCATION = 2,
-            QUERY = 3,
-            REGEX_OID = 4,
-            OID = 5
+            FIRST_CHAR = 2,
+            LENGTH = 3
         };
         
         enum ESourceParameter {
@@ -80,6 +92,26 @@ namespace Echoes
             PRIV_PROTO = 11,
             PRIV_PATH = 12
         };
+        
+        enum ESearchParameter {
+            OID = 1,
+            PATH = 2,
+            LINE = 3,
+            LAST_LINE = 4,
+            QUERY = 5
+        };
+        
+        enum EUserActionType {
+            LOGIN = 1,
+            REGISTER = 2,
+            LOGOUT = 3,
+            DISPLAY = 4,
+            DOWNLOAD = 5,
+            ADD = 6,
+            DEL = 7
+        };
+        
+        
   
   }
 }

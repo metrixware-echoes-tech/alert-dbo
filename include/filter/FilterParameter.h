@@ -45,7 +45,6 @@ namespace Echoes
                     TABLE_JOINT_PREFIX SEP TRIGRAM_FILTER_TYPE SEP TRIGRAM_FILTER_PARAMETER);
         }
 
-        virtual std::string toJSON() const;
 
     private:
 

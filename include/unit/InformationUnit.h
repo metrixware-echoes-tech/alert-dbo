@@ -25,7 +25,6 @@ namespace Echoes
   {
     class Information;
     class InformationUnitType;
-    class SearchUnit;
 
     class InformationUnit : public Table
     {
@@ -38,8 +37,6 @@ namespace Echoes
             Wt::WString name;
             
             Wt::WString baseOperation;
-
-            Wt::Dbo::collection<Wt::Dbo::ptr<SearchUnit> > searchUnits;
             
             Wt::Dbo::ptr<InformationUnitType> unitType;
             
@@ -62,15 +59,12 @@ namespace Echoes
 
                 Wt::Dbo::hasOne(a, information, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
                 
-                Wt::Dbo::hasMany(a, searchUnits, Wt::Dbo::ManyToOne, TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
                 Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION_UNIT);
 
                 Wt::Dbo::belongsTo(a, informationUnitBelongTo, TRIGRAM_INFORMATION_UNIT SEP "BASE_ID");
                 Wt::Dbo::hasOne(a, informationUnit, TRIGRAM_INFORMATION_UNIT SEP "BASE_ID");
             
             }
-
-            virtual std::string toJSON() const;
 
         protected:
         private:

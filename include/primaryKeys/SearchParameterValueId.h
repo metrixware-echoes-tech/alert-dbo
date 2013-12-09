@@ -9,8 +9,6 @@
 #define	SEARCHPARAMETERVALUEID_H
 
 #include <Wt/Dbo/Dbo>
-#include "primaryKeys/SourceId.h"
-#include "primaryKeys/SearchId.h"
 
 namespace Echoes
 {

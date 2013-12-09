@@ -72,7 +72,7 @@ void Session::initConnection(std::string connectionParams)
 
         void Session::initMapClass()
         {
-            mapClass<UserAction>(Constants::T_USER_ACTION_UAC);
+            mapClass<UserActionType>(Constants::TR_USER_ACTION_TYPE_UAT);
             mapClass<UserHistoricalAction>(Constants::T_USER_HISTORICAL_ACTION_UHA);
             mapClass<User>(Constants::T_USER_USR);
             mapClass<UserRole>(Constants::T_USER_ROLE_URO);
@@ -88,8 +88,9 @@ void Session::initConnection(std::string connectionParams)
             mapClass<PluginData>(Constants::T_PLUGIN_DATA_PDA);
             
             mapClass<Filter>(Constants::T_FILTER_FIL);
-            mapClass<FilterType>(Constants::T_FILTER_TYPE_FTY);
-            mapClass<FilterParameter>(Constants::T_FILTER_PARAMETER_FPA);
+            mapClass<FilterType>(Constants::TR_FILTER_TYPE_FTY);
+            mapClass<FilterParameter>(Constants::TR_FILTER_PARAMETER_FPA);
+            mapClass<FilterParameterValue>(Constants::T_FILTER_PARAMETER_VALUE_FPV);
 
             mapClass<Information>(Constants::T_INFORMATION_INF);
             mapClass<Organization>(Constants::T_ORGANIZATION_ORG);
@@ -140,9 +141,8 @@ void Session::initConnection(std::string connectionParams)
 
             mapClass<Search>(Constants::T_SEARCH_SEA);
             mapClass<SearchType>(Constants::TR_SEARCH_TYPE_STY);
-            mapClass<SearchParameter>(Constants::T_SEARCH_PARAMETER_SEP);
+            mapClass<SearchParameter>(Constants::TR_SEARCH_PARAMETER_SEP);
             mapClass<SearchParameterValue>(Constants::T_SEARCH_PARAMETER_VALUE_SEV);
-            mapClass<SearchUnit>(Constants::T_SEARCH_UNIT_SEU);
 
             mapClass<Pack>(Constants::T_PACK_PCK);
             mapClass<PackOption>(Constants::T_PACK_OPTION_POP);

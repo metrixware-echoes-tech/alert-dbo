@@ -28,7 +28,6 @@ namespace Echoes
     {
         public:
             SearchParameterValue();
-            SearchParameterValue(const SearchParameterValue& orig);
             virtual ~SearchParameterValue();
 
             static std::string TRIGRAM;
@@ -43,8 +42,6 @@ namespace Echoes
                 FIELD_FILLER();
                 Wt::Dbo::id(a, searchParameterValueId, "SEV_ID");
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };
