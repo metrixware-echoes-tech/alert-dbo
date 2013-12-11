@@ -73,6 +73,12 @@ namespace Echoes
         static const char *T_TAB_VERSION_TVS;
         //        static const char *T_TAB_WIDGET_TWG;
         
+        static const char *T_ADDON_ADO;
+        static const char *T_ADDON_COMMON_PACKAGE_CPA;
+        static const char *T_ADDON_COMMON_PACKAGE_PARAMETER_CPP;
+        static const char *T_ADDON_PACKAGE_APA;
+        static const char *T_ADDON_PACKAGE_PARAMETER_APP;
+        
         static const char *T_ALERT_ALE;
         static const char *T_ALERT_ACKNOWLEDGE_ACK;
         static const char *T_ALERT_MEDIA_SPECIALIZATION_AMS;

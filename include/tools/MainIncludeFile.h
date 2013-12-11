@@ -117,6 +117,10 @@
 //#include "TabWidgetAssociation.h"
 
 #include "addon/Addon.h"
+#include "addon/AddonCommonPackage.h"
+#include "addon/AddonCommonPackageParameter.h"
+#include "addon/AddonPackage.h"
+#include "addon/AddonPackageParameter.h"
 
 #include "alert/Alert.h"
 #include "alert/AlertAcknowledge.h"

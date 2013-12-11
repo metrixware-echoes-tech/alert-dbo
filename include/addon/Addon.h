@@ -41,6 +41,8 @@ namespace Echoes
             Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameter> > sourceParameters;
             Wt::Dbo::collection<Wt::Dbo::ptr<SearchType> > searchTypes;
 
+            Wt::Dbo::collection<Wt::Dbo::ptr<AddonPackageParameter> > addonPackageParameter;
+
             template<class Action>
             void persist(Action& a)
             {
@@ -60,7 +62,12 @@ namespace Echoes
                 Wt::Dbo::hasMany(a,
                         searchTypes,
                         Wt::Dbo::ManyToMany,
-                        TABLE_JOINT_PREFIX SEP TRIGRAM_ADDON SEP TRIGRAM_SEARCH_TYPE);
+                        TABLE_JOINT_PREFIX SEP TRIGRAM_ADDON SEP TRIGRAM_SEARCH_TYPE);                        
+
+                Wt::Dbo::hasMany(a,
+                        addonPackageParameter, 
+                        Wt::Dbo::ManyToOne, 
+                        TRIGRAM_ADDON_PACKAGE_PARAMETER SEP TRIGRAM_ADDON);
             }
 
             virtual std::string toJSON() const;

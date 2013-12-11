@@ -40,12 +40,14 @@ namespace Echoes
 
             Wt::WString probeVersion;
             Wt::WString packageVersion;
+            Wt::WString minimumVersion;
 
             template<class Action>
             void persist(Action& a)
             {
                 mapClassAttributesStrings["PROBE_VERSION"] = &this->probeVersion;
                 mapClassAttributesStrings["PACKAGE_VERSION"] = &this->packageVersion;
+                mapClassAttributesStrings["CPP_MINIMUM_VERSION"]=&this->minimumVersion;
 
                 FIELD_FILLER();
 

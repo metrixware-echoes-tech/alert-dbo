@@ -7,6 +7,10 @@
       <logicalFolder name="include" displayName="include" projectFiles="true">
         <logicalFolder name="addon" displayName="addon" projectFiles="true">
           <itemPath>include/addon/Addon.h</itemPath>
+          <itemPath>include/addon/AddonCommonPackage.h</itemPath>
+          <itemPath>include/addon/AddonCommonPackageParameter.h</itemPath>
+          <itemPath>include/addon/AddonPackage.h</itemPath>
+          <itemPath>include/addon/AddonPackageParameter.h</itemPath>
         </logicalFolder>
         <logicalFolder name="alert" displayName="alert" projectFiles="true">
           <itemPath>include/alert/Alert.h</itemPath>
@@ -149,6 +153,10 @@
       <logicalFolder name="src" displayName="src" projectFiles="true">
         <logicalFolder name="addon" displayName="addon" projectFiles="true">
           <itemPath>src/addon/Addon.cpp</itemPath>
+          <itemPath>src/addon/AddonCommonPackage.cpp</itemPath>
+          <itemPath>src/addon/AddonCommonPackageParameter.cpp</itemPath>
+          <itemPath>src/addon/AddonPackage.cpp</itemPath>
+          <itemPath>src/addon/AddonPackageParameter.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="alert" displayName="alert" projectFiles="true">
           <itemPath>src/alert/Alert.cpp</itemPath>
@@ -341,6 +349,20 @@
         </linkerTool>
       </compileType>
       <item path="include/addon/Addon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="include/alert/Alert.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -619,6 +641,20 @@
       <item path="include/widget/WidgetValue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/addon/Addon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonCommonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonCommonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="src/alert/Alert.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -845,6 +881,20 @@
       </compileType>
       <item path="include/addon/Addon.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/addon/AddonCommonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/alert/Alert.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertAcknowledge.h" ex="false" tool="3" flavor2="0">
@@ -1122,6 +1172,20 @@
       <item path="include/widget/WidgetValue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/addon/Addon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonCommonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonCommonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="src/alert/Alert.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1349,6 +1413,20 @@
         </linkerTool>
       </compileType>
       <item path="include/addon/Addon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="include/alert/Alert.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1605,6 +1683,20 @@
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/addon/Addon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonCommonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonCommonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="src/alert/Alert.cpp" ex="false" tool="1" flavor2="0">
       </item>

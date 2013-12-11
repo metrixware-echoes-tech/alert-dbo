@@ -47,6 +47,10 @@ namespace Echoes {
         //class WidgetValue;
         //class WidgetType;
         class Addon;
+        class AddonCommonPackage;
+        class AddonCommonPackageParameter;
+        class AddonPackage;
+        class AddonPackageParameter;
         //class Tab;
         //class TabVersion;
         //class TabWidgetAssociation;
@@ -109,6 +113,10 @@ namespace Wt {
         TEMPLATE_TRIGRAM(Echoes::Dbo::Alert, TRIGRAM_ALERT ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::UserActionType, TRIGRAM_USER_ACTION_TYPE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::Addon, TRIGRAM_ADDON ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::AddonCommonPackage, TRIGRAM_ADDON_COMMON_PACKAGE ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::AddonCommonPackageParameter, TRIGRAM_ADDON_COMMON_PACKAGE_PARAMETER ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::AddonPackage, TRIGRAM_ADDON_PACKAGE ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::AddonPackageParameter, TRIGRAM_ADDON_PACKAGE_PARAMETER ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertAcknowledge, TRIGRAM_ALERT_ACKNOWLEDGE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertSequence, TRIGRAM_ALERT_SEQUENCE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertTracking, TRIGRAM_ALERT_TRACKING ID)
