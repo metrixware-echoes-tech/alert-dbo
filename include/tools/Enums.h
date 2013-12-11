@@ -60,7 +60,7 @@ namespace Echoes
                 FILESYSTEM = 1,
                 FILE = 2,
                 LOG = 3,
-                MYSQL = 4,
+                ODBC = 4,
                 SNMP = 5
             };
         }
@@ -103,17 +103,17 @@ namespace Echoes
         namespace ESourceParameter {
             enum ESourceParameter {
                 PATH = 1,
-                HOST = 2,
-                USER = 3,
-                PASSWD = 4,
-                DB = 5,
-                PORT = 6,
-                COMMUNITY = 7,
-                VERSION = 8,
-                AUTH_PROTO = 9,
-                AUTH_PATH = 10,
-                PRIV_PROTO = 11,
-                PRIV_PATH = 12
+                CONNECTION_STRING = 2,
+                COMMUNITY = 3,
+                VERSION = 4,
+                AUTH_PROTO = 5,
+                AUTH_PATH = 6,
+                PRIV_PROTO = 7,
+                PRIV_PATH = 8,
+                LINE = 9,
+                LAST_LINES = 10,
+                HOST = 11,
+                USER = 12
             };
         }
         
