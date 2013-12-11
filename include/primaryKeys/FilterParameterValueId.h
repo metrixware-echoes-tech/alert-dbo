@@ -41,8 +41,10 @@ namespace Echoes
 
     inline std::ostream& operator<<(std::ostream& o, const FilterParameterValueId& pk) {
         // return o << "(" << pk.filterParameter << ")";
-        return o << pk.filter.id()
-                << ",\n\t\t\"filter_parameter_id\": " << pk.filterParameter.id();
+        return o << "\n    {"
+                << "\n        \"filter_id\": " << pk.filter.id()
+                << ",\n        \"filter_parameter_id\": " << pk.filterParameter.id()
+                << "\n    }";
     }
 
   }

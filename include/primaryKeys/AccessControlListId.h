@@ -45,7 +45,9 @@ namespace Echoes
     };
 
     inline std::ostream& operator<<(std::ostream& o, const AccessControlListId& pk) {
-        return o << "(" << pk.space << ")";
+        return o << "\n    {"
+                << "\n        \"space_id\": " << pk.space.id()
+                << "\n    }";
     }
 
   }

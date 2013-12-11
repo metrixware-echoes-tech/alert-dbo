@@ -40,9 +40,11 @@ namespace Echoes
     };
 
     inline std::ostream& operator<<(std::ostream& o, const AlertMessageAliasPluginId& pk) {
-        return o << "\"plugin_id\": " << pk.plugin.id()
-                << ",\n\"role_id\": " << pk.userRole.id()
-                << ",\n\"media_id\": " << pk.mediaType.id();
+        return o << "\n    {"
+                << "\n        \"plugin_id\": " << pk.plugin.id()
+                << ",\n        \"user_role_id\": " << pk.userRole.id()
+                << ",\n        \"media_type_id\": " << pk.mediaType.id()
+                << "\n    }";
     }
 
   }

@@ -44,8 +44,10 @@ namespace Echoes
 
     inline std::ostream& operator<<(std::ostream& o, const SearchParameterValueId& pk) {
         // return o << "(" << pk.searchParameter << ")";
-        return o << pk.search.id()
-                << ",\n\t\t\"search_parameter_id\": " << pk.searchParameter.id();
+        return o << "\n    {"
+                << "\n        \"search_id\": " << pk.search.id()
+                << ",\n        \"search_parameter_id\": " << pk.searchParameter.id()
+                << "\n    }";
     }
 
   }

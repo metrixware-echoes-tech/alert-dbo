@@ -41,10 +41,12 @@ namespace Echoes
     };
 
     inline std::ostream& operator<<(std::ostream& o, const AlertMessageAliasInformationCriteriaId& pk) {
-        return o << "\"role_id\": " << pk.userRole.id()
-                << ",\n" << pk.information.id()
-                << ",\n\"media_id\": " << pk.mediaType.id()
-                << ",\n\"alert_criteria_id\": " << pk.alertCriteria.id();
+        return o << "\n    {"
+                << "\n        \"user_role_id\": " << pk.userRole.id()
+                << ",\n        \"information_id\": " << pk.information.id()
+                << ",\n        \"media_type_id\": " << pk.mediaType.id()
+                << ",\n        \"alert_criteria_id\": " << pk.alertCriteria.id()
+                << "\n    }";
     }
 
   }

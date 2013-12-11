@@ -45,8 +45,10 @@ namespace Echoes
 
     inline std::ostream& operator<<(std::ostream& o, const SourceParameterValueId& pk) {
         //return o << "(" << pk.sourceParameter << ")";
-        return o << pk.source.id()
-                << ",\n\t\t\"source_parameter_id\": " << pk.sourceParameter.id();
+        return o << "\n    {"
+                << "\n        \"source_id\": " << pk.source.id()
+                << ",\n        \"source_parameter_id\": " << pk.sourceParameter.id()
+                << "\n    }";
     }
 
   }

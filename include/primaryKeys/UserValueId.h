@@ -43,7 +43,10 @@ namespace Echoes
     };
 
     inline std::ostream& operator<<(std::ostream& o, const UserValueId& uv) {
-        return o << "(" << uv.user << " ; " << uv.userField << ")";
+        return o << "\n    {"
+                << "\n        \"user_id\": " << uv.user.id()
+                << ",\n        \"user_field_id\": " << uv.userField.id()
+                << "\n    }";
     }
 
   }

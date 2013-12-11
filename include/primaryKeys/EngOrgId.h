@@ -40,8 +40,10 @@ namespace Echoes
 
     inline std::ostream& operator<<(std::ostream& o, const EngOrgId& pk) {
         //return o << "(" << pk.id << ")" << "(" << pk.source << ")";
-        return o << pk.engine.id() << ",\n\t\t"
-                << "\"organization_id\": " << pk.organization.id();
+        return o << "\n    {"
+                << "\n        \"engine_id\": " << pk.engine.id()
+                << ",\n        \"organization_id\": " << pk.organization.id()
+                << "\n    }";
     }
 
   }

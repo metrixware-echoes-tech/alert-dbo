@@ -44,8 +44,10 @@ namespace Echoes
 
     inline std::ostream& operator<<(std::ostream& o, const PackOptionId& pk) {
         //return o << "(" << pk.pack << ")";
-        return o << "\"pack_id\": " << pk.pack.id() << ",\n\t\t"
-                << "\"option_id\": " << pk.optionType.id();
+        return o << "\n    {"
+                << "\n        \"pack_id\": " << pk.pack.id()
+                << ",\n        \"option_type_id\": " << pk.optionType.id()
+                << "\n    }";
     }
 
   }
