@@ -148,22 +148,22 @@ ${OBJECTDIR}/src/addon/Addon.o: src/addon/Addon.cpp
 ${OBJECTDIR}/src/addon/AddonCommonPackage.o: src/addon/AddonCommonPackage.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonCommonPackage.o src/addon/AddonCommonPackage.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++11 -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonCommonPackage.o src/addon/AddonCommonPackage.cpp
 
 ${OBJECTDIR}/src/addon/AddonCommonPackageParameter.o: src/addon/AddonCommonPackageParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonCommonPackageParameter.o src/addon/AddonCommonPackageParameter.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++11 -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonCommonPackageParameter.o src/addon/AddonCommonPackageParameter.cpp
 
 ${OBJECTDIR}/src/addon/AddonPackage.o: src/addon/AddonPackage.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonPackage.o src/addon/AddonPackage.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++11 -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonPackage.o src/addon/AddonPackage.cpp
 
 ${OBJECTDIR}/src/addon/AddonPackageParameter.o: src/addon/AddonPackageParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -s -Iinclude -std=c++0x -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonPackageParameter.o src/addon/AddonPackageParameter.cpp
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++11 -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonPackageParameter.o src/addon/AddonPackageParameter.cpp
 
 ${OBJECTDIR}/src/alert/Alert.o: src/alert/Alert.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert

@@ -7,6 +7,12 @@
 
 #include "addon/AddonCommonPackage.h"
 
+
+namespace Echoes
+{
+namespace Dbo
+{
+
 std::string AddonCommonPackage::TRIGRAM(TRIGRAM_ADDON_COMMON_PACKAGE);
 
 AddonCommonPackage::AddonCommonPackage()
@@ -19,5 +25,8 @@ AddonCommonPackage::AddonCommonPackage(const AddonCommonPackage& orig)
 
 AddonCommonPackage::~AddonCommonPackage()
 {
+}
+
+}
 }
 

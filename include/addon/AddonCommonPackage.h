@@ -11,30 +11,34 @@
 #include "tools/MainIncludeFile.h"
 #include <Wt/Dbo/Dbo>
 
-class AddonCommonPackage : public Table {
-public:
-    AddonCommonPackage();
-    AddonCommonPackage(const AddonCommonPackage& orig);
-    virtual ~AddonCommonPackage();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString filename;
-    
-    Wt::Dbo::collection<Wt::Dbo::ptr<AddonCommonPackageParameter>> addonCommonPackageParameters;
-    
-    template<class Action>
-    void persist(Action& a)
-    { 
-        mapClassAttributesStrings["FILENAME"]=&this->filename;
+namespace Echoes {
+    namespace Dbo {
 
-        FIELD_FILLER();
+        class AddonCommonPackage : public Table {
+        public:
+            AddonCommonPackage();
+            AddonCommonPackage(const AddonCommonPackage& orig);
+            virtual ~AddonCommonPackage();
 
-        Wt::Dbo::hasMany(a, addonCommonPackageParameters, Wt::Dbo::ManyToOne, TRIGRAM_ADDON_COMMON_PACKAGE_PARAMETER SEP TRIGRAM_ADDON_COMMON_PACKAGE);
-   }
-private:
+            static std::string TRIGRAM;
 
-};
+            Wt::WString filename;
+
+            Wt::Dbo::collection<Wt::Dbo::ptr<AddonCommonPackageParameter >> addonCommonPackageParameters;
+
+            template<class Action>
+            void persist(Action& a) {
+                mapClassAttributesStrings["FILENAME"] = &this->filename;
+
+                FIELD_FILLER();
+
+                Wt::Dbo::hasMany(a, addonCommonPackageParameters, Wt::Dbo::ManyToOne, TRIGRAM_ADDON_COMMON_PACKAGE_PARAMETER SEP TRIGRAM_ADDON_COMMON_PACKAGE);
+            }
+        private:
+
+        };
+    }
+}
 
 #endif	/* ADDONCOMMONPACKAGE_H */
 

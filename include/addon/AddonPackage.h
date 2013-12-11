@@ -11,30 +11,35 @@
 #include "tools/MainIncludeFile.h"
 #include <Wt/Dbo/Dbo>
 
-class AddonPackage : public Table {
-public:
-    AddonPackage();
-    AddonPackage(const AddonPackage& orig);
-    virtual ~AddonPackage();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString filename;
-    
-    Wt::Dbo::collection<Wt::Dbo::ptr<AddonPackageParameter>> addonPackageParameters;
-    
-    template<class Action>
-    void persist(Action& a)
-    { 
-        mapClassAttributesStrings["FILENAME"]=&this->filename;
 
-        FIELD_FILLER();
+namespace Echoes {
+    namespace Dbo {
 
-        Wt::Dbo::hasMany(a, addonPackageParameters, Wt::Dbo::ManyToOne, TRIGRAM_ADDON_PACKAGE_PARAMETER SEP TRIGRAM_ADDON_PACKAGE);
-   }
-private:
+        class AddonPackage : public Table {
+        public:
+            AddonPackage();
+            AddonPackage(const AddonPackage& orig);
+            virtual ~AddonPackage();
 
-};
+            static std::string TRIGRAM;
+
+            Wt::WString filename;
+
+            Wt::Dbo::collection<Wt::Dbo::ptr<AddonPackageParameter >> addonPackageParameters;
+
+            template<class Action>
+            void persist(Action& a) {
+                mapClassAttributesStrings["FILENAME"] = &this->filename;
+
+                FIELD_FILLER();
+
+                Wt::Dbo::hasMany(a, addonPackageParameters, Wt::Dbo::ManyToOne, TRIGRAM_ADDON_PACKAGE_PARAMETER SEP TRIGRAM_ADDON_PACKAGE);
+            }
+        private:
+
+        };
+    }
+}
 
 #endif	/* ADDONPACKAGE_H */
 

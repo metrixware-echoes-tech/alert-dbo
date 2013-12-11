@@ -7,6 +7,11 @@
 
 #include "addon/AddonCommonPackageParameter.h"
 
+namespace Echoes
+{
+namespace Dbo
+{
+
 std::string AddonCommonPackageParameter::TRIGRAM(TRIGRAM_ADDON_COMMON_PACKAGE_PARAMETER);
 
 AddonCommonPackageParameter::AddonCommonPackageParameter()
@@ -19,5 +24,8 @@ AddonCommonPackageParameter::AddonCommonPackageParameter(const AddonCommonPackag
 
 AddonCommonPackageParameter::~AddonCommonPackageParameter()
 {
+}
+
+}
 }
 
