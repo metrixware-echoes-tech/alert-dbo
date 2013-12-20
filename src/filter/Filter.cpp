@@ -21,7 +21,7 @@ namespace Echoes
 
         Filter::Filter()
         {
-            this->jsonName = "search";
+            
         }
 
         Filter::Filter(const Filter& orig)
