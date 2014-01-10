@@ -23,6 +23,13 @@ namespace Echoes
         {
             mutex_.unlock();
         }
+        
+        void SafeTransaction::release()
+        {
+            Wt::Dbo::Transaction::release();
+            mutex_.unlock();
+        }
+
 
     }
 }

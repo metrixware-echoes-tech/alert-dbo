@@ -22,6 +22,8 @@ namespace Dbo
         SafeTransaction(Wt::Dbo::Session& session);
         virtual ~SafeTransaction();
         static boost::mutex mutex_;
+    protected:
+        virtual void release();
     private:
         
         boost::mutex::scoped_lock lock;
