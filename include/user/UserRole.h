@@ -21,39 +21,42 @@
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/UserValueId.h"
 
-class UserRole : public Table
+namespace Echoes
 {
-public:
-    UserRole();
-    virtual ~UserRole();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString name;
-
-    Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
-    
-    Wt::Dbo::ptr<Organization> organization;
-
-    template<class Action>
-    void persist(Action& a)
+  namespace Dbo
+  {
+    class UserRole : public Table
     {
-        mapClassAttributesStrings["NAME"]=&this->name;
-        FIELD_FILLER();
-        
-        Wt::Dbo::belongsTo(a,organization,TRIGRAM_USER_ROLE SEP TRIGRAM_ORGANIZATION);
-        
-        Wt::Dbo::hasMany(a,
-                         users,
-                         Wt::Dbo::ManyToOne,
-                         TRIGRAM_USER SEP TRIGRAM_USER_ROLE);
-        
-        
-    }
+        public:
+            UserRole();
+            virtual ~UserRole();
 
-    virtual std::string toJSON() const;
+            static std::string TRIGRAM;
 
-};
+            Wt::WString name;
+
+            Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
+
+            Wt::Dbo::ptr<Organization> organization;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                FIELD_FILLER();
+
+                Wt::Dbo::belongsTo(a, organization, TRIGRAM_USER_ROLE SEP TRIGRAM_ORGANIZATION);
+
+                Wt::Dbo::hasMany(a,
+                        users,
+                        Wt::Dbo::ManyToOne,
+                        TRIGRAM_USER SEP TRIGRAM_USER_ROLE);
+            }
+
+            virtual std::string toJSON() const;
+    };
+  }
+}
 
 #endif // USERROLE_H
 

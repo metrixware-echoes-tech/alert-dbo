@@ -13,27 +13,26 @@
 
 #include "alert/AlertMediaSpecialization.h"
 
-std::string AlertMediaSpecialization::TRIGRAM(TRIGRAM_ALERT_MEDIA_SPECIALIZATION);
-
-AlertMediaSpecialization::AlertMediaSpecialization() {
-    this->jsonName = "alertMediaSpecialization";
-}
-
-AlertMediaSpecialization::AlertMediaSpecialization(const AlertMediaSpecialization& orig) {
-}
-
-AlertMediaSpecialization::~AlertMediaSpecialization() {
-
-}
-
-std::string AlertMediaSpecialization::toJSON() const
+namespace Echoes
 {
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->alert);
-    res += Table::formatJSONForDboPtr(this->mediaValue, false);
-    
-    res += "}";
-    return res;
+    namespace Dbo
+    {
+        std::string AlertMediaSpecialization::TRIGRAM(TRIGRAM_ALERT_MEDIA_SPECIALIZATION);
+
+        AlertMediaSpecialization::AlertMediaSpecialization()
+        {
+            this->jsonName = "alertMediaSpecialization";
+        }
+
+        AlertMediaSpecialization::AlertMediaSpecialization(const AlertMediaSpecialization& orig)
+        {
+        }
+
+        AlertMediaSpecialization::~AlertMediaSpecialization()
+        {
+
+        }
+
+    }
 }
 

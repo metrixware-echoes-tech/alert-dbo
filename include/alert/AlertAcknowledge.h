@@ -19,37 +19,43 @@
 
 #include "tools/MainIncludeFile.h"
 
-class Alert;
-class User;
-
-class AlertAcknowledge : public Table
+namespace Echoes
 {
-    public:
-        AlertAcknowledge();
-        virtual ~AlertAcknowledge();
-        Wt::Dbo::ptr<Alert> alert;
-        Wt::Dbo::ptr<User> user;
-        
-        Wt::WString ackState;
-        Wt::WString isLast;
-        
-        static std::string TRIGRAM;
-        
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["STATE"]=&this->ackState;
-            mapClassAttributesStrings["IS_LAST"]=&this->isLast;
-            FIELD_FILLER();
-            Wt::Dbo::belongsTo(a, alert, "ACK_ALE");
-            Wt::Dbo::belongsTo(a, user, "ACK_USR");
-        }
-        
-        virtual std::string toJSON() const;
-        
-    protected:
-    private:
-};
+  namespace Dbo
+  {
+    class Alert;
+    class User;
+
+    class AlertAcknowledge : public Table 
+    {
+        public:
+            AlertAcknowledge();
+            virtual ~AlertAcknowledge();
+            Wt::Dbo::ptr<Alert> alert;
+            Wt::Dbo::ptr<User> user;
+
+            Wt::WString ackState;
+            Wt::WString isLast;
+
+            static std::string TRIGRAM;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["STATE"] = &this->ackState;
+                mapClassAttributesStrings["IS_LAST"] = &this->isLast;
+                FIELD_FILLER();
+                Wt::Dbo::belongsTo(a, alert, "ACK_ALE");
+                Wt::Dbo::belongsTo(a, user, "ACK_USR");
+            }
+
+            virtual std::string toJSON() const;
+
+        protected:
+        private:
+    };
+  }
+}
 
 #endif // ALERTACKNOWLEDGE_H
 

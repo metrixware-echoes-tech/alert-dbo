@@ -19,50 +19,58 @@
 
 #include "tools/MainIncludeFile.h"
 
-class InformationUnitType;
-class SearchUnit;
-
-class InformationUnit : public Table
+namespace Echoes
 {
-    public:
-        InformationUnit();
-        virtual ~InformationUnit();
-        
-        static std::string TRIGRAM;
-        
-        Wt::WString name; 
-       
-        Wt::Dbo::collection<Wt::Dbo::ptr<SearchUnit> > searchUnits;
-        Wt::Dbo::collection<Wt::Dbo::ptr<InformationSubUnit> > informationSubUnits;
-        Wt::Dbo::ptr<InformationUnitType> unitType;
-        
-        
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["NAME"]=&this->name;
+  namespace Dbo
+  {
+    class Information;
+    class InformationUnitType;
+
+    class InformationUnit : public Table
+    {
+        public:
+            InformationUnit();
+            virtual ~InformationUnit();
+
+            static std::string TRIGRAM;
+
+            Wt::WString name;
             
-            FIELD_FILLER();
+            Wt::WString baseOperation;
             
-            Wt::Dbo::belongsTo(a, unitType, TRIGRAM_INFORMATION_UNIT SEP TRIGRAM_INFORMATION_UNIT_TYPE);
+            Wt::Dbo::ptr<InformationUnitType> unitType;
             
-            Wt::Dbo::hasMany(a,
-                             searchUnits,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_SEARCH_UNIT SEP TRIGRAM_INFORMATION_UNIT);
+            Wt::Dbo::weak_ptr<Information> information;
             
-            Wt::Dbo::hasMany(a,
-                             informationSubUnits,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_INFORMATION_SUB_UNIT SEP TRIGRAM_INFORMATION_UNIT);
-         
-        }
-        
-       virtual std::string toJSON() const;
-        
-    protected:
-    private:
-};
+            Wt::Dbo::weak_ptr<InformationUnit> informationUnit;
+            Wt::Dbo::ptr<InformationUnit> informationUnitBelongTo;
+            
+            Wt::Dbo::collection<Wt::Dbo::ptr<InformationData>> informationDatas;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStrings["BASE_OPERATION"] = &this->baseOperation;
+
+                FIELD_FILLER();
+
+                Wt::Dbo::belongsTo(a, unitType, TRIGRAM_INFORMATION_UNIT SEP TRIGRAM_INFORMATION_UNIT_TYPE);
+
+                Wt::Dbo::hasOne(a, information, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
+                
+                Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION_UNIT);
+
+                Wt::Dbo::belongsTo(a, informationUnitBelongTo, TRIGRAM_INFORMATION_UNIT SEP "BASE_ID");
+                Wt::Dbo::hasOne(a, informationUnit, TRIGRAM_INFORMATION_UNIT SEP "BASE_ID");
+            
+            }
+
+        protected:
+        private:
+    };
+  }
+}
 
 #endif // INFORMATIONUNIT_H
 

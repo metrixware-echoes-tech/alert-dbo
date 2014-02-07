@@ -12,54 +12,56 @@
 /**
  * Automagically fill the field of the database. 
  * Must be used after the field definition.
- **/ 
+ **/
+
 
 /* FIELD_FILLER */
 #define FIELD_FILLER() mapClassAttributesDates["DELETE"]=&this->deleteTag; \
-            std::map<std::string,Wt::WString*>::iterator itStrings; \
-            for(itStrings = mapClassAttributesStrings.begin(); itStrings != mapClassAttributesStrings.end(); ++itStrings) \
-            { \
-                Wt::Dbo::field(a, *itStrings->second, formatColumnName(*this,(*itStrings).first)); \
-            } \
-            std::map<std::string,Wt::WDateTime*>::iterator itDates; \
-            for(itDates = mapClassAttributesDates.begin(); itDates != mapClassAttributesDates.end(); ++itDates) \
-            { \
-                Wt::Dbo::field(a, *itDates->second, formatColumnName(*this,(*itDates).first)); \
-            } \
-            std::map<std::string,bool*>::iterator itBools; \
-            for(itBools = mapClassAttributesBools.begin(); itBools != mapClassAttributesBools.end(); ++itBools) \
-            { \
-                Wt::Dbo::field(a, *itBools->second, formatColumnName(*this,(*itBools).first)); \
-            } \
-            std::map<std::string,int*>::iterator itInts; \
-            for(itInts = mapClassAttributesInts.begin(); itInts != mapClassAttributesInts.end(); ++itInts) \
-            { \
-                Wt::Dbo::field(a, *itInts->second, formatColumnName(*this,(*itInts).first)); \
-            } \
-            std::map<std::string,short*>::iterator itShorts; \
-            for(itShorts = mapClassAttributesShorts.begin(); itShorts != mapClassAttributesShorts.end(); ++itShorts) \
-            { \
-                Wt::Dbo::field(a, *itShorts->second, formatColumnName(*this,(*itShorts).first)); \
-            } \
-            std::map<std::string,boost::optional<Wt::WString>* >::iterator itStringsNn; \
-            for(itStringsNn = mapClassAttributesStringsNn.begin(); itStringsNn != mapClassAttributesStringsNn.end(); ++itStringsNn) \
-            { \
-                Wt::Dbo::field(a, *itStringsNn->second, formatColumnName(*this,(*itStringsNn).first)); \
-            } \
-            std::map<std::string,boost::optional<int>* >::iterator itIntsNn; \
-            for(itIntsNn = mapClassAttributesIntsNn.begin(); itIntsNn != mapClassAttributesIntsNn.end(); ++itIntsNn) \
-            { \
-                Wt::Dbo::field(a, *itIntsNn->second, formatColumnName(*this,(*itIntsNn).first)); \
-            } \
-            std::map<std::string,long long* >::iterator itSerials; \
-            for(itSerials = mapClassAttributesSerials.begin(); itSerials != mapClassAttributesSerials.end(); ++itSerials) \
-            { \
-                Wt::Dbo::field(a, *itSerials->second, formatColumnName(*this,(*itSerials).first)); \
-            }
+    std::map<std::string,Wt::WString*>::iterator itStrings; \
+    for(itStrings = mapClassAttributesStrings.begin(); itStrings != mapClassAttributesStrings.end(); ++itStrings) \
+    { \
+        Wt::Dbo::field(a, *itStrings->second, formatColumnName(*this,(*itStrings).first)); \
+    } \
+    std::map<std::string,Wt::WDateTime*>::iterator itDates; \
+    for(itDates = mapClassAttributesDates.begin(); itDates != mapClassAttributesDates.end(); ++itDates) \
+    { \
+        Wt::Dbo::field(a, *itDates->second, formatColumnName(*this,(*itDates).first)); \
+    } \
+    std::map<std::string,bool*>::iterator itBools; \
+    for(itBools = mapClassAttributesBools.begin(); itBools != mapClassAttributesBools.end(); ++itBools) \
+    { \
+        Wt::Dbo::field(a, *itBools->second, formatColumnName(*this,(*itBools).first)); \
+    } \
+    std::map<std::string,int*>::iterator itInts; \
+    for(itInts = mapClassAttributesInts.begin(); itInts != mapClassAttributesInts.end(); ++itInts) \
+    { \
+        Wt::Dbo::field(a, *itInts->second, formatColumnName(*this,(*itInts).first)); \
+    } \
+    std::map<std::string,short*>::iterator itShorts; \
+    for(itShorts = mapClassAttributesShorts.begin(); itShorts != mapClassAttributesShorts.end(); ++itShorts) \
+    { \
+        Wt::Dbo::field(a, *itShorts->second, formatColumnName(*this,(*itShorts).first)); \
+    } \
+    std::map<std::string,boost::optional<Wt::WString>* >::iterator itStringsNn; \
+    for(itStringsNn = mapClassAttributesStringsNn.begin(); itStringsNn != mapClassAttributesStringsNn.end(); ++itStringsNn) \
+    { \
+        Wt::Dbo::field(a, *itStringsNn->second, formatColumnName(*this,(*itStringsNn).first)); \
+    } \
+    std::map<std::string,boost::optional<int>* >::iterator itIntsNn; \
+    for(itIntsNn = mapClassAttributesIntsNn.begin(); itIntsNn != mapClassAttributesIntsNn.end(); ++itIntsNn) \
+    { \
+        Wt::Dbo::field(a, *itIntsNn->second, formatColumnName(*this,(*itIntsNn).first)); \
+    } \
+    std::map<std::string,long long* >::iterator itSerials; \
+    for(itSerials = mapClassAttributesSerials.begin(); itSerials != mapClassAttributesSerials.end(); ++itSerials) \
+    { \
+        Wt::Dbo::field(a, *itSerials->second, formatColumnName(*this,(*itSerials).first)); \
+    }
 
 
 
 /* END FIELD_FILLER */
+
 
 #include <Wt/Auth/User>
 
@@ -78,10 +80,9 @@
 //#include "tools/SessionPool.h"
 
 #include "unit/InformationUnit.h"
-#include "user/UserHierarchy.h"
 #include "user/UserHistoricalAction.h"
 #include "user/UserValue.h"
-#include "user/UserAction.h"
+#include "user/UserActionType.h"
 #include "user/UserRight.h"
 #include "user/Space.h"
 #include "user/AccessControlList.h"
@@ -94,8 +95,16 @@
 #include "information/Information.h"
 #include "information/InformationHistoricalValue.h"
 #include "information/InformationValue.h"
+#include "information/InformationData.h"
 
 #include "plugin/Plugin.h"
+#include "plugin/PluginReference.h"
+#include "plugin/PluginData.h"
+
+#include "filter/Filter.h"
+#include "filter/FilterType.h"
+#include "filter/FilterParameter.h"
+#include "filter/FilterParameterValue.h"
 
 //#include "widget/WidgetType.h"
 //#include "widget/Widget.h"
@@ -108,6 +117,10 @@
 //#include "TabWidgetAssociation.h"
 
 #include "addon/Addon.h"
+#include "addon/AddonCommonPackage.h"
+#include "addon/AddonCommonPackageParameter.h"
+#include "addon/AddonPackage.h"
+#include "addon/AddonPackageParameter.h"
 
 #include "alert/Alert.h"
 #include "alert/AlertAcknowledge.h"
@@ -117,7 +130,6 @@
 #include "alert/AlertSequence.h"
 #include "alert/AlertTracking.h"
 #include "alert/AlertTrackingEvent.h"
-#include "alert/AlertMessageDefinition.h"
 #include "alert/AlertMessageAliasAsset.h"
 #include "alert/AlertMessageAliasPlugin.h"
 #include "alert/AlertMessageAliasInformation.h"
@@ -126,37 +138,33 @@
 #include "engine/Engine.h"
 #include "engine/EngOrg.h"
 
-#include "plugin/Source.h"
-#include "plugin/SourceParameter.h"
-#include "plugin/SourceParameterValue.h"
+#include "source/Source.h"
+#include "source/SourceParameter.h"
+#include "source/SourceParameterValue.h"
 
 #include "asset/Asset.h"
 #include "asset/AssetArchitecture.h"
 #include "asset/AssetDistribution.h"
 #include "asset/AssetRelease.h"
 
-#include "plugin/Search.h"
-#include "plugin/SearchType.h"
-#include "plugin/SearchParameter.h"
-#include "plugin/SearchParameterValue.h"
-#include "plugin/SearchUnit.h"
+#include "search/Search.h"
+#include "search/SearchType.h"
+#include "search/SearchParameter.h"
+#include "search/SearchParameterValue.h"
 
 #include "information/Syslog.h"
 
 #include "pack/Pack.h"
-#include "pack/Option.h"
+#include "pack/OptionType.h"
 #include "pack/PackOption.h"
-#include "pack/OptionValue.h"
+#include "pack/Option.h"
 
 #include "probe/Probe.h"
 #include "probe/ProbePackage.h"
 #include "probe/ProbePackageParameter.h"
 
+#include "media/MediaType.h"
 #include "media/Media.h"
-#include "media/MediaValue.h"
-
-
-            
 
 #endif	/* MAININCLUDEFILE_H */
 

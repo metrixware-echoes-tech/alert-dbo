@@ -13,27 +13,33 @@
 
 #include "alert/AlertMessageAliasInformationCriteria.h"
 
-std::string AlertMessageAliasInformationCriteria::TRIGRAM(TRIGRAM_ALERT_MESSAGE_ALIAS_INFORMATION_CRITERIA);
-
-AlertMessageAliasInformationCriteria::AlertMessageAliasInformationCriteria()
+namespace Echoes
 {
-    this->jsonName = "alert_message_alias_information_criteria";
-}
+    namespace Dbo
+    {
+        std::string AlertMessageAliasInformationCriteria::TRIGRAM(TRIGRAM_ALERT_MESSAGE_ALIAS_INFORMATION_CRITERIA);
 
-AlertMessageAliasInformationCriteria::AlertMessageAliasInformationCriteria(const AlertMessageAliasInformationCriteria& orig)
-{
-}
+        AlertMessageAliasInformationCriteria::AlertMessageAliasInformationCriteria()
+        {
+            this->jsonName = "alert_message_alias_information_criteria";
+        }
 
-AlertMessageAliasInformationCriteria::~AlertMessageAliasInformationCriteria()
-{
-}
+        AlertMessageAliasInformationCriteria::AlertMessageAliasInformationCriteria(const AlertMessageAliasInformationCriteria& orig)
+        {
+        }
 
-std::string AlertMessageAliasInformationCriteria::toJSON() const
-{
-    std::string res = "{\n";
-    res += Table::toJSON();
-    res += "\"id\": {\n" + boost::lexical_cast<std::string>(this->pk) + " }\n";
-    res += "}\n";
-    return res;
+        AlertMessageAliasInformationCriteria::~AlertMessageAliasInformationCriteria()
+        {
+        }
+
+        std::string AlertMessageAliasInformationCriteria::toJSON() const
+        {
+            std::string res = "{\n";
+            res += Table::toJSON();
+            res += "\"id\": {\n" + boost::lexical_cast<std::string>(this->pk) + " }\n";
+            res += "}\n";
+            return res;
+        }
+    }
 }
 

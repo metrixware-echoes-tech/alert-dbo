@@ -19,33 +19,38 @@
 
 #include <boost/optional.hpp>
 
-class AlertTrackingEvent : public Table
+namespace Echoes
 {
-public:
-    AlertTrackingEvent();
-    AlertTrackingEvent(const AlertTrackingEvent& orig);
-    virtual ~AlertTrackingEvent();
-    static std::string TRIGRAM;
-//    boost::optional<std::string> eventValue;
-    Wt::WString value;
-    Wt::WDateTime date;
-    
-     Wt::Dbo::ptr<AlertTracking> alertTracking;
-    
-    template<class Action>
-    void persist(Action& a)
+  namespace Dbo
+  {
+    class AlertTrackingEvent : public Table
     {
-        mapClassAttributesStrings["VALUE"]=&this->value;
-        mapClassAttributesDates["DATE"]=&this->date;
-        FIELD_FILLER();
-        Wt::Dbo::belongsTo(a,alertTracking,TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
-    }
-    
-    virtual std::string toJSON() const;
-    
-private:
+        public:
+            AlertTrackingEvent();
+            AlertTrackingEvent(const AlertTrackingEvent& orig);
+            virtual ~AlertTrackingEvent();
+            static std::string TRIGRAM;
+            //    boost::optional<std::string> eventValue;
+            Wt::WString value;
+            Wt::WDateTime date;
 
-};
+            Wt::Dbo::ptr<AlertTracking> alertTracking;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["VALUE"] = &this->value;
+                mapClassAttributesDates["DATE"] = &this->date;
+                FIELD_FILLER();
+                Wt::Dbo::belongsTo(a, alertTracking, TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
+            }
+
+            virtual std::string toJSON() const;
+
+        private:
+    };
+  }
+}
 
 #endif	/* ALERTACKNOWLEDGEEVENT_H */
 

@@ -13,14 +13,23 @@
 
 #include "probe/ProbePackage.h"
 
-std::string ProbePackage::TRIGRAM(TRIGRAM_PROBE_PACKAGE);
+namespace Echoes
+{
+    namespace Dbo
+    {
+        std::string ProbePackage::TRIGRAM(TRIGRAM_PROBE_PACKAGE);
 
-ProbePackage::ProbePackage() {
-}
+        ProbePackage::ProbePackage()
+        {
+        }
 
-ProbePackage::ProbePackage(const ProbePackage& orig) {
-}
+        ProbePackage::ProbePackage(const ProbePackage& orig)
+        {
+        }
 
-ProbePackage::~ProbePackage() {
+        ProbePackage::~ProbePackage()
+        {
+        }
+    }
 }
 

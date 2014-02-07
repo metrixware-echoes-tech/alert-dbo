@@ -14,29 +14,36 @@
 #ifndef ACCESSCONTROLLIST_H
 #define	ACCESSCONTROLLIST_H
 
+#include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
-#include "Wt/Dbo/Dbo"
 #include "primaryKeys/AccessControlListId.h"
 
-class AccessControlList : public Table {
-public:
-    AccessControlList();
-    virtual ~AccessControlList();
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class AccessControlList : public Table
+    {
+        public:
+            AccessControlList();
+            virtual ~AccessControlList();
 
-    static std::string TRIGRAM;
-    Wt::WString value;
+            static std::string TRIGRAM;
+            Wt::WString value;
 
-    AccessControlListId pk;
+            AccessControlListId pk;
 
-    template<class Action>
-    void persist(Action& a)
-    {             
-        FIELD_FILLER();
-        
-        Wt::Dbo::id (a, pk, "ACL_ID");     
-    }
-    private:
-};
+            template<class Action>
+            void persist(Action& a)
+            {
+                FIELD_FILLER();
+
+                Wt::Dbo::id(a, pk, "ACL_ID");
+            }
+        private:
+    };
+  }
+}
 
 #endif	/* ACCESSCONTROLLIST_H */
 

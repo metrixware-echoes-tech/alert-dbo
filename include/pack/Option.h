@@ -1,7 +1,7 @@
 /* 
- * Header of Option Table
- * @author ECHOES Technologies (TSA)
- * @date 03/07/2012
+ * Header of Option Value Table
+ * @author ECHOES Technologies (RHI)
+ * @date 10/09/2012
  * 
  * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
  * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
@@ -12,38 +12,42 @@
  */
 
 #ifndef OPTION_H
-#define OPTION_H
+#define	OPTION_H
 
 #include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
-class Option : public Table
+namespace Echoes
 {
-    public:
-        Option();
-        virtual ~Option();
-        static std::string TRIGRAM;
-        Wt::WString name;
-        
-        Wt::Dbo::collection<Wt::Dbo::ptr<PackOption> > packOptions;
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["NAME"]=&this->name;                       
-            FIELD_FILLER();
-            
-            Wt::Dbo::hasMany(a,
-                             packOptions,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION );
-        }
-        
-        virtual std::string toJSON() const;
-        
-    protected:
-    private:
-};
+  namespace Dbo
+  {
+    class Option : public Table
+    {
+        public:
+            Option();
+            virtual ~Option();
 
-#endif // OPTION_H
+            static std::string TRIGRAM;
+            Wt::WString value;
+
+            Wt::Dbo::ptr<OptionType> optionType;
+            Wt::Dbo::ptr<Organization> organization;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["VALUE"] = &this->value;
+
+                FIELD_FILLER();
+
+                Wt::Dbo::belongsTo(a, optionType, TRIGRAM_OPTION SEP TRIGRAM_OPTION_TYPE);
+                Wt::Dbo::belongsTo(a, organization, TRIGRAM_OPTION SEP TRIGRAM_ORGANIZATION);
+            }
+
+        private:
+    };
+  }
+}
+
+#endif	/* OPTION_H */
 

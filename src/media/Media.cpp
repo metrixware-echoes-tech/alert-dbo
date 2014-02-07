@@ -1,7 +1,7 @@
 /* 
- * Media Table
+ * Media Value Table
  * @author ECHOES Technologies (TSA)
- * @date 18/04/2012
+ * @date 23/07/2012
  * 
  * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
  * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
@@ -13,28 +13,21 @@
 
 #include "media/Media.h"
 
-std::string Media::TRIGRAM(TRIGRAM_MEDIA);
-
-Media::Media()
+namespace Echoes
 {
-    this->jsonName = "media";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string Media::TRIGRAM(TRIGRAM_MEDIA);
 
-Media::~Media()
-{
+        Media::Media()
+        {
+            //ctor
+        }
 
-}
+        Media::~Media()
+        {
+        }
 
-std::string Media::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-
-    res += Table::formatJSONForDboCollection(this->mediaValues, "media_values", false);
-    
-    
-    res += "}";
-    return res;
+    }
 }
 

@@ -9,62 +9,76 @@
 #define	SEARCHPARAMETERVALUEID_H
 
 #include <Wt/Dbo/Dbo>
-#include "primaryKeys/SourceId.h"
-#include "primaryKeys/SearchId.h"
 
-class SearchParameter;
-class SearchParameterValue;
-
-struct SearchParameterValueId
+namespace Echoes
 {
-    Wt::Dbo::ptr<SearchParameter> searchParameter;
-    Wt::Dbo::ptr<Search> search;
+  namespace Dbo
+  {
 
-    SearchParameterValueId(Wt::Dbo::ptr<SearchParameter> searchParameter, Wt::Dbo::ptr<Search> search)
-        : searchParameter(searchParameter), search(search) { }
 
-    SearchParameterValueId(){ }
+    class SearchParameter;
+    class SearchParameterValue;
 
-    bool operator== (const SearchParameterValueId& other) const {
-        return searchParameter == other.searchParameter && search == other.search;
+    struct SearchParameterValueId {
+        Wt::Dbo::ptr<SearchParameter> searchParameter;
+        Wt::Dbo::ptr<Search> search;
+
+        SearchParameterValueId(Wt::Dbo::ptr<SearchParameter> searchParameter, Wt::Dbo::ptr<Search> search)
+        : searchParameter(searchParameter), search(search) {
+        }
+
+        SearchParameterValueId() {
+        }
+
+        bool operator==(const SearchParameterValueId& other) const {
+            return searchParameter == other.searchParameter && search == other.search;
+        }
+
+        bool operator<(const SearchParameterValueId& other) const {
+            if (searchParameter < other.searchParameter)
+                return true;
+            else
+                return false;
+        }
+    };
+
+    inline std::ostream& operator<<(std::ostream& o, const SearchParameterValueId& pk) {
+        // return o << "(" << pk.searchParameter << ")";
+        return o << "\n    {"
+                << "\n        \"search_id\": " << pk.search.id()
+                << ",\n        \"search_parameter_id\": " << pk.searchParameter.id()
+                << "\n    }";
     }
 
-    bool operator< (const SearchParameterValueId& other) const {
-        if (searchParameter < other.searchParameter)
-            return true;
-        else
-            return false;
-    }
-};
-
-inline std::ostream& operator<< (std::ostream& o, const SearchParameterValueId& pk)
-{
-   // return o << "(" << pk.searchParameter << ")";
-    return o <<  pk.search.id()
-             << ",\n\t\t\"search_parameter_id\": " << pk.searchParameter.id();
+  }
 }
 
 namespace Wt
 {
-    namespace Dbo
-    {
-        template <class Action>
-        void field(Action& a, SearchParameterValueId& spvid,
-                   const std::string& name, int size = -1)
-        {
-            field(a, spvid.search, "SEA_ID");
-            field(a, spvid.searchParameter, "SEP_ID");
-        }
-        template<>
-        struct dbo_traits<SearchParameterValue> : public dbo_default_traits
-        {
-            typedef SearchParameterValueId IdType;
-            static IdType invalidId() { return SearchParameterValueId(); }
-            static const char *surrogateIdField() { return 0; }
-        };
-    }
-}
+  namespace Dbo
+  {
 
+    template <class Action>
+    void field(Action& a, Echoes::Dbo::SearchParameterValueId& spvid,
+            const std::string& name, int size = -1) {
+        field(a, spvid.search, TRIGRAM_SEARCH ID);
+        field(a, spvid.searchParameter, TRIGRAM_SEARCH_PARAMETER ID);
+    }
+
+    template<>
+    struct dbo_traits<Echoes::Dbo::SearchParameterValue> : public dbo_default_traits {
+        typedef Echoes::Dbo::SearchParameterValueId IdType;
+
+        static IdType invalidId() {
+            return Echoes::Dbo::SearchParameterValueId();
+        }
+
+        static const char *surrogateIdField() {
+            return 0;
+        }
+    };
+  }
+}
 
 #endif	/* SEARCHPARAMETERVALUEID_H */
 

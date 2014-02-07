@@ -17,23 +17,29 @@
 #include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
 
-class Space : public Table
+namespace Echoes
 {
-public:
-    Space();
-    virtual ~Space();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString name;
-    
-    template<class Action>
-    void persist(Action& a)
+  namespace Dbo
+  {
+    class Space : public Table
     {
-        mapClassAttributesStrings["NAME"]=&this->name;
-        FIELD_FILLER();            
-    }
-};
+        public:
+            Space();
+            virtual ~Space();
+
+            static std::string TRIGRAM;
+
+            Wt::WString name;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                FIELD_FILLER();
+            }
+    };
+  }
+}
 
 #endif	/* SPACE_H */
 

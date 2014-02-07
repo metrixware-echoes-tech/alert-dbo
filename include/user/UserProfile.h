@@ -20,34 +20,40 @@
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/UserValueId.h"
 
-class User;
-
-class UserProfile : public Table
+namespace Echoes
 {
-public:
-    UserProfile();
-    virtual ~UserProfile();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString name;
+  namespace Dbo
+  {
+    class User;
 
-    Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
-
-    template<class Action>
-    void persist(Action& a)
+    class UserProfile : public Table
     {
-        mapClassAttributesStrings["NAME"]=&this->name;
-        
-        FIELD_FILLER();
-        //Wt::Dbo::belongsTo(a, user, User::getName().c_str());
-        Wt::Dbo::hasMany(a,
-                         users,
-                         Wt::Dbo::ManyToOne,
-                         "USR_UPR");
-    }
+        public:
+            UserProfile();
+            virtual ~UserProfile();
 
-};
+            static std::string TRIGRAM;
+
+            Wt::WString name;
+
+            Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+
+                FIELD_FILLER();
+                //Wt::Dbo::belongsTo(a, user, User::getName().c_str());
+                Wt::Dbo::hasMany(a,
+                        users,
+                        Wt::Dbo::ManyToOne,
+                        "USR_UPR");
+            }
+
+        };
+  }
+}
 
 #endif // USERPROFILE_H
 

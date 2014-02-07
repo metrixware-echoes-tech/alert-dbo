@@ -20,45 +20,55 @@
 
 #include "tools/MainIncludeFile.h"
 
-class Source;
-class Asset;
-
-class Plugin : public Table
+namespace Echoes
 {
-    public:
-        Plugin();
-        virtual ~Plugin();
+  namespace Dbo
+  {
+    class Source;
+    class Asset;
 
-        static std::string TRIGRAM;
-     //   Wt::WString name;
-        Wt::WString desc;
-        
-//        Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
+    class Plugin : public Table
+    {
+        public:
+            Plugin();
+            virtual ~Plugin();
 
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["NAME"]=&this->name;            
-            mapClassAttributesStrings["DESC"]=&this->desc;            
-            FIELD_FILLER();
-            //Plugin id as foreign key in other tables
-//            Wt::Dbo::hasMany(a,
-//                             sources,
-//                             Wt::Dbo::ManyToOne,
-//                             "SRC_PLG");
+            static std::string TRIGRAM;
+            //   Wt::WString name;
+            Wt::WString desc;
+            Wt::WString versionRef;
+            Wt::WString versionClient;
             
-            //TJ
-            Wt::Dbo::hasMany(a,
-                             assets,
-                             Wt::Dbo::ManyToMany,
-                             "TJ_AST_PLG");
-       }
-       virtual std::string toJSON() const;
-       
-    protected:
-    private:
-};
+            Wt::Dbo::ptr<PluginReference> pluginReference;
+            Wt::Dbo::ptr<Organization> organization;
+            
+            Wt::Dbo::collection<Wt::Dbo::ptr<Source>> sources;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Asset>> assets;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStrings["DESC"] = &this->desc;
+                mapClassAttributesStrings["VERSION_REF"] = &this->versionRef;
+                mapClassAttributesStrings["VERSION_CLIENT"] = &this->versionClient;
+                FIELD_FILLER();
+                
+                Wt::Dbo::belongsTo(a, pluginReference, TRIGRAM_PLUGIN SEP TRIGRAM_PLUGIN_REFERENCE);
+                Wt::Dbo::belongsTo(a, organization, TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
+                
+                //TJ
+                Wt::Dbo::hasMany(a, sources, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_SOURCE);
+                Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_ASSET);
+                
+            }
+            virtual std::string toJSON() const;
+
+        protected:
+        private:
+    };
+  }
+}
 
 #endif // PLUGIN_H
 

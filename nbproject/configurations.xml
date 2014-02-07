@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="88">
+<configurationDescriptor version="89">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -7,6 +7,10 @@
       <logicalFolder name="include" displayName="include" projectFiles="true">
         <logicalFolder name="addon" displayName="addon" projectFiles="true">
           <itemPath>include/addon/Addon.h</itemPath>
+          <itemPath>include/addon/AddonCommonPackage.h</itemPath>
+          <itemPath>include/addon/AddonCommonPackageParameter.h</itemPath>
+          <itemPath>include/addon/AddonPackage.h</itemPath>
+          <itemPath>include/addon/AddonPackageParameter.h</itemPath>
         </logicalFolder>
         <logicalFolder name="alert" displayName="alert" projectFiles="true">
           <itemPath>include/alert/Alert.h</itemPath>
@@ -17,7 +21,6 @@
           <itemPath>include/alert/AlertMessageAliasInformation.h</itemPath>
           <itemPath>include/alert/AlertMessageAliasInformationCriteria.h</itemPath>
           <itemPath>include/alert/AlertMessageAliasPlugin.h</itemPath>
-          <itemPath>include/alert/AlertMessageDefinition.h</itemPath>
           <itemPath>include/alert/AlertSequence.h</itemPath>
           <itemPath>include/alert/AlertTracking.h</itemPath>
           <itemPath>include/alert/AlertTrackingEvent.h</itemPath>
@@ -34,15 +37,22 @@
           <itemPath>include/engine/EngOrg.h</itemPath>
           <itemPath>include/engine/Engine.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="f1" displayName="filter" projectFiles="true">
+          <itemPath>include/filter/Filter.h</itemPath>
+          <itemPath>include/filter/FilterParameter.h</itemPath>
+          <itemPath>include/filter/FilterParameterValue.h</itemPath>
+          <itemPath>include/filter/FilterType.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>include/information/Information.h</itemPath>
+          <itemPath>include/information/InformationData.h</itemPath>
           <itemPath>include/information/InformationHistoricalValue.h</itemPath>
           <itemPath>include/information/InformationValue.h</itemPath>
           <itemPath>include/information/Syslog.h</itemPath>
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>include/media/Media.h</itemPath>
-          <itemPath>include/media/MediaValue.h</itemPath>
+          <itemPath>include/media/MediaType.h</itemPath>
         </logicalFolder>
         <logicalFolder name="organization"
                        displayName="organization"
@@ -54,20 +64,14 @@
         </logicalFolder>
         <logicalFolder name="pack" displayName="pack" projectFiles="true">
           <itemPath>include/pack/Option.h</itemPath>
-          <itemPath>include/pack/OptionValue.h</itemPath>
+          <itemPath>include/pack/OptionType.h</itemPath>
           <itemPath>include/pack/Pack.h</itemPath>
           <itemPath>include/pack/PackOption.h</itemPath>
         </logicalFolder>
         <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
           <itemPath>include/plugin/Plugin.h</itemPath>
-          <itemPath>include/plugin/Search.h</itemPath>
-          <itemPath>include/plugin/SearchParameter.h</itemPath>
-          <itemPath>include/plugin/SearchParameterValue.h</itemPath>
-          <itemPath>include/plugin/SearchType.h</itemPath>
-          <itemPath>include/plugin/SearchUnit.h</itemPath>
-          <itemPath>include/plugin/Source.h</itemPath>
-          <itemPath>include/plugin/SourceParameter.h</itemPath>
-          <itemPath>include/plugin/SourceParameterValue.h</itemPath>
+          <itemPath>include/plugin/PluginData.h</itemPath>
+          <itemPath>include/plugin/PluginReference.h</itemPath>
         </logicalFolder>
         <logicalFolder name="primaryKeys" displayName="primaryKeys" projectFiles="true">
           <itemPath>include/primaryKeys/AccessControlListId.h</itemPath>
@@ -75,16 +79,11 @@
           <itemPath>include/primaryKeys/AlertMessageAliasInformationCriteriaId.h</itemPath>
           <itemPath>include/primaryKeys/AlertMessageAliasInformationId.h</itemPath>
           <itemPath>include/primaryKeys/AlertMessageAliasPluginId.h</itemPath>
-          <itemPath>include/primaryKeys/AlertMessageDefinitionId.h</itemPath>
           <itemPath>include/primaryKeys/EngOrgId.h</itemPath>
-          <itemPath>include/primaryKeys/InformationId.h</itemPath>
-          <itemPath>include/primaryKeys/OptionValueId.h</itemPath>
+          <itemPath>include/primaryKeys/FilterParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/OrganizationValueId.h</itemPath>
           <itemPath>include/primaryKeys/PackOptionId.h</itemPath>
-          <itemPath>include/primaryKeys/SearchId.h</itemPath>
           <itemPath>include/primaryKeys/SearchParameterValueId.h</itemPath>
-          <itemPath>include/primaryKeys/SearchUnitId.h</itemPath>
-          <itemPath>include/primaryKeys/SourceId.h</itemPath>
           <itemPath>include/primaryKeys/SourceParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/UserHierarchyId.h</itemPath>
           <itemPath>include/primaryKeys/UserValueId.h</itemPath>
@@ -95,6 +94,17 @@
           <itemPath>include/probe/ProbePackage.h</itemPath>
           <itemPath>include/probe/ProbePackageParameter.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="search" displayName="search" projectFiles="true">
+          <itemPath>include/search/Search.h</itemPath>
+          <itemPath>include/search/SearchParameter.h</itemPath>
+          <itemPath>include/search/SearchParameterValue.h</itemPath>
+          <itemPath>include/search/SearchType.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="source" displayName="source" projectFiles="true">
+          <itemPath>include/source/Source.h</itemPath>
+          <itemPath>include/source/SourceParameter.h</itemPath>
+          <itemPath>include/source/SourceParameterValue.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>include/tools/AuthApplication.h</itemPath>
           <itemPath>include/tools/Constants.h</itemPath>
@@ -102,14 +112,12 @@
           <itemPath>include/tools/Enums.h</itemPath>
           <itemPath>include/tools/MacroTrigram.h</itemPath>
           <itemPath>include/tools/MainIncludeFile.h</itemPath>
-          <itemPath>include/tools/PostgresConnector.h</itemPath>
+          <itemPath>include/tools/SafeTransaction.h</itemPath>
           <itemPath>include/tools/Session.h</itemPath>
-          <itemPath>include/tools/SessionPool.h</itemPath>
           <itemPath>include/tools/Table.h</itemPath>
           <itemPath>include/tools/dboSpecialization.h</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
-          <itemPath>include/unit/InformationSubUnit.h</itemPath>
           <itemPath>include/unit/InformationUnit.h</itemPath>
           <itemPath>include/unit/InformationUnitType.h</itemPath>
         </logicalFolder>
@@ -117,7 +125,7 @@
           <itemPath>include/user/AccessControlList.h</itemPath>
           <itemPath>include/user/Space.h</itemPath>
           <itemPath>include/user/User.h</itemPath>
-          <itemPath>include/user/UserAction.h</itemPath>
+          <itemPath>include/user/UserActionType.h</itemPath>
           <itemPath>include/user/UserField.h</itemPath>
           <itemPath>include/user/UserHierarchy.h</itemPath>
           <itemPath>include/user/UserHistoricalAction.h</itemPath>
@@ -146,6 +154,10 @@
       <logicalFolder name="src" displayName="src" projectFiles="true">
         <logicalFolder name="addon" displayName="addon" projectFiles="true">
           <itemPath>src/addon/Addon.cpp</itemPath>
+          <itemPath>src/addon/AddonCommonPackage.cpp</itemPath>
+          <itemPath>src/addon/AddonCommonPackageParameter.cpp</itemPath>
+          <itemPath>src/addon/AddonPackage.cpp</itemPath>
+          <itemPath>src/addon/AddonPackageParameter.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="alert" displayName="alert" projectFiles="true">
           <itemPath>src/alert/Alert.cpp</itemPath>
@@ -156,7 +168,6 @@
           <itemPath>src/alert/AlertMessageAliasInformation.cpp</itemPath>
           <itemPath>src/alert/AlertMessageAliasInformationCriteria.cpp</itemPath>
           <itemPath>src/alert/AlertMessageAliasPlugin.cpp</itemPath>
-          <itemPath>src/alert/AlertMessageDefinition.cpp</itemPath>
           <itemPath>src/alert/AlertSequence.cpp</itemPath>
           <itemPath>src/alert/AlertTracking.cpp</itemPath>
           <itemPath>src/alert/AlertTrackingEvent.cpp</itemPath>
@@ -173,15 +184,22 @@
           <itemPath>src/engine/EngOrg.cpp</itemPath>
           <itemPath>src/engine/Engine.cpp</itemPath>
         </logicalFolder>
+        <logicalFolder name="f1" displayName="filter" projectFiles="true">
+          <itemPath>src/filter/Filter.cpp</itemPath>
+          <itemPath>src/filter/FilterParameter.cpp</itemPath>
+          <itemPath>src/filter/FilterParameterValue.cpp</itemPath>
+          <itemPath>src/filter/FilterType.cpp</itemPath>
+        </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>src/information/Information.cpp</itemPath>
+          <itemPath>src/information/InformationData.cpp</itemPath>
           <itemPath>src/information/InformationHistoricalValue.cpp</itemPath>
           <itemPath>src/information/InformationValue.cpp</itemPath>
           <itemPath>src/information/Syslog.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>src/media/Media.cpp</itemPath>
-          <itemPath>src/media/MediaValue.cpp</itemPath>
+          <itemPath>src/media/MediaType.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="organization"
                        displayName="organization"
@@ -193,37 +211,39 @@
         </logicalFolder>
         <logicalFolder name="pack" displayName="pack" projectFiles="true">
           <itemPath>src/pack/Option.cpp</itemPath>
-          <itemPath>src/pack/OptionValue.cpp</itemPath>
+          <itemPath>src/pack/OptionType.cpp</itemPath>
           <itemPath>src/pack/Pack.cpp</itemPath>
           <itemPath>src/pack/PackOption.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="plugin" displayName="plugin" projectFiles="true">
           <itemPath>src/plugin/Plugin.cpp</itemPath>
-          <itemPath>src/plugin/Search.cpp</itemPath>
-          <itemPath>src/plugin/SearchParameter.cpp</itemPath>
-          <itemPath>src/plugin/SearchParameterValue.cpp</itemPath>
-          <itemPath>src/plugin/SearchType.cpp</itemPath>
-          <itemPath>src/plugin/SearchUnit.cpp</itemPath>
-          <itemPath>src/plugin/Source.cpp</itemPath>
-          <itemPath>src/plugin/SourceParameter.cpp</itemPath>
-          <itemPath>src/plugin/SourceParameterValue.cpp</itemPath>
+          <itemPath>src/plugin/PluginData.cpp</itemPath>
+          <itemPath>src/plugin/PluginReference.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="probe" displayName="probe" projectFiles="true">
           <itemPath>src/probe/Probe.cpp</itemPath>
           <itemPath>src/probe/ProbePackage.cpp</itemPath>
           <itemPath>src/probe/ProbePackageParameter.cpp</itemPath>
         </logicalFolder>
+        <logicalFolder name="search" displayName="search" projectFiles="true">
+          <itemPath>src/search/Search.cpp</itemPath>
+          <itemPath>src/search/SearchParameter.cpp</itemPath>
+          <itemPath>src/search/SearchParameterValue.cpp</itemPath>
+          <itemPath>src/search/SearchType.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="source" displayName="source" projectFiles="true">
+          <itemPath>src/source/Source.cpp</itemPath>
+          <itemPath>src/source/SourceParameter.cpp</itemPath>
+          <itemPath>src/source/SourceParameterValue.cpp</itemPath>
+        </logicalFolder>
         <logicalFolder name="tools" displayName="tools" projectFiles="true">
           <itemPath>src/tools/AuthApplication.cpp</itemPath>
           <itemPath>src/tools/Constants.cpp</itemPath>
-          <itemPath>src/tools/Enums.cpp</itemPath>
-          <itemPath>src/tools/PostgresConnector.cpp</itemPath>
+          <itemPath>src/tools/SafeTransaction.cpp</itemPath>
           <itemPath>src/tools/Session.cpp</itemPath>
-          <itemPath>src/tools/SessionPool.cpp</itemPath>
           <itemPath>src/tools/Table.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="unit" displayName="unit" projectFiles="true">
-          <itemPath>src/unit/InformationSubUnit.cpp</itemPath>
           <itemPath>src/unit/InformationUnit.cpp</itemPath>
           <itemPath>src/unit/InformationUnitType.cpp</itemPath>
         </logicalFolder>
@@ -231,7 +251,7 @@
           <itemPath>src/user/AccessControlList.cpp</itemPath>
           <itemPath>src/user/Space.cpp</itemPath>
           <itemPath>src/user/User.cpp</itemPath>
-          <itemPath>src/user/UserAction.cpp</itemPath>
+          <itemPath>src/user/UserActionType.cpp</itemPath>
           <itemPath>src/user/UserField.cpp</itemPath>
           <itemPath>src/user/UserHierarchy.cpp</itemPath>
           <itemPath>src/user/UserHistoricalAction.cpp</itemPath>
@@ -293,20 +313,26 @@
     <Elem>src/widget</Elem>
     <Elem>include/engine</Elem>
     <Elem>src/engine</Elem>
+    <Elem>include/filter</Elem>
+    <Elem>include/search</Elem>
+    <Elem>include/source</Elem>
+    <Elem>src/filter</Elem>
+    <Elem>src/search</Elem>
+    <Elem>src/source</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug_SharedObject" type="2">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>GNU|GNU</compilerSet>
+        <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
         <ccTool>
           <standard>8</standard>
-          <commandlineTool>DISTCC_FALLBACK=0 distcc</commandlineTool>
+          <commandlineTool>DISTCC_FALLBACK=0 distcc g++-4.7</commandlineTool>
           <incDir>
             <pElem>include</pElem>
           </incDir>
@@ -314,14 +340,31 @@
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
+          <commandlineTool>distcc g++-4.7</commandlineTool>
           <linkerLibItems>
             <linkerLibLibItem>wt</linkerLibLibItem>
             <linkerLibLibItem>wtdbo</linkerLibLibItem>
             <linkerLibLibItem>wtdbopostgres</linkerLibLibItem>
+            <linkerLibLibItem>boost_system</linkerLibLibItem>
+            <linkerLibLibItem>boost_signals</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
       <item path="include/addon/Addon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="include/alert/Alert.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -354,11 +397,6 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/alert/AlertMessageDefinition.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
@@ -381,7 +419,23 @@
       </item>
       <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/filter/Filter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/filter/FilterType.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/InformationData.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="include/information/InformationHistoricalValue.h"
             ex="false"
@@ -397,7 +451,7 @@
       </item>
       <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/media/MediaValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/media/MediaType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/organization/Organization.h"
             ex="false"
@@ -421,7 +475,7 @@
       </item>
       <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/pack/OptionValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/pack/OptionType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/pack/Pack.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -429,27 +483,9 @@
       </item>
       <item path="include/plugin/Plugin.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/Search.h" ex="false" tool="3" flavor2="0">
+      <item path="include/plugin/PluginData.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/SearchParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/plugin/SearchType.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchUnit.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/Source.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/plugin/PluginReference.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/AccessControlListId.h"
             ex="false"
@@ -476,19 +512,9 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/primaryKeys/AlertMessageDefinitionId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/InformationId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/OptionValueId.h"
+      <item path="include/primaryKeys/FilterParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -500,16 +526,10 @@
       </item>
       <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/SearchId.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/primaryKeys/SearchParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
-      </item>
-      <item path="include/primaryKeys/SearchUnitId.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/primaryKeys/SourceId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/SourceParameterValueId.h"
             ex="false"
@@ -537,6 +557,26 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="include/search/Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/search/SearchType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/Source.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/tools/AuthApplication.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Constants.h" ex="false" tool="3" flavor2="0">
@@ -552,17 +592,13 @@
       </item>
       <item path="include/tools/MainIncludeFile.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/tools/PostgresConnector.h" ex="false" tool="3" flavor2="0">
+      <item path="include/tools/SafeTransaction.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Session.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/tools/SessionPool.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Table.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/unit/InformationSubUnit.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/unit/InformationUnit.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -574,7 +610,7 @@
       </item>
       <item path="include/user/User.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/user/UserAction.h" ex="false" tool="3" flavor2="0">
+      <item path="include/user/UserActionType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/user/UserField.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -610,6 +646,20 @@
       </item>
       <item path="src/addon/Addon.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/addon/AddonCommonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonCommonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="src/alert/Alert.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertAcknowledge.cpp" ex="false" tool="1" flavor2="0">
@@ -641,11 +691,6 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="src/alert/AlertMessageDefinition.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/alert/AlertSequence.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertTracking.cpp" ex="false" tool="1" flavor2="0">
@@ -668,7 +713,23 @@
       </item>
       <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/filter/Filter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/filter/FilterType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/InformationData.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="src/information/InformationHistoricalValue.cpp"
             ex="false"
@@ -684,7 +745,7 @@
       </item>
       <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/media/MediaValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/media/MediaType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -705,7 +766,7 @@
       </item>
       <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/pack/OptionValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/pack/OptionType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/pack/Pack.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -713,27 +774,9 @@
       </item>
       <item path="src/plugin/Plugin.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/Search.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/plugin/PluginData.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/plugin/SearchType.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/Source.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/plugin/PluginReference.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/Probe.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -744,21 +787,35 @@
             tool="1"
             flavor2="0">
       </item>
+      <item path="src/search/Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/search/SearchType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/Source.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="src/tools/AuthApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Constants.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/tools/Enums.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tools/PostgresConnector.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/tools/SafeTransaction.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/tools/SessionPool.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/tools/Table.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/unit/InformationSubUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/unit/InformationUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -770,7 +827,7 @@
       </item>
       <item path="src/user/User.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/user/UserAction.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/user/UserActionType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/user/UserField.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -813,15 +870,14 @@
         <ccTool>
           <developmentMode>6</developmentMode>
           <stripSymbols>true</stripSymbols>
-          <commandlineTool>g++-4.4</commandlineTool>
+          <standard>8</standard>
           <incDir>
             <pElem>include</pElem>
           </incDir>
-          <commandLine>-std=c++0x -fPIC</commandLine>
+          <commandLine>-fPIC</commandLine>
         </ccTool>
         <linkerTool>
           <stripSymbols>true</stripSymbols>
-          <commandlineTool>g++-4.4</commandlineTool>
           <linkerLibItems>
             <linkerLibLibItem>wt</linkerLibLibItem>
             <linkerLibLibItem>wtdbo</linkerLibLibItem>
@@ -830,6 +886,20 @@
         </linkerTool>
       </compileType>
       <item path="include/addon/Addon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="include/alert/Alert.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -862,11 +932,6 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/alert/AlertMessageDefinition.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="include/alert/AlertSequence.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
@@ -889,7 +954,23 @@
       </item>
       <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/filter/Filter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/filter/FilterType.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/InformationData.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="include/information/InformationHistoricalValue.h"
             ex="false"
@@ -905,7 +986,7 @@
       </item>
       <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/media/MediaValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/media/MediaType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/organization/Organization.h"
             ex="false"
@@ -929,7 +1010,7 @@
       </item>
       <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/pack/OptionValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/pack/OptionType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/pack/Pack.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -937,27 +1018,9 @@
       </item>
       <item path="include/plugin/Plugin.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/Search.h" ex="false" tool="3" flavor2="0">
+      <item path="include/plugin/PluginData.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/SearchParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/plugin/SearchType.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchUnit.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/Source.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/plugin/PluginReference.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/AccessControlListId.h"
             ex="false"
@@ -984,19 +1047,9 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/primaryKeys/AlertMessageDefinitionId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/InformationId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/OptionValueId.h"
+      <item path="include/primaryKeys/FilterParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1008,16 +1061,10 @@
       </item>
       <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/SearchId.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/primaryKeys/SearchParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
-      </item>
-      <item path="include/primaryKeys/SearchUnitId.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/primaryKeys/SourceId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/SourceParameterValueId.h"
             ex="false"
@@ -1045,6 +1092,26 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="include/search/Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/search/SearchType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/Source.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/tools/AuthApplication.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Constants.h" ex="false" tool="3" flavor2="0">
@@ -1060,17 +1127,13 @@
       </item>
       <item path="include/tools/MainIncludeFile.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/tools/PostgresConnector.h" ex="false" tool="3" flavor2="0">
+      <item path="include/tools/SafeTransaction.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Session.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/tools/SessionPool.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Table.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/unit/InformationSubUnit.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/unit/InformationUnit.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1082,7 +1145,7 @@
       </item>
       <item path="include/user/User.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/user/UserAction.h" ex="false" tool="3" flavor2="0">
+      <item path="include/user/UserActionType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/user/UserField.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1118,6 +1181,20 @@
       </item>
       <item path="src/addon/Addon.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/addon/AddonCommonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonCommonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="src/alert/Alert.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertAcknowledge.cpp" ex="false" tool="1" flavor2="0">
@@ -1149,11 +1226,6 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="src/alert/AlertMessageDefinition.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
       <item path="src/alert/AlertSequence.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertTracking.cpp" ex="false" tool="1" flavor2="0">
@@ -1176,7 +1248,23 @@
       </item>
       <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/filter/Filter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/filter/FilterType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/InformationData.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="src/information/InformationHistoricalValue.cpp"
             ex="false"
@@ -1192,7 +1280,7 @@
       </item>
       <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/media/MediaValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/media/MediaType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1213,7 +1301,7 @@
       </item>
       <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/pack/OptionValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/pack/OptionType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/pack/Pack.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1221,27 +1309,9 @@
       </item>
       <item path="src/plugin/Plugin.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/Search.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/plugin/PluginData.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/plugin/SearchType.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/Source.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/plugin/PluginReference.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/Probe.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1252,21 +1322,35 @@
             tool="1"
             flavor2="0">
       </item>
+      <item path="src/search/Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/search/SearchType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/Source.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="src/tools/AuthApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Constants.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/tools/Enums.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tools/PostgresConnector.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/tools/SafeTransaction.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/tools/SessionPool.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/tools/Table.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/unit/InformationSubUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/unit/InformationUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1278,7 +1362,7 @@
       </item>
       <item path="src/user/User.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/user/UserAction.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/user/UserActionType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/user/UserField.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1328,14 +1412,10 @@
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
-          <linkerAddLib>
-            <pElem>dist/Debug_SharedObject/GNU-Linux-x86</pElem>
-          </linkerAddLib>
           <linkerLibItems>
-            <linkerLibLibItem>dbo</linkerLibLibItem>
-            <linkerLibLibItem>wtdbopostgres</linkerLibLibItem>
-            <linkerLibLibItem>wtdbo</linkerLibLibItem>
             <linkerLibLibItem>wt</linkerLibLibItem>
+            <linkerLibLibItem>wtdbo</linkerLibLibItem>
+            <linkerLibLibItem>wtdbopostgres</linkerLibLibItem>
             <linkerLibLibItem>boost_signals</linkerLibLibItem>
             <linkerLibLibItem>boost_system</linkerLibLibItem>
             <linkerLibLibItem>stdc++</linkerLibLibItem>
@@ -1343,6 +1423,20 @@
         </linkerTool>
       </compileType>
       <item path="include/addon/Addon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonCommonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/addon/AddonPackageParameter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="include/alert/Alert.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1375,7 +1469,23 @@
       </item>
       <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/filter/Filter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/filter/FilterParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/filter/FilterType.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/information/Information.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/information/InformationData.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="include/information/InformationHistoricalValue.h"
             ex="false"
@@ -1391,7 +1501,7 @@
       </item>
       <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/media/MediaValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/media/MediaType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/organization/Organization.h"
             ex="false"
@@ -1415,7 +1525,7 @@
       </item>
       <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/pack/OptionValue.h" ex="false" tool="3" flavor2="0">
+      <item path="include/pack/OptionType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/pack/Pack.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1423,27 +1533,9 @@
       </item>
       <item path="include/plugin/Plugin.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/Search.h" ex="false" tool="3" flavor2="0">
+      <item path="include/plugin/PluginData.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/plugin/SearchParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/plugin/SearchType.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SearchUnit.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/Source.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameter.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/plugin/SourceParameterValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/plugin/PluginReference.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/AccessControlListId.h"
             ex="false"
@@ -1470,17 +1562,7 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/primaryKeys/AlertMessageDefinitionId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/InformationId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="include/primaryKeys/OptionValueId.h"
+      <item path="include/primaryKeys/FilterParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1492,16 +1574,10 @@
       </item>
       <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/primaryKeys/SearchId.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/primaryKeys/SearchParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
-      </item>
-      <item path="include/primaryKeys/SearchUnitId.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/primaryKeys/SourceId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/SourceParameterValueId.h"
             ex="false"
@@ -1529,6 +1605,26 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="include/search/Search.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/search/SearchParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/search/SearchType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/Source.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/source/SourceParameterValue.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="include/tools/AuthApplication.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Constants.h" ex="false" tool="3" flavor2="0">
@@ -1544,17 +1640,13 @@
       </item>
       <item path="include/tools/MainIncludeFile.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/tools/PostgresConnector.h" ex="false" tool="3" flavor2="0">
+      <item path="include/tools/SafeTransaction.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Session.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/tools/SessionPool.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/Table.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/tools/dboSpecialization.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="include/unit/InformationSubUnit.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/unit/InformationUnit.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1566,7 +1658,7 @@
       </item>
       <item path="include/user/User.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/user/UserAction.h" ex="false" tool="3" flavor2="0">
+      <item path="include/user/UserActionType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/user/UserField.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1604,6 +1696,20 @@
       </item>
       <item path="src/addon/Addon.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/addon/AddonCommonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonCommonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/addon/AddonPackageParameter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="src/alert/Alert.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertAcknowledge.cpp" ex="false" tool="1" flavor2="0">
@@ -1635,7 +1741,23 @@
       </item>
       <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/filter/Filter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/filter/FilterParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/filter/FilterType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/information/Information.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/information/InformationData.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="src/information/InformationHistoricalValue.cpp"
             ex="false"
@@ -1651,7 +1773,7 @@
       </item>
       <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/media/MediaValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/media/MediaType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1672,7 +1794,7 @@
       </item>
       <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/pack/OptionValue.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/pack/OptionType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/pack/Pack.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1680,27 +1802,9 @@
       </item>
       <item path="src/plugin/Plugin.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/Search.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/plugin/PluginData.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/plugin/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/plugin/SearchType.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SearchUnit.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/Source.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/plugin/SourceParameterValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/plugin/PluginReference.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/probe/Probe.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1711,21 +1815,35 @@
             tool="1"
             flavor2="0">
       </item>
+      <item path="src/search/Search.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/search/SearchParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/search/SearchType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/Source.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/source/SourceParameterValue.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
       <item path="src/tools/AuthApplication.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Constants.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/tools/Enums.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tools/PostgresConnector.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/tools/SafeTransaction.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tools/Session.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/tools/SessionPool.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/tools/Table.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/unit/InformationSubUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/unit/InformationUnit.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1737,7 +1855,7 @@
       </item>
       <item path="src/user/User.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/user/UserAction.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/user/UserActionType.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/user/UserField.cpp" ex="false" tool="1" flavor2="0">
       </item>

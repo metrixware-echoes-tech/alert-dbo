@@ -10,58 +10,73 @@
 
 #include <Wt/Dbo/Dbo>
 
-class Organization;
-class OrganizationValue;
-
-struct OrganizationValueId
+namespace Echoes
 {
-    Wt::Dbo::ptr<OrganizationField> organizationField;
-    Wt::Dbo::ptr<Organization> organization;
+  namespace Dbo
+  {
 
-    OrganizationValueId(Wt::Dbo::ptr<OrganizationField> organizationField, Wt::Dbo::ptr<Organization> organisation)
-        : organizationField(organizationField), organization(organisation) { }
+    class Organization;
+    class OrganizationValue;
 
-    OrganizationValueId(){ }
+    struct OrganizationValueId {
+        Wt::Dbo::ptr<OrganizationField> organizationField;
+        Wt::Dbo::ptr<Organization> organization;
 
-    bool operator== (const OrganizationValueId& other) const {
-        return organizationField == other.organizationField && organization == other.organization;
+        OrganizationValueId(Wt::Dbo::ptr<OrganizationField> organizationField, Wt::Dbo::ptr<Organization> organization)
+        : organizationField(organizationField), organization(organization) {
+        }
+
+        OrganizationValueId() {
+        }
+
+        bool operator==(const OrganizationValueId& other) const {
+            return organizationField == other.organizationField && organization == other.organization;
+        }
+
+        bool operator<(const OrganizationValueId& other) const {
+            if (organizationField < other.organizationField)
+                return true;
+            else
+                return false;
+        }
+    };
+
+    inline std::ostream& operator<<(std::ostream& o, const OrganizationValueId& pk) {
+        //return o << "(" << pk.organization << ")";
+        return o << "\n    {"
+                << "\n        \"organization_id\": " << pk.organization.id()
+                << ",\n        \"orgnanization_field_id\": " << pk.organizationField.id()
+                << "\n    }";
     }
 
-    bool operator< (const OrganizationValueId& other) const {
-        if (organizationField < other.organizationField)
-            return true;
-        else
-            return false;
-    }
-};
-
-
-inline std::ostream& operator<< (std::ostream& o, const OrganizationValueId& pk)
-{
-    //return o << "(" << pk.organization << ")";
-    return o << "\"organization_id\": " << pk.organization.id() << ",\n\t\t"
-         << "\"orgnanization_field_id\": " << pk.organizationField.id() ;
+  }
 }
 
 namespace Wt
 {
-    namespace Dbo
-    {
-        template <class Action>
-        void field(Action& a, OrganizationValueId& spvid,
-                   const std::string& name, int size = -1)
-        {
-            field(a, spvid.organizationField, "OFI_ID");
-            field(a, spvid.organization, "ORG_ID");
-        }
-        template<>
-        struct dbo_traits<OrganizationValue> : public dbo_default_traits
-        {
-            typedef OrganizationValueId IdType;
-            static IdType invalidId() { return OrganizationValueId(); }
-            static const char *surrogateIdField() { return 0; }
-        };
+  namespace Dbo
+  {
+
+    template <class Action>
+    void field(Action& a, Echoes::Dbo::OrganizationValueId& spvid,
+            const std::string& name, int size = -1) {
+        field(a, spvid.organizationField, "OFI_ID");
+        field(a, spvid.organization, "ORG_ID");
     }
+
+    template<>
+    struct dbo_traits<Echoes::Dbo::OrganizationValue> : public dbo_default_traits {
+        typedef Echoes::Dbo::OrganizationValueId IdType;
+
+        static IdType invalidId() {
+            return Echoes::Dbo::OrganizationValueId();
+        }
+
+        static const char *surrogateIdField() {
+            return 0;
+        }
+    };
+  }
 }
 
 #endif	/* ORGANIZATIONVALUEID_H */

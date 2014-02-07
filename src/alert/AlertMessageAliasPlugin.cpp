@@ -13,27 +13,33 @@
 
 #include "alert/AlertMessageAliasPlugin.h"
 
-std::string AlertMessageAliasPlugin::TRIGRAM(TRIGRAM_ALERT_MESSAGE_ALIAS_PLUGIN);
-
-AlertMessageAliasPlugin::AlertMessageAliasPlugin()
+namespace Echoes
 {
-    this->jsonName = "alert_message_alias_plugin";
-}
+    namespace Dbo
+    {
+        std::string AlertMessageAliasPlugin::TRIGRAM(TRIGRAM_ALERT_MESSAGE_ALIAS_PLUGIN);
 
-AlertMessageAliasPlugin::AlertMessageAliasPlugin(const AlertMessageAliasPlugin& orig)
-{
-}
+        AlertMessageAliasPlugin::AlertMessageAliasPlugin()
+        {
+            this->jsonName = "alert_message_alias_plugin";
+        }
 
-AlertMessageAliasPlugin::~AlertMessageAliasPlugin()
-{
-}
+        AlertMessageAliasPlugin::AlertMessageAliasPlugin(const AlertMessageAliasPlugin& orig)
+        {
+        }
 
-std::string AlertMessageAliasPlugin::toJSON() const
-{
-    std::string res = "{\n";
-    res += Table::toJSON();
-    res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " }\n";
-    res += "}\n";
-    return res;
+        AlertMessageAliasPlugin::~AlertMessageAliasPlugin()
+        {
+        }
+
+        std::string AlertMessageAliasPlugin::toJSON() const
+        {
+            std::string res = "{\n";
+            res += Table::toJSON();
+            res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " }\n";
+            res += "}\n";
+            return res;
+        }
+    }
 }
 

@@ -13,29 +13,34 @@
 
 #include "user/UserRole.h"
 
-std::string UserRole::TRIGRAM(TRIGRAM_USER_ROLE);
-
-UserRole::UserRole()
+namespace Echoes
 {
-    this->jsonName = "user_role";
-    //ctor
+    namespace Dbo
+    {
+        std::string UserRole::TRIGRAM(TRIGRAM_USER_ROLE);
+
+        UserRole::UserRole()
+        {
+            this->jsonName = "user_role";
+            //ctor
+        }
+
+        UserRole::~UserRole()
+        {
+
+        }
+
+        std::string UserRole::toJSON() const
+        {
+            std::string res = "";
+            res += "\t";
+            res += Table::toJSON();
+
+            res += Table::formatJSONForDboCollection(this->users, "users", false);
+
+            res += "\t}";
+            return res;
+        }
+    }
 }
-
-UserRole::~UserRole()
-{
-
-}
-
-std::string UserRole::toJSON() const
-{
-    std::string res = "";
-    res += "\t";
-    res += Table::toJSON();
-
-    res += Table::formatJSONForDboCollection(this->users, "users", false);
-    
-    res += "\t}";
-    return res;
-}
-
 

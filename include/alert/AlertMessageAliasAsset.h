@@ -14,38 +14,43 @@
 #ifndef ALERTMEDIAMESSAGEALIASASSET_H
 #define	ALERTMEDIAMESSAGEALIASASSET_H
 
-#include "tools/MainIncludeFile.h"
-#include <Wt/Dbo/Dbo>
 
+#include <Wt/Dbo/Dbo>
+#include "tools/MainIncludeFile.h"
 #include "primaryKeys/AlertMessageAliasAssetId.h"
 
-class AlertMessageAliasAsset : public Table {
-public:
-    AlertMessageAliasAsset();
-    AlertMessageAliasAsset(const AlertMessageAliasAsset& orig);
-    virtual ~AlertMessageAliasAsset();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString alias;
-    AlertMessageAliasAssetId pk;
-    
-    template<class Action>
-    void persist(Action& a)
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class AlertMessageAliasAsset : public Table
     {
-        mapClassAttributesStrings["ALIAS"]=&this->alias;
+        public:
+            AlertMessageAliasAsset();
+            AlertMessageAliasAsset(const AlertMessageAliasAsset& orig);
+            virtual ~AlertMessageAliasAsset();
 
-        FIELD_FILLER();
-        
-        Wt::Dbo::id (a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_ASSET SEP ID);
+            static std::string TRIGRAM;
 
-    }
-    
-    virtual std::string toJSON() const;
+            Wt::WString alias;
+            AlertMessageAliasAssetId pk;
 
-private:
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["ALIAS"] = &this->alias;
 
-};
+                FIELD_FILLER();
+
+                Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_ASSET ID);
+            }
+
+            virtual std::string toJSON() const;
+
+        private:
+    };
+  }
+}
 
 #endif	/* ALERTMEDIAMESSAGEALIASASSET_H */
 

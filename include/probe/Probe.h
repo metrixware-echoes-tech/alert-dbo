@@ -18,51 +18,57 @@
 
 #include "tools/MainIncludeFile.h"
 
-class Organization;
-class InformationValue;
-class InformationValue;
-
-class Probe : public Table
+namespace Echoes
 {
-    public:
-        Probe();
-        virtual ~Probe();
-        
-        static std::string TRIGRAM;             
-        Wt::WString name;
-        Wt::WString cert;
-        
-        Wt::Dbo::ptr<Organization> organization;
-        Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
+  namespace Dbo
+  {
+    class Organization;
+    class InformationValue;
+    class InformationValue;
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
-        Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
+    class Probe : public Table
+    {
+        public:
+            Probe();
+            virtual ~Probe();
 
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["NAME"]=&this->name;            
-            mapClassAttributesStrings["CERT"]=&this->cert; 
-            FIELD_FILLER();
-            Wt::Dbo::belongsTo(a, organization, TRIGRAM_PROBE SEP TRIGRAM_ORGANIZATION);
-            Wt::Dbo::belongsTo(a, probePackageParameter, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
+            static std::string TRIGRAM;
+            Wt::WString name;
+            Wt::WString cert;
 
-            Wt::Dbo::hasMany(a,
-                             syslogs,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_SYSLOG SEP TRIGRAM_PROBE);
+            Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
+            Wt::Dbo::ptr<Asset> asset;
 
-            Wt::Dbo::hasMany(a,
-                             assets,
-                             Wt::Dbo::ManyToOne,
-                             TRIGRAM_ASSET SEP TRIGRAM_PROBE);
-                         
-        }
-        virtual std::string toJSON() const;
-        
-    protected:
-    private:
-};
+            Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
+//            Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStrings["CERT"] = &this->cert;
+                FIELD_FILLER();
+                Wt::Dbo::belongsTo(a, probePackageParameter, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
+                Wt::Dbo::belongsTo(a, asset, TRIGRAM_PROBE SEP TRIGRAM_ASSET);
+
+                Wt::Dbo::hasMany(a,
+                        syslogs,
+                        Wt::Dbo::ManyToOne,
+                        TRIGRAM_SYSLOG SEP TRIGRAM_PROBE);
+
+//                Wt::Dbo::hasMany(a,
+//                        assets,
+//                        Wt::Dbo::ManyToOne,
+//                        TRIGRAM_ASSET SEP TRIGRAM_PROBE);
+
+            }
+            virtual std::string toJSON() const;
+
+        protected:
+        private:
+    };
+  }
+}
 
 #endif // PROBE_H
 

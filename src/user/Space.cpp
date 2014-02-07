@@ -13,14 +13,20 @@
 
 #include "user/Space.h"
 
-std::string Space::TRIGRAM(TRIGRAM_SPACE);
-
-Space::Space()
+namespace Echoes
 {
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string Space::TRIGRAM(TRIGRAM_SPACE);
 
-Space::~Space()
-{
+        Space::Space()
+        {
+            //ctor
+        }
+
+        Space::~Space()
+        {
+        }
+    }
 }
 

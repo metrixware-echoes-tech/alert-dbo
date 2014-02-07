@@ -18,28 +18,33 @@
 
 #include "tools/MainIncludeFile.h"
 
-class UserValue : public Table
+namespace Echoes
 {
-    public:
-        UserValue();
-        virtual ~UserValue();
-        
-        static std::string TRIGRAM;
-        Wt::WString value;
-        
-        UserValueId uvid;
+  namespace Dbo
+  {
+    class UserValue : public Table
+    {
+        public:
+            UserValue();
+            virtual ~UserValue();
 
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["VALUE"]=&this->value;
-            FIELD_FILLER();
-            Wt::Dbo::id(a,uvid,"PRIMARY_KEY");
-        }
-    protected:
-    private:
-};
+            static std::string TRIGRAM;
+            Wt::WString value;
 
+            UserValueId uvid;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["VALUE"] = &this->value;
+                FIELD_FILLER();
+                Wt::Dbo::id(a, uvid, "PRIMARY_KEY");
+            }
+        protected:
+        private:
+    };
+  }
+}
 
 #endif // USERVALUE_H
 

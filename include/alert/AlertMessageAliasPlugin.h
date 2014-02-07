@@ -14,38 +14,43 @@
 #ifndef ALERTMESSAGEALIASPLUGIN_H
 #define	ALERTMESSAGEALIASPLUGIN_H
 
-#include "tools/MainIncludeFile.h"
 #include <Wt/Dbo/Dbo>
-
+#include "tools/MainIncludeFile.h"
 #include "primaryKeys/AlertMessageAliasPluginId.h"
 
-class AlertMessageAliasPlugin : public Table {
-public:
-    AlertMessageAliasPlugin();
-    AlertMessageAliasPlugin(const AlertMessageAliasPlugin& orig);
-    virtual ~AlertMessageAliasPlugin();
-    
-    static std::string TRIGRAM;
-    
-    Wt::WString alias;
-    
-    AlertMessageAliasPluginId pk;
-    
-    template<class Action>
-    void persist(Action& a)
+namespace Echoes
+{
+  namespace Dbo
+  {
+
+    class AlertMessageAliasPlugin : public Table
     {
-        mapClassAttributesStrings["ALIAS"]=&this->alias;
+        public:
+            AlertMessageAliasPlugin();
+            AlertMessageAliasPlugin(const AlertMessageAliasPlugin& orig);
+            virtual ~AlertMessageAliasPlugin();
 
-        FIELD_FILLER();
-        
-        Wt::Dbo::id (a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_PLUGIN SEP ID);
+            static std::string TRIGRAM;
 
-    }
-    
-    virtual std::string toJSON() const;
-private:
+            Wt::WString alias;
 
-};
+            AlertMessageAliasPluginId pk;
+
+            template<class Action>
+            void persist(Action& a) {
+                mapClassAttributesStrings["ALIAS"] = &this->alias;
+
+                FIELD_FILLER();
+
+                Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_PLUGIN ID);
+
+            }
+
+            virtual std::string toJSON() const;
+        private:
+    };
+  }
+}
 
 #endif	/* ALERTMESSAGEALIASPLUGIN_H */
 

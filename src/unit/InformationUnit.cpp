@@ -13,29 +13,23 @@
 
 #include "unit/InformationUnit.h"
 
-std::string InformationUnit::TRIGRAM(TRIGRAM_INFORMATION_UNIT);
-
-InformationUnit::InformationUnit()
+namespace Echoes
 {
-    this->jsonName = "information_unit";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string InformationUnit::TRIGRAM(TRIGRAM_INFORMATION_UNIT);
 
-InformationUnit::~InformationUnit()
-{
- 
-}
+        InformationUnit::InformationUnit()
+        {
+            this->jsonName = "information_unit";
+            //ctor
+        }
 
-std::string InformationUnit::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
-    res += Table::formatJSONForDboPtr(this->unitType);
-    
-    res += Table::formatJSONForDboCollection(this->searchUnits, "search_units");
-    res += Table::formatJSONForDboCollection(this->informationSubUnits, "information_sub_units", false);
-   
-    res += "}";
-    return res;
+        InformationUnit::~InformationUnit()
+        {
+
+        }
+
+    }
 }
 

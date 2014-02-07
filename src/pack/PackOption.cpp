@@ -13,28 +13,33 @@
 
 #include "pack/PackOption.h"
 
-std::string PackOption::TRIGRAM(TRIGRAM_PACK_OPTION);
-
-
-PackOption::PackOption() 
+namespace Echoes
 {
-    this->jsonName = "pack_option";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string PackOption::TRIGRAM(TRIGRAM_PACK_OPTION);
 
-PackOption::~PackOption() 
-{
+        PackOption::PackOption()
+        {
+            this->jsonName = "pack_option";
+            //ctor
+        }
 
-}
+        PackOption::~PackOption()
+        {
 
-std::string PackOption::toJSON() const
-{
-    std::string res = "";
-    res = "{\n\t";
-    res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
-    res += Table::toJSON();
-    res.replace(res.size()-2, 1, "");
-    res += "}";
-    return res;
+        }
+
+        std::string PackOption::toJSON() const
+        {
+            std::string res = "";
+            res = "{\n\t";
+            res += "\"id\": {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
+            res += Table::toJSON();
+            res.replace(res.size() - 2, 1, "");
+            res += "}";
+            return res;
+        }
+    }
 }
 

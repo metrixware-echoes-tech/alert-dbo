@@ -13,29 +13,34 @@
 
 #include "pack/Pack.h"
 
-std::string Pack::TRIGRAM(TRIGRAM_PACK);
-
-Pack::Pack()
+namespace Echoes
 {
-    this->jsonName = "pack";
-    //ctor
-}
+    namespace Dbo
+    {
+        std::string Pack::TRIGRAM(TRIGRAM_PACK);
 
-Pack::~Pack()
-{
+        Pack::Pack()
+        {
+            this->jsonName = "pack";
+            //ctor
+        }
 
-}
+        Pack::~Pack()
+        {
 
-std::string Pack::toJSON() const
-{
-    std::string res = "";
-    res += Table::toJSON();
+        }
 
-    res += Table::formatJSONForDboCollection(this->organizations, "organizations");
-    res += Table::formatJSONForDboCollection(this->packOptions, "pack_options", false);
-    
-    
-    res += "}";
-    return res;
+        std::string Pack::toJSON() const
+        {
+            std::string res = "";
+            res += Table::toJSON();
+
+            res += Table::formatJSONForDboCollection(this->organizations, "organizations");
+            res += Table::formatJSONForDboCollection(this->packOptions, "pack_options", false);
+
+            res += "}";
+            return res;
+        }
+    }
 }
 

@@ -10,59 +10,74 @@
 
 #include <Wt/Dbo/Dbo>
 
-class Pack;
-class PackOption;
-class Option;
-
-
-struct PackOptionId
+namespace Echoes
 {
-    Wt::Dbo::ptr<Pack> pack;
-    Wt::Dbo::ptr<Option> option;
+  namespace Dbo
+  {
 
-    PackOptionId(Wt::Dbo::ptr<Pack> pack, Wt::Dbo::ptr<Option> option)
-        : pack(pack), option(option) { }
+    class Pack;
+    class PackOption;
+    class OptionType;
 
-    PackOptionId(){ }
+    struct PackOptionId {
+        Wt::Dbo::ptr<Pack> pack;
+        Wt::Dbo::ptr<OptionType> optionType;
 
-    bool operator== (const PackOptionId& other) const {
-        return pack == other.pack && option == other.option;
+        PackOptionId(Wt::Dbo::ptr<Pack> pack, Wt::Dbo::ptr<OptionType> optionType)
+        : pack(pack), optionType(optionType) {
+        }
+
+        PackOptionId() {
+        }
+
+        bool operator==(const PackOptionId& other) const {
+            return pack == other.pack && optionType == other.optionType;
+        }
+
+        bool operator<(const PackOptionId& other) const {
+            if (pack < other.pack)
+                return true;
+            else
+                return false;
+        }
+    };
+
+    inline std::ostream& operator<<(std::ostream& o, const PackOptionId& pk) {
+        //return o << "(" << pk.pack << ")";
+        return o << "\n    {"
+                << "\n        \"pack_id\": " << pk.pack.id()
+                << ",\n        \"option_type_id\": " << pk.optionType.id()
+                << "\n    }";
     }
 
-    bool operator< (const PackOptionId& other) const {
-        if (pack < other.pack)
-            return true;
-        else
-            return false;
-    }
-};
-
-inline std::ostream& operator<< (std::ostream& o, const PackOptionId& pk)
-{
-    //return o << "(" << pk.pack << ")";
-    return o << "\"pack_id\": " << pk.pack.id() << ",\n\t\t"
-         << "\"option_id\": " << pk.option.id() ;
+  }
 }
 
 namespace Wt
 {
-    namespace Dbo
-    {
-        template <class Action>
-        void field(Action& a, PackOptionId& spvid,
-                   const std::string& name, int size = -1)
-        {
-            field(a, spvid.pack, TRIGRAM_PACK_OPTION SEP TRIGRAM_PACK);
-            field(a, spvid.option, TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION);
-        }
-        template<>
-        struct dbo_traits<PackOption> : public dbo_default_traits
-        {
-            typedef PackOptionId IdType;
-            static IdType invalidId() { return PackOptionId(); }
-            static const char *surrogateIdField() { return 0; }
-        };
+  namespace Dbo
+  {
+
+    template <class Action>
+    void field(Action& a, Echoes::Dbo::PackOptionId& spvid,
+            const std::string& name, int size = -1) {
+        field(a, spvid.pack, TRIGRAM_PACK_OPTION SEP TRIGRAM_PACK);
+        field(a, spvid.optionType, TRIGRAM_PACK_OPTION SEP TRIGRAM_OPTION_TYPE);
     }
+
+    template<>
+    struct dbo_traits<Echoes::Dbo::PackOption> : public dbo_default_traits {
+        typedef Echoes::Dbo::PackOptionId IdType;
+
+        static IdType invalidId() {
+            return Echoes::Dbo::PackOptionId();
+        }
+
+        static const char *surrogateIdField() {
+            return 0;
+        }
+    };
+  }
 }
 #endif	/* PACKOPTIONID_H */
 
