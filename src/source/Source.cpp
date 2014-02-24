@@ -21,7 +21,6 @@ namespace Echoes
 
         Source::Source()
         {
-            this->jsonName = "source";
         }
 
         Source::Source(const Source& orig)
@@ -32,16 +31,6 @@ namespace Echoes
         {
 
         }
-
-        std::string Source::toJSON() const
-        {
-            std::string res = "";
-            res = "{\n\t";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->addon, false);
-
-            res += "}";
-            return res;
-        }
     }
 }
+

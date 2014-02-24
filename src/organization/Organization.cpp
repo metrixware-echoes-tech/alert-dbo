@@ -21,8 +21,6 @@ namespace Echoes
 
         Organization::Organization()
         {
-            this->jsonName = "user";
-            //ctor
         }
 
         Organization::~Organization()

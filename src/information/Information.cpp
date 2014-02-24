@@ -19,8 +19,6 @@ namespace Echoes {
 
         Information::Information()
         {
-             this->jsonName = "information";
-            //ctor
         }
 
         Information::Information(const Information &orig)
@@ -34,13 +32,6 @@ namespace Echoes {
 
         Information::~Information()
         {
-        }
-
-        std::string Information::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-            return res;
         }
     }
 }

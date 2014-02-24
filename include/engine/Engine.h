@@ -14,8 +14,9 @@
 #ifndef ENGINE_H
 #define	ENGINE_H
 
-#include "tools/MainIncludeFile.h"
 #include <Wt/Dbo/Dbo>
+
+#include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
@@ -27,13 +28,15 @@ namespace Echoes
             Engine();
             Engine(const Engine& orig);
             virtual ~Engine();
+
             static std::string TRIGRAM;
+
             Wt::WString fqdn;
             Wt::WString state;
             Wt::WDateTime keepAlive;
             int nbThread;
 
-            Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Alert>> alerts;
 
             template<class Action>
             void persist(Action& a)

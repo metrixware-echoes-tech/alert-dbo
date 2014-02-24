@@ -33,11 +33,10 @@ namespace Echoes {
 
                 //        InformationId pk;
 
-                
-                
                 Wt::Dbo::collection<Wt::Dbo::ptr<InformationData> > informationDatas;
                 
                 Wt::Dbo::ptr<InformationUnit> informationUnit;
+                Wt::Dbo::ptr<Organization> organization;
 
                 //     Wt::WString name;
                 boost::optional<Wt::WString> desc;
@@ -53,14 +52,12 @@ namespace Echoes {
                     mapClassAttributesStringsNn["CALCULATE"] = &this->calculate;
                     FIELD_FILLER();
                     //            Wt::Dbo::id(a,pk,"PRIMARY_KEY");
-
-                    Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
                     
                     Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION);
-                    
-                }
 
-                virtual std::string toJSON() const;
+                    Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
+                    Wt::Dbo::belongsTo(a, organization, TRIGRAM_INFORMATION SEP TRIGRAM_ORGANIZATION);
+                }
 
             protected:
             private:

@@ -21,7 +21,6 @@ namespace Echoes
 
         Engine::Engine()
         {
-            this->jsonName = "engine";
         }
 
         Engine::Engine(const Engine& orig)

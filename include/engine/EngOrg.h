@@ -45,7 +45,7 @@ namespace Echoes
             }
 
         private:
-        };
+    };
   }
 }
 

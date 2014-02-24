@@ -30,7 +30,6 @@ namespace Echoes
             virtual ~Source();
 
             static std::string TRIGRAM;
-            Wt::WDateTime deleteTag;
 
             Wt::Dbo::ptr<Addon> addon;
             
@@ -49,8 +48,6 @@ namespace Echoes
                 
                 Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_SOURCE);
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };
