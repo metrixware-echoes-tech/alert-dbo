@@ -26,7 +26,6 @@ namespace Echoes
 
         User::User() : Table()
         {
-            this->jsonName = "user";
         }
 
         User::User(std::string firstName, std::string lastName, std::string eMail, std::string password, std::string token) : Table()

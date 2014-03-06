@@ -21,13 +21,10 @@ namespace Echoes
 
         AlertTracking::AlertTracking()
         {
-            this->jsonName = "alertTracking";
-            //ctor
         }
 
         AlertTracking::~AlertTracking()
         {
-
         }
 
     }
