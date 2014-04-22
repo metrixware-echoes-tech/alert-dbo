@@ -35,7 +35,9 @@ namespace Echoes
         {
             enum {
                 TEXT = 1,
-                NUMBER = 2
+                NUMBER = 2,
+                BOOL = 3,
+                CUSTOM = 4
             };
         }
         
