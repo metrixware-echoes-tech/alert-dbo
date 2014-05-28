@@ -63,7 +63,10 @@ namespace Echoes
                 FILE = 2,
                 LOG = 3,
                 ODBC = 4,
-                SNMP = 5
+                SNMP = 5,
+                HASH = 6,
+                XML = 7,
+                PROCESS = 8
             };
         }
         
@@ -78,11 +81,14 @@ namespace Echoes
         
         namespace ESearchType {
             enum  {
-                OID = 1,
+                PATH = 1,
                 PATH_LINE = 2,
-                PATH = 3,
-                PATH_LAST_LINE = 4,
-                QUERY = 5
+                PATH_LAST_LINE = 3,
+                QUERY = 4,
+                OID = 5,
+                PATH_ALGORITHM = 6,
+                PATH_XPATH = 7,
+                NAME = 8
             };
         }
         
@@ -104,28 +110,28 @@ namespace Echoes
         
         namespace ESourceParameter {
             enum ESourceParameter {
-                PATH = 1,
-                CONNECTION_STRING = 2,
-                COMMUNITY = 3,
-                VERSION = 4,
-                AUTH_PROTO = 5,
-                AUTH_PATH = 6,
-                PRIV_PROTO = 7,
-                PRIV_PATH = 8,
-                LINE = 9,
-                LAST_LINES = 10,
-                HOST = 11,
-                USER = 12
+                CONNECTION_STRING = 1,
+                COMMUNITY = 2,
+                VERSION = 3,
+                AUTH_PROTO = 4,
+                AUTH_PATH = 5,
+                PRIV_PROTO = 6,
+                PRIV_PATH = 7,
+                HOST = 8,
+                USER = 9
             };
         }
         
         namespace ESearchParameter {
             enum  {
-                OID = 1,
-                PATH = 2,
-                LINE = 3,
-                LAST_LINE = 4,
-                QUERY = 5
+                PATH = 1,
+                LINE = 2,
+                LAST_LINE = 3,
+                QUERY = 4,
+                OID = 5,
+                ALGORITHM = 6,
+                XPATH = 7,
+                NAME = 8
             };
         }
         
