@@ -324,6 +324,23 @@ namespace Echoes
             WithUser find(*this, user);
             return user_->lastLoginAttempt();
         }
+        
+        virtual int updateAuthToken(const User& user, const std::string& hash,
+			      const std::string& newHash) {
+        WithUser find(*this, user);
+
+            for (typename AuthTokens::const_iterator i = user_->authTokens().begin();
+             i != user_->authTokens().end(); ++i) 
+            {
+                Wt::Dbo::ptr<AuthTokenType> t = *i;
+                if (t->value() == hash) {
+                    t.modify()->setValue(newHash);
+                    return std::max(0, Wt::WDateTime::currentDateTime().secsTo(t->expires()));
+                }
+            }
+
+            return 0;
+        }
 
         //    Wt::Dbo::Session getSession()
         //    {
