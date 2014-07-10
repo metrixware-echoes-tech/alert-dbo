@@ -325,9 +325,9 @@ namespace Echoes
             return user_->lastLoginAttempt();
         }
         
-        virtual int updateAuthToken(const User& user, const std::string& hash,
+        virtual int updateAuthToken(const WtUser& user, const std::string& hash,
 			      const std::string& newHash) {
-        WithUser find(*this, user);
+            WithUser find(*this, user);
 
             for (typename AuthTokens::const_iterator i = user_->authTokens().begin();
              i != user_->authTokens().end(); ++i) 
