@@ -184,6 +184,23 @@ namespace Echoes
                     (Wt::Dbo::ptr<AuthIdentityType > (new AuthIdentityType(provider,
                     identity)));
         }
+        
+        virtual void setIdentity(const WtUser& user, const std::string& provider,
+			   const Wt::WT_USTRING& identity) {
+            WithUser find(*this, user);
+
+            AuthIdentities c
+              = user_->authIdentities().find().where("provider = ?").bind(provider);
+
+            typename AuthIdentities::const_iterator i = c.begin();
+
+            if (i != c.end())
+              i->modify()->setIdentity(identity);
+            else
+              user_.modify()->authIdentities().insert
+            (Wt::Dbo::ptr<AuthIdentityType>(new AuthIdentityType(provider,
+                                         identity)));
+        }
 
         virtual bool setEmail(const WtUser& user, const std::string& address) {
             WithUser find(*this, user);
