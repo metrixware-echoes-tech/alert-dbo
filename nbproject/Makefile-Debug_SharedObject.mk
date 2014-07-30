@@ -142,398 +142,398 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdbo.${CND_DLIB_EXT}: ${OBJECTFILES
 
 ${OBJECTDIR}/src/addon/Addon.o: src/addon/Addon.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/Addon.o src/addon/Addon.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/addon/Addon.o src/addon/Addon.cpp
 
 ${OBJECTDIR}/src/addon/AddonCommonPackage.o: src/addon/AddonCommonPackage.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonCommonPackage.o src/addon/AddonCommonPackage.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/addon/AddonCommonPackage.o src/addon/AddonCommonPackage.cpp
 
 ${OBJECTDIR}/src/addon/AddonCommonPackageParameter.o: src/addon/AddonCommonPackageParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonCommonPackageParameter.o src/addon/AddonCommonPackageParameter.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/addon/AddonCommonPackageParameter.o src/addon/AddonCommonPackageParameter.cpp
 
 ${OBJECTDIR}/src/addon/AddonPackage.o: src/addon/AddonPackage.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonPackage.o src/addon/AddonPackage.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/addon/AddonPackage.o src/addon/AddonPackage.cpp
 
 ${OBJECTDIR}/src/addon/AddonPackageParameter.o: src/addon/AddonPackageParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/addon
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/addon/AddonPackageParameter.o src/addon/AddonPackageParameter.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/addon/AddonPackageParameter.o src/addon/AddonPackageParameter.cpp
 
 ${OBJECTDIR}/src/alert/Alert.o: src/alert/Alert.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/Alert.o src/alert/Alert.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/Alert.o src/alert/Alert.cpp
 
 ${OBJECTDIR}/src/alert/AlertAcknowledge.o: src/alert/AlertAcknowledge.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertAcknowledge.o src/alert/AlertAcknowledge.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertAcknowledge.o src/alert/AlertAcknowledge.cpp
 
 ${OBJECTDIR}/src/alert/AlertCriteria.o: src/alert/AlertCriteria.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertCriteria.o src/alert/AlertCriteria.cpp
 
 ${OBJECTDIR}/src/alert/AlertMediaSpecialization.o: src/alert/AlertMediaSpecialization.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMediaSpecialization.o src/alert/AlertMediaSpecialization.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertMediaSpecialization.o src/alert/AlertMediaSpecialization.cpp
 
 ${OBJECTDIR}/src/alert/AlertMessageAliasAsset.o: src/alert/AlertMessageAliasAsset.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasAsset.o src/alert/AlertMessageAliasAsset.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertMessageAliasAsset.o src/alert/AlertMessageAliasAsset.cpp
 
 ${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o: src/alert/AlertMessageAliasInformation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o src/alert/AlertMessageAliasInformation.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertMessageAliasInformation.o src/alert/AlertMessageAliasInformation.cpp
 
 ${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o: src/alert/AlertMessageAliasInformationCriteria.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o src/alert/AlertMessageAliasInformationCriteria.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertMessageAliasInformationCriteria.o src/alert/AlertMessageAliasInformationCriteria.cpp
 
 ${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o: src/alert/AlertMessageAliasPlugin.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o src/alert/AlertMessageAliasPlugin.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertMessageAliasPlugin.o src/alert/AlertMessageAliasPlugin.cpp
 
 ${OBJECTDIR}/src/alert/AlertSequence.o: src/alert/AlertSequence.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertSequence.o src/alert/AlertSequence.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertSequence.o src/alert/AlertSequence.cpp
 
 ${OBJECTDIR}/src/alert/AlertTracking.o: src/alert/AlertTracking.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTracking.o src/alert/AlertTracking.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertTracking.o src/alert/AlertTracking.cpp
 
 ${OBJECTDIR}/src/alert/AlertTrackingEvent.o: src/alert/AlertTrackingEvent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertTrackingEvent.o src/alert/AlertTrackingEvent.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertTrackingEvent.o src/alert/AlertTrackingEvent.cpp
 
 ${OBJECTDIR}/src/alert/AlertType.o: src/alert/AlertType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertType.o src/alert/AlertType.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertType.o src/alert/AlertType.cpp
 
 ${OBJECTDIR}/src/alert/AlertValue.o: src/alert/AlertValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/alert/AlertValue.o src/alert/AlertValue.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertValue.o src/alert/AlertValue.cpp
 
 ${OBJECTDIR}/src/asset/Asset.o: src/asset/Asset.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/asset
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/asset/Asset.o src/asset/Asset.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/asset/Asset.o src/asset/Asset.cpp
 
 ${OBJECTDIR}/src/asset/AssetArchitecture.o: src/asset/AssetArchitecture.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/asset
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/asset/AssetArchitecture.o src/asset/AssetArchitecture.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/asset/AssetArchitecture.o src/asset/AssetArchitecture.cpp
 
 ${OBJECTDIR}/src/asset/AssetDistribution.o: src/asset/AssetDistribution.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/asset
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/asset/AssetDistribution.o src/asset/AssetDistribution.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/asset/AssetDistribution.o src/asset/AssetDistribution.cpp
 
 ${OBJECTDIR}/src/asset/AssetRelease.o: src/asset/AssetRelease.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/asset
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/asset/AssetRelease.o src/asset/AssetRelease.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/asset/AssetRelease.o src/asset/AssetRelease.cpp
 
 ${OBJECTDIR}/src/engine/EngOrg.o: src/engine/EngOrg.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/engine
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/engine/EngOrg.o src/engine/EngOrg.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/engine/EngOrg.o src/engine/EngOrg.cpp
 
 ${OBJECTDIR}/src/engine/Engine.o: src/engine/Engine.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/engine
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/engine/Engine.o src/engine/Engine.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/engine/Engine.o src/engine/Engine.cpp
 
 ${OBJECTDIR}/src/filter/Filter.o: src/filter/Filter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/filter
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/Filter.o src/filter/Filter.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/filter/Filter.o src/filter/Filter.cpp
 
 ${OBJECTDIR}/src/filter/FilterParameter.o: src/filter/FilterParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/filter
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/FilterParameter.o src/filter/FilterParameter.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/filter/FilterParameter.o src/filter/FilterParameter.cpp
 
 ${OBJECTDIR}/src/filter/FilterParameterValue.o: src/filter/FilterParameterValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/filter
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/FilterParameterValue.o src/filter/FilterParameterValue.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/filter/FilterParameterValue.o src/filter/FilterParameterValue.cpp
 
 ${OBJECTDIR}/src/filter/FilterType.o: src/filter/FilterType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/filter
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/filter/FilterType.o src/filter/FilterType.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/filter/FilterType.o src/filter/FilterType.cpp
 
 ${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/information/Information.o src/information/Information.cpp
 
 ${OBJECTDIR}/src/information/InformationData.o: src/information/InformationData.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationData.o src/information/InformationData.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/information/InformationData.o src/information/InformationData.cpp
 
 ${OBJECTDIR}/src/information/InformationHistoricalValue.o: src/information/InformationHistoricalValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationHistoricalValue.o src/information/InformationHistoricalValue.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/information/InformationHistoricalValue.o src/information/InformationHistoricalValue.cpp
 
 ${OBJECTDIR}/src/information/InformationValue.o: src/information/InformationValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/InformationValue.o src/information/InformationValue.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/information/InformationValue.o src/information/InformationValue.cpp
 
 ${OBJECTDIR}/src/information/Syslog.o: src/information/Syslog.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/information/Syslog.o src/information/Syslog.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/information/Syslog.o src/information/Syslog.cpp
 
 ${OBJECTDIR}/src/media/Media.o: src/media/Media.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/media
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/Media.o src/media/Media.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/media/Media.o src/media/Media.cpp
 
 ${OBJECTDIR}/src/media/MediaType.o: src/media/MediaType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/media
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/media/MediaType.o src/media/MediaType.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/media/MediaType.o src/media/MediaType.cpp
 
 ${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
 
 ${OBJECTDIR}/src/organization/OrganizationField.o: src/organization/OrganizationField.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationField.o src/organization/OrganizationField.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/organization/OrganizationField.o src/organization/OrganizationField.cpp
 
 ${OBJECTDIR}/src/organization/OrganizationType.o: src/organization/OrganizationType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
 
 ${OBJECTDIR}/src/organization/OrganizationValue.o: src/organization/OrganizationValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/organization/OrganizationValue.o src/organization/OrganizationValue.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/organization/OrganizationValue.o src/organization/OrganizationValue.cpp
 
 ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Option.o src/pack/Option.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/pack/Option.o src/pack/Option.cpp
 
 ${OBJECTDIR}/src/pack/OptionType.o: src/pack/OptionType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/OptionType.o src/pack/OptionType.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/pack/OptionType.o src/pack/OptionType.cpp
 
 ${OBJECTDIR}/src/pack/Pack.o: src/pack/Pack.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/Pack.o src/pack/Pack.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/pack/Pack.o src/pack/Pack.cpp
 
 ${OBJECTDIR}/src/pack/PackOption.o: src/pack/PackOption.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/pack/PackOption.o src/pack/PackOption.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/pack/PackOption.o src/pack/PackOption.cpp
 
 ${OBJECTDIR}/src/plugin/Plugin.o: src/plugin/Plugin.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/plugin/Plugin.o src/plugin/Plugin.cpp
 
 ${OBJECTDIR}/src/plugin/PluginData.o: src/plugin/PluginData.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/PluginData.o src/plugin/PluginData.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/plugin/PluginData.o src/plugin/PluginData.cpp
 
 ${OBJECTDIR}/src/plugin/PluginReference.o: src/plugin/PluginReference.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/plugin
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/plugin/PluginReference.o src/plugin/PluginReference.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/plugin/PluginReference.o src/plugin/PluginReference.cpp
 
 ${OBJECTDIR}/src/probe/Probe.o: src/probe/Probe.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/probe
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/probe/Probe.o src/probe/Probe.cpp
 
 ${OBJECTDIR}/src/probe/ProbePackage.o: src/probe/ProbePackage.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/probe
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/ProbePackage.o src/probe/ProbePackage.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/probe/ProbePackage.o src/probe/ProbePackage.cpp
 
 ${OBJECTDIR}/src/probe/ProbePackageParameter.o: src/probe/ProbePackageParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/probe
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/probe/ProbePackageParameter.o src/probe/ProbePackageParameter.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/probe/ProbePackageParameter.o src/probe/ProbePackageParameter.cpp
 
 ${OBJECTDIR}/src/search/Search.o: src/search/Search.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/search
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/Search.o src/search/Search.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/search/Search.o src/search/Search.cpp
 
 ${OBJECTDIR}/src/search/SearchParameter.o: src/search/SearchParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/search
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/SearchParameter.o src/search/SearchParameter.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/search/SearchParameter.o src/search/SearchParameter.cpp
 
 ${OBJECTDIR}/src/search/SearchParameterValue.o: src/search/SearchParameterValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/search
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/SearchParameterValue.o src/search/SearchParameterValue.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/search/SearchParameterValue.o src/search/SearchParameterValue.cpp
 
 ${OBJECTDIR}/src/search/SearchType.o: src/search/SearchType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/search
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/search/SearchType.o src/search/SearchType.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/search/SearchType.o src/search/SearchType.cpp
 
 ${OBJECTDIR}/src/source/Source.o: src/source/Source.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/source
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/source/Source.o src/source/Source.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/source/Source.o src/source/Source.cpp
 
 ${OBJECTDIR}/src/source/SourceParameter.o: src/source/SourceParameter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/source
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/source/SourceParameter.o src/source/SourceParameter.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/source/SourceParameter.o src/source/SourceParameter.cpp
 
 ${OBJECTDIR}/src/source/SourceParameterValue.o: src/source/SourceParameterValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/source
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/source/SourceParameterValue.o src/source/SourceParameterValue.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/source/SourceParameterValue.o src/source/SourceParameterValue.cpp
 
 ${OBJECTDIR}/src/tools/AuthApplication.o: src/tools/AuthApplication.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tools/AuthApplication.o src/tools/AuthApplication.cpp
 
 ${OBJECTDIR}/src/tools/Constants.o: src/tools/Constants.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Constants.o src/tools/Constants.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tools/Constants.o src/tools/Constants.cpp
 
 ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
 
 ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tools/Table.o src/tools/Table.cpp
 
 ${OBJECTDIR}/src/unit/InformationUnit.o: src/unit/InformationUnit.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/unit
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnit.o src/unit/InformationUnit.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/unit/InformationUnit.o src/unit/InformationUnit.cpp
 
 ${OBJECTDIR}/src/unit/InformationUnitType.o: src/unit/InformationUnitType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/unit
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/unit/InformationUnitType.o src/unit/InformationUnitType.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/unit/InformationUnitType.o src/unit/InformationUnitType.cpp
 
 ${OBJECTDIR}/src/user/AccessControlList.o: src/user/AccessControlList.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/AccessControlList.o src/user/AccessControlList.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/AccessControlList.o src/user/AccessControlList.cpp
 
 ${OBJECTDIR}/src/user/Space.o: src/user/Space.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/Space.o src/user/Space.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/Space.o src/user/Space.cpp
 
 ${OBJECTDIR}/src/user/User.o: src/user/User.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/User.o src/user/User.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/User.o src/user/User.cpp
 
 ${OBJECTDIR}/src/user/UserActionType.o: src/user/UserActionType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserActionType.o src/user/UserActionType.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/UserActionType.o src/user/UserActionType.cpp
 
 ${OBJECTDIR}/src/user/UserField.o: src/user/UserField.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserField.o src/user/UserField.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/UserField.o src/user/UserField.cpp
 
 ${OBJECTDIR}/src/user/UserHierarchy.o: src/user/UserHierarchy.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHierarchy.o src/user/UserHierarchy.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/UserHierarchy.o src/user/UserHierarchy.cpp
 
 ${OBJECTDIR}/src/user/UserHistoricalAction.o: src/user/UserHistoricalAction.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserHistoricalAction.o src/user/UserHistoricalAction.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/UserHistoricalAction.o src/user/UserHistoricalAction.cpp
 
 ${OBJECTDIR}/src/user/UserProfile.o: src/user/UserProfile.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/UserProfile.o src/user/UserProfile.cpp
 
 ${OBJECTDIR}/src/user/UserRight.o: src/user/UserRight.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRight.o src/user/UserRight.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/UserRight.o src/user/UserRight.cpp
 
 ${OBJECTDIR}/src/user/UserRole.o: src/user/UserRole.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/UserRole.o src/user/UserRole.cpp
 
 ${OBJECTDIR}/src/user/UserValue.o: src/user/UserValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/user
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/user/UserValue.o src/user/UserValue.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/user/UserValue.o src/user/UserValue.cpp
 
 ${OBJECTDIR}/src/widget/Tab.o: src/widget/Tab.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Tab.o src/widget/Tab.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/widget/Tab.o src/widget/Tab.cpp
 
 ${OBJECTDIR}/src/widget/TabVersion.o: src/widget/TabVersion.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/widget/TabVersion.o src/widget/TabVersion.cpp
 
 ${OBJECTDIR}/src/widget/TabWidgetAssociation.o: src/widget/TabWidgetAssociation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/TabWidgetAssociation.o src/widget/TabWidgetAssociation.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/widget/TabWidgetAssociation.o src/widget/TabWidgetAssociation.cpp
 
 ${OBJECTDIR}/src/widget/Widget.o: src/widget/Widget.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/Widget.o src/widget/Widget.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/widget/Widget.o src/widget/Widget.cpp
 
 ${OBJECTDIR}/src/widget/WidgetType.o: src/widget/WidgetType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetType.o src/widget/WidgetType.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/widget/WidgetType.o src/widget/WidgetType.cpp
 
 ${OBJECTDIR}/src/widget/WidgetValue.o: src/widget/WidgetValue.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/widget
-	${RM} $@.d
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -pedantic -fPIC -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/widget/WidgetValue.o src/widget/WidgetValue.cpp
 
 # Subprojects
 .build-subprojects:

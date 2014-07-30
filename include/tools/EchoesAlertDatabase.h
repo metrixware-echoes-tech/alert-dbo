@@ -8,6 +8,7 @@
 #ifndef ECHOESALERTDATABASE_H
 #define	ECHOESALERTDATABASE_H
 
+#include <boost/foreach.hpp>
 
 #include <Wt/Auth/AbstractUserDatabase>
 #include <Wt/Auth/Dbo/AuthInfo>
@@ -284,9 +285,21 @@ namespace Echoes
             /*
              * Prevent a user from piling up the database with tokens
              */
-            if (user_->authTokens().size() > maxAuthTokensPerUser_)
-                return;
-
+            size_t tokens_number = user_->authTokens().size();
+            if (tokens_number >= maxAuthTokensPerUser_) {
+              // remove so many tokens, that their number
+              // would be (maxAuthTokensPerUser_ - 1)
+              int tokens_to_remove = tokens_number - (maxAuthTokensPerUser_ - 1);
+              // remove the first token(s) to expire
+              Wt::Dbo::collection<Wt::Dbo::ptr<AuthTokenType> > earliest_tokens =
+                user_->authTokens().find().orderBy("expires").limit(tokens_to_remove);
+              std::vector<Wt::Dbo::ptr<AuthTokenType> > earliest_tokens_v(
+                earliest_tokens.begin(), earliest_tokens.end());
+              BOOST_FOREACH (Wt::Dbo::ptr<AuthTokenType> token, earliest_tokens_v) {
+                token.remove();
+              }
+            }
+            
             user_.modify()->authTokens().insert
                     (Wt::Dbo::ptr<AuthTokenType >
                     (new AuthTokenType(token.hash(), token.expirationTime())));
@@ -303,6 +316,23 @@ namespace Echoes
                     break;
                 }
             }
+        }
+        
+        virtual int updateAuthToken(const WtUser& user, const std::string& hash,
+			      const std::string& newHash) {
+            WithUser find(*this, user);
+
+            for (typename AuthTokens::const_iterator i = user_->authTokens().begin();
+             i != user_->authTokens().end(); ++i) 
+            {
+                Wt::Dbo::ptr<AuthTokenType> t = *i;
+                if (t->value() == hash) {
+                    t.modify()->setValue(newHash);
+                    return std::max(0, Wt::WDateTime::currentDateTime().secsTo(t->expires()));
+                }
+            }
+
+            return 0;
         }
 
         virtual WtUser findWithAuthToken(const std::string& hash) const {
@@ -342,28 +372,6 @@ namespace Echoes
             return user_->lastLoginAttempt();
         }
         
-        virtual int updateAuthToken(const WtUser& user, const std::string& hash,
-			      const std::string& newHash) {
-            WithUser find(*this, user);
-
-            for (typename AuthTokens::const_iterator i = user_->authTokens().begin();
-             i != user_->authTokens().end(); ++i) 
-            {
-                Wt::Dbo::ptr<AuthTokenType> t = *i;
-                if (t->value() == hash) {
-                    t.modify()->setValue(newHash);
-                    return std::max(0, Wt::WDateTime::currentDateTime().secsTo(t->expires()));
-                }
-            }
-
-            return 0;
-        }
-
-        //    Wt::Dbo::Session getSession()
-        //    {
-        //        return this->session_;
-        //    }
-
         Wt::Dbo::Session& session_;
     private:
 
