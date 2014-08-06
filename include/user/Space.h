@@ -14,7 +14,6 @@
 #ifndef SPACE_H
 #define	SPACE_H
 
-#include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -29,13 +28,11 @@ namespace Echoes
 
             static std::string TRIGRAM;
 
-            Wt::WString name;
-
             template<class Action>
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
             }
     };
   }

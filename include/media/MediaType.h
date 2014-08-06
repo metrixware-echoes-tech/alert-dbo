@@ -15,38 +15,35 @@
 #define MEDIATYPE_H
 
 #include "tools/MainIncludeFile.h"
-#include <Wt/Dbo/Dbo>
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class Media;
-
     class MediaType : public Table
     {
-    public:
-        MediaType();
-        virtual ~MediaType();
-        static std::string TRIGRAM;
-        Wt::WString name;
+        public:
+            MediaType();
+            virtual ~MediaType();
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<Media> > medias;
+            static std::string TRIGRAM;
 
-        template<class Action>
-        void persist(Action& a)
-        {
-            mapClassAttributesStrings["NAME"] = &this->name;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Media> > medias;
 
-            FIELD_FILLER();
-            Wt::Dbo::hasMany(a,
-                    medias,
-                    Wt::Dbo::ManyToOne,
-                    TRIGRAM_MEDIA SEP TRIGRAM_MEDIA_TYPE);
-        }
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
 
-    protected:
-    private:
+                Table::fieldFiller(a, *this);
+                Wt::Dbo::hasMany(a,
+                        medias,
+                        Wt::Dbo::ManyToOne,
+                        TRIGRAM_MEDIA SEP TRIGRAM_MEDIA_TYPE);
+            }
+
+        protected:
+        private:
     };
   }
 }

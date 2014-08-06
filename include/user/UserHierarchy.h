@@ -38,7 +38,7 @@
 //            template<class Action>
 //            void persist(Action& a) {
 //
-//                FIELD_FILLER();
+//                Table::fieldFiller(a, *this);
 //                Wt::Dbo::belongsTo(a, hiid.parent, TRIGRAM_USER_HIERARCHY SEP "UPA");
 //            }
 //        protected:

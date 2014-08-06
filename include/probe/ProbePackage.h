@@ -15,7 +15,6 @@
 #define	PROBEPACKAGE_H
 
 #include "tools/MainIncludeFile.h"
-#include <Wt/Dbo/Dbo>
 
 namespace Echoes
 {
@@ -39,10 +38,11 @@ namespace Echoes
             {
                 mapClassAttributesStrings["FILENAME"] = &this->filename;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a, probePackageParameters, Wt::Dbo::ManyToOne, TRIGRAM_PROBE_PACKAGE_PARAMETER SEP TRIGRAM_PROBE_PACKAGE);
             }
+
         private:
     };
   }

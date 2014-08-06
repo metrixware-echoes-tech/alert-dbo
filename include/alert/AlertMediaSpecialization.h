@@ -14,7 +14,6 @@
 #ifndef ALERTMEDIASPECIALIZATION_H
 #define	ALERTMEDIASPECIALIZATION_H
 
-#include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -27,7 +26,9 @@ namespace Echoes
             AlertMediaSpecialization();
             AlertMediaSpecialization(const AlertMediaSpecialization& orig);
             virtual ~AlertMediaSpecialization();
+
             static std::string TRIGRAM;
+
             Wt::WDateTime lastSend; //last time the alert was send to a media
             bool notifEndOfAlert;
             int snoozeDuration;
@@ -44,7 +45,7 @@ namespace Echoes
                 mapClassAttributesDates["LAST_SEND"] = &this->lastSend;
                 mapClassAttributesStrings["MESSAGE"] = &this->message;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, alert, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_ALERT);
                 Wt::Dbo::belongsTo(a, media, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_MEDIA);

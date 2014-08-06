@@ -29,7 +29,7 @@
 //            mapClassAttributesStrings["NAME"]=&this->name;
 //            mapClassAttributesStrings["FORMAT"]=&this->format;
 //            
-//            FIELD_FILLER();
+//            Table::fieldFiller(a, *this);
 //            
 ////            Wt::Dbo::hasMany(a,
 ////                             alertValues,

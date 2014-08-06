@@ -14,17 +14,12 @@
 #ifndef ALERTVALUE_H
 #define ALERTVALUE_H
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class Alert;
-
     class AlertValue : public Table
     {
         public:
@@ -35,11 +30,11 @@ namespace Echoes
 
             Wt::WString value;
             boost::optional<Wt::WString> keyValue;
-            Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
+
             Wt::Dbo::ptr<InformationData> informationData;
             Wt::Dbo::ptr<AlertCriteria> alertCriteria;
 
-
+            Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
             Wt::Dbo::collection<Wt::Dbo::ptr<AlertSequence> > alertSequences;
 
             template<class Action>
@@ -48,17 +43,14 @@ namespace Echoes
                 mapClassAttributesStrings["VALUE"] = &this->value;
                 mapClassAttributesStringsNn["KEY_VALUE"] = &this->keyValue;
 
-                FIELD_FILLER();
-
-                Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToOne, TRIGRAM_ALERT SEP TRIGRAM_ALERT_VALUE);
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, informationData, TRIGRAM_ALERT_VALUE SEP TRIGRAM_INFORMATION_DATA);
                 Wt::Dbo::belongsTo(a, alertCriteria, TRIGRAM_ALERT_VALUE SEP TRIGRAM_ALERT_CRITERIA);
 
+                Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToOne, TRIGRAM_ALERT SEP TRIGRAM_ALERT_VALUE);
                 Wt::Dbo::hasMany(a, alertSequences, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_SEQUENCE SEP TRIGRAM_ALERT_VALUE);
             }
-
-            virtual std::string toJSON() const;
 
         protected:
         private:

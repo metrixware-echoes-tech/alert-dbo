@@ -13,39 +13,25 @@
 
 #include "alert/AlertSequence.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string AlertSequence::TRIGRAM(TRIGRAM_ALERT_SEQUENCE);
+
+    AlertSequence::AlertSequence()
     {
-        std::string AlertSequence::TRIGRAM(TRIGRAM_ALERT_SEQUENCE);
-
-        AlertSequence::AlertSequence()
-        {
-            this->jsonName = "alertSequence";
-        }
-
-        AlertSequence::AlertSequence(const AlertSequence& orig)
-        {
-        }
-
-        AlertSequence::~AlertSequence()
-        {
-
-        }
-
-        std::string AlertSequence::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->alertValue);
-            res += Table::formatJSONForDboPtr(this->alertSequence);
-            res += Table::formatJSONForDboPtr(this->alertSequenceBelongTo);
-
-            res += Table::formatJSONForDboCollection(this->alerts, "alerts", false);
-
-            res += "}";
-            return res;
-        }
     }
+
+    AlertSequence::AlertSequence(const AlertSequence& orig)
+    {
+    }
+
+    AlertSequence::~AlertSequence()
+    {
+    }
+  }
 }
 

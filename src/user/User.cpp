@@ -18,33 +18,35 @@
 
 //DBO_INSTANTIATE_TEMPLATES(Echoes::Dbo::User)
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string User::TRIGRAM(TRIGRAM_USER);
+
+    User::User() : Table()
     {
-        std::string User::TRIGRAM(TRIGRAM_USER);
-
-        User::User() : Table()
-        {
-        }
-
-        User::User(std::string firstName, std::string lastName, std::string eMail, std::string password, std::string token) : Table()
-        {
-            this->firstName = firstName;
-            this->lastName = lastName;
-            this->eMail = eMail;
-            this->password = password;
-            this->token = token;
-        }
-
-        User::~User()
-        {
-        }
-
-        std::string User::getName()
-        {
-            return Constants::T_USER_USR;
-        }
     }
+
+    User::User(string firstName, string lastName, string eMail, string password, string token) : Table()
+    {
+        this->firstName = firstName;
+        this->lastName = lastName;
+        this->eMail = eMail;
+        this->password = password;
+        this->token = token;
+    }
+
+    User::~User()
+    {
+    }
+
+    string User::getName()
+    {
+        return Constants::T_USER_USR;
+    }
+  }
 }
 

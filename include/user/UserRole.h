@@ -14,10 +14,6 @@
 #ifndef USERROLE_H
 #define USERROLE_H
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/backend/Postgres>
-#include <Wt/Dbo/WtSqlTraits>
-
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/UserValueId.h"
 
@@ -33,8 +29,6 @@ namespace Echoes
 
             static std::string TRIGRAM;
 
-            Wt::WString name;
-
             Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
             Wt::Dbo::ptr<Organization> organization;
@@ -43,7 +37,7 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, organization, TRIGRAM_USER_ROLE SEP TRIGRAM_ORGANIZATION);
 
@@ -52,8 +46,6 @@ namespace Echoes
                         Wt::Dbo::ManyToOne,
                         TRIGRAM_USER SEP TRIGRAM_USER_ROLE);
             }
-
-            virtual std::string toJSON() const;
     };
   }
 }

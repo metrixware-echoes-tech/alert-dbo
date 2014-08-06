@@ -14,18 +14,12 @@
 #ifndef INFORMATIONUNITTYPE_H
 #define INFORMATIONUNITTYPE_H
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class InformationUnit;
-    //class WidgetType;
-
     class InformationUnitType : public Table
     {
         public:
@@ -33,8 +27,6 @@ namespace Echoes
             virtual ~InformationUnitType();
 
             static std::string TRIGRAM;
-
-            Wt::WString name;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<InformationUnit> > units;
 
@@ -44,7 +36,7 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a,
                         units,
@@ -54,8 +46,6 @@ namespace Echoes
                 //TJ
                 Wt::Dbo::hasMany(a, alertCriterias, Wt::Dbo::ManyToMany, "TJ" SEP TRIGRAM_ALERT_CRITERIA SEP TRIGRAM_INFORMATION_UNIT_TYPE);
             }
-
-            virtual std::string toJSON() const;
 
         protected:
         private:

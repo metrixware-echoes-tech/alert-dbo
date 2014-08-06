@@ -1,5 +1,5 @@
 /* 
- * Option Table
+ * Option Type Table
  * @author ECHOES Technologies (TSA)
  * @date 03/07/2012
  * 
@@ -13,21 +13,21 @@
 
 #include "pack/OptionType.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string OptionType::TRIGRAM(TRIGRAM_OPTION_TYPE);
+
+    OptionType::OptionType()
     {
-        std::string OptionType::TRIGRAM(TRIGRAM_OPTION_TYPE);
-
-        OptionType::OptionType()
-        {
-            //ctor
-        }
-
-        OptionType::~OptionType()
-        {
-        }
-
     }
+
+    OptionType::~OptionType()
+    {
+    }
+  }
 }
 

@@ -14,8 +14,6 @@
 #ifndef ENGINE_H
 #define	ENGINE_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -45,7 +43,7 @@ namespace Echoes
                 mapClassAttributesStrings["STATE"] = &this->state;
                 mapClassAttributesDates["KEEP_ALIVE"] = &this->keepAlive;
                 mapClassAttributesInts["NB_THREAD"] = &this->nbThread;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToOne, TRIGRAM_ALERT SEP TRIGRAM_ENGINE);
             }

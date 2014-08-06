@@ -13,21 +13,21 @@
 
 #include "user/UserHistoricalAction.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string UserHistoricalAction::TRIGRAM(TRIGRAM_USER_HISTORICAL_ACTION);
+
+    UserHistoricalAction::UserHistoricalAction()
     {
-        std::string UserHistoricalAction::TRIGRAM(TRIGRAM_USER_HISTORICAL_ACTION);
-
-        UserHistoricalAction::UserHistoricalAction()
-        {
-            //ctor
-        }
-
-        UserHistoricalAction::~UserHistoricalAction()
-        {
-
-        }
     }
+
+    UserHistoricalAction::~UserHistoricalAction()
+    {
+    }
+  }
 }
 

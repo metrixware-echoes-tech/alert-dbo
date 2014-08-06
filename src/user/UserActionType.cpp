@@ -13,20 +13,20 @@
 
 #include "user/UserActionType.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string UserActionType::TRIGRAM(TRIGRAM_USER_ACTION_TYPE);
+
+    UserActionType::UserActionType()
     {
-        std::string UserActionType::TRIGRAM(TRIGRAM_USER_ACTION_TYPE);
-
-        UserActionType::UserActionType()
-        {
-            //ctor
-        }
-
-        UserActionType::~UserActionType()
-        {
-
-        }
     }
+
+    UserActionType::~UserActionType()
+    {
+    }
+  }
 }

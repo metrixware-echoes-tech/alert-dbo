@@ -13,23 +13,21 @@
 
 #include "unit/InformationUnit.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string InformationUnit::TRIGRAM(TRIGRAM_INFORMATION_UNIT);
+
+    InformationUnit::InformationUnit()
     {
-        std::string InformationUnit::TRIGRAM(TRIGRAM_INFORMATION_UNIT);
-
-        InformationUnit::InformationUnit()
-        {
-            this->jsonName = "information_unit";
-            //ctor
-        }
-
-        InformationUnit::~InformationUnit()
-        {
-
-        }
-
     }
+
+    InformationUnit::~InformationUnit()
+    {
+    }
+  }
 }
 

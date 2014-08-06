@@ -13,26 +13,26 @@
 
 #include "alert/AlertMediaSpecialization.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string AlertMediaSpecialization::TRIGRAM(TRIGRAM_ALERT_MEDIA_SPECIALIZATION);
+
+    AlertMediaSpecialization::AlertMediaSpecialization()
     {
-        std::string AlertMediaSpecialization::TRIGRAM(TRIGRAM_ALERT_MEDIA_SPECIALIZATION);
-
-        AlertMediaSpecialization::AlertMediaSpecialization()
-        {
-            this->jsonName = "alertMediaSpecialization";
-        }
-
-        AlertMediaSpecialization::AlertMediaSpecialization(const AlertMediaSpecialization& orig)
-        {
-        }
-
-        AlertMediaSpecialization::~AlertMediaSpecialization()
-        {
-
-        }
-
     }
+
+    AlertMediaSpecialization::AlertMediaSpecialization(const AlertMediaSpecialization& orig)
+    {
+    }
+
+    AlertMediaSpecialization::~AlertMediaSpecialization()
+    {
+    }
+
+  }
 }
 

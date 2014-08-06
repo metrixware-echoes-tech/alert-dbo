@@ -13,20 +13,20 @@
 
 #include "user/AccessControlList.h"
 
+using namespace std;
+
 namespace Echoes
 {
     namespace Dbo
     {
-        std::string AccessControlList::TRIGRAM(TRIGRAM_ACCESS_CONTROL_LIST);
+        string AccessControlList::TRIGRAM(TRIGRAM_ACCESS_CONTROL_LIST);
 
         AccessControlList::AccessControlList()
         {
-            //ctor
         }
 
         AccessControlList::~AccessControlList()
         {
-
         }
     }
 }

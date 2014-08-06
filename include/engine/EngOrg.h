@@ -14,7 +14,6 @@
 #ifndef ENGORG_H
 #define	ENGORG_H
 
-#include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/EngOrgId.h"
 
@@ -39,7 +38,7 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["TOKEN"] = &this->token;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::id(a, pk, "PRIMARY_KEY");
             }

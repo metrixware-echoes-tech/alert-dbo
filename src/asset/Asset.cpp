@@ -13,34 +13,21 @@
 
 #include "asset/Asset.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Asset::TRIGRAM(TRIGRAM_ASSET);
+
+    Asset::Asset()
     {
-        std::string Asset::TRIGRAM(TRIGRAM_ASSET);
-
-        Asset::Asset()
-        {
-            this->jsonName = "asset";
-        }
-
-        Asset::~Asset()
-        {
-
-        }
-
-        std::string Asset::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-//            res += Table::formatJSONForDboPtr(this->probe);
-            res += Table::formatJSONForDboPtr(this->assetArchitecture);
-            res += Table::formatJSONForDboPtr(this->assetDistribution);
-            res += Table::formatJSONForDboPtr(this->assetRelease);
-
-            res += "}";
-            return res;
-        }
     }
+
+    Asset::~Asset()
+    {
+    }
+  }
 }
 

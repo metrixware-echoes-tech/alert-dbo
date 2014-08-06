@@ -13,25 +13,25 @@
 
 #include "search/Search.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Search::TRIGRAM(TRIGRAM_SEARCH);
+
+    Search::Search()
     {
-        std::string Search::TRIGRAM(TRIGRAM_SEARCH);
-
-        Search::Search()
-        {
-            this->jsonName = "search";
-        }
-
-        Search::Search(const Search& orig)
-        {
-        }
-
-        Search::~Search()
-        {
-
-        }
     }
+
+    Search::Search(const Search& orig)
+    {
+    }
+
+    Search::~Search()
+    {
+    }
+  }
 }
 

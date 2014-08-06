@@ -14,13 +14,6 @@
 #ifndef USERHISTORICALACTION_H
 #define USERHISTORICALACTION_H
 
-#include <string>
-
-// include Dbo
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-#include <Wt/WDateTime>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -63,7 +56,7 @@ namespace Echoes
                 mapClassAttributesInts["RELATIVE"] = &this->actionRelative;
                 mapClassAttributesStrings["TABLE_OBJECT"] = &this->tableObject;
                 mapClassAttributesSerials["TAO_ID"] = &this->tableObjectId;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 //Other tables ids as foreign keys for user table
 
                 Wt::Dbo::belongsTo(a, user, TRIGRAM_USER_HISTORICAL_ACTION SEP TRIGRAM_USER);

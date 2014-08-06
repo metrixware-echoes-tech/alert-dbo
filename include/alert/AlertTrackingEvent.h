@@ -15,9 +15,6 @@
 #define	ALERTACKNOWLEDGEEVENT_H
 
 #include <tools/MainIncludeFile.h>
-#include <Wt/Dbo/Dbo>
-
-#include <boost/optional.hpp>
 
 namespace Echoes
 {
@@ -29,7 +26,9 @@ namespace Echoes
             AlertTrackingEvent();
             AlertTrackingEvent(const AlertTrackingEvent& orig);
             virtual ~AlertTrackingEvent();
+
             static std::string TRIGRAM;
+
             //    boost::optional<std::string> eventValue;
             Wt::WString value;
             Wt::WDateTime date;
@@ -41,11 +40,9 @@ namespace Echoes
             {
                 mapClassAttributesStrings["VALUE"] = &this->value;
                 mapClassAttributesDates["DATE"] = &this->date;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::belongsTo(a, alertTracking, TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };

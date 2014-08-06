@@ -15,7 +15,6 @@
 #define ORGANIZATIONVALUE_H
 
 #include "tools/MainIncludeFile.h"
-#include "Wt/Dbo/Dbo"
 #include "primaryKeys/OrganizationValueId.h"
 
 namespace Echoes
@@ -29,6 +28,7 @@ namespace Echoes
             virtual ~OrganizationValue();
 
             static std::string TRIGRAM;
+
             Wt::WString value;
 
             OrganizationValueId pk;
@@ -38,7 +38,7 @@ namespace Echoes
             {
                 mapClassAttributesStrings["VALUE"] = &this->value;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::id(a, pk, "OVA_ID");
 

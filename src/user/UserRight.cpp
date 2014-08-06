@@ -13,21 +13,21 @@
 
 #include "user/UserRight.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string UserRight::TRIGRAM(TRIGRAM_USER_RIGHT);
+
+    UserRight::UserRight()
     {
-        std::string UserRight::TRIGRAM(TRIGRAM_USER_RIGHT);
-
-        UserRight::UserRight()
-        {
-            //ctor
-        }
-
-        UserRight::~UserRight()
-        {
-
-        }
     }
+
+    UserRight::~UserRight()
+    {
+    }
+  }
 }
 

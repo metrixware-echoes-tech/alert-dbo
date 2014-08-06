@@ -16,7 +16,6 @@
 
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/SourceParameterValueId.h"
-#include <Wt/Dbo/Dbo>
 
 namespace Echoes
 {
@@ -35,18 +34,15 @@ namespace Echoes
 
             Wt::WString value;
 
-
             SourceParameterValueId pk;
 
             template<class Action>
             void persist(Action& a)
             {
                 mapClassAttributesStrings["VALUE"] = &this->value;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::id(a, pk, "PRIMARY_KEY");
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };

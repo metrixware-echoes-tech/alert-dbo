@@ -13,23 +13,25 @@
 
 #include "engine/EngOrg.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string EngOrg::TRIGRAM(TRIGRAM_ENG_ORG);
+
+    EngOrg::EngOrg()
     {
-        std::string EngOrg::TRIGRAM(TRIGRAM_ENG_ORG);
-
-        EngOrg::EngOrg()
-        {
-        }
-
-        EngOrg::EngOrg(const EngOrg& orig)
-        {
-        }
-
-        EngOrg::~EngOrg()
-        {
-        }
     }
+
+    EngOrg::EngOrg(const EngOrg& orig)
+    {
+    }
+
+    EngOrg::~EngOrg()
+    {
+    }
+  }
 }
 

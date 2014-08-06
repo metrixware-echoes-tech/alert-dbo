@@ -14,17 +14,11 @@
 #ifndef TABLE_H
 #define TABLE_H
 
-#include <string>
-#include <sstream>
-
-#include <boost/optional.hpp>
-
 #include <Wt/WDateTime>
-#include <Wt/Dbo/Session>
+#include <Wt/WString>
+#include <Wt/Dbo/Dbo>
 
 #include "tools/dboSpecialization.h"
-
-
 
 #define BOOL_STR(b) ((b)?"true":"false")
 
@@ -32,51 +26,22 @@ namespace Echoes
 {
   namespace Dbo
   {
-    template<typename T>
-    std::string to_string(const T & Value)
-    {
-        // utiliser un flux de sortie pour créer la chaîne
-        std::ostringstream oss;
-        // écrire la valeur dans le flux
-        oss << Value;
-        // renvoyer une string
-        return oss.str();
-    }
-
     class Table //classe abstraite
     {
         public:
             Table();
             Table(const Table& orig);
             virtual ~Table();
-            void setId(long long id);
 
             long long id;
             Wt::WString name;
             Wt::WDateTime deleteTag;
-            std::string jsonName;
 
             template<typename T>
             std::string formatColumnName(const T &x, std::string value) const;
 
-            template<typename T>
-            std::string formatIdColumnName(const T &x) const;
-
-            template<typename T>
-            std::string formatJSONForDboPtr(const T &x, bool column = true, bool composite = false) const;
-
-            template<typename T>
-            std::string formatJSONForDboCollection(const T &x, std::string name, bool column = true) const;
-
             template<class Action>
-            void persist(Action& a)
-            {
-
-            }
-
-            virtual std::string toJSON() const;
-           
-            std::string produceResString(std::string key, std::string value, bool quote = true, bool column = true, bool composite = false) const;
+            void persist(Action& a);
 
         protected:
             std::map <std::string, Wt::WString*> mapClassAttributesStrings;
@@ -87,7 +52,9 @@ namespace Echoes
             std::map <std::string, boost::optional<int>* > mapClassAttributesIntsNn;
             std::map <std::string, short*> mapClassAttributesShorts;
             std::map <std::string, long long*> mapClassAttributesSerials;
-            
+
+            template<class Action, class Object>
+            void fieldFiller(Action& a, Object& obj);
     };
 
     /**
@@ -95,56 +62,57 @@ namespace Echoes
      * Make sure you place both between the #ifndef / #endif anchors to prevent
      * duplicates.
      */
-
     template<typename T>
     std::string Table::formatColumnName(const T &x, std::string value) const
     {
         return T::TRIGRAM + SEP + value;
     }
-
-    template<typename T>
-    std::string Table::formatJSONForDboPtr(const T &x, bool column, bool composite) const
+    
+    template<class Action, class Object>
+    void Table::fieldFiller(Action& a, Object& obj)
     {
-        std::string res = "";
-        std::string key1 = "ID";
+        mapClassAttributesDates["DELETE"]=&this->deleteTag;
 
-        if (x)
+        std::map<std::string, Wt::WString*>::iterator itStrings;
+        for (itStrings = mapClassAttributesStrings.begin(); itStrings != mapClassAttributesStrings.end(); ++itStrings)
         {
-            std::string value1 = boost::lexical_cast<std::string>(x.id());
-            res += "\t\"" + x->jsonName + "\" : ";
-            res += "{\n";
-
-            if (x->name != "")
-            {
-                std::string key2 = "NAME";
-                std::string value2 = x->name.toUTF8();
-                res += "\t " + produceResString(key1, value1, false, true, composite);
-                res += "\t " + produceResString(key2, value2, true, false);
-            }
-            else
-            {
-                res += "\t " + produceResString(key1, value1, false, false, composite);
-            }
-
-            res += "\t}";
-            if (column)
-            {
-                res += ",";
-            }
-            res += "\n";
+            Wt::Dbo::field(a, *itStrings->second, formatColumnName(obj, (*itStrings).first));
         }
-
-
-        return res;
-    }
-
-    template<typename T>
-    std::string Table::formatJSONForDboCollection(const T &x, std::string name, bool column) const
-    {
-        std::string res = "";
-        std::string size = boost::lexical_cast<std::string>(x.size());
-        res += produceResString(name, size, false, column);
-        return res;
+        std::map<std::string, Wt::WDateTime*>::iterator itDates;
+        for (itDates = mapClassAttributesDates.begin(); itDates != mapClassAttributesDates.end(); ++itDates)
+        {
+            Wt::Dbo::field(a, *itDates->second, formatColumnName(obj, (*itDates).first));
+        }
+        std::map < std::string, bool*>::iterator itBools;
+        for (itBools = mapClassAttributesBools.begin(); itBools != mapClassAttributesBools.end(); ++itBools)
+        {
+            Wt::Dbo::field(a, *itBools->second, formatColumnName(obj, (*itBools).first));
+        }
+        std::map<std::string, int*>::iterator itInts;
+        for (itInts = mapClassAttributesInts.begin(); itInts != mapClassAttributesInts.end(); ++itInts)
+        {
+            Wt::Dbo::field(a, *itInts->second, formatColumnName(obj, (*itInts).first));
+        }
+        std::map<std::string, short*>::iterator itShorts;
+        for (itShorts = mapClassAttributesShorts.begin(); itShorts != mapClassAttributesShorts.end(); ++itShorts)
+        {
+            Wt::Dbo::field(a, *itShorts->second, formatColumnName(obj, (*itShorts).first));
+        }
+        std::map<std::string, boost::optional<Wt::WString>* >::iterator itStringsNn;
+        for (itStringsNn = mapClassAttributesStringsNn.begin(); itStringsNn != mapClassAttributesStringsNn.end(); ++itStringsNn)
+        {
+            Wt::Dbo::field(a, *itStringsNn->second, formatColumnName(obj, (*itStringsNn).first));
+        }
+        std::map<std::string, boost::optional<int>* >::iterator itIntsNn;
+        for (itIntsNn = mapClassAttributesIntsNn.begin(); itIntsNn != mapClassAttributesIntsNn.end(); ++itIntsNn)
+        {
+            Wt::Dbo::field(a, *itIntsNn->second, formatColumnName(obj, (*itIntsNn).first));
+        }
+        std::map<std::string, long long* >::iterator itSerials;
+        for (itSerials = mapClassAttributesSerials.begin(); itSerials != mapClassAttributesSerials.end(); ++itSerials)
+        {
+            Wt::Dbo::field(a, *itSerials->second, formatColumnName(obj, (*itSerials).first));
+        }
     }
   }
 }

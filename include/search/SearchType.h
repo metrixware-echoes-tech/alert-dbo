@@ -14,16 +14,12 @@
 #ifndef SEARCHTYPE_H
 #define	SEARCHTYPE_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class Search;
-
     class SearchType : public Table
     {
         public:
@@ -32,7 +28,6 @@ namespace Echoes
             virtual ~SearchType();
 
             static std::string TRIGRAM;
-            Wt::WString name;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<Search> > searches;
             Wt::Dbo::collection<Wt::Dbo::ptr<SearchParameter> > searchParameters;
@@ -42,7 +37,7 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::hasMany(a,
                         searches,
                         Wt::Dbo::ManyToOne,
@@ -59,8 +54,6 @@ namespace Echoes
                         Wt::Dbo::ManyToMany,
                         "TJ_ADO_STY");
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };

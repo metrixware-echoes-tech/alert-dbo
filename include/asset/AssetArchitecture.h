@@ -15,7 +15,6 @@
 #define	ASSETARCHITECTURE_H
 
 #include <tools/MainIncludeFile.h>
-#include <Wt/Dbo/Dbo>
 
 namespace Echoes
 {
@@ -33,14 +32,12 @@ namespace Echoes
             Wt::Dbo::collection<Wt::Dbo::ptr<Asset >> assets;
             Wt::Dbo::collection<Wt::Dbo::ptr<ProbePackageParameter >> probePackageParameters;
 
-            Wt::WString name;
-
             template<class Action>
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToOne, TRIGRAM_ASSET SEP TRIGRAM_ASSET_ARCHITECTURE);
                 Wt::Dbo::hasMany(a, probePackageParameters, Wt::Dbo::ManyToOne, TRIGRAM_PROBE_PACKAGE_PARAMETER SEP TRIGRAM_ASSET_ARCHITECTURE);

@@ -13,34 +13,21 @@
 
 #include "probe/Probe.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Probe::TRIGRAM(TRIGRAM_PROBE);
+
+    Probe::Probe()
     {
-        std::string Probe::TRIGRAM(TRIGRAM_PROBE);
-
-        Probe::Probe()
-        {
-            this->jsonName = "probe";
-        }
-
-        Probe::~Probe()
-        {
-
-        }
-
-        std::string Probe::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-            res += this->probePackageParameter.modify()->toJSON();
-
-            res += Table::formatJSONForDboCollection(this->syslogs, "syslogs");
-//            res += Table::formatJSONForDboCollection(this->assets, "assets");
-
-            res += "}";
-            return res;
-        }
     }
+
+    Probe::~Probe()
+    {
+    }
+  }
 }
 

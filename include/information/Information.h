@@ -14,55 +14,52 @@
 #ifndef INFORMATION_H
 #define INFORMATION_H
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-
 #include "tools/MainIncludeFile.h"
 
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class Information : public Table
+    {
+        public:
+            Information();
+            Information(const Information& orig);
+            virtual ~Information();
 
-namespace Echoes {
-    namespace Dbo {
-        class Information : public Table
-        {
-            public:
-                Information();
-                Information(const Information& orig);
-                virtual ~Information();
+            static std::string TRIGRAM;
 
-                static std::string TRIGRAM;
+            //        InformationId pk;
 
-                //        InformationId pk;
+            Wt::Dbo::collection<Wt::Dbo::ptr<InformationData> > informationDatas;
+            
+            Wt::Dbo::ptr<InformationUnit> informationUnit;
+            Wt::Dbo::ptr<Organization> organization;
 
-                Wt::Dbo::collection<Wt::Dbo::ptr<InformationData> > informationDatas;
+            boost::optional<Wt::WString> desc;
+            bool display;
+            boost::optional<Wt::WString> calculate;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesBools["DISPLAY"] = &this->display;
+                mapClassAttributesStringsNn["DESC"] = &this->desc;
+                mapClassAttributesStringsNn["CALCULATE"] = &this->calculate;
+                Table::fieldFiller(a, *this);
+                //            Wt::Dbo::id(a,pk,"PRIMARY_KEY");
                 
-                Wt::Dbo::ptr<InformationUnit> informationUnit;
-                Wt::Dbo::ptr<Organization> organization;
+                Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION);
 
-                //     Wt::WString name;
-                boost::optional<Wt::WString> desc;
-                bool display;
-                boost::optional<Wt::WString> calculate;
+                Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
+                Wt::Dbo::belongsTo(a, organization, TRIGRAM_INFORMATION SEP TRIGRAM_ORGANIZATION);
+            }
 
-                template<class Action>
-                void persist(Action& a)
-                {
-                    mapClassAttributesStrings["NAME"] = &this->name;
-                    mapClassAttributesBools["DISPLAY"] = &this->display;
-                    mapClassAttributesStringsNn["DESC"] = &this->desc;
-                    mapClassAttributesStringsNn["CALCULATE"] = &this->calculate;
-                    FIELD_FILLER();
-                    //            Wt::Dbo::id(a,pk,"PRIMARY_KEY");
-                    
-                    Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION);
-
-                    Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
-                    Wt::Dbo::belongsTo(a, organization, TRIGRAM_INFORMATION SEP TRIGRAM_ORGANIZATION);
-                }
-
-            protected:
-            private:
-        };
-    }
+        protected:
+        private:
+    };
+  }
 }
 
 #endif // INFORMATION_H

@@ -13,34 +13,24 @@
 
 #include "search/SearchParameter.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string SearchParameter::TRIGRAM(TRIGRAM_SEARCH_PARAMETER);
+
+    SearchParameter::SearchParameter()
     {
-        std::string SearchParameter::TRIGRAM(TRIGRAM_SEARCH_PARAMETER);
-
-        SearchParameter::SearchParameter()
-        {
-            this->jsonName = "search_parameter";
-        }
-
-        SearchParameter::SearchParameter(const SearchParameter& orig)
-        {
-        }
-
-        SearchParameter::~SearchParameter()
-        {
-        }
-
-        std::string SearchParameter::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-
-            res += Table::formatJSONForDboCollection(this->searchTypes, "search_types", false);
-
-            res += "}";
-            return res;
-        }
     }
+
+    SearchParameter::SearchParameter(const SearchParameter& orig)
+    {
+    }
+
+    SearchParameter::~SearchParameter()
+    {
+    }
+  }
 }

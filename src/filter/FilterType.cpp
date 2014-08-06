@@ -1,47 +1,37 @@
 /* 
- * File:   FilterType.cpp
- * Author: tsa
+ * Filter Type Table
+ * @author ECHOES Technologies (TSA)
+ * @date 30/10/2013
  * 
- * Created on 30 octobre 2013, 17:53
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #include "filter/FilterType.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string FilterType::TRIGRAM(TRIGRAM_FILTER_TYPE);
+
+    FilterType::FilterType()
     {
-        std::string FilterType::TRIGRAM(TRIGRAM_FILTER_TYPE);
-
-        FilterType::FilterType()
-        {
-            this->jsonName = "filter_type";
-        }
-
-        FilterType::FilterType(const FilterType& orig)
-        {
-        }
-
-        FilterType::~FilterType()
-        {
-        }
-
-        std::string FilterType::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-
-            res += Table::formatJSONForDboCollection(this->filters, "filters");
-            res += Table::formatJSONForDboCollection(this->filterParameters, "filter_parameters");
-
-
-            res += "}";
-            return res;
-        }
-
     }
+
+    FilterType::FilterType(const FilterType& orig)
+    {
+    }
+
+    FilterType::~FilterType()
+    {
+    }
+  }
 }
-
-
-
 

@@ -14,19 +14,12 @@
 #ifndef ADDON_H
 #define ADDON_H
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-
-    class Plugin;
-    class Source;
-
     class Addon : public Table
     {
         public:
@@ -34,8 +27,6 @@ namespace Echoes
             virtual ~Addon();
 
             static std::string TRIGRAM;
-
-            Wt::WString name;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<Source> > sources;
             Wt::Dbo::collection<Wt::Dbo::ptr<SourceParameter> > sourceParameters;
@@ -47,7 +38,7 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::hasMany(a,
                         sources,
                         Wt::Dbo::ManyToOne,
@@ -70,12 +61,9 @@ namespace Echoes
                         TRIGRAM_ADDON_PACKAGE_PARAMETER SEP TRIGRAM_ADDON);
             }
 
-            virtual std::string toJSON() const;
-
         protected:
         private:
     };
-
   }
 }
 

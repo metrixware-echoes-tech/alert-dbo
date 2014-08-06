@@ -14,18 +14,12 @@
 #ifndef PROBE_H
 #define PROBE_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class Organization;
-    class InformationValue;
-    class InformationValue;
-
     class Probe : public Table
     {
         public:
@@ -33,7 +27,7 @@ namespace Echoes
             virtual ~Probe();
 
             static std::string TRIGRAM;
-            Wt::WString name;
+
             Wt::WString cert;
 
             Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
@@ -47,7 +41,7 @@ namespace Echoes
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["CERT"] = &this->cert;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::belongsTo(a, probePackageParameter, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
                 Wt::Dbo::belongsTo(a, asset, TRIGRAM_PROBE SEP TRIGRAM_ASSET);
 
@@ -62,7 +56,6 @@ namespace Echoes
 //                        TRIGRAM_ASSET SEP TRIGRAM_PROBE);
 
             }
-            virtual std::string toJSON() const;
 
         protected:
         private:

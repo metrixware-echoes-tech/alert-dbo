@@ -15,42 +15,36 @@
 #define	FILTERPARAMETER_H
 
 #include "tools/MainIncludeFile.h"
-#include <Wt/Dbo/Dbo>
 
 namespace Echoes
 {
   namespace Dbo
   {
-
     class FilterParameter : public Table {
-    public:
-        FilterParameter();
-        FilterParameter(const FilterParameter& orig);
-        virtual ~FilterParameter();
+        public:
+            FilterParameter();
+            FilterParameter(const FilterParameter& orig);
+            virtual ~FilterParameter();
 
-        static std::string TRIGRAM;
-        Wt::WString name;
-        Wt::WString format;
+            static std::string TRIGRAM;
 
-        Wt::Dbo::collection<Wt::Dbo::ptr<FilterType> > filterTypes;
+            Wt::WString format;
 
-        template<class Action>
-        void persist(Action& a) {
-            mapClassAttributesStrings["NAME"] = &this->name;
-            mapClassAttributesStrings["FORMAT"] = &this->format;
-            FIELD_FILLER();
-            Wt::Dbo::hasMany(a,
-                    filterTypes,
-                    Wt::Dbo::ManyToMany,
-                    TABLE_JOINT_PREFIX SEP TRIGRAM_FILTER_TYPE SEP TRIGRAM_FILTER_PARAMETER);
-        }
+            Wt::Dbo::collection<Wt::Dbo::ptr<FilterType> > filterTypes;
 
+            template<class Action>
+            void persist(Action& a) {
+                mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStrings["FORMAT"] = &this->format;
+                Table::fieldFiller(a, *this);
+                Wt::Dbo::hasMany(a,
+                        filterTypes,
+                        Wt::Dbo::ManyToMany,
+                        TABLE_JOINT_PREFIX SEP TRIGRAM_FILTER_TYPE SEP TRIGRAM_FILTER_PARAMETER);
+            }
 
-    private:
-
+        private:
     };
-
-
   }
 }
 

@@ -14,19 +14,12 @@
 #ifndef PLUGIN_H
 #define PLUGIN_H
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-#include <Wt/WDateTime>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class Source;
-    class Asset;
-
     class Plugin : public Table
     {
         public:
@@ -34,7 +27,7 @@ namespace Echoes
             virtual ~Plugin();
 
             static std::string TRIGRAM;
-            //   Wt::WString name;
+
             Wt::WString desc;
             Wt::WString versionRef;
             Wt::WString versionClient;
@@ -52,7 +45,7 @@ namespace Echoes
                 mapClassAttributesStrings["DESC"] = &this->desc;
                 mapClassAttributesStrings["VERSION_REF"] = &this->versionRef;
                 mapClassAttributesStrings["VERSION_CLIENT"] = &this->versionClient;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 
                 Wt::Dbo::belongsTo(a, pluginReference, TRIGRAM_PLUGIN SEP TRIGRAM_PLUGIN_REFERENCE);
                 Wt::Dbo::belongsTo(a, organization, TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
@@ -62,7 +55,6 @@ namespace Echoes
                 Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_ASSET);
                 
             }
-            virtual std::string toJSON() const;
 
         protected:
         private:

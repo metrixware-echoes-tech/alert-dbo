@@ -14,8 +14,6 @@
 #ifndef USERVALUE_H
 #define USERVALUE_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -29,6 +27,7 @@ namespace Echoes
             virtual ~UserValue();
 
             static std::string TRIGRAM;
+
             Wt::WString value;
 
             UserValueId uvid;
@@ -37,7 +36,7 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["VALUE"] = &this->value;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::id(a, uvid, "PRIMARY_KEY");
             }
         protected:

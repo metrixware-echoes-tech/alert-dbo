@@ -1,5 +1,5 @@
 /* 
- * Filgooetr Table
+ * Filter Table
  * @author ECHOES Technologies (TSA)
  * @date 30/10/2012
  * 
@@ -13,24 +13,25 @@
 
 #include "filter/Filter.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Filter::TRIGRAM(TRIGRAM_FILTER);
+
+    Filter::Filter()
     {
-        std::string Filter::TRIGRAM(TRIGRAM_FILTER);
-
-        Filter::Filter()
-        {
-            
-        }
-
-        Filter::Filter(const Filter& orig)
-        {
-        }
-
-        Filter::~Filter()
-        {
-        }
     }
+
+    Filter::Filter(const Filter& orig)
+    {
+    }
+
+    Filter::~Filter()
+    {
+    }
+  }
 }
 

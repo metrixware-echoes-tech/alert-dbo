@@ -13,24 +13,25 @@
 
 #include "source/Source.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Source::TRIGRAM(TRIGRAM_SOURCE);
+
+    Source::Source()
     {
-        std::string Source::TRIGRAM(TRIGRAM_SOURCE);
-
-        Source::Source()
-        {
-        }
-
-        Source::Source(const Source& orig)
-        {
-        }
-
-        Source::~Source()
-        {
-
-        }
     }
+
+    Source::Source(const Source& orig)
+    {
+    }
+
+    Source::~Source()
+    {
+    }
+  }
 }
 

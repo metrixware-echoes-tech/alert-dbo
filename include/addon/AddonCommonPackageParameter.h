@@ -1,21 +1,27 @@
 /* 
- * File:   AddonCommonPackageParameter.h
- * Author: mla
- *
- * Created on 8 octobre 2013, 13:51
+ * Header of Addon Common Package Parameter Table
+ * @author ECHOES Technologies (MLA)
+ * @date 08/10/2013
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef ADDONCOMMONPACKAGEPARAMETER_H
 #define	ADDONCOMMONPACKAGEPARAMETER_H
 
 #include "tools/MainIncludeFile.h"
-#include <Wt/Dbo/Dbo>
 
-
-namespace Echoes {
-    namespace Dbo {
-
-        class AddonCommonPackageParameter : public Table {
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class AddonCommonPackageParameter : public Table
+    {
         public:
             AddonCommonPackageParameter();
             AddonCommonPackageParameter(const AddonCommonPackageParameter& orig);
@@ -39,7 +45,7 @@ namespace Echoes {
                 mapClassAttributesStrings["PACKAGE_VERSION"] = &this->packageVersion;
                 mapClassAttributesStrings["PPP_MINIMUM_VERSION"] = &this->minimumVersion;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, assetArchitecture, TRIGRAM_ADDON_COMMON_PACKAGE_PARAMETER SEP TRIGRAM_ASSET_ARCHITECTURE);
                 Wt::Dbo::belongsTo(a, assetDistribution, TRIGRAM_ADDON_COMMON_PACKAGE_PARAMETER SEP TRIGRAM_ASSET_DISTRIBUTION);
@@ -49,9 +55,8 @@ namespace Echoes {
 
             }
         private:
-
-        };
-    }
+    };
+  }
 }
 
 #endif	/* ADDONCOMMONPACKAGEPARAMETER_H */

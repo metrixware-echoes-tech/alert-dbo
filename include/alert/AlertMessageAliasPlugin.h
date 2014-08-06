@@ -14,7 +14,6 @@
 #ifndef ALERTMESSAGEALIASPLUGIN_H
 #define	ALERTMESSAGEALIASPLUGIN_H
 
-#include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/AlertMessageAliasPluginId.h"
 
@@ -40,13 +39,11 @@ namespace Echoes
             void persist(Action& a) {
                 mapClassAttributesStrings["ALIAS"] = &this->alias;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_PLUGIN ID);
-
             }
 
-            virtual std::string toJSON() const;
         private:
     };
   }

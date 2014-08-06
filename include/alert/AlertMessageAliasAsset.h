@@ -40,12 +40,10 @@ namespace Echoes
             {
                 mapClassAttributesStrings["ALIAS"] = &this->alias;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::id(a, pk, TRIGRAM_ALERT_MESSAGE_ALIAS_ASSET ID);
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };

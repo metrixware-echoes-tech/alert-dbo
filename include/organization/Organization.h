@@ -14,13 +14,6 @@
 #ifndef ORGANIZATION_H
 #define ORGANIZATION_H
 
-#include <string>
-
-// include Dbo
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-#include <Wt/WDateTime>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -36,13 +29,11 @@ namespace Echoes
             static std::string TRIGRAM;
 
             // attributes
-            Wt::WString name;
             Wt::WString address;
             Wt::WString cp;
             Wt::WString city;
             Wt::WString token;
             // methods
-
 
             // dbo collections (This table id as foreign key in other tables)
             Wt::Dbo::collection<Wt::Dbo::ptr<User>> users;
@@ -63,7 +54,7 @@ namespace Echoes
                 mapClassAttributesStrings["CITY"] = &this->city;
                 mapClassAttributesStrings["TOKEN"] = &this->token;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 //User id as foreign key in other tables
                 Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToOne, TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);

@@ -13,23 +13,25 @@
 
 #include "asset/AssetDistribution.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string AssetDistribution::TRIGRAM(TRIGRAM_ASSET_DISTRIBUTION);
+
+    AssetDistribution::AssetDistribution()
     {
-        std::string AssetDistribution::TRIGRAM(TRIGRAM_ASSET_DISTRIBUTION);
-
-        AssetDistribution::AssetDistribution()
-        {
-        }
-
-        AssetDistribution::AssetDistribution(const AssetDistribution& orig)
-        {
-        }
-
-        AssetDistribution::~AssetDistribution()
-        {
-        }
     }
+
+    AssetDistribution::AssetDistribution(const AssetDistribution& orig)
+    {
+    }
+
+    AssetDistribution::~AssetDistribution()
+    {
+    }
+  }
 }
 

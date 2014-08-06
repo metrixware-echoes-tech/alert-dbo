@@ -13,32 +13,21 @@
 
 #include "information/InformationValue.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string InformationValue::TRIGRAM(TRIGRAM_INFORMATION_VALUE);
+
+    InformationValue::InformationValue() : Table()
     {
-        std::string InformationValue::TRIGRAM(TRIGRAM_INFORMATION_VALUE);
-
-        InformationValue::InformationValue() : Table()
-        {
-            this->jsonName = "information_value";
-            //ctor
-        }
-
-        InformationValue::~InformationValue()
-        {
-            //dtor
-        }
-
-        std::string InformationValue::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->syslog);
-
-            res += "}";
-            return res;
-        }
     }
+
+    InformationValue::~InformationValue()
+    {
+    }
+  }
 }
 

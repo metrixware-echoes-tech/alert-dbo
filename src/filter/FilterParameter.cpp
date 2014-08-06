@@ -13,29 +13,25 @@
 
 #include "filter/FilterParameter.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string FilterParameter::TRIGRAM(TRIGRAM_FILTER_PARAMETER);
+
+    FilterParameter::FilterParameter()
     {
-
-        std::string FilterParameter::TRIGRAM(TRIGRAM_FILTER_PARAMETER);
-        
-        FilterParameter::FilterParameter()
-        {
-        }
-
-        FilterParameter::FilterParameter(const FilterParameter& orig)
-        {
-        }
-
-        FilterParameter::~FilterParameter()
-        {
-        }
-        
-
     }
+
+    FilterParameter::FilterParameter(const FilterParameter& orig)
+    {
+    }
+
+    FilterParameter::~FilterParameter()
+    {
+    }
+  }
 }
-
-
-        
 

@@ -13,20 +13,21 @@
 
 #include "organization/OrganizationField.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string OrganizationField::TRIGRAM(TRIGRAM_ORGANIZATION_FIELD);
+
+    OrganizationField::OrganizationField()
     {
-        std::string OrganizationField::TRIGRAM(TRIGRAM_ORGANIZATION_FIELD);
-
-        OrganizationField::OrganizationField()
-        {
-            //ctor
-        }
-
-        OrganizationField::~OrganizationField()
-        {
-        }
     }
+
+    OrganizationField::~OrganizationField()
+    {
+    }
+  }
 }
 

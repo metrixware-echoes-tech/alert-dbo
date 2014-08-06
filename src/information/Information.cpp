@@ -13,26 +13,28 @@
 
 #include "information/Information.h"
 
+using namespace std;
+
 namespace Echoes {
-    namespace Dbo {
-        std::string Information::TRIGRAM(TRIGRAM_INFORMATION);
+  namespace Dbo {
+    string Information::TRIGRAM(TRIGRAM_INFORMATION);
 
-        Information::Information()
-        {
-        }
-
-        Information::Information(const Information &orig)
-        : Table(orig)
-        {
-            this->calculate = orig.calculate;
-            this->desc = orig.desc;
-            this->display = orig.display;
-        //    this->pk = orig.pk;
-        }
-
-        Information::~Information()
-        {
-        }
+    Information::Information()
+    {
     }
+
+    Information::Information(const Information &orig)
+    : Table(orig)
+    {
+        this->calculate = orig.calculate;
+        this->desc = orig.desc;
+        this->display = orig.display;
+    //    this->pk = orig.pk;
+    }
+
+    Information::~Information()
+    {
+    }
+  }
 }
 

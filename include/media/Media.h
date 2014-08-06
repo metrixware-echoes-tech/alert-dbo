@@ -14,8 +14,6 @@
 #ifndef MEDIA_H
 #define	MEDIA_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -29,6 +27,7 @@ namespace Echoes
             virtual ~Media();
 
             static std::string TRIGRAM;
+
             Wt::WString value;
             bool isDefault;
             Wt::WString token;
@@ -47,7 +46,7 @@ namespace Echoes
                 mapClassAttributesBools["IS_DEFAULT"] = &this->isDefault;
                 mapClassAttributesStrings["TOKEN"] = &this->token;
                 mapClassAttributesBools["IS_CONFIRMED"] = &this->isConfirmed;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, mediaType, TRIGRAM_MEDIA SEP TRIGRAM_MEDIA_TYPE);
                 Wt::Dbo::belongsTo(a, user, TRIGRAM_MEDIA SEP TRIGRAM_USER);

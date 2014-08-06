@@ -13,20 +13,21 @@
 
 #include "organization/OrganizationValue.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string OrganizationValue::TRIGRAM(TRIGRAM_ORGANIZATION_VALUE);
+
+    OrganizationValue::OrganizationValue()
     {
-        std::string OrganizationValue::TRIGRAM(TRIGRAM_ORGANIZATION_VALUE);
-
-        OrganizationValue::OrganizationValue()
-        {
-            //ctor
-        }
-
-        OrganizationValue::~OrganizationValue()
-        {
-        }
     }
+
+    OrganizationValue::~OrganizationValue()
+    {
+    }
+  }
 }
 

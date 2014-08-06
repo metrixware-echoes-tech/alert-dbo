@@ -14,7 +14,6 @@
 #ifndef ACCESSCONTROLLIST_H
 #define	ACCESSCONTROLLIST_H
 
-#include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/AccessControlListId.h"
 
@@ -29,6 +28,7 @@ namespace Echoes
             virtual ~AccessControlList();
 
             static std::string TRIGRAM;
+
             Wt::WString value;
 
             AccessControlListId pk;
@@ -36,7 +36,7 @@ namespace Echoes
             template<class Action>
             void persist(Action& a)
             {
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::id(a, pk, "ACL_ID");
             }

@@ -15,7 +15,6 @@
 #define	PROBEPACKAGEPARAMETER_H
 
 #include "tools/MainIncludeFile.h"
-#include <Wt/Dbo/Dbo>
 
 namespace Echoes
 {
@@ -49,7 +48,7 @@ namespace Echoes
                 mapClassAttributesStrings["PACKAGE_VERSION"] = &this->packageVersion;
                 mapClassAttributesStrings["CPP_MINIMUM_VERSION"]=&this->minimumVersion;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, assetArchitecture, TRIGRAM_PROBE_PACKAGE_PARAMETER SEP TRIGRAM_ASSET_ARCHITECTURE);
                 Wt::Dbo::belongsTo(a, assetDistribution, TRIGRAM_PROBE_PACKAGE_PARAMETER SEP TRIGRAM_ASSET_DISTRIBUTION);

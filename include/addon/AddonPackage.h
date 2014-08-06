@@ -1,21 +1,27 @@
 /* 
- * File:   AddonPackage.h
- * Author: mla
- *
- * Created on 9 octobre 2013, 14:52
+ * Header of Addon Package Table
+ * @author ECHOES Technologies (MLA)
+ * @date 09/10/2013
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef ADDONPACKAGE_H
 #define	ADDONPACKAGE_H
 
 #include "tools/MainIncludeFile.h"
-#include <Wt/Dbo/Dbo>
 
-
-namespace Echoes {
-    namespace Dbo {
-
-        class AddonPackage : public Table {
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class AddonPackage : public Table
+    {
         public:
             AddonPackage();
             AddonPackage(const AddonPackage& orig);
@@ -28,17 +34,18 @@ namespace Echoes {
             Wt::Dbo::collection<Wt::Dbo::ptr<AddonPackageParameter >> addonPackageParameters;
 
             template<class Action>
-            void persist(Action& a) {
+            void persist(Action& a)
+            {
                 mapClassAttributesStrings["FILENAME"] = &this->filename;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a, addonPackageParameters, Wt::Dbo::ManyToOne, TRIGRAM_ADDON_PACKAGE_PARAMETER SEP TRIGRAM_ADDON_PACKAGE);
             }
-        private:
 
-        };
-    }
+        private:
+  };
+}
 }
 
 #endif	/* ADDONPACKAGE_H */

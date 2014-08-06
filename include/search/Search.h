@@ -42,7 +42,7 @@ namespace Echoes
             {
                 mapClassAttributesInts["PERIOD"] = &this->period;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, searchType, TRIGRAM_SEARCH SEP TRIGRAM_SEARCH_TYPE);
                 Wt::Dbo::belongsTo(a, source, TRIGRAM_SEARCH SEP TRIGRAM_SOURCE);

@@ -14,20 +14,10 @@
 #ifndef USER_H
 #define USER_H
 
-//#include "Table.h"
-
-#include <string>
-
-#include <Wt/Dbo/Types>
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-#include <Wt/WDateTime>
-#include <Wt/WGlobal>
 #include <Wt/Auth/AbstractUserDatabase>
 #include <Wt/Auth/Dbo/AuthInfo>
 
 #include "tools/MainIncludeFile.h"
-
 
 typedef Wt::Auth::Dbo::AuthInfo<Echoes::Dbo::User> AuthInfo;
 typedef Wt::Dbo::collection< Wt::Dbo::ptr<Echoes::Dbo::User> > Users;
@@ -36,14 +26,6 @@ namespace Echoes
 {
   namespace Dbo
   {
-    class UserRole;
-    class UserProfile;
-    class UserField;
-    class UserValue;
-    class UserHistoricalAction;
-    class Organization;
-    class Media;
-
     class User : public Table
     {
         public:
@@ -85,7 +67,7 @@ namespace Echoes
                 mapClassAttributesStrings["PWD"] = &this->password;
                 mapClassAttributesStrings["TOKEN"] = &this->token;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 //Other tables ids as foreign keys for user table
 

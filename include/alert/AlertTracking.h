@@ -14,8 +14,6 @@
 #ifndef ALERTTRACKING_H
 #define	ALERTTRACKING_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -31,8 +29,6 @@ namespace Echoes
             static std::string TRIGRAM;
 
             boost::optional<Wt::WString> content;
-
-
             boost::optional<Wt::WString> senderSrv;
             Wt::WDateTime sendDate;
             boost::optional<Wt::WString> receiverSrv;
@@ -58,7 +54,7 @@ namespace Echoes
                 mapClassAttributesDates["SEND_DATE"] = &this->sendDate;
                 mapClassAttributesDates["RECEIV_DATE"] = &this->receiveDate;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, media, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_MEDIA);
                 Wt::Dbo::belongsTo(a, alert, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_ALERT);

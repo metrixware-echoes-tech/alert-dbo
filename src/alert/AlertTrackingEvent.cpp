@@ -13,34 +13,25 @@
 
 #include "alert/AlertTrackingEvent.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string AlertTrackingEvent::TRIGRAM(TRIGRAM_ALERT_TRACKING_EVENT);
+
+    AlertTrackingEvent::AlertTrackingEvent()
     {
-        std::string AlertTrackingEvent::TRIGRAM(TRIGRAM_ALERT_TRACKING_EVENT);
-
-        AlertTrackingEvent::AlertTrackingEvent()
-        {
-            this->jsonName = "alertTrackingEvent";
-        }
-
-        AlertTrackingEvent::AlertTrackingEvent(const AlertTrackingEvent& orig)
-        {
-        }
-
-        AlertTrackingEvent::~AlertTrackingEvent()
-        {
-        }
-
-        std::string AlertTrackingEvent::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->alertTracking, false);
-
-            res += "}";
-            return res;
-        }
     }
+
+    AlertTrackingEvent::AlertTrackingEvent(const AlertTrackingEvent& orig)
+    {
+    }
+
+    AlertTrackingEvent::~AlertTrackingEvent()
+    {
+    }
+  }
 }
 

@@ -13,32 +13,21 @@
 
 #include "alert/AlertAcknowledge.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string AlertAcknowledge::TRIGRAM(TRIGRAM_ALERT_ACKNOWLEDGE);
+
+    AlertAcknowledge::AlertAcknowledge()
     {
-        std::string AlertAcknowledge::TRIGRAM(TRIGRAM_ALERT_ACKNOWLEDGE);
-
-        AlertAcknowledge::AlertAcknowledge()
-        {
-            this->jsonName = "alertAcknoledge";
-            //ctor
-        }
-
-        AlertAcknowledge::~AlertAcknowledge()
-        {
-        }
-
-        std::string AlertAcknowledge::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->alert);
-            res += Table::formatJSONForDboPtr(this->user, false);
-
-            res += "}";
-            return res;
-        }
     }
+
+    AlertAcknowledge::~AlertAcknowledge()
+    {
+    }
+  }
 }
 

@@ -1,21 +1,27 @@
 /* 
- * File:   InformationData.h
- * Author: tsa
- *
- * Created on 31 octobre 2013, 16:42
+ * Header of Information Data Table
+ * @author ECHOES Technologies (TSA)
+ * @date 31/10/2013
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef INFORMATIONDATA_H
 #define	INFORMATIONDATA_H
 
-#include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
+
+using namespace std;
 
 namespace Echoes
 {
   namespace Dbo
   {
-
     class InformationData : public Table {
     public:
         InformationData();
@@ -37,7 +43,7 @@ namespace Echoes
         template<class Action>
         void persist(Action& a) {
             mapClassAttributesInts["FILTER_FIELD_INDEX"] = &this->filterFieldIndex;
-            FIELD_FILLER();
+            Table::fieldFiller(a, *this);
             
             Wt::Dbo::belongsTo(a, information, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION);
             Wt::Dbo::belongsTo(a, filter, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_FILTER);
@@ -50,9 +56,7 @@ namespace Echoes
         }
 
     private:
-
     };
-
   }
 }
 

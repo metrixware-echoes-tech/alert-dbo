@@ -14,17 +14,12 @@
 #ifndef ASSET_H
 #define ASSET_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class Plugin;
-    class Probe;
-
     class Asset : public Table
     {
         public:
@@ -33,11 +28,7 @@ namespace Echoes
 
             static std::string TRIGRAM;
 
-
-            Wt::WString name;
             bool assetIsHost;
-
-//            Wt::Dbo::ptr<Probe> probe;
 
             Wt::Dbo::ptr<Organization> organization;
 
@@ -46,9 +37,7 @@ namespace Echoes
             Wt::Dbo::ptr<AssetRelease> assetRelease;
             
             Wt::Dbo::collection<Wt::Dbo::ptr<Probe>> probes;
-
             Wt::Dbo::collection<Wt::Dbo::ptr<Plugin> > plugins;
-
             Wt::Dbo::collection<Wt::Dbo::ptr<InformationData> > informationDatas;
 
             template<class Action>
@@ -57,8 +46,7 @@ namespace Echoes
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesBools["IS_HOST"] = &this->assetIsHost;
 
-                FIELD_FILLER();
-
+                Table::fieldFiller(a, *this);
                 
                 Wt::Dbo::belongsTo(a, organization, TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);
 
@@ -70,8 +58,6 @@ namespace Echoes
                 Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_ASSET);
                 Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_ASSET);
             }
-
-            virtual std::string toJSON() const;
 
         protected:
         private:

@@ -8,61 +8,6 @@
 #ifndef MAININCLUDEFILE_H
 #define	MAININCLUDEFILE_H
 
-
-/**
- * Automagically fill the field of the database. 
- * Must be used after the field definition.
- **/
-
-
-/* FIELD_FILLER */
-#define FIELD_FILLER() mapClassAttributesDates["DELETE"]=&this->deleteTag; \
-    std::map<std::string,Wt::WString*>::iterator itStrings; \
-    for(itStrings = mapClassAttributesStrings.begin(); itStrings != mapClassAttributesStrings.end(); ++itStrings) \
-    { \
-        Wt::Dbo::field(a, *itStrings->second, formatColumnName(*this,(*itStrings).first)); \
-    } \
-    std::map<std::string,Wt::WDateTime*>::iterator itDates; \
-    for(itDates = mapClassAttributesDates.begin(); itDates != mapClassAttributesDates.end(); ++itDates) \
-    { \
-        Wt::Dbo::field(a, *itDates->second, formatColumnName(*this,(*itDates).first)); \
-    } \
-    std::map<std::string,bool*>::iterator itBools; \
-    for(itBools = mapClassAttributesBools.begin(); itBools != mapClassAttributesBools.end(); ++itBools) \
-    { \
-        Wt::Dbo::field(a, *itBools->second, formatColumnName(*this,(*itBools).first)); \
-    } \
-    std::map<std::string,int*>::iterator itInts; \
-    for(itInts = mapClassAttributesInts.begin(); itInts != mapClassAttributesInts.end(); ++itInts) \
-    { \
-        Wt::Dbo::field(a, *itInts->second, formatColumnName(*this,(*itInts).first)); \
-    } \
-    std::map<std::string,short*>::iterator itShorts; \
-    for(itShorts = mapClassAttributesShorts.begin(); itShorts != mapClassAttributesShorts.end(); ++itShorts) \
-    { \
-        Wt::Dbo::field(a, *itShorts->second, formatColumnName(*this,(*itShorts).first)); \
-    } \
-    std::map<std::string,boost::optional<Wt::WString>* >::iterator itStringsNn; \
-    for(itStringsNn = mapClassAttributesStringsNn.begin(); itStringsNn != mapClassAttributesStringsNn.end(); ++itStringsNn) \
-    { \
-        Wt::Dbo::field(a, *itStringsNn->second, formatColumnName(*this,(*itStringsNn).first)); \
-    } \
-    std::map<std::string,boost::optional<int>* >::iterator itIntsNn; \
-    for(itIntsNn = mapClassAttributesIntsNn.begin(); itIntsNn != mapClassAttributesIntsNn.end(); ++itIntsNn) \
-    { \
-        Wt::Dbo::field(a, *itIntsNn->second, formatColumnName(*this,(*itIntsNn).first)); \
-    } \
-    std::map<std::string,long long* >::iterator itSerials; \
-    for(itSerials = mapClassAttributesSerials.begin(); itSerials != mapClassAttributesSerials.end(); ++itSerials) \
-    { \
-        Wt::Dbo::field(a, *itSerials->second, formatColumnName(*this,(*itSerials).first)); \
-    }
-
-
-
-/* END FIELD_FILLER */
-
-
 #include <Wt/Auth/User>
 
 #include "tools/Table.h"

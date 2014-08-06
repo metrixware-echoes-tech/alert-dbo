@@ -14,20 +14,12 @@
 #ifndef ALERT_H
 #define ALERT_H
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class AlertAcknowledge;
-    class AlertSequence;
-    class AlertValue;
-    class Engine;
-
     class Alert : public Table
     {
         public:
@@ -60,7 +52,7 @@ namespace Echoes
                 mapClassAttributesInts["THREAD_SLEEP"] = &this->threadSleep;
 
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a, alertAcks, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_ACKNOWLEDGE SEP TRIGRAM_ALERT);
                 Wt::Dbo::hasMany(a, alertTrackings, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_ALERT);
@@ -70,8 +62,6 @@ namespace Echoes
                 Wt::Dbo::belongsTo(a, alertSequence, TRIGRAM_ALERT_SEQUENCE SEP "FIRST_ID");
                 Wt::Dbo::belongsTo(a, engine, TRIGRAM_ALERT SEP TRIGRAM_ENGINE);
             }
-
-            virtual std::string toJSON() const;
 
         protected:
         private:

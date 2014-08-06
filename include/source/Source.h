@@ -40,7 +40,7 @@ namespace Echoes
             template<class Action>
             void persist(Action& a)
             {
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, addon, TRIGRAM_SOURCE SEP TRIGRAM_ADDON);
                 

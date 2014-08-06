@@ -15,9 +15,6 @@
 #define	SEARCHPARAMETERVALUE_H
 
 #include "tools/MainIncludeFile.h"
-
-#include <Wt/Dbo/Dbo>
-
 #include "primaryKeys/SearchParameterValueId.h"
 
 namespace Echoes
@@ -31,6 +28,7 @@ namespace Echoes
             virtual ~SearchParameterValue();
 
             static std::string TRIGRAM;
+
             Wt::WString value;
 
             SearchParameterValueId searchParameterValueId;
@@ -39,7 +37,7 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["VALUE"] = &this->value;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::id(a, searchParameterValueId, "SEV_ID");
             }
 

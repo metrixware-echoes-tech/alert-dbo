@@ -14,13 +14,6 @@
 #ifndef USERACTION_H
 #define USERACTION_H
 
-#include <string>
-
-// include Dbo
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-#include <Wt/WDateTime>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -34,10 +27,11 @@ namespace Echoes
             virtual ~UserActionType();
 
             static std::string TRIGRAM;
-            // attributes
-            Wt::WString name;
-            // methods
 
+            // attributes
+
+
+            // methods
 
 
             Wt::Dbo::collection<Wt::Dbo::ptr<UserHistoricalAction> > userHistoricalActions;
@@ -47,7 +41,7 @@ namespace Echoes
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a,
                         userHistoricalActions,

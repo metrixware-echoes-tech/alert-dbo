@@ -13,24 +13,25 @@
 
 #include "asset/AssetArchitecture.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string AssetArchitecture::TRIGRAM(TRIGRAM_ASSET_ARCHITECTURE);
+
+    AssetArchitecture::AssetArchitecture()
     {
-        std::string AssetArchitecture::TRIGRAM(TRIGRAM_ASSET_ARCHITECTURE);
-
-        AssetArchitecture::AssetArchitecture()
-        {
-            this->jsonName = "architecture";
-        }
-
-        AssetArchitecture::AssetArchitecture(const AssetArchitecture& orig)
-        {
-        }
-
-        AssetArchitecture::~AssetArchitecture()
-        {
-        }
     }
+
+    AssetArchitecture::AssetArchitecture(const AssetArchitecture& orig)
+    {
+    }
+
+    AssetArchitecture::~AssetArchitecture()
+    {
+    }
+  }
 }
 

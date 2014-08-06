@@ -15,18 +15,17 @@
 #define ORGANIZATIONTYPE_H
 
 #include "tools/MainIncludeFile.h"
-#include "Wt/Dbo/Dbo"
 
 namespace Echoes
 {
   namespace Dbo
   {
-
     class OrganizationType : public Table
     {
         public:
             OrganizationType();
             virtual ~OrganizationType();
+
             static std::string TRIGRAM;
 
             enum eType
@@ -45,12 +44,11 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::hasMany(a,
                         organizationField,
                         Wt::Dbo::ManyToMany,
                         "TJ_OFI_OTY");
-
 
                 Wt::Dbo::hasMany(a,
                         organization,
@@ -59,7 +57,7 @@ namespace Echoes
 
 
             }
-            virtual std::string toJSON() const;
+
         private:
     };
   }

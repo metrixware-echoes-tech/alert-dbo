@@ -14,8 +14,6 @@
 #ifndef USERFIELD_H
 #define USERFIELD_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/UserHierarchyId.h"
 #include "primaryKeys/UserValueId.h"
@@ -32,7 +30,6 @@ namespace Echoes
 
             static std::string TRIGRAM;
 
-            Wt::WString name;
             Wt::WString format;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
@@ -44,7 +41,7 @@ namespace Echoes
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["FORMAT"] = &this->format;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a,
                         users,

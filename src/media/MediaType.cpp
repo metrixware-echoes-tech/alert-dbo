@@ -13,22 +13,21 @@
 
 #include "media/MediaType.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string MediaType::TRIGRAM(TRIGRAM_MEDIA_TYPE);
+
+    MediaType::MediaType()
     {
-        std::string MediaType::TRIGRAM(TRIGRAM_MEDIA_TYPE);
-
-        MediaType::MediaType()
-        {
-            //ctor
-        }
-
-        MediaType::~MediaType()
-        {
-
-        }
-
     }
+
+    MediaType::~MediaType()
+    {
+    }
+  }
 }
 

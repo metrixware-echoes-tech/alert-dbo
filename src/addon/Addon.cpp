@@ -13,36 +13,21 @@
 
 #include "addon/Addon.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Addon::TRIGRAM(TRIGRAM_ADDON);
+
+    Addon::Addon()
     {
-        std::string Addon::TRIGRAM(TRIGRAM_ADDON);
-
-        Addon::Addon()
-        {
-            this->jsonName = "addon";
-            //ctor
-        }
-
-        Addon::~Addon()
-        {
-            //dtor
-        }
-
-        std::string Addon::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-
-            res += Table::formatJSONForDboCollection(this->sources, "sources");
-            res += Table::formatJSONForDboCollection(this->searchTypes, "search_types");
-            res += Table::formatJSONForDboCollection(this->sourceParameters, "sources_parameters", false);
-
-
-            res += "}";
-            return res;
-        }
     }
+
+    Addon::~Addon()
+    {
+    }
+  }
 }
 

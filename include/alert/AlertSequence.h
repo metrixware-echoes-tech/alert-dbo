@@ -15,7 +15,6 @@
 #define	ALERTSEQUENCE_H
 
 #include "tools/MainIncludeFile.h"
-#include <Wt/Dbo/Dbo>
 
 namespace Echoes
 {
@@ -29,6 +28,7 @@ namespace Echoes
             virtual ~AlertSequence();
 
             static std::string TRIGRAM;
+
             bool firstParenthesis;
             Wt::Dbo::ptr<AlertValue> alertValue;
             bool secondParenthesis;
@@ -45,7 +45,7 @@ namespace Echoes
                 mapClassAttributesBools["SECOND_PARENTHESIS"] = &this->secondParenthesis;
                 mapClassAttributesIntsNn["BOOL_OP"] = &this->boolOperator;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, alertSequenceBelongTo, TRIGRAM_ALERT_SEQUENCE SEP "NXT_ID");
                 Wt::Dbo::hasOne(a, alertSequence, TRIGRAM_ALERT_SEQUENCE SEP "NXT_ID");
@@ -53,8 +53,6 @@ namespace Echoes
                 Wt::Dbo::belongsTo(a, alertValue, TRIGRAM_ALERT_SEQUENCE SEP TRIGRAM_ALERT_VALUE);
                 Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_SEQUENCE SEP "FIRST_ID");
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };

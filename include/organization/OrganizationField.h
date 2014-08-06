@@ -15,7 +15,6 @@
 #define	ORGANIZATIONFIELD_H
 
 #include "tools/MainIncludeFile.h"
-#include "Wt/Dbo/Dbo"
 
 namespace Echoes
 {
@@ -26,8 +25,9 @@ namespace Echoes
         public:
             OrganizationField();
             virtual ~OrganizationField();
+
             static std::string TRIGRAM;
-            Wt::WString name;
+
             Wt::WString format;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<OrganizationType> > organizationType;
@@ -37,14 +37,12 @@ namespace Echoes
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["FORMAT"] = &this->format;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a,
                         organizationType,
                         Wt::Dbo::ManyToMany,
                         "TJ_OFI_OTY");
-
-
             }
     };
   }

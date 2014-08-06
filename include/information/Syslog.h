@@ -11,12 +11,10 @@
  * 
  */
 
-#include <Wt/Dbo/Dbo>
-
-#include "tools/MainIncludeFile.h"
-
 #ifndef SYSLOG_H
 #define	SYSLOG_H
+
+#include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
@@ -30,6 +28,7 @@ namespace Echoes
             virtual ~Syslog();
 
             static std::string TRIGRAM;
+
             Wt::WString sd;
             Wt::WDateTime rcptDate;
             Wt::WDateTime sentDate;
@@ -62,7 +61,7 @@ namespace Echoes
                 mapClassAttributesShorts["STATE"] = &this->state;
 
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, probe, "SLO_PRB");
 
@@ -76,8 +75,6 @@ namespace Echoes
                         TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG);
 
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };

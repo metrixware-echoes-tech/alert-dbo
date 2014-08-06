@@ -15,7 +15,6 @@
 #define	PACKOPTION_H
 
 #include "tools/MainIncludeFile.h"
-#include "Wt/Dbo/Dbo"
 #include "primaryKeys/PackOptionId.h"
 
 namespace Echoes
@@ -29,6 +28,7 @@ namespace Echoes
             virtual ~PackOption();
 
             static std::string TRIGRAM;
+
             Wt::WString value;
 
             PackOptionId pk;
@@ -38,12 +38,10 @@ namespace Echoes
             {
                 mapClassAttributesStrings["VALUE"] = &this->value;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::id(a, pk, "POP_ID");
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };

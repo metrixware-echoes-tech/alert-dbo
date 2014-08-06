@@ -14,39 +14,36 @@
 #ifndef FILTERPARAMETERVALUE_H
 #define	FILTERPARAMETERVALUE_H
 
-#include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
 
 #include "primaryKeys/FilterParameterValueId.h"
 
 namespace Echoes
 {
-namespace Dbo
-{
-
-class FilterParameterValue : public Table
-{
-public:
-    FilterParameterValue();
-    virtual ~FilterParameterValue();
-
-    static std::string TRIGRAM;
-    Wt::WString value;
-    
-    FilterParameterValueId filteParameterValueId;
-    
-    template<class Action>
-    void persist(Action& a)
+  namespace Dbo
+  {
+    class FilterParameterValue : public Table
     {
-        mapClassAttributesStrings["VALUE"] = &this->value;
-        FIELD_FILLER();
-        Wt::Dbo::id(a, filteParameterValueId, TRIGRAM_FILTER_PARAMETER_VALUE ID);
-    }
+        public:
+            FilterParameterValue();
+            virtual ~FilterParameterValue();
 
-private:
+            static std::string TRIGRAM;
+            Wt::WString value;
 
-};
-}
+            FilterParameterValueId filteParameterValueId;
+
+            template<class Action>
+            void persist(Action& a)
+            {
+                mapClassAttributesStrings["VALUE"] = &this->value;
+                Table::fieldFiller(a, *this);
+                Wt::Dbo::id(a, filteParameterValueId, TRIGRAM_FILTER_PARAMETER_VALUE ID);
+            }
+
+        private: 
+    };
+  }
 }
 #endif	/* FILTERPARAMETERVALUE_H */
 

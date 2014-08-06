@@ -13,31 +13,21 @@
 
 #include "plugin/Plugin.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Plugin::TRIGRAM(TRIGRAM_PLUGIN);
+
+    Plugin::Plugin()
     {
-        std::string Plugin::TRIGRAM(TRIGRAM_PLUGIN);
-
-        Plugin::Plugin()
-        {
-            this->jsonName = "plugin";
-            //ctor
-        }
-
-        Plugin::~Plugin()
-        {
-
-        }
-
-        std::string Plugin::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-
-            res += "}";
-            return res;
-        }
     }
+
+    Plugin::~Plugin()
+    {
+    }
+  }
 }
 

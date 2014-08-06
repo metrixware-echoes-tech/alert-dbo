@@ -14,8 +14,6 @@
 #ifndef INFORMATIONHISTORICALVALUE_H
 #define INFORMATIONHISTORICALVALUE_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 //#include "primaryKeys/InformationId.h"
@@ -24,10 +22,6 @@ namespace Echoes
 {
   namespace Dbo
   {
-    class Plugin;
-    class Syslog;
-    class Information;
-
     class InformationHistoricalValue : public Table
     {
         public:
@@ -54,12 +48,10 @@ namespace Echoes
                 mapClassAttributesShorts["STATE"] = &this->state;
                 mapClassAttributesInts["LOT_NUM"] = &this->lotNumber;
                 mapClassAttributesInts["LINE_NUM"] = &this->lineNumber;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::belongsTo(a, syslog, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_SYSLOG, Wt::Dbo::OnDeleteSetNull);
                 Wt::Dbo::belongsTo(a, informationData, TRIGRAM_INFORMATION_HISTORICAL_VALUE SEP TRIGRAM_INFORMATION_DATA);
             }
-
-            virtual std::string toJSON() const;
 
         protected:
         private:

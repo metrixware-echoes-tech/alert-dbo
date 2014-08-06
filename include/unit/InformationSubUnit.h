@@ -40,7 +40,7 @@
 //                mapClassAttributesStrings["NAME"] = &this->name;
 //                mapClassAttributesInts["FACTOR"] = &this->factor;
 //
-//                FIELD_FILLER();
+//                Table::fieldFiller(a, *this);
 //
 //                Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION_SUB_UNIT SEP TRIGRAM_INFORMATION_UNIT);
 //            }

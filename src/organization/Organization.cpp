@@ -13,21 +13,21 @@
 
 #include "organization/Organization.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Organization::TRIGRAM(TRIGRAM_ORGANIZATION);
+
+    Organization::Organization()
     {
-        std::string Organization::TRIGRAM(TRIGRAM_ORGANIZATION);
-
-        Organization::Organization()
-        {
-        }
-
-        Organization::~Organization()
-        {
-        }
-
-
     }
+
+    Organization::~Organization()
+    {
+    }
+  }
 }
 

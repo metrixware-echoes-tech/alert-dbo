@@ -16,14 +16,10 @@
 
 #include "tools/MainIncludeFile.h"
 
-#include <Wt/Dbo/Dbo>
-
 namespace Echoes
 {
   namespace Dbo
   {
-    class SourceParameterValue;
-
     class SourceParameter : public Table
     {
         public:
@@ -44,7 +40,7 @@ namespace Echoes
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["FORMAT"] = &this->format;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 //        Wt::Dbo::hasMany(a,
                 //                        sourceParameterValues,
                 //                        Wt::Dbo::ManyToOne,
@@ -57,7 +53,6 @@ namespace Echoes
                         "TJ_ADO_SRP");
             }
 
-            virtual std::string toJSON() const;
         private:
     };
   }

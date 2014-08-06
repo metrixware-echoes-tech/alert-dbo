@@ -1,5 +1,5 @@
 /* 
- * Header of Option Value Table
+ * Header of Option Table
  * @author ECHOES Technologies (RHI)
  * @date 10/09/2012
  * 
@@ -14,7 +14,6 @@
 #ifndef OPTION_H
 #define	OPTION_H
 
-#include <Wt/Dbo/Dbo>
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
@@ -28,6 +27,7 @@ namespace Echoes
             virtual ~Option();
 
             static std::string TRIGRAM;
+
             Wt::WString value;
 
             Wt::Dbo::ptr<OptionType> optionType;
@@ -38,7 +38,7 @@ namespace Echoes
             {
                 mapClassAttributesStrings["VALUE"] = &this->value;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, optionType, TRIGRAM_OPTION SEP TRIGRAM_OPTION_TYPE);
                 Wt::Dbo::belongsTo(a, organization, TRIGRAM_OPTION SEP TRIGRAM_ORGANIZATION);

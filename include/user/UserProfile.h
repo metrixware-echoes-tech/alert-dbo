@@ -14,9 +14,6 @@
 #ifndef USERPROFILE_H
 #define USERPROFILE_H
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/UserValueId.h"
 
@@ -24,8 +21,6 @@ namespace Echoes
 {
   namespace Dbo
   {
-    class User;
-
     class UserProfile : public Table
     {
         public:
@@ -34,8 +29,6 @@ namespace Echoes
 
             static std::string TRIGRAM;
 
-            Wt::WString name;
-
             Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
             template<class Action>
@@ -43,14 +36,13 @@ namespace Echoes
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 //Wt::Dbo::belongsTo(a, user, User::getName().c_str());
                 Wt::Dbo::hasMany(a,
                         users,
                         Wt::Dbo::ManyToOne,
                         "USR_UPR");
             }
-
         };
   }
 }

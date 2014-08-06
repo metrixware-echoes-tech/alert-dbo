@@ -13,36 +13,24 @@
 
 #include "source/SourceParameterValue.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string SourceParameterValue::TRIGRAM(TRIGRAM_SOURCE_PARAMETER_VALUE);
+
+    SourceParameterValue::SourceParameterValue()
     {
-        std::string SourceParameterValue::TRIGRAM(TRIGRAM_SOURCE_PARAMETER_VALUE);
-
-        SourceParameterValue::SourceParameterValue()
-        {
-            this->jsonName = "source_parameter_value";
-        }
-
-        SourceParameterValue::SourceParameterValue(const SourceParameterValue& orig)
-        {
-        }
-
-        SourceParameterValue::~SourceParameterValue()
-        {
-
-        }
-
-        std::string SourceParameterValue::toJSON() const
-        {
-            std::string res = "";
-            res = "{\n\t";
-            res += "\"id\" : {" + boost::lexical_cast<std::string>(this->pk) + " },\n";
-            res += Table::toJSON();
-            res.replace(res.size() - 2, 1, "");
-
-            res += "}";
-            return res;
-        }
     }
+
+    SourceParameterValue::SourceParameterValue(const SourceParameterValue& orig)
+    {
+    }
+
+    SourceParameterValue::~SourceParameterValue()
+    {
+    }
+  }
 }

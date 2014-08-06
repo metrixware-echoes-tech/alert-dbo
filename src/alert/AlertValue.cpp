@@ -13,34 +13,21 @@
 
 #include "alert/AlertValue.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string AlertValue::TRIGRAM(TRIGRAM_ALERT_VALUE);
+
+    AlertValue::AlertValue()
     {
-        std::string AlertValue::TRIGRAM(TRIGRAM_ALERT_VALUE);
-
-        AlertValue::AlertValue()
-        {
-            this->jsonName = "alertValue";
-            //ctor
-        }
-
-        AlertValue::~AlertValue()
-        {
-        }
-
-        std::string AlertValue::toJSON() const
-        {
-            std::string res = "";
-            res += Table::toJSON();
-            res += Table::formatJSONForDboPtr(this->alertCriteria);
-
-            res += Table::formatJSONForDboCollection(this->alerts, "alerts");
-            res += Table::formatJSONForDboCollection(this->alertSequences, "alerts_sequences", false);
-
-            res += "}";
-            return res;
-        }
     }
+
+    AlertValue::~AlertValue()
+    {
+    }
+  }
 }
 

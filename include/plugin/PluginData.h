@@ -1,14 +1,18 @@
 /* 
- * File:   PluginData.h
- * Author: tsa
- *
- * Created on 5 novembre 2013, 12:07
+ * Header of Plugin Data Table
+ * @author ECHOES Technologies (TSA)
+ * @date 05/11/2013
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef PLUGINDATA_H
 #define	PLUGINDATA_H
-
-#include <Wt/Dbo/Dbo>
 
 #include "tools/MainIncludeFile.h"
 #include "primaryKeys/PluginDataId.h"
@@ -17,7 +21,6 @@ namespace Echoes
 {
   namespace Dbo
   {
-
     class PluginData : public Table {
     public:
         PluginData();
@@ -31,16 +34,13 @@ namespace Echoes
         template<class Action>
         void persist(Action& a)
         {
-            FIELD_FILLER();
+            Table::fieldFiller(a, *this);
 
             Wt::Dbo::id(a, pk, TRIGRAM_PLUGIN_DATA ID);
         }
-
         
     private:
-
     };
-
   }
 }
 

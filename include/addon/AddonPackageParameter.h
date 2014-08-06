@@ -1,21 +1,27 @@
 /* 
- * File:   AddonPackageParameter.h
- * Author: mla
- *
- * Created on 9 octobre 2013, 14:52
+ * Header of Addon Package Parameter Table
+ * @author ECHOES Technologies (MLA)
+ * @date 09/10/2013
+ * 
+ * THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO ECHOES TECHNOLOGIES SAS
+ * AND MAY NOT BE REPRODUCED, PUBLISHED OR DISCLOSED TO OTHERS WITHOUT
+ * COMPANY AUTHORIZATION.
+ * 
+ * COPYRIGHT 2012-2013 BY ECHOES TECHNOLGIES SAS
+ * 
  */
 
 #ifndef ADDONPACKAGEPARAMETER_H
 #define	ADDONPACKAGEPARAMETER_H
 
 #include "tools/MainIncludeFile.h"
-#include <Wt/Dbo/Dbo>
 
-
-namespace Echoes {
-    namespace Dbo {
-
-        class AddonPackageParameter : public Table {
+namespace Echoes
+{
+  namespace Dbo
+  {
+    class AddonPackageParameter : public Table
+    {
         public:
             AddonPackageParameter();
             AddonPackageParameter(const AddonPackageParameter& orig);
@@ -41,7 +47,7 @@ namespace Echoes {
                 mapClassAttributesStrings["PACKAGE_VERSION"] = &this->packageVersion;
                 mapClassAttributesStrings["CPP_MINIMUM_VERSION"] = &this->minimumVersion;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, assetArchitecture, TRIGRAM_ADDON_PACKAGE_PARAMETER SEP TRIGRAM_ASSET_ARCHITECTURE);
                 Wt::Dbo::belongsTo(a, assetDistribution, TRIGRAM_ADDON_PACKAGE_PARAMETER SEP TRIGRAM_ASSET_DISTRIBUTION);
@@ -52,9 +58,8 @@ namespace Echoes {
 
             }
         private:
-
-        };
-    }
+    };
+  }
 }
 
 #endif	/* ADDONPACKAGEPARAMETER_H */

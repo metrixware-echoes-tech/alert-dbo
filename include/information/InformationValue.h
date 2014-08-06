@@ -14,18 +14,12 @@
 #ifndef INFORMATIONVALUE_H
 #define INFORMATIONVALUE_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class Plugin;
-    class Probe;
-    class Information;
-
     class InformationValue : public Table
     {
         public:
@@ -54,14 +48,10 @@ namespace Echoes
                 mapClassAttributesInts["LOT_NUM"] = &this->lotNumber;
                 mapClassAttributesInts["LINE_NUM"] = &this->lineNumber;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::belongsTo(a, syslog, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_SYSLOG, Wt::Dbo::OnDeleteSetNull);
                 Wt::Dbo::belongsTo(a, informationData, TRIGRAM_INFORMATION_VALUE SEP TRIGRAM_INFORMATION_DATA);
-
-
             }
-
-            virtual std::string toJSON() const;
 
         protected:
         private:

@@ -13,21 +13,21 @@
 
 #include "media/Media.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Media::TRIGRAM(TRIGRAM_MEDIA);
+
+    Media::Media()
     {
-        std::string Media::TRIGRAM(TRIGRAM_MEDIA);
-
-        Media::Media()
-        {
-            //ctor
-        }
-
-        Media::~Media()
-        {
-        }
-
     }
+
+    Media::~Media()
+    {
+    }
+  }
 }
 

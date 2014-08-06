@@ -14,15 +14,12 @@
 #ifndef PACK_H
 #define PACK_H
 
-#include <Wt/Dbo/Dbo>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-
     class Pack : public Table
     {
         public:
@@ -30,7 +27,6 @@ namespace Echoes
             virtual ~Pack();
 
             static std::string TRIGRAM;
-            Wt::WString name;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<PackOption> > packOptions;
             Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
@@ -39,7 +35,7 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a,
                         organizations,
@@ -51,8 +47,6 @@ namespace Echoes
                         Wt::Dbo::ManyToOne,
                         TRIGRAM_PACK_OPTION SEP TRIGRAM_PACK);
             }
-
-            virtual std::string toJSON() const;
 
         protected:
         private:

@@ -14,18 +14,12 @@
 #ifndef INFORMATIONUNIT_H
 #define INFORMATIONUNIT_H
 
-#include <Wt/Dbo/Dbo>
-#include <Wt/Dbo/WtSqlTraits>
-
 #include "tools/MainIncludeFile.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class Information;
-    class InformationUnitType;
-
     class InformationUnit : public Table
     {
         public:
@@ -34,8 +28,6 @@ namespace Echoes
 
             static std::string TRIGRAM;
 
-            Wt::WString name;
-            
             Wt::WString baseOperation;
             
             Wt::Dbo::ptr<InformationUnitType> unitType;
@@ -53,7 +45,7 @@ namespace Echoes
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["BASE_OPERATION"] = &this->baseOperation;
 
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, unitType, TRIGRAM_INFORMATION_UNIT SEP TRIGRAM_INFORMATION_UNIT_TYPE);
 

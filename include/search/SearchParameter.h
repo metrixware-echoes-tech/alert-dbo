@@ -16,14 +16,10 @@
 
 #include "tools/MainIncludeFile.h"
 
-#include <Wt/Dbo/Dbo>
-
 namespace Echoes
 {
   namespace Dbo
   {
-    class SearchParameterValue;
-
     class SearchParameter : public Table
     {
         public:
@@ -32,7 +28,7 @@ namespace Echoes
             virtual ~SearchParameter();
 
             static std::string TRIGRAM;
-            Wt::WString name;
+
             Wt::WString format;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<SearchType> > searchTypes;
@@ -42,14 +38,12 @@ namespace Echoes
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["FORMAT"] = &this->format;
-                FIELD_FILLER();
+                Table::fieldFiller(a, *this);
                 Wt::Dbo::hasMany(a,
                         searchTypes,
                         Wt::Dbo::ManyToMany,
                         "TJ_STY_SEP");
             }
-
-            virtual std::string toJSON() const;
 
         private:
     };

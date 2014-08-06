@@ -1,5 +1,5 @@
 /* 
- * Option Value Table
+ * Option Table
  * @author ECHOES Technologies (RHI)
  * @date 10/09/2012
  * 
@@ -13,23 +13,21 @@
 
 #include "pack/Option.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string Option::TRIGRAM(TRIGRAM_OPTION);
+
+    Option::Option()
     {
-        std::string Option::TRIGRAM(TRIGRAM_OPTION);
-
-        Option::Option()
-        {
-
-            //ctor
-        }
-
-        Option::~Option()
-        {
-
-        }
-
     }
+
+    Option::~Option()
+    {
+    }
+  }
 }
 

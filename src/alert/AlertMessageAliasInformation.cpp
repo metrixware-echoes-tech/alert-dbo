@@ -13,33 +13,25 @@
 
 #include "alert/AlertMessageAliasInformation.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
-    {
-        std::string AlertMessageAliasInformation::TRIGRAM(TRIGRAM_ALERT_MESSAGE_ALIAS_INFORMATION);
+ namespace Dbo
+ {
+   string AlertMessageAliasInformation::TRIGRAM(TRIGRAM_ALERT_MESSAGE_ALIAS_INFORMATION);
 
-        AlertMessageAliasInformation::AlertMessageAliasInformation()
-        {
-            this->jsonName = "alert_message_alias_information";
-        }
+   AlertMessageAliasInformation::AlertMessageAliasInformation()
+   {
+   }
 
-        AlertMessageAliasInformation::AlertMessageAliasInformation(const AlertMessageAliasInformation& orig)
-        {
-        }
+   AlertMessageAliasInformation::AlertMessageAliasInformation(const AlertMessageAliasInformation& orig)
+   {
+   }
 
-        AlertMessageAliasInformation::~AlertMessageAliasInformation()
-        {
-        }
-
-        std::string AlertMessageAliasInformation::toJSON() const
-        {
-            std::string res = "{\n";
-            res += Table::toJSON();
-            res += "\"id\": {\n" + boost::lexical_cast<std::string>(this->pk) + " }\n";
-            res += "}\n";
-            return res;
-        }
-    }
+   AlertMessageAliasInformation::~AlertMessageAliasInformation()
+   {
+   }
+ }
 }
 

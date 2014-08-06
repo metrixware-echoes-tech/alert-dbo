@@ -13,20 +13,21 @@
 
 #include "search/SearchParameterValue.h"
 
+using namespace std;
+
 namespace Echoes
 {
-    namespace Dbo
+  namespace Dbo
+  {
+    string SearchParameterValue::TRIGRAM(TRIGRAM_SEARCH_PARAMETER_VALUE);
+
+    SearchParameterValue::SearchParameterValue()
     {
-        std::string SearchParameterValue::TRIGRAM(TRIGRAM_SEARCH_PARAMETER_VALUE);
-
-        SearchParameterValue::SearchParameterValue()
-        {
-        }
-
-        SearchParameterValue::~SearchParameterValue()
-        {
-
-        }
-
     }
+
+    SearchParameterValue::~SearchParameterValue()
+    {
+    }
+  }
 }
+
