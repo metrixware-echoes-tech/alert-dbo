@@ -94,6 +94,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tools/AuthApplication.o \
 	${OBJECTDIR}/src/tools/Constants.o \
 	${OBJECTDIR}/src/tools/Session.o \
+	${OBJECTDIR}/src/tools/SpecializedAuthService.o \
 	${OBJECTDIR}/src/tools/Table.o \
 	${OBJECTDIR}/src/unit/InformationUnit.o \
 	${OBJECTDIR}/src/unit/InformationUnitType.o \
@@ -434,6 +435,11 @@ ${OBJECTDIR}/src/tools/Session.o: src/tools/Session.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tools
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -s -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tools/Session.o src/tools/Session.cpp
+
+${OBJECTDIR}/src/tools/SpecializedAuthService.o: src/tools/SpecializedAuthService.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tools
+	${RM} "$@.d"
+	$(COMPILE.cc) -O3 -s -Iinclude -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tools/SpecializedAuthService.o src/tools/SpecializedAuthService.cpp
 
 ${OBJECTDIR}/src/tools/Table.o: src/tools/Table.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tools

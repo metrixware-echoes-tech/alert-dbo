@@ -12,6 +12,7 @@
  */
 
 #include "tools/Session.h"
+#include "tools/SpecializedAuthService.h"
 
 using namespace std;
 
@@ -29,7 +30,7 @@ namespace Echoes
             }
     };
 
-    Wt::Auth::AuthService myAuthService;
+    SpecializedAuthService myAuthService;
     Wt::Auth::PasswordService myPasswordService(myAuthService);
     MyOAuth myOAuthServices;
 
