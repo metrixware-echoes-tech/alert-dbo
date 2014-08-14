@@ -145,6 +145,13 @@ namespace Echoes
           DEL = 7
       };
     }
+    
+    namespace EBooleanOperator {
+      enum {
+          AND = 1,
+          OR = 2
+      };
+    }
   }
 }
 
