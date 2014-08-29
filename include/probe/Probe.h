@@ -28,7 +28,9 @@ namespace Echoes
 
             static std::string TRIGRAM;
 
-            Wt::WString cert;
+            int             timer;
+            Wt::WString     cert;
+            Wt::WDateTime   lastlog;
 
             Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
             Wt::Dbo::ptr<Asset> asset;
@@ -41,6 +43,8 @@ namespace Echoes
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
                 mapClassAttributesStrings["CERT"] = &this->cert;
+                mapClassAttributesInts["TIMER"] = &this->timer;
+                mapClassAttributesDates["LASTLOG"] = &this->lastlog;
                 Table::fieldFiller(a, *this);
                 Wt::Dbo::belongsTo(a, probePackageParameter, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
                 Wt::Dbo::belongsTo(a, asset, TRIGRAM_PROBE SEP TRIGRAM_ASSET);
