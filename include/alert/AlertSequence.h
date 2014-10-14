@@ -33,8 +33,8 @@ namespace Echoes
             Wt::Dbo::ptr<AlertValue> alertValue;
             bool secondParenthesis;
             boost::optional<int> boolOperator;
-            Wt::Dbo::weak_ptr<AlertSequence> alertSequence;
-            Wt::Dbo::ptr<AlertSequence> alertSequenceBelongTo;
+            Wt::Dbo::weak_ptr<AlertSequence> alertSequenceBelongTo;
+            Wt::Dbo::ptr<AlertSequence> alertSequence;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<Alert> > alerts;
 
@@ -47,8 +47,8 @@ namespace Echoes
 
                 Table::fieldFiller(a, *this);
 
-                Wt::Dbo::belongsTo(a, alertSequenceBelongTo, TRIGRAM_ALERT_SEQUENCE SEP "NXT_ID");
-                Wt::Dbo::hasOne(a, alertSequence, TRIGRAM_ALERT_SEQUENCE SEP "NXT_ID");
+                Wt::Dbo::belongsTo(a, alertSequence, TRIGRAM_ALERT_SEQUENCE SEP "NXT_ID");
+                Wt::Dbo::hasOne(a, alertSequenceBelongTo, TRIGRAM_ALERT_SEQUENCE SEP "NXT_ID");
 
                 Wt::Dbo::belongsTo(a, alertValue, TRIGRAM_ALERT_SEQUENCE SEP TRIGRAM_ALERT_VALUE);
                 Wt::Dbo::hasMany(a, alerts, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_SEQUENCE SEP "FIRST_ID");
