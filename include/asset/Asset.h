@@ -56,7 +56,7 @@ namespace Echoes
 
                 Wt::Dbo::hasMany(a, probes, Wt::Dbo::ManyToOne, TRIGRAM_PROBE SEP TRIGRAM_ASSET);
                 Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_ASSET);
-                Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN SEP TRIGRAM_ASSET);
+                Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToOne, TRIGRAM_PLUGIN SEP TRIGRAM_ASSET);
             }
 
         protected:
