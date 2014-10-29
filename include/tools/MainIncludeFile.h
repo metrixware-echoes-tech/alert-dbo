@@ -73,6 +73,7 @@
 #include "alert/AlertMediaSpecialization.h"
 #include "alert/AlertValue.h"
 #include "alert/AlertSequence.h"
+#include "alert/AlertTimeSlot.h"
 #include "alert/AlertTracking.h"
 #include "alert/AlertTrackingEvent.h"
 #include "alert/AlertMessageAliasAsset.h"

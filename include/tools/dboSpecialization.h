@@ -40,6 +40,7 @@ namespace Echoes {
         class AlertMessageAliasInformation;
         class AlertMessageAliasInformationCriteria;
         class AlertSequence;
+        class AlertTimeSlot;
         class AlertTracking;
         class AlertTrackingEvent;
         class Engine;
@@ -119,6 +120,7 @@ namespace Wt {
         TEMPLATE_TRIGRAM(Echoes::Dbo::AddonPackageParameter, TRIGRAM_ADDON_PACKAGE_PARAMETER ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertAcknowledge, TRIGRAM_ALERT_ACKNOWLEDGE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertSequence, TRIGRAM_ALERT_SEQUENCE ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::AlertTimeSlot, TRIGRAM_ALERT_TIMESLOT ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertTracking, TRIGRAM_ALERT_TRACKING ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertTrackingEvent, TRIGRAM_ALERT_TRACKING_EVENT ID)
 

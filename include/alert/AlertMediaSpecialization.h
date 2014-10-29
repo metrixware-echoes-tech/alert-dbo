@@ -36,7 +36,9 @@ namespace Echoes
 
             Wt::Dbo::ptr<Alert> alert;
             Wt::Dbo::ptr<Media> media;
-
+            
+            Wt::Dbo::collection<Wt::Dbo::ptr<AlertTimeSlot> > timeSlots;
+            
             template<class Action>
             void persist(Action& a)
             {
@@ -49,6 +51,7 @@ namespace Echoes
 
                 Wt::Dbo::belongsTo(a, alert, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_ALERT);
                 Wt::Dbo::belongsTo(a, media, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_MEDIA);
+                Wt::Dbo::hasMany(a, timeSlots, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_TIMESLOT SEP TRIGRAM_ALERT_MEDIA_SPECIALIZATION);
             }
 
         private:

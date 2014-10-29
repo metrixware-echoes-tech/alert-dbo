@@ -46,6 +46,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/AlertCriteria.o \
 	${OBJECTDIR}/src/alert/AlertMediaSpecialization.o \
 	${OBJECTDIR}/src/alert/AlertSequence.o \
+	${OBJECTDIR}/src/alert/AlertTimeSlot.o \
 	${OBJECTDIR}/src/alert/AlertTracking.o \
 	${OBJECTDIR}/src/alert/AlertTrackingEvent.o \
 	${OBJECTDIR}/src/alert/AlertType.o \
@@ -191,6 +192,11 @@ ${OBJECTDIR}/src/alert/AlertSequence.o: src/alert/AlertSequence.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertSequence.o src/alert/AlertSequence.cpp
+
+${OBJECTDIR}/src/alert/AlertTimeSlot.o: src/alert/AlertTimeSlot.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertTimeSlot.o src/alert/AlertTimeSlot.cpp
 
 ${OBJECTDIR}/src/alert/AlertTracking.o: src/alert/AlertTracking.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
