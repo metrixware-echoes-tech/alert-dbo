@@ -28,6 +28,7 @@ namespace Echoes
 
             static std::string TRIGRAM;
 
+            int flapping;
             Wt::WString value;
             boost::optional<Wt::WString> keyValue;
 
@@ -40,6 +41,7 @@ namespace Echoes
             template<class Action>
             void persist(Action& a)
             {
+                mapClassAttributesInts["FLAPPING"] = &this->flapping;
                 mapClassAttributesStrings["VALUE"] = &this->value;
                 mapClassAttributesStringsNn["KEY_VALUE"] = &this->keyValue;
 
