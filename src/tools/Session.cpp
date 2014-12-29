@@ -39,6 +39,7 @@ namespace Echoes
         myAuthService.setAuthTokensEnabled(true, "logincookie");
         myAuthService.setIdentityPolicy(Wt::Auth::EmailAddressIdentity);
         myAuthService.setEmailVerificationEnabled(true);
+        myAuthService.setEmailVerificationRequired(true);
 
         Wt::Auth::PasswordVerifier *verifier = new Wt::Auth::PasswordVerifier();
         verifier->addHashFunction(new Wt::Auth::BCryptHashFunction(7));

@@ -174,7 +174,7 @@ namespace Echoes
         }
 
         virtual void addIdentity(const WtUser& user, const std::string& provider,
-                const Wt::WT_USTRING& identity) {
+                const WT_USTRING& identity) {
             WithUser find(*this, user);
 
             if (session_.find<AuthIdentityType > ()
@@ -193,7 +193,7 @@ namespace Echoes
         }
         
         virtual void setIdentity(const WtUser& user, const std::string& provider,
-			   const Wt::WT_USTRING& identity) {
+			   const WT_USTRING& identity) {
             WithUser find(*this, user);
 
             AuthIdentities c
