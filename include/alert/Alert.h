@@ -36,7 +36,7 @@ namespace Echoes
             //        const Wt::WString& name_() const {return *name;};
 
             Wt::Dbo::collection<Wt::Dbo::ptr<AlertAcknowledge> > alertAcks;
-            Wt::Dbo::collection<Wt::Dbo::ptr<AlertTracking> > alertTrackings;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Message> > alertTrackings;
             Wt::Dbo::collection<Wt::Dbo::ptr<AlertMediaSpecialization> > alertMediaSpecializations;
 
             Wt::Dbo::ptr<AlertValue> alertValue;
@@ -55,7 +55,7 @@ namespace Echoes
                 Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a, alertAcks, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_ACKNOWLEDGE SEP TRIGRAM_ALERT);
-                Wt::Dbo::hasMany(a, alertTrackings, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_ALERT);
+                Wt::Dbo::hasMany(a, alertTrackings, Wt::Dbo::ManyToOne, TRIGRAM_MESSAGE SEP TRIGRAM_ALERT);
                 Wt::Dbo::hasMany(a, alertMediaSpecializations, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_ALERT);
 
                 Wt::Dbo::belongsTo(a, alertValue, TRIGRAM_ALERT SEP TRIGRAM_ALERT_VALUE);

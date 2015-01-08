@@ -20,11 +20,11 @@ namespace Echoes
 {
   namespace Dbo
   {
-    class AlertTracking : public Table
+    class Message : public Table
     {
         public:
-            AlertTracking();
-            virtual ~AlertTracking();
+            Message();
+            virtual ~Message();
 
             static std::string TRIGRAM;
 
@@ -52,17 +52,17 @@ namespace Echoes
                 mapClassAttributesStringsNn["ACK_PORT"] = &this->ackPort;
                 mapClassAttributesStringsNn["ACK_ID"] = &this->ackId;
                 mapClassAttributesDates["SEND_DATE"] = &this->sendDate;
-                mapClassAttributesDates["RECEIV_DATE"] = &this->receiveDate;
+                mapClassAttributesDates["RECEIVE_DATE"] = &this->receiveDate;
 
                 Table::fieldFiller(a, *this);
 
-                Wt::Dbo::belongsTo(a, media, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_MEDIA);
-                Wt::Dbo::belongsTo(a, alert, TRIGRAM_ALERT_TRACKING SEP TRIGRAM_ALERT);
+                Wt::Dbo::belongsTo(a, media, TRIGRAM_MESSAGE SEP TRIGRAM_MEDIA);
+                Wt::Dbo::belongsTo(a, alert, TRIGRAM_MESSAGE SEP TRIGRAM_ALERT);
 
                 Wt::Dbo::hasMany(a,
                         alertTrackingEvents,
                         Wt::Dbo::ManyToOne,
-                        TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
+                        TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_MESSAGE);
             }
 
         protected:

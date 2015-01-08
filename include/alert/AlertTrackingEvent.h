@@ -33,7 +33,7 @@ namespace Echoes
             Wt::WString value;
             Wt::WDateTime date;
 
-            Wt::Dbo::ptr<AlertTracking> alertTracking;
+            Wt::Dbo::ptr<Message> alertTracking;
 
             template<class Action>
             void persist(Action& a)
@@ -41,7 +41,7 @@ namespace Echoes
                 mapClassAttributesStrings["VALUE"] = &this->value;
                 mapClassAttributesDates["DATE"] = &this->date;
                 Table::fieldFiller(a, *this);
-                Wt::Dbo::belongsTo(a, alertTracking, TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_TRACKING);
+                Wt::Dbo::belongsTo(a, alertTracking, TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_MESSAGE);
             }
 
         private:

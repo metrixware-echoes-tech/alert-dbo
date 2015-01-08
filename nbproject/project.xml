@@ -41,10 +41,12 @@
                 <sourceRootElem>src/engine</sourceRootElem>
                 <sourceRootElem>include/filter</sourceRootElem>
                 <sourceRootElem>include/search</sourceRootElem>
+                <sourceRootElem>include/message</sourceRootElem>
                 <sourceRootElem>include/source</sourceRootElem>
                 <sourceRootElem>src/filter</sourceRootElem>
                 <sourceRootElem>src/search</sourceRootElem>
                 <sourceRootElem>src/source</sourceRootElem>
+                <sourceRootElem>src/message</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

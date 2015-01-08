@@ -11,7 +11,7 @@
  * 
  */
 
-#include "alert/AlertTracking.h"
+#include "message/Message.h"
 
 using namespace std;
 
@@ -19,13 +19,13 @@ namespace Echoes
 {
   namespace Dbo
   {
-    string AlertTracking::TRIGRAM(TRIGRAM_ALERT_TRACKING);
+    string Message::TRIGRAM(TRIGRAM_MESSAGE);
 
-    AlertTracking::AlertTracking()
+    Message::Message()
     {
     }
 
-    AlertTracking::~AlertTracking()
+    Message::~Message()
     {
     }
 

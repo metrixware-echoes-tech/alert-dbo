@@ -74,12 +74,13 @@
 #include "alert/AlertValue.h"
 #include "alert/AlertSequence.h"
 #include "alert/AlertTimeSlot.h"
-#include "alert/AlertTracking.h"
 #include "alert/AlertTrackingEvent.h"
 #include "alert/AlertMessageAliasAsset.h"
 #include "alert/AlertMessageAliasPlugin.h"
 #include "alert/AlertMessageAliasInformation.h"
 #include "alert/AlertMessageAliasInformationCriteria.h"
+
+#include "message/Message.h"
 
 #include "engine/Engine.h"
 #include "engine/EngOrg.h"

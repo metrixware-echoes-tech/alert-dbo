@@ -47,7 +47,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/AlertMediaSpecialization.o \
 	${OBJECTDIR}/src/alert/AlertSequence.o \
 	${OBJECTDIR}/src/alert/AlertTimeSlot.o \
-	${OBJECTDIR}/src/alert/AlertTracking.o \
 	${OBJECTDIR}/src/alert/AlertTrackingEvent.o \
 	${OBJECTDIR}/src/alert/AlertType.o \
 	${OBJECTDIR}/src/alert/AlertValue.o \
@@ -67,6 +66,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/information/Syslog.o \
 	${OBJECTDIR}/src/media/Media.o \
 	${OBJECTDIR}/src/media/MediaType.o \
+	${OBJECTDIR}/src/message/Message.o \
 	${OBJECTDIR}/src/organization/Organization.o \
 	${OBJECTDIR}/src/organization/OrganizationField.o \
 	${OBJECTDIR}/src/organization/OrganizationType.o \
@@ -198,11 +198,6 @@ ${OBJECTDIR}/src/alert/AlertTimeSlot.o: src/alert/AlertTimeSlot.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertTimeSlot.o src/alert/AlertTimeSlot.cpp
 
-${OBJECTDIR}/src/alert/AlertTracking.o: src/alert/AlertTracking.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/alert
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertTracking.o src/alert/AlertTracking.cpp
-
 ${OBJECTDIR}/src/alert/AlertTrackingEvent.o: src/alert/AlertTrackingEvent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} "$@.d"
@@ -297,6 +292,11 @@ ${OBJECTDIR}/src/media/MediaType.o: src/media/MediaType.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/media
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/media/MediaType.o src/media/MediaType.cpp
+
+${OBJECTDIR}/src/message/Message.o: src/message/Message.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/message
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/message/Message.o src/message/Message.cpp
 
 ${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/organization

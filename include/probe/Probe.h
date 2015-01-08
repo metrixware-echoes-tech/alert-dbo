@@ -31,12 +31,12 @@ namespace Echoes
             int             timer;
             Wt::WString     cert;
             Wt::WDateTime   lastlog;
+            bool            sendAlertIfDown;
 
             Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
             Wt::Dbo::ptr<Asset> asset;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<Syslog> > syslogs;
-//            Wt::Dbo::collection<Wt::Dbo::ptr<Asset> > assets;
 
             template<class Action>
             void persist(Action& a)
@@ -45,7 +45,9 @@ namespace Echoes
                 mapClassAttributesStrings["CERT"] = &this->cert;
                 mapClassAttributesInts["TIMER"] = &this->timer;
                 mapClassAttributesDates["LASTLOG"] = &this->lastlog;
+                mapClassAttributesBools["ALERT_IF_DOWN"] = &this->sendAlertIfDown;
                 Table::fieldFiller(a, *this);
+
                 Wt::Dbo::belongsTo(a, probePackageParameter, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
                 Wt::Dbo::belongsTo(a, asset, TRIGRAM_PROBE SEP TRIGRAM_ASSET);
 
@@ -53,12 +55,6 @@ namespace Echoes
                         syslogs,
                         Wt::Dbo::ManyToOne,
                         TRIGRAM_SYSLOG SEP TRIGRAM_PROBE);
-
-//                Wt::Dbo::hasMany(a,
-//                        assets,
-//                        Wt::Dbo::ManyToOne,
-//                        TRIGRAM_ASSET SEP TRIGRAM_PROBE);
-
             }
 
         protected:

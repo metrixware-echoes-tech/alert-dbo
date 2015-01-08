@@ -23,10 +23,10 @@
           <itemPath>include/alert/AlertMessageAliasPlugin.h</itemPath>
           <itemPath>include/alert/AlertSequence.h</itemPath>
           <itemPath>include/alert/AlertTimeSlot.h</itemPath>
-          <itemPath>include/alert/AlertTracking.h</itemPath>
           <itemPath>include/alert/AlertTrackingEvent.h</itemPath>
           <itemPath>include/alert/AlertType.h</itemPath>
           <itemPath>include/alert/AlertValue.h</itemPath>
+          <itemPath>include/alert/Message.h</itemPath>
         </logicalFolder>
         <logicalFolder name="asset" displayName="asset" projectFiles="true">
           <itemPath>include/asset/Asset.h</itemPath>
@@ -54,6 +54,9 @@
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>include/media/Media.h</itemPath>
           <itemPath>include/media/MediaType.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="message" displayName="message" projectFiles="true">
+          <itemPath>include/message/Message.h</itemPath>
         </logicalFolder>
         <logicalFolder name="organization"
                        displayName="organization"
@@ -171,7 +174,6 @@
           <itemPath>src/alert/AlertMessageAliasPlugin.cpp</itemPath>
           <itemPath>src/alert/AlertSequence.cpp</itemPath>
           <itemPath>src/alert/AlertTimeSlot.cpp</itemPath>
-          <itemPath>src/alert/AlertTracking.cpp</itemPath>
           <itemPath>src/alert/AlertTrackingEvent.cpp</itemPath>
           <itemPath>src/alert/AlertType.cpp</itemPath>
           <itemPath>src/alert/AlertValue.cpp</itemPath>
@@ -202,6 +204,9 @@
         <logicalFolder name="media" displayName="media" projectFiles="true">
           <itemPath>src/media/Media.cpp</itemPath>
           <itemPath>src/media/MediaType.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="message" displayName="message" projectFiles="true">
+          <itemPath>src/message/Message.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="organization"
                        displayName="organization"
@@ -317,10 +322,12 @@
     <Elem>src/engine</Elem>
     <Elem>include/filter</Elem>
     <Elem>include/search</Elem>
+    <Elem>include/message</Elem>
     <Elem>include/source</Elem>
     <Elem>src/filter</Elem>
     <Elem>src/search</Elem>
     <Elem>src/source</Elem>
+    <Elem>src/message</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -402,13 +409,13 @@
       </item>
       <item path="include/alert/AlertTimeSlot.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/alert/AlertTrackingEvent.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/Message.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/asset/Asset.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -455,6 +462,8 @@
       <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/media/MediaType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/message/Message.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/organization/Organization.h"
             ex="false"
@@ -701,8 +710,6 @@
       </item>
       <item path="src/alert/AlertTimeSlot.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/alert/AlertTracking.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/alert/AlertTrackingEvent.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertType.cpp" ex="false" tool="1" flavor2="0">
@@ -754,6 +761,8 @@
       <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/media/MediaType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/message/Message.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -946,13 +955,13 @@
       </item>
       <item path="include/alert/AlertTimeSlot.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/alert/AlertTrackingEvent.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/Message.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/asset/Asset.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -999,6 +1008,8 @@
       <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/media/MediaType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/message/Message.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/organization/Organization.h"
             ex="false"
@@ -1245,8 +1256,6 @@
       </item>
       <item path="src/alert/AlertTimeSlot.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/alert/AlertTracking.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/alert/AlertTrackingEvent.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertType.cpp" ex="false" tool="1" flavor2="0">
@@ -1298,6 +1307,8 @@
       <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/media/MediaType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/message/Message.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1472,13 +1483,13 @@
       </item>
       <item path="include/alert/AlertTimeSlot.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/alert/AlertTracking.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="include/alert/AlertTrackingEvent.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertType.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/alert/AlertValue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/alert/Message.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/asset/Asset.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1523,6 +1534,8 @@
       <item path="include/media/Media.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/media/MediaType.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/message/Message.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/organization/Organization.h"
             ex="false"
@@ -1749,8 +1762,6 @@
       </item>
       <item path="src/alert/AlertTimeSlot.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/alert/AlertTracking.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/alert/AlertTrackingEvent.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/alert/AlertType.cpp" ex="false" tool="1" flavor2="0">
@@ -1800,6 +1811,8 @@
       <item path="src/media/Media.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/media/MediaType.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/message/Message.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
       </item>
