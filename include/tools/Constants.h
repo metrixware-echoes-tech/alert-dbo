@@ -85,7 +85,7 @@ namespace Echoes
             static const char *T_ALERT_PARAM_APA;
             static const char *T_ALERT_SEQUENCE_ASE;
             static const char *T_ALERT_TIMESLOT_ATS;
-            static const char *T_ALERT_TRACKING_EVENT_ATE;
+            static const char *T_MESSAGE_TRACKING_EVENT_MTE;
             static const char *T_MESSAGE_MSG;
             static const char *T_SOURCE_SRC;
             static const char *T_SOURCE_PARAMETER_VALUE_SPV;

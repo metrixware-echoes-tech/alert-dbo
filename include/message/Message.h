@@ -40,7 +40,7 @@ namespace Echoes
             Wt::Dbo::ptr<Media> media;
             Wt::Dbo::ptr<Alert> alert;
 
-            Wt::Dbo::collection<Wt::Dbo::ptr<AlertTrackingEvent> > alertTrackingEvents;
+            Wt::Dbo::collection<Wt::Dbo::ptr<MessageTrackingEvent> > alertTrackingEvents;
 
             template<class Action>
             void persist(Action& a)
@@ -62,7 +62,7 @@ namespace Echoes
                 Wt::Dbo::hasMany(a,
                         alertTrackingEvents,
                         Wt::Dbo::ManyToOne,
-                        TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_MESSAGE);
+                        TRIGRAM_MESSAGE_TRACKING_EVENT SEP TRIGRAM_MESSAGE);
             }
 
         protected:

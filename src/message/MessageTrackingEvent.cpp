@@ -11,7 +11,7 @@
  * 
  */
 
-#include "alert/AlertTrackingEvent.h"
+#include "message/MessageTrackingEvent.h"
 
 using namespace std;
 
@@ -19,17 +19,17 @@ namespace Echoes
 {
   namespace Dbo
   {
-    string AlertTrackingEvent::TRIGRAM(TRIGRAM_ALERT_TRACKING_EVENT);
+    string MessageTrackingEvent::TRIGRAM(TRIGRAM_MESSAGE_TRACKING_EVENT);
 
-    AlertTrackingEvent::AlertTrackingEvent()
+    MessageTrackingEvent::MessageTrackingEvent()
     {
     }
 
-    AlertTrackingEvent::AlertTrackingEvent(const AlertTrackingEvent& orig)
+    MessageTrackingEvent::MessageTrackingEvent(const MessageTrackingEvent& orig)
     {
     }
 
-    AlertTrackingEvent::~AlertTrackingEvent()
+    MessageTrackingEvent::~MessageTrackingEvent()
     {
     }
   }

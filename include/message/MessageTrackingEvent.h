@@ -20,12 +20,12 @@ namespace Echoes
 {
   namespace Dbo
   {
-    class AlertTrackingEvent : public Table
+    class MessageTrackingEvent : public Table
     {
         public:
-            AlertTrackingEvent();
-            AlertTrackingEvent(const AlertTrackingEvent& orig);
-            virtual ~AlertTrackingEvent();
+            MessageTrackingEvent();
+            MessageTrackingEvent(const MessageTrackingEvent& orig);
+            virtual ~MessageTrackingEvent();
 
             static std::string TRIGRAM;
 
@@ -33,7 +33,7 @@ namespace Echoes
             Wt::WString value;
             Wt::WDateTime date;
 
-            Wt::Dbo::ptr<Message> alertTracking;
+            Wt::Dbo::ptr<Message> message;
 
             template<class Action>
             void persist(Action& a)
@@ -41,7 +41,7 @@ namespace Echoes
                 mapClassAttributesStrings["VALUE"] = &this->value;
                 mapClassAttributesDates["DATE"] = &this->date;
                 Table::fieldFiller(a, *this);
-                Wt::Dbo::belongsTo(a, alertTracking, TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_MESSAGE);
+                Wt::Dbo::belongsTo(a, message, TRIGRAM_MESSAGE_TRACKING_EVENT SEP TRIGRAM_MESSAGE);
             }
 
         private:
