@@ -32,6 +32,8 @@ namespace Echoes
             Wt::WString     cert;
             Wt::WDateTime   lastlog;
             bool            sendAlertIfDown;
+            int             snoozeBeforeNextWarning;
+            Wt::WDateTime   lastDownAlert;
 
             Wt::Dbo::ptr<ProbePackageParameter> probePackageParameter;
             Wt::Dbo::ptr<Asset> asset;
@@ -46,6 +48,8 @@ namespace Echoes
                 mapClassAttributesInts["TIMER"] = &this->timer;
                 mapClassAttributesDates["LASTLOG"] = &this->lastlog;
                 mapClassAttributesBools["ALERT_IF_DOWN"] = &this->sendAlertIfDown;
+                mapClassAttributesInts["SNOOZE_BEFORE_NEXT_WARNING"] = &this->snoozeBeforeNextWarning;
+                mapClassAttributesDates["LAST_DOWN_ALERT"] = &this->lastDownAlert;
                 Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, probePackageParameter, TRIGRAM_PROBE SEP TRIGRAM_PROBE_PACKAGE_PARAMETER);
