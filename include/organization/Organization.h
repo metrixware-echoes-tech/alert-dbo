@@ -42,6 +42,8 @@ namespace Echoes
             Wt::Dbo::collection<Wt::Dbo::ptr<Plugin>> plugins;
             Wt::Dbo::collection<Wt::Dbo::ptr<Option>> options;
             Wt::Dbo::collection<Wt::Dbo::ptr<Information>> informations;
+            
+            Wt::Dbo::ptr<Media> defaultMedia;
             Wt::Dbo::ptr<Pack> pack;
             Wt::Dbo::ptr<OrganizationType> organizationType;
 
@@ -66,6 +68,7 @@ namespace Echoes
 
                 Wt::Dbo::belongsTo(a, pack, TRIGRAM_ORGANIZATION SEP TRIGRAM_PACK);
                 Wt::Dbo::belongsTo(a, organizationType, TRIGRAM_ORGANIZATION SEP TRIGRAM_ORGANIZATION_TYPE);
+                Wt::Dbo::belongsTo(a, defaultMedia, TRIGRAM_ORGANIZATION SEP TRIGRAM_MEDIA);
             }
     };
   }

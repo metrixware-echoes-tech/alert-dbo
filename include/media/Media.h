@@ -38,6 +38,7 @@ namespace Echoes
 
             Wt::Dbo::collection<Wt::Dbo::ptr<Message> > alertTrackings;
             Wt::Dbo::collection<Wt::Dbo::ptr<AlertMediaSpecialization> > alertMediaSpecializations;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
 
             template<class Action>
             void persist(Action& a)
@@ -53,6 +54,7 @@ namespace Echoes
 
                 Wt::Dbo::hasMany(a, alertTrackings, Wt::Dbo::ManyToOne, TRIGRAM_MESSAGE SEP TRIGRAM_MEDIA);
                 Wt::Dbo::hasMany(a, alertMediaSpecializations, Wt::Dbo::ManyToOne, TRIGRAM_ALERT_MEDIA_SPECIALIZATION SEP TRIGRAM_MEDIA);
+                Wt::Dbo::hasMany(a, organization, Wt::Dbo::ManyToOne, TRIGRAM_ORGANIZATION SEP TRIGRAM_MEDIA);
             }
 
         protected:
