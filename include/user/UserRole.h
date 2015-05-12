@@ -31,7 +31,7 @@ namespace Echoes
 
             Wt::Dbo::collection<Wt::Dbo::ptr<User> > users;
 
-            Wt::Dbo::ptr<Organization> organization;
+            Wt::Dbo::ptr<Group> group;
 
             template<class Action>
             void persist(Action& a)
@@ -39,7 +39,7 @@ namespace Echoes
                 mapClassAttributesStrings["NAME"] = &this->name;
                 Table::fieldFiller(a, *this);
 
-                Wt::Dbo::belongsTo(a, organization, TRIGRAM_USER_ROLE SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::belongsTo(a, group, TRIGRAM_USER_ROLE SEP TRIGRAM_GROUP);
 
                 Wt::Dbo::hasMany(a,
                         users,

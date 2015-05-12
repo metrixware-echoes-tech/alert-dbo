@@ -29,7 +29,7 @@ namespace Echoes
             static std::string TRIGRAM;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<PackOption> > packOptions;
-            Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organizations;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Group> > group;
 
             template<class Action>
             void persist(Action& a)
@@ -38,9 +38,9 @@ namespace Echoes
                 Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a,
-                        organizations,
+                        group,
                         Wt::Dbo::ManyToOne,
-                        TRIGRAM_ORGANIZATION SEP TRIGRAM_PACK);
+                        TRIGRAM_GROUP SEP TRIGRAM_PACK);
 
                 Wt::Dbo::hasMany(a,
                         packOptions,

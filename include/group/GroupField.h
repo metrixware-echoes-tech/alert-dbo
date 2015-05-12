@@ -1,5 +1,5 @@
 /* 
- * Header of Organization Field Table
+ * Header of Group Field Table
  * @author ECHOES Technologies (TSA)
  * @date 09/07/2012
  * 
@@ -11,8 +11,8 @@
  * 
  */
 
-#ifndef ORGANIZATIONFIELD_H
-#define	ORGANIZATIONFIELD_H
+#ifndef GROUPFIELD_H
+#define	GROUPFIELD_H
 
 #include "tools/MainIncludeFile.h"
 
@@ -20,17 +20,17 @@ namespace Echoes
 {
   namespace Dbo
   {
-    class OrganizationField : public Table
+    class GroupField : public Table
     {
         public:
-            OrganizationField();
-            virtual ~OrganizationField();
+            GroupField();
+            virtual ~GroupField();
 
             static std::string TRIGRAM;
 
             Wt::WString format;
 
-            Wt::Dbo::collection<Wt::Dbo::ptr<OrganizationType> > organizationType;
+            Wt::Dbo::collection<Wt::Dbo::ptr<GroupType> > groupType;
 
             template<class Action>
             void persist(Action& a)
@@ -40,7 +40,7 @@ namespace Echoes
                 Table::fieldFiller(a, *this);
 
                 Wt::Dbo::hasMany(a,
-                        organizationType,
+                        groupType,
                         Wt::Dbo::ManyToMany,
                         "TJ_OFI_OTY");
             }
@@ -48,5 +48,5 @@ namespace Echoes
   }
 }
 
-#endif	/* ORGANIZATIONFIELD_H */
+#endif	/* GROUPFIELD_H */
 

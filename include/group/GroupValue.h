@@ -1,5 +1,5 @@
 /* 
- * Header of Organization Value Table
+ * Header of Group Value Table
  * @author ECHOES Technologies (RHI)
  * @date 03/07/2012
  * 
@@ -11,27 +11,27 @@
  * 
  */
 
-#ifndef ORGANIZATIONVALUE_H
-#define ORGANIZATIONVALUE_H
+#ifndef GROUPVALUE_H
+#define GROUPVALUE_H
 
 #include "tools/MainIncludeFile.h"
-#include "primaryKeys/OrganizationValueId.h"
+#include "primaryKeys/GroupValueId.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class OrganizationValue : public Table
+    class GroupValue : public Table
     {
         public:
-            OrganizationValue();
-            virtual ~OrganizationValue();
+            GroupValue();
+            virtual ~GroupValue();
 
             static std::string TRIGRAM;
 
             Wt::WString value;
 
-            OrganizationValueId pk;
+            GroupValueId pk;
 
             template<class Action>
             void persist(Action& a)
@@ -48,5 +48,5 @@ namespace Echoes
   }
 }
 
-#endif // ORGANIZATIONVALUE_H
+#endif // GROUPVALUE_H
 

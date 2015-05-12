@@ -1,5 +1,5 @@
 /* 
- * Organization Type Table
+ * Group Type Table
  * @author ECHOES Technologies (RHI)
  * @date 03/07/2012
  * 
@@ -11,7 +11,7 @@
  * 
  */
 
-#include "organization/OrganizationType.h"
+#include "group/GroupType.h"
 
 using namespace std;
 
@@ -19,13 +19,13 @@ namespace Echoes
 {
   namespace Dbo
   {
-    string OrganizationType::TRIGRAM(TRIGRAM_ORGANIZATION_TYPE);
+    string GroupType::TRIGRAM(TRIGRAM_GROUP_TYPE);
 
-    OrganizationType::OrganizationType()
+    GroupType::GroupType()
     {
     }
 
-    OrganizationType::~OrganizationType()
+    GroupType::~GroupType()
     {
     }
   }

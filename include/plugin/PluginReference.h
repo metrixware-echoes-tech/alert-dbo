@@ -32,7 +32,7 @@ namespace Echoes
             Wt::WString version;
             Wt::Dbo::collection<Wt::Dbo::ptr<Plugin>> plugins;
             Wt::Dbo::collection<Wt::Dbo::ptr<Source>> sources;
-            Wt::Dbo::collection<Wt::Dbo::ptr<Organization>> organizations;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Group>> groups;
 
             template<class Action>
             void persist(Action& a)
@@ -46,7 +46,7 @@ namespace Echoes
 
                 //TJ
                 Wt::Dbo::hasMany(a, sources, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN_REFERENCE SEP TRIGRAM_SOURCE);
-                Wt::Dbo::hasMany(a, organizations, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN_REFERENCE SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::hasMany(a, groups, Wt::Dbo::ManyToMany, TABLE_JOINT_PREFIX SEP TRIGRAM_PLUGIN_REFERENCE SEP TRIGRAM_GROUP);
 
             }
 

@@ -33,7 +33,7 @@ namespace Echoes
             Wt::WString versionClient;
             
             Wt::Dbo::ptr<PluginReference> pluginReference;
-            Wt::Dbo::ptr<Organization> organization;
+            Wt::Dbo::ptr<Group> group;
             Wt::Dbo::ptr<Asset> asset;
             
             Wt::Dbo::collection<Wt::Dbo::ptr<Source>> sources;
@@ -48,7 +48,7 @@ namespace Echoes
                 Table::fieldFiller(a, *this);
                 
                 Wt::Dbo::belongsTo(a, pluginReference, TRIGRAM_PLUGIN SEP TRIGRAM_PLUGIN_REFERENCE);
-                Wt::Dbo::belongsTo(a, organization, TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::belongsTo(a, group, TRIGRAM_PLUGIN SEP TRIGRAM_GROUP);
                 Wt::Dbo::belongsTo(a, asset, TRIGRAM_PLUGIN SEP TRIGRAM_ASSET);
                 
                 //TJ

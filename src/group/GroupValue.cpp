@@ -1,5 +1,5 @@
 /* 
- * Organization Value Table
+ * Group Value Table
  * @author ECHOES Technologies (RHI)
  * @date 03/07/2012
  * 
@@ -11,7 +11,7 @@
  * 
  */
 
-#include "organization/OrganizationValue.h"
+#include "group/GroupValue.h"
 
 using namespace std;
 
@@ -19,13 +19,13 @@ namespace Echoes
 {
   namespace Dbo
   {
-    string OrganizationValue::TRIGRAM(TRIGRAM_ORGANIZATION_VALUE);
+    string GroupValue::TRIGRAM(TRIGRAM_GROUP_VALUE);
 
-    OrganizationValue::OrganizationValue()
+    GroupValue::GroupValue()
     {
     }
 
-    OrganizationValue::~OrganizationValue()
+    GroupValue::~GroupValue()
     {
     }
   }

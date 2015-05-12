@@ -30,7 +30,7 @@ namespace Echoes
 
             bool assetIsHost;
 
-            Wt::Dbo::ptr<Organization> organization;
+            Wt::Dbo::ptr<Group> group;
 
             Wt::Dbo::ptr<AssetArchitecture> assetArchitecture;
             Wt::Dbo::ptr<AssetDistribution> assetDistribution;
@@ -48,7 +48,7 @@ namespace Echoes
 
                 Table::fieldFiller(a, *this);
                 
-                Wt::Dbo::belongsTo(a, organization, TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::belongsTo(a, group, TRIGRAM_ASSET SEP TRIGRAM_GROUP);
 
                 Wt::Dbo::belongsTo(a, assetArchitecture, TRIGRAM_ASSET SEP TRIGRAM_ASSET_ARCHITECTURE);
                 Wt::Dbo::belongsTo(a, assetDistribution, TRIGRAM_ASSET SEP TRIGRAM_ASSET_DISTRIBUTION);
