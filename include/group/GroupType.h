@@ -32,7 +32,8 @@ namespace Echoes
             {
                 Company = 1,
                 Individual = 2,
-                Association = 3
+                Association = 3,
+                Default = 4
             };
 
             Wt::WString name;
