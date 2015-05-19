@@ -109,10 +109,10 @@ namespace Echoes
         mapClass<FilterParameterValue>(Constants::T_FILTER_PARAMETER_VALUE_FPV);
 
         mapClass<Information>(Constants::T_INFORMATION_INF);
-        mapClass<Group>(Constants::T_ORGANIZATION_ORG);
-        mapClass<GroupType>(Constants::TR_ORGANIZATION_TYPE_OTY);
-        mapClass<GroupValue>(Constants::T_ORGANIZATION_VALUE_OVA);
-        mapClass<GroupField>(Constants::T_ORGANIZATION_FIELD_OFI);
+        mapClass<Group>(Constants::T_GROUP_GRP);
+        mapClass<GroupType>(Constants::TR_GROUP_TYPE_GTY);
+        mapClass<GroupValue>(Constants::T_GROUP_VALUE_GVA);
+        mapClass<GroupField>(Constants::T_GROUP_FIELD_GFI);
 
         mapClass<Probe>(Constants::T_PROBE_PRB);
         mapClass<ProbePackage>(Constants::T_PROBE_PACKAGE_PPA);
@@ -147,7 +147,7 @@ namespace Echoes
         mapClass<MessageTrackingEvent>(Constants::T_MESSAGE_TRACKING_EVENT_MTE);
 
         mapClass<Engine>(Constants::TR_ENGINE_ENG);
-        mapClass<EngGrp>(Constants::TJ_ENG_ORG);
+        mapClass<EngGrp>(Constants::TJ_ENG_GRP);
 
         mapClass<Source>(Constants::T_SOURCE_SRC);
         mapClass<SourceParameter>(Constants::TR_SOURCE_PARAMETER_SRP);
