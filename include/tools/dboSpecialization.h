@@ -39,11 +39,14 @@ namespace Echoes {
         class AlertMessageAliasPlugin;
         class AlertMessageAliasInformation;
         class AlertMessageAliasInformationCriteria;
+        class AlertTrackingEvent;
+        class AlertStatus;
         class AlertSequence;
         class AlertTimeSlot;
         
         class Message;
         class MessageTrackingEvent;
+        class MessageStatus;
         
         class Engine;
         class EngOrg;

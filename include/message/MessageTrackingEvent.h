@@ -16,6 +16,8 @@
 
 #include <tools/MainIncludeFile.h>
 
+#include "MessageStatus.h"
+
 namespace Echoes
 {
   namespace Dbo
@@ -30,17 +32,22 @@ namespace Echoes
             static std::string TRIGRAM;
 
             //    boost::optional<std::string> eventValue;
-            Wt::WString value;
+            
             Wt::WDateTime date;
-
+            Wt::WString text;
+            
+            Wt::Dbo::ptr<MessageStatus> statut;
             Wt::Dbo::ptr<Message> message;
 
             template<class Action>
             void persist(Action& a)
             {
-                mapClassAttributesStrings["VALUE"] = &this->value;
                 mapClassAttributesDates["DATE"] = &this->date;
+                mapClassAttributesStrings["MESSAGE"] = &this->text;
+                
                 Table::fieldFiller(a, *this);
+                
+                Wt::Dbo::belongsTo(a, statut, TRIGRAM_MESSAGE_TRACKING_EVENT SEP TRIGRAM_MESSAGE_STATUS);
                 Wt::Dbo::belongsTo(a, message, TRIGRAM_MESSAGE_TRACKING_EVENT SEP TRIGRAM_MESSAGE);
             }
 
