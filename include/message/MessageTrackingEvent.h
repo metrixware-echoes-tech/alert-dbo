@@ -11,8 +11,8 @@
  * 
  */
 
-#ifndef ALERTACKNOWLEDGEEVENT_H
-#define	ALERTACKNOWLEDGEEVENT_H
+#ifndef MESSAGETRACKINGEVENT_H
+#define	MESSAGETRACKINGEVENT_H
 
 #include <tools/MainIncludeFile.h>
 
@@ -56,5 +56,5 @@ namespace Echoes
   }
 }
 
-#endif	/* ALERTACKNOWLEDGEEVENT_H */
+#endif	/* MESSAGETRACKINGEVENT_H */
 

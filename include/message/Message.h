@@ -11,8 +11,8 @@
  * 
  */
 
-#ifndef ALERTTRACKING_H
-#define	ALERTTRACKING_H
+#ifndef MESSAGE_H
+#define	MESSAGE_H
 
 #include "tools/MainIncludeFile.h"
 
@@ -71,5 +71,5 @@ namespace Echoes
   }
 }
 
-#endif	/* ALERTTRACKING_H */
+#endif	/* MESSAGE_H */
 

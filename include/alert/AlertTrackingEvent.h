@@ -32,7 +32,8 @@ namespace Echoes
 
             Wt::Dbo::ptr<AlertStatus> statut;
             Wt::Dbo::ptr<Alert> alert;
-
+            Wt::Dbo::ptr<User> user;
+            
             template<class Action>
             void persist(Action& a)
             {
@@ -40,6 +41,7 @@ namespace Echoes
 
                 Table::fieldFiller(a, *this);
 
+                Wt::Dbo::belongsTo(a, user, TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_USER);
                 Wt::Dbo::belongsTo(a, statut, TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_STATUS);
                 Wt::Dbo::belongsTo(a, alert, TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT);
             }
