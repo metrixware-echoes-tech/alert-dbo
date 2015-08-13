@@ -41,7 +41,7 @@ namespace Echoes
             Wt::Dbo::ptr<User> user;
             Wt::Dbo::ptr<Alert> alert;
 
-            Wt::Dbo::collection<Wt::Dbo::ptr<MessageTrackingEvent> > alertTrackingEvents;
+            Wt::Dbo::collection<Wt::Dbo::ptr<MessageTrackingEvent> > messageTrackingEvents;
 
             template<class Action>
             void persist(Action& a)
@@ -51,7 +51,7 @@ namespace Echoes
                 mapClassAttributesStringsNn["RECEIVER_SRV"] = &this->receiverSrv;
                 mapClassAttributesStringsNn["SENDER_PORT"] = &this->senderPort;
                 mapClassAttributesStringsNn["RECEIVER_PORT"] = &this->receiverPort;
-                mapClassAttributesStringsNn["ACK_ID"] = &this->refAck;
+                mapClassAttributesStringsNn["REF_ACK"] = &this->refAck;
                 mapClassAttributesStringsNn["DEST"] = &this->dest;
 
                 Table::fieldFiller(a, *this);
@@ -60,7 +60,7 @@ namespace Echoes
                 Wt::Dbo::belongsTo(a, alert, TRIGRAM_MESSAGE SEP TRIGRAM_ALERT);
 
                 Wt::Dbo::hasMany(a,
-                        alertTrackingEvents,
+                        messageTrackingEvents,
                         Wt::Dbo::ManyToOne,
                         TRIGRAM_MESSAGE_TRACKING_EVENT SEP TRIGRAM_MESSAGE);
             }

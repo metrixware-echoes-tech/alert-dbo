@@ -21,6 +21,8 @@ namespace Echoes
             virtual ~MessageStatus();
 
             static std::string TRIGRAM;
+            
+            boost::optional<Wt::WString> desc;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<MessageTrackingEvent> > messagesTrackingEvent;
 
@@ -28,6 +30,7 @@ namespace Echoes
             void persist(Action& a)
             {
                 mapClassAttributesStrings["NAME"] = &this->name;
+                mapClassAttributesStringsNn["DESC"] = &this->desc;
 
                 Table::fieldFiller(a, *this);
                 Wt::Dbo::hasMany(a,

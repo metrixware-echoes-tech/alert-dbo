@@ -129,6 +129,9 @@ namespace Wt {
 
         TEMPLATE_TRIGRAM(Echoes::Dbo::Message, TRIGRAM_MESSAGE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::MessageTrackingEvent, TRIGRAM_MESSAGE_TRACKING_EVENT ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::AlertTrackingEvent, TRIGRAM_ALERT_TRACKING_EVENT ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::AlertStatus, TRIGRAM_ALERT_STATUS ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::MessageStatus, TRIGRAM_MESSAGE_STATUS ID)
                 
         TEMPLATE_TRIGRAM(Echoes::Dbo::Engine, TRIGRAM_ENGINE ID)
 

@@ -39,7 +39,7 @@ namespace Echoes
                 Wt::Dbo::hasMany(a,
                         alerts,
                         Wt::Dbo::ManyToOne,
-                        TRIGRAM_ALERT SEP TRIGRAM_ALERT_STATUS);
+                        TRIGRAM_ALERT_TRACKING_EVENT SEP TRIGRAM_ALERT_STATUS);
             }
 
         protected:
