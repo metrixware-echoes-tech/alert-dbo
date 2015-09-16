@@ -1,0 +1,37 @@
+{
+  "name": "echoes-echoes_alert_dbo",
+  "version": "0.1.0",
+  "author": "Echoes Technologies",
+  "summary": "Puppet module to manage echoes alert dbo installation and configuration",
+  "license": "Apache-2.0",
+  "source": "https://forge.echoes-tech.com/projects/dbo/repository",
+  "project_page": "https://forge.echoes-tech.com/projects/dbo",
+  "issues_url": "https://forge.echoes-tech.com/projects/dbo/issues",
+  "tags": [
+    "echoes",
+    "alert",
+    "dbo"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"},
+    {"name":"echoes/wt","version_requirement":">= 0.1.0"}
+  ]
+}
