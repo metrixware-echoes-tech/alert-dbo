@@ -17,7 +17,6 @@
 
 Puppet module to manage Echoes Alert DBO installation and configuration.
 
-
 ## Module Description
 
 This module installs and configures Echoes Alert DBO.
@@ -28,9 +27,9 @@ This module installs and configures Echoes Alert DBO.
 
 This module requires Wt to be installed.
 
-The binaries should be located in the 'files' directory of the module, under the path /files/$branch_name/$version_number/.
-
 You can use [echoes-wt](https://github.com/echoes-tech/puppet-wt) to install Wt.
+
+The DBO resources (binaries, configuration files, etc.) should be located in the `files` or `templates` directories of the module, under the path `/$branch_name/$version_number/`.
 
 ### Beginning with echoes_alert_dbo
 
@@ -64,6 +63,8 @@ class {'echoes_alert_dbo':
 
 #### Parameters
 
+The following parameters are available in the `::echoes_alert_dbo` class:
+
 ##### `branch`
 
 Tells Puppet which branch to choose to install DBO. Valid options: string. Default value: 'master'
@@ -83,4 +84,3 @@ Debian family OSes is officially supported. Tested and built on Debian.
 ## Contributors
 
 The list of contributors can be found at: https://forge.echoes-tech.com/projects/dbo/repository/statistics#statistics-contributors
-
