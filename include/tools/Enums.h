@@ -171,7 +171,9 @@ namespace Echoes
           SENDED = 5,
           ACKFAILED = 6,
           RECEIVED = 7,
-          ANSWERED = 8
+          ANSWERED = 8,
+          LINKING = 9,
+          LINKLOST = 10
       };
     }
   }
