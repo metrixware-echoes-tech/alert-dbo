@@ -69,7 +69,7 @@ namespace Echoes
       };
     }
     
-    namespace EOrganizationType
+    namespace EGroupType
     {
       enum {
           INDIVIDUAL = 1,

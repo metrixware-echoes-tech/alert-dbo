@@ -46,7 +46,7 @@ namespace Echoes
             Wt::Dbo::ptr<UserRole> userRole;
             Wt::Dbo::ptr<UserProfile> userProfile;
 
-            Wt::Dbo::ptr<Organization> organization;
+            Wt::Dbo::ptr<Group> group;
 
             Wt::Dbo::collection<Wt::Dbo::ptr<UserValue> > userValues;
             Wt::Dbo::collection<Wt::Dbo::ptr<UserHistoricalAction> > historicalActions;
@@ -72,7 +72,7 @@ namespace Echoes
                 //Other tables ids as foreign keys for user table
 
                 Wt::Dbo::belongsTo(a, userRole, TRIGRAM_USER SEP TRIGRAM_USER_ROLE);
-                Wt::Dbo::belongsTo(a, organization, TRIGRAM_USER SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::belongsTo(a, group, TRIGRAM_USER SEP TRIGRAM_GROUP);
                 Wt::Dbo::belongsTo(a, userProfile, TRIGRAM_USER SEP TRIGRAM_USER_PROFILE);
 
                 //User id as foreign key in other tables

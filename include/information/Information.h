@@ -34,7 +34,7 @@ namespace Echoes
             Wt::Dbo::collection<Wt::Dbo::ptr<InformationData> > informationDatas;
             
             Wt::Dbo::ptr<InformationUnit> informationUnit;
-            Wt::Dbo::ptr<Organization> organization;
+            Wt::Dbo::ptr<Group> group;
 
             boost::optional<Wt::WString> desc;
             bool display;
@@ -53,7 +53,7 @@ namespace Echoes
                 Wt::Dbo::hasMany(a, informationDatas, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION_DATA SEP TRIGRAM_INFORMATION);
 
                 Wt::Dbo::belongsTo(a, informationUnit, TRIGRAM_INFORMATION SEP TRIGRAM_INFORMATION_UNIT);
-                Wt::Dbo::belongsTo(a, organization, TRIGRAM_INFORMATION SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::belongsTo(a, group, TRIGRAM_INFORMATION SEP TRIGRAM_GROUP);
             }
 
         protected:

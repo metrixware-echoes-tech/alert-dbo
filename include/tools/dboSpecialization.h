@@ -46,7 +46,7 @@ namespace Echoes {
         class MessageTrackingEvent;
         
         class Engine;
-        class EngOrg;
+        class EngGrp;
         //class WidgetValue;
         //class WidgetType;
         class Addon;
@@ -68,10 +68,10 @@ namespace Echoes {
         class FilterType;
         class FilterParameter;
         
-        class Organization;
-        class OrganizationType;
-        class OrganizationValue;
-        class OrganizationField;
+        class Group;
+        class GroupType;
+        class GroupValue;
+        class GroupField;
         
         class InformationValue;
         class InformationHistoricalValue;
@@ -140,9 +140,9 @@ namespace Wt {
         TEMPLATE_TRIGRAM(Echoes::Dbo::FilterType, TRIGRAM_FILTER_TYPE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::FilterParameter, TRIGRAM_FILTER_PARAMETER ID)
                 
-        TEMPLATE_TRIGRAM(Echoes::Dbo::Organization, TRIGRAM_ORGANIZATION ID)
-        TEMPLATE_TRIGRAM(Echoes::Dbo::OrganizationType, TRIGRAM_ORGANIZATION_TYPE ID)
-        TEMPLATE_TRIGRAM(Echoes::Dbo::OrganizationField, TRIGRAM_ORGANIZATION_FIELD ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::Group, TRIGRAM_GROUP ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::GroupType, TRIGRAM_GROUP_TYPE ID)
+        TEMPLATE_TRIGRAM(Echoes::Dbo::GroupField, TRIGRAM_GROUP_FIELD ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::InformationHistoricalValue, TRIGRAM_INFORMATION_HISTORICAL_VALUE ID)
         TEMPLATE_TRIGRAM(Echoes::Dbo::AlertCriteria, TRIGRAM_ALERT_CRITERIA ID)
 

@@ -58,6 +58,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/filter/FilterParameter.o \
 	${OBJECTDIR}/src/filter/FilterParameterValue.o \
 	${OBJECTDIR}/src/filter/FilterType.o \
+	${OBJECTDIR}/src/group/Group.o \
+	${OBJECTDIR}/src/group/GroupField.o \
+	${OBJECTDIR}/src/group/GroupType.o \
+	${OBJECTDIR}/src/group/GroupValue.o \
 	${OBJECTDIR}/src/information/Information.o \
 	${OBJECTDIR}/src/information/InformationData.o \
 	${OBJECTDIR}/src/information/InformationHistoricalValue.o \
@@ -67,10 +71,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/media/MediaType.o \
 	${OBJECTDIR}/src/message/Message.o \
 	${OBJECTDIR}/src/message/MessageTrackingEvent.o \
-	${OBJECTDIR}/src/organization/Organization.o \
-	${OBJECTDIR}/src/organization/OrganizationField.o \
-	${OBJECTDIR}/src/organization/OrganizationType.o \
-	${OBJECTDIR}/src/organization/OrganizationValue.o \
 	${OBJECTDIR}/src/pack/Option.o \
 	${OBJECTDIR}/src/pack/OptionType.o \
 	${OBJECTDIR}/src/pack/Pack.o \
@@ -253,6 +253,26 @@ ${OBJECTDIR}/src/filter/FilterType.o: src/filter/FilterType.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/filter/FilterType.o src/filter/FilterType.cpp
 
+${OBJECTDIR}/src/group/Group.o: src/group/Group.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/group
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/group/Group.o src/group/Group.cpp
+
+${OBJECTDIR}/src/group/GroupField.o: src/group/GroupField.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/group
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/group/GroupField.o src/group/GroupField.cpp
+
+${OBJECTDIR}/src/group/GroupType.o: src/group/GroupType.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/group
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/group/GroupType.o src/group/GroupType.cpp
+
+${OBJECTDIR}/src/group/GroupValue.o: src/group/GroupValue.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/group
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/group/GroupValue.o src/group/GroupValue.cpp
+
 ${OBJECTDIR}/src/information/Information.o: src/information/Information.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/information
 	${RM} "$@.d"
@@ -297,26 +317,6 @@ ${OBJECTDIR}/src/message/MessageTrackingEvent.o: src/message/MessageTrackingEven
 	${MKDIR} -p ${OBJECTDIR}/src/message
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/message/MessageTrackingEvent.o src/message/MessageTrackingEvent.cpp
-
-${OBJECTDIR}/src/organization/Organization.o: src/organization/Organization.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/organization/Organization.o src/organization/Organization.cpp
-
-${OBJECTDIR}/src/organization/OrganizationField.o: src/organization/OrganizationField.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/organization/OrganizationField.o src/organization/OrganizationField.cpp
-
-${OBJECTDIR}/src/organization/OrganizationType.o: src/organization/OrganizationType.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/organization/OrganizationType.o src/organization/OrganizationType.cpp
-
-${OBJECTDIR}/src/organization/OrganizationValue.o: src/organization/OrganizationValue.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/organization
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/organization/OrganizationValue.o src/organization/OrganizationValue.cpp
 
 ${OBJECTDIR}/src/pack/Option.o: src/pack/Option.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/pack

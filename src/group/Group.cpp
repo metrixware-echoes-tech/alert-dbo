@@ -1,5 +1,5 @@
 /* 
- * Organization Table
+ * Group Table
  * @author ECHOES Technologies (TSA)
  * @date 18/04/2012
  * 
@@ -11,7 +11,7 @@
  * 
  */
 
-#include "organization/Organization.h"
+#include "group/Group.h"
 
 using namespace std;
 
@@ -19,13 +19,13 @@ namespace Echoes
 {
   namespace Dbo
   {
-    string Organization::TRIGRAM(TRIGRAM_ORGANIZATION);
+    string Group::TRIGRAM(TRIGRAM_GROUP);
 
-    Organization::Organization()
+    Group::Group()
     {
     }
 
-    Organization::~Organization()
+    Group::~Group()
     {
     }
   }

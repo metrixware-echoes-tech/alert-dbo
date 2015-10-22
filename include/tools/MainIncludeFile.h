@@ -32,10 +32,10 @@
 #include "user/Space.h"
 #include "user/AccessControlList.h"
 
-#include "organization/Organization.h"
-#include "organization/OrganizationType.h"
-#include "organization/OrganizationValue.h"
-#include "organization/OrganizationField.h"
+#include "group/Group.h"
+#include "group/GroupType.h"
+#include "group/GroupValue.h"
+#include "group/GroupField.h"
 
 #include "information/Information.h"
 #include "information/InformationHistoricalValue.h"
@@ -84,7 +84,7 @@
 #include "message/Message.h"
 
 #include "engine/Engine.h"
-#include "engine/EngOrg.h"
+#include "engine/EngGrp.h"
 
 #include "source/Source.h"
 #include "source/SourceParameter.h"

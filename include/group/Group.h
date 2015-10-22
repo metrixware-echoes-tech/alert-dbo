@@ -1,5 +1,5 @@
 /* 
- * Header of Organization Table
+ * Header of Group Table
  * @author ECHOES Technologies (TSA)
  * @date 18/04/2012
  * 
@@ -11,8 +11,8 @@
  * 
  */
 
-#ifndef ORGANIZATION_H
-#define ORGANIZATION_H
+#ifndef GROUP_H
+#define GROUP_H
 
 #include "tools/MainIncludeFile.h"
 
@@ -20,11 +20,11 @@ namespace Echoes
 {
   namespace Dbo
   {
-    class Organization : public Table
+    class Group : public Table
     {
         public:
-            Organization();
-            virtual ~Organization();
+            Group();
+            virtual ~Group();
 
             static std::string TRIGRAM;
 
@@ -45,7 +45,7 @@ namespace Echoes
             
             Wt::Dbo::ptr<Media> defaultMedia;
             Wt::Dbo::ptr<Pack> pack;
-            Wt::Dbo::ptr<OrganizationType> organizationType;
+            Wt::Dbo::ptr<GroupType> groupType;
 
             template<class Action>
             void persist(Action& a)
@@ -59,20 +59,20 @@ namespace Echoes
                 Table::fieldFiller(a, *this);
 
                 //User id as foreign key in other tables
-                Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToOne, TRIGRAM_ASSET SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a, userRoles, Wt::Dbo::ManyToOne, TRIGRAM_USER_ROLE SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToOne, TRIGRAM_PLUGIN SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a, users, Wt::Dbo::ManyToOne, TRIGRAM_USER SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a, informations, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION SEP TRIGRAM_ORGANIZATION);
-                Wt::Dbo::hasMany(a, options, Wt::Dbo::ManyToOne, TRIGRAM_OPTION SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::hasMany(a, assets, Wt::Dbo::ManyToOne, TRIGRAM_ASSET SEP TRIGRAM_GROUP);
+                Wt::Dbo::hasMany(a, userRoles, Wt::Dbo::ManyToOne, TRIGRAM_USER_ROLE SEP TRIGRAM_GROUP);
+                Wt::Dbo::hasMany(a, plugins, Wt::Dbo::ManyToOne, TRIGRAM_PLUGIN SEP TRIGRAM_GROUP);
+                Wt::Dbo::hasMany(a, users, Wt::Dbo::ManyToOne, TRIGRAM_USER SEP TRIGRAM_GROUP);
+                Wt::Dbo::hasMany(a, informations, Wt::Dbo::ManyToOne, TRIGRAM_INFORMATION SEP TRIGRAM_GROUP);
+                Wt::Dbo::hasMany(a, options, Wt::Dbo::ManyToOne, TRIGRAM_OPTION SEP TRIGRAM_GROUP);
 
-                Wt::Dbo::belongsTo(a, pack, TRIGRAM_ORGANIZATION SEP TRIGRAM_PACK);
-                Wt::Dbo::belongsTo(a, organizationType, TRIGRAM_ORGANIZATION SEP TRIGRAM_ORGANIZATION_TYPE);
-                Wt::Dbo::belongsTo(a, defaultMedia, TRIGRAM_ORGANIZATION SEP TRIGRAM_MEDIA);
+                Wt::Dbo::belongsTo(a, pack, TRIGRAM_GROUP SEP TRIGRAM_PACK);
+                Wt::Dbo::belongsTo(a, groupType, TRIGRAM_GROUP SEP TRIGRAM_GROUP_TYPE);
+                Wt::Dbo::belongsTo(a, defaultMedia, TRIGRAM_GROUP SEP TRIGRAM_MEDIA);
             }
     };
   }
 }
 
-#endif // ORGANIZATION_H
+#endif // GROUP_H
 

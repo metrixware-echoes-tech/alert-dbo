@@ -33,7 +33,7 @@
           <itemPath>include/asset/AssetRelease.h</itemPath>
         </logicalFolder>
         <logicalFolder name="engine" displayName="engine" projectFiles="true">
-          <itemPath>include/engine/EngOrg.h</itemPath>
+          <itemPath>include/engine/EngGrp.h</itemPath>
           <itemPath>include/engine/Engine.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="filter" projectFiles="true">
@@ -41,6 +41,12 @@
           <itemPath>include/filter/FilterParameter.h</itemPath>
           <itemPath>include/filter/FilterParameterValue.h</itemPath>
           <itemPath>include/filter/FilterType.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="group" displayName="group" projectFiles="true">
+          <itemPath>include/group/Group.h</itemPath>
+          <itemPath>include/group/GroupField.h</itemPath>
+          <itemPath>include/group/GroupType.h</itemPath>
+          <itemPath>include/group/GroupValue.h</itemPath>
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>include/information/Information.h</itemPath>
@@ -56,14 +62,6 @@
         <logicalFolder name="message" displayName="message" projectFiles="true">
           <itemPath>include/message/Message.h</itemPath>
           <itemPath>include/message/MessageTrackingEvent.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="organization"
-                       displayName="organization"
-                       projectFiles="true">
-          <itemPath>include/organization/Organization.h</itemPath>
-          <itemPath>include/organization/OrganizationField.h</itemPath>
-          <itemPath>include/organization/OrganizationType.h</itemPath>
-          <itemPath>include/organization/OrganizationValue.h</itemPath>
         </logicalFolder>
         <logicalFolder name="pack" displayName="pack" projectFiles="true">
           <itemPath>include/pack/Option.h</itemPath>
@@ -82,9 +80,9 @@
           <itemPath>include/primaryKeys/AlertMessageAliasInformationCriteriaId.h</itemPath>
           <itemPath>include/primaryKeys/AlertMessageAliasInformationId.h</itemPath>
           <itemPath>include/primaryKeys/AlertMessageAliasPluginId.h</itemPath>
-          <itemPath>include/primaryKeys/EngOrgId.h</itemPath>
+          <itemPath>include/primaryKeys/EngGrpId.h</itemPath>
           <itemPath>include/primaryKeys/FilterParameterValueId.h</itemPath>
-          <itemPath>include/primaryKeys/OrganizationValueId.h</itemPath>
+          <itemPath>include/primaryKeys/GroupValueId.h</itemPath>
           <itemPath>include/primaryKeys/PackOptionId.h</itemPath>
           <itemPath>include/primaryKeys/SearchParameterValueId.h</itemPath>
           <itemPath>include/primaryKeys/SourceParameterValueId.h</itemPath>
@@ -183,7 +181,7 @@
           <itemPath>src/asset/AssetRelease.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="engine" displayName="engine" projectFiles="true">
-          <itemPath>src/engine/EngOrg.cpp</itemPath>
+          <itemPath>src/engine/EngGrp.cpp</itemPath>
           <itemPath>src/engine/Engine.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="filter" projectFiles="true">
@@ -191,6 +189,12 @@
           <itemPath>src/filter/FilterParameter.cpp</itemPath>
           <itemPath>src/filter/FilterParameterValue.cpp</itemPath>
           <itemPath>src/filter/FilterType.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="group" displayName="group" projectFiles="true">
+          <itemPath>src/group/Group.cpp</itemPath>
+          <itemPath>src/group/GroupField.cpp</itemPath>
+          <itemPath>src/group/GroupType.cpp</itemPath>
+          <itemPath>src/group/GroupValue.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="information" displayName="information" projectFiles="true">
           <itemPath>src/information/Information.cpp</itemPath>
@@ -206,14 +210,6 @@
         <logicalFolder name="message" displayName="message" projectFiles="true">
           <itemPath>src/message/Message.cpp</itemPath>
           <itemPath>src/message/MessageTrackingEvent.cpp</itemPath>
-        </logicalFolder>
-        <logicalFolder name="organization"
-                       displayName="organization"
-                       projectFiles="true">
-          <itemPath>src/organization/Organization.cpp</itemPath>
-          <itemPath>src/organization/OrganizationField.cpp</itemPath>
-          <itemPath>src/organization/OrganizationType.cpp</itemPath>
-          <itemPath>src/organization/OrganizationValue.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="pack" displayName="pack" projectFiles="true">
           <itemPath>src/pack/Option.cpp</itemPath>
@@ -296,7 +292,7 @@
     <Elem>include/asset</Elem>
     <Elem>include/information</Elem>
     <Elem>include/media</Elem>
-    <Elem>include/organization</Elem>
+    <Elem>include/group</Elem>
     <Elem>include/pack</Elem>
     <Elem>include/plugin</Elem>
     <Elem>include/probe</Elem>
@@ -309,7 +305,7 @@
     <Elem>src/asset</Elem>
     <Elem>src/information</Elem>
     <Elem>src/media</Elem>
-    <Elem>src/organization</Elem>
+    <Elem>src/group</Elem>
     <Elem>src/pack</Elem>
     <Elem>src/plugin</Elem>
     <Elem>src/probe</Elem>
@@ -420,7 +416,7 @@
       </item>
       <item path="include/asset/AssetRelease.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/engine/EngOrg.h" ex="false" tool="3" flavor2="0">
+      <item path="include/engine/EngGrp.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -465,25 +461,13 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/organization/Organization.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/Group.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/organization/OrganizationField.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/GroupField.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/organization/OrganizationType.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/GroupType.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/organization/OrganizationValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/GroupValue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -524,17 +508,14 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
+      <item path="include/primaryKeys/EngGrpId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/FilterParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/primaryKeys/OrganizationValueId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/primaryKeys/GroupValueId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -722,7 +703,7 @@
       </item>
       <item path="src/asset/AssetRelease.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/engine/EngOrg.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/engine/EngGrp.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -767,22 +748,13 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/group/Group.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/organization/OrganizationField.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/group/GroupField.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/organization/OrganizationType.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/group/GroupType.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/organization/OrganizationValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/group/GroupValue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -970,7 +942,7 @@
       </item>
       <item path="include/asset/AssetRelease.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/engine/EngOrg.h" ex="false" tool="3" flavor2="0">
+      <item path="include/engine/EngGrp.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/engine/Engine.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1015,25 +987,13 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/organization/Organization.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/Group.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/organization/OrganizationField.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/GroupField.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/organization/OrganizationType.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/GroupType.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/organization/OrganizationValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/GroupValue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1074,17 +1034,14 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/primaryKeys/EngOrgId.h" ex="false" tool="3" flavor2="0">
+      <item path="include/primaryKeys/EngGrpId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/FilterParameterValueId.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/primaryKeys/OrganizationValueId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/primaryKeys/GroupValueId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1272,7 +1229,7 @@
       </item>
       <item path="src/asset/AssetRelease.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/engine/EngOrg.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/engine/EngGrp.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/engine/Engine.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1317,22 +1274,13 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/group/Group.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/organization/OrganizationField.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/group/GroupField.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/organization/OrganizationType.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/group/GroupType.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/organization/OrganizationValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/group/GroupValue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1545,25 +1493,13 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/organization/Organization.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/Group.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/organization/OrganizationField.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/GroupField.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/organization/OrganizationType.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/GroupType.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/organization/OrganizationValue.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/group/GroupValue.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/pack/Option.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1609,10 +1545,7 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="include/primaryKeys/OrganizationValueId.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="include/primaryKeys/GroupValueId.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/primaryKeys/PackOptionId.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -1825,22 +1758,13 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="src/organization/Organization.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/group/Group.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/organization/OrganizationField.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/group/GroupField.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/organization/OrganizationType.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/group/GroupType.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/organization/OrganizationValue.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="src/group/GroupValue.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/pack/Option.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -18,7 +18,7 @@
 ////
 ////#include "Plugin.h"
 ////
-////#include "Organization.h"
+////#include "Group.h"
 ////
 ////#include "WidgetType.h"
 ////

@@ -31,7 +31,7 @@ namespace Echoes
             Wt::WString value;
 
             Wt::Dbo::ptr<OptionType> optionType;
-            Wt::Dbo::ptr<Organization> organization;
+            Wt::Dbo::ptr<Group> group;
 
             template<class Action>
             void persist(Action& a)
@@ -41,7 +41,7 @@ namespace Echoes
                 Table::fieldFiller(a, *this);
 
                 Wt::Dbo::belongsTo(a, optionType, TRIGRAM_OPTION SEP TRIGRAM_OPTION_TYPE);
-                Wt::Dbo::belongsTo(a, organization, TRIGRAM_OPTION SEP TRIGRAM_ORGANIZATION);
+                Wt::Dbo::belongsTo(a, group, TRIGRAM_OPTION SEP TRIGRAM_GROUP);
             }
 
         private:

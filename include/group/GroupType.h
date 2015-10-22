@@ -1,5 +1,5 @@
 /* 
- * Header of Organization Type Table
+ * Header of Group Type Table
  * @author ECHOES Technologies (RHI)
  * @date 03/07/2012
  * 
@@ -11,8 +11,8 @@
  * 
  */
 
-#ifndef ORGANIZATIONTYPE_H
-#define ORGANIZATIONTYPE_H
+#ifndef GROUPTYPE_H
+#define GROUPTYPE_H
 
 #include "tools/MainIncludeFile.h"
 
@@ -20,11 +20,11 @@ namespace Echoes
 {
   namespace Dbo
   {
-    class OrganizationType : public Table
+    class GroupType : public Table
     {
         public:
-            OrganizationType();
-            virtual ~OrganizationType();
+            GroupType();
+            virtual ~GroupType();
 
             static std::string TRIGRAM;
 
@@ -32,13 +32,14 @@ namespace Echoes
             {
                 Company = 1,
                 Individual = 2,
-                Association = 3
+                Association = 3,
+                Default = 4
             };
 
             Wt::WString name;
 
-            Wt::Dbo::collection<Wt::Dbo::ptr<Organization> > organization;
-            Wt::Dbo::collection<Wt::Dbo::ptr<OrganizationField> > organizationField;
+            Wt::Dbo::collection<Wt::Dbo::ptr<Group> > group;
+            Wt::Dbo::collection<Wt::Dbo::ptr<GroupField> > groupField;
 
             template<class Action>
             void persist(Action& a)
@@ -46,12 +47,12 @@ namespace Echoes
                 mapClassAttributesStrings["NAME"] = &this->name;
                 Table::fieldFiller(a, *this);
                 Wt::Dbo::hasMany(a,
-                        organizationField,
+                        groupField,
                         Wt::Dbo::ManyToMany,
                         "TJ_OFI_OTY");
 
                 Wt::Dbo::hasMany(a,
-                        organization,
+                        group,
                         Wt::Dbo::ManyToOne,
                         "ORG_OTY");
 
@@ -63,5 +64,5 @@ namespace Echoes
   }
 }
 
-#endif // ORGANIZATIONTYPE_H
+#endif // GROUPTYPE_H
 

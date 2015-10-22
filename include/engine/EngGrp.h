@@ -1,5 +1,5 @@
 /* 
- * Header of Engine Organization Table
+ * Header of Engine Group Table
  * @author ECHOES Technologies (TSA)
  * @date 21/04/2013
  * 
@@ -11,26 +11,26 @@
  * 
  */
 
-#ifndef ENGORG_H
-#define	ENGORG_H
+#ifndef ENGGRP_H
+#define	ENGGRP_H
 
 #include "tools/MainIncludeFile.h"
-#include "primaryKeys/EngOrgId.h"
+#include "primaryKeys/EngGrpId.h"
 
 namespace Echoes
 {
   namespace Dbo
   {
-    class EngOrg : public Table
+    class EngGrp : public Table
     {
         public:
-            EngOrg();
-            EngOrg(const EngOrg& orig);
-            virtual ~EngOrg();
+            EngGrp();
+            EngGrp(const EngGrp& orig);
+            virtual ~EngGrp();
 
             static std::string TRIGRAM;
 
-            EngOrgId pk;
+            EngGrpId pk;
 
             Wt::WString token;
 
@@ -48,5 +48,5 @@ namespace Echoes
   }
 }
 
-#endif	/* ENGORG_H */
+#endif	/* ENGGRP_H */
 

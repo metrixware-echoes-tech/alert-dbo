@@ -40,9 +40,9 @@ namespace Echoes
             static const char *T_USER_FIELD_UFI;
             static const char *T_USER_HISTORICAL_ACTION_UHA;
 
-            static const char *T_ORGANIZATION_ORG;
-            static const char *T_ORGANIZATION_VALUE_OVA;
-            static const char *T_ORGANIZATION_FIELD_OFI;
+            static const char *T_GROUP_GRP;
+            static const char *T_GROUP_VALUE_GVA;
+            static const char *T_GROUP_FIELD_GFI;
             static const char *T_PROBE_PRB;
             static const char *T_PROBE_PACKAGE_PPA;
             static const char *T_PROBE_PACKAGE_PARAMETER_PPP;
@@ -102,7 +102,7 @@ namespace Echoes
             static const char *T_OPTION_OPT;
             static const char *T_MEDIA_MED;
 
-            static const char *TJ_ENG_ORG;
+            static const char *TJ_ENG_GRP;
 
             static const char *TR_INFORMATION_UNIT_TYPE_IUT;
             static const char *TR_ALERT_CRITERIA_ACR;
@@ -110,7 +110,7 @@ namespace Echoes
             static const char *TR_MEDIA_TYPE_MTY;
             static const char *TR_ADDON_ADO;
             static const char *TR_SEARCH_TYPE_STY;
-            static const char *TR_ORGANIZATION_TYPE_OTY;
+            static const char *TR_GROUP_TYPE_GTY;
             static const char *TR_SOURCE_PARAMETER_SRP;
             static const char *TR_ENGINE_ENG;
             static const char *TR_USER_ACTION_TYPE_UAT;

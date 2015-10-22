@@ -10,7 +10,7 @@
 //
 //#include <Wt/Dbo/Dbo>
 //
-//class Organization;
+//class Group;
 //class Widget;
 //class Probe;
 //class Plugin;
@@ -19,20 +19,20 @@
 //
 //struct WidgetValueId
 //{
-//    Wt::Dbo::ptr<Organization> organization;
+//    Wt::Dbo::ptr<Group> group;
 //    Wt::Dbo::ptr<Widget> widget;
 //    Wt::Dbo::ptr<Probe> probe;
 //    Wt::Dbo::ptr<Plugin> plugin;
 //    Wt::Dbo::ptr<Information> information;
 //
-//    WidgetValueId(Wt::Dbo::ptr<Organization> o, Wt::Dbo::ptr<Widget> w, Wt::Dbo::ptr<Probe> pr, Wt::Dbo::ptr<Plugin> 
+//    WidgetValueId(Wt::Dbo::ptr<Group> o, Wt::Dbo::ptr<Widget> w, Wt::Dbo::ptr<Probe> pr, Wt::Dbo::ptr<Plugin> 
 //    pl, Wt::Dbo::ptr<Information> i)
-//        : organization(o), widget(w), probe(pr), plugin(pl), information(i) { }
+//        : group(o), widget(w), probe(pr), plugin(pl), information(i) { }
 //
 //    WidgetValueId(){ }
 //
 //    bool operator== (const WidgetValueId& other) const {
-//        return organization == other.organization && widget == other.widget && probe == other.probe 
+//        return group == other.group && widget == other.widget && probe == other.probe 
 //                && plugin == other.plugin && information == other.information;
 //    }
 //
@@ -57,7 +57,7 @@
 //        void field(Action& a, WidgetValueId& wvid,
 //                   const std::string& name, int size = -1)
 //        {
-//            Wt::Dbo::belongsTo(a, wvid.organization, "ORG_ID");
+//            Wt::Dbo::belongsTo(a, wvid.group, "ORG_ID");
 //            Wt::Dbo::belongsTo(a, wvid.widget, "WGT_ID");
 //            Wt::Dbo::belongsTo(a, wvid.probe, "PRB_ID");
 //            Wt::Dbo::belongsTo(a, wvid.plugin, "PLU_ID");
