@@ -152,6 +152,30 @@ namespace Echoes
           OR = 2
       };
     }
+    
+    namespace EAlertStatus {
+      enum {
+          PENDING = 1,
+          SUPPORTED = 2,
+          FORWARDING = 3,
+          BACKTONORMAL = 4
+      };
+    }
+    
+    namespace EMessageStatus {
+      enum {
+          UNCREATED = 1,
+          SENDREFUSED = 2,
+          CREATED = 3,
+          SENDFAILED = 4,
+          SENDED = 5,
+          ACKFAILED = 6,
+          RECEIVED = 7,
+          ANSWERED = 8,
+          LINKING = 9,
+          LINKLOST = 10
+      };
+    }
   }
 }
 

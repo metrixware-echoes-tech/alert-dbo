@@ -11,8 +11,8 @@
  * 
  */
 
-#ifndef ALERTTRACKING_H
-#define	ALERTTRACKING_H
+#ifndef MESSAGE_H
+#define	MESSAGE_H
 
 #include "tools/MainIncludeFile.h"
 
@@ -30,17 +30,18 @@ namespace Echoes
 
             boost::optional<Wt::WString> content;
             boost::optional<Wt::WString> senderSrv;
-            Wt::WDateTime sendDate;
+            boost::optional<Wt::WString> senderPort;
             boost::optional<Wt::WString> receiverSrv;
-            Wt::WDateTime receiveDate;
-            boost::optional<Wt::WString> ackGw;
-            boost::optional<Wt::WString> ackPort;
-            boost::optional<Wt::WString> ackId;
+            boost::optional<Wt::WString> receiverPort;
 
-            Wt::Dbo::ptr<Media> media;
+
+            boost::optional<Wt::WString> refAck;
+            boost::optional<Wt::WString> dest;
+            
+            Wt::Dbo::ptr<User> user;
             Wt::Dbo::ptr<Alert> alert;
 
-            Wt::Dbo::collection<Wt::Dbo::ptr<MessageTrackingEvent> > alertTrackingEvents;
+            Wt::Dbo::collection<Wt::Dbo::ptr<MessageTrackingEvent> > messageTrackingEvents;
 
             template<class Action>
             void persist(Action& a)
@@ -48,19 +49,18 @@ namespace Echoes
                 mapClassAttributesStringsNn["CONTENT"] = &this->content;
                 mapClassAttributesStringsNn["SENDER_SRV"] = &this->senderSrv;
                 mapClassAttributesStringsNn["RECEIVER_SRV"] = &this->receiverSrv;
-                mapClassAttributesStringsNn["ACK_GW"] = &this->ackGw;
-                mapClassAttributesStringsNn["ACK_PORT"] = &this->ackPort;
-                mapClassAttributesStringsNn["ACK_ID"] = &this->ackId;
-                mapClassAttributesDates["SEND_DATE"] = &this->sendDate;
-                mapClassAttributesDates["RECEIVE_DATE"] = &this->receiveDate;
+                mapClassAttributesStringsNn["SENDER_PORT"] = &this->senderPort;
+                mapClassAttributesStringsNn["RECEIVER_PORT"] = &this->receiverPort;
+                mapClassAttributesStringsNn["REF_ACK"] = &this->refAck;
+                mapClassAttributesStringsNn["DEST"] = &this->dest;
 
                 Table::fieldFiller(a, *this);
 
-                Wt::Dbo::belongsTo(a, media, TRIGRAM_MESSAGE SEP TRIGRAM_MEDIA);
+                Wt::Dbo::belongsTo(a, user, TRIGRAM_MESSAGE SEP TRIGRAM_USER);
                 Wt::Dbo::belongsTo(a, alert, TRIGRAM_MESSAGE SEP TRIGRAM_ALERT);
 
                 Wt::Dbo::hasMany(a,
-                        alertTrackingEvents,
+                        messageTrackingEvents,
                         Wt::Dbo::ManyToOne,
                         TRIGRAM_MESSAGE_TRACKING_EVENT SEP TRIGRAM_MESSAGE);
             }
@@ -71,5 +71,5 @@ namespace Echoes
   }
 }
 
-#endif	/* ALERTTRACKING_H */
+#endif	/* MESSAGE_H */
 

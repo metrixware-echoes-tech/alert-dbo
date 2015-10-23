@@ -46,7 +46,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/alert/AlertCriteria.o \
 	${OBJECTDIR}/src/alert/AlertMediaSpecialization.o \
 	${OBJECTDIR}/src/alert/AlertSequence.o \
+	${OBJECTDIR}/src/alert/AlertStatus.o \
 	${OBJECTDIR}/src/alert/AlertTimeSlot.o \
+	${OBJECTDIR}/src/alert/AlertTrackingEvent.o \
 	${OBJECTDIR}/src/alert/AlertType.o \
 	${OBJECTDIR}/src/alert/AlertValue.o \
 	${OBJECTDIR}/src/asset/Asset.o \
@@ -70,6 +72,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/media/Media.o \
 	${OBJECTDIR}/src/media/MediaType.o \
 	${OBJECTDIR}/src/message/Message.o \
+	${OBJECTDIR}/src/message/MessageStatus.o \
 	${OBJECTDIR}/src/message/MessageTrackingEvent.o \
 	${OBJECTDIR}/src/pack/Option.o \
 	${OBJECTDIR}/src/pack/OptionType.o \
@@ -193,10 +196,20 @@ ${OBJECTDIR}/src/alert/AlertSequence.o: src/alert/AlertSequence.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertSequence.o src/alert/AlertSequence.cpp
 
+${OBJECTDIR}/src/alert/AlertStatus.o: src/alert/AlertStatus.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertStatus.o src/alert/AlertStatus.cpp
+
 ${OBJECTDIR}/src/alert/AlertTimeSlot.o: src/alert/AlertTimeSlot.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertTimeSlot.o src/alert/AlertTimeSlot.cpp
+
+${OBJECTDIR}/src/alert/AlertTrackingEvent.o: src/alert/AlertTrackingEvent.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/alert
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/alert/AlertTrackingEvent.o src/alert/AlertTrackingEvent.cpp
 
 ${OBJECTDIR}/src/alert/AlertType.o: src/alert/AlertType.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/alert
@@ -312,6 +325,11 @@ ${OBJECTDIR}/src/message/Message.o: src/message/Message.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/message
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/message/Message.o src/message/Message.cpp
+
+${OBJECTDIR}/src/message/MessageStatus.o: src/message/MessageStatus.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/message
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/message/MessageStatus.o src/message/MessageStatus.cpp
 
 ${OBJECTDIR}/src/message/MessageTrackingEvent.o: src/message/MessageTrackingEvent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/message

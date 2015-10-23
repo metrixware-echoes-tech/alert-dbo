@@ -143,8 +143,12 @@ namespace Echoes
         mapClass<AlertCriteria>(Constants::TR_ALERT_CRITERIA_ACR);
         mapClass<AlertSequence>(Constants::T_ALERT_SEQUENCE_ASE);
         mapClass<AlertTimeSlot>(Constants::T_ALERT_TIMESLOT_ATS);
+        mapClass<AlertTrackingEvent>(Constants::T_ALERT_TRACKING_EVENT_ATE);
+        mapClass<AlertStatus>(Constants::TR_ALERT_STATUS_ALS);
+        
         mapClass<Message>(Constants::T_MESSAGE_MSG);
         mapClass<MessageTrackingEvent>(Constants::T_MESSAGE_TRACKING_EVENT_MTE);
+        mapClass<MessageStatus>(Constants::TR_MESSAGE_STATUS_MSA);
 
         mapClass<Engine>(Constants::TR_ENGINE_ENG);
         mapClass<EngGrp>(Constants::TJ_ENG_GRP);

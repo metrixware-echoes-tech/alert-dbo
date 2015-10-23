@@ -85,6 +85,8 @@ namespace Echoes
             static const char *T_ALERT_PARAM_APA;
             static const char *T_ALERT_SEQUENCE_ASE;
             static const char *T_ALERT_TIMESLOT_ATS;
+            static const char *T_ALERT_TRACKING_EVENT_ATE;
+            
             static const char *T_MESSAGE_TRACKING_EVENT_MTE;
             static const char *T_MESSAGE_MSG;
             static const char *T_SOURCE_SRC;
@@ -106,6 +108,8 @@ namespace Echoes
 
             static const char *TR_INFORMATION_UNIT_TYPE_IUT;
             static const char *TR_ALERT_CRITERIA_ACR;
+            static const char *TR_ALERT_STATUS_ALS;
+            static const char *TR_MESSAGE_STATUS_MSA;
             static const char *TR_OPTION_TYPE_OTP;
             static const char *TR_MEDIA_TYPE_MTY;
             static const char *TR_ADDON_ADO;
