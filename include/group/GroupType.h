@@ -49,12 +49,12 @@ namespace Echoes
                 Wt::Dbo::hasMany(a,
                         groupField,
                         Wt::Dbo::ManyToMany,
-                        "TJ_OFI_OTY");
+                        "TJ_GFI_GTY");
 
                 Wt::Dbo::hasMany(a,
                         group,
                         Wt::Dbo::ManyToOne,
-                        "ORG_OTY");
+                        "GRP_GTY");
 
 
             }

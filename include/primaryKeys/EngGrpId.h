@@ -58,7 +58,7 @@ namespace Wt
     void field(Action& a, Echoes::Dbo::EngGrpId& srid,
             const std::string& name, int size = -1) {
         field(a, srid.engine, "ENG_ID");
-        field(a, srid.group, "ORG_ID");
+        field(a, srid.group, "GRP_ID");
     }
 
     template<>

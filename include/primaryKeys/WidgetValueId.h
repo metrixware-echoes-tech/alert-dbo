@@ -57,7 +57,7 @@
 //        void field(Action& a, WidgetValueId& wvid,
 //                   const std::string& name, int size = -1)
 //        {
-//            Wt::Dbo::belongsTo(a, wvid.group, "ORG_ID");
+//            Wt::Dbo::belongsTo(a, wvid.group, "GRP_ID");
 //            Wt::Dbo::belongsTo(a, wvid.widget, "WGT_ID");
 //            Wt::Dbo::belongsTo(a, wvid.probe, "PRB_ID");
 //            Wt::Dbo::belongsTo(a, wvid.plugin, "PLU_ID");

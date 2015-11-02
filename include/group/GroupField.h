@@ -42,7 +42,7 @@ namespace Echoes
                 Wt::Dbo::hasMany(a,
                         groupType,
                         Wt::Dbo::ManyToMany,
-                        "TJ_OFI_OTY");
+                        "TJ_GFI_GTY");
             }
     };
   }

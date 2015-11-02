@@ -40,7 +40,7 @@ namespace Echoes
 
                 Table::fieldFiller(a, *this);
 
-                Wt::Dbo::id(a, pk, "OVA_ID");
+                Wt::Dbo::id(a, pk, "GVA_ID");
 
             }
         private:

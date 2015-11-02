@@ -60,8 +60,8 @@ namespace Wt
     template <class Action>
     void field(Action& a, Echoes::Dbo::GroupValueId& spvid,
             const std::string& name, int size = -1) {
-        field(a, spvid.groupField, "OFI_ID");
-        field(a, spvid.group, "ORG_ID");
+        field(a, spvid.groupField, "GFI_ID");
+        field(a, spvid.group, "GRP_ID");
     }
 
     template<>
